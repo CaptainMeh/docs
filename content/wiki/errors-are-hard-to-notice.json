@@ -1,0 +1,155 @@
+{
+  "slug": "errors-are-hard-to-notice",
+  "title": "Errors Are Hard To Notice",
+  "pageType": "failure",
+  "category": "failures",
+  "section": "Error And Recovery Failures",
+  "summary": "Errors are hard to notice when the interface shows no clear, timely, or operationally perceptible signal that an error has occurred. The failure is consequential because users continue acting within a false-normal frame until the error appears later in outputs, reviews, or downstream use.",
+  "keyFacts": [
+    "Error detection depends on the interface producing a perceptible signal at the moment an error occurs.",
+    "This failure concerns errors that are made but not detected, not the frequency with which errors occur.",
+    "The main consequence is delayed detection after subsequent actions, outputs, or decisions have already occurred.",
+    "The five mechanisms are silent errors, error signals below the operational attention threshold, deferred error manifestation, errors hidden in normal variation, and accumulating sub-threshold errors.",
+    "Silent errors are described as the most consequential category because the system continues normally and the output appears valid.",
+    "In the Gexcon CFD simulation case, 5–8 configuration errors per simulation were recorded before redesign, with 4–6 hours of corrective load per error at output review.",
+    "In the Beissbarth automotive calibration case, borderline measurements could appear as passing measurements without adequate differentiation before the three-level measurement state design.",
+    "In the Elsner Elektronik case, delayed sensor readings could appear as accurate current readings because displayed values looked normal."
+  ],
+  "bodySections": [
+    {
+      "heading": "Summary",
+      "bodyMarkdown": "Creative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nErrors are hard to notice when the interface does not produce a signal that is perceptible to the user under actual work conditions. The error may be silent, too subtle, deferred, hidden inside normal variation, or distributed across several small deviations.\n\nThe defining feature of this failure is not that an error exists. The defining feature is that the user continues operating on the false assumption that everything is proceeding correctly. Detection happens later, after subsequent actions, outputs, or decisions have already been shaped by that false-normal frame."
+    },
+    {
+      "heading": "Failure pattern: errors are not detected when correction is still cheap",
+      "bodyMarkdown": "Errors are hard to notice when detection is separated from the moment of occurrence. At the moment when correction would be simple, the interface either shows no signal, shows a weak signal, or shows a signal that looks like acceptable variation.\n\nThe later cost is not only the cost of the original error. The later cost includes the actions taken after the error, the outputs produced from the error state, the decisions made on top of those outputs, and the revision or discard work that follows when the error is finally detected.\n\nThis failure creates a false negative error state: the interface shows normal or acceptable operation when an error has already occurred. In that state, the user has no reason to stop, inspect, repeat, or correct the action."
+    },
+    {
+      "heading": "Adjacent failure boundaries",
+      "bodyMarkdown": "Errors are hard to notice is distinct from errors are easy to make. Errors are easy to make concerns interface conditions that increase the frequency of error occurrence. Errors are hard to notice concerns errors that have occurred but are not detected. The two failures can co-occur, but the design responses differ: reducing error-generating conditions is not the same as improving error signal quality and timing.\n\nErrors are hard to notice is also distinct from errors are hard to correct. Errors are hard to correct concerns the correction process after detection. Errors are hard to notice concerns the detection point itself, before correction can begin."
+    },
+    {
+      "heading": "Silent errors create positive false evidence of normal operation",
+      "bodyMarkdown": "Silent errors complete without producing any perceptible interface signal. The system processes the error, produces output, and continues normally. The output appears valid, so the user receives positive false evidence that the process has worked.\n\nThis is the most consequential mechanism described here. The user does not merely lack an error signal. The user sees the system continue and sees output in the expected format. That apparent normality can allow the error to enter later review, shared outputs, or downstream use.\n\nIn the Gexcon CFD simulation case, a misconfigured simulation setup could run to completion and produce outputs that appeared valid. Before redesign, 5–8 configuration errors per simulation were recorded, and those errors did not produce interface signals during configuration. Corrective load was 4–6 hours per error when errors were deferred until output review."
+    },
+    {
+      "heading": "Error signals can fall below the operational attention threshold",
+      "bodyMarkdown": "Error signals are ineffective when they require focused inspection to notice but the user is working under time pressure, divided attention, or ambient workload. A small warning icon, a subtle colour change in a peripheral indicator, or a text note in a secondary panel may be visible during careful review but still functionally invisible during operational use.\n\nThe operational attention threshold is the level of signal intensity that is perceptible under real work conditions. A signal that is technically present but below that threshold does not support timely error detection.\n\nThis mechanism is especially relevant when the user is performing routine work and the interface relies on peripheral or low-salience indicators. The failure is not absence of visual content; it is absence of a signal strong enough to be noticed when attention is already loaded."
+    },
+    {
+      "heading": "Deferred error manifestation breaks cause-effect association",
+      "bodyMarkdown": "Deferred error manifestation occurs when the consequence of an error appears significantly later than the error itself. The user may take an action in one step, but the consequence appears several steps later, during output review, or in downstream use.\n\nThe temporal gap breaks the user's ability to associate the error with its cause. The error may eventually be noticed, but the source of the error is harder to identify because the interface did not connect the consequence to the action that produced it.\n\nIn the Gexcon CFD simulation case, configuration errors were deferred until output review. The redesign's warning architecture made configuration errors detectable before the simulation ran, changing the detection point from output review to setup."
+    },
+    {
+      "heading": "Errors hidden in normal variation look acceptable when confidence is low",
+      "bodyMarkdown": "Errors hidden in normal variation produce outputs that remain within the acceptable range but fall below the confidence threshold. The interface gives the user no signal that a value is acceptable-low, borderline, stale, or error-adjacent rather than simply normal.\n\nIn the Beissbarth automotive calibration case, borderline calibration measurements could appear as passing measurements before the three-level measurement state design. Measurements that should have prompted repetition could be recorded as confirmations because the interface did not adequately differentiate confirmed, borderline, and out-of-range states.\n\nIn the Elsner Elektronik case, delayed sensor readings could appear as accurate current readings. A displayed temperature value could look normal even when it reflected an earlier measurement rather than the current state. The firmware timing synchronisation addressed this by ensuring that displayed values corresponded to current sensor readings rather than prior-cycle values."
+    },
+    {
+      "heading": "Accumulating sub-threshold errors become visible only after aggregate deviation",
+      "bodyMarkdown": "Accumulating sub-threshold errors occur when several individually acceptable decisions combine into a significant deviation. No single step produces an error signal because each step remains inside an acceptable range. The aggregate state is wrong, but the interface has not monitored the accumulated deviation.\n\nThis mechanism differs from a single silent error. The error is distributed across a sequence, so a step-level validation signal may not detect it. Without an aggregate monitoring mechanism, the deviation remains invisible until its consequences surface."
+    },
+    {
+      "heading": "How Creative Navy's Critical Systems Design method addresses this failure",
+      "bodyMarkdown": "Creative Navy's Critical Systems Design method treats errors-are-hard-to-notice as a detection failure rather than only an input failure or correction failure. The design response is to improve error signal quality and timing so that the error becomes perceptible while correction is still cheap.\n\nThe documented design responses include making configuration errors detectable before execution, separating borderline measurements from confirmed passing measurements, and ensuring displayed sensor values correspond to current readings. These responses do not merely add more information. They change whether the user can perceive the error state under normal operating conditions.\n\nFor this failure, the design target is error detectability: the degree to which errors produce signals that users can perceive during actual work. A useful response must address the false negative error state, not only the final consequences of the error."
+    },
+    {
+      "heading": "Evidence basis from documented cases",
+      "bodyMarkdown": "The Gexcon CFD simulation case provides the clearest example of silent error detection failure. A misconfigured simulation setup could run to completion and produce valid-looking outputs. The case records 5–8 configuration errors per simulation before redesign and 4–6 hours of corrective load per error when errors were detected at output review.\n\nThe Beissbarth automotive calibration case provides evidence for errors hidden in normal variation. Borderline measurements that should have prompted repetition could be treated as confirmations before the three-level measurement state design made confirmed, borderline, and out-of-range states explicit.\n\nThe Elsner Elektronik case provides evidence for invisible accuracy errors caused by delayed sensor readings. The displayed value could be technically valid but stale, making the displayed state diverge from the current state without giving the user a perceptible signal."
+    },
+    {
+      "heading": "Boundaries and limits",
+      "bodyMarkdown": "Errors are hard to notice does not describe every error in an interface. It describes the subset where an error has occurred and the interface fails to make that error perceptible at the time when the user can still correct it cheaply.\n\nThis failure does not primarily describe correction difficulty. Once the user has detected the error, the quality of undo, repair, repetition, or recovery paths belongs to errors are hard to correct.\n\nThe available evidence examples are case-based. They illustrate mechanisms and documented consequences in CFD simulation, automotive calibration, and smart home controller contexts, but they do not establish a general prevalence rate across all software domains."
+    }
+  ],
+  "evidenceSummary": {
+    "strongClaims": [
+      "Errors are hard to notice when the interface does not produce a perceptible signal under actual work conditions, causing users to continue on a false assumption of normal operation.",
+      "The failure is consequential because detection happens later, after subsequent actions, outputs, or decisions have been made from the false-normal frame.",
+      "The five mechanisms are silent errors, error signals below the operational attention threshold, deferred error manifestation, errors hidden in normal variation, and accumulating sub-threshold errors.",
+      "In the Gexcon CFD simulation case, misconfigured setups could complete normally and produce valid-looking outputs; before redesign, 5–8 configuration errors per simulation and 4–6 hours of corrective load per error were recorded.",
+      "In the Beissbarth automotive calibration case, borderline measurements could appear as passing measurements before a three-level measurement state design made the borderline category explicit.",
+      "In the Elsner Elektronik case, delayed sensor readings could appear as accurate current readings because the displayed value looked normal while reflecting an earlier measurement.",
+      "Errors are hard to notice is distinct from errors are easy to make and errors are hard to correct because it concerns detection rather than error generation or post-detection correction."
+    ],
+    "limitations": [
+      "The evidence examples are case-based and do not establish prevalence across all software domains.",
+      "The Gexcon figures are described as measured in the current source, but the current source does not specify the measurement owner, protocol, or sample conditions.",
+      "The Beissbarth and Elsner Elektronik examples describe detection mechanisms but do not provide quantified outcome figures.",
+      "This failure concerns error detection, not the frequency of error occurrence or the difficulty of correction after detection."
+    ]
+  },
+  "relatedPageSlugs": [
+    "errors-are-easy-to-make",
+    "errors-are-hard-to-correct",
+    "warnings-are-visible-but-their-meaning-is-unclear",
+    "important-status-information-is-buried",
+    "users-cannot-see-what-state-the-system-is-in",
+    "transitions-are-hard-to-notice",
+    "data-is-available-but-hard-to-interpret",
+    "uncertainty-is-not-communicated-usefully",
+    "beissbarth"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "errors are easy to make",
+      "targetSlug": "errors-are-easy-to-make",
+      "reason": "The current source explicitly distinguishes this failure from error occurrence frequency."
+    },
+    {
+      "anchorText": "errors are hard to correct",
+      "targetSlug": "errors-are-hard-to-correct",
+      "reason": "The current source explicitly distinguishes detection failure from correction difficulty."
+    },
+    {
+      "anchorText": "warnings are visible but their meaning is unclear",
+      "targetSlug": "warnings-are-visible-but-their-meaning-is-unclear",
+      "reason": "Warning clarity is relevant to whether an error signal is usable once visible."
+    },
+    {
+      "anchorText": "important status information is buried",
+      "targetSlug": "important-status-information-is-buried",
+      "reason": "The failure includes signals that are present but too subtle or peripheral for operational attention."
+    },
+    {
+      "anchorText": "users cannot see what state the system is in",
+      "targetSlug": "users-cannot-see-what-state-the-system-is-in",
+      "reason": "False negative error states depend on the interface showing normal or acceptable state when an error exists."
+    },
+    {
+      "anchorText": "transitions are hard to notice",
+      "targetSlug": "transitions-are-hard-to-notice",
+      "reason": "Deferred or subtle state changes can contribute to missed error detection."
+    },
+    {
+      "anchorText": "data is available but hard to interpret",
+      "targetSlug": "data-is-available-but-hard-to-interpret",
+      "reason": "Borderline values and normal variation can make error-adjacent data hard to judge."
+    },
+    {
+      "anchorText": "uncertainty is not communicated usefully",
+      "targetSlug": "uncertainty-is-not-communicated-usefully",
+      "reason": "Borderline measurements involve uncertainty that must be made visible to support detection."
+    },
+    {
+      "anchorText": "Beissbarth automotive calibration",
+      "targetSlug": "beissbarth",
+      "reason": "The current source names Beissbarth as a case example, and the matching slug is available in the linking context."
+    }
+  ],
+  "tags": [
+    "error detection",
+    "silent errors",
+    "error recovery",
+    "operational attention threshold",
+    "deferred consequences",
+    "false negative error state",
+    "error accumulation",
+    "warning design"
+  ],
+  "_meta": {
+    "sourcePath": "sources/articles/Failures/failures--error-recovery--errors-are-hard-to-notice.md",
+    "parentSlug": "error-and-recovery-failures",
+    "childPageSlugs": [],
+    "generatedBy": "deterministic"
+  }
+}

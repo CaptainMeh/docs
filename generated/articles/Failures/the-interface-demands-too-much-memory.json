@@ -1,0 +1,189 @@
+{
+  "_type": "documentationPage",
+  "sourceFile": "Articles/Failures/failures--cognitive--the-interface-demands-too-much-memory.md",
+  "sourcePath": "sources/articles/Failures/failures--cognitive--the-interface-demands-too-much-memory.md",
+  "sanityDocumentIdCandidate": "documentationPage.the-interface-demands-too-much-memory",
+  "title": "The Interface Demands Too Much Memory",
+  "slug": {
+    "_type": "slug",
+    "current": "the-interface-demands-too-much-memory"
+  },
+  "pageType": "failure",
+  "category": "failures",
+  "parentSlug": "cognitive-failures",
+  "childPageSlugs": [],
+  "excerpt": "An interface demands too much memory when users must carry layout, state, or system-model information that the interface should communicate directly. In complex operational software, this memory demand becomes costly under time pressure, divided attention, clinical procedure, physical constraint, or high transaction rate.",
+  "metaTitle": "The Interface Demands Too Much Memory",
+  "metaDescription": "Failure pattern where unstable layout, weak state recognition, or untranslated system models transfer cognitive work from interface to user.",
+  "summary": "This failure describes interfaces that require users to remember where information is, interpret states by reading, or learn the system's internal model before they can operate safely. The page distinguishes layout instability, recognition failure, and conceptual overload, with examples from Kardion, deSoutter Medical / Zethon, and Polymatica.",
+  "definition": "The interface demands too much memory when it places structural cognitive work outside itself, requiring users to hold spatial, state, or conceptual information that should be communicated directly by the interface.",
+  "keyFacts": [
+    "The failure mechanism is that the interface holds less information than it should, so the user must hold more than they should.",
+    "The three described forms are layout instability, recognition failure, and conceptual overload.",
+    "Layout instability forces users to re-locate information because spatial memory does not transfer across view transitions or mode changes.",
+    "Recognition failure occurs when critical states require reading or sequential interpretation instead of brief-glance pattern recognition.",
+    "Conceptual overload occurs when the interface exposes the system's internal model rather than translating it into the operational audience's terms.",
+    "In the Kardion MCS Controller engagement, Creative Navy applied a design standard that no element may shift position across any view transition.",
+    "The Kardion standard running view required 34 iterations, and the controller received FDA approval with no design changes required.",
+    "In the deSoutter Medical / Zethon engagement, six competitor devices were benchmarked and reliance on colour as the primary state indicator was the most common failure pattern across the competitive set.",
+    "Eight orthopaedic and trauma surgeons participated in structured review sessions for deSoutter Medical / Zethon and reported that state verification could happen through brief glances without reading.",
+    "In Polymatica, independent task completion rose from 2% before redesign to 40% after release 1 and 56% after release 2, based on product analytics in the live system."
+  ],
+  "tags": [
+    "cognitive load",
+    "memory demand",
+    "layout instability",
+    "state recognition",
+    "conceptual overload",
+    "complex software",
+    "medical device UX",
+    "operational software",
+    "Critical Systems Design"
+  ],
+  "bodyMarkdown": "## Summary\n\nCreative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nAn interface demands too much memory when it requires users to hold information that the interface should communicate directly. The user may need to remember where information is located, interpret what a state means, or carry a conceptual model of how the system organises its data.\n\nThis failure is structural. It is not caused only by user inattention or by the inherent complexity of the domain. It occurs when the interface transfers cognitive work from the screen to the person.\n\nIn capable users, the added memory demand may remain tolerable in calm conditions. In operational conditions such as time pressure, divided attention, high transaction rate, clinical procedure, or physical constraint, the same demand can become a failure mode.\n\n## Failure pattern: the interface holds too little and the user must hold too much\n\nThe interface demands too much memory when it withholds structure that users need during the task. The same mechanism appears in three forms: layout instability, recognition failure, and conceptual overload.\n\nLayout instability occurs when elements shift position across view transitions, screen states, overlays, or mode changes. The spatial map a user builds in one context no longer applies in another context, so the user must actively search for information.\n\nRecognition failure occurs when critical states are presented in forms that require reading and interpretation. Device activation, system readiness, alarm priority, and similar conditions need to be immediately readable under brief attention. If the interface requires sequential reading, the state is not available in the mode of attention the task permits.\n\nConceptual overload occurs when the interface exposes the system's internal model. Technical constructs, empty-by-default states, and engineering hierarchies require users to learn how the system thinks before they can use it in operational terms.\n\n## Layout instability makes spatial memory unreliable\n\nUsers of complex software build spatial memory while working. They learn where information lives on screen, often without intending to. In operational environments, spatial memory is not only a shortcut; it may be the only practical navigation method available during divided attention.\n\nWhen layout changes across view transitions, the user's remembered location and the screen's actual location no longer match. The user must reconcile that mismatch before acting. Under calm conditions, this may cost only a fraction of a second. Under clinical or high-throughput conditions, it can interrupt the task.\n\nThe Kardion MCS Controller example shows this form of memory demand in a regulated cardiac-device interface. The controller manages blood flow delivered by an implanted pump to patients during high-risk cardiac interventions and cardiogenic shock support. Primary users include scrub nurses, perfusionists, and ICU nurses working with primary attention on the patient and procedure and secondary attention on the controller.\n\nIn the Kardion engagement, Creative Navy's design work established a governing design standard: no element may shift position across any view transition. The standard applied across the standard running view, flow adjustment overlay, alarm states, trend screens, case management views, and setup screens. The intent was that spatial memory built in the primary running view would transfer directly to other view states.\n\nThe Kardion standard running view required 34 iterations. The iteration count is described as Creative Navy-recorded evidence of the difficulty of satisfying visual distinctiveness, clinical prioritisation, and spatial stability at the same time. The Kardion MCS Controller received FDA approval, passing the regulatory evaluation as submitted, with no design changes required. The regulatory result is documented as FDA approval; the page does not specify a pathway.\n\n## Recognition failure makes users read when the task requires a glance\n\nRecognition failure occurs when critical state information cannot be confirmed through brief-glance pattern recognition. Reading requires focused, sequential attention. In an operating theatre, supervisor workstation, workshop environment, or high-throughput transaction context, that attention may already be allocated to the primary task.\n\nThe deSoutter Medical / Zethon surgical-device interface shows this form of memory demand in an operating-theatre context. The bone cutter operates at rotational speeds from approximately 200 rpm to approximately 85,000 rpm during orthopaedic and trauma surgery. The surgeon interacts with an embedded GUI during live procedures, with primary attention on the surgical field, often using the non-dominant hand, in a constrained sterile-field position, and through surgical gloves.\n\nThe legacy interface required reading to confirm activation states and device readiness. It used text labels for state conditions, colour coding without redundant spatial or iconographic reinforcement, and intermediate confirmation steps that required sequential attention to parse.\n\nDuring Sandbox Experiments, six competitor devices were benchmarked. The most common failure pattern across the competitive set was reliance on colour as the primary state indicator. The surviving design did not rely on colour alone for any critical state.\n\nCreative Navy's design standard for the deSoutter Medical / Zethon engagement was that every critical state must be interpretable through recognition in a brief glance, without reading. Fixed positions for critical indicators supported spatial stability. Redundant non-colour cues meant that spatial position, icon form, and reserved colour each independently communicated every critical state. Intermediate confirmation steps that added cognitive burden without contributing to safety were removed.\n\nEight orthopaedic and trauma surgeons participated in structured review sessions during the engagement. They reported that device state could be verified through brief glances without reading, and that parameter adjustments no longer interrupted surgical workflow. These were reports from participants in the design engagement, not post-deployment operational measurement.\n\n## Conceptual overload exposes the system model instead of translating it\n\nConceptual overload occurs when an interface presents the system's internal model as the user's operating model. This can include technical terminology, empty-by-default entry points, abstract hierarchies, or features that are visible but not explained in operational terms.\n\nPolymatica's analytics platform shows this form of memory demand in a technically capable OLAP system. The GPU-backed OLAP analytics engine ran full-volume queries 50–100x faster than competing solutions and handled data at a scale that Tableau and Domo could not match. Its interface had been designed for OLAP specialists.\n\nBefore redesign, Polymatica surfaced the cube metaphor for data structures, used technical terminology such as “dimensions” and “facts” rather than the industry-standard “measures,” exposed SQL queries directly during database connection, and presented many entry points as empty by default. Advanced analytical features such as clustering, forecasting, and association rules were visible but unlabelled.\n\nUsers trained by the founder could work productively in the system. Every new customer required founder-delivered training before the product could be used at all. Before the redesign, 2% of users could complete key operations independently without consulting help documentation or tutorial videos. 9% could complete them with documentation.\n\nThe point of first-use failure was not mainly OLAP operation. Users trained on clean, structurally ideal data arrived with real datasets containing inconsistencies such as cities appearing in columns alongside other categories, malformed values, and non-standard structures. The interface offered no data preparation or preview step and no guidance for diagnosing the mismatch.\n\nAfter Creative Navy's Critical Systems Design engagement, independent task completion rose to 40% following release 1 and 56% following release 2. These figures are measured through product analytics from real users in the live system. Release 1 addressed orientation; release 2 addressed feature-level guidance.\n\n## Workarounds show where memory demand has moved off screen\n\nA physical workaround can reveal where the interface has imposed too much memory demand. When users cannot hold the required information during the interaction, they may externalise it outside the system.\n\nExamples include printed reference sheets taped beside a terminal and handwritten sample lists placed next to a laboratory instrument. The location of the workaround identifies the step where users have concluded that the designed process is not worth engaging with directly.\n\nIn this failure pattern, the interface may have provided the information somewhere in the system. The failure is that the information was not available in a form the user could hold during the task.\n\n## How Creative Navy's Critical Systems Design method addresses memory demand\n\nCreative Navy's Critical Systems Design method designs software whose interfaces, workflows, and operating logic carry real operational consequences, working through five phases — Sandbox Experiments, Concept Convergence, Iterative System Building, Organizational Integration, and Implementation Partnership — to take each system from initial exploration to independent operation by the client's own team.\n\nCreative Navy's Critical Systems Design method addresses excessive memory demand by identifying the actual operating conditions before design decisions are made, then holding design standards against those conditions during system building.\n\nIn the Kardion engagement, Sandbox Experiments included clinical choreography sessions with cardiologists and nurses. These sessions documented the divided-attention conditions of cath lab and ICU use before visual and interaction decisions were made.\n\nIn the deSoutter Medical / Zethon engagement, human factors literature on gloved-hand performance, attention switching in dual-task conditions, and medical-device usability in clinical environments was reviewed and applied to design decisions.\n\nIn the Polymatica engagement, two weeks of daily structured exercises made the Creative Navy team productive OLAP users. That domain learning supported translation from the system's technical model into the operational terms users needed.\n\nDuring Iterative System Building, the design standards were treated as requirements rather than preferences. In Kardion, the layout-stability standard was held through 18 sprints. In deSoutter Medical / Zethon, the recognition standard governed state communication decisions. In Polymatica, Concept Convergence replaced the cube metaphor, restructured the entry hierarchy around operational logic, and introduced a data preparation step.\n\n## Boundary with pressure-related failures\n\nThis failure is the precondition for pressure-related degradation, not the same failure as pressure-related degradation. Memory demand can exist in the interface before pressure rises.\n\nWhen pressure rises, the user has less capacity to absorb memory demand. The related failure described as the interface getting harder when pressure rises concerns what happens when memory-reliant interfaces meet operational pressure. The present failure concerns the structural memory demand that was already built into the interface.\n\nThis failure is also distinct from the broader organisational pattern in which operators rely on memory too much. That broader situation describes what the problem looks like from outside the product. This page describes the interface mechanisms that create the compensation requirement.\n\n## Evidence basis and limits\n\nThe evidence for this failure pattern is grounded in documented examples from Kardion, deSoutter Medical / Zethon, and Polymatica. The examples cover regulated medical-device control, surgical-device interaction, and analytics-platform conceptual translation.\n\nThe Kardion evidence includes a Creative Navy-recorded 34-iteration count for the standard running view, a design standard of fixed element position across view transitions, and FDA approval with no design changes required. FDA approval is a regulatory result, not a measured usability outcome, and the page does not specify a regulatory pathway.\n\nThe deSoutter Medical / Zethon evidence includes six competitor devices benchmarked during Sandbox Experiments and structured review sessions with eight orthopaedic and trauma surgeons. The surgeon feedback is engagement-session evidence and is not described as post-deployment operational measurement.\n\nThe Polymatica evidence includes product analytics from real users in the live system. Independent task completion increased from 2% before redesign to 40% after release 1 and 56% after release 2. These figures support the conceptual-overload example, but they should not be generalised as expected results for all analytics platforms.\n\n## Related pages\n\nThis page is closely related to The Interface Gets Harder When Pressure Rises because memory demand becomes more damaging when operational pressure reduces the user's ability to compensate.\n\nIt also relates to failures involving rapid judgment, interruption recovery, state visibility, unclear mode changes, and buried status information. These failures can overlap when an interface requires users to remember state or location instead of making it visible and recognisable.",
+  "claims": [
+    {
+      "claim": "The interface demands too much memory when layout, state, or conceptual information that should be communicated by the interface must instead be carried by the user.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "Supported by the failure definition and situation description in the page."
+    },
+    {
+      "claim": "The failure has three distinct forms in the documented analysis: layout instability, recognition failure, and conceptual overload.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "The page explicitly names these three forms and describes their shared mechanism."
+    },
+    {
+      "claim": "In the Kardion MCS Controller engagement, Creative Navy applied a design standard that no element may shift position across any view transition.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "Supported by the Kardion example in the page."
+    },
+    {
+      "claim": "The Kardion standard running view required 34 iterations, and the controller received FDA approval with no design changes required.",
+      "evidenceType": "verifiable regulatory outcome",
+      "sourceStrength": "verifiable regulatory result",
+      "notes": "The 34-iteration count is an engagement fact; FDA approval is a regulatory result, not a measured usability outcome."
+    },
+    {
+      "claim": "In the deSoutter Medical / Zethon engagement, six competitor devices were benchmarked and reliance on colour as the primary state indicator was the most common failure pattern across the competitive set.",
+      "evidenceType": "Creative Navy-observed",
+      "sourceStrength": "engagement record",
+      "notes": "Supported by the deSoutter Medical / Zethon example and described as occurring during Sandbox Experiments."
+    },
+    {
+      "claim": "Eight orthopaedic and trauma surgeons participated in structured review sessions and reported that device state could be verified through brief glances without reading.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "The page explicitly states these are surgeon-reported outcomes from the design engagement, not post-deployment operational measurement."
+    },
+    {
+      "claim": "Before the Polymatica redesign, 2% of users could complete key operations independently without help documentation or tutorial videos, and 9% could complete them with documentation.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "Supported by the Polymatica example in the page."
+    },
+    {
+      "claim": "After the Polymatica engagement, independent task completion rose to 40% following release 1 and 56% following release 2, based on product analytics in the live system.",
+      "evidenceType": "field-measured",
+      "sourceStrength": "strong",
+      "notes": "The page describes these as measured outcomes from product analytics from real users in the live system."
+    },
+    {
+      "claim": "Creative Navy's Critical Systems Design method addresses memory demand through domain learning during Sandbox Experiments and design standards held during Iterative System Building.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "Supported by the method section describing Kardion, deSoutter Medical / Zethon, and Polymatica engagements."
+    }
+  ],
+  "limitations": [
+    "The page describes a failure pattern and selected documented examples; it does not claim that all complex interfaces exhibit all three forms of memory demand.",
+    "The Kardion FDA approval is a regulatory result and should not be treated as a measured usability outcome or as proof of clinical performance.",
+    "The Kardion FDA approval pathway is not specified in the page.",
+    "The deSoutter Medical / Zethon review outcomes are reports from structured review sessions during the engagement, not post-deployment operational measurement.",
+    "The Polymatica task-completion figures are product analytics from the live system, but they apply to the described releases and should not be generalised to all analytics products.",
+    "The page does not provide a quantitative threshold for how much memory demand is acceptable in a given operational environment."
+  ],
+  "publicationBlockers": [],
+  "questionsForReview": [
+    "The Kardion regulatory pathway is not specified; preserve the wording as FDA approval and do not infer a pathway.",
+    "Confirm whether the Kardion case should carry the separate medical-device role caveat on pages that are not case-study pages."
+  ],
+  "relatedPageSlugs": [
+    "the-interface-gets-harder-when-pressure-rises",
+    "the-system-does-not-support-rapid-judgment",
+    "too-much-attention-is-required-for-routine-use",
+    "users-cannot-reorient-quickly-after-interruption",
+    "important-status-information-is-buried",
+    "mode-changes-are-unclear",
+    "users-cannot-see-what-state-the-system-is-in",
+    "data-is-available-but-hard-to-interpret",
+    "kardion"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "The Interface Gets Harder When Pressure Rises",
+      "targetSlug": "the-interface-gets-harder-when-pressure-rises",
+      "placementHint": "Boundary with pressure-related failures section",
+      "reason": "The source explicitly distinguishes this page from the pressure-related failure and describes a causal relationship between memory demand and pressure degradation."
+    },
+    {
+      "anchorText": "The System Does Not Support Rapid Judgment",
+      "targetSlug": "the-system-does-not-support-rapid-judgment",
+      "placementHint": "Related pages section",
+      "reason": "Recognition failure is described as a brief-glance and rapid state-confirmation problem."
+    },
+    {
+      "anchorText": "Too Much Attention Is Required For Routine Use",
+      "targetSlug": "too-much-attention-is-required-for-routine-use",
+      "placementHint": "Related pages section",
+      "reason": "The failure involves routine use becoming dependent on focused attention and memory."
+    },
+    {
+      "anchorText": "Users Cannot Reorient Quickly After Interruption",
+      "targetSlug": "users-cannot-reorient-quickly-after-interruption",
+      "placementHint": "Related pages section",
+      "reason": "Layout instability and memory demand can make reorientation harder after attention is interrupted."
+    },
+    {
+      "anchorText": "Important Status Information Is Buried",
+      "targetSlug": "important-status-information-is-buried",
+      "placementHint": "Related pages section",
+      "reason": "Recognition failure can occur when state or status information is present but not available in a readily interpretable form."
+    },
+    {
+      "anchorText": "Mode Changes Are Unclear",
+      "targetSlug": "mode-changes-are-unclear",
+      "placementHint": "Related pages section",
+      "reason": "The page discusses view transitions, mode changes, and state communication as memory-demand mechanisms."
+    },
+    {
+      "anchorText": "Users Cannot See What State The System Is In",
+      "targetSlug": "users-cannot-see-what-state-the-system-is-in",
+      "placementHint": "Related pages section",
+      "reason": "The recognition-failure section concerns critical states that are visible only through reading or interpretation rather than immediate recognition."
+    },
+    {
+      "anchorText": "Data Is Available But Hard To Interpret",
+      "targetSlug": "data-is-available-but-hard-to-interpret",
+      "placementHint": "Related pages section",
+      "reason": "The Polymatica example describes available data and tools that users could not interpret because the interface exposed the technical model."
+    },
+    {
+      "anchorText": "Kardion",
+      "targetSlug": "kardion",
+      "placementHint": "Layout instability section",
+      "reason": "The Kardion MCS Controller is a named grounded example and an allowed case-study link candidate."
+    }
+  ],
+  "qualityChecks": {
+    "factsOnlyFromCurrentSource": true,
+    "documentationStyle": true,
+    "noMarketingLanguage": true,
+    "noInventedClaims": true,
+    "linksOnlyFromLinkingContext": true,
+    "internalNotesNotPublished": true,
+    "readyForSanityImport": true
+  }
+}

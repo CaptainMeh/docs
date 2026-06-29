@@ -1,0 +1,205 @@
+{
+  "_type": "documentationPage",
+  "sourceFile": "Articles/Capabilities/capabilities--design-for-abnormal-and-degraded-scenarios.md",
+  "sourcePath": "sources/articles/Capabilities/capabilities--design-for-abnormal-and-degraded-scenarios.md",
+  "sanityDocumentIdCandidate": "documentationPage.design-for-abnormal-and-degraded-scenarios",
+  "title": "Design For Abnormal And Degraded Scenarios",
+  "slug": {
+    "_type": "slug",
+    "current": "design-for-abnormal-and-degraded-scenarios"
+  },
+  "pageType": "capability",
+  "category": "capabilities",
+  "parentSlug": "capabilities",
+  "childPageSlugs": [],
+  "excerpt": "Design for abnormal and degraded scenarios treats fault states, degraded modes, recovery paths, alarms, sensor faults, cadence mismatches, and user deviations as primary interface design targets. The capability is evidenced across embedded, maritime, medical, industrial, expert software, calibration, and patient-operated device examples.",
+  "metaTitle": "Design for Abnormal Scenarios",
+  "metaDescription": "How Creative Navy designs for fault states, degraded modes, alarms, sensor faults, cadence mismatches, and recovery paths.",
+  "summary": "This capability defines how interfaces behave when systems, data, procedures, or users move outside the intended operating state. It covers alarm hierarchy, fault communication, graceful degradation, silent failure prevention, redundant cues, recovery paths, and abnormal-condition identification before design decisions are made.",
+  "definition": "Design for abnormal and degraded scenarios is the capability of treating fault states, degraded modes, recovery paths, alarms, sensor faults, configuration errors, cadence mismatches, and foreseeable user deviations as primary design targets rather than edge cases.",
+  "keyFacts": [
+    "Abnormal conditions, degraded mode, and fault state are conditions that deviate from the intended operating state and are treated as primary design targets in high-consequence contexts.",
+    "Silent failure is described as the most dangerous failure mode in embedded systems because users continue as if the system is functioning correctly.",
+    "Elsner Elektronik / Cala Touch KNX used a dual-priority alert system to separate general alerts from critical notifications requiring immediate attention.",
+    "Torqeedo maritime HMI work addressed multiple telemetry systems updating at different rates through a grid structure that synchronised display rhythm.",
+    "Cox Marine scenario testing explored a multi-engine fault scenario in a six-engine configuration and led to a dedicated fault-summary area plus per-tile alarm highlighting.",
+    "Kardion MCS Controller alarm architecture was governed by IEC 62366-1 requirements for alarm management derived from identified use-related hazards.",
+    "deSoutter Medical / Zethon used redundant non-colour cues because operating theatre lighting makes colour unreliable as a primary state indicator.",
+    "Gexcon CFD simulation case evidence records configuration errors decreasing from 5–8 to 1–2 and corrective load decreasing from 4–6 hours to approximately 20 minutes.",
+    "Squaremind post-redesign ecological testing recorded 12 patients deviating during a 29-user test; all 12 recovered, with recovery times of 2–4 minutes.",
+    "Squaremind evidence states Creative Navy's role was formative evaluation; summative validation and regulatory submission are Squaremind's responsibility."
+  ],
+  "tags": [
+    "abnormal conditions",
+    "degraded mode",
+    "fault state",
+    "fault recovery",
+    "alarm hierarchy",
+    "sensor faults",
+    "silent failure",
+    "IEC 62366-1",
+    "graceful degradation",
+    "redundant cues",
+    "sensor cadence",
+    "Inform–Prevent–Correct"
+  ],
+  "bodyMarkdown": "## Summary\n\nCreative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nDesign for abnormal and degraded scenarios means designing interface behaviour for conditions that deviate from the intended operating state. In high-consequence contexts, abnormal conditions, degraded modes, and fault states are primary design targets rather than edge cases.\n\nThis capability covers the interface structures that help users recognise a fault state, understand its priority, avoid silent failure, continue safely under reduced capability where possible, and return to a known good condition through a recovery path.\n\n## When abnormal and degraded scenario design is needed\n\nCreative Navy's Critical Systems Design method applies abnormal-scenario design when the normal operating display is not enough to keep the system intelligible under real conditions. The need appears when faults, degraded data, alarm states, procedure interruptions, or user deviations are foreseeable before interaction design begins.\n\nCommon conditions include sensor faults, calibration drift, data integrity failure, delayed sensor readings, and sensor cadence mismatch. Elsner Elektronik / Cala Touch KNX involved smart-home conditions such as sensors in fault state, calibration drift from temperature or humidity changes, and delayed sensor readings during firmware update cycles. Torqeedo maritime HMI work involved propulsion motors, battery banks, generators, and conversion units updating telemetry at different frequencies.\n\nThe capability is also needed when multiple simultaneous faults compete for attention. Cox Marine scenario testing deliberately explored a multi-engine fault scenario in a six-engine configuration. Designs that worked in nominal-state evaluation failed when they made fault presence visible but did not direct attention to the priority engine.\n\nMedical and clinical interfaces require abnormal-scenario design when alarm behaviour is tied to use-related hazards. In the Kardion MCS Controller case, alarm architecture was governed by IEC 62366-1 requirements for alarm management derived from identified use-related hazards.\n\nAbnormal conditions can also be environmental rather than system-generated. In the deSoutter Medical / Zethon case, the operating theatre itself is described as the abnormal condition: variable theatre lighting, divided surgeon attention, and brief glance-based device checks shaped the recognition requirements.\n\nExpert industrial software can contain deferred faults. In the Gexcon CFD simulation case, a misconfigured simulation could run to completion and produce outputs that looked valid, with the error surfacing only when the assessment was challenged, re-run, or investigated after an incident.\n\nSequential physical processes can fail because the user deviates while the system is functioning correctly. In Squaremind dermatology scanning, the abnormal condition was a patient moving incorrectly, losing position in the sequence, or failing to follow a transition instruction.\n\n## What Creative Navy designs for abnormal and degraded states\n\nCreative Navy designs abnormal-state behaviour so the interface communicates what is wrong, how urgent it is, where attention should go, and what recovery path is available. The design target is not only whether a fault is displayed, but whether the displayed state is interpretable under the operating conditions where the fault will occur.\n\nAlarm hierarchy and priority tiering are central when multiple alert types compete for attention. Without hierarchy, everything looks equally important and nothing is acted on. Elsner Elektronik / Cala Touch KNX used two visual and auditory notification levels: general alerts and critical notifications requiring immediate attention. The hierarchy was designed to prevent alert fatigue from low-priority sensor notifications while still surfacing complete sensor failure and safety-relevant state changes.\n\nFault recovery requires more than error notification. A recovery path supports users in understanding a fault state and returning to a known good condition. In Squaremind, the Correct layer of the Inform–Prevent–Correct framework specified what the interface must communicate when a patient deviates, how to guide the patient back to the correct physical state, and what the system must do after successful recovery to re-engage the guidance cycle.\n\nSilent failure prevention requires surfacing conditions that would otherwise remain hidden. In Elsner Elektronik / Cala Touch KNX, animation timing was aligned with firmware update intervals so visual state changes would not drift out of sync with actual thermal values during the firmware processing cycle. In Gexcon CFD simulation, the design response made required values visible during scenario setup, surfaced warnings for incomplete or contradictory input, and specified system behaviour when configuration errors were detected.\n\nRedundant cues are used when a single signal may fail under operating conditions. In deSoutter Medical / Zethon, every critical state was communicated through spatial position, icon form, and colour because colour alone can fail under variable theatre lighting.\n\n## What this capability produces\n\nCreative Navy's abnormal-scenario design work produces explicit interface behaviour for identified abnormal conditions. The output is not a generic error style; it is a defined state model for how the product behaves when data, hardware, alarms, procedures, or users deviate from the expected state.\n\nTypical outputs include priority-tiered alarms, fault-state displays, mute behaviour rules, recovery paths, warnings for incomplete or contradictory input, dedicated fault-summary areas, per-item alarm highlighting, redundant non-colour cues, stable layouts for rapid response, and synchronised display rhythms for data sources with different update cadences.\n\nIn the Kardion MCS Controller case, requirements included priority tiering, visual differentiation between alarm priority levels, mute behaviour where a muted alarm remains visible, and alarm-state visibility during normal operation. The absence of an alarm had to be as visible as its presence. The layout standard also required that no element shift position across any view transition, because surgeons build spatial memory during procedures and depend on that memory during rapid response.\n\nIn Cox Marine cluster displays, the multi-engine fault scenario led to a dedicated fault-summary area that surfaced the highest-priority condition across all engine tiles, plus alarm-state highlighting per tile. The structure communicated both that something was wrong and where attention should go.\n\nIn Torqeedo maritime HMI work, the output was a grid structure that synchronised different telemetry cadences into a unified display rhythm. The design goal was for captains to perceive one coherent system rather than competing data streams from propulsion motors, battery banks, generators, and conversion units.\n\n## Evidence basis across documented examples\n\nThe evidence basis for this capability comes from multiple documented cases in which abnormal conditions were identified before or during design work and then translated into explicit interface behaviour.\n\nElsner Elektronik / Cala Touch KNX shows abnormal-condition identification before interaction design. Sensor faults, calibration drift, and delayed readings were identified through analysis of how KNX sensors behave in real installations, not from user complaints about specific faults.\n\nTorqeedo maritime HMI evidence describes sensor cadence mismatch as the central design problem. The work was tested during sea trials through early morning conditions, and storm conditions were observed during sea trials. Night operations shaped stability and predictability requirements because relief crews experienced the benefit of stable information during active vessel manoeuvring.\n\nCox Marine evidence shows the value of testing abnormal scenarios during Concept Convergence. Several layouts that passed nominal-state evaluation failed a multi-engine fault scenario because they distributed attention evenly instead of directing it to the priority engine.\n\nKardion MCS Controller evidence links alarm architecture to IEC 62366-1 requirements for alarm management. The case records FDA approval as the process outcome and states that the alarm architecture contributed to the submitted design passing FDA evaluation. This is not a specific alarm-design claim; it is confirmation that the overall process, including alarm design, satisfied regulatory review.\n\ndeSoutter Medical / Zethon evidence records that 8 surgeons in structured review sessions confirmed state verification reduced to brief glance recognition. This was surgeon-reported from design review sessions, not post-deployment measurement.\n\nGexcon CFD simulation evidence records configuration errors decreasing from 5–8 to 1–2 and corrective load decreasing from 4–6 hours to approximately 20 minutes. The documented case evidence labels both reductions as measured.\n\nBeissbarth automotive calibration evidence describes distinct fault states in sequential calibration procedures: borderline tolerance values, measurement failures, and equipment errors. Each required distinct communication because each required a different corrective action from the technician.\n\nSquaremind evidence separates client-reported background from Creative Navy-measured ecological testing. Before redesign, a 14-patient test by Squaremind produced 0 recoveries from deviation events. After redesign, 12 patients deviated during the 29-user ecological test; all 12 recovered, with recovery times of 2–4 minutes. The post-redesign result was Creative Navy-measured under an ecological protocol.\n\n## Boundaries and limits\n\nDesign for abnormal and degraded scenarios does not mean treating every rare event as equally important. The capability depends on identifying which abnormal conditions are foreseeable, what consequences they carry, and what interface behaviour is required for each condition.\n\nSome evidence is case-specific and should not be generalised across all domains. The deSoutter Medical / Zethon surgeon feedback came from structured design review sessions and was not post-deployment measurement. The Squaremind pre-redesign 14-patient result was client-reported background, while the post-redesign ecological test was Creative Navy-measured.\n\nRegulatory results are not measured usability outcomes. In Kardion, FDA approval is recorded as the process outcome, and the alarm architecture is described as contributing to the design passing FDA evaluation as submitted. The evidence does not support treating a specific alarm-design decision as the sole cause of the regulatory result.\n\nCreative Navy's role in the Squaremind work was formative evaluation. Summative validation and regulatory submission are Squaremind's responsibility.\n\n## Related pages\n\nThis capability is closely related to error reduction and recovery design, state and status visibility design, warning and alarm clarity improvement, usability evaluation for high-consequence products, research in complex operational contexts, and information architecture for expert systems.\n\nNamed examples connected to this capability include Kardion, Cox Marine, Beissbarth Automotive, and Squaremind.",
+  "claims": [
+    {
+      "claim": "Abnormal conditions, degraded modes, and fault states are treated as primary design targets rather than edge cases in this capability.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "Supported by the domain vocabulary defining edge case as primary design target and abnormal conditions as primary design targets in high-consequence contexts."
+    },
+    {
+      "claim": "Elsner Elektronik / Cala Touch KNX identified sensor faults, calibration drift, and delayed sensor readings as design targets before interaction design began.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "The source attributes identification to analysis of how KNX sensors behave in real installations, not user complaints."
+    },
+    {
+      "claim": "Torqeedo maritime HMI work addressed telemetry systems updating at different rates by using a grid structure that synchronised cadences into a unified display rhythm.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "The source describes sensor cadence mismatch as the central design problem and the grid structure as the resolution."
+    },
+    {
+      "claim": "Cox Marine multi-engine fault scenario testing revealed layouts that passed nominal-state evaluation but failed to direct attention to the priority engine under fault conditions.",
+      "evidenceType": "Creative Navy-observed",
+      "sourceStrength": "engagement record",
+      "notes": "The source states that scenario testing during Concept Convergence deliberately explored the multi-engine fault scenario and revealed this layout failure."
+    },
+    {
+      "claim": "Kardion MCS Controller alarm architecture was governed by IEC 62366-1 requirements for alarm management derived from identified use-related hazards.",
+      "evidenceType": "industry standard",
+      "sourceStrength": "case evidence",
+      "notes": "The source lists requirements including priority tiering, visual differentiation beyond colour alone, mute behaviour, and alarm state visibility during normal operation."
+    },
+    {
+      "claim": "The Kardion MCS Controller design passed FDA evaluation as submitted, with FDA approval recorded as the process outcome, but this is not a specific alarm-design claim.",
+      "evidenceType": "verifiable regulatory outcome",
+      "sourceStrength": "verifiable regulatory result",
+      "notes": "The source states that the alarm architecture contributed to the overall process satisfying regulatory review and cautions against treating it as a specific alarm-design claim."
+    },
+    {
+      "claim": "deSoutter Medical / Zethon used redundant non-colour cues because colour alone can fail under variable theatre lighting.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "The source identifies spatial position, icon form, and colour as three independent channels for critical state communication."
+    },
+    {
+      "claim": "Gexcon CFD simulation case evidence records configuration errors decreasing from 5–8 to 1–2 and corrective load decreasing from 4–6 hours to approximately 20 minutes.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "The source labels both the configuration-error reduction and corrective-load reduction as measured, without specifying whether the measurement was client-measured or Creative Navy-measured."
+    },
+    {
+      "claim": "Squaremind post-redesign ecological testing recorded 12 patient deviations during a 29-user test, with all 12 recovering in 2–4 minutes.",
+      "evidenceType": "field-measured",
+      "sourceStrength": "case evidence",
+      "notes": "The source states this was Creative Navy-measured under an ecological protocol; the pre-redesign 14-patient 0-recovery result is separately labelled client-reported background."
+    },
+    {
+      "claim": "Beissbarth automotive calibration required distinct communication for borderline tolerance values, measurement failures, and equipment errors because each required a different corrective action.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "The source describes sequential calibration procedures and the need for unambiguous state communication across three device types."
+    }
+  ],
+  "limitations": [
+    "The evidence is drawn from specific documented cases and should not be generalised as a guarantee across all products or domains.",
+    "The deSoutter Medical / Zethon surgeon finding was reported in structured design review sessions, not measured after deployment.",
+    "The Squaremind pre-redesign 14-patient 0-recovery result was client-reported background; the post-redesign ecological result was Creative Navy-measured.",
+    "The Gexcon reductions are labelled as measured in the case evidence, but the source does not specify whether they were client-measured or Creative Navy-measured.",
+    "The Kardion FDA approval is a regulatory process outcome and not a measured usability outcome or a specific alarm-design causality claim.",
+    "Creative Navy's role in Squaremind was formative evaluation; summative validation and regulatory submission are Squaremind's responsibility."
+  ],
+  "publicationBlockers": [],
+  "questionsForReview": [
+    "None"
+  ],
+  "relatedPageSlugs": [
+    "error-reduction-and-recovery-design",
+    "state-and-status-visibility-design",
+    "warning-and-alarm-clarity-improvement",
+    "usability-evaluation-for-high-consequence-products",
+    "research-in-complex-operational-contexts",
+    "information-architecture-for-expert-systems",
+    "kardion",
+    "cox-marine",
+    "beissbarth",
+    "squaremind"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "error reduction and recovery design",
+      "targetSlug": "error-reduction-and-recovery-design",
+      "placementHint": "Related pages section",
+      "reason": "The capability includes recovery paths, corrective guidance, and prevention of configuration or user-state errors."
+    },
+    {
+      "anchorText": "state and status visibility design",
+      "targetSlug": "state-and-status-visibility-design",
+      "placementHint": "Related pages section",
+      "reason": "The source repeatedly concerns fault visibility, alarm state visibility, sensor state display, and recognition of system state."
+    },
+    {
+      "anchorText": "warning and alarm clarity improvement",
+      "targetSlug": "warning-and-alarm-clarity-improvement",
+      "placementHint": "Related pages section",
+      "reason": "Alarm hierarchy, priority tiering, mute behaviour, and alarm differentiation are central mechanisms in the capability."
+    },
+    {
+      "anchorText": "usability evaluation for high-consequence products",
+      "targetSlug": "usability-evaluation-for-high-consequence-products",
+      "placementHint": "Related pages section",
+      "reason": "The source includes IEC 62366-1 hazard-related use scenarios, structured review sessions, scenario testing, and ecological testing."
+    },
+    {
+      "anchorText": "research in complex operational contexts",
+      "targetSlug": "research-in-complex-operational-contexts",
+      "placementHint": "Related pages section",
+      "reason": "Several examples depend on field or realistic operating conditions such as sea trials, theatre lighting, storm conditions, and calibration from 2–3 metres."
+    },
+    {
+      "anchorText": "information architecture for expert systems",
+      "targetSlug": "information-architecture-for-expert-systems",
+      "placementHint": "Related pages section",
+      "reason": "The Gexcon example concerns configuration architecture, warnings for incomplete or contradictory input, and visibility of required values in expert software."
+    },
+    {
+      "anchorText": "Kardion",
+      "targetSlug": "kardion",
+      "placementHint": "Evidence basis section where Kardion MCS Controller is discussed",
+      "reason": "The source names Kardion MCS Controller as a case for regulated alarm architecture under IEC 62366-1."
+    },
+    {
+      "anchorText": "Cox Marine",
+      "targetSlug": "cox-marine",
+      "placementHint": "Evidence basis section where Cox Marine cluster displays are discussed",
+      "reason": "The source names Cox Marine as a case for multi-engine fault scenario testing."
+    },
+    {
+      "anchorText": "Beissbarth Automotive",
+      "targetSlug": "beissbarth",
+      "placementHint": "Evidence basis section where Beissbarth calibration is discussed",
+      "reason": "The source names Beissbarth automotive calibration as a case for sequential procedure interruption by fault state."
+    },
+    {
+      "anchorText": "Squaremind",
+      "targetSlug": "squaremind",
+      "placementHint": "Evidence basis and boundaries sections where Squaremind dermatology scanning is discussed",
+      "reason": "The source names Squaremind as a case for physical process deviation and the Inform–Prevent–Correct recovery layer."
+    }
+  ],
+  "qualityChecks": {
+    "factsOnlyFromCurrentSource": true,
+    "documentationStyle": true,
+    "noMarketingLanguage": true,
+    "noInventedClaims": true,
+    "linksOnlyFromLinkingContext": true,
+    "internalNotesNotPublished": true,
+    "readyForSanityImport": true
+  },
+  "__sourceCategoryDir": "Capabilities"
+}

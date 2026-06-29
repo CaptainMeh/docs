@@ -1,0 +1,151 @@
+{
+  "_type": "documentationPage",
+  "sourceFile": "Articles/Failures/failures--governance--the-product-has-no-clear-behaviour-model.md",
+  "sourcePath": "sources/articles/Failures/failures--governance--the-product-has-no-clear-behaviour-model.md",
+  "sanityDocumentIdCandidate": "documentationPage.the-product-has-no-clear-behaviour-model",
+  "title": "The Product Has No Clear Behaviour Model",
+  "slug": {
+    "_type": "slug",
+    "current": "the-product-has-no-clear-behaviour-model"
+  },
+  "pageType": "failure",
+  "category": "failures",
+  "parentSlug": "governance-and-behaviour-failures",
+  "childPageSlugs": [],
+  "excerpt": "A product has no clear behaviour model when the team cannot specify what the system should do under defined conditions, inputs, outputs, and logic. In AI-assisted products, this often makes governance, audit, model comparison, and support review difficult or impossible.",
+  "metaTitle": "The Product Has No Clear Behaviour Model",
+  "metaDescription": "Defines the failure where an AI or policy product lacks an explicit behaviour model, with Callsign and Puraite evidence.",
+  "summary": "This failure describes systems whose behaviour is operational but not explicitly specified. The product produces outputs and users interact with it, but the team cannot answer governance, support, or model-comparison questions against a defined behavioural standard.",
+  "definition": "A product has no clear behaviour model when the team lacks an explicit specification of what the system should do under defined conditions, in response to defined inputs, producing defined outputs through defined logic.",
+  "keyFacts": [
+    "A behaviour model specifies what a system should do under what conditions, in response to what inputs, producing what outputs, through what logic.",
+    "In AI-assisted products, the model does not specify its own interface behaviour; the team must specify what the interface surfaces and how it handles uncertainty, confidence, and edge cases.",
+    "The failure becomes visible when reviewers, enterprise buyers, support cases, or model-version comparisons require a clear answer about intended system behaviour.",
+    "One expression is a policy engine whose interaction model cannot represent the reasoning structure that domain experts need to encode.",
+    "A second expression is an AI-assisted product whose surface behaviour has not been specified as a design problem.",
+    "In the Callsign case, the initial policy engine could express simple rule conditions but not the conditional logic, exception handling, policy sequencing, and strategic reasoning that fraud analysts needed.",
+    "In the Puraite case, the AI suggestion display went through four cycles to specify what reviewers needed to see at the screening decision point.",
+    "Callsign commercial outcomes are client-reported: Lloyds Bank and HSBC contracts followed demos with the redesigned policy engine.",
+    "Puraite evidence is client-reported and indirect: users who had seen the product as theoretical or prototype-stage began actively using it following the redesign."
+  ],
+  "tags": [
+    "behaviour model",
+    "AI surface behaviour",
+    "governance failure",
+    "policy engine",
+    "auditability",
+    "AI-assisted products",
+    "Critical Systems Design",
+    "domain learning"
+  ],
+  "bodyMarkdown": "## Summary\n\nCreative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nA product has no clear behaviour model when the team cannot specify what the system should do under defined conditions, in response to defined inputs, producing defined outputs, through defined logic. In traditional software, behaviour models may be implicit in specifications and test plans. In AI-assisted products, the behaviour model is often absent: the AI produces outputs, the interface surfaces those outputs, and the team relies on collective intuitions about whether the behaviour is correct.\n\nThe absence of a behaviour model is not always visible during ordinary use. The product may appear to work because it produces outputs and users can interact with it. The failure becomes visible when a governance reviewer asks what the system will do with a given input, when an enterprise buyer asks what guardrails exist, when a team compares a new model version with an old one, or when a support case requires a decision about whether the system behaved correctly.\n\n## Failure pattern: behaviour exists but is not specified\n\nThe failure is the absence of a specified behaviour model, not the absence of system activity. The system behaves, but the team cannot state the intended behaviour in a form that supports verification, external review, or systematic improvement.\n\nIn AI-assisted products, this failure is structural. The model produces outputs through processes that are not fully transparent even to the team that trained it. The interface still has to decide what to surface, how to communicate confidence, what to do when uncertain, and how to handle edge cases. Those interface decisions form a behaviour model. If the team does not specify them, the product inherits behaviour from model defaults and informal team intuitions.\n\nThis failure is distinct from poor usability. A product may be usable at the interaction level while still failing to represent the reasoning structure that the domain requires. The issue is whether the product can express and communicate the behaviour it is supposed to have.\n\n## How the failure appears in policy engines\n\nA policy engine has no clear behaviour model when its configuration interface cannot represent the reasoning structure of the domain it is meant to encode. In fraud prevention, analysts may need to express strategies built from specific transaction types, customer segments, behavioural signals, adversarial patterns, conditional branches, exception handling, and response sequencing.\n\nIf the policy engine can express only simple rule conditions, the resulting behaviour model becomes a degraded version of the behaviour domain experts intended. Analysts may still configure the product, but the configuration does not represent their actual strategy. The mismatch is between what the domain requires and what the interaction model can represent.\n\nIn the documented Callsign case, the initial policy engine exposed fraud detection configuration through database views and configuration tables. Fraud analysts could represent simple rule conditions, but not the strategic logic they needed: combinations of behavioural signals under specific conditions, conditional branching for different customer segments, and policy sequencing for rule evaluation order. The product could be configured, but the configuration did not capture the analysts' intended fraud strategies.\n\n## How the failure appears in AI-assisted tools\n\nAn AI-assisted tool has no clear behaviour model when the surface behaviour of AI outputs is not specified as a design requirement. The AI model may make a suggestion, classification, or recommendation, and the interface may display it, but the team has not defined what correct presentation means.\n\nThe unspecified questions are practical. The team may not know whether the interface should display confidence, how uncertainty should be communicated, what context the user needs to evaluate the suggestion, or what should happen when the model's confidence is low. Without a written specification, interface iterations cannot be evaluated against a standard.\n\nIn the Puraite case, the AI-assisted systematic review tool had been partially built before systematic design review. The unspecified behaviour problem was the screening decision point. The model made inclusion and exclusion decisions, and the interface showed them, but the team had not specified whether reviewers needed to see the criteria applied, the specific text from the publication, a confidence level, or another form of context in order to evaluate the AI decision rather than merely accept or reject it.\n\n## Why an absent behaviour model creates governance failure\n\nAn absent behaviour model makes governance difficult because the team cannot answer the question that governance requires: what will this system do under condition X? Without that answer, reviewers cannot audit the product externally, buyers cannot evaluate guardrails, product teams cannot compare model versions against defined criteria, and support teams cannot determine whether an incident reflects correct or incorrect behaviour.\n\nIn the Callsign case, bank risk teams needed to understand product behaviour before deployment. Fraud analysts attempting to explain what the system would do with a given transaction type were effectively explaining a simplified version of what they had intended to specify, because the full strategy was not representable in the interface. The documented consequence was commercial as well as operational: governance questions that could not be answered with a clear behaviour specification became deal-blockers.\n\nIn the Puraite case, the governance issue was epistemic rather than commercial. The interface could not be evaluated as correctly communicating AI behaviour because correct communication had not been specified. The team could not know whether a future interface or model update preserved the reviewer's ability to evaluate AI decisions unless that support had first been defined as a design requirement.\n\n## How Creative Navy's Critical Systems Design method addresses the failure\n\nCreative Navy's Critical Systems Design method addresses the absent behaviour model by treating AI surface behaviour and policy behaviour as design specifications, not as display arrangements that fall out of model behaviour by default. The relevant work is to make the product's intended behaviour explicit enough to be represented, tested, explained, and improved.\n\nIn the Callsign engagement, Creative Navy's work began in the Sandbox Experiments phase by making the mechanics of the policy engine explicit. Workshops with Callsign's product, engineering, and security specialists mapped the fraud scenarios the engine needed to cover and the points where existing configurations failed to represent analyst intent. The resulting model-layer and policy-layer separation made a sufficient behaviour model representable: the policy layer could express fraud analyst reasoning in domain terms, while the model layer remained separate from the non-technical configuration surface.\n\nThe Callsign interaction architecture bundled policies with conditions, actions, history, and audit trail. The three-gesture interaction model calibrated the expressiveness of the architecture to what fraud analysts and compliance professionals could operate without engineering access, while preserving the logical depth of the strategies they needed to specify.\n\nIn the Puraite engagement, Creative Navy's Critical Systems Design method treated the missing AI surface behaviour as a specification problem to be discovered through iteration. Four cycles on the AI suggestion display each tested a different theory of what information the reviewer needed at the decision point. The cycles exposed opposing failure modes: too much information required additional interaction across hundreds of decisions, while too little information made override decisions reflexive rather than substantive.\n\nThe Puraite resolution was a specific behaviour model for the screening decision point: the direct quote from the publication should be visible in the side panel from the outset, without additional interaction. That design decision became a specification that could be tested, communicated to reviewers, and used to evaluate future changes.\n\n## Evidence basis from Callsign and Puraite\n\nThe Callsign evidence is case evidence from a fraud detection and authentication platform engagement. The documented mechanism is that Creative Navy made the policy engine's behaviour representable in domain terms, enabling demos that answered governance questions for bank risk teams. The commercial outcomes are client-reported: Lloyds Bank and HSBC contracts followed demos with the redesigned policy engine.\n\nThe Callsign analyst workflow improvement is Creative Navy-observed, not measured. The documented observation is that time to express a fraud scenario and make client-call explanations was reduced during the engagement. No measured timing dataset is reported for that improvement.\n\nThe Puraite evidence is case evidence from a 7-month Implementation Partnership. The primary documented outcome is client-reported and indirect: users who had previously perceived Puraite as theoretical or prototype-stage began actively using it following the redesign, and the client launched a user acquisition and growth phase on that basis. A single user quote was relayed through the client: “Jetzt passt das tool in meine Arbeit.” No measured task-time or error-rate data was collected.\n\n## Boundaries and adjacent failures\n\nThis failure concerns the absence of a specified behaviour model. The team cannot answer what the system should do under a given condition because the model of intended behaviour has not been written.\n\nProduct Behaviour Cannot Be Explained Or Reviewed Cleanly is adjacent but different. In that failure, the behaviour model may be clear, but the interface does not expose it in a form that allows external review. The current failure is earlier: the behaviour model is not specified at all.\n\nGood Behaviour Is Not Defined Explicitly is also adjacent but different. That failure concerns implicit knowledge about good behaviour that has not been made explicit. The current failure is more fundamental: no clear model of good behaviour exists, even implicitly, so there is no implicit standard to document.\n\nUncertainty Is Not Communicated Usefully is related when an AI-assisted interface does not specify how confidence or uncertainty should be shown. In the present failure, uncertainty communication is one part of the broader absence of a behaviour model, not the whole problem.\n\n## Related pages\n\nRelated documentation includes Product Behaviour Cannot Be Explained Or Reviewed Cleanly, Good Behaviour Is Not Defined Explicitly, Uncertainty Is Not Communicated Usefully, the Callsign case, and the Puraite case.",
+  "claims": [
+    {
+      "claim": "A behaviour model specifies what a system should do under defined conditions, inputs, outputs, and logic.",
+      "evidenceType": "definition",
+      "sourceStrength": "strong",
+      "notes": "The definition is stated directly in the failure description."
+    },
+    {
+      "claim": "In AI-assisted products, the model does not specify its own interface behaviour; the team must specify what the interface surfaces, how it communicates confidence, and how it handles uncertainty and edge cases.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "The source explicitly states that the model does not specify its own interface behaviour and that the team must do so."
+    },
+    {
+      "claim": "In the Callsign case, the initial policy engine could represent simple rule conditions but not the strategic logic fraud analysts needed to express.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "The source describes the limitation as a mismatch between analyst reasoning and the policy engine interaction model."
+    },
+    {
+      "claim": "Creative Navy's Callsign work made the policy engine's mechanics explicit and introduced a model-layer and policy-layer separation that made a sufficient behaviour model representable.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "engagement record",
+      "notes": "The engagement record describes Sandbox Experiments workshops and the conceptual clarification that emerged from them."
+    },
+    {
+      "claim": "Lloyds Bank and HSBC contracts followed Callsign demos with the redesigned policy engine, and this outcome is client-reported.",
+      "evidenceType": "client-reported",
+      "sourceStrength": "case evidence",
+      "notes": "The source states the commercial outcomes as client-reported and describes the mechanism as demos that answered governance questions."
+    },
+    {
+      "claim": "In the Puraite case, the AI screening interface lacked a specified behaviour model for what information reviewers needed at the decision point.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "The source identifies the screening screen as the specific unspecified behaviour problem."
+    },
+    {
+      "claim": "The Puraite AI suggestion display went through four cycles, and the specified resolution was to show the direct quote from the publication in the side panel from the outset without additional interaction.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "engagement record",
+      "notes": "The source describes four cycles and the resulting specified behaviour model."
+    },
+    {
+      "claim": "Puraite users began actively using the product following the redesign, according to client-reported indirect evidence, with no measured task-time or error-rate data collected.",
+      "evidenceType": "client-reported",
+      "sourceStrength": "anecdotal",
+      "notes": "The source explicitly labels the evidence as client-reported and indirect and states that no measured task-time or error-rate data was collected."
+    }
+  ],
+  "limitations": [
+    "The Callsign commercial outcomes are client-reported; the page does not present independently verified contract evidence.",
+    "The Callsign analyst workflow improvement was observed during the engagement and is not reported as a measured timing result.",
+    "The Puraite adoption evidence is client-reported and indirect, not independently verified.",
+    "The Puraite engagement did not collect measured task-time or error-rate data.",
+    "The page distinguishes absent behaviour models from adjacent governance failures; it should not be used as evidence that all reviewability or uncertainty-communication failures have the same cause."
+  ],
+  "publicationBlockers": [],
+  "questionsForReview": [
+    "None"
+  ],
+  "relatedPageSlugs": [
+    "product-behaviour-cannot-be-explained-or-reviewed-cleanly",
+    "good-behaviour-is-not-defined-explicitly",
+    "uncertainty-is-not-communicated-usefully",
+    "callsign-fraud-authentication",
+    "puraite"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "Product Behaviour Cannot Be Explained Or Reviewed Cleanly",
+      "targetSlug": "product-behaviour-cannot-be-explained-or-reviewed-cleanly",
+      "placementHint": "Boundaries and adjacent failures section",
+      "reason": "The source explicitly distinguishes this page from the failure where a clear behaviour model is not exposed for external review."
+    },
+    {
+      "anchorText": "Good Behaviour Is Not Defined Explicitly",
+      "targetSlug": "good-behaviour-is-not-defined-explicitly",
+      "placementHint": "Boundaries and adjacent failures section",
+      "reason": "The source explicitly distinguishes this page from the failure where implicit good behaviour has not been made explicit."
+    },
+    {
+      "anchorText": "Uncertainty Is Not Communicated Usefully",
+      "targetSlug": "uncertainty-is-not-communicated-usefully",
+      "placementHint": "Boundaries and adjacent failures section",
+      "reason": "The source discusses confidence and uncertainty display as part of AI surface behaviour specification."
+    },
+    {
+      "anchorText": "Callsign case",
+      "targetSlug": "callsign-fraud-authentication",
+      "placementHint": "Evidence basis from Callsign and Puraite section",
+      "reason": "The body discusses Callsign as a grounded example and the allowed linking context provides a matching case study slug."
+    },
+    {
+      "anchorText": "Puraite case",
+      "targetSlug": "puraite",
+      "placementHint": "Evidence basis from Callsign and Puraite section",
+      "reason": "The body discusses Puraite as a grounded example and the allowed linking context provides a matching case-study-notes slug."
+    }
+  ],
+  "qualityChecks": {
+    "factsOnlyFromCurrentSource": true,
+    "documentationStyle": true,
+    "noMarketingLanguage": true,
+    "noInventedClaims": true,
+    "linksOnlyFromLinkingContext": true,
+    "internalNotesNotPublished": true,
+    "readyForSanityImport": true
+  }
+}

@@ -1,0 +1,161 @@
+{
+  "_type": "documentationPage",
+  "sourceFile": "Articles/Situations/situations--ai--users-do-not-trust-the-ai-enough.md",
+  "sourcePath": "sources/articles/Situations/situations--ai--users-do-not-trust-the-ai-enough.md",
+  "sanityDocumentIdCandidate": "documentationPage.users-do-not-trust-the-ai-enough",
+  "title": "Users Do Not Trust The AI Enough",
+  "slug": {
+    "_type": "slug",
+    "current": "users-do-not-trust-the-ai-enough"
+  },
+  "pageType": "situation",
+  "category": "situations",
+  "parentSlug": "ai-and-automation",
+  "childPageSlugs": [],
+  "excerpt": "AI under-trust can refer to accuracy-based skepticism, confidence miscalibration, or capability opacity. This page addresses capability opacity: users do not know what an AI system can do well enough to form useful starting expectations.",
+  "metaTitle": "Users Do Not Trust The AI Enough",
+  "metaDescription": "Defines AI capability opacity as an entry-point trust failure and explains how it differs from accuracy skepticism and hidden uncertainty.",
+  "summary": "This situation describes AI capability opacity: a trust failure where users avoid or underuse an AI system because they do not understand its capability range, data scope, or useful starting queries. The page distinguishes this from accuracy-based skepticism and confidence miscalibration, and uses Owkin K as a grounded example of making specialist AI capability visible at entry.",
+  "definition": "Capability opacity is an AI product condition in which users lack a sufficient model of what the AI can do, what it can reason over, and what a useful first query looks like, so disengagement presents as distrust even when the immediate cause is not accuracy skepticism.",
+  "keyFacts": [
+    "\"Users do not trust the AI\" can describe at least three structurally different phenomena: accuracy-based skepticism, confidence miscalibration, and capability opacity.",
+    "Accuracy-based skepticism occurs after users encounter enough AI errors, inconsistencies, or overconfident wrong answers to be uncertain about when to rely on outputs.",
+    "Confidence miscalibration occurs when users are using the AI but cannot distinguish reliable outputs from unreliable ones because the interface presents outputs with the same apparent certainty.",
+    "Capability opacity occurs when users do not have a sufficient model of the AI's capability range to know what to ask of it.",
+    "In specialist AI products, capability is a reasoning space rather than a visible set of discrete interface actions.",
+    "Owkin's K, now K Pro, is described as an AI copilot for researchers and clinicians to query proprietary and publicly available biological datasets through natural language.",
+    "Creative Navy's work on Owkin K identified data opacity as a separate entry barrier: users could not formulate useful queries without knowing what data was available to query.",
+    "Creative Navy benchmarked 20+ competing and adjacent AI products for Owkin K and identified four design challenge areas.",
+    "The Owkin K Explore page received five iterations and converged from capability listing toward dataset-and-mode framing.",
+    "The Owkin K engagement ran for 8 months as an Implementation Partnership alongside Owkin's permanent design agency, Merge; the £5M investment attribution is client-reported, approximate, and not independently measured."
+  ],
+  "tags": [
+    "AI trust",
+    "AI capability opacity",
+    "AI discoverability",
+    "AI uncertainty",
+    "specialist AI products",
+    "natural language interfaces",
+    "data-bounded AI systems",
+    "Creative Navy Critical Systems Design",
+    "Owkin K"
+  ],
+  "bodyMarkdown": "## AI under-trust has three different causes\n\nCreative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\n\"Users do not trust the AI\" is a description, not a diagnosis. The phrase can refer to accuracy-based skepticism, confidence miscalibration, or capability opacity. These three conditions look similar at the surface because users hesitate, avoid, verify, or disengage. They require different design responses.\n\nAccuracy-based skepticism occurs when users have encountered enough AI errors, inconsistencies, or overconfident wrong answers to become uncertain about when to rely on outputs. This is an AI under-trust condition that appears in products users are already actively using. Users have tried the AI and been burned.\n\nConfidence miscalibration occurs when users are using the AI but cannot distinguish reliable outputs from unreliable ones because the interface presents all outputs with the same apparent certainty. This is an uncertainty communication failure. Users may engage more deeply if the interface communicates when to trust outputs and when to verify them.\n\nCapability opacity occurs before reliable engagement has formed. Users do not have a sufficient model of what the AI can do, what questions are within scope, what the AI can reason about, what it is likely to fail on, or what a useful first query looks like. The resulting disengagement may be interpreted as distrust, but the immediate cause is the absence of a starting model.\n\n## Capability opacity is an entry-point failure, not an accuracy failure\n\nCapability opacity is structurally different from AI accuracy problems because the user has not yet reached the point where accuracy experience can calibrate trust. The missing element is a cognitive scaffold that lets the user form expectations about the AI's capability range.\n\nIn traditional software, capability is visible by construction. Buttons, menus, forms, and navigation expose available actions. Users may not understand every action, but they can see that actions exist and explore within a visible space.\n\nIn AI systems, capability is not inherently visible at the surface. The capability is a reasoning space: a range of questions the AI can engage with and a range of data it can reason over. General-purpose AI assistants benefit from public discourse and prior user exposure because users often arrive with a rough model of what to ask. Specialist AI products operating in bounded domains do not automatically benefit from that shared model.\n\nFor specialist AI products, users may arrive without knowing what the system can reason about, what its domain boundaries are, or what data is available. If the interface does not communicate that reasoning space, users do not generate the trial-and-error needed to build familiarity. They may avoid asking questions that could fail, which can make the product appear unused or untrusted.\n\n## Owkin K shows capability opacity in a specialist AI product\n\nOwkin is a Paris-based AI company whose product K, now K Pro, is an AI copilot that lets researchers and clinicians query proprietary and publicly available biological datasets through natural language. K is described as trained on biology and operating across clinical records, imaging, and genomics. It is a specialised reasoning system rather than a generic AI assistant applied to biology.\n\nThe design challenge in Creative Navy's work on Owkin K was that the backend capability had been built by and for expert biologists, while the expanding user base included clinicians with low to medium scientific background. These users needed to use the same system under different conditions and without the domain intuition that helped expert biologists formulate productive queries.\n\nUsers arriving on K did not understand what K could do or how to start. The capability lived in the backend: the datasets available to query and the specificity of the biological reasoning. At the surface, users could not see enough of that capability to form useful expectations.\n\nCreative Navy identified two entry barriers in the Owkin K work. The first was capability opacity: users did not know what K could do. The second was data opacity: users did not understand what data was available to query. For a bounded AI system such as K, knowing what could be asked required knowing what could be asked against.\n\n## Data discoverability was more useful than capability listing for Owkin K users\n\nCreative Navy's Critical Systems Design method addressed the Owkin K entry problem through Sandbox Experiments. Creative Navy benchmarked 20+ competing and adjacent AI products, including products that had addressed AI tool discoverability in adjacent contexts, to understand existing entry-point patterns and where K's challenge differed.\n\nCreative Navy identified four design challenge areas for Owkin K: an Explore page communicating K's capabilities at entry, prompt suggestions helping users formulate useful starting queries, the AI chat box handling modes, settings, and interaction states, and dataset presentation making K's data holdings navigable. Each area received five iterations.\n\nThe Explore page tested different models of what users needed at entry. Earlier directions included use-case orientation and a prompt catalogue. The work ultimately converged on dataset-and-mode framing. This shift reflected the finding that, for K's users, understanding what data was available to query was more generative than understanding the tool's capability in the abstract.\n\nUsers who could see that a specific dataset they cared about was available had a concrete starting point for formulating a query. Users shown a list of capabilities did not receive the same scaffold. In this data-bounded AI system, the data landscape was the scaffold that allowed users to imagine productive queries.\n\nCreative Navy prioritised data discoverability over second-stage prompting in the Owkin K work. Prompting was deferred because data discoverability addressed the earlier failure point: users needed to understand what they could ask before they could benefit from guidance on how to ask it.\n\n## Creative Navy's Critical Systems Design method treats entry-point trust as a modelling problem\n\nCreative Navy's Critical Systems Design method addresses capability opacity as a cognitive entry-point problem rather than a general discoverability problem. The design task is not only to make features findable. The design task is to build enough of the AI's capability model into the interface for users to form working expectations about a reasoning space they have not encountered before.\n\nIn the Owkin K engagement, domain learning was a prerequisite. Creative Navy needed enough biological domain fluency to evaluate what kinds of questions engaged K's genuine capability and what kinds of questions K would handle inadequately. Benchmarking 20+ AI products established what users might expect from AI research tools, but benchmarking alone was not sufficient. The capability communication solution required both a model of generic AI tool expectations and a model of what K specifically offered that differed from those expectations.\n\nThe Owkin K finding should not be generalised to all AI systems. Dataset visibility was more useful than capability listing for K because K was a data-bounded AI system serving users with concrete data needs. Different AI architectures and different user populations may require different entry-point structures.\n\nThe more generalisable point is the design process: Creative Navy tested different models of what users needed at entry before converging. The Explore page iterations each committed to a different theory of the entry problem, and that divergence-before-convergence process revealed the productive scaffold for this specific user type.\n\n## Known outcomes and evidence limits from Owkin K\n\nThe Owkin K engagement ran for 8 months as an Implementation Partnership alongside Owkin's permanent design agency, Merge. The designs produced were the central element of Owkin's investment pitch. The pitch question was whether Owkin had a paradigm for making its backend capability accessible to a less technical user type, and the prototype was used as the answer to that question.\n\nOwkin attributed £5M in investment to the quality of the design work. This figure is client-reported, approximate, and causally attributed by the client. It is not presented as an independently measured financial outcome.\n\nThe available evidence for discoverability improvement is directional and based on internal product launch feedback. No measured user metrics are available for the Owkin K engagement. The case supports a documented design finding about AI capability opacity and data opacity, but it does not establish a quantified user-behaviour result.\n\n## Capability opacity differs from hidden uncertainty and unreliable product behaviour\n\nCapability opacity is the entry-point trust failure: users do not know enough about the AI's capability range to begin confidently. Hidden uncertainty is a mid-use failure: users are engaged with the AI but cannot evaluate outputs at moments of consequence because confidence is not communicated. Unreliable product behaviour is an ongoing-use failure: the AI's reasoning capability may be strong, but the interface makes the product feel inconsistent or ungovernable.\n\nThese failures can coexist. A product that addresses capability opacity without addressing uncertainty communication may acquire users who engage initially and later disengage when they cannot calibrate trust in outputs. A product that addresses both entry and uncertainty may still present as unreliable if the product behaviour is inconsistent in ways that are separate from model performance.\n\nFor adjacent AI trust failures, see the pages on uncertainty hidden at the point of decision and product behaviour that makes a good model feel unreliable. For the grounded Owkin example, see the Owkin K case study.",
+  "claims": [
+    {
+      "claim": "AI under-trust can describe accuracy-based skepticism, confidence miscalibration, or capability opacity, and these require different design responses.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "moderate",
+      "notes": "The distinction is explicitly defined in the situation description."
+    },
+    {
+      "claim": "Capability opacity occurs when users lack a sufficient model of what the AI can do, what it can reason over, and what a useful first query looks like.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "moderate",
+      "notes": "The page defines capability opacity as the trust deficit addressed by this situation."
+    },
+    {
+      "claim": "Specialist AI products differ from traditional software because capability is a reasoning space rather than a visible set of discrete actions.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "moderate",
+      "notes": "The source contrasts traditional visible actions with AI reasoning spaces."
+    },
+    {
+      "claim": "Owkin K users faced both capability opacity and data opacity, because K operated over specific proprietary, public, and user-uploaded datasets rather than the entire internet.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "The Owkin K example identifies both gaps as blocking entry."
+    },
+    {
+      "claim": "Creative Navy benchmarked 20+ competing and adjacent AI products and identified four design challenge areas for Owkin K.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "engagement record",
+      "notes": "The engagement record states the benchmark count and four areas."
+    },
+    {
+      "claim": "The Owkin K Explore page received five iterations and converged on dataset-and-mode framing because dataset visibility was more generative for users than abstract capability listing.",
+      "evidenceType": "Creative Navy-observed",
+      "sourceStrength": "case evidence",
+      "notes": "The source describes this as a finding from Creative Navy's exploration."
+    },
+    {
+      "claim": "The Owkin K engagement ran for 8 months as an Implementation Partnership alongside Merge.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "engagement record",
+      "notes": "The engagement duration and collaboration context are stated directly."
+    },
+    {
+      "claim": "Owkin attributed approximately £5M in investment to the quality of the design work, but the figure is client-reported and not independently measured.",
+      "evidenceType": "client-reported",
+      "sourceStrength": "anecdotal",
+      "notes": "The source explicitly calibrates the investment figure as client-reported, approximate, and causally attributed by the client."
+    },
+    {
+      "claim": "No measured user metrics are available for the Owkin K engagement.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "The source explicitly states that no measured user metrics are available."
+    }
+  ],
+  "limitations": [
+    "The Owkin K design finding that dataset visibility was more generative than capability listing is explicitly not presented as a generalisation to all AI systems.",
+    "The Owkin K discoverability improvement is directional and based on internal product launch feedback; no measured user metrics are available.",
+    "The £5M investment attribution is client-reported, approximate, and causally attributed by the client, not independently measured.",
+    "This page addresses capability opacity only. It does not cover confidence miscalibration or unreliable product behaviour except to distinguish them from the entry-point failure."
+  ],
+  "publicationBlockers": [],
+  "questionsForReview": [
+    "None"
+  ],
+  "relatedPageSlugs": [
+    "owkin-k",
+    "uncertainty-is-hidden-at-the-point-of-decision",
+    "the-model-may-be-good-but-the-product-behaviour-is-not",
+    "users-trust-the-ai-too-much",
+    "teams-cannot-define-good-ai-behaviour",
+    "the-product-behaves-inconsistently-across-scenarios",
+    "human-control-is-weak-in-practice"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "Owkin K case study",
+      "targetSlug": "owkin-k",
+      "placementHint": "Use where the Owkin K example is first introduced and again in the related pages section if rendered.",
+      "reason": "The page uses Owkin K as its grounded example and the matching case study slug is available."
+    },
+    {
+      "anchorText": "uncertainty hidden at the point of decision",
+      "targetSlug": "uncertainty-is-hidden-at-the-point-of-decision",
+      "placementHint": "Use in the section distinguishing capability opacity from adjacent AI trust failures.",
+      "reason": "The source explicitly identifies hidden uncertainty as an adjacent mid-use trust failure."
+    },
+    {
+      "anchorText": "product behaviour that makes a good model feel unreliable",
+      "targetSlug": "the-model-may-be-good-but-the-product-behaviour-is-not",
+      "placementHint": "Use in the section distinguishing capability opacity from adjacent AI trust failures.",
+      "reason": "The source explicitly identifies unreliable product behaviour as an adjacent ongoing-use failure."
+    },
+    {
+      "anchorText": "users trust the AI too much",
+      "targetSlug": "users-trust-the-ai-too-much",
+      "placementHint": "Use in related pages if the page template renders broader AI trust situations.",
+      "reason": "This is a closely related AI trust situation in the allowed same-category set."
+    },
+    {
+      "anchorText": "teams cannot define good AI behaviour",
+      "targetSlug": "teams-cannot-define-good-ai-behaviour",
+      "placementHint": "Use in related pages if the page template renders adjacent AI product behaviour topics.",
+      "reason": "Capability opacity relates to unclear expectations about AI behaviour, and the slug is available in the AI and automation situation cluster."
+    }
+  ],
+  "qualityChecks": {
+    "factsOnlyFromCurrentSource": true,
+    "documentationStyle": true,
+    "noMarketingLanguage": true,
+    "noInventedClaims": true,
+    "linksOnlyFromLinkingContext": true,
+    "internalNotesNotPublished": true,
+    "readyForSanityImport": true
+  },
+  "__sourceCategoryDir": "Situations"
+}

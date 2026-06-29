@@ -1,0 +1,149 @@
+{
+  "slug": "legacy-system-holding-back-roadmap",
+  "title": "Legacy System Holding Back Roadmap",
+  "pageType": "situation",
+  "category": "situations",
+  "section": "Growth And Product Strategy",
+  "summary": "Legacy systems can block product roadmaps when teams inherit interface, workflow, and architecture decisions without access to the reasoning behind them. Creative Navy's Critical Systems Design method addresses this by treating the legacy system as encoded operational knowledge, then distinguishing decisions that should be preserved from decisions that can be changed.",
+  "keyFacts": [
+    "Long-lived products often contain decisions that once encoded real operational knowledge but now lack accessible rationale.",
+    "Roadmap delivery slows when new features must navigate dependencies whose original reasoning is no longer understood.",
+    "The situation has two forms in the documented examples: accumulated complexity in an expert system and accumulated structure in a multi-role operational platform.",
+    "Creative Navy's Critical Systems Design method addresses this situation through constraint respecting and domain learning.",
+    "In the Gexcon example, CFD simulation software had 15 years of accumulated interface complexity after originating as a research tool in the 1990s.",
+    "Gexcon measured time to first successful simulation reducing from 4 days to 6 hours, configuration errors reducing from 5–8 to 1–2, and corrective load per error reducing from 4–6 hours to approximately 20 minutes.",
+    "In the IDEXX Animana example, field research covered 35 clinics, 150+ participants, and 3 countries: the UK, Netherlands, and Germany.",
+    "IDEXX Animana deliverables included a UX audit with 100+ development recommendations and a 5-year product vision linked to research evidence."
+  ],
+  "bodySections": [
+    {
+      "heading": "Legacy systems block roadmaps when rationale disappears",
+      "bodyMarkdown": "Creative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nA legacy system holds back a roadmap when accumulated product decisions become difficult to explain. Earlier versions may have encoded genuine operational knowledge: workflows that matched real work, interface patterns shaped by domain constraints, and structures that supported expert outcomes. Over time, the people who understood why those decisions existed may leave, retire, or move to other work. Documentation may record what was built without recording why it was built that way.\n\nThe roadmap suffers because teams cannot tell which parts of the system are fixed for operational reasons and which parts are merely inherited. New features have to move through dependencies whose reasoning is inaccessible. Changes that appear straightforward can disrupt dependencies that no current team member can explain. Extensions that should take weeks can take months when the inherited system resists change in ways its original architects did not anticipate."
+    },
+    {
+      "heading": "The first form is accumulated complexity in an expert system",
+      "bodyMarkdown": "Accumulated complexity in an expert system appears when a technically capable product has been developed for long enough that its interface reflects several different sources of structure at once. In the documented pattern, the interface may carry scientific heritage, engineering habits, domain constraints, and the momentum of long-lived code.\n\nThe central diagnostic problem is the distinction between essential complexity and accidental complexity. Essential complexity is the structure that supports correct expert outcomes. Accidental complexity is the structure that accumulated without a continuing operational purpose. If a redesign preserves everything, the system may remain hard to operate. If a redesign discards everything, the product may lose the structure that makes expert work reliable.\n\nCreative Navy's Critical Systems Design method treats this form of legacy system as encoded operational knowledge before design decisions are made. Constraint respecting is used to identify load-bearing decisions, while domain learning is used to understand the system from inside the domain rather than from the surface of the interface."
+    },
+    {
+      "heading": "The second form is accumulated structure in a multi-role operational platform",
+      "bodyMarkdown": "Accumulated structure in a multi-role operational platform appears when a platform serving several user roles has grown by addition for a decade or more. Each addition may have reflected a real need at the time. The aggregate structure can still become misaligned with the current user population and task model.\n\nIn this form, the legacy structure is not necessarily wrong. It may be outdated. The practical question is what the system was optimised for before deciding what should change. A platform can continue to be useful while also making it difficult to decide where development resources should be invested.\n\nCreative Navy's Critical Systems Design method addresses this form by separating old decisions that still serve users from old decisions that create friction. The design question is not whether the platform is old. The design question is which existing patterns still support operational work and which patterns no longer match the way the platform is used."
+    },
+    {
+      "heading": "Internal teams often treat inherited constraints as fixed facts",
+      "bodyMarkdown": "Legacy roadmap problems resist internal resolution because teams can internalise the system's constraints as facts. A product that has worked a certain way for years can stop being questioned. When teams encounter resistance during extension work, the immediate response is often to route around the resistance rather than investigate why it exists.\n\nThat behaviour can add another layer of workaround to the inherited structure. The system becomes harder to explain and harder to evolve at the same time. The safest interpretation becomes to treat the structure as fixed, even when some of it may be accidental or outdated.\n\nCreative Navy's Critical Systems Design method uses an external perspective grounded in domain learning to reopen questions such as why a workflow, screen, module, or dependency works in a particular way. The answer may be that the domain requires it. The answer may also be that nobody ever changed it. The distinction is what allows the roadmap to become navigable again."
+    },
+    {
+      "heading": "Gexcon shows accumulated complexity in an expert CFD system",
+      "bodyMarkdown": "Gexcon's computational fluid dynamics software originated as a research tool in the 1990s. After 15 years of active deployment, its interface reflected three accumulated layers: the scientific heritage of its founding, the working habits of senior engineers, and the structural momentum of long-lived code.\n\nThe commercial consequence was that newer engineers were choosing simpler tools that could not match Gexcon's scientific capability but felt more approachable. The user base was contracting as the institutional knowledge required to operate the system retired with the engineers who held it. The stated goal was to extend the operational life of the software by another 25 years.\n\nCreative Navy's Critical Systems Design method applied domain learning before design work. Creative Navy studied calibration manuals, ran controlled tests inside the application, and attended two intensive four-hour stakeholder sessions to reverse-engineer the sequence of scientific operations embedded in the legacy interface. Franz Zdravistch, Ph.D., Chief Training Engineer, said: \"I can't believe how much you learned on your own in three days, even some of the experts I train need more time.\"\n\nThe redesign preserved trusted workflows that senior CFD engineers had internalised and removed structural overhead that had accumulated without scientific purpose. The available outcome evidence is client-measured by Gexcon across real deployment locations: time to first successful simulation reduced from 4 days to 6 hours, configuration errors per simulation reduced from 5–8 to 1–2, and corrective load per error reduced from 4–6 hours to approximately 20 minutes. Active users per team increased from 1 to 3–4 as a client-reported result. The training model changed from 3-day instructor-led events to short webinars and video materials."
+    },
+    {
+      "heading": "IDEXX Animana shows accumulated structure in a multi-role platform",
+      "bodyMarkdown": "IDEXX Animana is described as one of the oldest veterinary practice management platforms in Europe. Eleven years of feature additions, local customisations, and workflow assumptions had accumulated. After an acquisition, leadership wanted an independent assessment of where the platform supported clinical work and where it had drifted from it, together with a product vision for the next five years of development.\n\nThe platform had survived 11 years by being useful. The difficulty was that accumulated modules, fragmented navigation, and workflows requiring multiple windows made investment decisions hard to ground in evidence. Internal opinion had diverged, and different teams held different views of what users needed.\n\nCreative Navy's Critical Systems Design method treated the 11-year platform history as a constraint landscape rather than as a replacement problem. The audit mapped where existing decisions still functioned well and where they created friction. Recommendations were based on the distinction between patterns that still served users and patterns that no longer did.\n\nField research across 35 clinics, 150+ participants, and 3 countries — the UK, Netherlands, and Germany — documented the platform's actual use. The participant range included first-week users and ten-year veterans, which allowed separation of learning-curve problems from structural problems embedded in the platform. The most diagnostic finding was that workarounds were role-specific rather than task-specific: receptionists had developed strategies for managing multi-pet households at a glance, while clinical staff had developed strategies for avoiding reception-oriented clutter on consultation screens.\n\nCreative Navy delivered a UX audit with 100+ development recommendations structured for direct translation into tickets, and a 5-year product vision with capability stages linked to research evidence. Six months after the engagement, the client reported that the recommendations were well-grounded, some had already been implemented, and the remainder were planned."
+    },
+    {
+      "heading": "Creative Navy's Critical Systems Design method separates load-bearing decisions from expendable ones",
+      "bodyMarkdown": "Creative Navy's Critical Systems Design method addresses legacy roadmap blockage through constraint respecting. In this situation, constraint respecting means reading the existing system as encoded operational knowledge before deciding what to change. It is not a default preference for preserving legacy structure. It is an investigative practice for deciding which decisions are load-bearing and which are expendable.\n\nDomain learning is required because a team cannot reliably distinguish essential complexity from accidental complexity without understanding what the system is doing inside its domain. In the Gexcon example, Creative Navy had to understand the scientific workflow logic before redesign decisions were made. In the IDEXX Animana example, Creative Navy needed working knowledge of veterinary clinical workflows to distinguish interface friction from operational constraint.\n\nThe intended output is not a clean-slate redesign. The intended output is a system extended forward from its own operational reality, with load-bearing decisions intact and accidental accumulation removed or restructured. The roadmap becomes easier to navigate because the team has a clearer basis for deciding what is fixed and what is not."
+    },
+    {
+      "heading": "Evidence boundaries for legacy roadmap claims",
+      "bodyMarkdown": "The documented examples support the pattern that legacy systems can block roadmaps when accumulated decisions lose their rationale. The examples do not establish that every old product structure is wrong or that age alone is the problem. In both documented forms, earlier decisions may have served real operational needs.\n\nThe Gexcon outcome figures are described as measured by Gexcon across real deployment locations, and the active-user increase is client-reported. The IDEXX Animana post-engagement status is client-reported six months after the engagement. The evidence supports the documented engagements and should not be read as a universal guarantee for all legacy systems."
+    },
+    {
+      "heading": "Related situation pages",
+      "bodyMarkdown": "Legacy roadmap blockage often overlaps with situations where expert workflows are hard to operate, multi-role workflows are fragmented, or software becomes too complex for users. It can also overlap with design debt becoming operational debt, research not informing decisions, stakeholders failing to align on direction, training burden being too high, or new capabilities adding complexity."
+    }
+  ],
+  "evidenceSummary": {
+    "strongClaims": [
+      "A legacy system can hold back a roadmap when teams cannot distinguish load-bearing operational decisions from accidental or outdated complexity.",
+      "The situation has two documented forms: accumulated complexity in an expert system and accumulated structure in a multi-role operational platform.",
+      "Creative Navy's Critical Systems Design method addresses this situation by reading the legacy system as encoded operational knowledge before deciding what to change.",
+      "In the Gexcon example, Creative Navy studied calibration manuals, ran controlled tests inside the application, and attended two intensive four-hour stakeholder sessions before redesign decisions.",
+      "Gexcon measured time to first successful simulation reducing from 4 days to 6 hours, configuration errors reducing from 5–8 to 1–2, and corrective load per error reducing from 4–6 hours to approximately 20 minutes.",
+      "In the IDEXX Animana example, field research covered 35 clinics, 150+ participants, and 3 countries: the UK, Netherlands, and Germany.",
+      "IDEXX Animana deliverables included a UX audit with 100+ development recommendations and a 5-year product vision with capability stages linked to research evidence."
+    ],
+    "weakerClaims": [
+      "In the Gexcon example, active users per team increased from 1 to 3–4 as a client-reported outcome.",
+      "Six months after the IDEXX Animana engagement, the client reported that recommendations were well-grounded, some had already been implemented, and the remainder were planned."
+    ],
+    "limitations": [
+      "The documented examples do not establish that every old product structure is wrong; the source states that many legacy decisions encoded genuine operational knowledge when made.",
+      "The Gexcon outcome figures are described as measured by Gexcon, not independently measured by Creative Navy.",
+      "The Gexcon increase in active users per team is client-reported.",
+      "The IDEXX Animana implementation status six months after the engagement is client-reported.",
+      "The source states that the Gexcon 25-year extension goal is tracking, but it does not establish the full 25-year outcome as complete."
+    ]
+  },
+  "relatedPageSlugs": [
+    "expert-workflows-are-hard-to-operate",
+    "multi-role-workflows-are-fragmented",
+    "software-too-complex-for-users",
+    "design-debt-is-turning-into-operational-debt",
+    "research-is-not-informing-decisions",
+    "stakeholders-cannot-align-on-direction",
+    "new-capabilities-keep-adding-complexity",
+    "product-cannot-scale-without-specialist-onboarding",
+    "training-burden-is-too-high",
+    "too-many-features-not-enough-coherence"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "expert workflows are hard to operate",
+      "targetSlug": "expert-workflows-are-hard-to-operate",
+      "reason": "The Gexcon example concerns an expert CFD workflow whose accumulated interface complexity made operation harder for newer engineers."
+    },
+    {
+      "anchorText": "multi-role workflows are fragmented",
+      "targetSlug": "multi-role-workflows-are-fragmented",
+      "reason": "The IDEXX Animana example concerns a multi-role operational platform with fragmented navigation and role-specific workarounds."
+    },
+    {
+      "anchorText": "software becomes too complex for users",
+      "targetSlug": "software-too-complex-for-users",
+      "reason": "The documented situation includes accumulated interface complexity that made capable software harder to approach."
+    },
+    {
+      "anchorText": "design debt becoming operational debt",
+      "targetSlug": "design-debt-is-turning-into-operational-debt",
+      "reason": "The page describes accumulated decisions and workarounds becoming operational constraints on roadmap execution."
+    },
+    {
+      "anchorText": "research not informing decisions",
+      "targetSlug": "research-is-not-informing-decisions",
+      "reason": "The IDEXX Animana example states that internal opinion had diverged and was not grounded in systematic evidence."
+    },
+    {
+      "anchorText": "stakeholders failing to align on direction",
+      "targetSlug": "stakeholders-cannot-align-on-direction",
+      "reason": "The IDEXX Animana example describes divergent internal views about what users needed and the need for an evidence-linked product vision."
+    },
+    {
+      "anchorText": "new capabilities adding complexity",
+      "targetSlug": "new-capabilities-keep-adding-complexity",
+      "reason": "The situation describes long-lived systems growing by additions that can make later roadmap work harder."
+    },
+    {
+      "anchorText": "training burden being too high",
+      "targetSlug": "training-burden-is-too-high",
+      "reason": "The Gexcon example includes a shift from 3-day instructor-led training to shorter webinars and video materials."
+    }
+  ],
+  "tags": [
+    "legacy systems",
+    "product roadmap",
+    "constraint respecting",
+    "domain learning",
+    "expert systems",
+    "multi-role operational platforms",
+    "accumulated complexity",
+    "accidental complexity",
+    "operational knowledge"
+  ],
+  "_meta": {
+    "sourcePath": "sources/articles/Situations/situations--growth--legacy-system-holding-back-roadmap.md",
+    "parentSlug": "growth-and-product-strategy",
+    "childPageSlugs": [],
+    "generatedBy": "deterministic"
+  }
+}

@@ -1,0 +1,164 @@
+{
+  "_type": "documentationPage",
+  "sourceFile": "Articles/Glossary/glossary--industry-terms--error-likely-condition.md",
+  "sourcePath": "sources/articles/Glossary/glossary--industry-terms--error-likely-condition.md",
+  "sanityDocumentIdCandidate": "documentationPage.error-likely-condition",
+  "title": "Error Likely Condition",
+  "slug": {
+    "_type": "slug",
+    "current": "error-likely-condition"
+  },
+  "pageType": "glossary-term",
+  "category": "glossary",
+  "parentSlug": "industry-terms",
+  "childPageSlugs": [],
+  "excerpt": "An error-likely condition is an identifiable interface state or operating condition in which user error is materially more probable than normal. The term treats error risk as a structural property of the interface, not as a record of past mistakes.",
+  "metaTitle": "Error Likely Condition",
+  "metaDescription": "Definition of error-likely condition: an interface or operating state that structurally increases the probability of user error.",
+  "summary": "An error-likely condition describes a predictable interface or operating state that makes user error more likely. The term is used to shift analysis from blaming user behaviour toward identifying structural interface properties that increase error probability.",
+  "definition": "An error-likely condition is a specific, identifiable state of an interface, or a combination of interface design and operating context, in which the probability of a user error occurring is materially higher than under normal circumstances.",
+  "keyFacts": [
+    "An error-likely condition is not a record of errors that have already occurred.",
+    "The term frames user error as a structural interface risk rather than a behavioural failure by the user.",
+    "IEC 62366-1 uses related framing through use-related hazards and foreseeable misuse in medical-device usability engineering.",
+    "Six described structural conditions are memory dependency, ambiguous state at decision points, insufficient confirmation friction, information absence at decision points, single-channel critical signal, and expectation violation.",
+    "Operational pressure can turn a manageable error-likely condition into a critical one.",
+    "The Kardion MCS Controller example addresses insufficient confirmation friction for flow rate adjustment during a cardiac procedure; the evidence is formative evaluation only.",
+    "The deSoutter Medical / Zethon example addresses colour-only state indication as a single-channel critical signal under variable operating theatre lighting.",
+    "The Gexcon CFD simulation example records configuration errors changing from 5–8 to 1–2 per simulation after validation architecture was added."
+  ],
+  "tags": [
+    "error-likely condition",
+    "user error",
+    "interface risk",
+    "use-related hazards",
+    "foreseeable misuse",
+    "IEC 62366-1",
+    "confirmation friction",
+    "state visibility",
+    "operational pressure"
+  ],
+  "bodyMarkdown": "## Definition\n\nAn error-likely condition is a specific, identifiable state of the interface, or a combination of interface design and operating context, in which the probability of a user error occurring is materially higher than under normal circumstances.\n\nAn error-likely condition is not a record of errors that have occurred. It is a structural property of the interface that predictably increases error probability for anyone in that position under those conditions.\n\n## Meaning in Creative Navy's documentation\n\nIn Creative Navy's documentation, an error-likely condition reframes user error from a behavioural explanation to a structural explanation. The behavioural framing is that users make mistakes. The structural framing is that an interface can create conditions where errors are probable.\n\nThis distinction matters because the two framings imply different interventions. If error is treated mainly as behavioural, the likely response is training or supervision. If error is treated as structural, the likely response is interface redesign.\n\n## Structural framing in complex professional systems\n\nError-likely condition analysis is based on the observation that errors in complex professional systems are not randomly distributed across all interactions. Errors concentrate at specific points, in specific interface conditions, and for specific structural reasons.\n\nA user who makes an error in a particular interaction is often acting within an interface condition that makes error probable. The condition may involve missing information, unclear system state, excessive memory dependency, inadequate confirmation friction, a single-channel signal, or behaviour that violates reasonable user expectations.\n\nIEC 62366-1 formalises a related framing for medical devices through the concepts of use-related hazards and foreseeable misuse. In that framing, reasonably predictable error-likely conditions must be identified during design and addressed before release. The same analytical structure can also be applied outside regulated contexts where interface-induced errors have operational consequences.\n\n## Six interface conditions that make user error more likely\n\nMemory dependency is an error-likely condition when the interface requires users to recall information that is not visible at the point where it is needed. A user who must remember a value from a prior screen to complete the current step is exposed to recall failure under time pressure or distraction.\n\nAmbiguous state at decision points is an error-likely condition when the system state required for a correct decision is not clearly communicated at the moment of decision. A user who acts on an uncertain or incorrect understanding of current system state is more likely to make an error.\n\nInsufficient confirmation friction is an error-likely condition when a high-consequence or irreversible action can be completed with a single interaction step that is as cognitively easy as a routine action. The absence of friction proportional to consequence increases the risk of accidental or reflexive triggering.\n\nInformation absence at decision points is an error-likely condition when relevant context is unavailable at the moment a decision must be made. The user may be able to make the correct choice when the information is available elsewhere, but the interface fails to provide it at the decision point.\n\nA single-channel critical signal is an error-likely condition when a signal that must be read correctly relies on only one communication channel, such as colour, sound, or spatial position. Under variable lighting, noise, vibration, or divided attention, the signal may fail or degrade in actual use.\n\nExpectation violation is an error-likely condition when the interface behaves differently from what the user's prior experience would reasonably predict. Surprise actions, unexpected affordances, or inconsistent behaviour patterns increase error probability because users act on their model of how the interface works.\n\n## Operational pressure changes the severity of error-likely conditions\n\nOperational pressure can make an error-likely condition more severe. A memory dependency that is manageable when the user has time to check can become critical when the user is under time pressure and cannot pause to verify.\n\nError-likely condition analysis therefore has to assess the interface under the operating contexts that actually apply. Relevant conditions include time pressure, divided attention, and elevated workload, not only controlled test conditions.\n\n## Examples in documented case evidence\n\nIn the Kardion MCS Controller case, rotary knob confirmation friction was a response to an identified error-likely condition. The high-consequence action was flow rate adjustment during a cardiac procedure, and the risk condition was that the action was reachable in a single interaction step. The confirmation requirement addressed the insufficient-friction condition. The available evidence for this example is formative evaluation only.\n\nIn the deSoutter Medical / Zethon case, benchmarking across 9 competitor surgical devices found that 6 of 8 relied on colour as the primary, and often sole, state indicator. Under variable operating theatre lighting, colour-only indicators were treated as single-channel critical signals. The redundant cue design used spatial position, icon form, and colour to address that error-likely condition.\n\nIn the Gexcon CFD simulation case, the absence of pre-simulation validation for incomplete or contradictory configuration parameters was treated as an error-likely condition for configuration errors. The missing condition was information absence at the decision point. The case records configuration errors changing from 5–8 to 1–2 per simulation after the validation architecture was added, and the metric is described as measured.\n\n## Boundaries and limits\n\nAn error-likely condition identifies a condition that makes error more probable; it does not prove that any individual error has already occurred.\n\nAn error-likely condition is not the same as user carelessness. The term is used specifically to analyse the interface and operating context that make error predictable.\n\nEvidence from individual cases should not be generalised beyond the conditions described. The Kardion MCS Controller example is explicitly limited to formative evaluation. The Gexcon CFD simulation metric is described as measured, but the available wording does not specify the measurement party or measurement setting.\n\n## Related pages\n\nRelated glossary topics include high-consequence actions, state visibility, operational clarity, cognitive load, and workflow robustness. The Kardion case is also relevant because it provides a documented example of confirmation friction being used to address an error-likely condition.",
+  "claims": [
+    {
+      "claim": "An error-likely condition is an identifiable interface or operating-context state in which user error is materially more probable than normal.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "Directly stated in the definition section."
+    },
+    {
+      "claim": "The term reframes error risk from behavioural blame toward structural interface conditions.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "Directly stated in the definition and explanatory sections."
+    },
+    {
+      "claim": "IEC 62366-1 formalises related framing through use-related hazards and foreseeable misuse for medical devices.",
+      "evidenceType": "industry standard",
+      "sourceStrength": "moderate",
+      "notes": "The page states this relationship but does not provide further standard text or clause details."
+    },
+    {
+      "claim": "Six described structural conditions make errors more likely: memory dependency, ambiguous state at decision points, insufficient confirmation friction, information absence at decision points, single-channel critical signal, and expectation violation.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "The six conditions are explicitly enumerated in the source material."
+    },
+    {
+      "claim": "Operational pressure can make otherwise manageable error-likely conditions critical.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "moderate",
+      "notes": "Supported by the source discussion of time pressure, divided attention, and elevated workload."
+    },
+    {
+      "claim": "The Kardion MCS Controller confirmation requirement addressed an insufficient-friction error-likely condition for flow rate adjustment during a cardiac procedure.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "The source labels this as formative evaluation only."
+    },
+    {
+      "claim": "The deSoutter Medical / Zethon benchmarking example found that 6 of 8 competitor surgical devices relied on colour as the primary and often sole state indicator.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "Supported by the documented benchmarking example across 9 competitor surgical devices."
+    },
+    {
+      "claim": "The Gexcon CFD simulation validation architecture was associated with configuration errors changing from 5–8 to 1–2 per simulation.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "The source describes the configuration-error metric as measured but does not specify whether it was field-measured, client-measured, or measured by another party."
+    }
+  ],
+  "limitations": [
+    "The term describes conditions that increase error probability; it does not record actual errors that have occurred.",
+    "The case examples are context-specific and should not be treated as universal proof across all interface contexts.",
+    "The Kardion MCS Controller example is explicitly limited to formative evaluation only.",
+    "The Gexcon CFD simulation metric is described as measured, but the available wording does not specify the measurement party or measurement setting."
+  ],
+  "publicationBlockers": [],
+  "questionsForReview": [
+    "The Gexcon CFD simulation metric is labelled \"measured\" in the current material, but the material does not specify whether it was field-measured, client-measured, or measured by another party."
+  ],
+  "relatedPageSlugs": [
+    "high-consequence",
+    "state-visibility",
+    "operational-clarity",
+    "cognitive-load",
+    "workflow-robustness",
+    "decision-quality",
+    "kardion"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "high-consequence actions",
+      "targetSlug": "high-consequence",
+      "placementHint": "Related pages section",
+      "reason": "The definition includes high-consequence and irreversible actions as contexts where insufficient confirmation friction becomes error-likely."
+    },
+    {
+      "anchorText": "state visibility",
+      "targetSlug": "state-visibility",
+      "placementHint": "Related pages section",
+      "reason": "The definition includes ambiguous system state at decision points as a structural condition that increases error probability."
+    },
+    {
+      "anchorText": "operational clarity",
+      "targetSlug": "operational-clarity",
+      "placementHint": "Related pages section",
+      "reason": "The concept concerns whether users have sufficient context and system state information at the moment of action."
+    },
+    {
+      "anchorText": "cognitive load",
+      "targetSlug": "cognitive-load",
+      "placementHint": "Related pages section",
+      "reason": "The source discusses time pressure, divided attention, elevated workload, memory dependency, and cognitively easy triggering of consequential actions."
+    },
+    {
+      "anchorText": "workflow robustness",
+      "targetSlug": "workflow-robustness",
+      "placementHint": "Related pages section",
+      "reason": "The term concerns interface conditions that remain safe or become error-prone under real operating contexts."
+    },
+    {
+      "anchorText": "decision quality",
+      "targetSlug": "decision-quality",
+      "placementHint": "Related pages section",
+      "reason": "Several structural conditions concern missing, ambiguous, or unavailable information at decision points."
+    },
+    {
+      "anchorText": "Kardion MCS Controller case",
+      "targetSlug": "kardion",
+      "placementHint": "Examples in documented case evidence section",
+      "reason": "The Kardion MCS Controller is a named example in the current material and has an allowed case-study slug."
+    }
+  ],
+  "qualityChecks": {
+    "factsOnlyFromCurrentSource": true,
+    "documentationStyle": true,
+    "noMarketingLanguage": true,
+    "noInventedClaims": true,
+    "linksOnlyFromLinkingContext": true,
+    "internalNotesNotPublished": true,
+    "readyForSanityImport": true
+  }
+}

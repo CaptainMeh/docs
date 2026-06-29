@@ -1,0 +1,199 @@
+{
+  "slug": "gericke-industrial-hmi",
+  "title": "Gericke Industrial HMI",
+  "pageType": "case-study",
+  "category": "evidence",
+  "section": "Embedded",
+  "summary": "Creative Navy redesigned Gericke's dosing and conveying HMI into the GUC platform, with GUC-F and GUC-C variants, under fixed algorithm, hardware, TwinCAT, and industrial floor constraints. The case evidence links the redesign to state visibility, alarm hierarchy, progressive complexity, and client-measured post-go-live reductions in diagnosis time, repeat alarms, and operator-caused stoppages within a confirmed single-variable window.",
+  "keyFacts": [
+    "Client: Gericke AG, Switzerland, supplier of conveying, dosing and mixing systems for bulk-solids processing since 1894.",
+    "The redesigned controller was the GUC, with GUC-F for feeder dosing and GUC-C for conveying, replacing Easydos Pro and STP61 interfaces.",
+    "The hardware and technical base used Kontron WP web panels, Beckhoff TwinCAT HMI, and an HTML5/SASS/JavaScript web stack with a 1024×600 minimum resolution constraint.",
+    "Creative Navy's engagement comprised a 4-month design engagement followed by a 12-month Implementation Partnership on a 1-week sprint cadence.",
+    "The central research finding was interpretation failure: operators could see information but could not reliably answer what was happening, why it was happening, and what to do next.",
+    "Creative Navy-observed testing involved 17 operators across three European deployment-and-research sites.",
+    "The delivered HMI comprised 18 screens and an 89-component design system.",
+    "Client-measured figures four months after go-live showed fault diagnosis time reductions from 24 to 8 minutes, 38 to 12 minutes, and 68 to 20 minutes across the three described sites.",
+    "Gericke confirmed that no new hardware, sensors, mechanical upgrades, training programmes, recipe changes, or process changes occurred during the measurement window.",
+    "The GUC HMI is industrial process-control software, not a medical device; GMP and GAMP 5 are relevant in pharmaceutical deployments, while validation and regulatory compliance remain the manufacturer's and operator's responsibility."
+  ],
+  "bodySections": [
+    {
+      "heading": "Gericke GUC as an industrial HMI for dosing, feeding, and conveying systems",
+      "bodyMarkdown": "Creative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nGericke AG is a Swiss supplier of conveying, dosing, and mixing systems for bulk-solids processing. The Gericke Industrial HMI case covers Creative Navy's redesign of the human-machine interface for Gericke's dosing and conveying control platform.\n\nThe redesigned controller became the GUC, or Gericke Universal Controller. GUC-F is the feeder dosing variant, and GUC-C is the conveying variant. The GUC replaced the ageing Easydos Pro dosing interface and the STP61 conveying control, and was intended to unify Gericke's previously fragmented control philosophies under one HMI and design system.\n\nThe industrial domain matters because Gericke's machines are used in pharmaceutical, food, and specialty-chemical production. The operating vocabulary includes dosing and feeding, loss-in-weight and gravimetric control, dense-phase pneumatic conveying, bulk solids, powders, OEE, MTTR, and shop-floor intervention under time pressure."
+    },
+    {
+      "heading": "Fixed technical and operational constraints shaped the HMI redesign",
+      "bodyMarkdown": "The Gericke GUC HMI redesign was constrained by the existing technical base rather than by an open software environment. The hardware was Kontron WP web panels running Chromium-based HTML5. The implementation environment was Beckhoff TwinCAT HMI, using a web stack of HTML5, SASS, and JavaScript.\n\nThe supported panel resolutions ranged from 1024×600 to 1280×800, with 1024×600 as a hard floor. That minimum resolution bounded information density, layout flexibility, and navigation patterns.\n\nThe dosing algorithm was also fixed. Gericke stakeholders independently treated the proven dosing algorithm as an engine that could not change, so Creative Navy's design work concentrated on the interaction layer around that engine.\n\nThis is a documented instance of constraint respecting. Creative Navy's design work did not attempt radical visual reinvention, replacement of Beckhoff/TwinCAT, or a new customer-facing visual identity. The redesign had to preserve Gericke terminology, process representations, and visual conventions that customers already recognised while improving interpretability and action support."
+    },
+    {
+      "heading": "The central finding was interpretation failure, not mechanical failure",
+      "bodyMarkdown": "The central finding in the Gericke Industrial HMI case was that the most expensive operator errors across the three deployment-and-research sites were interpretation failures caused by insufficient system transparency. Operators often executed the correct task with an incomplete mental model of process state. When the interface left them unsure, they stopped or overrode the process as a precaution rather than risk a deviation.\n\nThe research reframed a scattered set of apparent problems into one coherent UX problem. Unnecessary restarts, wrong subsystem investigation, manual overrides, maintenance call-outs, alarm fatigue, and repeated recovery attempts shared a common root: operators could see information but could not reliably answer three action-governing questions — what is happening, why it is happening, and what should be done next.\n\nThis finding grounds the blanks phenomenon in the Gericke case. Operators filled gaps in an incomplete mental model because the legacy interface exposed symptoms, alarm codes, and technical fragments without making process state intelligible.\n\nThe same finding also illustrates performance in reality. Gericke's underlying machines and dosing algorithm could perform according to specification, but real operating performance was reduced when the interface caused precautionary stops, unnecessary maintenance calls, and wrong diagnosis paths."
+    },
+    {
+      "heading": "Legacy sense decay appeared in menu structure, naming, and alarm presentation",
+      "bodyMarkdown": "The legacy Easydos Pro interface had accumulated over years of separate product-group commissions. The documented effect was sense decay: menu structure, parameter naming, and information architecture drifted away from operational reality as the system expanded.\n\nGericke stakeholders described several effects of this accumulation. The old interfaces had different operating philosophies across controllers. Error messages appeared as raw codes. Experienced users could operate the system largely because they had memorised it. Bernhard Meir, Head of Continuous Manufacturing, described the existing information architecture as having been extended over the years without usability in view.\n\nMarkus Flammer summarised the gap between the public simplicity claim and operating reality: \"Creative Navy's marketing slogan — 'simple menu navigation makes operation intuitive' — unfortunately shows quite a few difficulties in practice.\"\n\nThe redesign brief therefore asked for a modern responsive touch HMI, reduced training burden, role-appropriate complexity, instant feedback replacing error codes, and a reusable design system for future Gericke digital products. Gericke also explicitly asked Creative Navy to forgo a deep teardown of the old interface and start from operational reality."
+    },
+    {
+      "heading": "Creative Navy's Critical Systems Design method structured the work across research, convergence, iteration, and implementation",
+      "bodyMarkdown": "Creative Navy's Critical Systems Design method designs software whose interfaces, workflows, and operating logic carry real operational consequences, working through five phases — Sandbox Experiments, Concept Convergence, Iterative System Building, Organizational Integration, and Implementation Partnership — to take each system from initial exploration to independent operation by the client's own team.\n\nIn Sandbox Experiments, Creative Navy conducted human-centred research across the three deployment-and-research sites. The evidence base included site observation, contextual interviews with operators and maintenance technicians, stakeholder interviews with plant managers and supervisors, existing-system review, and incident and maintenance records where available.\n\nThe operator-error taxonomy that resulted from this research was a Creative Navy synthesis artefact, not a field instrument and not telemetry. Operators did not use labels such as OE01 or OE14. The taxonomy organised twenty observed or reported operator-error types by likely HMI cause, immediate consequence, operational and maintenance impact, and inferred importance.\n\nThe interpretation-failure insight emerged through triangulation, not confirmation. The signal was the discrepancy between how design and engineering teams expected operators to think and how operators actually approached alarms, process state, recovery, and maintenance escalation."
+    },
+    {
+      "heading": "Option space mapping focused on organising complexity rather than visual reinvention",
+      "bodyMarkdown": "Creative Navy's option space mapping in the Gericke case was conceptual. The fixed industrial-automation context ruled out a consumer-style visual reinvention, so the meaningful divergence was how operational complexity should be organised.\n\nFour organising principles were explored: process-flow based navigation, equipment-based navigation, task-based navigation, and context-sensitive or progressive access to diagnostics. Related options included plant, alarm, or KPI home screens; alarm lists, root-cause trees, or guided workflows; separate maintenance areas or embedded drill-down; and role-specific or shared interfaces.\n\nEach organising principle failed when treated as the whole answer. Role-based design hid too much information. Equipment-based design mirrored system architecture rather than user goals. Task-based design worked for operators but became awkward for engineers.\n\nConcept Convergence resolved the tension by treating complexity as something to structure rather than remove. This is the documented tension-driven reasoning in the case: progressive disclosure preserved useful parts of the rival principles instead of compromising between them."
+    },
+    {
+      "heading": "The three-tier progressive-complexity model separated operational, diagnostic, and engineering work",
+      "bodyMarkdown": "The Gericke GUC HMI organised information into three progressive levels: an operational layer for production status, alarms, and common actions; a diagnostic layer for troubleshooting, component status, and fault analysis; and an engineering layer for configuration, tuning, and deeper process control.\n\nThe model served four user roles through one interface: production operators, maintenance and service technicians, process engineers and plant supervisors, and management stakeholders. The brief also described three permission groups: Operator Settings, Product Data, and Advanced Engineering.\n\nProgressive complexity in this case is not the same as a permission model. A permission model hides or grants functionality. Progressive complexity organises information so users meet the level of detail required by the current task when they need it.\n\nProgressive complexity in the Gericke case should also not be conflated with progressive specification. The documented Gericke usage concerns how operational information is layered for different tasks and roles. Progressive specification is a distinct proprietary concept unless Creative Navy later confirms an intended alignment."
+    },
+    {
+      "heading": "Alarm hierarchy and process-state visibility targeted the interpretation-failure mechanism",
+      "bodyMarkdown": "Creative Navy's design response targeted the same three questions that the old interface failed to answer: what is happening, why it is happening, and what should happen next. The built GUC HMI included a live process mimic, the twin-vessel conveying schematic, and process visualisation with state shown directly on the diagram.\n\nGraphical error visualisation replaced raw codes with contextual indication. Failed components were highlighted on the mimic, matching the brief's requirement that failed machine parts should light up in the graphic.\n\nThe alarm model moved away from a flat event list. Secondary alarms were grouped beneath their originating event, and the interface indicated probable root cause where the synthesis supported it. This root-cause alarm hierarchy was designed to reduce alarm-cascade handling, wrong subsystem investigation, repeated ineffective recovery attempts, and unnecessary maintenance call-outs.\n\nThe redesigned interaction pattern supported progressive drill-down. A user could begin from the primary operational view, inspect process variables, and enter diagnostics only if the situation required it."
+    },
+    {
+      "heading": "Two reconstructed operator moments show trust calibration in both directions",
+      "bodyMarkdown": "Creative Navy documented two illustrative reconstructions of the interaction redesign. They are not incident transcripts or logged events. They show how the redesigned HMI calibrated operator trust by supporting both restraint and precise intervention.\n\nIn the feeder refill instability example, the old alarm list showed feed-rate deviation, low hopper level, refill active, and dosing instability without indicating which event mattered. A safe operator response was to pause production, acknowledge alarms, check settings, and call maintenance, even though the feeder had entered a normal refill cycle that would stabilise.\n\nIn the redesigned interaction, the mimic showed the affected feeder in \"Refill Cycle,\" displayed expected duration, stated that temporary dosing deviation was expected, and indicated that no operator action was required. Secondary alarms were grouped beneath the refill event. The interface explained state rather than listing symptoms.\n\nIn the pneumatic conveying blockage example, the old interface presented \"Alarm 1047 — conveying fault\" followed by feeder starvation, throughput loss, and mixer-feed deviation. The operator could investigate the feeder, mixer, and dosing system before maintenance later found a conveying valve that had failed to reach position.\n\nIn the redesigned interaction, the process mimic highlighted the affected route and indicated \"Valve V12 failed to reach open position — probable root cause of 6 active alarms.\" Related alarms were collapsed beneath the root-cause event, and maintenance could be directed to the correct valve."
+    },
+    {
+      "heading": "Iterative System Building refined hierarchy, alarm interpretation, terminology, and drill-down boundaries",
+      "bodyMarkdown": "Creative Navy's Iterative System Building phase used repeated cycles: prototype a workflow or screen set, review technical feasibility and process accuracy with engineering and product stakeholders, evaluate representative users on realistic tasks, synthesise where users struggled, and refine.\n\nCreative Navy-observed user testing involved 17 operators at the three deployment sites. Four operators were aged 20–24 with under a year of experience, and the rest were older and more experienced. The tested sites were in Europe: pharmaceutical and chemical sites in Switzerland and a food site in Italy.\n\nTesting did not force a redesign of the three-tier concept. Role-oriented workflows, improved alarm handling, and graduated complexity held during testing. The refinements were more specific: key operational information was elevated, alarm presentations were reorganised around diagnosis, navigation was aligned to process flow and operational task, technical labels were replaced with shop-floor vocabulary, and maintenance access to troubleshooting tools was shortened.\n\nBy later iterations, operators could answer what was happening, why it was happening, and what should happen next with less navigation and fewer interpretation errors. The success criterion was not preference; it was interpretability under realistic operational tasks."
+    },
+    {
+      "heading": "The delivered HMI combined 18 screens, 89 components, and Gericke-owned implementation",
+      "bodyMarkdown": "Creative Navy-recorded design output for the Gericke GUC HMI included 18 screens and an 89-component design system. The design system unified the previously fragmented Easydos Pro and STP61 interfaces under the GUC platform and supported the GUC-F dosing and GUC-C conveying variants.\n\nThe delivered design included a pixel-perfect SVG icon set, language switching, role-based parameter grouping, a live process mimic, graphical error visualisation, a root-cause alarm hierarchy, contextual alarm explanations, guided troubleshooting flows, and an automatic event timeline in the prioritised HMI improvement set.\n\nGericke implemented the design itself in TwinCAT HMI. Creative Navy's 12-month Implementation Partnership consisted of QA against the design, on-panel testing on the target hardware, and in-situ colour calibration.\n\nThe endpoint was organisational independence. Gericke operated and extended the system without further Creative Navy involvement, and client-reported evidence states that Gericke later propagated the design system internally to other products."
+    },
+    {
+      "heading": "GMP and GAMP 5 framing applies in pharmaceutical environments without making the GUC HMI a medical device",
+      "bodyMarkdown": "The Gericke GUC HMI is industrial process-control software, not a medical device. The case does not carry medical-device usability validation, and the IEC 62366-1 summative-validation caveat used on medical-device pages does not apply.\n\nIn pharmaceutical deployments, the GUC HMI operates inside GMP-governed environments where GAMP 5 is relevant. The documented GMP touchpoints are operator-error prevention, clear status visibility, alarm handling, batch-execution workflows, data integrity, and procedural compliance.\n\nFDA 21 CFR Part 11 was studied and kept in mind, but it was not a hard requirement for the engagement.\n\nCreative Navy's responsibility was HMI and UX design. Validation and regulatory compliance of the deployed, integrated system are the manufacturer's and operator's responsibility."
+    },
+    {
+      "heading": "Client-measured operational metrics four months after go-live support the interface-attributable interpretation-failure thesis",
+      "bodyMarkdown": "The operational before-and-after figures in the Gericke case were client-measured by Gericke, captured four months after interface go-live, and recorded at the actual deployment-and-research sites. The sites are described by type and geography rather than named.\n\nGericke confirmed that no other variables changed during the measurement period: no new hardware or sensors, no mechanical upgrades, no training programmes, and no recipe or process changes. Within that confirmed single-variable window, the deltas are described as interface-attributable rather than merely co-occurring. They are not Creative Navy-measured.\n\nThe strongest interface-attributable signals are the ones closest to the interpretation-failure thesis. Fault diagnosis time fell from 24 to 8 minutes at the Swiss pharmaceutical continuous-manufacturing site, from 38 to 12 minutes at the Italian premium infant-formula food site, and from 68 to 20 minutes at the Swiss specialty-chemical powder-coatings site.\n\nOperator-caused stoppages fell from 3 to 1 per month at the Swiss pharmaceutical site, from 7 to 3 per month at the Italian food site, and from 15 to 6 per month at the Swiss specialty-chemical site. Repeat alarms fell from 42% to 18%, 58% to 28%, and 73% to 35% across the same three described sites.\n\nSupporting metrics also moved. Availability changed from 96.5% to 98.0%, 94.2% to 96.8%, and 90.5% to 94.5%. OEE changed from 79% to 84%, 71% to 78%, and 61% to 72%. MTTR changed from 65 to 42 minutes, 105 to 60 minutes, and 165 to 90 minutes. Unplanned downtime changed from 22 to 15 hours per year, 48 to 30 hours per year, and 165 to 95 hours per year.\n\nAvailability and OEE are supporting evidence rather than the headline evidence because they have more plausible confounders even inside the confirmed single-variable window. Diagnosis time, operator-caused stoppages, and repeat alarms map more directly to state visibility, root-cause alarm hierarchy, and contextual explanation."
+    },
+    {
+      "heading": "Client-reported commercial and longitudinal evidence is qualitative and separately calibrated",
+      "bodyMarkdown": "Gericke client-reported that the redesigned HMI strengthened perceptions of process maturity and operational control in pharmaceutical sales discussions. Gericke also client-reported that food customers responded to reduced operational complexity, and that chemical customers responded most strongly to troubleshooting and operational transparency.\n\nGericke client-reported a broader positioning shift: Gericke could compete on the operability of its equipment, not only mechanical performance. The same client-reported evidence states that the redesigned HMI became Gericke's standard platform.\n\nThe longitudinal evidence has two distinct forms. The stronger durability signal is client-reported independent evolution: Gericke propagated the design system to other products internally, without Creative Navy involvement. The second signal is a repeat-client return: Gericke later chose Creative Navy for a concluded environmental and energy engagement after a competitive process in which Creative Navy was the more expensive option, with trust from the first engagement reported as the reason the work was won."
+    },
+    {
+      "heading": "Evidence boundaries for the Gericke Industrial HMI case",
+      "bodyMarkdown": "The Gericke Industrial HMI evidence base is mixed and must be read with calibration. The operational metrics are client-measured, not Creative Navy-measured. The per-plant operator-error frequencies are client-reported by plant managers from their own operational statistics, not telemetry captured by Creative Navy.\n\nThe OE01–OE20 taxonomy is a Creative Navy synthesis artefact grounded in mixed-method research. It should not be read as a field instrument, as operator-entered codes, or as instrument-grade telemetry.\n\nThe two operator moments involving feeder refill instability and pneumatic conveying blockage are Creative Navy illustrative reconstructions of the interaction redesign. They are consistent with the taxonomy and design synthesis, but they are not logged incident transcripts.\n\nThe commercial, positioning, standard-platform, independent-propagation, and repeat-client-return statements are client-reported and qualitative. They are not independently verified in the documented case evidence."
+    }
+  ],
+  "evidenceSummary": {
+    "strongClaims": [
+      "Creative Navy redesigned Gericke's dosing and conveying HMI into the GUC platform, with GUC-F and GUC-C variants replacing Easydos Pro and STP61 under one design system.",
+      "The central research finding was that costly operator errors were interpretation failures caused by insufficient system transparency, not primarily mechanical failure, lack of training, or negligence.",
+      "The GUC HMI redesign was constrained by a fixed dosing algorithm, Kontron WP panels, a 1024×600 minimum resolution, Beckhoff TwinCAT HMI, and established Gericke visual conventions.",
+      "Creative Navy's option space mapping explored rival organising principles and converged on a three-tier progressive-complexity model: operational, diagnostic, and engineering layers.",
+      "Creative Navy-observed user testing involved 17 operators at three European deployment sites and refined hierarchy, alarm interpretation, navigation, terminology, drill-down boundaries, and maintenance workflows.",
+      "The delivered design included 18 screens and an 89-component design system, with Gericke implementing the HMI itself in TwinCAT and Creative Navy providing QA, on-panel testing, and colour calibration during a 12-month Implementation Partnership.",
+      "Gericke client-measured operational metrics four months after go-live showed fault diagnosis time falling from 24 to 8 minutes, 38 to 12 minutes, and 68 to 20 minutes across the three described deployment-and-research sites.",
+      "Gericke client-measured repeat alarms and operator-caused stoppages fell across all three described sites within a confirmed single-variable window.",
+      "The GUC HMI is industrial process-control software, not a medical device; GMP and GAMP 5 are relevant in pharmaceutical deployments, while validation and regulatory compliance remain the manufacturer's and operator's responsibility."
+    ],
+    "weakerClaims": [
+      "Gericke client-reported that the redesigned HMI became its standard, that the design system was propagated internally to other products, and that Gericke later returned for a concluded environmental and energy engagement."
+    ],
+    "limitations": [
+      "Operational before-and-after metrics are client-measured by Gericke, not Creative Navy-measured.",
+      "The metrics are interface-attributable within a confirmed single-variable window, but the page does not claim a controlled causal study.",
+      "The three deployment-and-research sites are described by type and geography, not named; metrics must not be attached to a named plant.",
+      "Per-plant operator-error frequencies are client-reported by plant managers from their own operational statistics, not Creative Navy-captured telemetry.",
+      "The OE01–OE20 taxonomy is a Creative Navy synthesis artefact, not a field instrument and not operator-entered coding.",
+      "The feeder refill and pneumatic conveying examples are illustrative reconstructions, not incident transcripts.",
+      "Commercial, positioning, standard-platform, independent-propagation, and repeat-client-return outcomes are client-reported and qualitative.",
+      "The GUC HMI is not a medical device and carries no medical-device usability validation; deployed-system validation and regulatory compliance are the manufacturer's and operator's responsibility.",
+      "FDA 21 CFR Part 11 was studied and kept in mind but was not a hard requirement for the engagement."
+    ]
+  },
+  "relatedPageSlugs": [
+    "embedded-devices-and-constrained-interfaces",
+    "expert-tools-and-internal-systems",
+    "multi-stakeholder-operational-environments",
+    "better-state-visibility",
+    "improved-operational-clarity",
+    "reduced-error-risk",
+    "stronger-recovery-support",
+    "reduced-maintenance-and-downtime",
+    "verifiable-performance-claims",
+    "triangulation-not-confirmation",
+    "longitudinal-durability"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "embedded devices and constrained interfaces",
+      "targetSlug": "embedded-devices-and-constrained-interfaces",
+      "reason": "The source identifies this as the primary context for the case."
+    },
+    {
+      "anchorText": "expert tools and internal systems",
+      "targetSlug": "expert-tools-and-internal-systems",
+      "reason": "The source lists this as an also-relevant context because the HMI served operators, technicians, engineers, supervisors, and management stakeholders."
+    },
+    {
+      "anchorText": "multi-stakeholder operational environments",
+      "targetSlug": "multi-stakeholder-operational-environments",
+      "reason": "The source lists this as an also-relevant context for the case."
+    },
+    {
+      "anchorText": "better state visibility",
+      "targetSlug": "better-state-visibility",
+      "reason": "The case centres on making process state visible through the mimic, graphical error indication, and root-cause alarm hierarchy."
+    },
+    {
+      "anchorText": "improved operational clarity",
+      "targetSlug": "improved-operational-clarity",
+      "reason": "The source frames the core problem as operators being unable to answer what is happening, why, and what next."
+    },
+    {
+      "anchorText": "reduced error risk",
+      "targetSlug": "reduced-error-risk",
+      "reason": "The documented redesign targeted interpretation errors, wrong diagnosis paths, unnecessary restarts, and operator-caused stoppages."
+    },
+    {
+      "anchorText": "stronger recovery support",
+      "targetSlug": "stronger-recovery-support",
+      "reason": "The source states that guided troubleshooting and faster maintenance access were part of the built recovery support."
+    },
+    {
+      "anchorText": "reduced maintenance and downtime",
+      "targetSlug": "reduced-maintenance-and-downtime",
+      "reason": "The source includes client-measured MTTR, diagnosis-time, unplanned-downtime, and maintenance-call-out related evidence."
+    },
+    {
+      "anchorText": "verifiable performance claims",
+      "targetSlug": "verifiable-performance-claims",
+      "reason": "The source carefully calibrates client-measured before-and-after metrics and their single-variable window."
+    },
+    {
+      "anchorText": "triangulation-not-confirmation",
+      "targetSlug": "triangulation-not-confirmation",
+      "reason": "The source explicitly describes the interpretation-failure insight as triangulation, not confirmation."
+    },
+    {
+      "anchorText": "longitudinal durability",
+      "targetSlug": "longitudinal-durability",
+      "reason": "The source identifies internal propagation and the repeat engagement as two longitudinal durability signals."
+    }
+  ],
+  "tags": [
+    "industrial HMI",
+    "embedded interface",
+    "process control",
+    "bulk solids",
+    "dosing and conveying",
+    "GUC",
+    "TwinCAT",
+    "state visibility",
+    "alarm hierarchy",
+    "progressive complexity",
+    "GMP",
+    "GAMP 5"
+  ],
+  "_meta": {
+    "sourcePath": "sources/articles/Case studies/case-study--gericke-industrial-hmi.md",
+    "parentSlug": "embedded",
+    "childPageSlugs": [],
+    "generatedBy": "deterministic"
+  }
+}

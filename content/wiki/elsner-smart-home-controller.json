@@ -1,0 +1,178 @@
+{
+  "slug": "elsner-smart-home-controller",
+  "title": "Elsner Smart Home Controller",
+  "pageType": "case-study",
+  "category": "evidence",
+  "section": "Embedded",
+  "summary": "This case study documents Creative Navy’s 9-month redesign of the Elsner Cala Touch KNX 4-inch standalone smart-home controller interface. The work addressed swipe-dependent navigation, touch latency, accessibility, module complexity, state visibility, sensor fault handling, and a design system that Elsner product managers could extend after the engagement.",
+  "keyFacts": [
+    "Client: Elsner Elektronik, Germany, a hardware manufacturer in the KNX building-automation ecosystem.",
+    "Product line: Cala Touch KNX, covering the 4-inch standalone variant.",
+    "Engagement duration: 9 months.",
+    "Device: 4-inch round TFT LCD panel at 480×480px resolution, wall-mounted at 140cm.",
+    "The controller handled heating, cooling, lighting, blinds, and scenes, with inputs from weather stations, CO2 sensors, humidity sensors, temperature probes, and the main heating unit.",
+    "The product serves consumers in 54 countries; dealer networks from 10 countries were involved in design and validation input.",
+    "Creative Navy explored six navigation architecture directions and converged on a hamburger-plus-dashboard model that removed swipe dependency as the sole navigation mechanism.",
+    "Formal usability testing involved 12 subjects in one structured session.",
+    "Client-reported dealer feedback: 30 of 130 dealers responded, and 100% of those respondents rated the redesign as an improvement.",
+    "Early post-launch sales were client-reported as better than expected; no precise figures are available."
+  ],
+  "bodySections": [
+    {
+      "heading": "Elsner Cala Touch KNX as a constrained embedded room controller",
+      "bodyMarkdown": "Creative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nIn the Elsner case, Creative Navy redesigned the GUI for Elsner Elektronik’s Cala Touch KNX product line, covering the 4-inch standalone variant of an embedded smart-home and building-automation room controller. Elsner Elektronik is a German hardware manufacturer in the KNX building-automation ecosystem.\n\nThe controller was a 4-inch round TFT LCD panel at 480×480px resolution, mounted on a wall at 140cm. The interface controlled heating, cooling, lighting, blinds, and scenes. The device received inputs from weather stations, CO2 sensors, humidity sensors, temperature probes, and the main heating unit.\n\nThe engagement lasted 9 months. The team included a UX designer, UI designer, interaction designer, project manager, product owner, and researcher. A five-person steering committee governed the work throughout.\n\nThe product serves consumers in 54 countries. Dealer networks from 10 countries were involved in the design and validation process. Daily interaction frequency was client-reported at approximately 25 interactions per day."
+    },
+    {
+      "heading": "The design problem centred on swipe navigation, touch latency, accessibility, and module complexity",
+      "bodyMarkdown": "Creative Navy’s design work began after Elsner had accumulated customer feedback over multiple years. The most prominent complaint concerned navigation: the existing interface used a carousel of pages numbered 1–10 and relied exclusively on swipe gestures. Users reported needing up to 10 swipes to reach a target function, and the swipe gesture was laggy because of the microcontroller’s limited processing power.\n\nTouch responsiveness was a foundational constraint rather than a late discovery. The hardware touch layer was unresponsive relative to modern smartphone expectations, so patterns that depended on gestural fluency, including swipes and sliders, created friction.\n\nAccessibility was a named design issue because the user base ranged from tech-savvy professionals to elderly users with limited dexterity. The interface had to work for standing use at 140cm, in varying lighting conditions, and with limited motor precision expected.\n\nSeveral modules were rated as unnecessarily complicated: RGBW, Tuneable White, HCL, FanCoil, and Split Control. These modules involved multiple states and manual adjustments that the previous interface did not organise clearly.\n\nVisual quality was also part of the redesign scope. Typography, icons, visual hierarchy, and contrast on modern displays were identified as dated or insufficient."
+    },
+    {
+      "heading": "Constraint respecting shaped the interface around firmware, display, and touch limits",
+      "bodyMarkdown": "Creative Navy’s Critical Systems Design method applied constraint respecting to the Elsner engagement by treating firmware timing, voltage, colour depth, display resolution, touch latency, and microcontroller symbol limits as design parameters. The constraints were not framed as exceptions to be worked around after design; they were incorporated into the design from the start.\n\nThe final screen had not been selected when the redesign began. Creative Navy therefore designed at 320×240px and scaled up once the 480×480px panel was confirmed. This was a Creative Navy-recorded risk-reduction decision made after engineering disclosed that the final screen was unconfirmed. Conservative-resolution design forced the strongest UX patterns to appear early, because patterns that worked at the lower resolution could scale up cleanly once the panel was confirmed.\n\nFirmware behaviour also shaped the temperature control. Temperature increments of 0.5° were determined by the firmware because the heating unit applied new values through discrete internal commands. Creative Navy aligned the interface to those increments so the visual state matched the underlying control behaviour.\n\nAnimation timing was aligned with firmware update intervals after direct engineering collaboration. The design intent was that visual changes should not drift out of sync with real thermal values. This was observed in prototype testing with engineers and was not independently quantified."
+    },
+    {
+      "heading": "Domain learning covered ETS configuration logic and the KNX operating split",
+      "bodyMarkdown": "Creative Navy’s Critical Systems Design method used domain learning in the Elsner engagement to understand the controller from inside the KNX operating model. Creative Navy configured test setups in ETS, the KNX programming environment used by systems engineers in the ecosystem.\n\nThe ETS work clarified a central split in the product. Systems engineers configure the device through ETS, while daily occupants use the on-device interface without configuration access. The occupant sees and operates choices made by a third party and cannot change that configuration on the device.\n\nDomain learning also revealed that some existing interface patterns were not user-centred design decisions. They were workarounds for firmware or configuration constraints. In several cases, Elsner stakeholders could not recall the original rationale for persistent patterns, creating the blanks phenomenon: interface behaviour existed, but the recorded reason for it had decayed or disappeared.\n\nThe domain learning process also covered display supplier specifications, including voltage requirements, graphics interface behaviour, colour depth, and sample availability. Physical installation conditions were treated as design inputs, including the recommended 140cm mounting height, daylight as the primary use context, and evening use with limited luminance as a secondary context."
+    },
+    {
+      "heading": "Option space mapping compared six navigation structures and multiple module directions",
+      "bodyMarkdown": "Creative Navy’s Critical Systems Design method used option space mapping to compare navigation architecture directions before convergence. Six structural directions were prototyped and compared: lower bar tabs, hamburger menu, top ribbon menu, carousel menu, multiple buttons layout, and a physical home button concept.\n\nThe navigation directions were evaluated against constrained-hardware performance and observed usage patterns. The three most substantively different directions carried furthest were top bar tabs, a top bar ribbon menu, and a carousel combined with directional hardware-button navigation.\n\nThe physical home button concept was explored but not pursued. Elsner’s product manager noted that recent room controllers had moved away from hardware home buttons, following the same trajectory as the smartphone market. The converged direction was an Android-style hamburger trigger: a persistent access point to a full function list, reachable from anywhere in the interface without swiping.\n\nOption space mapping also applied to individual modules. Creative Navy-recorded iteration counts included 4 dashboard iterations, 5 HCL iterations, 3 timer iterations, and 2 RGB iterations. The HCL module was the most iterated single module after navigation, with difficulty concentrated in the auto/manual mode switch and in managing sequences in auto mode.\n\nThe temperature control used a vertical thermometer-inspired scale based on behavioural research indicating that users rarely adjusted more than four degrees in either direction. A circular gauge was developed alongside it: 100 slices per circle, each representing 0.5°C, with 20 slices removed to create a visual boundary, leaving 80 active segments. Each slice corresponded to 3.6° of arc, and one full degree of temperature corresponded to 7.2° of rotation."
+    },
+    {
+      "heading": "Tension-driven reasoning resolved the blind-controls conflict without ignoring accessibility",
+      "bodyMarkdown": "Creative Navy’s Critical Systems Design method used tension-driven reasoning in the blind-controls work because Elsner’s engineering and development preference conflicted with accessibility requirements. Engineers and developers required all blind functions to remain on a single screen. At the conservative 320×240px design resolution, that consolidation could not meet minimum touch target size requirements without creating clutter and reducing accessibility.\n\nThe tension was not treated as a simple preference dispute. The case evidence describes a conflict between firmware architecture, engineering habit, and usability requirements for a small embedded display. Creative Navy worked through multiple steering committee iterations to find a configuration that preserved usability and met accessibility requirements without requiring changes to the underlying firmware behaviour.\n\nThe touch target parameters were grounded in ergonomics research by Herbert A. Colle and Keith J. Hiszem from 2004. The cited finding was that touch targets should be a minimum of 13mm, with accuracy improving only up to approximately 22mm. These parameters informed exact touch target sizing in the interface."
+    },
+    {
+      "heading": "Performance in reality included sensor faults, calibration drift, and low-luminance use",
+      "bodyMarkdown": "Creative Navy’s Critical Systems Design method applied performance in reality to non-ideal operating conditions in the Elsner controller. The interface was designed for delayed sensor readings, contradictory sensor values, calibration faults, heating unit alerts, and minor notifications such as open window detection.\n\nDelayed sensor readings were communicated calmly and without ambiguity. Contradictory sensor values were handled with explicit communication rather than silent suppression or generic error states. Calibration faults were surfaced as a named state rather than hidden.\n\nThe alert hierarchy distinguished primary operational alerts from secondary notifications. Heating unit alerts were treated as primary signals in the visual hierarchy, while minor notifications were treated as visually secondary. The case evidence describes this dual-priority alert system as grounded in cognitive load research and in observed consequences of poor alert hierarchy in embedded consumer devices.\n\nAmbient lighting was also treated as a design condition. The UI was produced in light and dark modes, with dark mode requested by Elsner and particularly valued for private-home and bedroom use. The interface was designed for well-lit offices and dimly lit bedrooms, with functional legibility prioritised over decorative treatment."
+    },
+    {
+      "heading": "Evidence-aware thinking used survey, usability testing, benchmarking, dealer review, and engineering input",
+      "bodyMarkdown": "Creative Navy’s Critical Systems Design method used evidence-aware thinking and multi-perspective synthesis by comparing distinct evidence sources rather than treating one source as decisive. The evidence base included ergonomics research, a client-distributed survey, formal usability testing, competitive benchmarking, dealer feedback, and engineering sessions.\n\nThe client-distributed survey covered 20 users and provided raw results to Creative Navy. The survey confirmed navigation complaints, HCL/RGBW complexity, and touch responsiveness issues. It also surfaced two undocumented use cases and one mental model that differed from how Elsner had framed a specific function.\n\nSpecific survey findings included missing complete dimming capability in bedrooms, requested by 5 users; missing favourites or quick access, requested by 4 users; pages jumping back and forth; poor touch slider performance; typography and icons being too small for some users; and a recurring recommendation to avoid overly complex solutions.\n\nFormal usability testing involved 12 subjects in a single structured testing session. The testing produced findings about interaction patterns, navigation legibility, and temperature control readability under realistic conditions. The case evidence states that the testing shaped touch target sizing, card layout vertical spacing, and circular control positioning.\n\nCompetitive benchmarking analysed dozens of competitor devices for navigation patterns on small embedded screens at 2.4-inch and 4-inch sizes. Competitors referenced in the case evidence included MDT push-button, Smart 86 Series .02, and Glass push-button II Smart Series .02. Gesture-dependent patterns were disqualified before iteration when the device’s processing limits could not support them fluidly.\n\nDealer feedback consisted of 30 responses from informal prototype reviews with dealers from 10 countries. Dealer input surfaced behavioural differences across markets, local competitive pressures, and emerging regional trends."
+    },
+    {
+      "heading": "Sandbox Experiments, Concept Convergence, Iterative System Building, and Organizational Integration structured the engagement",
+      "bodyMarkdown": "Creative Navy’s Critical Systems Design method mapped the Elsner engagement across Sandbox Experiments, Concept Convergence, Iterative System Building, and Organizational Integration. These phase names describe how the work moved from exploration to convergence, full system production, and client-side capability transfer.\n\nSandbox Experiments covered the six navigation architectures, temperature and circular control variants, dashboard/HCL/timer/RGB module directions, ETS domain learning, competitor benchmarking, 20-user survey analysis, ergonomics research, and concurrent dealer and user research.\n\nConcept Convergence included the blind-controls resolution with the steering committee, convergence on the hamburger-plus-dashboard navigation model, finalisation of the temperature component configuration, and definition of the dual-priority alert system.\n\nIterative System Building covered the full interface redesign across all screens, dual light/dark mode UI, prototype testing against engineers for lag conditions, calibration drift, and control synchronisation, and animation timing aligned with firmware intervals.\n\nOrganizational Integration covered the organisation-wide design system, including design tokens, component library, and governance models. Elsner’s product managers were reported by the client as able to iterate the UI independently after the engagement, which the case evidence records as an observed operational outcome."
+    },
+    {
+      "heading": "The delivered system covered the full embedded GUI and a rationale-bearing design system",
+      "bodyMarkdown": "Creative Navy delivered high-fidelity wireframes across all screens, a full UI in light and dark modes, and a complete design system including a styleguide and component library. The UI applied Elsner’s brand colours while prioritising accessibility and functional legibility.\n\nThe design system was not only a component set. The case evidence describes organic system building in which the design system documented reasoning and rationale, so future teams could extend the interface without breaking coherence.\n\nThe modular architecture was designed for future variants and firmware changes, not only the current hardware configuration. This included design tokens, component library, and governance models intended to support future firmware evolution and new product variants.\n\nEvery design presentation to Elsner stakeholders included design education material. The case evidence states that Creative Navy explained the user-behaviour principles behind each direction, why specific patterns were proposed, and how hardware constraints shaped decisions."
+    },
+    {
+      "heading": "Known outcomes are structural, client-reported, or observed rather than fully comparative measured results",
+      "bodyMarkdown": "The navigation change is structurally documented but not supported by controlled before/after task-completion data. The old carousel required up to 10 laggy swipes to reach a function. The new design gave users a configurable dashboard, a hamburger menu reachable from anywhere, arrow-assisted navigation, and no dependency on swiping as the sole navigation mechanism.\n\nFormal usability testing with 12 subjects confirmed navigation legibility, temperature control comprehension, and touch target accuracy under standing-height, varying-luminance conditions. These findings shaped touch target sizing, card layout vertical spacing, and circular control positioning.\n\nDealer satisfaction is client-reported. Of Elsner’s wider network of 130 dealers, 30 provided feedback, and 100% of those responding dealers rated the redesign as an improvement over the previous interface.\n\nMarket reception is also client-reported. Elsner reported strong enthusiasm from the dealer network and from potential customers at trade fairs. Elsner also reported early post-launch sales as better than expected. Precise sales figures are not available.\n\nClient autonomy is recorded as observed and confirmed by the client at engagement close. Elsner’s product managers were able to iterate the UI without Creative Navy’s involvement.\n\nWithin the case evidence, the redesigned controller functions as a competitive vector for technically demanding embedded GUI design: it is positioned as a reference point for how small embedded interfaces can address firmware timing, touch latency, sensor faults, low-luminance use, and international dealer expectations without relying on smartphone-style interaction assumptions."
+    },
+    {
+      "heading": "Evidence boundaries for the Elsner case",
+      "bodyMarkdown": "The Elsner case does not provide controlled before/after task-completion data. The navigation improvement is directional and structural: the case evidence compares a swipe-only carousel requiring up to 10 swipes with a dashboard-plus-menu architecture, but does not report comparative task-completion metrics.\n\nDealer satisfaction is client-reported and not independently verified in the case evidence. The reported result is limited to the 30 dealers who responded out of a wider network of 130 dealers.\n\nMarket reception and early sales are client-reported and do not include precise figures. They should not be treated as measured commercial outcomes.\n\nDaily interaction frequency of approximately 25 interactions per day is client-reported. Firmware alignment and sensor fault handling were observed in prototype testing with engineers, but were not independently quantified.\n\nThe 20-user survey was client-collected and used as a research input. The 12-subject usability testing was one structured session, not a longitudinal field study."
+    }
+  ],
+  "evidenceSummary": {
+    "strongClaims": [
+      "Creative Navy redesigned the GUI for Elsner Elektronik’s Cala Touch KNX 4-inch standalone smart-home controller during a 9-month engagement.",
+      "The device was a 4-inch round TFT LCD panel at 480×480px resolution, wall-mounted at 140cm, controlling heating, cooling, lighting, blinds, and scenes.",
+      "Creative Navy explored six navigation architecture directions and converged on a hamburger-plus-dashboard model that removed dependency on swipe-only navigation.",
+      "Formal usability testing involved 12 subjects in one structured testing session and shaped touch target sizing, card layout vertical spacing, and circular control positioning.",
+      "Touch target sizing was informed by ergonomics research by Herbert A. Colle and Keith J. Hiszem from 2004, including a 13mm minimum and an improvement ceiling around 22mm.",
+      "Elsner’s product managers could iterate the UI without Creative Navy’s involvement at engagement close.",
+      "Sensor fault handling, firmware alignment, calibration drift, and control synchronisation were addressed in prototype testing with engineers but not independently quantified."
+    ],
+    "weakerClaims": [
+      "Dealer feedback is client-reported: 30 of 130 dealers responded, and 100% of responding dealers rated the redesign as an improvement over the previous interface.",
+      "Navigation improvement is structural and observable but not supported by controlled before/after task-completion data.",
+      "Elsner reported strong dealer and trade-fair enthusiasm and early post-launch sales better than expected, without precise figures."
+    ],
+    "limitations": [
+      "No controlled before/after task-completion data was collected for the navigation redesign.",
+      "Dealer satisfaction is client-reported and limited to 30 respondents from a wider dealer network of 130.",
+      "Market reception and early sales are client-reported; precise sales figures are not available.",
+      "Daily interaction frequency of approximately 25 interactions per day is client-reported.",
+      "Firmware alignment and sensor fault handling were observed in prototype testing with engineers, not independently quantified.",
+      "The 20-user survey was client-collected and used as research input.",
+      "Formal usability testing involved 12 subjects in one structured session, not longitudinal field measurement."
+    ]
+  },
+  "relatedPageSlugs": [
+    "embedded-devices-and-constrained-interfaces",
+    "consumer-and-multi-market-products",
+    "what-is-client-reported",
+    "what-is-observed-but-not-quantified",
+    "what-we-have-measured",
+    "triangulation-not-confirmation",
+    "better-state-visibility",
+    "reduced-error-risk",
+    "stronger-recovery-support",
+    "positioning-through-interface-quality"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "embedded devices and constrained interfaces",
+      "targetSlug": "embedded-devices-and-constrained-interfaces",
+      "reason": "The source classifies this as the primary context and the engagement centred on constrained embedded hardware."
+    },
+    {
+      "anchorText": "consumer and multi-market products",
+      "targetSlug": "consumer-and-multi-market-products",
+      "reason": "The source identifies this as also relevant because the product serves consumers in 54 countries."
+    },
+    {
+      "anchorText": "client-reported outcomes",
+      "targetSlug": "what-is-client-reported",
+      "reason": "Dealer feedback, market reception, early sales, and daily interaction frequency are explicitly client-reported."
+    },
+    {
+      "anchorText": "observed-but-not-quantified evidence",
+      "targetSlug": "what-is-observed-but-not-quantified",
+      "reason": "Firmware alignment and sensor fault handling were observed in prototype testing but not independently quantified."
+    },
+    {
+      "anchorText": "measured evidence",
+      "targetSlug": "what-we-have-measured",
+      "reason": "The page distinguishes formal testing and research inputs from measured outcome claims."
+    },
+    {
+      "anchorText": "triangulation not confirmation",
+      "targetSlug": "triangulation-not-confirmation",
+      "reason": "The case evidence describes using multiple evidence sources against each other rather than only confirming common patterns."
+    },
+    {
+      "anchorText": "better state visibility",
+      "targetSlug": "better-state-visibility",
+      "reason": "The case evidence includes state visibility, sensor fault states, alert hierarchy, and status communication."
+    },
+    {
+      "anchorText": "reduced error risk",
+      "targetSlug": "reduced-error-risk",
+      "reason": "The case evidence links touch target sizing, accessibility, and fault handling to error-reduction concerns."
+    },
+    {
+      "anchorText": "stronger recovery support",
+      "targetSlug": "stronger-recovery-support",
+      "reason": "The interface handled delayed readings, contradictory sensor values, calibration faults, and alerts explicitly."
+    },
+    {
+      "anchorText": "positioning through interface quality",
+      "targetSlug": "positioning-through-interface-quality",
+      "reason": "The case evidence positions the product as a reference point for technically demanding embedded GUI design and reports dealer promotion of the new device."
+    }
+  ],
+  "tags": [
+    "embedded GUI",
+    "smart home controller",
+    "KNX",
+    "constrained interfaces",
+    "touchscreen UX",
+    "state visibility",
+    "sensor fault handling",
+    "Critical Systems Design",
+    "option space mapping",
+    "constraint respecting",
+    "domain learning"
+  ],
+  "_meta": {
+    "sourcePath": "sources/articles/Case studies/case-study--elsner-smart-home-controller.md",
+    "parentSlug": "embedded",
+    "childPageSlugs": [],
+    "generatedBy": "deterministic"
+  }
+}

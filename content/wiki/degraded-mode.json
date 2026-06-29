@@ -1,0 +1,137 @@
+{
+  "slug": "degraded-mode",
+  "title": "Degraded Mode",
+  "pageType": "glossary-term",
+  "category": "glossary",
+  "section": "Industry Terms",
+  "summary": "A degraded mode describes continued operation under reduced capability, often caused by a faulted component, lost input, lost connection, or operating condition beyond designed parameters. The term is used to distinguish persistent reduced operation from momentary errors and complete failures.",
+  "keyFacts": [
+    "A degraded mode means the system has not failed completely; it is operating with less than full operational capability.",
+    "Degraded modes are distinct from errors, which are momentary events requiring immediate correction.",
+    "Degraded modes are distinct from complete failures, which involve cessation of function.",
+    "Degraded modes may persist for extended periods while users continue making decisions and taking actions.",
+    "Silent degradation occurs when a system continues presenting data as complete and reliable even though the underlying input or capability is compromised.",
+    "Designed degraded modes communicate the specific degradation, the remaining reliable capability, and the transition into or out of the degraded state.",
+    "Transparent continuation and brittle failure are two failure patterns associated with systems not designed for degraded modes.",
+    "Case examples include Elsner Elektronik / Cala Touch KNX, Cox Marine cluster displays, Torqeedo maritime HMI, and Gexcon CFD simulation."
+  ],
+  "bodySections": [
+    {
+      "heading": "Definition",
+      "bodyMarkdown": "A degraded mode is an operational condition in which a system continues to function with reduced capability. The reduction may occur because a component has faulted, an input is outside the designed normal range, a connection has been lost, or operating conditions have exceeded designed parameters.\n\nA degraded mode is not a complete failure. The system is still operating within what remains available, but what remains available is less than the system's full operational capability.\n\nA degraded mode is also different from an error. An error is a momentary event requiring immediate correction. A degraded mode may persist for an extended period, during which users continue to make decisions and take actions with a reduced or modified informational picture."
+    },
+    {
+      "heading": "Meaning in Creative Navy's documentation",
+      "bodyMarkdown": "In Creative Navy's documentation, degraded mode is treated as a design target for complex operational software. The relevant design question is not only whether faults, missing inputs, lost connections, or exceeded operating parameters can occur. The design question is what the system does when those conditions occur.\n\nDegraded modes are described as expected operating conditions in maritime, industrial, clinical, and embedded contexts. Sensors may drift, connectivity may drop, components may reach operational limits, and hardware may fault during operation. A system that is designed for degraded mode continues to support work within the constraints that still apply."
+    },
+    {
+      "heading": "What degraded mode design includes",
+      "bodyMarkdown": "Designed degraded modes include four communication and operational requirements.\n\n### Degradation communication identifies the affected capability\n\nA user must know that the system is operating in a degraded mode. The system should identify the specific degradation, such as the affected sensor, component, or capability, rather than presenting the condition as a generic system problem.\n\n### Capability residual communication explains what still works\n\nA user must know what the system can still reliably do in the degraded mode. This includes which data remains valid, which functions remain available, and which decisions can still be made with confidence.\n\nWithout capability residual communication, the user receives only a warning that something is wrong. The user still lacks the information needed to act appropriately in the degraded condition.\n\n### Continued operation support preserves critical functions\n\nCritical functions must remain operable in degraded mode, even at reduced quality. A navigation system that stops displaying all information because one sensor fails makes every remaining navigational decision harder, without gaining operational value from the loss of the failed component.\n\n### Transition visibility marks entry and exit from degraded mode\n\nEntry into degraded mode and exit from degraded mode must be communicated as state transitions. If a system enters degraded mode silently, the user faces the same risk as silent degradation: the interface appears to represent normal operation when the underlying capability has changed."
+    },
+    {
+      "heading": "How degraded mode differs from related conditions",
+      "bodyMarkdown": "A degraded mode differs from transparent continuation because transparent continuation keeps the system running without telling the user that the input or capability has degraded. In transparent continuation, users may make decisions based on data they believe is complete and reliable when it is actually partial or degraded.\n\nA degraded mode differs from brittle failure because brittle failure stops or disrupts operation in a way that is disproportionate to the degradation. A sensor dropout that makes an entire display incoherent, or a connectivity loss that halts a safety-critical workflow, is a brittle response to a reduced condition.\n\nA designed degraded mode is the alternative to both patterns. The system continues operating at reduced capability, communicates what has been reduced, communicates what remains available, and supports the user in continuing work within the new constraints."
+    },
+    {
+      "heading": "Silent degradation as the critical failure pattern",
+      "bodyMarkdown": "Silent degradation is the most consequential degraded-mode failure described in Creative Navy's documentation. It occurs when degradation is not communicated and the system continues to present data as if it were complete and reliable.\n\nSilent degradation creates a false implicit claim of completeness. Users act as though they have a complete operational picture, while the interface gives no signal that the picture is partial, stale, extrapolated, or otherwise compromised.\n\nSilent degradation can occur in embedded systems when a sensor faults and a display shows stale or extrapolated values without indication. It can also occur in data systems when a component fails to refresh and the display continues to show data that appears current."
+    },
+    {
+      "heading": "Examples in practice",
+      "bodyMarkdown": "Elsner Elektronik / Cala Touch KNX is described as a case where sensor faults, calibration drift, and delayed sensor readings were designed for as degraded modes. The interface communicates each fault type specifically, distinguishes routine calibration drift from sensor failure, and continues controlling remaining systems during a single-sensor fault. Firmware timing synchronisation addressed a silent degradation risk in which displayed values no longer corresponded to current sensor readings.\n\nCox Marine cluster displays are described as a case where single-engine and multi-engine fault scenarios were scenario-tested during Concept Convergence. A multi-engine configuration with one engine in fault is a degraded mode because the vessel continues operating at reduced propulsion. The display must communicate which engines are operational and which are not.\n\nTorqeedo maritime HMI is described as a case where storm conditions and sensor connectivity issues were designed for as degraded operating contexts. The sensor cadence synchronisation architecture was designed to prevent apparent data transitions during hardware disruptions, which is described as a form of silent degradation prevention.\n\nGexcon CFD simulation is described as a case where internally contradictory simulation parameters create a degraded model state. The simulation can run, but the outputs are unreliable. The pre-run validation architecture addresses this condition by preventing the simulation from entering a silent-degradation output mode."
+    },
+    {
+      "heading": "Evidence basis",
+      "bodyMarkdown": "The definition of degraded mode is conceptual and operational: the system continues functioning, but with reduced capability. The distinction from errors and complete failures is part of the term's definition.\n\nThe design requirements for degraded modes are supported by documented examples from the case study corpus. The examples cover sensor faults, calibration drift, delayed sensor readings, engine fault scenarios, storm conditions, sensor connectivity issues, and internally contradictory simulation parameters.\n\nThe evidence does not establish a universal taxonomy for every possible degraded mode. It documents how degraded-mode design appears in the listed operational software cases."
+    },
+    {
+      "heading": "Boundaries and limits",
+      "bodyMarkdown": "A degraded mode should not be treated as normal full-capability operation. The system is still functioning, but the informational picture or available capability is reduced.\n\nA degraded mode should not be treated as a complete failure. Complete failure means cessation of function, while degraded mode means continued operation within reduced constraints.\n\nA degraded mode should not be communicated only as a generic fault. The user needs to know what has degraded and what remains reliable enough to support decisions."
+    }
+  ],
+  "evidenceSummary": {
+    "strongClaims": [
+      "A degraded mode is continued system operation with reduced capability caused by a faulted component, abnormal input range, lost connection, or exceeded operating parameters.",
+      "Degraded modes are distinct from errors and complete failures because they may persist while users continue making decisions with a reduced or modified informational picture.",
+      "Designed degraded modes require degradation communication, capability residual communication, continued operation support, and transition visibility.",
+      "Silent degradation occurs when compromised or incomplete data continues to appear complete and reliable to users.",
+      "Elsner Elektronik / Cala Touch KNX, Cox Marine cluster displays, Torqeedo maritime HMI, and Gexcon CFD simulation are documented examples involving degraded-mode design or degraded-state prevention."
+    ],
+    "weakerClaims": [
+      "Systems not designed for degraded modes tend toward transparent continuation or brittle failure patterns."
+    ],
+    "limitations": [
+      "The examples are limited to the listed case study corpus and do not form an exhaustive taxonomy of degraded modes.",
+      "The page defines degraded mode operationally; it does not provide numeric thresholds for when reduced capability becomes degraded mode.",
+      "The evidence basis is case evidence and conceptual definition, not a formal industry standard."
+    ]
+  },
+  "relatedPageSlugs": [
+    "state-visibility",
+    "transition-clarity",
+    "operational-clarity",
+    "workflow-robustness",
+    "trust-calibration",
+    "error-likely-condition",
+    "decision-quality",
+    "cox-marine"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "state visibility",
+      "targetSlug": "state-visibility",
+      "reason": "Degraded-mode design depends on communicating the current operating state to users."
+    },
+    {
+      "anchorText": "transition clarity",
+      "targetSlug": "transition-clarity",
+      "reason": "The source identifies entry into and exit from degraded mode as transitions that must be visible."
+    },
+    {
+      "anchorText": "operational clarity",
+      "targetSlug": "operational-clarity",
+      "reason": "Degraded-mode design requires users to understand what capability remains reliable during reduced operation."
+    },
+    {
+      "anchorText": "workflow robustness",
+      "targetSlug": "workflow-robustness",
+      "reason": "The source states that critical functions must remain operable during degraded mode."
+    },
+    {
+      "anchorText": "trust calibration",
+      "targetSlug": "trust-calibration",
+      "reason": "Silent degradation creates misplaced trust in data that appears complete and reliable."
+    },
+    {
+      "anchorText": "error-likely condition",
+      "targetSlug": "error-likely-condition",
+      "reason": "Uncommunicated degradation can lead users to make decisions from a partial or unreliable operational picture."
+    },
+    {
+      "anchorText": "decision quality",
+      "targetSlug": "decision-quality",
+      "reason": "The source describes users continuing to make decisions under reduced or modified information."
+    },
+    {
+      "anchorText": "Cox Marine",
+      "targetSlug": "cox-marine",
+      "reason": "The source names Cox Marine cluster displays as a case involving multi-engine fault scenarios and degraded operation."
+    }
+  ],
+  "tags": [
+    "degraded mode",
+    "silent degradation",
+    "operational software",
+    "fault communication",
+    "state transition",
+    "reduced capability",
+    "system resilience",
+    "interface design"
+  ],
+  "_meta": {
+    "sourcePath": "sources/articles/Glossary/glossary--industry-terms--degraded-mode.md",
+    "parentSlug": "industry-terms",
+    "childPageSlugs": [],
+    "generatedBy": "deterministic"
+  }
+}

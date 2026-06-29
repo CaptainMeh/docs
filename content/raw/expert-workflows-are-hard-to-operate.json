@@ -1,0 +1,178 @@
+{
+  "_type": "documentationPage",
+  "sourceFile": "Articles/Situations/situations--complexity--expert-workflows-are-hard-to-operate.md",
+  "sourcePath": "sources/articles/Situations/situations--complexity--expert-workflows-are-hard-to-operate.md",
+  "sanityDocumentIdCandidate": "documentationPage.expert-workflows-are-hard-to-operate",
+  "title": "Expert Workflows Are Hard To Operate",
+  "slug": {
+    "_type": "slug",
+    "current": "expert-workflows-are-hard-to-operate"
+  },
+  "pageType": "situation",
+  "category": "situations",
+  "parentSlug": "complexity",
+  "childPageSlugs": [],
+  "excerpt": "Expert workflows become hard to operate when interfaces are designed outside the physical, cognitive, and time-pressured conditions in which experts actually work. The problem is operational rather than conceptual: experts understand the domain, but the interface does not support real use conditions.",
+  "metaTitle": "Expert Workflows Are Hard To Operate",
+  "metaDescription": "Why expert software can fail under real operating conditions even when the domain model and system capability are correct.",
+  "summary": "This situation describes expert software whose domain logic and technical capability are genuine, but whose interface fails under real operating conditions such as movement, interruption, degraded visibility, gloves, non-linear task switching, and time pressure.",
+  "definition": "Expert workflows are hard to operate when expert users understand the domain and the system is technically capable, but the interface does not perform under the physical, cognitive, and time-pressured conditions of real work.",
+  "keyFacts": [
+    "The situation is operational rather than conceptual: the issue is not that experts lack domain knowledge, but that the interface was not designed for real conditions of use.",
+    "Common conditions include movement, interruption, non-linear task switching, gloved hands, degraded lighting, competing demands on attention, and time pressure.",
+    "Three failure patterns are identified: testing under non-operational conditions, placing state reconstruction on the user, and accumulating accidental complexity on top of essential complexity.",
+    "In the Gexcon example, time to first successful simulation changed from 4 days to 6 hours after Creative Navy's Critical Systems Design engagement, with figures measured by Gexcon across real deployment locations.",
+    "In the Beissbarth example, calibration time changed from 18 minutes to 12 minutes per vehicle, measured by Beissbarth across 8 production deployment locations.",
+    "In the Triopsis example, live-product analytics recorded 62% faster job discovery, 83% faster job sequence optimisation, and 58% faster weekly planning.",
+    "Creative Navy's Critical Systems Design method addresses this situation through domain learning and performance in reality before interface decisions are made."
+  ],
+  "tags": [
+    "expert workflows",
+    "operational complexity",
+    "cognitive load",
+    "state reconstruction",
+    "accidental complexity",
+    "domain learning",
+    "performance in reality",
+    "Critical Systems Design"
+  ],
+  "bodyMarkdown": "## Expert workflow operation fails when real conditions are not design inputs\n\nCreative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nExpert workflows become hard to operate when the interface is designed under controlled conditions and then deployed into physical and cognitive reality. The domain may be represented correctly. The system capability may be genuine. The workflow structure may be sound. The operational failure appears when the interface must function during movement, interruption, non-linear task switching, gloved-hand interaction, degraded lighting, competing attention demands, and time pressure.\n\nThis situation is not caused by a lack of expert knowledge. It is caused by treating real conditions of use as afterthoughts rather than design inputs. The interface demands interpretation at the same moment the work itself requires attention.\n\n## Operational difficulty is distinct from conceptual complexity\n\nExpert workflow operation is distinct from software that is too complex for its intended users. In software that is too complex for its intended users, the conceptual model is wrong for the audience. The domain is communicated incorrectly to the wrong user type.\n\nIn this situation, the interface fails users who already understand the domain correctly. The failure is operational, not conceptual. The expert knows what the system is for and what the work requires, but the interface does not support the conditions under which the work occurs.\n\n## Three mechanisms make expert workflows hard to operate\n\nExpert workflows in complex domains compress high-stakes decisions into time-pressured, physically constrained, cognitively loaded conditions. The interface must perform without consuming attention that the work itself requires. When that condition is not the explicit design target, three failure patterns appear.\n\n### Interfaces are tested under conditions that do not exist in operation\n\nControlled usability testing may not reproduce the conditions that determine whether expert software performs in the field. A calibration technician reading values from two metres while moving, a maritime captain making course corrections under vibration and spray, and a scheduler managing exception cascades under peak-load pressure are examples of operational conditions that do not appear in standard desk-based testing.\n\nAn interface can pass controlled testing and still fail when expert performance is most needed. The test environment removes the pressure, movement, lighting, visibility, vibration, and interruption conditions that shape real use.\n\n### Interfaces place state reconstruction on the expert user\n\nExpert workflow operation degrades when the interface requires users to infer system state from multiple sources. State may be distributed across screens, indicators, and values that do not update in concert.\n\nExperts can compensate by maintaining a mental model of current system state while performing their actual work. That compensation can function under normal conditions. Under pressure, the cognitive cost of maintaining the mental model competes with the cognitive cost of the task itself.\n\n### Accidental complexity accumulates on top of essential complexity\n\nExpert software with long development histories often contains structure that reflects years of engineering decisions as well as domain logic. Correct and trusted workflows can sit beside navigational overhead, redundant states, and interaction patterns that once made sense but have drifted from operational reality.\n\nExperts learn workarounds for accidental complexity. Once those workarounds are internalised, the workarounds become invisible and the operational cost of the interface becomes invisible with them.\n\n## Operational cost is measured in work outcomes, not satisfaction\n\nThe cost of hard-to-operate expert workflows appears in operational outcomes. A calibration technician who has to re-read a display because the previous reading was ambiguous under real lighting conditions adds time, introduces measurement uncertainty, and increases procedural error risk.\n\nA CFD engineer who spends four days reaching a first successful simulation because the interface does not communicate where errors occurred or how to correct them creates a direct operational cost. In the Gexcon example, that cost was measured in time and safety-assessment confidence.\n\nThe secondary cost is commercial. Expert software that requires experts to work harder than the domain requires can signal to prospective buyers that operational maturity has not kept pace with technical capability. In markets where buyers evaluate products by watching experts use them, visible interface friction can undermine the sale.\n\n## Gexcon CFD simulation example: four days to first successful simulation before redesign\n\nGexcon's computational fluid dynamics software was used for gas dispersion modelling, explosion risk assessment, and facility safety validation. The scientific capability was genuine and differentiated, but after fifteen years of development the interface had accumulated accidental complexity over essential scientific structure.\n\nEngineers used the simulation interface alongside a three-dimensional facility view. Attention shifted between the spatial representation, simulation parameters, and system controls. Workflows were non-linear because engineers moved between configuration, verification, and interpretation as part of scientific reasoning under uncertainty.\n\nBefore Creative Navy's Critical Systems Design engagement, documented operational figures from real use were 4 days to first successful simulation, 5–8 configuration errors per simulation, 4–6 hours corrective load per error, and one person per team capable of operating the system.\n\nAfter Creative Navy's Critical Systems Design engagement, the figures became 6 hours to first successful simulation, 1–2 configuration errors per simulation, approximately 20 minutes corrective load per error, and 3–4 active users per team. The figures were measured by Gexcon across real deployment locations.\n\nCreative Navy's Critical Systems Design method addressed the Gexcon case through domain learning before design decisions. Creative Navy became productive users of the CFD software, distinguished essential complexity required for correct scientific outcomes from accidental complexity accumulated without scientific purpose, and targeted the accidental complexity while preserving the essential complexity.\n\n## Beissbarth automotive calibration example: values had to be read while moving\n\nBeissbarth's calibration equipment was used in manufacturer-authorised inspection centres meeting the standards of Mercedes, Daimler, and BMW. Calibration procedures were sequential and sensitive to timing. Technicians moved around the vehicle with tools in hand and read the embedded OEM display from 2–3 metres while moving.\n\nGloves restricted fine touch interaction. Lighting varied and reflective surfaces reduced contrast. The calibration sequence did not pause for interface interpretation, so a delay in reading a value slowed the calibration and could introduce measurement error.\n\nThe previous interface had been developed through three iterations by engineers who understood the machinery. The functional workflows were correct and trusted. The visual hierarchy was not designed for the conditions of use: measurement states, tolerances, and progress indicators carried equal visual weight, making them unreliable to distinguish at distance under movement and variable lighting.\n\nCreative Navy's Critical Systems Design method began with domain learning that addressed physical operating conditions directly. Creative Navy studied how tolerances were interpreted during real calibration sequences, how technicians handled borderline values, and how technicians confirmed alignment states while moving. Option space mapping variants were evaluated under reproduced workshop lighting and viewing distances.\n\nThe redesign produced unambiguous state communication across three device classes. It accepted reduced information density per screen in exchange for a single reading logic across the whole system.\n\nCalibration time fell from 18 minutes to 12 minutes per vehicle, measured by Beissbarth across 8 production deployment locations. Repeated measurements reduced. Training was eliminated, and Beissbarth deploys the system without onboarding training.\n\n## Triopsis workforce management example: scheduling failed under peak-load conditions\n\nTriopsis served schedulers managing thousands of weekly interventions, operations managers scanning for exceptions across broad time horizons, and field technicians performing tasks outdoors with gloves, in direct sunlight, under time pressure and interruption. Three user roles with different operational realities shared one interface.\n\nSchedulers under peak load managed weather incidents, conflicting job locations, overlapping assignments, and sudden crew shortages simultaneously. The legacy interface required scanning multiple screens to make a single scheduling decision. Conflicts and exceptions were discovered mid-task rather than surfaced in advance.\n\nCreative Navy's Critical Systems Design method used three in-situ observation sessions to document scheduler and field technician conditions before redesign decisions were made. The redesign treated peak-load conditions and exception workflows as normal states rather than edge cases.\n\nPredictive conflict indicators surfaced scheduling problems before users encountered them under pressure. Weather incidents, partial completions, and delayed jobs received first-class interface treatment rather than workaround paths.\n\nTriopsis productivity figures were field-measured in the live product through product analytics: 62% faster job discovery, 83% faster job sequence optimisation, and 58% faster weekly planning. The figures are described as operational results from real users in real conditions, not controlled experiment results.\n\n## Creative Navy's Critical Systems Design method addresses conditions before interface decisions\n\nCreative Navy's Critical Systems Design method addresses hard-to-operate expert workflows through practices that operate before interface decisions are made. Domain learning is the structured process of becoming a productive user of the system being redesigned, so that the conditions of use are understood rather than assumed.\n\nIn the Gexcon engagement, Creative Navy studied manuals, ran controlled tests inside the application, and attended intensive stakeholder sessions to reverse-engineer the scientific workflow. In the Beissbarth engagement, Creative Navy studied calibration sequences and analysed how technicians interpret tolerances under movement. In the Triopsis engagement, Creative Navy conducted three in-situ observation sessions before redesign decisions were made.\n\nPerformance in reality is the design standard that follows from domain learning. Creative Navy's Critical Systems Design method evaluates interface variants against the operational constraints that exist in the field, not the constraints that are convenient in a studio setting.\n\nThe intended outcome in this situation is not simplification for non-experts. The intended outcome is expert software whose users can work at the level the domain requires, without working around the interface to reach it.",
+  "claims": [
+    {
+      "claim": "Expert workflow operation fails when interfaces are not designed for real physical, cognitive, and time-pressured conditions of use.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "moderate",
+      "notes": "Supported by the situation description and stated distinction between operational and conceptual failure."
+    },
+    {
+      "claim": "The situation is distinct from software that is too complex for its intended users because the affected users understand the domain correctly.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "moderate",
+      "notes": "The source explicitly distinguishes operational failure from conceptual mismatch."
+    },
+    {
+      "claim": "Three recurring failure patterns are testing under non-operational conditions, placing state reconstruction on the user, and accumulating accidental complexity on top of essential complexity.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "moderate",
+      "notes": "The source lists these three mechanisms directly."
+    },
+    {
+      "claim": "In the Gexcon example, time to first successful simulation changed from 4 days to 6 hours, configuration errors changed from 5–8 to 1–2 per simulation, corrective load changed from 4–6 hours to approximately 20 minutes per error, and active users changed from one person per team to 3–4 active users per team.",
+      "evidenceType": "client-measured",
+      "sourceStrength": "case evidence",
+      "notes": "The source states that these figures were measured by Gexcon across real deployment locations."
+    },
+    {
+      "claim": "In the Beissbarth example, calibration time fell from 18 minutes to 12 minutes per vehicle, measured by Beissbarth across 8 production deployment locations.",
+      "evidenceType": "client-measured",
+      "sourceStrength": "case evidence",
+      "notes": "The source also states that repeated measurements reduced and training was eliminated."
+    },
+    {
+      "claim": "In the Triopsis example, live-product analytics recorded 62% faster job discovery, 83% faster job sequence optimisation, and 58% faster weekly planning.",
+      "evidenceType": "field-measured",
+      "sourceStrength": "case evidence",
+      "notes": "The source describes these as operational figures from real users in real conditions, not controlled experiment results."
+    },
+    {
+      "claim": "Creative Navy's Critical Systems Design method addresses this situation through domain learning and performance in reality before interface decisions are made.",
+      "evidenceType": "Creative Navy-observed",
+      "sourceStrength": "engagement record",
+      "notes": "The source describes the practices and gives examples from Gexcon, Beissbarth, and Triopsis."
+    }
+  ],
+  "limitations": [
+    "The examples are drawn from three documented engagements: Gexcon, Beissbarth, and Triopsis.",
+    "Gexcon and Beissbarth metrics are client-measured, not described as independently verified third-party results.",
+    "Triopsis metrics are described as live-product analytics from real users in real conditions, not controlled experiment results.",
+    "The page addresses expert users who understand the domain correctly; it does not cover cases where the conceptual model is wrong for the intended audience."
+  ],
+  "publicationBlockers": [],
+  "questionsForReview": [
+    "None"
+  ],
+  "relatedPageSlugs": [
+    "software-too-complex-for-users",
+    "system-state-is-hard-to-understand",
+    "operators-rely-on-memory-too-much",
+    "abnormal-conditions-break-the-interface",
+    "the-interface-increases-cognitive-load-at-the-worst-moment",
+    "design-debt-is-turning-into-operational-debt",
+    "the-product-works-in-demos-but-not-in-real-use",
+    "training-burden-is-too-high",
+    "beissbarth",
+    "triopsis-workforce-management-saas"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "software that is too complex for its intended users",
+      "targetSlug": "software-too-complex-for-users",
+      "placementHint": "Use in the section 'Operational difficulty is distinct from conceptual complexity'.",
+      "reason": "The source explicitly distinguishes this situation from conceptual complexity for the wrong user type."
+    },
+    {
+      "anchorText": "system state is hard to understand",
+      "targetSlug": "system-state-is-hard-to-understand",
+      "placementHint": "Use near the subsection on state reconstruction burden.",
+      "reason": "The source describes experts reconstructing system state from multiple screens, indicators, and values."
+    },
+    {
+      "anchorText": "operators rely on memory too much",
+      "targetSlug": "operators-rely-on-memory-too-much",
+      "placementHint": "Use near the subsection on mental model compensation under pressure.",
+      "reason": "The source describes experts maintaining a mental model of state in addition to performing the work."
+    },
+    {
+      "anchorText": "abnormal conditions break the interface",
+      "targetSlug": "abnormal-conditions-break-the-interface",
+      "placementHint": "Use near the discussion of movement, interruption, degraded lighting, vibration, and peak-load pressure.",
+      "reason": "The source describes interfaces that pass controlled testing but fail under real operating conditions."
+    },
+    {
+      "anchorText": "the interface increases cognitive load at the worst moment",
+      "targetSlug": "the-interface-increases-cognitive-load-at-the-worst-moment",
+      "placementHint": "Use near the explanation of cognitive cost under pressure.",
+      "reason": "The source states that state reconstruction competes with the cognitive cost of the work itself under pressure."
+    },
+    {
+      "anchorText": "design debt is turning into operational debt",
+      "targetSlug": "design-debt-is-turning-into-operational-debt",
+      "placementHint": "Use near the subsection on accidental complexity accumulating over long development histories.",
+      "reason": "The source describes accumulated interface structure becoming operational cost."
+    },
+    {
+      "anchorText": "the product works in demos but not in real use",
+      "targetSlug": "the-product-works-in-demos-but-not-in-real-use",
+      "placementHint": "Use near the section on controlled testing versus operational conditions.",
+      "reason": "The source describes interfaces that pass controlled testing but fail in the conditions where expert performance is required."
+    },
+    {
+      "anchorText": "training burden is too high",
+      "targetSlug": "training-burden-is-too-high",
+      "placementHint": "Use near the Beissbarth example where onboarding training was eliminated.",
+      "reason": "The source states that Beissbarth deploys the redesigned system without onboarding training."
+    },
+    {
+      "anchorText": "Beissbarth automotive calibration",
+      "targetSlug": "beissbarth",
+      "placementHint": "Use when the Beissbarth example is mentioned.",
+      "reason": "The source includes Beissbarth as a grounded example and the linking context provides an allowed Beissbarth page slug."
+    },
+    {
+      "anchorText": "Triopsis workforce management SaaS",
+      "targetSlug": "triopsis-workforce-management-saas",
+      "placementHint": "Use when the Triopsis example is mentioned.",
+      "reason": "The source includes Triopsis as a grounded example and the linking context provides an allowed Triopsis page slug."
+    }
+  ],
+  "qualityChecks": {
+    "factsOnlyFromCurrentSource": true,
+    "documentationStyle": true,
+    "noMarketingLanguage": true,
+    "noInventedClaims": true,
+    "linksOnlyFromLinkingContext": true,
+    "internalNotesNotPublished": true,
+    "readyForSanityImport": true
+  },
+  "__sourceCategoryDir": "Situations"
+}

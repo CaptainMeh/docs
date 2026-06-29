@@ -1,0 +1,176 @@
+{
+  "_type": "documentationPage",
+  "sourceFile": "Articles/Situations/situations--complexity--the-product-works-in-demos-but-not-in-real-use.md",
+  "sourcePath": "sources/articles/Situations/situations--complexity--the-product-works-in-demos-but-not-in-real-use.md",
+  "sanityDocumentIdCandidate": "documentationPage.the-product-works-in-demos-but-not-in-real-use",
+  "title": "The Product Works In Demos But Not In Real Use",
+  "slug": {
+    "_type": "slug",
+    "current": "the-product-works-in-demos-but-not-in-real-use"
+  },
+  "pageType": "situation",
+  "category": "situations",
+  "parentSlug": "complexity",
+  "childPageSlugs": [],
+  "excerpt": "Products can perform well in controlled demos and fail in real use because demo conditions do not match operational conditions. The gap often appears through data mismatch, cognitive load mismatch, developer model substitution, or guidance architecture mismatch.",
+  "metaTitle": "Demos Work, Real Use Fails",
+  "metaDescription": "Why products that work in controlled demos fail under real data, ambient cognitive load and unsupervised use, with grounded examples.",
+  "summary": "This situation describes the performance gap between controlled product demonstrations and unsupervised operational use. It explains the structural causes, commercial cost, organisational cost, and documented examples from Polymatica, Pixelart Fugo, and Squaremind.",
+  "definition": "A demo-to-real-use gap is the condition where a product appears to perform under controlled demonstration conditions but fails when users operate it with their own data, workload, interruptions, assumptions, and recovery needs.",
+  "keyFacts": [
+    "Demo conditions differ from real use because a product specialist controls the data, scenario, pace, and frame of reference during a walkthrough.",
+    "Real users arrive with incomplete, inconsistent, or inherited data, and they often use the system without guidance while managing other work.",
+    "The source identifies data mismatch and cognitive load mismatch as two structural causes of demo-to-real-use failure.",
+    "Developer model substitution can occur when an interface encodes the development team's model rather than the user's model of the task.",
+    "In the Polymatica example, 2% of users could complete key operations independently before redesign; independent task completion rose to 40% after release 1 and 56% after release 2, based on product analytics from the live system.",
+    "In the Pixelart Fugo example, NPS changed from 57% to 89%, client-measured before and after the redesigned platform launched.",
+    "In the Squaremind example, the pre-redesign completion rate of 2 in 14 became 27 in 29 in post-redesign ecological testing.",
+    "Creative Navy's Critical Systems Design method addresses this situation through Sandbox Experiments, domain learning, and user research against real operational conditions."
+  ],
+  "tags": [
+    "demo-to-real-use gap",
+    "operational reality",
+    "data mismatch",
+    "cognitive load",
+    "developer model substitution",
+    "guidance architecture mismatch",
+    "Sandbox Experiments",
+    "domain learning",
+    "performance in reality",
+    "post-sale adoption"
+  ],
+  "bodyMarkdown": "## Demo performance is not operational performance\n\nCreative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nA product that works in a demo can fail in real use because demo conditions and operational conditions are structurally different environments. In a demo, a product specialist controls the data shown, the scenario followed, the pace of the walkthrough, and the frame of reference used by the audience. Those conditions do not persist when users operate the system independently.\n\nReal users bring their own data, which may be incomplete, inconsistently structured, or inherited from previous systems. Real users also work under cognitive load, alongside other tasks, and without a guide. They may return after days away to check or change something, rather than experiencing the product as a linear first encounter.\n\nThe demo-to-real-use gap is not accidental. It is the predictable consequence of designing and testing under conditions that do not resemble operational reality. The product communicates a capability it cannot consistently deliver. Sales cycles succeed and post-sale adoption fails.\n\n## Structural causes of demo-to-real-use failure\n\nData mismatch occurs when a product is developed and tested against clean, representative, idealised data while users operate with messy operational data. Sample datasets can make a workflow appear clear because edge cases and inconsistent structures have been excluded from testing. The first unsupervised encounter then happens against imported records, duplicate entries, inconsistent column names, unexpected file structures, or formats the interface has not been tested against.\n\nCognitive load mismatch occurs when a product is designed for the instructed experience of a demo rather than the ambient experience of real use. In a demo, a specialist directs attention, explains transitions, and manages the audience's frame of reference. In real use, the interface must orient a user who may be interrupted, time-pressured, unfamiliar with the system, or returning to a task they only partly remember.\n\nDeveloper model substitution occurs when a product team iterates internally without sustained user research. The interface gradually encodes the development team's model of how the system works instead of the user's model of what they are trying to do. The difference is often invisible inside the team because the team's mental model matches the interface. It becomes visible when a user who does not share that mental model encounters the system for the first time.\n\n## Commercial and organisational cost of the gap\n\nThe commercial cost of demo-to-real-use failure is lost post-sale adoption. A prospect sees a compelling demo, signs a contract, and then encounters a product that does not behave the way it appeared to behave during the sales process. Support tickets rise. Renewal conversations become more difficult. The product's reputation diverges from what the sales process communicates.\n\nThe organisational cost is poor product decision-making. Teams that cannot distinguish demo performance from operational performance cannot accurately identify what needs to change. Issues may be attributed to user error or training quality when the root cause is that the product was not tested against the conditions in which it would actually be used.\n\n## Polymatica showed how clean training data can hide first-contact failure\n\nPolymatica had built an OLAP analytics engine that trained users could operate productively. Before the redesign, every customer required the founder to personally deliver training, and 2% of users could complete key operations independently without consulting help documentation.\n\nThe failure appeared when users imported their own real data for the first time after training. Training had used clean, well-structured sample data. Operational files came from acquisitions, other tools, and different teams using different conventions. The interface had no path through the condition users actually encountered.\n\nA representative failure involved a user importing a spreadsheet while expecting three columns: city, sales, and staff. The file contained eight columns. Cities appeared in two columns, and no single column contained only cities. The user could not identify which column to use, had no framework for diagnosing the problem, and stopped.\n\nThe design response introduced a data preparation and preview step between importing data and beginning operations. Users could inspect sample values from their file, rename columns to match their mental model, and exclude fields that would add noise. The messy data failure mode largely disappeared from support requests after this step was introduced.\n\nMeasured outcomes across two redesign releases were recorded through product analytics from the live system: independent task completion rose from 2% before the redesign to 40% after release 1 and 56% after release 2.\n\n## Pixelart Fugo showed how a workflow can encode the developer sequence instead of the user's question\n\nPixelart Fugo served media agencies and organisations managing screens across locations. The existing system had a known NPS of 57%, and the playlist setup workflow appeared logical and complete in the development team's walkthrough. In real use, the workflow did not support common returning tasks such as checking what was playing, managing a campaign across 40 locations, or adjusting a schedule for a specific screen.\n\nThe playlist setup used a linear wizard defined by the internal sequence for creating a playlist object. To check or change something, users had to re-enter the wizard and navigate back to the relevant step. The structure represented the developer's sequence for producing a playlist, not the user's question about screens.\n\nSandbox Experiments surfaced two common use cases the development team had treated as minor. Some organisations managed multiple screens at a single location, while the system had been built around multi-location deployments as the primary pattern. Some media agencies ran a single campaign schedule across 20 or 40 locations simultaneously, while the system assumed location-specific schedules.\n\nThe redesign replaced the wizard with an overview structure showing three dimensions: what content plays, where it plays, and when it plays. Dedicated mini-flows configured each dimension independently. Returning to check or change something became faster because the overview was the first thing seen and the relevant mini-flow was one step away.\n\nPixelart Fugo's NPS changed from 57% to 89%. The evidence basis is client-measured before and after data: Pixelart Fugo surveyed all existing users, and the second measurement was taken approximately two months after the redesigned platform launched.\n\n## Squaremind showed how autonomous physical use can fail without recovery architecture\n\nSquaremind had built a dermatology scanning device with functioning hardware, a robot arm that scanned, and software that processed images. In internal tests and demonstrations to two friendly dermatologists, the technical capability was visible. The failure appeared when the founders tested the device with actual patients, unassisted.\n\nBefore Creative Navy's involvement, Squaremind's own test involved 14 users. Only 2 completed the process. Of the remaining 12, 8 got stuck within the first minute and 4 got stuck around the 3-minute mark. The evidence basis for this pre-redesign rate is client-reported background from Squaremind's own test.\n\nThe failure was not described as technical. The device worked. The failure was that the interface reflected the developer's model of the scanning process: a linear sequence of instructions displayed at each step. Patients experienced a first-time, unassisted, physical process while alone in a room with a moving robot arm. If anything went wrong, the interface provided no recovery path.\n\nCreative Navy conducted 4 unstructured field observation sessions in France. These sessions were deliberately not structured as measurement because the system was performing too poorly for systematic measurement to produce useful signal. The observation established that confused patients had nothing to act on: the interface had one path, and deviation from it produced a state the interface had no response to.\n\nThe design response used the Inform–Prevent–Correct framework across every step of the scan flow. The framework managed the patient's mental model at each stage, prevented specific physical confusion events before they occurred, and provided structured recovery when they did occur. Patient confusion was treated as a designed state rather than an edge case.\n\nPost-redesign ecological testing involved 29 users in London and Paris and was co-conducted with an independent dermatologist. The result was 27 independent completions. The 12 users who got stuck all recovered and completed the procedure. The pre-redesign completion rate of 2 in 14 became 27 in 29. The evidence basis for the post-redesign rate is Creative Navy-recorded ecological testing co-conducted with an independent dermatologist.\n\n## How Creative Navy's Critical Systems Design method addresses this situation\n\nCreative Navy's Critical Systems Design method addresses demo-to-real-use gaps through Sandbox Experiments, especially through domain learning and user research conducted against real operational conditions. Domain learning is the process of the design team becoming productive users of the system being redesigned. It exposes the difference between how a system behaves under tested conditions and how it behaves under real ones.\n\nIn the Polymatica engagement, Creative Navy ran the software against real data during the research phase rather than only against sample data. The messy-data failure mode became visible because the design team encountered it as users rather than reviewing it from outside.\n\nIn the Pixelart Fugo engagement, Sandbox Experiments identified single-location multi-screen operation and shared schedules across multiple locations. These were not found by asking users for abstract preferences. They were surfaced by observing what users actually did.\n\nThe Squaremind engagement adds a related mechanism: guidance architecture mismatch. The product had been designed for an uninterrupted case in which the patient followed every instruction correctly. Operational reality involved a patient encountering an unfamiliar physical process alone for the first time. Designing from that reality required a guidance architecture that held up when things went wrong, not only when everything went right.\n\n## Evidence boundaries\n\nThe examples on this page support the diagnosis of demo-to-real-use failure but do not reduce all cases to one cause. Polymatica illustrates data mismatch. Pixelart Fugo illustrates developer model substitution and workflow assumption mismatch. Squaremind illustrates guidance architecture mismatch in an autonomous physical process.\n\nThe evidence basis differs by example. Polymatica outcomes are based on product analytics from the live system. Pixelart Fugo outcomes are client-measured before and after the redesigned platform launched. Squaremind's pre-redesign completion rate is client-reported background from Squaremind's own test, while the post-redesign completion rate is Creative Navy-recorded ecological testing co-conducted with an independent dermatologist.\n\nThe general principle is bounded by the documented cases: products designed from operational reality perform more consistently in real use than products designed only for controlled conditions. The page does not establish that every product with strong demo performance will fail in the same way, or that one design response applies across all products.",
+  "claims": [
+    {
+      "claim": "Products can work in controlled demos and fail in real use because demo conditions differ structurally from operational conditions.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "moderate",
+      "notes": "Supported by the situation section, which contrasts controlled demo walkthroughs with real users' data, cognitive load, and unsupervised return use."
+    },
+    {
+      "claim": "Data mismatch and cognitive load mismatch are two structural causes of demo-to-real-use failure.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "moderate",
+      "notes": "The source explicitly identifies these two causes and explains how they produce failure independently and together."
+    },
+    {
+      "claim": "Developer model substitution can make an interface fit the development team's mental model while failing for first-time users.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "moderate",
+      "notes": "The source describes this as a related cause in longer-lived products built without sustained user research."
+    },
+    {
+      "claim": "In the Polymatica example, independent task completion rose from 2% before redesign to 40% after release 1 and 56% after release 2.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "The source gives product analytics from the live system as the evidence basis."
+    },
+    {
+      "claim": "In the Pixelart Fugo example, NPS changed from 57% to 89% after the redesigned platform launched.",
+      "evidenceType": "client-measured",
+      "sourceStrength": "case evidence",
+      "notes": "The source states that Pixelart Fugo surveyed all existing users and that the second measurement occurred approximately two months after launch."
+    },
+    {
+      "claim": "In the Squaremind example, the pre-redesign completion rate of 2 in 14 became 27 in 29 in post-redesign ecological testing.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "case evidence",
+      "notes": "The source distinguishes client-reported pre-redesign background from Creative Navy-recorded post-redesign ecological testing co-conducted with an independent dermatologist."
+    },
+    {
+      "claim": "Creative Navy's Critical Systems Design method addresses this situation through Sandbox Experiments, domain learning, and user research conducted against real operational conditions.",
+      "evidenceType": "Creative Navy-observed",
+      "sourceStrength": "engagement record",
+      "notes": "The source describes how Sandbox Experiments, domain learning, and research against operational conditions surfaced the failure modes in the documented engagements."
+    }
+  ],
+  "limitations": [
+    "The examples are case-specific and illustrate different mechanisms: data mismatch, workflow assumption mismatch, developer model substitution, and guidance architecture mismatch.",
+    "The Pixelart Fugo NPS evidence is client-measured rather than independently measured by Creative Navy.",
+    "The Squaremind pre-redesign completion rate is client-reported background from Squaremind's own test, not Creative Navy-recorded measurement.",
+    "The 4 Squaremind field observation sessions in France were deliberately unstructured and not used as systematic measurement.",
+    "The page does not establish a single universal design response for every product that works in demos but fails in real use."
+  ],
+  "publicationBlockers": [],
+  "questionsForReview": [
+    "None"
+  ],
+  "relatedPageSlugs": [
+    "training-burden-is-too-high",
+    "product-cannot-scale-without-specialist-onboarding",
+    "buyers-see-the-product-as-hard-to-adopt",
+    "software-too-complex-for-users",
+    "research-is-not-informing-decisions",
+    "the-team-is-shipping-without-a-clear-behaviour-model",
+    "abnormal-conditions-break-the-interface",
+    "users-cannot-recover-cleanly-from-errors",
+    "the-interface-increases-cognitive-load-at-the-worst-moment",
+    "squaremind"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "training burden is too high",
+      "targetSlug": "training-burden-is-too-high",
+      "placementHint": "Use near the Polymatica discussion of founder-led training and low independent task completion.",
+      "reason": "The Polymatica example connects demo success to a high training burden before redesign."
+    },
+    {
+      "anchorText": "product cannot scale without specialist onboarding",
+      "targetSlug": "product-cannot-scale-without-specialist-onboarding",
+      "placementHint": "Use near the commercial cost section or the Polymatica example.",
+      "reason": "The situation describes products that require guided use or specialist training to succeed after sale."
+    },
+    {
+      "anchorText": "buyers see the product as hard to adopt",
+      "targetSlug": "buyers-see-the-product-as-hard-to-adopt",
+      "placementHint": "Use near the section on post-sale adoption and renewal difficulty.",
+      "reason": "The page explains how a demo-to-real-use gap affects adoption perception after purchase."
+    },
+    {
+      "anchorText": "research is not informing decisions",
+      "targetSlug": "research-is-not-informing-decisions",
+      "placementHint": "Use near the explanation of developer model substitution or the Sandbox Experiments section.",
+      "reason": "The source connects developer model substitution to building without sustained user research."
+    },
+    {
+      "anchorText": "the team is shipping without a clear behaviour model",
+      "targetSlug": "the-team-is-shipping-without-a-clear-behaviour-model",
+      "placementHint": "Use near the developer model substitution discussion.",
+      "reason": "The failure pattern is related to teams encoding internal system logic rather than user behaviour."
+    },
+    {
+      "anchorText": "abnormal conditions break the interface",
+      "targetSlug": "abnormal-conditions-break-the-interface",
+      "placementHint": "Use near the Polymatica messy-data example or the Squaremind recovery-path discussion.",
+      "reason": "The examples show interfaces failing when real conditions deviate from the ideal scenario."
+    },
+    {
+      "anchorText": "users cannot recover cleanly from errors",
+      "targetSlug": "users-cannot-recover-cleanly-from-errors",
+      "placementHint": "Use near the Squaremind discussion of no recovery path and Inform–Prevent–Correct.",
+      "reason": "The Squaremind example centres on confusion states that required structured recovery."
+    },
+    {
+      "anchorText": "the interface increases cognitive load at the worst moment",
+      "targetSlug": "the-interface-increases-cognitive-load-at-the-worst-moment",
+      "placementHint": "Use near the cognitive load mismatch section.",
+      "reason": "The situation describes real use under time pressure and ambient cognitive load."
+    },
+    {
+      "anchorText": "Squaremind",
+      "targetSlug": "squaremind",
+      "placementHint": "Use on the first Squaremind mention in the grounded examples section.",
+      "reason": "Squaremind is a named documented example and a matching allowed case-study slug is available."
+    }
+  ],
+  "qualityChecks": {
+    "factsOnlyFromCurrentSource": true,
+    "documentationStyle": true,
+    "noMarketingLanguage": true,
+    "noInventedClaims": true,
+    "linksOnlyFromLinkingContext": true,
+    "internalNotesNotPublished": true,
+    "readyForSanityImport": true
+  },
+  "__sourceCategoryDir": "Situations"
+}

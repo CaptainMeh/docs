@@ -1,0 +1,158 @@
+{
+  "_type": "documentationPage",
+  "sourceFile": "Articles/Situations/situations--delivery--design-does-not-survive-development.md",
+  "sourcePath": "sources/articles/Situations/situations--delivery--design-does-not-survive-development.md",
+  "sanityDocumentIdCandidate": "documentationPage.design-does-not-survive-development",
+  "title": "Design Does Not Survive Development",
+  "slug": {
+    "_type": "slug",
+    "current": "design-does-not-survive-development"
+  },
+  "pageType": "situation",
+  "category": "situations",
+  "parentSlug": "delivery-and-execution",
+  "childPageSlugs": [],
+  "excerpt": "Design does not survive development when design artefacts reach implementation but the reasoning behind them does not transfer. The result may appear as velocity erosion, translation loss, or a production gap between implementation and operational use.",
+  "metaTitle": "Design Does Not Survive Development",
+  "metaDescription": "A delivery failure pattern where design artefacts transfer but design reasoning does not, causing drift, inconsistency, or poor operational adoption.",
+  "summary": "Design does not survive development when implementation diverges from design intent, or when a technically correct implementation fails to produce the intended operational outcome. Creative Navy describes three structural expressions: velocity erosion, translation loss, and the production gap.",
+  "definition": "Design does not survive development when a software delivery process transfers design artefacts without transferring enough design understanding for implementation teams to preserve intent under edge cases, constraints, scope changes, and operational reality.",
+  "keyFacts": [
+    "The situation is described as a gap between what was designed and what was built, inconsistent behaviour in production, and repeated reintroduction of earlier design decisions.",
+    "Creative Navy identifies three structural expressions: velocity erosion, translation loss, and the production gap.",
+    "Velocity erosion occurs when development output outpaces design coverage and developers make local decisions under time pressure.",
+    "Translation loss occurs when specifications are complete but do not carry the reasoning needed to adapt design intent under implementation constraints.",
+    "The production gap occurs when implementation matches the design but users do not adopt the designed flows because the design did not reflect operational reality.",
+    "In the Bofin example, a 50-person engineering team was moving across modules including onboarding, identity verification, account aggregation, and transaction initiation.",
+    "In the Triopsis example, a 9-month redesign produced 68 components and 200+ documented states, followed by 2 years of implementation partnership.",
+    "Triopsis product analytics recorded 62% faster job discovery, 83% faster sequence optimisation, and 58% faster weekly planning.",
+    "In the WCO/IPM example, usability testing involved 47 participants from Italy, Romania, Uzbekistan, Algeria, and Spain.",
+    "Creative Navy links this situation to Organizational Integration, Implementation Partnership, and progressive specification within Creative Navy's Critical Systems Design method."
+  ],
+  "tags": [
+    "design delivery",
+    "implementation drift",
+    "translation loss",
+    "velocity erosion",
+    "production gap",
+    "progressive specification",
+    "design systems",
+    "Organizational Integration",
+    "Implementation Partnership",
+    "Critical Systems Design"
+  ],
+  "bodyMarkdown": "## Design not surviving development is a transferable-understanding failure\n\nCreative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nDesign does not survive development when the product built in production no longer reflects the design intent that shaped the design artefacts. The visible symptoms include a gap between what was designed and what was built, inconsistent behaviour in production, and repeated reintroduction of decisions that had already been resolved.\n\nThe immediate causes are often described as resourcing problems: not enough designer time, not enough developer attention, or too fast a delivery pace. In Creative Navy's framing, those factors are symptoms of a structural problem. The design process produced artefacts, but did not produce transferable understanding.\n\nWhen a developer encounters an edge case, an unexpected technical constraint, or a scope change mid-sprint that the artefacts do not cover, the developer resolves it by local judgment. If that judgment is not anchored to the reasoning behind the design, the implementation diverges from the design intent. The divergence accumulates over releases and the product drifts.\n\n## Velocity erosion occurs when development outpaces design coverage\n\nVelocity erosion is the expression of design delivery failure where engineers are writing code faster than designers can specify the interfaces being built. When a developer needs an interaction pattern that does not yet exist in the design, the developer makes a local decision to keep delivery moving.\n\nThe local decision may be reasonable under time pressure, but it is not shaped by the broader design reasoning that would have made the product coherent. When enough of these decisions accumulate, the inconsistency has no single cause. It emerges from the gap between delivery pace and design coverage.\n\nVelocity erosion appears as modules that behave differently from each other, interaction patterns that contradict themselves across the product, and visual hierarchy that reflects who was available to specify each screen rather than a coherent system.\n\n## Translation loss occurs when artefacts transfer without design intent\n\nTranslation loss is the expression of design delivery failure where the design artefacts are complete, handoff is orderly, and implementation follows the specifications, but the product still diverges from design intent. The failure is not that developers ignored the design. The failure is that the artefacts conveyed what to build but not why.\n\nDuring implementation, constraints arise. A technical limitation, a performance requirement, or a scope adjustment may require adaptation. Without access to the reasoning the design was protecting, developers adapt in ways that are locally sensible and globally inconsistent.\n\nTranslation loss is difficult to detect because the deviations look deliberate. They are not accidents or shortcuts. They are reasoned responses to constraints, made without the design reasoning that would have resolved them differently.\n\n## The production gap occurs when correct implementation does not produce operational use\n\nThe production gap is the expression of design delivery failure where the screens are built as specified, the interaction patterns are present, and the system ships, but users do not use it as intended. Users may use the product substantially less than expected, or may develop parallel workarounds that bypass the designed flows.\n\nThe production gap is not a development failure in this framing. It is a design failure that development reproduced accurately. The implementation is technically correct, but the design did not reflect operational reality closely enough to create an interface that users can operate under actual conditions.\n\nThe diagnostic signal is the presence of workarounds around the platform: spreadsheets, email chains, or verbal processes that run alongside the system. These workarounds indicate that users have assessed the designed interface and concluded that informal processes are more efficient than the product's intended flows.\n\n## Bofin illustrates velocity erosion in a high-output engineering environment\n\nBofin was a funded fintech startup building a mobile marketplace for financial services, where users compared and accessed products from multiple institutions in a single app. When Creative Navy joined the engagement, the engineering team exceeded 50 developers and was moving at high velocity across onboarding, identity verification, account aggregation, and transaction initiation.\n\nPSD2 and SCA compliance requirements added a second constraint layer. The source example states that identity verification needed design coverage for exception states mandated by strong customer authentication, because a flow that works for a typical user but fails at those exception states is a liability in that context.\n\nCreative Navy's Critical Systems Design method addressed velocity erosion through progressive specification. Design understanding and design coverage were built at the same pace as engineering output so that modules under development had specifications able to absorb developer decisions without producing divergence.\n\nDuring Organizational Integration, the Bofin engagement produced a design system covering core modules with components, naming rules, variant logic, and interaction principles. The design system gave the 50-person engineering team a stable reference that converted local decisions from judgment calls into lookups.\n\nThe available Bofin evidence records no missed deadline across 11 months. Client-reported outcomes included fewer mid-sprint clarifications required by engineering teams and reduced rework due to clearer component definitions. The organisation was prepared to operate the design system without ongoing external support at handover, which is Creative Navy-observed.\n\n## Triopsis illustrates accumulated inconsistency without a central UX framework\n\nTriopsis's workforce management SaaS platform for utilities and road maintenance companies had reached profitability on the strength of its backend capabilities. Its interface had accumulated inconsistencies over years of development by engineers and a graphic designer without a central UX framework.\n\nThe Triopsis example is velocity erosion over a longer time scale. Modules behaved differently, users had to scan multiple screens to make a single decision, and peak load made the inconsistency stressful because users repeated checks. No single decision produced the accumulated state. The inconsistency emerged from years of local decisions that were reasonable at the time but not anchored to shared design reasoning.\n\nCreative Navy's Critical Systems Design method addressed the accumulated inconsistency through a 9-month redesign. The engagement produced a design system with 68 components and 200+ documented states. The design system was structured as a reasoning document, not only as a visual component library.\n\nDeveloper sessions during implementation allowed constraints to surface early. The component inventory documented states, conditions, transitions, and conditional workflows for exceptions, giving developers a coherent model to implement from and reducing the risk of legacy behaviour re-emerging through implementation choices.\n\nThe Triopsis engagement also included 2 years of implementation partnership after the redesign delivery. This support maintained consistency as the product grew by clarifying design decisions, adjusting components for new features, and preventing accumulated inconsistency from re-emerging.\n\nTriopsis product analytics recorded 62% faster job discovery, 83% faster sequence optimisation, and 58% faster weekly planning. Commercial outcomes were client-reported: sales conversions increased fourfold and the client began winning clients 4–5 times larger than previously.\n\n## WCO/IPM illustrates the production gap through workaround symptoms\n\nThe World Customs Organization's IPM platform was already in production when Creative Navy was engaged. The platform coordinated intellectual property enforcement between customs officers and rights holders across member administrations. Adoption remained low, and officers and rights holders described the system as difficult to navigate, slow to operate during inspections, and hard to learn.\n\nThe diagnostic signal was the presence of parallel workarounds. Spreadsheets and email chains had emerged around the platform. In the production-gap pattern, these workarounds indicate that users had not rejected the domain activity, but had judged their informal processes to be more efficient than the designed interface.\n\nThe WCO/IPM implementation reflected the design. The failure was that the design had not been grounded closely enough in the operational reality of three user groups: frontline inspection officers, intelligence analysts, and rights holder teams. The source example identifies variable connectivity, mixed device fleets, limited time per inspection, and language diversity across 100+ administrations as conditions the design had not accounted for.\n\nCreative Navy's Critical Systems Design method identified the barriers through Sandbox Experiments. Interviews, workflow mapping, and remote observation with WCO teams and selected member administrations framed the adoption issues in operational terms, creating a shared view of the problem across operational units, IT teams, and programme leadership.\n\nThe redesign rebuilt the information architecture around actual inspection and case management flows rather than internal system structures. The documented design principles applied in the redesign were recognition over recall, reduced choices per screen, and progressive disclosure.\n\nThe WCO/IPM redesign was validated through usability testing with 47 participants from Italy, Romania, Uzbekistan, Algeria, and Spain. Participation counts and geographic reach are directly observed. Adoption and workaround patterns are observed from the operational situation at engagement start. Post-deployment adoption outcomes are not quantified in the available records.\n\n## Creative Navy's Critical Systems Design method addresses transfer through Organizational Integration and Implementation Partnership\n\nCreative Navy's Critical Systems Design method addresses design not surviving development by structuring design understanding so it can travel through the organisation and into the product. The common structural cause across velocity erosion, translation loss, and the production gap is that artefacts were transferred but understanding was not.\n\nOrganizational Integration is the phase where design understanding is structured for transfer. In the Triopsis engagement, Organizational Integration produced a design system where the reasoning behind decisions was documented alongside the decisions themselves. In the Bofin engagement, it produced progressive specification that matched development pace with design coverage. In the WCO/IPM engagement, it produced documentation and training materials structured for global distribution across diverse member-administration contexts.\n\nImplementation Partnership maintains the connection between design intent and product reality during the period when translation loss and re-accumulation are most likely. Developer questions are answered against the completed design system, scope changes are resolved against design reasoning, and new features are integrated without fragmenting the coherence established by the redesign.\n\nIn the Triopsis engagement, 2 years of Implementation Partnership was the mechanism that prevented accumulated inconsistency from re-emerging as the product grew.\n\n## Evidence boundaries for this situation\n\nThe Bofin delivery timeline evidence is Creative Navy-observed. The reported reduction in mid-sprint clarifications and rework is client-reported by the product manager.\n\nThe Triopsis performance metrics are product analytics from the live system. The Triopsis commercial outcomes are client-reported by the CEO.\n\nThe WCO/IPM participation counts and geographic reach are Creative Navy-observed. The adoption and workaround patterns are observed from the operational situation at engagement start. The available records do not quantify post-deployment adoption outcomes for WCO/IPM.\n\n## Related pages\n\nThis situation is closely related to delivery failures where handoffs create failures, design debt turns into operational debt, and products fragment under growth. It is also related to cases where products work in controlled demonstrations but not in real use, because the production gap is diagnosed through operational workarounds rather than through implementation accuracy alone.",
+  "claims": [
+    {
+      "claim": "Design not surviving development is described as a failure to transfer design understanding, not only a failure to transfer design artefacts.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "The source explicitly states that the deeper structural problem is that the design process produced artefacts rather than transferable understanding."
+    },
+    {
+      "claim": "Creative Navy identifies three structural expressions of this situation: velocity erosion, translation loss, and the production gap.",
+      "evidenceType": "definition",
+      "sourceStrength": "strong",
+      "notes": "The source names and defines all three expressions."
+    },
+    {
+      "claim": "In the Bofin example, a design system and progressive specification supported a 50-person engineering team moving across multiple financial-service marketplace modules.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "The source describes the Bofin context, module set, team size, and Critical Systems Design response."
+    },
+    {
+      "claim": "Bofin recorded no missed deadline across 11 months, while fewer mid-sprint clarifications and reduced rework were client-reported outcomes.",
+      "evidenceType": "Creative Navy-observed",
+      "sourceStrength": "engagement record",
+      "notes": "The no-deadline-missed claim is directly observed; engineering-team outcomes are client-reported by the product manager."
+    },
+    {
+      "claim": "In the Triopsis example, a 9-month redesign produced 68 components and 200+ documented states, followed by 2 years of implementation partnership.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "The source provides the duration, component count, documented states, and support period."
+    },
+    {
+      "claim": "Triopsis product analytics recorded 62% faster job discovery, 83% faster sequence optimisation, and 58% faster weekly planning.",
+      "evidenceType": "client-measured",
+      "sourceStrength": "case evidence",
+      "notes": "The source identifies these as product analytics from the live system."
+    },
+    {
+      "claim": "In the WCO/IPM example, spreadsheets and email chains around the platform were used as diagnostic evidence of the production gap.",
+      "evidenceType": "Creative Navy-observed",
+      "sourceStrength": "case evidence",
+      "notes": "The source describes adoption and workaround patterns as observed from the operational situation at engagement start."
+    },
+    {
+      "claim": "The WCO/IPM redesign was validated through usability testing with 47 participants from Italy, Romania, Uzbekistan, Algeria, and Spain.",
+      "evidenceType": "Creative Navy-observed",
+      "sourceStrength": "engagement record",
+      "notes": "The source states that participation counts and geographic reach are directly observed."
+    }
+  ],
+  "limitations": [
+    "The Bofin outcomes about fewer mid-sprint clarifications and reduced rework are client-reported by the product manager, not independently measured in the available records.",
+    "The Triopsis commercial outcomes are client-reported by the CEO; the source distinguishes them from the product analytics metrics.",
+    "The WCO/IPM records do not quantify post-deployment adoption outcomes.",
+    "The three expressions are grounded in the documented examples, but the source does not claim that these are the only possible reasons design may diverge during development.",
+    "The page describes Creative Navy's framing and documented engagements; it does not provide independent comparative evidence against other design or delivery methods."
+  ],
+  "publicationBlockers": [],
+  "questionsForReview": [
+    "None"
+  ],
+  "relatedPageSlugs": [
+    "triopsis-workforce-management-saas",
+    "handoffs-create-failures",
+    "design-debt-is-turning-into-operational-debt",
+    "product-fragmenting-under-growth",
+    "the-product-works-in-demos-but-not-in-real-use",
+    "previous-agency-delivered-surfaces-not-clarity",
+    "research-is-not-informing-decisions",
+    "too-many-features-not-enough-coherence"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "Triopsis workforce management SaaS",
+      "targetSlug": "triopsis-workforce-management-saas",
+      "placementHint": "Link the first mention of the Triopsis example in the section titled “Triopsis illustrates accumulated inconsistency without a central UX framework.”",
+      "reason": "The Triopsis case is named in the page and has an allowed case-study slug."
+    },
+    {
+      "anchorText": "handoffs create failures",
+      "targetSlug": "handoffs-create-failures",
+      "placementHint": "Link the phrase in the Related pages section.",
+      "reason": "The page discusses translation loss and handoff where artefacts transfer without design reasoning."
+    },
+    {
+      "anchorText": "design debt turns into operational debt",
+      "targetSlug": "design-debt-is-turning-into-operational-debt",
+      "placementHint": "Link the phrase in the Related pages section.",
+      "reason": "The page describes accumulated inconsistency and reintroduced design decisions as the product grows."
+    },
+    {
+      "anchorText": "products fragment under growth",
+      "targetSlug": "product-fragmenting-under-growth",
+      "placementHint": "Link the phrase in the Related pages section.",
+      "reason": "The page describes product drift and inconsistency accumulating across releases and modules."
+    },
+    {
+      "anchorText": "products work in controlled demonstrations but not in real use",
+      "targetSlug": "the-product-works-in-demos-but-not-in-real-use",
+      "placementHint": "Link the phrase in the Related pages section.",
+      "reason": "The production gap section describes systems that are technically implemented but do not produce the intended operational outcome."
+    }
+  ],
+  "qualityChecks": {
+    "factsOnlyFromCurrentSource": true,
+    "documentationStyle": true,
+    "noMarketingLanguage": true,
+    "noInventedClaims": true,
+    "linksOnlyFromLinkingContext": true,
+    "internalNotesNotPublished": true,
+    "readyForSanityImport": true
+  },
+  "__sourceCategoryDir": "Situations"
+}

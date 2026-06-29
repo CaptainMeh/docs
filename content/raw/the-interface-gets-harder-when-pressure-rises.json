@@ -1,0 +1,225 @@
+{
+  "_type": "documentationPage",
+  "sourceFile": "Articles/Failures/failures--cognitive--the-interface-gets-harder-when-pressure-rises.md",
+  "sourcePath": "sources/articles/Failures/failures--cognitive--the-interface-gets-harder-when-pressure-rises.md",
+  "sanityDocumentIdCandidate": "documentationPage.the-interface-gets-harder-when-pressure-rises",
+  "title": "The Interface Gets Harder When Pressure Rises",
+  "slug": {
+    "_type": "slug",
+    "current": "the-interface-gets-harder-when-pressure-rises"
+  },
+  "pageType": "failure",
+  "category": "failures",
+  "parentSlug": "cognitive-failures",
+  "childPageSlugs": [],
+  "excerpt": "This failure occurs when an interface performs acceptably in evaluation conditions but becomes harder to use under real operational pressure. The interface cost rises at the same time as the task cost rises.",
+  "metaTitle": "The Interface Gets Harder When Pressure Rises",
+  "metaDescription": "A cognitive failure where interface difficulty increases under pressure because physical, attentional, and time conditions degrade together.",
+  "summary": "The interface gets harder when pressure rises when design and evaluation conditions under-represent the physical environment, attentional division, and time compression that determine operational performance. The failure is not that the interface stops working; it is that the cognitive cost of using it increases at the same moment when the user's task also becomes harder.",
+  "definition": "The interface gets harder when pressure rises is a cognitive failure in which an interface's usability degrades under real operating conditions because operational demand and interface demand peak together.",
+  "keyFacts": [
+    "The failure pattern concerns the dynamic relationship between operational pressure and interface cognitive cost.",
+    "The three mechanisms described are physical environment degradation, attentional division, and temporal compression.",
+    "Physical environment degradation includes glare, variable lighting, vibration, operational distance, gloves, and touch-target constraints.",
+    "Attentional division occurs when the interface is a secondary task accessed through brief glances or partial-attention intervals.",
+    "Temporal compression occurs when operational pace reduces the time available for each interface interaction.",
+    "COX Marine testing revealed multi-engine fault-priority and night-vision colour-palette issues that were not visible under normal display and lighting conditions.",
+    "Beissbarth reported calibration time reduction from 18 minutes to 12 minutes per vehicle, client-measured across 8 production deployment locations.",
+    "Triopsis recorded 62% faster job discovery, 83% faster job sequence optimisation, and 58% faster weekly planning in the live product.",
+    "Stromer glance duration fell from 4.32 seconds to 1.89 seconds after redesign, field-measured by Creative Navy during actual riding with 5 participants.",
+    "Squaremind ecological testing produced 27 of 29 independent completions, with all 12 patients who got stuck recovering and completing the scan."
+  ],
+  "tags": [
+    "cognitive load",
+    "operational pressure",
+    "interface degradation",
+    "attention",
+    "legibility",
+    "temporal compression",
+    "critical systems design",
+    "failure pattern",
+    "field conditions",
+    "high-consequence software"
+  ],
+  "bodyMarkdown": "## Summary\n\nCreative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nThe interface gets harder when pressure rises is a cognitive failure in which interface difficulty increases under the same conditions that make the user's primary task harder. The interface has not necessarily broken. The physical, attentional, and temporal conditions of use have changed, and the design was not calibrated against those conditions.\n\nThe failure appears when usability evaluation under-represents the real environment. A display that is legible at a desk can become harder to read through spray, vibration, glare, distance, gloves, or movement. A navigation path that is acceptable in a quiet test can become too slow when a queue is moving at 84 transactions per hour. A status display that is readable with full attention can become unusable when the user's attention is divided across a patient, vessel, vehicle, road, or operational schedule.\n\nThe defining feature is concurrence. The cognitive cost of using the interface rises at the same moment as the cognitive cost of the task rises. Both demands draw on the same limited attention budget.\n\n## Failure pattern: interface cost and operational cost peak together\n\nThis failure concerns the interaction-level pattern of degradation under pressure. It describes how an interface that works in low-pressure evaluation can impose additional cognitive cost when operational demand increases.\n\nThe failure is distinct from a general lack of rapid-judgment support. The adjacent failure described in The System Does Not Support Rapid Judgment concerns interfaces that do not provide the information conditions required for fast, accurate decisions regardless of pressure level. The failure described here concerns amplification: physical degradation, attention splitting, and reduced time budgets make every existing interface cost more expensive.\n\nThe failure is also distinct from the organisational situation in which a product reaches users despite being evaluated under conditions that do not reveal pressure-driven failure. This page describes the interaction mechanisms that make the interface degrade under pressure.\n\n## Physical environment degradation makes unchanged interfaces harder to perceive\n\nPhysical environment degradation occurs when legibility and interaction parameters are calibrated for evaluation conditions rather than operating conditions. Lighting may be controlled during design; viewing distance may be fixed and close; the user may be seated, stationary, and bare-handed. In deployment, those assumptions may not hold.\n\nReal operating environments introduce glare, variable lighting, vibration, movement, distance, gloves, and unstable posture. Glare from reflected water reduces contrast. Workshop lighting shifts the relationship between foreground and background. Vibration blurs display content at the pixel level. Distance across a helm console or two to three metres during a calibration sequence changes the effective resolution at which visual hierarchy must survive.\n\nThe design response is not to make every element larger or louder in all conditions. The design response is to treat the degraded condition as the baseline. Contrast ratios must be calibrated for variable lighting rather than ideal lighting. State communication must be redundant across cues that degrade independently, such as spatial position, icon form, and colour. Text sizes and touch targets must match gloved hands and operational viewing distances, not bare hands and desk distance.\n\n## Attentional division turns reading tasks into recognition requirements\n\nAttentional division occurs when the user cannot give the interface full attention because attention is already committed to another task. The interface is accessed through brief glances, partial-attention intervals, and interruptions between other demands.\n\nThis mechanism appears in two-task contexts. A surgeon may need to confirm device state while maintaining the surgical field. A vessel operator may need to read engine telemetry while managing a manoeuvre. An automotive technician may need to confirm calibration progress while adjusting a component. A rider may need to check bike status while maintaining road attention.\n\nIn these contexts, information that is extractable under full attention may not be extractable under partial attention. The cognitive cost is not simply reduced in proportion to the available attention. It can become many times higher because the available interval is short and may end before the user completes reading, searching, or sequential parsing.\n\nThe design response is to reduce retrieval from reading to recognition. Critical state should be confirmable in a single brief glance, without directed search or sequential parsing. Creative Navy's work on the deSoutter Medical surgical device redesign applied this principle by making every critical state interpretable through recognition in a fraction of a second. The Kardion MCS Controller layout stability standard applied the same requirement by keeping every element in its established position regardless of view state, so spatial memory rather than active search located what was needed.\n\n## Temporal compression makes tolerated inefficiency operationally expensive\n\nTemporal compression occurs when operational pace reduces the time budget available for each interface interaction. A complex navigation path may be inconvenient at a typical transaction rate and impossible at 84 transactions per hour, where each transaction averages 43 seconds and complex transactions add pressure to the transactions that follow.\n\nTemporal compression interacts with physical degradation and attentional division. A one-second delay in confirming a state can accumulate across a calibration queue. A second re-read may be tolerable at low pace and error-producing at high pace. Navigation overhead that was absorbed by a generous time budget can become an operational failure when the time budget shrinks.\n\nThe design response is to design against the constrained time budget from the start. Worst-case interaction rates must be evaluated, not only typical rates. Complex transaction paths must be treated as first-class workflows rather than edge cases. Exception states must be surfaced before the user encounters them mid-task under pressure.\n\n## COX Marine shows pressure-driven degradation in helm telemetry and alarm priority\n\nThe COX Marine case shows how physical conditions and attentional division can change the performance requirements of a marine display. COX Marine builds diesel outboard engines deployed on fast patrol craft, racing boats, and workboats. The helm environment includes sustained vibration, hull slamming, spray, variable light, operators bracing with both feet, and gloves.\n\nThe display had to remain readable across direct sunlight, heavy overcast, and night conditions including military night vision equipment. Engine telemetry arrived through NMEA 2000 protocol, including rpm, coolant temperature, oil pressure, fuel rate, and trim. The frequency and criticality of these values changed between low-speed and high-load operating states.\n\nCreative Navy's domain learning during Sandbox Experiments covered NMEA 2000 data behaviour under varying load states, the hardware constraints of three display families, and direct operating conditions such as scanning behaviour during open-water transit and close-quarters docking. Scenario testing during Concept Convergence identified two failures that were not visible under normal display and lighting conditions.\n\nA multi-engine fault scenario showed that early layouts made fault presence visible but did not help operators identify which engine required priority attention first. Under vibration and divided attention, requiring the operator to scan each engine tile and form a priority assessment consumed time and attention the operating situation did not supply. The redesign established alarm state highlighting within engine tiles and a fixed display area where the highest-priority fault was always summarised.\n\nA night-conditions test showed that initial alarm palette colours interfered with military night vision equipment. The palette and contrast were revised. Distributor feedback, relayed to Creative Navy by COX, characterised the interface as best-in-category relative to Garmin and Simrad; this is client-reported commercial standing, not an independently verified comparison.\n\n## Beissbarth shows physical degradation across calibration displays\n\nThe Beissbarth case shows how distance, movement, variable lighting, and gloves can turn equal visual weight into ambiguous state. Beissbarth's calibration equipment is used in manufacturer-authorised inspection centres meeting the standards of Mercedes, Daimler, and BMW.\n\nTechnicians moved around the vehicle during calibration, read an embedded OEM display from two to three metres, used a rugged tablet from different positions, and consulted a large inspection-line display serving both technicians and inspection staff. The calibration sequence was sensitive to timing. One extra second spent confirming a measurement state could accumulate across a sequence and across a full day's queue.\n\nThe previous interface had correct functional workflows, developed through three engineering iterations by people who understood the machinery. The failure was visual hierarchy rather than workflow logic. Measurement states, tolerances, and progress indicators carried equal visual weight across three device classes. Under controlled conditions this was legible. Under real calibration conditions it produced ambiguous state.\n\nCreative Navy's Sandbox Experiments phase documented conditions through fourteen technicians across five workshops, including contextual walkthroughs of live calibration sequences. A feature analysis mapped twelve key features across four modules, recording expected movement, lighting conditions, and acceptable interpretation time at each step.\n\nCreative Navy's Concept Convergence work used tension-driven reasoning to prioritise unambiguous state communication over information density across all three device classes. Option space mapping produced three structural variants for the OEM display, tested under reproduced workshop lighting and viewing distances rather than at a desk.\n\nCalibration time reduced from 18 minutes to 12 minutes per vehicle, client-measured by Beissbarth across 8 production deployment locations. Repeated measurements reduced directionally, client-measured but without an exact figure shared. Beissbarth now deploys the system without onboarding training, a client-reported operational change. Reduced measurement error risk is inferred from the addressed mechanism: ambiguous state under calibration conditions was the failure pathway, and unambiguous state communication was the design response.\n\n## Triopsis shows peak-load scheduling as the condition where the interface failed\n\nThe Triopsis case shows temporal compression in enterprise scheduling work. Triopsis served schedulers managing thousands of weekly interventions for utilities and road maintenance operations. Peak load included simultaneous weather incidents, conflicting job locations, overlapping assignments, sudden crew shortages, and ticking deadlines.\n\nThe legacy interface required scanning multiple screens to make a single scheduling decision. Conflict and exception states were not surfaced in advance. They were discovered mid-task, under the pressure the exception itself created. At normal load, this was a manageable inefficiency. At peak load, it competed with the cognitive cost of the operational situation.\n\nCreative Navy observed peak-load behaviour through three in-situ observation sessions before redesign decisions were made. The sessions targeted concurrent exception conditions because the typical workflow was not where the interface failed.\n\nThe redesign treated peak-load conditions as normal workflow states. Predictive conflict indicators surfaced scheduling problems before users encountered them under pressure. Weather incidents, partial completions, and delayed jobs received first-class interface treatment with direct action paths rather than workaround routes.\n\nProductivity was field-measured in the live system through product analytics: 62% faster job discovery, 83% faster job sequence optimisation, and 58% faster weekly planning. These are measured outcomes from real users in the live product, not controlled experiment results. The productivity gains are partly a function of peak-load exception handling, because the previous interface added the most overhead under those conditions.\n\n## Stromer shows attentional division crossing a safety-relevant glance threshold\n\nThe Stromer e-bike embedded display case shows attentional division in active riding. Before Creative Navy's engagement, average glance duration at the display was 4.32 seconds. The page relates this to the 2-second threshold at which road safety research identifies a doubling of near-crash and crash risk, citing Klauer et al. (2006), The Impact of Driver Inattention on Near-Crash/Crash Risk, NHTSA Report No. DOT HS 810 594, and NHTSA Driver Distraction Guidelines Phase 1, 2012.\n\nCreative Navy field-measured the pre-redesign glance duration directly using eye tracking equipment during actual riding on real routes in Munich and surrounding countryside. The measurement involved 5 participants and the same terrain conditions used in the broader usability testing programme.\n\nThe mechanism was attentional division against an interface that required sustained attention to extract meaning. The display's warning architecture had been designed after the screen layout was fixed. Warnings had no structural relationship to the surface they inhabited, appeared without contextual grounding, and covered or interfered with other content.\n\nCreative Navy rebuilt the warning architecture at the structural level. Rules and principles governing how warnings and interruptive elements related to screen structure were established before components were produced. After redesign, Creative Navy field-measured the same routes and methodology. Average glance duration fell to 1.89 seconds, within the cited threshold, and glance frequency per kilometre fell by 18%.\n\nThis is the only case described here where pressure-driven interface degradation is expressed as a before-and-after crossing of an externally defined safety threshold.\n\n## Squaremind shows affective attentional division in a consumer clinical context\n\nThe Squaremind dermatology scanning device case applies attentional division to a consumer clinical context. The user is an undressed patient alone in a room with a moving robot arm. Attention is split between following interface instructions and managing the physical and psychological experience of the scan.\n\nThe patient's attention is drawn by the robot arm's proximity, prescribed body positions, unfamiliar motor sounds, operational lighting, close-range movement, and anxiety. Under those conditions, instruction-following degrades. Interface elements clear to a calm seated user can be harder to process when attention is also required by the physical situation.\n\nThe pre-redesign failure pattern was age-stratified. Users aged 45–65 failed within the first minute, while users aged 20–35 failed around the 3-minute mark. The design had to perform across that range of attentional and anxiety profiles.\n\nThe design response minimised text and used animation, silhouette, and spatial positioning wherever possible. At system level, guidance was distributed across screen, audio, and floor markings so no single channel carried the full cognitive burden of orientation.\n\nPost-redesign ecological testing produced 27 of 29 independent completions, with all 12 patients who got stuck recovering and completing the scan. The age-stratified sample covered 20–35, 35–45, and 45–65. The evidence basis is Creative Navy-recorded ecological testing across two sites, independently dermatologist co-conducted.\n\n## How Creative Navy's Critical Systems Design method addresses pressure-driven degradation\n\nCreative Navy's Critical Systems Design method designs software whose interfaces, workflows, and operating logic carry real operational consequences, working through five phases — Sandbox Experiments, Concept Convergence, Iterative System Building, Organizational Integration, and Implementation Partnership — to take each system from initial exploration to independent operation by the client's own team.\n\nCreative Navy's Critical Systems Design method addresses pressure-driven degradation by making high-demand conditions visible before design decisions are fixed, then evaluating design directions against those conditions during Iterative System Building. The operating condition is treated as a design input rather than as a later deployment variable.\n\nDomain learning is the prerequisite. In the COX Marine work, Creative Navy studied marine display hardware, NMEA 2000 protocol behaviour, and high-speed vessel operation before layout decisions were made. In the Beissbarth work, Creative Navy documented live calibration sequences through fourteen technician interviews and a twelve-feature, four-module analysis. In the Triopsis work, Creative Navy observed peak-load scheduling conditions in situ rather than relying only on recalled descriptions. In the deSoutter Medical work, Creative Navy reviewed twelve human factors studies and ergonomics papers on gloved-hand performance and attention switching in dual-task conditions. In the Stromer work, Creative Navy field-measured pre-redesign glance duration before setting the design standard for warning architecture.\n\nIterative System Building then holds design directions against the conditions that determine operational performance. COX Marine layouts were revised after multi-engine fault testing showed operator hesitation. Beissbarth variants were tested under reproduced workshop lighting and viewing distances. Triopsis conflict surfacing was evaluated against peak-load scenario behaviour. Stromer post-redesign glance duration was measured under the same real riding conditions as the pre-redesign baseline.\n\nThe Swiss petrol station engagement used the same principle at transaction scale. Sixteen alternative POS architectures were evaluated against a 532-transaction coded corpus from real field operation, specifically testing performance against the transaction types and sequences that produced the highest operational cost under peak load.\n\n## Boundaries and evidence limits\n\nThe examples on this page do not have identical evidence strength. Stromer includes field-measured before-and-after glance data using eye tracking during actual riding with 5 participants. Triopsis outcomes were measured in the live product through product analytics, but not as controlled experiment results. Beissbarth calibration time and repeated measurements were client-measured, with the exact repeated-measurement figure not shared. COX Marine commercial standing is client-reported distributor feedback and not independently verified.\n\nSome design effects are inferred from mechanism rather than directly measured as outcome claims. In the Beissbarth case, reduced measurement error risk is inferred from the design change and the failure pathway it addressed. The documented measurement is the calibration time reduction from 18 minutes to 12 minutes per vehicle and the directional reduction in repeated measurements.\n\nThe road safety threshold cited in the Stromer case comes from standards and research formally defined for four-wheeled vehicles. The page applies the threshold and principle to embedded displays used during riding, as described in the case evidence.\n\n## Related pages\n\nThe closest adjacent failure page is The System Does Not Support Rapid Judgment, which concerns the absence of information conditions required for fast, accurate decisions. This page concerns pressure-driven amplification of interface cost.\n\nRelated case evidence includes Kardion, COX Marine, Beissbarth Automotive, Triopsis Workforce Management SaaS, Stromer Ebike, and Squaremind. These cases illustrate different mechanisms of pressure-driven degradation: layout stability under divided attention, helm display readability, calibration state ambiguity, peak-load scheduling, riding glance duration, and patient anxiety during guided scanning.",
+  "claims": [
+    {
+      "claim": "The failure pattern occurs when interface cognitive cost rises at the same time as operational task demand rises.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "Defined directly in the situation and mechanism sections of CURRENT_SOURCE_MD."
+    },
+    {
+      "claim": "The three mechanisms of pressure-driven interface degradation are physical environment degradation, attentional division, and temporal compression.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "CURRENT_SOURCE_MD explicitly structures the failure around these three mechanisms."
+    },
+    {
+      "claim": "COX Marine testing revealed a multi-engine fault-priority issue and a night-vision alarm-palette issue that were not visible under normal display and lighting conditions.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "Scenario testing during Concept Convergence is described in the COX Marine example."
+    },
+    {
+      "claim": "Beissbarth calibration time reduced from 18 minutes to 12 minutes per vehicle, client-measured across 8 production deployment locations.",
+      "evidenceType": "client-measured",
+      "sourceStrength": "case evidence",
+      "notes": "CURRENT_SOURCE_MD states the metric, evidence basis, and deployment-location count."
+    },
+    {
+      "claim": "Beissbarth repeated measurements reduced directionally, but the exact figure was not shared.",
+      "evidenceType": "client-measured",
+      "sourceStrength": "moderate",
+      "notes": "CURRENT_SOURCE_MD states a directional client-measured reduction and the absence of an exact figure."
+    },
+    {
+      "claim": "Triopsis recorded 62% faster job discovery, 83% faster job sequence optimisation, and 58% faster weekly planning in the live product through product analytics.",
+      "evidenceType": "field-measured",
+      "sourceStrength": "case evidence",
+      "notes": "CURRENT_SOURCE_MD states these are measured outcomes from real users in the live product, not controlled experiment results."
+    },
+    {
+      "claim": "Stromer average glance duration fell from 4.32 seconds to 1.89 seconds after redesign, with 18% fewer glances per kilometre.",
+      "evidenceType": "field-measured",
+      "sourceStrength": "case evidence",
+      "notes": "CURRENT_SOURCE_MD states Creative Navy measured pre/post glance duration using eye tracking during actual riding with 5 participants."
+    },
+    {
+      "claim": "The Stromer case relates the pre-redesign 4.32-second glance duration to the 2-second threshold associated with doubled near-crash and crash risk in Klauer et al. (2006), NHTSA DOT HS 810 594, and NHTSA Driver Distraction Guidelines Phase 1, 2012.",
+      "evidenceType": "third-party study",
+      "sourceStrength": "third-party study",
+      "notes": "The cited threshold and references appear in CURRENT_SOURCE_MD."
+    },
+    {
+      "claim": "Squaremind post-redesign ecological testing produced 27 of 29 independent completions, with all 12 patients who got stuck recovering and completing the scan.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "case evidence",
+      "notes": "CURRENT_SOURCE_MD states Creative Navy-measured ecological protocol, two sites, independent dermatologist co-conducted."
+    },
+    {
+      "claim": "Creative Navy's Critical Systems Design method addresses pressure-driven degradation by using domain learning to make high-demand conditions visible and Iterative System Building to evaluate designs against those conditions.",
+      "evidenceType": "Creative Navy-observed",
+      "sourceStrength": "engagement record",
+      "notes": "CURRENT_SOURCE_MD describes this as the method's response and provides engagement examples."
+    }
+  ],
+  "limitations": [
+    "The examples have different evidence strengths and should not be treated as a single uniform evidence class.",
+    "COX Marine distributor feedback is client-reported commercial standing and not an independently verified comparison.",
+    "Triopsis productivity figures are measured in the live product through product analytics, not controlled experiment results.",
+    "Beissbarth repeated-measurement reduction is directional because the exact figure was not shared.",
+    "Beissbarth reduced measurement error risk is inferred from the failure mechanism and design response, not reported as a directly measured error-rate outcome.",
+    "The Stromer safety threshold cited is formally defined for four-wheeled vehicles; the page applies the threshold and principle to embedded displays used during riding as described in the case evidence.",
+    "Squaremind attentional division includes affective attention demands, so it differs from professional two-task contexts such as surgery, vessel operation, or riding."
+  ],
+  "publicationBlockers": [],
+  "questionsForReview": [
+    "The adjacent situations page named in the source is not present in LINKING_CONTEXT.allowedSlugs, so it was described in prose but not added as an internal link."
+  ],
+  "relatedPageSlugs": [
+    "the-system-does-not-support-rapid-judgment",
+    "too-much-attention-is-required-for-routine-use",
+    "users-cannot-reorient-quickly-after-interruption",
+    "users-cannot-see-what-state-the-system-is-in",
+    "warnings-are-visible-but-their-meaning-is-unclear",
+    "important-status-information-is-buried",
+    "tasks-span-too-many-screens-or-steps",
+    "kardion",
+    "cox-marine",
+    "beissbarth",
+    "triopsis-workforce-management-saas",
+    "stromer-ebike",
+    "squaremind"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "The System Does Not Support Rapid Judgment",
+      "targetSlug": "the-system-does-not-support-rapid-judgment",
+      "placementHint": "Related pages section and failure-pattern distinction",
+      "reason": "The source explicitly distinguishes this adjacent cognitive failure from pressure-driven interface degradation."
+    },
+    {
+      "anchorText": "Too Much Attention Is Required For Routine Use",
+      "targetSlug": "too-much-attention-is-required-for-routine-use",
+      "placementHint": "Related pages metadata or related pages section",
+      "reason": "The failure pattern involves interface cost consuming attention when attention is already divided."
+    },
+    {
+      "anchorText": "Users Cannot Reorient Quickly After Interruption",
+      "targetSlug": "users-cannot-reorient-quickly-after-interruption",
+      "placementHint": "Related pages metadata",
+      "reason": "Attentional division and interrupted partial-attention intervals are central mechanisms in the failure."
+    },
+    {
+      "anchorText": "Users Cannot See What State The System Is In",
+      "targetSlug": "users-cannot-see-what-state-the-system-is-in",
+      "placementHint": "Physical environment degradation and Beissbarth discussion",
+      "reason": "Several examples involve state that becomes ambiguous under operating conditions."
+    },
+    {
+      "anchorText": "Warnings Are Visible But Their Meaning Is Unclear",
+      "targetSlug": "warnings-are-visible-but-their-meaning-is-unclear",
+      "placementHint": "Stromer and COX Marine example sections",
+      "reason": "The Stromer warning architecture and COX Marine alarm-priority examples both concern visible warnings whose operational meaning required redesign."
+    },
+    {
+      "anchorText": "Important Status Information Is Buried",
+      "targetSlug": "important-status-information-is-buried",
+      "placementHint": "COX Marine and Triopsis example sections",
+      "reason": "The source describes priority faults and exception states that needed to be surfaced under pressure."
+    },
+    {
+      "anchorText": "Tasks Span Too Many Screens Or Steps",
+      "targetSlug": "tasks-span-too-many-screens-or-steps",
+      "placementHint": "Triopsis temporal-compression section",
+      "reason": "The Triopsis legacy interface required scanning multiple screens for a single scheduling decision."
+    },
+    {
+      "anchorText": "Kardion",
+      "targetSlug": "kardion",
+      "placementHint": "Attentional division section",
+      "reason": "The source names Kardion MCS Controller layout stability as an example of recognition through spatial memory."
+    },
+    {
+      "anchorText": "COX Marine",
+      "targetSlug": "cox-marine",
+      "placementHint": "COX Marine example section",
+      "reason": "The page uses COX Marine as a grounded example of helm telemetry and alarm priority under operating pressure."
+    },
+    {
+      "anchorText": "Beissbarth Automotive",
+      "targetSlug": "beissbarth",
+      "placementHint": "Beissbarth example section",
+      "reason": "The page uses Beissbarth as a grounded example of physical degradation and calibration state ambiguity."
+    },
+    {
+      "anchorText": "Triopsis Workforce Management SaaS",
+      "targetSlug": "triopsis-workforce-management-saas",
+      "placementHint": "Triopsis example section",
+      "reason": "The page uses Triopsis as a grounded example of temporal compression and peak-load scheduling."
+    },
+    {
+      "anchorText": "Stromer Ebike",
+      "targetSlug": "stromer-ebike",
+      "placementHint": "Stromer example section",
+      "reason": "The page uses Stromer as a grounded example of field-measured glance duration under riding conditions."
+    },
+    {
+      "anchorText": "Squaremind",
+      "targetSlug": "squaremind",
+      "placementHint": "Squaremind example section",
+      "reason": "The page uses Squaremind as a grounded example of affective attentional division in a consumer clinical context."
+    }
+  ],
+  "qualityChecks": {
+    "factsOnlyFromCurrentSource": true,
+    "documentationStyle": true,
+    "noMarketingLanguage": true,
+    "noInventedClaims": true,
+    "linksOnlyFromLinkingContext": true,
+    "internalNotesNotPublished": true,
+    "readyForSanityImport": true
+  },
+  "__sourceCategoryDir": "Failures"
+}

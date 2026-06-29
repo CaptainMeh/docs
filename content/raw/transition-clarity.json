@@ -1,0 +1,161 @@
+{
+  "_type": "documentationPage",
+  "sourceFile": "Articles/Glossary/glossary--industry-terms--transition-clarity.md",
+  "sourcePath": "sources/articles/Glossary/glossary--industry-terms--transition-clarity.md",
+  "sanityDocumentIdCandidate": "documentationPage.transition-clarity",
+  "title": "Transition Clarity",
+  "slug": {
+    "_type": "slug",
+    "current": "transition-clarity"
+  },
+  "pageType": "glossary-term",
+  "category": "glossary",
+  "parentSlug": "industry-terms",
+  "childPageSlugs": [],
+  "excerpt": "Transition clarity describes how clearly a system communicates that a state has changed. It concerns the event of change, not only the readability of the resulting state.",
+  "metaTitle": "Transition Clarity",
+  "metaDescription": "Definition of transition clarity: how clearly system state changes are detected, understood, timed, and distinguished from state visibility.",
+  "summary": "Transition clarity is a design property of state changes. It covers whether users detect that a change occurred, understand what changed, and see a display transition that matches the actual system transition.",
+  "definition": "Transition clarity is the degree to which changes in system state are communicated clearly enough for users to notice them, understand what changed, and update their operational model accordingly.",
+  "keyFacts": [
+    "Transition clarity concerns the event of a state change, not only the condition after the change.",
+    "A system can have high state visibility and low transition clarity if the current state is legible but the moment of change is missed.",
+    "The three stated dimensions of transition clarity are detectability, comprehensibility, and timing accuracy.",
+    "Detectability must be assessed under operating conditions such as divided attention, time pressure, variable lighting, ambient noise, and physical movement.",
+    "Comprehensibility requires users to understand what changed, not only that a change occurred.",
+    "Timing accuracy requires the displayed transition to correspond precisely to the actual transition in the underlying system.",
+    "System-initiated transitions are described as higher risk than user-initiated transitions because users may not expect them or attend to the display when they occur.",
+    "Spatial stability reduces the reorientation burden after a transition by keeping element positions consistent across views.",
+    "The Kardion MCS Controller example is limited to formative evaluation evidence.",
+    "The deSoutter Medical / Zethon example is surgeon-reported from design review sessions and is not post-deployment measurement."
+  ],
+  "tags": [
+    "transition clarity",
+    "state changes",
+    "system state",
+    "state visibility",
+    "detectability",
+    "comprehensibility",
+    "timing accuracy",
+    "system-initiated transitions",
+    "spatial stability",
+    "high-consequence contexts"
+  ],
+  "bodyMarkdown": "## Definition\n\nTransition clarity is the degree to which changes in system state are communicated clearly enough for users to notice them, understand what changed, and update their operational model accordingly.\n\nTransition clarity differs from state visibility. State visibility concerns whether users can read the current state. Transition clarity concerns whether users can perceive when that state changes. The design problem is the event of change, not only the condition after change.\n\nA system can have high state visibility and low transition clarity. The current state may be legible, but the moment when it changed may have passed unnoticed. In that case, the user may continue operating under the assumption that the prior state is current.\n\n## Transition clarity treats state change as an event\n\nTransition clarity treats a system transition as a distinct design problem. System states can be designed as static displays, while transitions must be designed as events.\n\nAn event is momentary. It either produces a perceptible signal when it occurs or it does not. If the user's attention is elsewhere at the moment of a state transition, and the transition produces no persistent signal beyond the resulting state, the user may not know that the transition occurred.\n\nThe risk is not only that the user misreads the current state. The specific risk of low transition clarity is that the user does not update their operational model. The user may continue using a mental model formed in a prior state that was accurate at the time and is no longer accurate.\n\n## Detectability, comprehensibility, and timing accuracy are the three dimensions of transition clarity\n\nTransition clarity has three stated dimensions: detectability, comprehensibility, and timing accuracy.\n\nDetectability means that the transition produces a signal perceptible under the operating conditions of actual use. Perceptibility must be assessed under divided attention, time pressure, variable lighting, ambient noise, and physical movement. A transition visible during focused inspection may be invisible during a brief glance in a time-pressured environment.\n\nComprehensibility means that the user can understand not only that a transition occurred but also what changed. The new state must be distinguishable from the prior state without active interpretation. The two states need to be visually differentiated at a level perceptible under operating conditions, not only differentiated in principle.\n\nTiming accuracy means that the displayed transition corresponds precisely to the actual transition in the underlying system. A display transition that precedes or follows the actual state change is a false transition. It either shows a change that has not yet occurred or fails to show a change that has already occurred.\n\n## System-initiated transitions carry higher transition-clarity risk\n\nUser-initiated transitions are described as less risky because the user has taken an action and expects a response. The user is primed to notice a transition because they know they triggered one.\n\nSystem-initiated transitions are described as higher risk. A timeout, background process completion, sensor update, or mode change triggered by system logic may occur without the user expecting it. The user may not be attending to the display when the transition occurs.\n\nHigh-consequence contexts are specifically those where system-initiated transitions have operational consequences. The risk is highest when a system changes mode, reaches a critical threshold, or enters a fault state independently of user action. In these contexts, transition clarity is described as a safety requirement rather than a courtesy feature.\n\n## Spatial stability reduces the reorientation burden after transitions\n\nSpatial stability is a transition design constraint. A transition that reorganises the interface can shift element positions, add or remove sections, or restructure the layout. This creates a second transition problem: the user must notice the state change and then reorient to the new layout.\n\nInterfaces that maintain spatial consistency across transitions reduce this secondary burden. If elements remain stable across view transitions, users who noticed the transition can read the resulting state without an additional reorientation step.\n\n## Examples of transition clarity in documented case evidence\n\nThe Kardion MCS Controller example concerns transition-induced spatial disruption. The layout stability standard stated for that controller was that no element shifts position across any view transition. In the clinical device context described, transitions must not require reorientation, and the surgeon's spatial memory must remain valid immediately after a transition. The available evidence for this example is formative evaluation only.\n\nThe Elsner Elektronik / Cala Touch KNX example concerns timing accuracy. Animation timing was explicitly aligned with firmware update cycles so that display transitions corresponded precisely to actual state transitions. This addressed false transitions, where the display shows a change before firmware completion, and missed transitions, where the display remains at a prior state after firmware has changed.\n\nThe deSoutter Medical / Zethon example concerns detectability in a surgical instrument workflow. The activation state transition from ready to active was identified as the highest-risk transition because surgeons may not be attending to the device display at the moment of transition. Redundant non-colour cues addressed detectability under variable operating conditions. The evidence is surgeon-reported from design review sessions and is not post-deployment measurement.\n\nThe Torqeedo maritime HMI example concerns sensor cadence synchronisation. Multiple sensors updating at different rates could produce display changes that appeared to be state transitions but were artefacts of update timing. The synchronisation architecture addressed this by ensuring that display changes corresponded to genuine changes in the system.\n\n## Evidence basis\n\nThe definition of transition clarity is conceptual. The practical evidence described here comes from case examples involving clinical device, building-control, surgical instrument, and maritime HMI contexts.\n\nThe evidence strength differs by example. Kardion is labelled as formative evaluation only. deSoutter Medical / Zethon is labelled as surgeon-reported from design review sessions and not post-deployment measurement. The Elsner Elektronik / Cala Touch KNX and Torqeedo examples describe design responses to timing-accuracy problems in the documented case evidence.\n\n## Boundaries and limits\n\nTransition clarity is not the same as state visibility. A display can make the current state readable while still failing to communicate when the state changed.\n\nTransition clarity is not established by controlled inspection alone. The definition requires perceptibility under actual operating conditions, including divided attention, time pressure, lighting variation, ambient noise, and physical movement.\n\nTransition clarity does not only concern visual styling. It includes whether a transition is detectable, whether the user can understand what changed, and whether the displayed transition accurately matches the underlying system transition.\n\nThe documented examples do not establish a universal quantitative threshold for adequate transition clarity. The available evidence describes design risks and case-specific responses, with explicit limits for the Kardion and deSoutter Medical / Zethon examples.\n\n## Related pages\n\nState Visibility is the closest related glossary term because transition clarity is defined partly by contrast with the readability of the current state.\n\nHigh Consequence is relevant because transition clarity is described as a safety requirement when system-initiated transitions have operational consequences.",
+  "claims": [
+    {
+      "claim": "Transition clarity is the degree to which changes in system state are communicated clearly enough for users to notice them, understand what changed, and update their operational model accordingly.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "Directly stated in the definition section."
+    },
+    {
+      "claim": "A system can have high state visibility and low transition clarity when the current state is legible but the moment of change passes unnoticed.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "Directly stated in the definition section and used to distinguish transition clarity from state visibility."
+    },
+    {
+      "claim": "Transition clarity has three dimensions: detectability, comprehensibility, and timing accuracy.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "The source explicitly lists these three dimensions and defines each one."
+    },
+    {
+      "claim": "System-initiated transitions are higher risk than user-initiated transitions because users may not expect them or attend to the display when they occur.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "Directly stated in the system-initiated versus user-initiated transitions section."
+    },
+    {
+      "claim": "Spatial stability reduces transition-induced reorientation by keeping interface element positions consistent across transitions.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "Directly supported by the spatial stability section."
+    },
+    {
+      "claim": "The Kardion MCS Controller layout stability standard addressed transition-induced spatial disruption by preventing element shifts across view transitions.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "The source labels this as formative evaluation only."
+    },
+    {
+      "claim": "Elsner Elektronik / Cala Touch KNX aligned animation timing with firmware update cycles to match display transitions to actual state transitions.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "The source describes this as addressing timing accuracy by avoiding false and missed transitions."
+    },
+    {
+      "claim": "The deSoutter Medical / Zethon activation transition was identified as the highest-risk transition in the surgical instrument workflow, with redundant non-colour cues used for detectability.",
+      "evidenceType": "client-reported",
+      "sourceStrength": "case evidence",
+      "notes": "The source states this was surgeon-reported from design review sessions and not post-deployment measurement."
+    },
+    {
+      "claim": "The Torqeedo maritime HMI synchronised sensor cadence to prevent display changes caused by update timing from appearing as false state transitions.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "The source describes the synchronisation architecture as eliminating apparent false transitions caused by sensors updating at different rates."
+    }
+  ],
+  "limitations": [
+    "The Kardion MCS Controller evidence is formative evaluation only.",
+    "The deSoutter Medical / Zethon evidence is surgeon-reported from design review sessions and is not post-deployment measurement.",
+    "The documented examples are case-specific and do not provide a universal quantitative threshold for transition clarity.",
+    "The definition distinguishes actual operating conditions from controlled observation conditions, but the source does not provide a formal measurement protocol."
+  ],
+  "publicationBlockers": [],
+  "questionsForReview": [
+    "None"
+  ],
+  "relatedPageSlugs": [
+    "state-visibility",
+    "high-consequence",
+    "operational-clarity",
+    "workflow-robustness",
+    "error-likely-condition",
+    "kardion"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "State Visibility",
+      "targetSlug": "state-visibility",
+      "placementHint": "Related pages section or the definition section where transition clarity is contrasted with state visibility.",
+      "reason": "The source explicitly distinguishes transition clarity from state visibility."
+    },
+    {
+      "anchorText": "High Consequence",
+      "targetSlug": "high-consequence",
+      "placementHint": "System-initiated transitions section where high-consequence contexts are discussed.",
+      "reason": "The source explicitly states that transition clarity becomes a safety requirement in high-consequence contexts with system-initiated transitions."
+    },
+    {
+      "anchorText": "Kardion MCS Controller",
+      "targetSlug": "kardion",
+      "placementHint": "Examples of transition clarity in documented case evidence section.",
+      "reason": "The source names the Kardion MCS Controller as a case example, and the linking context provides an allowed Kardion slug."
+    },
+    {
+      "anchorText": "Operational Clarity",
+      "targetSlug": "operational-clarity",
+      "placementHint": "Related pages section as an adjacent glossary concept, if the page template displays related concepts.",
+      "reason": "Transition clarity concerns whether users update their operational model after a system state change."
+    },
+    {
+      "anchorText": "Workflow Robustness",
+      "targetSlug": "workflow-robustness",
+      "placementHint": "Related pages section as an adjacent glossary concept, if the page template displays related concepts.",
+      "reason": "The source discusses transition clarity in workflows where missed state changes affect operation."
+    }
+  ],
+  "qualityChecks": {
+    "factsOnlyFromCurrentSource": true,
+    "documentationStyle": true,
+    "noMarketingLanguage": true,
+    "noInventedClaims": true,
+    "linksOnlyFromLinkingContext": true,
+    "internalNotesNotPublished": true,
+    "readyForSanityImport": true
+  },
+  "__sourceCategoryDir": "Glossary"
+}

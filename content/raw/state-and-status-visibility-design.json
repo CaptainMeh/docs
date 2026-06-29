@@ -1,0 +1,198 @@
+{
+  "_type": "documentationPage",
+  "sourceFile": "Articles/Capabilities/capabilities--state-and-status-visibility-design.md",
+  "sourcePath": "sources/articles/Capabilities/capabilities--state-and-status-visibility-design.md",
+  "sanityDocumentIdCandidate": "documentationPage.state-and-status-visibility-design",
+  "title": "State And Status Visibility Design",
+  "slug": {
+    "_type": "slug",
+    "current": "state-and-status-visibility-design"
+  },
+  "pageType": "capability",
+  "category": "capabilities",
+  "parentSlug": "capabilities",
+  "childPageSlugs": [],
+  "excerpt": "State and status visibility design makes operational state recognisable without forcing users to reconstruct meaning from alarms, codes, scattered values, or shifting layouts. The capability is evidenced across maritime, clinical, industrial, operating-theatre, building-control, and workforce-management interfaces.",
+  "metaTitle": "State And Status Visibility Design",
+  "metaDescription": "Capability page defining state and status visibility design, with evidence from maritime, medical, industrial, and workforce systems.",
+  "summary": "State and status visibility design concerns how interfaces communicate current operational state, abnormal conditions, mode changes, and state transitions. The documented evidence emphasises state hierarchy, glance readability, spatial consistency, state aggregation, process mimics, and calibrated alert behaviour.",
+  "definition": "State-and-status visibility design is the design of interface structures that make a system’s current operational state, abnormal conditions, mode changes, and state transitions recognisable without users reconstructing meaning from raw indicators, alarms, or codes.",
+  "keyFacts": [
+    "State visibility is the degree to which users can understand what the system is doing without active interpretation.",
+    "Glance readability depends on state communication that works under brief or partial attention.",
+    "Recognition over recall is treated as a safety standard in high-consequence contexts, not only a usability preference.",
+    "Process mimics show state on a representation of the physical process, placing state where the equipment is rather than in a separate list.",
+    "State hierarchy separates primary state, secondary state, and tertiary state so that urgent information remains visible without flooding the interface.",
+    "Torqeedo evidence records 50% faster energy state identification in a controlled environment experiment with 24 subjects.",
+    "Torqeedo sea trials recorded glance reduction during manoeuvres through eye tracking with 7 subjects.",
+    "Kardion evidence records an absolute layout-stability standard: no element shifts position across any view transition.",
+    "Gericke evidence records client-measured fault-diagnosis time reductions from 24 to 8, 38 to 12, and 68 to 20 minutes across three sites.",
+    "deSoutter Medical / Zethon evidence records redundant non-colour cues because colour-only state indication was unreliable under operating-theatre lighting conditions."
+  ],
+  "tags": [
+    "state visibility",
+    "status visibility",
+    "operational state",
+    "glance readability",
+    "recognition over recall",
+    "state hierarchy",
+    "layout stability",
+    "alarm hierarchy",
+    "process mimic",
+    "ambient awareness",
+    "mode indicators"
+  ],
+  "bodyMarkdown": "## Summary\n\nCreative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nState-and-status visibility design makes operational state recognisable without forcing users to reconstruct meaning from scattered signals. It covers system state, operational state, device state, abnormal state, mode indicators, state transitions, and the visual hierarchy that determines which state is always visible and which state is available only in context.\n\nThe capability is needed when users must maintain ambient awareness under divided attention. In the documented work, that includes maritime energy systems, multi-engine vessel displays, clinical controllers, operating-theatre devices, building-control systems, workforce schedulers, and industrial HMIs.\n\n## When state and status visibility is needed\n\nState and status visibility is needed when a user’s next action depends on understanding the current condition of a system. The relevant state may be a vessel’s energy capacity, a device’s operational status, a process blockage, a sensor fault, a scheduling exception, or a normal temporary deviation that should not be treated as a fault.\n\nThe recurring failure pattern is symptom-versus-state communication. An interface may expose alarms, raw error codes, changing values, and scattered parameters, while still failing to explain the state that produced them. In the Gericke industrial HMI work, the legacy Easydos Pro interface exposed symptoms through alarm lists, raw error codes, and scattered parameters, but did not show operators whether the process was healthy. Under ambiguity, operators stopped or overrode healthy equipment precautionarily.\n\nState and status visibility is also needed at mode changes and state transitions. A mode change is a high-risk moment because the system’s operating logic changes while the user may still be acting on the previous state. State transition behaviour is therefore part of the design problem, not only an animation or display detail.\n\n## What state and status visibility design does\n\nState and status visibility design establishes a hierarchy of primary, secondary, and tertiary state. Primary state is always visible and highest priority. Secondary state is visible in context. Tertiary state is accessible but not intrusive. This hierarchy prevents the interface from treating telemetry, alarms, normal deviations, and urgent faults as equal information.\n\nCreative Navy’s state-and-status visibility design uses recognition over recall where the operating context requires rapid interpretation. Recognition over recall means that users recognise the state from a visual pattern rather than remembering the meaning of an indicator. In high-consequence contexts described in the evidence, this is treated as a safety requirement rather than a preference for ease of use.\n\nThe capability also uses layout stability and spatial consistency. Spatial memory supports glance readability only when indicators remain in stable positions across view transitions. In the Kardion MCS Controller work, the layout stability standard required that no element shift position across any view transition. The clinical rationale was that surgeons rely on the spatial memory of critical state indicators during rapid response.\n\nState aggregation is used when several components must be read as one operational state. In the Torqeedo maritime HMI, propulsion motors, battery banks, generators, auxiliary loads, and conversion units each had their own state and update cadence. The design problem was not only to show component readings, but to answer the captain’s question about vessel energy: how much energy remains, how it is being consumed, and what capacity remains.\n\nProcess-state communication is used when the physical process itself is the most reliable structure for recognition. In the Gericke industrial HMI work, the process mimic showed the twin-vessel conveying schematic, feeders, and flow paths, with failed components highlighted directly on the diagram. State was read from the picture of the plant rather than reconstructed from a separate alarm list.\n\n## Design mechanisms used for visible state\n\nState hierarchy is the main organising mechanism. In the Torqeedo maritime HMI, primary state covered vessel energy state and range, secondary state covered component-level breakdown on demand, and tertiary state covered full telemetry that was accessible but not surfaced by default. This allowed captains to maintain ambient awareness without monitoring every component.\n\nSpatial consistency is the main mechanism for glance readability. In the Kardion MCS Controller work, the standard view was shaped by a rule that no element could shift position across view transitions. Thirty-four directions of exploration for the standard view were evaluated against this constraint, and candidates were eliminated if an element’s position changed across transitions.\n\nRedundant state cues are used where a single signal channel may fail. In the deSoutter Medical / Zethon work, colour alone was not considered reliable under variable operating-theatre lighting. Critical state was communicated through spatial position, icon form, and colour together, so that the failure of one channel did not remove the signal.\n\nA process mimic is used where state should be shown where the equipment is. In the Gericke industrial HMI work, abnormal state was placed directly on the conveying schematic. A conveying blockage example highlighted “Valve V12 failed to reach open position — probable root cause of 6 active alarms” on the process path, rather than presenting a flat alarm list.\n\nSensor cadence synchronisation is used where data sources update at different rates. In the Torqeedo maritime HMI, different systems updated at different intervals, which could otherwise make the display read as unstable. A grid structure synchronised competing update cadences into a unified display rhythm so captains perceived one coherent system rather than competing data streams.\n\n## Torqeedo maritime HMI evidence for state aggregation\n\nThe Torqeedo maritime HMI evidence is the strongest measured example of state aggregation in the documented capability set. The system combined propulsion motors, battery banks from 40 to 200 kWh, generators, auxiliary loads, and conversion units, each with its own state and update cadence.\n\nThe design response aggregated these component states into a coherent vessel energy state. Captains did not need to interpret separate systems as independent streams; the interface presented energy state, consumption, remaining capacity, and range as a coherent operational view.\n\nAvailable Torqeedo evidence records 50% faster energy state identification in a controlled environment experiment with 24 subjects. Available Torqeedo evidence also records glance reduction during manoeuvres in actual sea trials, measured through eye tracking with 7 subjects. Participant-reported structured feedback records that all 15 professional captains rated the new interface as significantly better.\n\n## Cox Marine evidence for multi-engine state coherence\n\nThe Cox Marine cluster display work addressed state coherence across configurations from 1 engine to 6 engines. The state communication problem was that a single-engine display and a six-engine display had to share a coherent mental model so captains could read both without relearning the interface.\n\nThe engine tile became the invariant unit. Each engine had one tile, and state information kept a consistent spatial arrangement inside each tile regardless of configuration. A six-engine vessel displayed six tiles; a single-engine vessel displayed one tile. The state-reading logic did not change.\n\nMulti-engine fault scenario testing during Concept Convergence showed that some layout candidates made fault presence visible at tile level but did not direct attention to the priority engine in a multi-engine fault condition. The design therefore included a fault-summary area that surfaced the highest-priority fault across all tiles, allowing captains to identify the priority fault without scanning every tile individually.\n\nThe Cox Marine work also included a military night vision mode. The constraint was absolute: all state communication had to remain legible under night vision goggles, within luminance and contrast ranges that removed most standard interface choices.\n\n## Kardion evidence for layout stability as a clinical state standard\n\nThe Kardion MCS Controller work treated layout stability as a clinical state visibility requirement. The rule was more specific than the IEC 62366-1 consistency requirement recorded in the evidence: no element shifts position across any view transition.\n\nThe clinical rationale was that surgeons build spatial memory for critical state indicators during a procedure. If the blood flow value moves between views, spatial memory fails and active search begins. The standard view was therefore built around a spatial and visual hierarchy rather than tabbed sections.\n\nThe Kardion state hierarchy separated primary, secondary, and tertiary state. Primary state included device operational status and the min/max flow visualisation that the standard view was built around. Secondary state included parameter detail accessible from the standard view. Tertiary state included alarm history and configuration.\n\nThe recorded regulatory outcome is FDA approval: the design passed evaluation as submitted, with no design changes required. The documented evidence states that the state hierarchy and layout stability contributed to the regulatory review satisfying identified use-related hazards related to misinterpretation of device state. This is a verifiable regulatory result, not a measured usability outcome.\n\nFor regulated medical-device work, Creative Navy's role is formative evaluation only; summative validation is the manufacturer's responsibility via the regulatory submission.\n\n## deSoutter Medical / Zethon evidence for recognition under operating-theatre conditions\n\nThe deSoutter Medical / Zethon work treated the operating theatre as a stress test for state visibility. The relevant conditions included variable overhead lighting, gloved hands, divided attention, and primary focus on the surgical field.\n\nCompetitive benchmarking found that 6 of 8 benchmarked competitors relied primarily on colour as the state indicator. The documented failure mode was that colour coding became unreliable when surgical headlights were repositioned, overhead field illumination changed, or theatre setups differed.\n\nThe design response used redundant non-colour cues. Every critical state was communicated through spatial position, icon form, and colour together. The recognition standard was that a surgeon should be able to confirm the operating state without reading, without recalling an indicator meaning, and without taking attention from the patient for more than a brief glance.\n\nEight surgeons in structured review sessions confirmed that state verification was reduced to brief glance recognition. This evidence is surgeon-reported from design review sessions and is not post-deployment measurement.\n\n## Elsner Elektronik evidence for multi-zone state and non-technical fault communication\n\nThe Elsner Elektronik work addressed state visibility for users across 54 countries, including tech-savvy professionals and elderly consumers with limited technical background. The state communication had to function without requiring technical interpretation.\n\nThe multi-zone display challenge was that a single controller managed heating, cooling, lighting, and blinds across multiple rooms. The state of each system had to be visible without requiring navigation between views.\n\nSensor fault communication was calibrated for non-technical occupants. A user encountering a sensor fault needed to understand that something was wrong and that an engineer should be called, without needing to understand what a sensor fault meant for the broader system.\n\nThe work also used a dual-priority alert system. Routine notifications, such as a sensor outside a preferred range, were distinguished visually and behaviourally from critical notifications, such as complete sensor failure or safety-relevant state change. The hierarchy was intended to prevent alert fatigue from degrading the urgency of genuinely critical states.\n\n## Triopsis evidence for scheduler and field-technician state hierarchy\n\nThe Triopsis workforce management work addressed state hierarchy for schedulers under operational pressure. Schedulers managing workforce interventions across a live fleet needed ambient awareness of fleet state without monitoring every job individually.\n\nThe scheduler view surfaced exceptions such as jobs at risk, developing conflicts, and incomplete assignments. Predictive conflict indicators made future scheduling problems visible before they became present crises. This treated an approaching conflict as a state that needed to be visible before it had fully occurred.\n\nThe state hierarchy in the scheduler view was defined by criticality. Jobs requiring immediate action included exceptions, conflicts, and overdue work. Jobs requiring monitoring included in-progress work and jobs near deadline. Jobs in normal state were backgrounded.\n\nField technicians also needed job-state visibility under outdoor conditions. The field-use state communication had to support sunlight, gloves, and brief glances, while showing the current job state and what came next.\n\n## Gericke evidence for process-state communication on a live mimic\n\nThe Gericke industrial HMI work addressed the difference between symptoms and state. The legacy Easydos Pro interface exposed alarm lists, raw error codes, and scattered parameters, but did not show operators whether the process was healthy. Operators could therefore read ambiguous conditions as faults and stop or override healthy equipment precautionarily.\n\nThe redesigned interface used a live process mimic. The twin-vessel conveying schematic, feeders, and flow paths showed state where the equipment was located. Failed components were highlighted directly on the diagram, replacing raw error-code interpretation with process-state recognition.\n\nGericke also used a root-cause alarm hierarchy for abnormal conditions. Secondary alarms were collapsed beneath their originating event, and probable cause was indicated rather than presenting a flat list of effects. In the documented conveying-blockage example, the interface highlighted “Valve V12 failed to reach open position — probable root cause of 6 active alarms” directly on the process path.\n\nThe documented refill-cycle example shows the difference between symptom communication and state communication. A normal feeder refill cycle had previously surfaced as a cluster of alarms with no indication of which mattered. The redesigned mimic showed “Refill Cycle — temporary deviation expected — no operator action required,” so the normal state was recognisable as normal.\n\nClient-measured Gericke evidence records fault-diagnosis time falling by roughly two-thirds at every site: 24 to 8 minutes, 38 to 12 minutes, and 68 to 20 minutes. Client-measured evidence also records repeat alarms more than halving: 42% to 18%, 58% to 28%, and 73% to 35%. The evidence basis is client-measured by Gericke, not Creative Navy-measured, across three sites described by type and geography within a confirmed single-variable window.\n\nGericke is not a regulated device. It operates in GMP environments, GAMP 5 is relevant, and the validation boundary is the manufacturer’s.\n\n## Boundaries and limits of the evidence\n\nThe evidence base for state and status visibility design is mixed. Torqeedo includes directly measured controlled-environment and sea-trial evidence. Gericke includes client-measured evidence by Gericke, not Creative Navy-measured evidence. Kardion includes a recorded FDA approval outcome, but the regulatory result should not be treated as a measured usability outcome.\n\nSome evidence is structured but not deployment-measured. deSoutter Medical / Zethon evidence is surgeon-reported from design review sessions, not post-deployment measurement. Cox Marine evidence records design constraints, scenario testing, and architectural decisions, but not a quantitative outcome metric in the available capability evidence. Elsner Elektronik and Triopsis evidence describes state hierarchy and communication requirements, but does not provide quantitative outcome metrics in the available capability evidence.\n\nThe Gericke refill and valve illustrations are Creative Navy reconstructions of the redesign, not logged incidents. They are useful examples of symptom-versus-state communication, but they should not be cited as recorded operational events.\n\n## Related capabilities and cases\n\nState and status visibility design is closely related to warning and alarm clarity improvement, because both concern how abnormal conditions are prioritised and interpreted. It is also related to cognitive load reduction, information architecture for expert systems, design for abnormal and degraded scenarios, error reduction and recovery design, and usability evaluation for high-consequence products.\n\nThe documented cases most directly connected to this capability include Kardion, Cox Marine, and Triopsis. These cases illustrate layout stability in clinical use, tile-based state coherence across vessel configurations, and state hierarchy for workforce scheduling under operational pressure.",
+  "claims": [
+    {
+      "claim": "State visibility is the degree to which users can understand what the system is doing without active interpretation.",
+      "evidenceType": "definition",
+      "sourceStrength": "strong",
+      "notes": "Defined in the domain vocabulary."
+    },
+    {
+      "claim": "Torqeedo evidence records 50% faster energy state identification in a controlled environment experiment with 24 subjects.",
+      "evidenceType": "case study",
+      "sourceStrength": "strong",
+      "notes": "Directly measured new interface versus legacy in a controlled environment experiment."
+    },
+    {
+      "claim": "Torqeedo evidence records glance reduction during manoeuvres through eye tracking with 7 subjects during actual sea trials.",
+      "evidenceType": "field-measured",
+      "sourceStrength": "strong",
+      "notes": "Measured via eye tracking during actual sea trials."
+    },
+    {
+      "claim": "Kardion applied an absolute layout-stability standard requiring no element to shift position across any view transition.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "engagement record",
+      "notes": "The notes describe this as Creative Navy's own standard above the IEC 62366-1 consistency requirement."
+    },
+    {
+      "claim": "Kardion received FDA approval, with the design passing evaluation as submitted and no design changes required.",
+      "evidenceType": "verifiable regulatory outcome",
+      "sourceStrength": "verifiable regulatory result",
+      "notes": "Regulatory result is recorded as FDA approval; it is not a measured usability outcome."
+    },
+    {
+      "claim": "deSoutter Medical / Zethon used redundant non-colour cues after benchmarking found that 6 of 8 competitors relied primarily on colour for state indication.",
+      "evidenceType": "case study",
+      "sourceStrength": "moderate",
+      "notes": "Operating-theatre lighting conditions made colour-only state indication unreliable in the documented benchmarking."
+    },
+    {
+      "claim": "Eight surgeons in structured review sessions confirmed that state verification was reduced to brief glance recognition for deSoutter Medical / Zethon.",
+      "evidenceType": "case study",
+      "sourceStrength": "moderate",
+      "notes": "Surgeon-reported from design review sessions, not post-deployment measurement."
+    },
+    {
+      "claim": "Gericke client-measured evidence records fault-diagnosis time reductions from 24 to 8, 38 to 12, and 68 to 20 minutes across three sites.",
+      "evidenceType": "client-measured",
+      "sourceStrength": "strong",
+      "notes": "Client-measured by Gericke, not Creative Navy-measured, within a confirmed single-variable window."
+    },
+    {
+      "claim": "Gericke client-measured evidence records repeat alarm reductions from 42% to 18%, 58% to 28%, and 73% to 35%.",
+      "evidenceType": "client-measured",
+      "sourceStrength": "strong",
+      "notes": "Client-measured by Gericke across three sites; repeat-alarm reduction is used as evidence for the alarm-state hierarchy."
+    },
+    {
+      "claim": "Cox Marine used an engine tile as the invariant unit so configurations from 1 engine to 6 engines shared the same state-reading logic.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "engagement record",
+      "notes": "The notes describe tile architecture and multi-engine fault scenario testing during Concept Convergence."
+    }
+  ],
+  "limitations": [
+    "The evidence base varies by case: Torqeedo includes directly measured controlled-environment and sea-trial results, while other examples are design records, structured feedback, or client-measured outcomes.",
+    "Kardion FDA approval is a regulatory result and should not be treated as a measured usability outcome.",
+    "deSoutter Medical / Zethon evidence is surgeon-reported from structured design review sessions, not post-deployment measurement.",
+    "Gericke results were client-measured by Gericke, not Creative Navy-measured.",
+    "The Gericke refill and valve illustrations are Creative Navy reconstructions of the redesign, not logged incidents.",
+    "Cox Marine, Elsner Elektronik, and Triopsis evidence in this capability description does not provide quantitative outcome metrics.",
+    "Gericke is not a regulated device; it operates in GMP environments, GAMP 5 is relevant, and the validation boundary is the manufacturer’s."
+  ],
+  "publicationBlockers": [],
+  "questionsForReview": [
+    "The notes use “deSoutter Medical / Zethon” without explaining whether this is a client/product naming relationship or two entities; the public page preserves the source wording."
+  ],
+  "relatedPageSlugs": [
+    "warning-and-alarm-clarity-improvement",
+    "cognitive-load-reduction",
+    "information-architecture-for-expert-systems",
+    "design-for-abnormal-and-degraded-scenarios",
+    "error-reduction-and-recovery-design",
+    "usability-evaluation-for-high-consequence-products",
+    "kardion",
+    "cox-marine",
+    "triopsis-workforce-management-saas"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "warning and alarm clarity improvement",
+      "targetSlug": "warning-and-alarm-clarity-improvement",
+      "placementHint": "Related capabilities section",
+      "reason": "State visibility and alarm clarity both concern how abnormal conditions are prioritised and interpreted."
+    },
+    {
+      "anchorText": "cognitive load reduction",
+      "targetSlug": "cognitive-load-reduction",
+      "placementHint": "Related capabilities section",
+      "reason": "The page discusses recognition over recall, ambient awareness, and avoiding active interpretation."
+    },
+    {
+      "anchorText": "information architecture for expert systems",
+      "targetSlug": "information-architecture-for-expert-systems",
+      "placementHint": "Related capabilities section",
+      "reason": "State hierarchy and progressive access to telemetry are information-architecture problems in expert systems."
+    },
+    {
+      "anchorText": "design for abnormal and degraded scenarios",
+      "targetSlug": "design-for-abnormal-and-degraded-scenarios",
+      "placementHint": "Related capabilities section",
+      "reason": "The page covers abnormal states, degraded conditions, faults, and state transitions."
+    },
+    {
+      "anchorText": "error reduction and recovery design",
+      "targetSlug": "error-reduction-and-recovery-design",
+      "placementHint": "Related capabilities section",
+      "reason": "Clear state communication reduces misinterpretation of faults and normal deviations."
+    },
+    {
+      "anchorText": "usability evaluation for high-consequence products",
+      "targetSlug": "usability-evaluation-for-high-consequence-products",
+      "placementHint": "Related capabilities section",
+      "reason": "Several evidence examples involve controlled evaluation, structured review, eye tracking, and regulatory evaluation."
+    },
+    {
+      "anchorText": "Kardion",
+      "targetSlug": "kardion",
+      "placementHint": "Kardion evidence section and related cases section",
+      "reason": "Kardion is a named case example for layout stability and clinical state visibility."
+    },
+    {
+      "anchorText": "Cox Marine",
+      "targetSlug": "cox-marine",
+      "placementHint": "Cox Marine evidence section and related cases section",
+      "reason": "Cox Marine is a named case example for tile-based state coherence across multi-engine configurations."
+    },
+    {
+      "anchorText": "Triopsis",
+      "targetSlug": "triopsis-workforce-management-saas",
+      "placementHint": "Triopsis evidence section and related cases section",
+      "reason": "Triopsis is a named case example for scheduler state hierarchy and predictive conflict indicators."
+    }
+  ],
+  "qualityChecks": {
+    "factsOnlyFromCurrentSource": true,
+    "documentationStyle": true,
+    "noMarketingLanguage": true,
+    "noInventedClaims": true,
+    "linksOnlyFromLinkingContext": true,
+    "internalNotesNotPublished": true,
+    "readyForSanityImport": true
+  },
+  "__sourceCategoryDir": "Capabilities"
+}

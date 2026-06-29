@@ -1,0 +1,138 @@
+{
+  "slug": "the-product-behaves-inconsistently-across-scenarios",
+  "title": "The Product Behaves Inconsistently Across Scenarios",
+  "pageType": "situation",
+  "category": "situations",
+  "section": "AI And Automation",
+  "summary": "This situation describes AI-enabled products that perform well on average but behave inconsistently across scenarios. The inconsistency often comes from absent behavioural requirements, invisible context sensitivity, unmanaged edge cases, uniform confidence presentation, or uncommunicated behavioural drift.",
+  "keyFacts": [
+    "AI-enabled products can show acceptable aggregate accuracy or task completion while still behaving inconsistently in specific scenarios.",
+    "Users experience behavioural inconsistency as unpredictability: similar cases appear to receive different recommendations or responses without a visible reason.",
+    "The operational cost of inconsistency is vigilance: users must scrutinise every interaction because they cannot identify the AI's high-reliability zone.",
+    "Common drivers include absent behavioural requirements, invisible context sensitivity, unmanaged edge cases, confidence uniformity, and behavioural drift without communication.",
+    "Confidence uniformity means the interface presents AI outputs in the same way even when reliability varies by scenario.",
+    "In the Callsign fraud detection case, similar transactions could be handled differently because fraud rules existed without a policy-level object governing their interaction.",
+    "In the Puraite AI systematic review case, users experienced AI screening decisions as arbitrary when confidence variation was not communicated.",
+    "In the Veecle automotive embedded IDE case, users experienced AI features as contextless because the interface did not make the AI's operating context visible.",
+    "In the Typewise AI keyboard case, users experienced transition-period inconsistency between familiar native-keyboard behaviour and a new interaction model."
+  ],
+  "bodySections": [
+    {
+      "heading": "AI product inconsistency as a user-facing situation",
+      "bodyMarkdown": "Creative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nAI-enabled products can produce acceptable aggregate performance while behaving inconsistently in specific scenarios. Accuracy and task completion can look acceptable in aggregate metrics, while edge cases, unusual inputs, or contexts outside the model's designed parameters produce behaviour that users experience as unpredictable.\n\nThe user-facing problem is not only that the AI may be wrong. The problem is that the user cannot form a stable expectation of the product's behaviour. Similar cases may appear to receive different recommendations. Demonstrations may be confident and correct, while real work produces different behaviour. The product may respond in ways that do not match what the user thought the AI was doing.\n\nBehavioural inconsistency creates an operational vigilance cost. Users cannot tell when the AI is operating in its high-reliability zone and when it is outside that zone, so every interaction requires the same level of scrutiny. The absence of a stable pattern prevents users from developing a reliable mental model of when to trust the AI output and when to question it."
+    },
+    {
+      "heading": "Drivers of inconsistent AI product behaviour",
+      "bodyMarkdown": "Absent behavioural requirements are a primary driver of inconsistent AI product behaviour. A team may specify how the AI should behave in normal cases, while leaving non-standard scenarios, edge cases, and unusual inputs unspecified. In those cases, the model produces behaviour based on its training, and the interface may not communicate that the AI is outside its designed parameters.\n\nContext sensitivity without context visibility creates unexplained variation. The AI may respond to prior session history, user-specific behaviour patterns, data availability, system load, or version. When those contextual factors change in ways the user cannot see, the AI's behaviour changes in ways the user cannot account for.\n\nEdge cases often become consistency failures when they are treated as rare exceptions rather than governed product behaviour. Normal cases may be designed deliberately, while edge case behaviour remains unspecified. In real work, users encounter edge cases regularly, so behaviour that was not designed becomes part of the operational experience.\n\nConfidence uniformity masks reliability variation. When all AI outputs receive the same visual treatment, users cannot distinguish outputs produced inside the AI's reliable zone from outputs produced in uncertain or borderline scenarios. The interface removes the signal users need to calibrate trust.\n\nBehavioural drift without communication also creates inconsistency. Model updates, data changes, or configuration changes can alter the product's behaviour without the change being visible to users. Users may then interpret the changed behaviour as a failure in their own understanding rather than as a product change."
+    },
+    {
+      "heading": "Behavioural consistency, reliability zones, and stable mental models",
+      "bodyMarkdown": "Behavioural consistency means that an AI product behaves predictably and explicably across scenarios and contexts. The target is not identical output in every case. The target is behaviour that users can understand, anticipate, and interpret in relation to the scenario they are working in.\n\nA behavioural requirement is an explicit specification of what the product should do in a specific situation. Behavioural requirements are the mechanism that governs consistency across normal cases, non-standard cases, edge cases, and unusual inputs.\n\nA reliability zone is the range of inputs and contexts in which the AI's performance is consistently high. Outside that zone, behaviour becomes less predictable. If the interface does not communicate the boundary between reliable and uncertain zones, users cannot calibrate the level of scrutiny the output requires.\n\nA stable mental model is the user's ability to form a reliable expectation of how the AI will behave. Behavioural consistency is a prerequisite for that mental model. Without it, the user has no dependable way to know whether a surprising output reflects a valid distinction, a borderline case, missing context, a configuration change, or an AI error."
+    },
+    {
+      "heading": "How this situation differs from adjacent AI product situations",
+      "bodyMarkdown": "This situation is narrower than the general gap between model quality and product behaviour. A model may be technically good while the product behaviour is not useful, but behavioural inconsistency concerns the specific problem of variation across scenarios that users cannot explain or predict.\n\nThis situation is also the user-facing consequence of undefined good AI behaviour. When teams cannot define good AI behaviour internally, users may later experience the unresolved specification problem as unpredictability in the product.\n\nThis situation overlaps with hidden uncertainty at the point of decision, but it is not identical. Hidden uncertainty concerns the absence of confidence communication. Behavioural inconsistency can result from hidden uncertainty, absent behavioural requirements, invisible context sensitivity, edge case behaviour, and uncommunicated drift."
+    },
+    {
+      "heading": "Callsign fraud detection case evidence: rule logic without a policy-level governing model",
+      "bodyMarkdown": "In the documented Callsign fraud detection case, fraud rules existed across database views and configuration tables before the Creative Navy engagement. There was no policy-level object connecting the rules, so similar transactions could be handled differently depending on which rules were active, how those rules interacted, and whether their interactions had been considered when they were independently created.\n\nThe Callsign behaviour was not arbitrary in the sense that each rule lacked logic. Each rule had its own logic. The inconsistency appeared at the aggregate product level because no policy-level model governed how rules interacted. Risk analysts could not reliably predict whether a configuration change would produce the intended outcome or interact with other rules in unexpected ways.\n\nThe redesign established the policy as the central governing object. Rules connected to named policies, and each policy's behaviour became visible and testable through evaluation mode before live deployment. The case evidence describes consistency as the result of making the governing model explicit."
+    },
+    {
+      "heading": "Puraite AI systematic review case evidence: confidence hidden behind uniform presentation",
+      "bodyMarkdown": "In the documented Puraite AI systematic review case, users experienced AI screening decisions as arbitrary when similar papers appeared to receive different recommendations without a visible basis for the distinction. The case evidence describes confidence variation as the missing signal: some AI decisions were high-confidence, while others were genuinely borderline.\n\nThe inconsistency was not always that the AI was wrong. The problem was that the interface made correct and incorrect behaviour equally opaque. When all decisions were presented with the same visual treatment, users could not form a mental model of when the AI's recommendations warranted scrutiny and when they did not.\n\nThe redesign introduced an explicit confidence percentage with colour coding. This allowed users to distinguish the AI's reliable zone from its uncertain zone, making behaviour more predictable rather than arbitrary from the user's perspective."
+    },
+    {
+      "heading": "Veecle automotive embedded IDE case evidence: AI output without visible context",
+      "bodyMarkdown": "In the documented Veecle automotive embedded IDE case, AI features felt contextless because they produced outputs that did not seem connected to the user's current state. Users experienced the AI as responding to something other than what they thought they were asking.\n\nThe inconsistency was not described as an accuracy problem. It was a mismatch between the user's visible context and the context the AI appeared to use. Users could not form a reliable expectation of what the AI would respond to or what it would produce.\n\nThe redesign addressed this by communicating the AI state: what the AI was currently doing and what project state it was drawing on. Making the context visible gave users a basis for understanding why the AI behaved as it did."
+    },
+    {
+      "heading": "Typewise AI keyboard case evidence: transition-period inconsistency between interaction models",
+      "bodyMarkdown": "In the documented Typewise AI keyboard case, users experienced the keyboard as inconsistent during adoption. It sometimes behaved like the familiar iOS native keyboard and sometimes behaved according to the new interaction model users were learning.\n\nThe inconsistency was structural because users were moving between two interaction models. It felt arbitrary when the interface did not communicate where the boundary between old and new behaviour lay.\n\nThe adoption framework introduced new behaviours one at a time and kept them within reach of existing competence. This made the transition explicit, so users could distinguish which parts of the interaction model matched existing knowledge and which parts were new."
+    },
+    {
+      "heading": "Boundaries and limits of the documented evidence",
+      "bodyMarkdown": "The documented evidence describes several mechanisms that can produce behavioural inconsistency in AI-enabled products. It does not establish a single cause for all inconsistency. Absent behavioural requirements, invisible context sensitivity, unmanaged edge cases, confidence uniformity, and behavioural drift can appear separately or in combination.\n\nThe case examples are descriptive and scenario-specific. They do not provide quantified error rates, measured trust changes, or statistical comparisons across product versions. The evidence is useful for identifying mechanisms and design patterns, but it should not be read as a universal measurement of AI product reliability."
+    }
+  ],
+  "evidenceSummary": {
+    "strongClaims": [
+      "In the Callsign fraud detection case, similar transactions could be handled differently because rules existed without a policy-level object governing their interaction.",
+      "In the Puraite AI systematic review case, uniform presentation of AI decisions made confidence variation invisible to users.",
+      "In the Veecle automotive embedded IDE case, users experienced AI features as contextless because the interface did not communicate what context the AI was using.",
+      "In the Typewise AI keyboard case, transition-period inconsistency came from users moving between familiar native-keyboard behaviour and a new interaction model."
+    ],
+    "weakerClaims": [
+      "AI-enabled products can have acceptable aggregate performance while behaving inconsistently in edge cases, unusual inputs, or contexts outside the model's designed parameters.",
+      "Behavioural inconsistency erodes trust by preventing users from forming a stable expectation of when to trust or scrutinise AI output.",
+      "Common drivers of AI product inconsistency include absent behavioural requirements, invisible context sensitivity, unmanaged edge cases, confidence uniformity, and uncommunicated behavioural drift."
+    ],
+    "limitations": [
+      "The documented evidence is descriptive and does not provide quantified error rates, measured trust changes, or statistical comparisons across product versions.",
+      "The case examples show mechanisms of inconsistency in specific products and should not be generalised as proof that all AI product inconsistency has the same cause.",
+      "The situation distinguishes behavioural inconsistency from adjacent situations, but overlap remains possible when hidden uncertainty, undefined behavioural requirements, and poor product behaviour occur together."
+    ]
+  },
+  "relatedPageSlugs": [
+    "the-model-may-be-good-but-the-product-behaviour-is-not",
+    "teams-cannot-define-good-ai-behaviour",
+    "uncertainty-is-hidden-at-the-point-of-decision",
+    "users-do-not-trust-the-ai-enough",
+    "system-state-is-hard-to-understand",
+    "callsign-fraud-authentication",
+    "puraite"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "the model may be good but the product behaviour is not",
+      "targetSlug": "the-model-may-be-good-but-the-product-behaviour-is-not",
+      "reason": "The source explicitly distinguishes this situation from the broader gap between model quality and product usability."
+    },
+    {
+      "anchorText": "teams cannot define good AI behaviour",
+      "targetSlug": "teams-cannot-define-good-ai-behaviour",
+      "reason": "The source explicitly describes this as the internal specification problem that can lead to user-facing unpredictability."
+    },
+    {
+      "anchorText": "uncertainty is hidden at the point of decision",
+      "targetSlug": "uncertainty-is-hidden-at-the-point-of-decision",
+      "reason": "The source explicitly distinguishes hidden confidence communication from the broader inconsistency situation."
+    },
+    {
+      "anchorText": "users do not trust the AI enough",
+      "targetSlug": "users-do-not-trust-the-ai-enough",
+      "reason": "The source states that behavioural inconsistency erodes trust by preventing stable expectations."
+    },
+    {
+      "anchorText": "system state is hard to understand",
+      "targetSlug": "system-state-is-hard-to-understand",
+      "reason": "The source describes inconsistent AI behaviour caused by context the user cannot see."
+    },
+    {
+      "anchorText": "Callsign fraud detection case",
+      "targetSlug": "callsign-fraud-authentication",
+      "reason": "The source uses Callsign as case evidence for inconsistency caused by rules without a governing policy-level model."
+    },
+    {
+      "anchorText": "Puraite AI systematic review case",
+      "targetSlug": "puraite",
+      "reason": "The source uses Puraite as case evidence for inconsistency caused by hidden confidence variation."
+    }
+  ],
+  "tags": [
+    "AI-enabled products",
+    "behavioural consistency",
+    "behavioural requirements",
+    "edge case behaviour",
+    "confidence communication",
+    "reliability zone",
+    "stable mental model",
+    "AI trust",
+    "context visibility"
+  ],
+  "_meta": {
+    "sourcePath": "sources/articles/Situations/situations--ai--the-product-behaves-inconsistently-across-scenarios.md",
+    "parentSlug": "ai-and-automation",
+    "childPageSlugs": [],
+    "generatedBy": "deterministic"
+  }
+}

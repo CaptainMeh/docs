@@ -1,0 +1,187 @@
+{
+  "_type": "documentationPage",
+  "sourceFile": "Articles/Glossary/glossary--industry-terms--human-oversight.md",
+  "sourcePath": "sources/articles/Glossary/glossary--industry-terms--human-oversight.md",
+  "sanityDocumentIdCandidate": "documentationPage.human-oversight",
+  "title": "Human Oversight",
+  "slug": {
+    "_type": "slug",
+    "current": "human-oversight"
+  },
+  "pageType": "glossary-term",
+  "category": "glossary",
+  "parentSlug": "industry-terms",
+  "childPageSlugs": [],
+  "excerpt": "Human oversight is the capacity of a person to meaningfully review, verify, or intervene in decisions made within a system. Oversight is functional only when the interface allows substantive human judgement, not merely formal approval.",
+  "metaTitle": "Human Oversight Definition",
+  "metaDescription": "Human oversight means meaningful human review, verification, or intervention in system decisions, including AI-influenced decisions.",
+  "summary": "Human oversight describes meaningful human review or intervention in system decisions. In design terms, it depends on whether the reviewer has the information, time, cognitive support, and independence needed to exercise judgement at the point of review.",
+  "definition": "Human oversight is the capacity of a person to meaningfully review, verify, or intervene in decisions made within a system, including decisions made or influenced by automated processes, AI recommendations, or algorithmic rules.",
+  "keyFacts": [
+    "Human oversight requires meaningful review, verification, or intervention, not only a formal approval step.",
+    "Nominal oversight records that a person was involved but does not enable substantive independent assessment.",
+    "Functional oversight enables a reviewer to verify the substance of what they are reviewing without relying on the prior party's interpretation.",
+    "Relevant information must be available at the oversight point for oversight to be functional.",
+    "Sufficient time and cognitive support are necessary because excessive navigation or cognitive overhead can make substantive review impractical.",
+    "Independence preservation is necessary because the reviewer should not be systematically anchored to the prior party's framing or the system's recommendation.",
+    "In AI-enabled systems, human oversight can be weakened by visual authority signals, costly override mechanisms, missing confidence information, and audit trails that record decisions without recording what oversight found.",
+    "IEC 62366-1 and SCA are described as regulatory framings that attempt to mandate human oversight; interface design determines whether the mandated oversight is functional or nominal.",
+    "Case evidence includes Callsign fraud detection, Akrivia Health clinical research, and Puraite AI systematic review."
+  ],
+  "tags": [
+    "human oversight",
+    "functional oversight",
+    "nominal oversight",
+    "AI governance",
+    "review interfaces",
+    "decision review",
+    "independence preservation",
+    "audit trails",
+    "SCA",
+    "IEC 62366-1"
+  ],
+  "bodyMarkdown": "## Definition\n\nHuman oversight is the capacity of a person to meaningfully review, verify, or intervene in decisions made within a system. The term applies to decisions made or influenced by automated processes, AI recommendations, or algorithmic rules.\n\nThe word \"meaningfully\" is central. Oversight that exists formally but cannot be exercised substantively is not human oversight in the functional sense; it is the appearance of oversight.\n\n## Meaning in Creative Navy's documentation\n\nHuman oversight is treated as both a governance property and a design property. A system can require oversight in governance documentation while designing interfaces that make substantive review impractical or impossible.\n\nA well-designed oversight interface makes review possible at the moment when review is supposed to occur. The relevant question is whether the person responsible for oversight can form an independent judgement using the information and interaction support available at that point in the workflow.\n\n## Functional oversight differs from nominal approval\n\nNominal oversight exists when a review or approval step appears in the workflow, a person is involved, and a record is produced documenting that oversight occurred. Nominal oversight does not mean the reviewer could verify the substance of what they were approving. The required information may be absent, the time allowed may be insufficient, or the complexity may be too high for independent assessment without significant additional work.\n\nFunctional oversight exists when the review or approval step enables genuine independent assessment. The reviewer can verify what they are reviewing without depending on the prior party's interpretation. The information required for independent judgement is available at the review step, and the interface supports the oversight activity rather than merely providing a button to record that it occurred.\n\n## Interface conditions required for functional human oversight\n\nFunctional human oversight requires relevant information at the oversight point. The reviewer must be able to see the information needed for independent assessment without requiring the prior party to explain or interpret it.\n\nFunctional human oversight requires sufficient time and cognitive support. An interface that forces extensive navigation to find review-relevant information effectively limits oversight to reviewers who invest disproportionate effort.\n\nFunctional human oversight requires independence preservation. The oversight mechanism must not systematically anchor the reviewer's judgement to the prior party's framing or to the system's recommendation. Oversight is not independent when the reviewer sees only the system's summary, or when the system's recommendation is presented before the reviewer has formed an independent assessment.\n\n## Human oversight in AI-enabled systems\n\nHuman oversight has become particularly prominent in AI governance, but the concept applies to any system where automated processes make or influence consequential decisions. The design question is whether the interface enables human judgement to be genuinely exercised at the point where oversight is expected.\n\nIn AI-enabled systems, oversight can become nominal when AI recommendations are presented with visual authority signals that substitute for independent assessment. Oversight can also become nominal when override mechanisms exist but are practically costlier than acceptance.\n\nHuman oversight in AI-enabled systems is also weakened when confidence is not communicated. Without confidence information, reviewers cannot know when the AI is operating within its reliable zone. Audit trails can also be insufficient when they document that decisions were made but not what the oversight found.\n\n## Regulatory framing for mandated human oversight\n\nIn regulated medical devices, IEC 62366-1 is described as requiring that certain decisions remain with the clinical team rather than the device. In financial services, SCA is described as requiring human approval for certain transaction categories.\n\nThese regulatory requirements are attempts to mandate human oversight. Interface design determines whether mandated oversight is functional or nominal.\n\n## Examples in documented case evidence\n\nIn the documented [Callsign fraud detection case](callsign-fraud-authentication), the policy engine architecture was designed to make risk team oversight of fraud control decisions functional. The documented case evidence says every policy was traceable, every decision was attributable, and every configuration session was separated from live evaluation. Risk teams reviewing the platform under SCA and PCI DSS compliance requirements could perform substantive oversight rather than nominal approval. Lloyds Bank and HSBC contracts followed; this outcome is client-reported.\n\nIn the documented Akrivia Health clinical research case, governance reviewers could not perform functional oversight in the pre-redesign system because the cohort query logic was not independently readable. The redesign made oversight functional by surfacing cohort logic in a form the reviewer could assess without researcher involvement. The reported evidence is client-reported: governance reviewers could verify without escalating.\n\nIn the documented [Puraite AI systematic review case](puraite), blinded mode and override parity design addressed oversight independence. The design aimed to ensure that systematic reviewers' assessments were independent of the AI's prior recommendations, which is described as a methodological oversight requirement. The prior design had made independent oversight structurally difficult to achieve.\n\n## Evidence basis\n\nThe definition and design conditions for human oversight are conceptual definitions in Creative Navy's documentation. The case examples are drawn from documented engagements and are calibrated by their stated evidence basis.\n\nThe Callsign evidence includes client-reported commercial follow-on evidence. The Akrivia Health evidence includes a client-reported governance review outcome. The Puraite example is described as case evidence about design mechanisms for independence, not as a quantified measured outcome.\n\n## Boundaries and limits\n\nHuman oversight is not established by the presence of a review button, approval record, or audit trail alone. A record that oversight occurred does not show that the reviewer could perform an independent substantive assessment.\n\nHuman oversight is not limited to AI-enabled systems. The same distinction between nominal and functional oversight applies wherever automated processes, algorithmic rules, or prior-party decisions influence consequential decisions.\n\nThe case evidence does not establish a universal measurement of human oversight quality. It shows how functional oversight was addressed in specific documented systems, with some outcomes labelled as client-reported rather than independently verified.\n\n## Related pages\n\nRelated glossary entries include cognitive load, behavioural governance, decision quality, trust calibration, state visibility, operational clarity, and workflow robustness. Related case evidence includes the documented Callsign fraud detection case and the documented Puraite AI systematic review case.",
+  "claims": [
+    {
+      "claim": "Human oversight is meaningful human review, verification, or intervention in decisions made within a system, including decisions influenced by automated processes, AI recommendations, or algorithmic rules.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "Directly stated in the definition section."
+    },
+    {
+      "claim": "Oversight that exists formally but cannot be exercised substantively is nominal rather than functional oversight.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "Supported by the nominal versus functional oversight distinction."
+    },
+    {
+      "claim": "Functional oversight requires relevant information at the oversight point, sufficient time and cognitive support, and independence preservation.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "The source identifies these three interface conditions as necessary for functional oversight."
+    },
+    {
+      "claim": "AI-enabled systems can weaken oversight through visual authority signals, costly overrides, missing confidence information, and audit trails that do not record what oversight found.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "These challenges are listed in the AI-enabled systems section."
+    },
+    {
+      "claim": "IEC 62366-1 and SCA are described as regulatory attempts to mandate human oversight, with interface design determining whether oversight is functional or nominal.",
+      "evidenceType": "industry standard",
+      "sourceStrength": "moderate",
+      "notes": "The source gives these as regulatory framing examples; it does not provide detailed regulatory analysis."
+    },
+    {
+      "claim": "In the Callsign fraud detection case, the policy engine architecture was designed to make risk team oversight of fraud control decisions functional under SCA and PCI DSS compliance requirements.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "The source describes traceability, attribution, and separation of configuration sessions from live evaluation."
+    },
+    {
+      "claim": "Lloyds Bank and HSBC contracts followed the Callsign work, and this is client-reported.",
+      "evidenceType": "client-reported",
+      "sourceStrength": "case evidence",
+      "notes": "The source explicitly labels this as client-reported."
+    },
+    {
+      "claim": "In the Akrivia Health clinical research case, governance reviewers could verify cohort construction without escalating after the redesign, and this is client-reported.",
+      "evidenceType": "client-reported",
+      "sourceStrength": "case evidence",
+      "notes": "The source states that governance reviewers could verify without escalating and labels this client-reported."
+    },
+    {
+      "claim": "In the Puraite AI systematic review case, blinded mode and override parity design addressed oversight independence for systematic reviewers.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "The source describes these design mechanisms as directly addressing oversight independence."
+    }
+  ],
+  "limitations": [
+    "The definition is conceptual and does not provide quantitative thresholds for oversight quality.",
+    "The case examples are context-specific and do not establish that the same design conditions are sufficient in every system.",
+    "Some case evidence is explicitly client-reported and not independently verified in the available text.",
+    "The regulatory framing is limited to the descriptions of IEC 62366-1 and SCA provided in the page; no broader regulatory analysis is included.",
+    "The Puraite example is described as case evidence about design mechanisms, not as a field-measured or client-measured outcome."
+  ],
+  "publicationBlockers": [],
+  "questionsForReview": [
+    "None"
+  ],
+  "relatedPageSlugs": [
+    "cognitive-load",
+    "behavioural-governance",
+    "decision-quality",
+    "trust-calibration",
+    "state-visibility",
+    "operational-clarity",
+    "workflow-robustness",
+    "callsign-fraud-authentication",
+    "puraite"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "cognitive load",
+      "targetSlug": "cognitive-load",
+      "placementHint": "Related pages section",
+      "reason": "The definition identifies cognitive overhead and cognitive support as conditions affecting whether oversight can be exercised substantively."
+    },
+    {
+      "anchorText": "behavioural governance",
+      "targetSlug": "behavioural-governance",
+      "placementHint": "Related pages section",
+      "reason": "Human oversight is described as both a governance property and a design property."
+    },
+    {
+      "anchorText": "decision quality",
+      "targetSlug": "decision-quality",
+      "placementHint": "Related pages section",
+      "reason": "Human oversight concerns the review, verification, or intervention in decisions made within a system."
+    },
+    {
+      "anchorText": "trust calibration",
+      "targetSlug": "trust-calibration",
+      "placementHint": "Related pages section",
+      "reason": "The AI-enabled systems section discusses confidence communication and reliable-zone awareness as oversight issues."
+    },
+    {
+      "anchorText": "state visibility",
+      "targetSlug": "state-visibility",
+      "placementHint": "Related pages section",
+      "reason": "Functional oversight requires relevant information to be visible at the oversight point."
+    },
+    {
+      "anchorText": "operational clarity",
+      "targetSlug": "operational-clarity",
+      "placementHint": "Related pages section",
+      "reason": "Functional oversight depends on whether the reviewer can understand and assess the decision context at the point of review."
+    },
+    {
+      "anchorText": "workflow robustness",
+      "targetSlug": "workflow-robustness",
+      "placementHint": "Related pages section",
+      "reason": "The nominal versus functional oversight distinction concerns whether review steps in a workflow can operate reliably in practice."
+    },
+    {
+      "anchorText": "Callsign fraud detection case",
+      "targetSlug": "callsign-fraud-authentication",
+      "placementHint": "Examples in documented case evidence section",
+      "reason": "The source names Callsign as case evidence for functional oversight in fraud control decisions."
+    },
+    {
+      "anchorText": "Puraite AI systematic review case",
+      "targetSlug": "puraite",
+      "placementHint": "Examples in documented case evidence section",
+      "reason": "The source names Puraite as case evidence for blinded mode and override parity as oversight independence mechanisms."
+    }
+  ],
+  "qualityChecks": {
+    "factsOnlyFromCurrentSource": true,
+    "documentationStyle": true,
+    "noMarketingLanguage": true,
+    "noInventedClaims": true,
+    "linksOnlyFromLinkingContext": true,
+    "internalNotesNotPublished": true,
+    "readyForSanityImport": true
+  }
+}

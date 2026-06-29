@@ -1,0 +1,154 @@
+{
+  "slug": "veecle",
+  "title": "Veecle",
+  "pageType": "case-study",
+  "category": "evidence",
+  "section": "Enterprise Software",
+  "summary": "Veecle had a working beta product for embedded automotive software development, but early users did not understand the platform's workflow, scope, system state, or AI integration. Creative Navy applied Critical Systems Design across onboarding, telemetry, workspace creation, AI integration, UI style exploration, and a UI starter kit. The case evidence includes Creative Navy-recorded research and design work, plus client-reported outcomes including full implementation and £2M in development funding.",
+  "keyFacts": [
+    "Veecle builds a cloud-based IDE for automotive and embedded software engineers.",
+    "The product was in beta with approximately ten early users when Creative Navy engaged.",
+    "Beta feedback showed comprehension failures around workflow, system state, compilation, AI integration, and overall platform capability.",
+    "Creative Navy wrote the research script and conducted structured interviews with Veecle beta users.",
+    "The research produced 64 discrete feedback points classified by importance and converted into sprint tickets.",
+    "Creative Navy explored four onboarding concepts, three telemetry iterations, three workspace creation flows, two AI integration directions, and three UI style directions.",
+    "A dedicated AI Optimisation screen was designed as a structured analytical view rather than a conversational AI surface.",
+    "Creative Navy delivered a UI starter kit covering colour palette, typography, shadow and corner radius tokens, an open-source icon pack, and core components with relevant states.",
+    "Veecle reported that all designs produced during the engagement were implemented.",
+    "Veecle reported that designs were used in investor demonstrations, comprised approximately 70% of the pitch, and unlocked £2M in development funding."
+  ],
+  "bodySections": [
+    {
+      "heading": "Veecle cloud IDE design for embedded automotive development",
+      "bodyMarkdown": "Creative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nVeecle is an embedded systems development studio building a cloud-based IDE for automotive and embedded software engineers. The platform enables developers to write, test, simulate, and debug vehicle software in a browser without physical hardware from day one.\n\nThe core product proposition was a pre-configured, fully integrated development environment with tools, licences, and dependencies available out of the box. The intended benefit was to remove the setup overhead that typically delayed new developers for weeks.\n\nAt the start of the engagement, Veecle was building toward a workflow shift between legacy automotive tooling culture and a modern code-first IDE pattern. The source comparison named fragmented specialist tools such as Vector, Grafana-style telemetry dashboards, and modern IDE-style workflows analogous to Android Studio or Apple Xcode. The product was in beta with approximately ten early users."
+    },
+    {
+      "heading": "Beta users could write code but could not understand the platform workflow",
+      "bodyMarkdown": "Veecle had a working beta product, but early users did not understand what the platform was capable of, what workflow it expected, or what to do when something went wrong. The documented problem was not a feature-gap problem; it was an interface comprehension problem.\n\nCreative Navy-recorded beta feedback identified five specific failure modes. Users could not navigate coherently from one tool to the next. System state was opaque when the platform was loading or a process was running. Compilation required users to open a terminal manually, without workflow guidance. The AI integration felt contextless and awkward. The platform's broader capability as a replacement for an entire local development setup was not visible in the interface.\n\nVeecle described the product as a paradigm shift in how embedded developers work. That shift meant users arrived without a stable conception of the intended workflow. The interface did not provide an entry point into the code, simulation, debugging, telemetry, and AI-supported work that Veecle wanted the product to support.\n\nVeecle also needed the product to communicate its ambition and capability in investor and partner demonstrations. The case evidence therefore covers both user comprehension and external product communication."
+    },
+    {
+      "heading": "Creative Navy's Critical Systems Design method focused on four UX topics and a UI starter kit",
+      "bodyMarkdown": "Creative Navy's Critical Systems Design method was applied across four primary UX topics in the Veecle engagement: onboarding, telemetry, workspace creation and layout, and AI integration. The source records four onboarding concept directions, three telemetry layout and navigation iterations, three full-flow workspace creation iterations, and two AI integration directions.\n\nA subsequent phase covered UI style exploration and production of a UI starter kit. The UI style work included three directions. The UI starter kit included a full colour palette, typography, shadow and corner radius tokens, a full open-source icon pack, and a component set covering buttons, navigation, and menus with relevant states.\n\nThe platform constraint was a web-based application designed at 1920×1080px. The VS Code coding environment inside the workspace was treated as fixed and was outside Creative Navy's design scope."
+    },
+    {
+      "heading": "Sandbox Experiments established the embedded development workflow before design decisions",
+      "bodyMarkdown": "Creative Navy's Sandbox Experiments in the Veecle engagement required substantial domain learning before design could begin. Creative Navy needed to internalise the embedded development workflow, including the code → simulate → debug sequence, asynchronous log streams, developer movement between tools, and telemetry information hierarchy.\n\nThe documented difficulty was technical empathy. Creative Navy needed enough understanding of the product internals to design for developers working in realistic embedded software conditions.\n\nThe kickoff session and workshop series were the main learning vehicles. Veecle's CEO, CTO, and product lead participated directly. Veecle's internal developers also contributed technical perspective. The case evidence records an explicit caveat: internal developers were operating system engineers comfortable with command-line environments, so their interface preferences were not representative of the target user population.\n\nCreative Navy wrote the research script and conducted structured user interviews with Veecle's beta users. The research produced 64 discrete feedback points. Creative Navy classified those findings by importance as low, moderate, or high, and converted them into sprint tickets. This made the research findings the direct basis for the prioritised design backlog."
+    },
+    {
+      "heading": "Telemetry workshop findings rejected a Grafana-style dashboard model",
+      "bodyMarkdown": "Creative Navy's telemetry work for Veecle used a dedicated workshop to resolve questions about log information hierarchy, time-series analysis, filtering, AI integration, and whether the primary structure should be a hierarchical component view or a scrolling log table.\n\nThe Grafana-style dashboard model was explicitly rejected by Veecle's team. The documented reason was that users would need to spend time configuring views they would rarely use, and the model was associated with post-deployment monitoring rather than active development debugging.\n\nThe more useful pattern was a constrained hierarchical view per component. The workshop findings favoured a fixed view showing the latest N logs per component, instead of a continuously updating scrollable stream. This gave developers a way to identify problems without being overwhelmed by log volume.\n\nLive log controls were identified as a critical interaction requirement. Developers needed the ability to stop the live feed and browse historical logs. AI integration within the telemetry view was confirmed as desirable but was scoped as a later priority."
+    },
+    {
+      "heading": "Concept Convergence resolved novice-expert and developer-stakeholder tensions",
+      "bodyMarkdown": "Creative Navy's Concept Convergence work for Veecle used option space mapping across onboarding, telemetry, workspace creation, AI integration, and UI style. The number of iterations was driven by the complexity of the design tensions rather than by a fixed process.\n\nThe novice-expert tension was resolved by making tutorial elements optional. Veecle valued discoverability, while experienced embedded developers needed the ability to skip or move quickly. The onboarding flow therefore gave value to users who engaged with it without forcing experienced users through it.\n\nA more substantive tension appeared between Veecle's internal developers and stakeholders. Internal developers requested more exposed functionality. Stakeholders pushed for simplification. Creative Navy supported the stakeholder direction and used progressive disclosure to avoid forcing a complete concession from either side.\n\nThe workspace creation flow illustrates the pattern. Predefined workspace templates gave users a fast path to a working setup. An additional menu layer allowed a fully custom workspace using available functionalities as widgets. Within each widget, common controls were immediately accessible, while advanced settings were available but not foregrounded. The resulting system was simple by default, with expert functionality available on demand."
+    },
+    {
+      "heading": "Onboarding used an AI assistant to make the product workflow discoverable",
+      "bodyMarkdown": "Creative Navy designed an AI-assisted onboarding flow for Veecle because onboarding needed to serve as a discoverability vehicle. The onboarding was not a static walkthrough. It introduced the platform through a conversational AI assistant that asked users about their project and suggested an appropriate setup and tool configuration.\n\nThe onboarding design addressed the paradigm-shift orientation problem. Veecle users arrived without a clear conception of the intended workflow, so onboarding had to explain more than where interface elements were located. It had to help users understand how the platform expected them to work.\n\nFour onboarding concept directions were explored: a full onboarding flow, a guided tour, a demo tutorial, and a resource library. The converged direction supported both novice users and experienced users by making tutorial content optional."
+    },
+    {
+      "heading": "Workspace creation balanced structured defaults with customisation flexibility",
+      "bodyMarkdown": "Creative Navy explored three full-flow iterations for Veecle workspace creation. The central design question was whether users should start from a blank canvas or receive meaningful defaults.\n\nThe documented exploration considered different degrees of flexibility and different default-setting models. Research into analogous tools, including Adobe applications, informed the exploration. The converged direction balanced structured defaults with enough customisation flexibility to serve varied embedded developer preferences.\n\nThis workspace work was also the clearest documented instance of progressive disclosure in the engagement. The design offered predefined workspace templates for a fast start, a custom workspace option through an additional layer, and tiered settings inside widgets."
+    },
+    {
+      "heading": "Telemetry design made log-heavy data controllable and scannable",
+      "bodyMarkdown": "Creative Navy's telemetry design for Veecle addressed the problem of making log-heavy data comprehensible without reproducing a Grafana dashboard. The design used a small number of top-level summary statistics, a hierarchical component view, and live log controls.\n\nThe top-level summary statistics gave general orientation without chart overload. The hierarchical component view presented the latest logs per component rather than a continuous scrolling stream. The live log controls enabled users to stop the feed and inspect a historical snapshot.\n\nThe design treated control over data flow as part of the user experience, not only the visualisation layer. Warning indicators were used minimally so that severity signals remained meaningful rather than becoming background noise."
+    },
+    {
+      "heading": "AI Optimisation was designed as a structured analytical screen",
+      "bodyMarkdown": "Creative Navy designed a dedicated AI Optimisation screen for Veecle as a full interaction design with complete states, defined behaviours, and detailed component specifications. The screen was not a conversational AI surface.\n\nThe AI Optimisation screen enabled AI to suggest improvements to a user's project by simulating different scenarios and presenting comparative data. The intended interaction was analytical: users could evaluate options and make decisions from structured results generated by AI.\n\nThis design direction separated AI-generated input from conversational interaction. In the documented design, AI was used to generate scenarios and comparative data, while the interface presented those results in a structured decision-support view."
+    },
+    {
+      "heading": "UI starter kit replaced an off-the-shelf template with a product-specific foundation",
+      "bodyMarkdown": "Creative Navy's UI starter kit for Veecle created a design system foundation for the web-based application. The kit included neutrals, primary, secondary, and extended colours; shadow and corner radius tokens; a typography system; a full open-source icon pack; and core components with relevant states.\n\nThe component set covered buttons, navigation, and menus. The visual direction applied Veecle's brand where it worked in a developer tool context and departed from it where it did not.\n\nThe case evidence records that Veecle had previously used an off-the-shelf UI template. The starter kit replaced that template with a coherent foundation built for Veecle's product. The existing brand's bright green was not carried into the tool's colour scheme; a developer-appropriate palette was developed instead."
+    },
+    {
+      "heading": "Organizational Integration included design education in every presentation",
+      "bodyMarkdown": "Creative Navy's Organizational Integration work in the Veecle engagement included design education in every design presentation. Each presentation explained the user behaviour principles and research findings behind design decisions.\n\nThe documented purpose was twofold. First, Veecle's team needed the reasoning behind design decisions so stakeholders could make informed product judgments. Second, Veecle needed shared product intuition to extend the system coherently after the engagement.\n\nVeecle's developers were included in feedback sessions during Concept Convergence. Their technical input contributed to domain learning, while their interface preferences were treated carefully because they were not representative of the broader target user population."
+    },
+    {
+      "heading": "Client-reported outcomes included full implementation and £2M in funding",
+      "bodyMarkdown": "Veecle reported that all designs produced during the engagement were implemented by Veecle's development team. This is client-reported evidence and was not independently verified in the documented case evidence.\n\nVeecle also reported that the designs were used in investor demonstrations in which the interface comprised approximately 70% of the pitch. Veecle reported that the engagement unlocked £2M in development funding. The causal link between the design work and the funding outcome is described as direct by Veecle, but the outcome figure has no third-party verification in the documented case evidence.\n\nCreative Navy-recorded research evidence also includes 64 classified feedback points from structured beta-user interviews. Those findings were converted directly into sprint tickets and used to structure the design backlog."
+    },
+    {
+      "heading": "Evidence limits and scope boundaries in the Veecle case",
+      "bodyMarkdown": "The Veecle case includes several explicit evidence boundaries. The £2M funding outcome is client-reported to Creative Navy. The claim that all designs were implemented is also client-reported. No third-party verification of any outcome figure is recorded.\n\nThe duration is recorded as approximately one year, but exact dates are not confirmed. The beta user population was approximately ten early users, so user research findings should be read as beta-stage product evidence rather than broad market evidence.\n\nThe VS Code coding environment inside the Veecle workspace was out of scope for Creative Navy's design work. Creative Navy designed around that fixed constraint rather than redesigning the coding environment itself."
+    }
+  ],
+  "evidenceSummary": {
+    "strongClaims": [
+      "Veecle builds a cloud-based IDE for automotive and embedded software engineers that supports writing, testing, simulating, and debugging vehicle software in a browser without physical hardware from day one.",
+      "At engagement start, Veecle had a working beta product but early users did not understand the platform's workflow, capability, system state, compilation path, or AI integration.",
+      "Creative Navy wrote the research script, conducted structured user interviews with Veecle beta users, and generated 64 discrete feedback points classified by importance and converted into sprint tickets.",
+      "Creative Navy explored four onboarding directions, three telemetry iterations, three workspace creation flows, two AI integration directions, and three UI style directions.",
+      "The telemetry design used top-level summary statistics, a hierarchical component view showing the latest logs per component, and live log controls to stop the feed and browse historical logs.",
+      "The workspace creation flow used progressive disclosure through predefined templates, a custom workspace layer, and tiered widget settings.",
+      "Creative Navy delivered a UI starter kit for Veecle with colour palette, typography, shadow and corner radius tokens, an open-source icon pack, and core components covering buttons, navigation, and menus with relevant states."
+    ],
+    "weakerClaims": [
+      "Veecle reported that all designs produced during the engagement were implemented by its development team.",
+      "Veecle reported that the designs were used in investor demonstrations, that the interface comprised approximately 70% of the pitch, and that the engagement unlocked £2M in development funding."
+    ],
+    "limitations": [
+      "The £2M funding outcome is client-reported to Creative Navy and not independently verified.",
+      "The claim that all designs were implemented is client-reported to Creative Navy and not independently verified.",
+      "The causal link between the design engagement and the funding outcome is described as direct by Veecle, but no third-party verification is recorded.",
+      "The 64 research findings are an internal Creative Navy count from the research classification process.",
+      "The engagement duration is recorded as approximately one year; exact dates are not confirmed.",
+      "The product was in beta with approximately ten early users, so the research evidence is beta-stage evidence rather than broad population evidence.",
+      "The VS Code coding environment within the workspace was treated as a fixed constraint and was out of scope."
+    ]
+  },
+  "relatedPageSlugs": [
+    "expert-tools-and-internal-systems",
+    "emerging-products",
+    "ai-enabled-products",
+    "enterprise-software",
+    "design-as-investment-evidence"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "enterprise software case-study category",
+      "targetSlug": "enterprise-software",
+      "reason": "The source classification places Veecle in the enterprise software case-study category."
+    },
+    {
+      "anchorText": "expert tools and internal systems",
+      "targetSlug": "expert-tools-and-internal-systems",
+      "reason": "The source classification identifies this as Veecle's primary context."
+    },
+    {
+      "anchorText": "emerging products",
+      "targetSlug": "emerging-products",
+      "reason": "The source classification lists emerging products as an also-relevant context."
+    },
+    {
+      "anchorText": "AI-enabled products",
+      "targetSlug": "ai-enabled-products",
+      "reason": "The source classification lists AI-enabled products as an also-relevant context."
+    },
+    {
+      "anchorText": "design as investment evidence",
+      "targetSlug": "design-as-investment-evidence",
+      "reason": "The source classification connects Veecle to design as investment evidence, and the case includes client-reported investor demonstration and funding evidence."
+    }
+  ],
+  "tags": [
+    "Veecle",
+    "enterprise software",
+    "expert tools",
+    "embedded systems",
+    "automotive software",
+    "cloud IDE",
+    "telemetry UX",
+    "AI-enabled products",
+    "progressive disclosure",
+    "design as investment evidence"
+  ],
+  "_meta": {
+    "sourcePath": "sources/articles/Case studies/case-study-notes--veecle.md",
+    "parentSlug": "enterprise-software",
+    "childPageSlugs": [],
+    "generatedBy": "deterministic"
+  }
+}

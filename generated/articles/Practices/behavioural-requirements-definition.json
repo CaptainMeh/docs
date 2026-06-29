@@ -1,0 +1,150 @@
+{
+  "_type": "documentationPage",
+  "sourceFile": "Articles/Practices/practices--behavioural-requirements-definition.md",
+  "sourcePath": "sources/articles/Practices/practices--behavioural-requirements-definition.md",
+  "sanityDocumentIdCandidate": "documentationPage.behavioural-requirements-definition",
+  "title": "Behavioural Requirements Definition",
+  "slug": {
+    "_type": "slug",
+    "current": "behavioural-requirements-definition"
+  },
+  "pageType": "practice",
+  "category": "practices",
+  "parentSlug": "practices",
+  "childPageSlugs": [],
+  "excerpt": "Behavioural requirements definition specifies testable interface-level requirements for products that use AI outputs. It separates product behaviour from model behaviour and makes human-AI responsibility boundaries explicit.",
+  "metaTitle": "Behavioural Requirements Definition",
+  "metaDescription": "A practice for defining testable interface-level requirements for AI-enabled products, including constraints and human-AI boundaries.",
+  "summary": "Behavioural requirements definition translates trust, oversight, and governance analysis into specific requirements for how an interface handles AI outputs. It defines what the product must show, prevent, record, and require from human users when AI recommendations or outputs are involved.",
+  "definition": "Behavioural requirements definition is the practice of producing specific, testable, interface-level requirements for how an AI-enabled product must behave when AI outputs are involved.",
+  "keyFacts": [
+    "Behavioural requirements are interface-level requirements, not model-level requirements.",
+    "The practice defines positive requirements, constraint requirements, and boundary requirements.",
+    "A well-formed behavioural requirement is testable, interface-level, connected to a governance or trust rationale, and boundary-explicit where relevant.",
+    "The practice is used after trust-and-oversight analysis and before human-AI interaction design begins.",
+    "In governance-sensitive contexts, behavioural requirements become formal documents that governance reviewers can assess against.",
+    "The Callsign fraud detection engagement used behavioural requirements around policy traceability, tracked policy modification, and decision reconstruction.",
+    "The Puraite AI systematic review engagement used behavioural requirements to protect epistemic independence and make AI confidence and evidence visible.",
+    "The Owkin / K biomedical AI engagement used behavioural requirements around data boundary transparency, source visibility, and out-of-scope query disclosure.",
+    "Model requirements remain the ML team's responsibility; behavioural requirements are the design team's responsibility."
+  ],
+  "tags": [
+    "AI-enabled products",
+    "behavioural requirements",
+    "interface requirements",
+    "human oversight",
+    "trust calibration",
+    "AI governance",
+    "decision boundaries",
+    "model outputs"
+  ],
+  "bodyMarkdown": "## Summary\n\nBehavioural requirements definition specifies what an AI-enabled product must do at the interface level when AI outputs are involved. The practice exists because an AI model's behaviour cannot be fully specified in advance, while the product's behaviour can and must be specified.\n\nBehavioural requirements define what the interface shows, when it shows it, what users can do with AI outputs, what the interface must prevent, and what evidence governance reviewers need to see. The practice separates interface-level behavioural requirements from model-level requirements.\n\nA behavioural requirement is not a principle such as “the AI should be trustworthy.” A behavioural requirement is a specific, testable statement, such as requiring a confidence level to appear alongside an AI recommendation in a format that communicates gradations of certainty rather than a binary high/low state.\n\n## What behavioural requirements definition does\n\nBehavioural requirements definition produces specific requirements for product behaviour in AI-enabled workflows. These requirements translate trust calibration problems, oversight gaps, and governance obligations into design constraints that can be implemented and tested.\n\nThe practice produces three categories of requirements.\n\nPositive requirements state what the system must do. Examples include displaying AI confidence, showing supporting evidence, logging decisions, surfacing the data source, or triggering confirmation for AI-influenced actions above a consequence threshold.\n\nConstraint requirements state what the system must not do. Examples include preventing AI recommendations from appearing before human independent assessment where epistemic independence is required, preventing untracked modifications to live AI policy during evaluation sessions, or preventing outputs from appearing without surfacing the data they are based on.\n\nBoundary requirements state where human judgement takes over from AI recommendation. These requirements identify the workflow points where a human must make an active decision rather than accept a default, and they define the interactions that enforce this boundary.\n\n## Well-formed behavioural requirements are testable, interface-level, justified, and boundary-explicit\n\nA well-formed behavioural requirement is testable. It can be assessed as met or not met without ambiguity. “The AI should be helpful” is not testable. “The AI's data source must be visible on the same screen as its output” is testable.\n\nA well-formed behavioural requirement is interface-level. It specifies what the interface must do, not what the model must produce. The model's behaviour is not fully under design control, but the interface's handling of model outputs is under design control.\n\nA well-formed behavioural requirement is connected to a governance or trust rationale. The requirement traces back to an identified trust calibration problem, an oversight requirement, or a governance obligation. Requirements without a rationale are preferences; requirements with a rationale are design standards.\n\nA well-formed behavioural requirement is boundary-explicit where the human-AI responsibility boundary matters. “The AI recommends; the human decides; the interface enforces this boundary by requiring an explicit confirm action before any AI recommendation is acted on” is more precise than “the system should support human decision-making.”\n\n## When behavioural requirements definition is used\n\nBehavioural requirements definition is used after trust-and-oversight analysis has identified trust calibration failures and oversight gaps. The analysis identifies what needs to be addressed; behavioural requirements definition specifies what the design must implement to address it.\n\nBehavioural requirements definition is used before human-AI interaction design begins. The requirements constrain and direct design work rather than being written retrospectively after design decisions have already been made.\n\nBehavioural requirements definition is used in governance-sensitive contexts, including enterprise banking, regulated medical devices, clinical research, and institutional AI deployments. In these contexts, behavioural requirements become formal documents that governance reviewers can assess against.\n\n## Outputs of behavioural requirements definition\n\nThe output of behavioural requirements definition is a set of interface-level requirements for how the product must behave when AI outputs are involved. These requirements may specify display rules, evidence visibility, logging behaviour, confirmation requirements, review access, modification controls, and human decision points.\n\nThe output is not a model performance specification. “The model must achieve 95% accuracy” is a model requirement. “The interface must display confidence level alongside every model recommendation” is a behavioural requirement.\n\nBehavioural requirements sit at the boundary between governance analysis and interface design. They take what trust and governance analysis has identified as necessary and translate it into what the interface must implement.\n\n## Callsign fraud detection requirements centred on policy traceability and reviewability\n\nIn the Callsign fraud detection engagement, the model/policy separation functioned as behavioural requirements implemented through architecture. The policy layer specified what the interface must do with the fraud model's outputs: apply thresholds, trigger step-up authentication, log decisions, and surface policy history.\n\nThe documented Callsign requirements included a governance traceability requirement: every fraud control decision that results in a block or step-up authentication must be attributable to a named, reviewable policy accessible within the same interface session, without requiring an engineering query.\n\nThe documented Callsign requirements also included a constraint requirement: policy modifications must be tracked with timestamps and user attribution, and the evaluation environment must not allow untracked live modifications.\n\nThe documented Callsign requirements included a boundary requirement for human review capability: risk analysts must be able to reconstruct the complete decision logic for any historical event using only the interface, without system logs or backend access.\n\nThese requirements came from governance consumer analysis of what bank risk teams under SCA and PCI DSS compliance must be able to verify. The engagement record states that Lloyds Bank and HSBC contracts followed demos that demonstrated these requirements met.\n\n## Puraite AI systematic review requirements protected epistemic independence\n\nIn the Puraite AI systematic review engagement, behavioural requirements were used to protect epistemic independence. Each reviewer's inclusion or exclusion decision needed to reflect their evaluation of the evidence, not their response to the AI's prior decision.\n\nThe documented Puraite requirements included a constraint requirement for blinded mode: the AI's inclusion or exclusion decision must not be visible to the reviewer before the reviewer has recorded their own decision.\n\nThe documented Puraite requirements included a positive requirement for uncertainty display: when AI decisions are shown after review or on request, the confidence level must be expressed as a numerical percentage with colour coding, not as a binary include/exclude recommendation.\n\nThe documented Puraite requirements included a positive requirement for evidence availability: the text evidence the AI used to make its decision must be visible in the review interface from the outset, without requiring interaction.\n\nThe documented Puraite requirements also included a boundary requirement for genuine optionality: override must require no more interaction than acceptance, so the non-default path remains cognitively equivalent to the default path.\n\n## Owkin / K biomedical AI requirements centred on data boundary transparency\n\nIn the Owkin / K biomedical AI engagement, data boundary transparency was the central behavioural requirement. The requirements addressed an under-trust condition: users who did not understand what K knew could not trust its outputs appropriately.\n\nThe documented K requirements included a positive requirement for provenance at point of use: every output produced by K must display the data sources it drew upon, in terms legible to researchers without requiring them to navigate away from the output.\n\nThe documented K requirements included a constraint requirement for out-of-scope queries: K must not respond to queries outside its data boundary without explicitly communicating that the query is outside scope. K must not produce outputs that appear to be knowledge-based when they are actually inference without data support.\n\nThe documented K requirements also included a positive requirement for capability transparency at entry: the entry point must communicate K's capability scope before users invest in framing questions.\n\n## Behavioural requirements differ from model requirements\n\nBehavioural requirements are interface requirements, not model requirements. This distinction is necessary because behavioural requirements define how the product handles model outputs, while model requirements define the model's performance or behaviour.\n\nA model requirement specifies model performance, such as an accuracy target. A behavioural requirement specifies interface handling, such as displaying a confidence level alongside every model recommendation.\n\nModel requirements are the ML team's responsibility. Behavioural requirements are the design team's responsibility. Behavioural requirements definition sits at the boundary by translating governance and trust analysis into requirements the interface must implement.\n\n## Relationship to trust-and-oversight analysis, decision-boundary design, and behavioural governance\n\nBehavioural requirements definition follows Trust And Oversight Analysis For AI. Trust-and-oversight analysis identifies the trust calibration and governance problems that must be addressed; behavioural requirements definition specifies what the design must do to address them.\n\nBehavioural requirements definition directly informs Decision Boundary Design. Boundary requirements are one category of behavioural requirement, and decision-boundary design implements them in the interaction model.\n\nBehavioural requirements definition also informs Behavioural Governance For AI Products. The practice produces the requirements that behavioural governance delivers through design.\n\n## Boundaries and limits\n\nBehavioural requirements definition does not replace model requirements. It does not specify model performance, model accuracy, training data quality, or ML evaluation criteria.\n\nBehavioural requirements definition does not decide the human-AI boundary in the abstract. It makes the boundary explicit at the level of workflow points, interface behaviours, review access, confirmation actions, and constraints on passive acceptance.\n\nThe engagement evidence described here comes from Callsign fraud detection, Puraite AI systematic review, and Owkin / K biomedical AI. These examples show how the practice was applied in specific governance-sensitive AI product contexts; they do not establish a universal requirement set for all AI-enabled products.",
+  "claims": [
+    {
+      "claim": "Behavioural requirements definition produces specific, testable interface-level requirements for products that use AI outputs.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "Supported by the definition and examples in the sections on what the practice is and what defines a well-formed behavioural requirement."
+    },
+    {
+      "claim": "The practice produces positive requirements, constraint requirements, and boundary requirements.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "The source explicitly identifies these three requirement levels and gives examples of each."
+    },
+    {
+      "claim": "A well-formed behavioural requirement is testable, interface-level, connected to a governance or trust rationale, and boundary-explicit where relevant.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "The source lists these four properties as the definition of a well-formed behavioural requirement."
+    },
+    {
+      "claim": "Behavioural requirements definition is used after trust-and-oversight analysis and before human-AI interaction design begins.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "The source explicitly states this sequencing in the section on when the practice is used."
+    },
+    {
+      "claim": "In the Callsign fraud detection engagement, behavioural requirements addressed policy traceability, tracked policy modification, and reconstruction of decision logic by risk analysts.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "Supported by the Callsign engagement examples in the evidence section."
+    },
+    {
+      "claim": "In the Puraite AI systematic review engagement, behavioural requirements addressed epistemic independence, confidence display, evidence visibility, and override optionality.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "Supported by the Puraite engagement examples in the evidence section."
+    },
+    {
+      "claim": "In the Owkin / K biomedical AI engagement, behavioural requirements addressed data source visibility, out-of-scope query disclosure, and capability transparency at entry.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "Supported by the Owkin / K engagement examples in the evidence section."
+    },
+    {
+      "claim": "Behavioural requirements are distinct from model requirements; model requirements are the ML team's responsibility and behavioural requirements are the design team's responsibility.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "Supported by the section on the relationship to model requirements."
+    }
+  ],
+  "limitations": [
+    "Behavioural requirements definition specifies interface behaviour; it does not specify model performance or model accuracy.",
+    "The practice depends on prior trust-and-oversight analysis to identify the trust calibration failures, oversight gaps, or governance obligations that requirements must address.",
+    "The examples are engagement-specific and should not be treated as a universal requirement set for all AI-enabled products.",
+    "The available engagement evidence does not present independent measurement of outcomes for the practice as a whole."
+  ],
+  "publicationBlockers": [],
+  "questionsForReview": [
+    "None"
+  ],
+  "relatedPageSlugs": [
+    "trust-and-oversight-analysis-for-ai",
+    "decision-boundary-design",
+    "callsign-fraud-authentication",
+    "puraite",
+    "owkin-k"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "Trust And Oversight Analysis For AI",
+      "targetSlug": "trust-and-oversight-analysis-for-ai",
+      "placementHint": "Use in the relationship section where the prerequisite analysis practice is described.",
+      "reason": "The current page states that behavioural requirements definition follows this practice."
+    },
+    {
+      "anchorText": "Decision Boundary Design",
+      "targetSlug": "decision-boundary-design",
+      "placementHint": "Use in the relationship section where boundary requirements are described as one category of behavioural requirement.",
+      "reason": "The current page states that behavioural requirements definition directly informs decision-boundary design."
+    },
+    {
+      "anchorText": "Callsign fraud detection engagement",
+      "targetSlug": "callsign-fraud-authentication",
+      "placementHint": "Use in the evidence basis section on Callsign policy traceability and reviewability.",
+      "reason": "The page discusses Callsign as a documented engagement example and the slug is available."
+    },
+    {
+      "anchorText": "Puraite AI systematic review engagement",
+      "targetSlug": "puraite",
+      "placementHint": "Use in the evidence basis section on epistemic independence and blinded review requirements.",
+      "reason": "The page discusses Puraite as a documented engagement example and the slug is available."
+    },
+    {
+      "anchorText": "Owkin / K biomedical AI engagement",
+      "targetSlug": "owkin-k",
+      "placementHint": "Use in the evidence basis section on data boundary transparency and source visibility.",
+      "reason": "The page discusses Owkin / K as a documented engagement example and the slug is available."
+    }
+  ],
+  "qualityChecks": {
+    "factsOnlyFromCurrentSource": true,
+    "documentationStyle": true,
+    "noMarketingLanguage": true,
+    "noInventedClaims": true,
+    "linksOnlyFromLinkingContext": true,
+    "internalNotesNotPublished": true,
+    "readyForSanityImport": true
+  }
+}

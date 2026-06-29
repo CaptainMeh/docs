@@ -1,0 +1,132 @@
+{
+  "_type": "documentationPage",
+  "sourceFile": "Articles/Failures/failures--state-visibility--transitions-are-hard-to-notice.md",
+  "sourcePath": "sources/articles/Failures/failures--state-visibility--transitions-are-hard-to-notice.md",
+  "sanityDocumentIdCandidate": "documentationPage.transitions-are-hard-to-notice",
+  "title": "Transitions Are Hard To Notice",
+  "slug": {
+    "_type": "slug",
+    "current": "transitions-are-hard-to-notice"
+  },
+  "pageType": "failure",
+  "category": "failures",
+  "parentSlug": "state-visibility-failures",
+  "childPageSlugs": [],
+  "excerpt": "Transitions are hard to notice when a system communicates the current state after it is established but fails to make the transition event perceptible. The resulting error is action that is correct for the prior state and incorrect for the current state.",
+  "metaTitle": "Transitions Are Hard To Notice",
+  "metaDescription": "A state-visibility failure where users miss the transition event and act on a mental model that was accurate but is no longer current.",
+  "summary": "This failure concerns the transition moment, not the resulting state. Users may understand the old state and the new state, but still miss the change between them when the transition signal is absent, too subtle, single-channel, spatially disorienting, or mistimed against the underlying system.",
+  "definition": "Transitions are hard to notice is a state-visibility failure in which the system changes operational state without producing a perceptible transition signal, leaving users to act on a stale but previously accurate mental model.",
+  "keyFacts": [
+    "The failure concerns the transition event, not the clarity of the resulting state once established.",
+    "The specific error pattern is action that is correct for the prior state and incorrect for the current state.",
+    "Background transitions can fail when system events complete, time out, or update without visual notification.",
+    "Small label changes, icon substitutions, and peripheral colour changes may be visible under focused reading but insufficient under divided attention.",
+    "Single-channel transition signals fail when the only channel degrades, such as colour under variable lighting or sound under noise.",
+    "Spatial reorganisation across transitions can make users experience a new context rather than a changed state.",
+    "Embedded systems can create false transitions when display timing is asynchronous with the physical system state.",
+    "Case evidence includes Elsner Elektronik / Cala Touch KNX, Torqeedo maritime HMI, Kardion MCS Controller, and deSoutter Medical / Zethon.",
+    "The Kardion MCS Controller case records that 34 directions were explored for the standard view before convergence."
+  ],
+  "tags": [
+    "state visibility",
+    "state transition",
+    "transition visibility",
+    "background transition",
+    "transition signal",
+    "mental model staleness",
+    "display-physical synchronisation",
+    "single-channel dependency",
+    "layout stability",
+    "divided attention"
+  ],
+  "bodyMarkdown": "## Summary\n\nCreative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nTransitions are hard to notice when a system communicates its current state clearly after the state is established, but fails to communicate the moment when the state changed. The failure is about the transition event, not about the eventual state display.\n\nThe consequence is a specific error class: users take actions that were correct for the prior state and are incorrect for the current state. The user is not necessarily confused. The user is acting on a mental model that was accurate before the transition and is no longer current.\n\n## Failure pattern: the transition event is imperceptible\n\nA state transition is the moment when a system moves from one operational state to another. Transition visibility is the degree to which that moment produces a perceptible signal for the user.\n\nThis failure occurs when the transition itself produces no perceptible signal, when the visual difference between states is too small to register under divided attention, or when the channel carrying the transition signal fails under operating conditions. In each case, the displayed current state may be legible after focused inspection, but the change event does not update the user's mental model at the time it occurs.\n\nMental model staleness is the condition where a user's model of system state is no longer current. In this failure pattern, mental model staleness is not caused by an initially poor understanding of the system. It is caused by an unnoticed change from a previously accurate state model to a new operational state.\n\n## How transitions become hard to notice\n\nBackground transitions without visual notification create this failure when state changes occur through system events rather than user action. A completion, timeout, or sensor update may change the system state while producing no visible signal that asks the user to update their model.\n\nTransition visual differences can be insufficient for peripheral attention. Users in operational environments cannot dedicate focused attention to state monitoring. A text label change, a small icon substitution, or a colour change in a peripheral display area may be readable under focused inspection and still fail at the speed and attention level of real work.\n\nSingle-channel transition signals are fragile. Colour as the only transition signal can fail under variable lighting. Sound as the only transition signal can fail under noise. When a transition depends on one channel, degradation of that channel can remove the transition signal entirely.\n\nSpatial transitions without orientation can obscure the fact that a state change occurred. When a transition reorganises layout by moving elements or adding and removing sections, users may experience a new context rather than a changed state. The transition then makes the state harder to interpret at the moment when users need to reorient.\n\nTransition timing can be misaligned with the display. In embedded systems, state changes in the physical system and state updates in the display can be asynchronous. A display may then show a false transition: either a transition that has not yet occurred in the underlying system or a transition that has occurred physically but is not yet shown.\n\n## Distinction from unclear modes and unclear state\n\nTransitions being hard to notice is distinct from mode changes being unclear. When mode changes are unclear, the user perceives that a transition occurred but misunderstands the new mode after the change. When transitions are hard to notice, the transition is imperceptible in the first place. Both failures can co-occur, but they require different design responses.\n\nTransitions being hard to notice is also a specific subset of the broader problem where users cannot see what state the system is in. General state-visibility failure concerns whether the current state is communicated. This failure concerns whether the change into that state was perceptible at the transition moment.\n\n## Evidence basis: Elsner Elektronik / Cala Touch KNX timing synchronisation\n\nThe Elsner Elektronik / Cala Touch KNX case is evidence that transition timing can be a design requirement. The controller's firmware updated temperature and humidity values at defined cycle intervals, while the display's animation logic was initially decoupled from this cycle.\n\nThe documented failure was a false transition. Visual state transitions showed changes before the underlying values had updated, so the display communicated a state change that had not yet occurred. The design response aligned animation timing with firmware update cycles so that visual transitions in the display corresponded to actual state transitions in the system.\n\nThis case addresses transition visibility at the timing level. The design issue was not only making genuine transitions more perceptible; it was preventing the display from communicating false-positive transitions.\n\n## Evidence basis: Torqeedo maritime HMI sensor cadence synchronisation\n\nThe Torqeedo maritime HMI case is evidence that update cadence can be misread as state change. Multiple sensor systems updated at different rates, creating a potential source of visual instability. The display could show values changing in a way that appeared to be state transitions, while the changes were artefacts of sensor update timing.\n\nThe documented design response was a grid architecture that synchronised different sensor cadences into a unified display rhythm. By showing components updating in a coordinated pattern, the display reduced the risk that users would interpret update timing as a genuine state transition.\n\n## Evidence basis: Kardion MCS Controller layout stability\n\nThe Kardion MCS Controller case is evidence that layout stability can function as a transition design standard. The documented standard required no element shifts position across any view transition.\n\nThe reason for the standard was spatial memory. If a critical flow indicator moves from one spatial position to another across a view transition, the user must search for it in the new view. The transition has made the state harder to read at the exact moment when the user needs to read it.\n\nThe documented standard required every transition to be spatially transparent: the same elements in the same positions, so the user's learned spatial map remains valid across transitions. The case records that 34 directions were explored for the standard view before convergence, with the spatial stability constraint operative throughout.\n\n## Evidence basis: deSoutter Medical / Zethon activation transition\n\nThe deSoutter Medical / Zethon case is evidence that transition signals may need to work under divided attention and variable lighting. The activation state transition from ready to active was identified as the highest-risk transition in the surgical instrument workflow.\n\nThe documented risk was that a surgeon may be directing attention to the surgical field when the device state changes. The transition therefore needed to be perceptible in peripheral attention during a brief glance, under divided attention and variable lighting.\n\nThe documented design response used a redundant cue architecture: spatial position, icon form, and colour. The purpose was to keep the transition perceptible through multiple simultaneous channels, so degradation of any single channel under theatre conditions would not eliminate the signal.\n\n## Boundaries and limits\n\nThis failure should not be used as a general label for every unclear state display. A system may display the current state poorly, but that is the broader state-visibility failure. This page concerns cases where the transition moment fails to update the user's mental model.\n\nThis failure should also not be treated as identical to unclear modes. If the transition is perceived but the new mode is misunderstood, the more precise failure is unclear mode change. If the transition is not perceived at all, the failure is transition visibility.\n\nThe case evidence is specific to the documented examples. It supports the mechanisms described here: timing misalignment, sensor cadence artefacts, spatial instability, and insufficiently redundant transition cues. It does not establish that every state transition requires the same response.\n\n## Related pages\n\nThe closest adjacent failure is mode changes are unclear, which concerns misunderstanding the new mode after a transition is perceived. The broader parent failure is users cannot see what state the system is in, which covers state communication more generally.\n\nThe Kardion case is a relevant case example because it records layout stability as a design standard for view transitions, including the requirement that elements do not shift position across transitions.",
+  "claims": [
+    {
+      "claim": "Transitions being hard to notice is a state-visibility failure about the transition event, not the clarity of the resulting state once established.",
+      "evidenceType": "definition",
+      "sourceStrength": "strong",
+      "notes": "Defined directly in the failure description."
+    },
+    {
+      "claim": "The consequence of this failure is action that is correct for the prior state and incorrect for the current state.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "Stated directly as the consequence of unnoticed transitions."
+    },
+    {
+      "claim": "Background transitions, insufficient peripheral visual differences, single-channel signals, spatial reorganisation, and display-physical timing misalignment can produce this failure.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "Listed in the source as mechanisms that produce the failure."
+    },
+    {
+      "claim": "In the Elsner Elektronik / Cala Touch KNX case, display animation timing was aligned with firmware update cycles to avoid visual transitions that preceded underlying value updates.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "The case evidence describes false transitions caused by decoupled display animation and firmware update cycles."
+    },
+    {
+      "claim": "In the Torqeedo maritime HMI case, a grid architecture synchronised different sensor cadences into a unified display rhythm to reduce misinterpretation of update timing as state transitions.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "The case evidence describes multiple sensor systems updating at different rates and a coordinated display rhythm as the response."
+    },
+    {
+      "claim": "In the Kardion MCS Controller case, the layout stability standard required no element shifts position across any view transition, and 34 directions were explored for the standard view before convergence.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "The case evidence explicitly states the no-shift standard and the 34 explored directions."
+    },
+    {
+      "claim": "In the deSoutter Medical / Zethon case, the ready-to-active activation transition was treated as the highest-risk transition and addressed with redundant cues across spatial position, icon form, and colour.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "The case evidence describes the risk conditions and redundant cue architecture."
+    }
+  ],
+  "limitations": [
+    "This page addresses the transition moment, not all forms of unclear current-state display.",
+    "This page distinguishes imperceptible transitions from perceived but misunderstood mode changes; both failures can co-occur.",
+    "The case evidence supports specific mechanisms and design responses but does not establish a universal response for every state transition.",
+    "The evidence examples are case-based rather than field-measured outcome studies."
+  ],
+  "publicationBlockers": [],
+  "questionsForReview": [
+    "None"
+  ],
+  "relatedPageSlugs": [
+    "mode-changes-are-unclear",
+    "users-cannot-see-what-state-the-system-is-in",
+    "kardion"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "mode changes are unclear",
+      "targetSlug": "mode-changes-are-unclear",
+      "placementHint": "In the section 'Distinction from unclear modes and unclear state'.",
+      "reason": "The source explicitly distinguishes this failure from mode changes being unclear."
+    },
+    {
+      "anchorText": "users cannot see what state the system is in",
+      "targetSlug": "users-cannot-see-what-state-the-system-is-in",
+      "placementHint": "In the section 'Distinction from unclear modes and unclear state'.",
+      "reason": "The source identifies this page as a specific subset of the broader state-visibility failure."
+    },
+    {
+      "anchorText": "Kardion case",
+      "targetSlug": "kardion",
+      "placementHint": "In the section 'Evidence basis: Kardion MCS Controller layout stability' or the related pages section.",
+      "reason": "The source names the Kardion MCS Controller as a case example, and a matching allowed slug is available."
+    }
+  ],
+  "qualityChecks": {
+    "factsOnlyFromCurrentSource": true,
+    "documentationStyle": true,
+    "noMarketingLanguage": true,
+    "noInventedClaims": true,
+    "linksOnlyFromLinkingContext": true,
+    "internalNotesNotPublished": true,
+    "readyForSanityImport": true
+  }
+}

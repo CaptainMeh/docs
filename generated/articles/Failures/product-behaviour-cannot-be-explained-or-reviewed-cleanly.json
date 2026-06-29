@@ -1,0 +1,154 @@
+{
+  "_type": "documentationPage",
+  "sourceFile": "Articles/Failures/failures--governance--product-behaviour-cannot-be-explained-or-reviewed-cleanly.md",
+  "sourcePath": "sources/articles/Failures/failures--governance--product-behaviour-cannot-be-explained-or-reviewed-cleanly.md",
+  "sanityDocumentIdCandidate": "documentationPage.product-behaviour-cannot-be-explained-or-reviewed-cleanly",
+  "title": "Product Behaviour Cannot Be Explained Or Reviewed Cleanly",
+  "slug": {
+    "_type": "slug",
+    "current": "product-behaviour-cannot-be-explained-or-reviewed-cleanly"
+  },
+  "pageType": "failure",
+  "category": "failures",
+  "parentSlug": "governance-and-behaviour-failures",
+  "childPageSlugs": [],
+  "excerpt": "This failure occurs when a product can produce outputs, configurations, or decisions but cannot expose a reviewable account of how that behaviour was produced. It is a governance failure located in the interface, not only in downstream compliance documentation.",
+  "metaTitle": "Product Behaviour Cannot Be Reviewed Cleanly",
+  "metaDescription": "A governance failure where product behaviour, policy logic, or configuration reasoning cannot be traced or independently reviewed through the interface.",
+  "summary": "Product behaviour cannot be explained or reviewed cleanly when the interface does not record, represent, and expose the reasoning behind configurations, decisions, or outputs. The product may function operationally, but reviewers cannot trace how behaviour was produced or verify that it matches approved specifications.",
+  "definition": "Product behaviour cannot be explained or reviewed cleanly when a product produces decisions, outputs, or configured states without an interface-level account that accountable reviewers can inspect, trace, and verify independently.",
+  "keyFacts": [
+    "Governance in this failure is treated as a property of the product interface, not as a procedure applied after the product is built.",
+    "The failure appears when the interface cannot record, represent, or expose the reasoning behind a configuration state or output.",
+    "A product can be usable for the production role and ungovernable for the review role at the same time.",
+    "One form appears in AI systems where model scores and policy decisions are not exposed in terms that risk analysts or compliance teams can trace.",
+    "A second form appears in analytical and research systems where nested query or configuration logic cannot be independently read by reviewers.",
+    "In the Callsign case, analysts could not express real fraud strategies cleanly, rules were scattered across database views and configuration tables, conflicts were hard to identify, and audit trails were absent or ambiguous.",
+    "Callsign operated in a banking context where SCA and PCI DSS requirements affected enterprise buyer trust in fraud control governance.",
+    "In the Akrivia case, governance reviewers needed to verify cohort construction against an approved study protocol without requiring the researcher to be present.",
+    "Creative Navy's Critical Systems Design method addressed the failure by treating the verification role as a first-class design audience."
+  ],
+  "tags": [
+    "governance failure",
+    "behaviour reviewability",
+    "audit trail",
+    "policy layer",
+    "AI-enabled products",
+    "configuration logic",
+    "cohort construction",
+    "verification role",
+    "SCA",
+    "PCI DSS"
+  ],
+  "bodyMarkdown": "## Summary\n\nCreative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nProduct behaviour cannot be explained or reviewed cleanly when a product produces decisions, outputs, or configuration states but the interface cannot show how that behaviour was produced. The failure is not only a documentation gap. It is a governance failure inside the interface.\n\nIn regulated, institutional, and enterprise contexts, the question “can you show how this decision was made?” is answered by the product interface. If the interface does not record, represent, and expose the reasoning that led to an output or configuration state, a later compliance process cannot reconstruct that account reliably.\n\n## Failure pattern: the product works but cannot produce an auditable account of its own behaviour\n\nThis failure appears when a product performs its operational function but cannot produce evidence that allows accountable people to review its behaviour. The product may detect fraud, construct cohorts, configure policies, or apply rules correctly in many use cases. The governance problem is that reviewers cannot trace the reasoning path from configuration to consequence.\n\nThe product becomes usable and ungovernable at the same time. The primary user can complete the work, but the reviewer cannot independently verify what was done, why it was done, what the system would do under specific conditions, or who made which configuration decision on what basis.\n\nIn regulated financial services, the consequence described in the Callsign case was commercial: enterprise buyers could not acquire a product that could not demonstrate compliance with SCA, PCI DSS, or equivalent standards. In clinical research, the consequence described in the Akrivia case was institutional: governance processes requiring independent verification could not operate without evidence the interface failed to produce.\n\n## Difference from unclear behaviour models and undefined good behaviour\n\nThis failure is distinct from the failure where a product has no clear behaviour model. In that adjacent failure, the team cannot answer what the system should do under a given condition. In this failure, the system may have a clear behaviour model, but the interface does not expose that model in a form that allows review.\n\nThis failure is also distinct from the failure where good behaviour is not defined explicitly. That adjacent failure concerns implicit knowledge that has not been turned into an explicit design artefact. Product behaviour that cannot be explained or reviewed cleanly concerns behaviour that may already be defined and implemented, but is not exposed in a reviewable form.\n\nThe distinction matters because the corrective design work differs. One failure requires defining expected behaviour. The other requires making implemented behaviour traceable, readable, and auditable through the interface.\n\n## AI system behaviour opaque to governance reviewers\n\nAI-driven systems can create governance failure when the configurations that determine decisions are visible only as database tables, parameter files, or technical configuration screens. Risk analysts and compliance teams may be accountable for the decisions produced by the system, but unable to inspect, modify, or trace the configurations that shape those decisions in operationally usable form.\n\nThe source failure is not that AI systems are inherently impossible to govern. The design problem is how AI system behaviour is exposed through the interface. The model may generate scores, and a policy layer may apply thresholds and decisions, but accountable humans cannot exercise meaningful oversight if neither layer is represented in terms they can work with.\n\nThe design task is not to expose model internals to non-technical reviewers. Model internals can require machine learning expertise to interpret. The reviewable layer described in the Callsign case is the policy layer: the layer that translates scores into organisational decisions such as allow, block, or trigger step-up authentication.\n\n## Complex query and configuration logic not independently readable\n\nA second form of the failure appears when behaviour is defined by user-assembled logic rather than by an AI model. Examples in the source include a patient cohort defined by nested logical criteria, a policy defined by rule combinations, or a filter set defined by parameter selections.\n\nThe person who assembled the configuration may understand it because they were present for its construction. The reviewer who verifies the configuration later was not present and cannot reconstruct the reasoning from the interface alone.\n\nThis creates a producibility and verifiability mismatch. The production interface may help a researcher, analyst, or policy author build complex configurations efficiently. The verification interface must help a different person read the completed logic independently. When only the production role is designed for, the verification role fails.\n\n## Callsign case: fraud policy governance required a traceable policy layer\n\nIn the documented Callsign case, the fraud detection platform scored behavioural events including device fingerprint, location change, spend velocity, and previous failure history. The policy engine concept was intended to translate those scores into real-world decisions: allow, block, or trigger step-up authentication.\n\nThe operational failure was interface-level. Analysts could not express real fraud strategies cleanly in the interface. Rules were scattered across database views and configuration tables. Conflicts between rules were hard to identify. Audit trails were absent or ambiguous.\n\nWhen Callsign demonstrated the platform to senior risk teams at major banks, the demonstrations raised questions about traceability and governance. The banking context included SCA and PCI DSS requirements governing how fraud control decisions had to be documented and evidenced. An interface that could not produce an auditable account of policy construction and configuration decisions was not saleable to buyers whose institutional accountability depended on demonstrable oversight.\n\nCreative Navy's Critical Systems Design method addressed the Callsign problem by separating the fraud detection model from the policy layer during Sandbox Experiments. The model scored events. The policy layer defined what the organisation would do with those scores under specified circumstances. This conceptual separation made the governance design problem tractable: the interface needed to make the policy layer configurable, traceable, and auditable by domain experts without exposing model internals to users who could not interpret them.\n\nThe redesigned policy representation bundled conditions, actions, history, and audit trail into a coherent unit. The interaction model used three gestures — drag, click, connect — so fraud analysts and compliance professionals could work without engineering access or technical training. Evaluation mode was structurally separated from configuration so that testing a policy did not modify it, keeping the audit trail clean.\n\nThe commercial outcome is client-reported and not independently verified: Callsign reported to Creative Navy that Lloyds Bank and HSBC contracts followed demos with the redesigned policy engine. The six-week UX/UI delivery and four-week React frontend delivery are documented engagement facts.\n\n## Akrivia case: cohort logic had to be readable without the researcher present\n\nIn the documented Akrivia Health case, the platform supported clinical mental health research at NHS trusts, academic institutions, and pharmaceutical research organisations. The central operation was cohort construction using nested logical inclusion and exclusion criteria across diagnostic codes, medication sequences, rating scale scores, and service use patterns.\n\nThe governance requirement was specific: a reviewer who did not construct the cohort had to verify that the assembled query matched the approved study protocol without requiring the researcher to be present. The researcher carried the reasoning in working memory. The reviewer arrived later and needed the completed logical structure to be independently readable.\n\nThe source describes a mismatch between construction and verification. Tools optimised for analyst flexibility expressed query logic in technical representations such as Boolean logic or database syntax. Tools optimised for governance auditability imposed rigid procedures that prevented iterative refinement in clinical research. The missing design focus was the handoff from the researcher’s completed work to the reviewer’s verification task.\n\nCreative Navy's Critical Systems Design method addressed the Akrivia problem by treating governance reviewers as a distinct participant group during Sandbox Experiments. Research with NHS analysts, academic researchers, and pharmaceutical research staff documented the verification task and the information reviewers needed to perform it independently.\n\nThe query architecture that resulted from Concept Convergence kept the reasoning structure visible at the surface. Conditions were visible as named logical blocks, nesting was visible as structure, and the full logical trace remained available for review during and after construction.\n\nAkrivia client-reported that governance reviewers could verify cohort construction without escalating to the research team. The earlier interface required the researcher’s presence to explain which conditions were active. No verification-time or task-completion data was collected, so the outcome should be treated as client-reported rather than measured.\n\n## How Creative Navy's Critical Systems Design method addresses reviewability failure\n\nCreative Navy's Critical Systems Design method designs software whose interfaces, workflows, and operating logic carry real operational consequences, working through five phases — Sandbox Experiments, Concept Convergence, Iterative System Building, Organizational Integration, and Implementation Partnership — to take each system from initial exploration to independent operation by the client's own team.\n\nFor this failure, Creative Navy's Critical Systems Design method treats the verification role as a first-class design audience. The reviewer is not an afterthought to the production user. The reviewer has distinct information requirements, distinct evidence needs, and distinct failure modes.\n\nDomain learning is the prerequisite. In the Callsign engagement, domain learning established the distinction between the fraud detection model and the policy layer. Without that separation, the problem appeared to be “make the AI system explainable.” With the separation, the problem became “make the policy layer traceable in domain terms.”\n\nIn the Akrivia engagement, interviewing governance reviewers separately from researchers and analysts made verification requirements legible as design requirements. The governance reviewer’s task differed from the researcher’s task. Designing for both required researching both.\n\n## Evidence basis and limits\n\nThe Callsign evidence includes documented engagement facts and client-reported commercial outcomes. The source records a six-week UX/UI delivery and a four-week React frontend delivery. The Lloyds Bank and HSBC contract outcome is client-reported by Callsign to Creative Navy and is not independently verified.\n\nThe Akrivia evidence includes client-reported governance review effects. Akrivia reported that governance reviewers could verify cohort construction without escalating to the research team. No verification-time or task-completion data was collected.\n\nThe examples establish how the failure appears in two documented contexts: AI policy governance and clinical research cohort verification. They do not establish that the same design response applies unchanged to all regulated, institutional, or enterprise products.\n\n## Related pages\n\nRelated governance failure pages include Good Behaviour Is Not Defined Explicitly and The Product Has No Clear Behaviour Model, because they separate definition failures from exposition and reviewability failures.\n\nOversight Is Symbolic Not Functional is also related where an organisation assigns accountability without giving reviewers the interface-level access needed to exercise it. Workflows Break Across Roles is related where the production role and verification role require different views of the same underlying logic.\n\nThe Callsign Fraud Authentication case is related because the Callsign example is one of the documented cases where policy behaviour had to become traceable and auditable through the interface.",
+  "claims": [
+    {
+      "claim": "Product behaviour cannot be explained or reviewed cleanly when the interface cannot record, represent, and expose the reasoning behind a configuration state or output.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "Directly supported by the situation section defining governance as a property of the interface."
+    },
+    {
+      "claim": "A product can be operationally usable and simultaneously ungovernable when it supports the production role but not the review role.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "Directly stated in the source as a product that is usable and ungovernable simultaneously."
+    },
+    {
+      "claim": "AI governance opacity can arise when policy configurations are accessible only through technical representations that risk analysts and compliance teams cannot directly inspect, modify, or trace.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "Supported by the AI system behaviour section and the Callsign example."
+    },
+    {
+      "claim": "The Callsign interface failure included scattered rules, hard-to-identify conflicts, and absent or ambiguous audit trails.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "Specific operational failure described in the Callsign example."
+    },
+    {
+      "claim": "Callsign reported that Lloyds Bank and HSBC contracts followed demos with the redesigned policy engine.",
+      "evidenceType": "client-reported",
+      "sourceStrength": "weak",
+      "notes": "The source explicitly states this is client-reported and not independently verified."
+    },
+    {
+      "claim": "The Callsign engagement included six-week UX/UI delivery and four-week React frontend delivery.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "engagement record",
+      "notes": "The source describes these as documented engagement facts."
+    },
+    {
+      "claim": "Akrivia reported that governance reviewers could verify cohort construction without escalating to the research team after the redesigned interface produced query logic in independently readable form.",
+      "evidenceType": "client-reported",
+      "sourceStrength": "weak",
+      "notes": "The source states this outcome is client-reported and that no verification-time or task-completion data was collected."
+    },
+    {
+      "claim": "Creative Navy's Critical Systems Design method addresses this failure by treating the verification role as a first-class design audience.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "Supported by the section describing how the method addresses the governance-reviewability failure."
+    }
+  ],
+  "limitations": [
+    "The Callsign commercial outcome is client-reported by the client to Creative Navy and is not independently verified.",
+    "The Akrivia governance review outcome is client-reported; no verification-time or task-completion data was collected.",
+    "The page distinguishes interface-level reviewability from model-level explainability; it does not claim that exposing model internals is the correct design response for non-technical reviewers.",
+    "The examples support two documented forms of the failure but do not prove that every regulated, institutional, or enterprise product has the same governance failure mode."
+  ],
+  "publicationBlockers": [],
+  "questionsForReview": [
+    "None"
+  ],
+  "relatedPageSlugs": [
+    "good-behaviour-is-not-defined-explicitly",
+    "the-product-has-no-clear-behaviour-model",
+    "oversight-is-symbolic-not-functional",
+    "workflows-break-across-roles",
+    "handoffs-lose-context",
+    "data-is-available-but-hard-to-interpret",
+    "callsign-fraud-authentication"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "Good Behaviour Is Not Defined Explicitly",
+      "targetSlug": "good-behaviour-is-not-defined-explicitly",
+      "placementHint": "Related pages section",
+      "reason": "The source explicitly distinguishes this failure from the failure where good behaviour has not been made explicit."
+    },
+    {
+      "anchorText": "The Product Has No Clear Behaviour Model",
+      "targetSlug": "the-product-has-no-clear-behaviour-model",
+      "placementHint": "Related pages section and distinction section",
+      "reason": "The source explicitly distinguishes this failure from the absence of a specified behaviour model."
+    },
+    {
+      "anchorText": "Oversight Is Symbolic Not Functional",
+      "targetSlug": "oversight-is-symbolic-not-functional",
+      "placementHint": "Related pages section",
+      "reason": "The page discusses accountability without operationally usable access for reviewers, which is closely related to symbolic oversight."
+    },
+    {
+      "anchorText": "Workflows Break Across Roles",
+      "targetSlug": "workflows-break-across-roles",
+      "placementHint": "Related pages section",
+      "reason": "The production-role and verification-role mismatch described in the Akrivia example is a cross-role workflow issue."
+    },
+    {
+      "anchorText": "Callsign Fraud Authentication",
+      "targetSlug": "callsign-fraud-authentication",
+      "placementHint": "Callsign case section or Related pages section",
+      "reason": "The source uses Callsign as a grounded example, and a matching case-study slug is available in the linking context."
+    }
+  ],
+  "qualityChecks": {
+    "factsOnlyFromCurrentSource": true,
+    "documentationStyle": true,
+    "noMarketingLanguage": true,
+    "noInventedClaims": true,
+    "linksOnlyFromLinkingContext": true,
+    "internalNotesNotPublished": true,
+    "readyForSanityImport": true
+  }
+}

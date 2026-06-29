@@ -1,0 +1,154 @@
+{
+  "_type": "documentationPage",
+  "sourceFile": "Articles/Practices/practices--state-and-transition-review.md",
+  "sourcePath": "sources/articles/Practices/practices--state-and-transition-review.md",
+  "sanityDocumentIdCandidate": "documentationPage.state-and-transition-review",
+  "title": "State And Transition Review",
+  "slug": {
+    "_type": "slug",
+    "current": "state-and-transition-review"
+  },
+  "pageType": "practice",
+  "category": "practices",
+  "parentSlug": "practices",
+  "childPageSlugs": [],
+  "excerpt": "State-and-transition review examines whether complex systems make operational states and transitions readable under actual conditions of use. It distinguishes state visibility failures from transition failures, including ambiguous mode changes, unstable processing states, and spatial shifts across view transitions.",
+  "metaTitle": "State And Transition Review",
+  "metaDescription": "Practice for reviewing system states, transitions, mode changes, spatial consistency, and state visibility under actual use conditions.",
+  "summary": "State-and-transition review is a structured practice for cataloguing system states, mapping transitions, checking spatial consistency, identifying mode changes, and evaluating state communication under the conditions in which users actually operate the system.",
+  "definition": "State-and-transition review is a structured examination of whether each operational state in a complex system is communicated clearly enough for users to recognise what the system is doing, and whether transitions between states preserve that clarity.",
+  "keyFacts": [
+    "The practice distinguishes state visibility failures from transition failures.",
+    "State visibility failures include unreadable indicators, buried status information, and state changes too subtle for users to recognise.",
+    "Transition failures include spatial shifts across view changes, visually ambiguous mode changes, and processing transitions that leave users uncertain whether the system is working or waiting for input.",
+    "The review examines a state catalogue, a transition map, a spatial consistency audit, mode change identification, and operating condition evaluation.",
+    "The practice is used during Sandbox Experiments for existing systems and during Iterative System Building for proposed designs and prototypes.",
+    "In regulated medical device contexts, the source describes direct alignment with IEC 62366-1 requirements for mode change identification.",
+    "In the Kardion MCS Controller engagement, the review produced a design standard that no element shifts position across any view transition.",
+    "In the deSoutter Medical / Zethon engagement, 6 of 8 benchmarked competitor devices relied primarily on colour for critical state indicators.",
+    "In the Tetra/Prism property compliance case, a launch download state lasting up to 10 minutes was identified as a transition state failure."
+  ],
+  "tags": [
+    "state visibility",
+    "transition design",
+    "mode changes",
+    "spatial consistency",
+    "operational states",
+    "degraded modes",
+    "fault states",
+    "IEC 62366-1",
+    "critical systems",
+    "interface review"
+  ],
+  "bodyMarkdown": "## Summary\n\nState-and-transition review examines whether a complex system makes its operational states readable and whether transitions between those states preserve user understanding. The practice applies to nominal states, fault states, configuration modes, processing states, degraded modes, alarm states, and transitions between them.\n\nThe review distinguishes two failure categories. State visibility failures occur when users cannot accurately read the current state, such as when indicators require interpretation, status information is placed where users do not scan, or state changes are too subtle for users to notice. Transition failures occur when movement from one state to another disrupts clarity, such as when view changes move elements, mode changes are visually ambiguous, or loading and updating states make users uncertain whether the system is working or waiting for input.\n\nState-and-transition review evaluates these issues under actual operating conditions rather than controlled viewing conditions. A state indicator that is readable on a desktop in good lighting may be unreadable on a helm display in rain, on a surgical instrument interface under variable theatre lighting, or on a calibration device read from two metres during movement.\n\n## What state-and-transition review does\n\nState-and-transition review creates an inventory of system states and examines how each state is communicated to users. The state catalogue includes nominal operating states, degraded modes, fault states, configuration states, processing states, and alarm states. In complex systems, this catalogue is often larger than stakeholders expect because states may have been added incrementally without a unified state architecture.\n\nState-and-transition review maps transitions between states. For each transition, the review identifies what triggers the transition, what visual change occurs, whether the user receives notification or must infer the change, and whether any element changes spatial position as part of the transition.\n\nState-and-transition review also audits spatial consistency. Spatial memory enables glance readability, and any element that shifts position across a transition requires the user to relocate it rather than rely on learned position. In high-consequence contexts described in the engagement evidence, this is treated as a design failure with operational consequences rather than a minor inconvenience.\n\n## Mode changes are treated as high-risk transitions\n\nState-and-transition review specifically identifies transitions that constitute mode changes. A mode change is a state change where the system's behaviour changes fundamentally, not only its display.\n\nMode changes are high-risk transitions because users who have not registered the change may interpret system behaviour incorrectly. In regulated medical device contexts, the practice is described as directly aligned with IEC 62366-1 requirements for mode change identification: mode changes must be clearly communicated, and foreseeable misuse arising from mode confusion must be addressed in the design.\n\nCreative Navy's use of state-and-transition review evaluates significant states and transitions under the conditions of actual use. Those conditions include the visual environment, the user's attentional load, and physical constraints during operation.\n\n## When Creative Navy applies state-and-transition review\n\nCreative Navy applies state-and-transition review during Sandbox Experiments when reviewing an existing system. In that setting, the review forms part of the evidence base for understanding what the system is doing before design decisions are made.\n\nCreative Navy also applies state-and-transition review during Iterative System Building when reviewing proposed designs. In that setting, the review is applied to prototypes to identify state visibility failures and transition failures before the design is implemented.\n\nThe practice usually follows workflow analysis and task-criticality mapping, because those practices identify the tasks for which state visibility is most critical. State-and-transition review then informs alarm-and-warning evaluation, because alarms are a specific category of state transition, and edge-case-and-degraded-mode analysis, because fault states and degraded modes are identified through the review before being examined in detail.\n\n## Outputs of state-and-transition review\n\nA state-and-transition review produces a state catalogue that records every significant system state. The catalogue covers nominal operating states, degraded modes, fault states, configuration states, processing states, and alarm states.\n\nA state-and-transition review produces a transition map that records triggers, visual changes, notification behaviour, inference requirements, and spatial changes across state transitions. The transition map is used to identify where users may miss a change or misunderstand what the system is doing.\n\nA state-and-transition review produces a spatial consistency audit. The audit checks whether any element changes position across view transitions and whether those shifts undermine learned spatial memory for critical state indicators.\n\nA state-and-transition review produces mode change findings. These findings identify which transitions change system behaviour fundamentally and therefore require clear communication to prevent mode confusion.\n\nA state-and-transition review produces operating condition findings. These findings record how state and transition communication performs in the actual visual, attentional, and physical conditions of use.\n\n## Evidence from Kardion MCS Controller\n\nIn the Kardion MCS Controller engagement, state-and-transition review produced the design standard that no element shifts position across any view transition. The source describes this as Creative Navy's own standard, above the IEC 62366-1 consistency requirement.\n\nThe clinical rationale identified in the review was that surgeons build spatial memory for critical state indicators during procedures and depend on that memory when rapid response is required. The standard view, alarm overlay, and parameter adjustment overlay were reviewed through every transition between these views. Creative Navy identified which element positions each user type relied upon, and any element that moved across a transition was redesigned or removed.\n\nThe documented regulatory outcome was FDA approval, with the submitted design passing evaluation as submitted and no design changes required. The source states that this outcome reflects in part a state architecture established from the start; it should not be read as a measured clinical outcome or as a standalone causal claim.\n\n## Evidence from deSoutter Medical / Zethon\n\nIn the deSoutter Medical / Zethon engagement, state-and-transition review examined mode change communication in an operating theatre context under divided attention. The review identified a primary failure across competitor devices: colour was used as the sole differentiator between states.\n\nThe engagement evidence records that 6 of 8 benchmarked competitor devices relied primarily on colour for critical state indicators. Variable theatre lighting made colour-only state communication unreliable. The resulting requirement was redundant cues using spatial position, icon form, and colour.\n\nThe review also identified activation state recognition as the highest-risk transition. This was the moment when the instrument moved from ready state to active use. The specified recognition standard was that the active state should be confirmable in a fraction of a second under divided attention, with gloved hands, and under variable lighting.\n\n## Evidence from Torqeedo maritime HMI\n\nIn the Torqeedo maritime HMI engagement, state-and-transition review identified a central design problem: propulsion motors, battery banks, and generators updated telemetry at different rates. Presenting those values without a synchronisation architecture made the display read as unstable during active vessel operation.\n\nThe review mapped sensor update cadences and identified transitions that created visual instability, including values changing at different moments and status appearing to flicker. The resulting requirement was a grid structure that synchronised competing cadences into a unified display rhythm, addressing transition instability rather than only managing its visible symptoms.\n\n## Evidence from Elsner Elektronik / Cala Touch KNX\n\nIn the Elsner Elektronik / Cala Touch KNX engagement, state-and-transition review examined three categories of state communication failure: sensor fault states, calibration drift states, and the relationship between animation timing and firmware update cycles.\n\nThe transition-level finding concerned firmware update cycles. Thermal values updated at a specific cycle, and animation timing had to align with those cycles so that visual state changes did not drift out of sync with actual system state. Without this alignment, the display could show a state that the system had already left, which the source describes as a transition failure visible under edge conditions rather than normal conditions.\n\n## Evidence from Cox Marine cluster displays\n\nIn the Cox Marine cluster displays engagement, state-and-transition review examined how fault state transitions communicated across multi-engine configurations. The finding was that making fault presence visible at the tile level was not sufficient when the design did not direct attention to the priority engine in a multi-engine fault condition.\n\nThe review treated a fault condition as a state and the move into that fault condition as a transition. The transition requirement was not only to change a colour, but to redirect the user's attention to the correct location. The dedicated fault-summary area and per-tile alarm state highlighting emerged from this review.\n\n## Evidence from Tetra/Prism property compliance\n\nIn the Tetra/Prism property compliance case, state-and-transition review identified a transition failure as the primary adoption barrier. When the mobile app launched, it entered a downloading state that downloaded the entire property portfolio and could last up to 10 minutes.\n\nThe downloading state looked visually similar to normal app loading, which meant users could not distinguish between loading and broken behaviour. The design response was property selection at launch, limiting download scope. The finding treated the issue as a transition communication failure rather than only a technical loading problem.\n\n## Boundaries and limits\n\nState-and-transition review identifies and evaluates states, transitions, spatial consistency, mode changes, and operating-condition risks. It does not, by itself, replace alarm-and-warning evaluation; alarms are a specific category of state transition that require alarm-specific examination after the baseline state-and-transition review.\n\nState-and-transition review identifies fault states and degraded modes, but those states are then examined in more detail through edge-case-and-degraded-mode analysis. The practice establishes the baseline state architecture and transition evidence rather than completing every downstream analysis.\n\nThe engagement evidence is case-specific. It documents how the practice produced requirements and design standards in named engagements, but it does not establish a universal failure rate across all complex systems.\n\n## Related pages\n\nState-and-transition review is closely related to workflow analysis and task-criticality mapping, because those practices identify where state visibility matters most. It also provides the baseline for alarm-and-warning evaluation and for edge-case-and-degraded-mode analysis.\n\nThe Kardion and Cox Marine examples show how the practice appears in documented engagement evidence where state visibility, spatial consistency, fault states, and transition communication had operational consequences.",
+  "claims": [
+    {
+      "claim": "State-and-transition review examines whether system states are readable and whether transitions preserve clarity for users.",
+      "evidenceType": "definition",
+      "sourceStrength": "strong",
+      "notes": "Supported by the opening definition of the practice."
+    },
+    {
+      "claim": "The practice distinguishes state visibility failures from transition failures.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "The source explicitly defines both categories and gives examples of each."
+    },
+    {
+      "claim": "The review examines a state catalogue, transition map, spatial consistency audit, mode change identification, and operating condition evaluation.",
+      "evidenceType": "definition",
+      "sourceStrength": "strong",
+      "notes": "These five examination areas are listed in the source."
+    },
+    {
+      "claim": "In regulated medical device contexts, the review aligns with IEC 62366-1 requirements for mode change identification.",
+      "evidenceType": "industry standard",
+      "sourceStrength": "strong",
+      "notes": "The source explicitly names IEC 62366-1 and describes the alignment."
+    },
+    {
+      "claim": "In the Kardion MCS Controller engagement, the review produced a no-position-shift standard across view transitions.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "The source describes this as the engagement's most consequential design standard."
+    },
+    {
+      "claim": "In the deSoutter Medical / Zethon engagement, 6 of 8 benchmarked competitor devices relied primarily on colour for critical state indicators.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "engagement record",
+      "notes": "The benchmark count and observed failure pattern are stated in the source."
+    },
+    {
+      "claim": "In the Tetra/Prism property compliance case, a launch downloading state lasting up to 10 minutes was identified as a transition state failure.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "The source describes this as the primary adoption barrier and identifies it as a transition state failure."
+    }
+  ],
+  "limitations": [
+    "The engagement examples are case-specific and do not establish universal rates of state or transition failure across all complex systems.",
+    "The practice identifies fault states and degraded modes, but the source describes detailed examination of those states as part of edge-case-and-degraded-mode analysis.",
+    "The practice establishes the baseline for alarm-specific work, but the source treats alarm-and-warning evaluation as a separate practice informed by this review.",
+    "The Kardion FDA approval statement is a regulatory outcome recorded in the source, not a measured clinical outcome."
+  ],
+  "publicationBlockers": [],
+  "questionsForReview": [
+    "None"
+  ],
+  "relatedPageSlugs": [
+    "workflow-analysis",
+    "task-criticality-mapping",
+    "alarm-and-warning-evaluation",
+    "edge-case-and-degraded-mode-analysis",
+    "kardion",
+    "cox-marine"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "workflow analysis",
+      "targetSlug": "workflow-analysis",
+      "placementHint": "Related pages section and the 'When Creative Navy applies state-and-transition review' section",
+      "reason": "The source states that state-and-transition review typically follows workflow analysis."
+    },
+    {
+      "anchorText": "task-criticality mapping",
+      "targetSlug": "task-criticality-mapping",
+      "placementHint": "Related pages section and the 'When Creative Navy applies state-and-transition review' section",
+      "reason": "The source states that state-and-transition review typically follows task-criticality mapping."
+    },
+    {
+      "anchorText": "alarm-and-warning evaluation",
+      "targetSlug": "alarm-and-warning-evaluation",
+      "placementHint": "Related pages section and the boundaries section",
+      "reason": "The source states that state-and-transition review directly informs alarm-and-warning evaluation."
+    },
+    {
+      "anchorText": "edge-case-and-degraded-mode analysis",
+      "targetSlug": "edge-case-and-degraded-mode-analysis",
+      "placementHint": "Related pages section and the boundaries section",
+      "reason": "The source states that state-and-transition review directly informs edge-case-and-degraded-mode analysis."
+    },
+    {
+      "anchorText": "Kardion MCS Controller",
+      "targetSlug": "kardion",
+      "placementHint": "Evidence from Kardion MCS Controller section",
+      "reason": "The source uses Kardion MCS Controller as a named engagement example, and a matching allowed case-study slug is available."
+    },
+    {
+      "anchorText": "Cox Marine cluster displays",
+      "targetSlug": "cox-marine",
+      "placementHint": "Evidence from Cox Marine cluster displays section",
+      "reason": "The source uses Cox Marine cluster displays as a named engagement example, and a matching allowed case-study slug is available."
+    }
+  ],
+  "qualityChecks": {
+    "factsOnlyFromCurrentSource": true,
+    "documentationStyle": true,
+    "noMarketingLanguage": true,
+    "noInventedClaims": true,
+    "linksOnlyFromLinkingContext": true,
+    "internalNotesNotPublished": true,
+    "readyForSanityImport": true
+  },
+  "__sourceCategoryDir": "Practices"
+}

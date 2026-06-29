@@ -1,0 +1,135 @@
+{
+  "slug": "constraint-respecting",
+  "title": "Constraint Respecting",
+  "pageType": "concept",
+  "category": "glossary",
+  "section": "Our Concepts",
+  "summary": "Constraint respecting is a Creative Navy concept for distinguishing constraints that must be preserved from assumptions, technical debt, or failed implementations that should be redesigned. It applies to legacy interfaces, technical limits, organisational boundaries, process dependencies, regulatory standards, design systems, physical contexts, and multi-party working patterns.",
+  "keyFacts": [
+    "Constraint respecting treats legacy systems as constraints to work within rather than obstacles to overcome.",
+    "Legacy systems can encode years of operational experience, user adaptation, and workflow knowledge.",
+    "Constraint respecting does not mean accepting everything as fixed; it requires examining which constraints are real and which are assumed.",
+    "In practice, constraint respecting identifies what works and preserves it, identifies what does not work and redesigns it, and makes the distinction explicit.",
+    "Constraint respecting is described as one mechanism that prevents sense decay by preserving meaning encoded in legacy design decisions.",
+    "Domain learning is required because a team can only respect constraints it understands.",
+    "The concept applies to technical, organisational, process, regulatory, and design system constraints.",
+    "In the Torqeedo maritime HMI example, interaction patterns captains had internalised were carried forward while information fragmentation and daylight contrast failures were redesigned.",
+    "In the Stromer e-bike example, EN 15194:2017 warning symbology and colour conventions were treated as regulatory design parameters.",
+    "In the Enhesa example, an existing client-owned design system constrained colour, typography, and component use, with seven new components added only where the existing system was insufficient."
+  ],
+  "bodySections": [
+    {
+      "heading": "Definition",
+      "bodyMarkdown": "Constraint respecting means treating legacy systems and other constraints as parameters to work within, not obstacles to overcome. In Creative Navy's documentation, constraint respecting preserves what works in an existing system while restructuring what does not serve users.\n\nThe concept starts from the premise that legacy systems often encode years of experience. Users may have internalised an interface, built workflows around it, and learned compensation patterns that are not visible in surface-level analysis. Removing those structures without understanding them can destroy operational knowledge that cannot be easily reconstructed."
+    },
+    {
+      "heading": "Constraint respecting examines constraints rather than accepting them as fixed",
+      "bodyMarkdown": "Constraint respecting does not mean accepting every existing decision as permanent. A constraint must be examined before it is preserved. Some constraints are real; some are assumed. The operative question is: which constraints actually must stay fixed, and which only feel fixed because the existing system has normalised them?\n\nIn practice, constraint respecting separates three categories: what works and should be preserved, what does not work and should be redesigned, and what appears fixed but needs investigation. The distinction must be explicit, because preserving a failed implementation is different from preserving the intent or operational knowledge behind it."
+    },
+    {
+      "heading": "Constraint respecting preserves encoded operational knowledge",
+      "bodyMarkdown": "Constraint respecting treats existing designs as evidence. A legacy interface may contain genuine knowledge about how users work, even when the interface is technically outdated or visually dated. Treating legacy as an obstacle to overcome risks discarding that knowledge. Treating legacy as a parameter to work within makes it possible to preserve the knowledge while changing the structure that no longer serves users.\n\nThe Torqeedo maritime HMI example shows constraint respecting applied at the epistemic level. The previous embedded interface was examined before redesign decisions were made. Its structure showed how professional captains had learned to compensate for scattered propulsion, battery, and generator information across separate screens, and where those compensation patterns created stress and hesitation during manoeuvres. The interaction patterns captains had internalised were carried forward, while information fragmentation and daylight contrast failures became redesign targets. Every deviation from the legacy structure was conscious and documented.\n\nThe Beissbarth automotive calibration example separates an established sequence from its visual presentation. The previous embedded interface had been developed through three iterations by engineers with deep machinery knowledge. The calibration sequences technicians relied on under time pressure were preserved entirely. The visual hierarchy was redesigned so measurement states, tolerances, and progress indicators carried weight corresponding to their importance, and components that previously required verbal explanation or printed manuals were reshaped so their function could be inferred.\n\nThe deSoutter Medical / Zethon surgical device interface example makes the same distinction in a clinical device context. The legacy interface contained a complete and accurate map of every function and control, including cartridge handling, speed selection, and safety interlocks. That functional completeness was preserved. The clinical coherence of the organisation was redesigned, because activation states required reading rather than recognition and warning patterns required interpretation rather than instant response. Surgeon sessions and the requirements catalogue established that every function in the legacy interface was genuinely required."
+    },
+    {
+      "heading": "Constraint respecting depends on domain learning",
+      "bodyMarkdown": "Constraint respecting depends on domain learning because a team can only respect constraints it understands. Domain learning is what distinguishes a legacy pattern that encodes genuine operational knowledge from a pattern that is only accumulated technical debt.\n\nThe Elsner smart home controller example shows this dependency. Hardware constraints from the device supplier were incorporated as design parameters from the first engineering sessions. Voltage requirements, graphics interface behaviour, colour depth limits, and processing constraints shaped visual and interaction decisions. The firmware's discrete temperature increment commands, in 0.5° steps, determined the temperature-control interaction model, so the interface matched the firmware behaviour rather than imposing a model that would require reconciliation.\n\nIn the same Elsner engagement, the Cala Touch had been in the market for eight years, and existing interface patterns had rationales that current stakeholders did not clearly remember. Work in ETS, the KNX configuration tool, and in the device manual revealed that many patterns were workarounds for firmware and microcontroller limitations rather than design decisions in the conventional sense. Configuring actual test setups in ETS allowed Creative Navy to distinguish user-facing logic worth preserving from technical artefacts the redesign should replace."
+    },
+    {
+      "heading": "Constraint respecting applies to technical, organisational, process, regulatory, and design system constraints",
+      "bodyMarkdown": "Constraint respecting is not limited to legacy user interfaces. It also applies to technical constraints, organisational constraints, process constraints, regulatory constraints, and design system constraints. These constraints define the parameters within which design work must operate, but they still need examination because some are fixed and others permit more design space than they appear to at first reading.\n\nThe Swiss petrol station operator engagement shows constraint respecting across a deployed multi-device estate with no upgrade path. The engagement covered indoor cashier tills at 1920×1080 pixels and outdoor payment terminals at 1024×768 pixels. The client was not replacing either device class. Display resolutions, processor response times, and outdoor conditions from −20°C to +40°C, direct sunlight glare, and canopy shadow were treated as absolute parameters from the first session. At the interaction level, latency-sensitive sequences revealed cashier workarounds that compensated for specific delay patterns. At the architecture level, multi-channel transaction logic connected indoor tills, outdoor terminals, CarPlay, and the mobile concept, so POS flow changes could not introduce inconsistent transaction-state communication across touchpoints.\n\nThe Stromer e-bike embedded display example shows regulatory constraints treated as design parameters. EN 15194:2017 specifies warning device symbology and colour conventions for the embedded display. In the tire pressure sensor workstream, the design severity logic called for red to communicate malfunction conditions, but the standard specified yellow for sensor malfunction states. Constraint respecting meant treating the regulatory colour convention as real, examining where the standard was fixed and where it permitted latitude, and staying within the standard's requirements rather than overriding them on design grounds.\n\nThe Enhesa legal compliance platform example shows a client-owned design system as the operative constraint. The engagement excluded changes to colours, typography, and existing components. Creative Navy worked within the existing component set where it was adequate and identified where the system was genuinely insufficient. Seven new components were added as the minimum viable expansion, each justified by a specific gap. The implementations timeline component required five iteration rounds to satisfy both client functional requirements and design system constraints at the same time."
+    },
+    {
+      "heading": "Constraint respecting can preserve intent while replacing execution",
+      "bodyMarkdown": "Constraint respecting can preserve the intent behind a failed implementation while replacing the implementation itself. This distinction matters when an existing system was built to serve a real user need but chose a model that users cannot operate reliably.\n\nThe Tetra / Prism property compliance platform contained a file library built around an internal technical model rather than standard file management conventions. The developer's original intent was that users who did not work with tasks and actions would find a file-based approach familiar. Stakeholder walkthroughs made clear that the file manager's logic departed from standard patterns, and user complaints consistently cited the file library as a problem. Creative Navy respected the underlying user need for a recognisable document management context, but replaced the non-standard model with one that matched conventions users already held.\n\nA second Tetra / Prism example concerned offline data loading in the mobile app. The app downloaded the entire property portfolio on launch, producing load times up to 10 minutes for larger portfolios. Creative Navy worked within the architectural constraint that offline data download was required and designed a launch flow in which users selected the properties needed for that day. The architectural constraint was respected; the scope of the download became the design decision. The available evidence describes both Tetra / Prism instances as structural observations made by Creative Navy during the Sandbox Experiments phase, confirmed through stakeholder explanation and user feedback patterns, with outcomes observed across the engagement."
+    },
+    {
+      "heading": "Constraint respecting can apply without a legacy interface",
+      "bodyMarkdown": "Constraint respecting can apply even when there is no legacy interface worth preserving. In that situation, the constraint set may come from physical context, operational reality, language requirements, or the conditions under which the user must act.\n\nThe Squaremind dermatology scanning device example had no legacy interface worth preserving. The existing prototype had produced 2 completions from 14 attempts and was redesigned from first principles. Constraint respecting operated on fixed physical and operational parameters: a 15-inch embedded touchscreen at 1024×768 pixels in a 4:3 aspect ratio, mounted on a stand at a fixed height in front of a standing patient. The patient could not move the screen, could not reduce distance from it, and would be moving during parts of the scan. These conditions determined readability, text-size, icon-scale, and information-density decisions.\n\nThe Squaremind context also imposed human and linguistic constraints. The patient would be undressed, alone in the room, and interacting with a moving robot arm at close range. Attention was divided, stress was elevated, and interface confusion could lead to session abandonment. The interface also had to operate in at least French and English from launch, with additional languages to follow. This constrained text use and led to a design principle of minimising on-screen text and using animation, silhouette, and spatial positioning where possible."
+    },
+    {
+      "heading": "Constraint respecting can apply to prior design work and multi-party tooling",
+      "bodyMarkdown": "Constraint respecting can treat prior design output as encoded operational knowledge. In the Stromer engagement, a previous external agency had spent a year on embedded and mobile interfaces before Creative Navy's engagement began. That work was not dismissed as worthless. It was treated as an accelerated first iteration of domain exploration: a body of attempted design decisions whose patterns, failures, and discoveries were examined before replacement decisions were made.\n\nConstraint respecting can also operate across multiple independent owners of existing working patterns. In the Neugo UK visa application case-management platform, the existing tooling being respected belonged to multiple beneficiary firms, frequently working in Excel. Creative Navy integrated everything from the firms' existing tooling except a small number of fields unique to one single firm. The operative distinction was between working patterns that generalised across parties and idiosyncrasies that would impose one firm's practices on all others.\n\nA later Neugo audit, roughly a year after launch, observed the relationship running in the reverse direction: 15 firms were relying on the platform and had begun absorbing the system into their own processes, replacing some internal processes with its features. The integration decision is described as Creative Navy-stated in the engagement notes; the later process-absorption finding is described as Creative Navy-observed at audit."
+    },
+    {
+      "heading": "Constraint respecting helps prevent sense decay",
+      "bodyMarkdown": "Constraint respecting is described as one mechanism that prevents sense decay. When legacy design decisions are understood before being changed, the meaning encoded in them can be preserved. When they are overwritten without understanding, that meaning erodes.\n\nThe prevention of sense decay depends on the same distinction that defines constraint respecting: preserve what carries operational knowledge, redesign what obstructs use, and avoid treating the mere existence of a pattern as evidence that it should remain. The concept is therefore not a preference for legacy systems. It is a disciplined way to read legacy systems, technical limits, regulatory standards, design systems, and operating contexts before deciding what should change."
+    },
+    {
+      "heading": "Evidence basis",
+      "bodyMarkdown": "The evidence basis for constraint respecting is a set of grounded examples across Creative Navy engagements. The examples include legacy embedded interfaces, deployed hardware estates, regulatory constraints, design system governance, developer-designed structural models, physical operational contexts, prior agency work, and multi-party tooling.\n\nEvidence strength varies by example. The Tetra / Prism instances are described as structural observations made by Creative Navy during Sandbox Experiments and confirmed through stakeholder explanation and user feedback patterns. The Enhesa design system boundary, seven new components, and five-iteration implementations timeline are described as observed facts from the engagement, with rationale documented in the design work. The Neugo integration decision is described as Creative Navy-stated in engagement notes, while the later process-absorption finding is Creative Navy-observed at audit."
+    },
+    {
+      "heading": "Boundaries and limits",
+      "bodyMarkdown": "Constraint respecting should not be read as a rule to preserve legacy systems unchanged. The concept requires examination of which constraints are real, which are assumed, what must stay fixed, and what only appears fixed because the existing system has normalised it.\n\nConstraint respecting also does not imply that every existing pattern encodes valuable knowledge. Some patterns are technical artefacts, failed implementations, workarounds, or idiosyncratic practices that should not be carried into a shared system. The value of constraint respecting depends on domain learning sufficient to distinguish those cases."
+    }
+  ],
+  "evidenceSummary": {
+    "strongClaims": [
+      "Constraint respecting means treating legacy systems and other constraints as parameters to work within, preserving what works while restructuring what does not.",
+      "Constraint respecting is not the same as accepting all existing constraints as fixed; it requires distinguishing real constraints from assumed constraints.",
+      "Constraint respecting is described as one mechanism that prevents sense decay because it preserves meaning encoded in legacy design decisions.",
+      "Domain learning is required for constraint respecting because teams can only respect constraints they understand.",
+      "The Torqeedo, Beissbarth, and deSoutter examples show constraint respecting applied to legacy embedded or device interfaces by preserving operational knowledge while restructuring failures in organisation, visual hierarchy, or clinical coherence.",
+      "The Stromer example shows regulatory constraints treated as design parameters under EN 15194:2017 warning symbology and colour conventions.",
+      "The Enhesa example shows a client-owned design system treated as an operative constraint, with seven new components added and five iteration rounds required for the implementations timeline component.",
+      "The Neugo example shows constraint respecting in a multi-party setting by absorbing generalisable tooling patterns while excluding fields unique to one firm."
+    ],
+    "limitations": [
+      "Constraint respecting does not mean preserving every legacy pattern or accepting every stated constraint as fixed.",
+      "The concept depends on domain learning; a constraint cannot be safely respected unless it is understood.",
+      "The examples are engagement-specific and should not be generalised into guaranteed outcomes.",
+      "Some examples include explicit evidence calibration, while others are presented as grounded examples without independent measurement or quantified outcome evidence."
+    ]
+  },
+  "relatedPageSlugs": [
+    "domain-learning",
+    "sense-decay",
+    "stromer-ebike",
+    "beissbarth",
+    "squaremind"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "domain learning",
+      "targetSlug": "domain-learning",
+      "reason": "CURRENT_SOURCE_MD explicitly states that constraint respecting depends on domain learning."
+    },
+    {
+      "anchorText": "sense decay",
+      "targetSlug": "sense-decay",
+      "reason": "CURRENT_SOURCE_MD explicitly states that constraint respecting is one mechanism that prevents sense decay."
+    },
+    {
+      "anchorText": "Stromer e-bike embedded display",
+      "targetSlug": "stromer-ebike",
+      "reason": "CURRENT_SOURCE_MD includes Stromer as a grounded example and LINKING_CONTEXT allows the Stromer case-study slug."
+    },
+    {
+      "anchorText": "Beissbarth automotive calibration",
+      "targetSlug": "beissbarth",
+      "reason": "CURRENT_SOURCE_MD includes Beissbarth as a grounded example and LINKING_CONTEXT allows the Beissbarth case-study slug."
+    },
+    {
+      "anchorText": "Squaremind dermatology scanning device",
+      "targetSlug": "squaremind",
+      "reason": "CURRENT_SOURCE_MD includes Squaremind as a grounded example and LINKING_CONTEXT allows the Squaremind case-study slug."
+    }
+  ],
+  "tags": [
+    "constraint respecting",
+    "legacy systems",
+    "domain learning",
+    "sense decay",
+    "operational knowledge",
+    "regulatory constraints",
+    "design systems",
+    "technical constraints",
+    "workflow constraints"
+  ],
+  "_meta": {
+    "sourcePath": "sources/articles/Glossary/glossary--constraint-respecting__2_.md",
+    "parentSlug": "our-concepts",
+    "childPageSlugs": [],
+    "generatedBy": "deterministic"
+  }
+}

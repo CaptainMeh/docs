@@ -1,0 +1,140 @@
+{
+  "slug": "teams-cannot-prioritise-ux-work-rationally",
+  "title": "Teams Cannot Prioritise UX Work Rationally",
+  "pageType": "situation",
+  "category": "situations",
+  "section": "Delivery And Execution",
+  "summary": "This situation describes teams that can prioritise features but cannot prioritise UX work with the same rational structure. The problem appears when UX decisions are sequenced by urgency, release pressure, or stakeholder concern instead of explicit dependency mapping and operational evidence.",
+  "keyFacts": [
+    "Feature prioritisation often has explicit mechanisms such as impact versus effort matrices, dependency graphs, release date constraints, and customer commitment tracking.",
+    "UX work often lacks an equivalent sequencing framework and is instead prioritised by urgency, release critical path, or stakeholder pressure.",
+    "UX decisions can propagate across modules, causing later modules to satisfy or break patterns established earlier.",
+    "Compliance and technical dependency chains can make some UX decisions upstream prerequisites even when they are not visible in the feature backlog.",
+    "The cost of deferring UX decisions is not uniform; some decisions become expensive to change after implementation, component build-out, shipment, or user learning.",
+    "In the Bofin engagement, PSD2 and Strong Customer Authentication requirements shaped authentication-state interaction patterns across onboarding, account aggregation, transaction initiation, and other authenticated sessions.",
+    "In the Bofin engagement, Creative Navy introduced a prioritisation framework during Sandbox Experiments and implemented sequencing over eight weeks during Iterative System Building.",
+    "Bofin client-reported outcomes included fewer mid-sprint clarifications required by engineering teams and reduced rework from clearer component definitions; no deadline was missed across 11 months.",
+    "In the IDEXX Animana engagement, a Sandbox Experiments audit produced more than 100 recommendations from research across 35 clinics, 150+ participants, and 3 countries.",
+    "IDEXX Animana client-reported six months post-engagement that recommendations were confirmed as well-grounded, with some already implemented and the remainder planned for future implementation."
+  ],
+  "bodySections": [
+    {
+      "heading": "Situation summary: UX work is sequenced without the logic used for feature prioritisation",
+      "bodyMarkdown": "Creative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nTeams often have established ways to prioritise features. Impact versus effort matrices, dependency graphs, release date constraints, and customer commitment tracking give teams a shared language for making sequencing decisions explicit and debatable. These mechanisms are imperfect, but they allow a team to explain why a feature is sequenced before or after another feature.\n\nUX work often lacks an equivalent framework. In the absence of one, UX work is commonly sequenced by urgency, release critical path, or senior stakeholder concern. These mechanisms respond to real pressures, but they do not account for the properties that make UX sequencing different from feature sequencing.\n\nThe result is design coverage that reflects who argued most strongly and when, rather than which workflows most needed design attention, which interaction patterns needed to be established before adjacent modules were built, or which structural decisions would become progressively more expensive to change as the product grew."
+    },
+    {
+      "heading": "UX decisions propagate across modules and create sequencing dependencies",
+      "bodyMarkdown": "UX prioritisation requires explicit logic because interface decisions often propagate beyond the module where they are first made. A navigation model decided for one module can establish expectations that other modules must either satisfy or break. A state communication pattern established in an onboarding flow can become the baseline against which users interpret every subsequent state communication.\n\nWhen foundational UX decisions are made by whichever module happens to be next in the queue, the product can accumulate inconsistencies without any individual design decision being obviously poor in isolation. The inconsistency comes from decisions being made without awareness of their cross-module consequences.\n\nThis propagation makes informal prioritisation systematically insufficient. A design task may look local in a backlog while functioning as a system-level decision in use."
+    },
+    {
+      "heading": "Compliance and technical dependency chains can be invisible in the feature backlog",
+      "bodyMarkdown": "Compliance and technical constraints can make certain UX decisions upstream prerequisites for other UX decisions. These dependencies are not always visible from the feature backlog because they may appear first as compliance requirements rather than as design work.\n\nThe Bofin example shows this pattern. Bofin was building a mobile marketplace for financial services with more than 50 developers, multiple modules running simultaneously, and design capacity that could not match the pace of development. The product involved onboarding, identity verification, account aggregation, and transaction initiation.\n\nPSD2 and Strong Customer Authentication requirements imposed interaction design constraints that were not visible as UX work from the feature backlog. Authentication state handling in the identity verification flow established the interaction pattern for every authenticated session across the product. A decision about how users experience authentication during onboarding was therefore not local to onboarding. It became the foundational pattern against which transactions, account actions, and cross-institution operations would be evaluated by users who had learned that pattern first.\n\nDesigning modules that touch authenticated sessions before establishing the authentication interaction pattern creates two possible outcomes: rework when the pattern is later established, or acceptance of inconsistency between the module design and the authentication standard. The dependency becomes visible only through explicit UX dependency mapping."
+    },
+    {
+      "heading": "The cost of deferring UX decisions is not uniform",
+      "bodyMarkdown": "UX decisions differ in how expensive they become to change over time. Some decisions become more costly to change after users have learned an existing pattern, after components have been built and shipped, or after the decision has propagated into adjacent modules. Other UX decisions can be deferred more cheaply because their consequences remain local and contained.\n\nInformal prioritisation mechanisms do not distinguish between these cost trajectories. A high-cost-to-defer decision and a low-cost-to-defer decision can appear in the same backlog queue and be sequenced by urgency rather than by the consequences of delay.\n\nThis is why UX prioritisation cannot be reduced to general backlog management. The same apparent unit of design work can have different system-level effects depending on whether it establishes a shared pattern, resolves an upstream dependency, or affects only a contained area of the product."
+    },
+    {
+      "heading": "Bofin example: sequencing UX work in a 50-developer environment",
+      "bodyMarkdown": "Creative Navy's Critical Systems Design method addressed Bofin's UX sequencing problem by converting prioritisation from a political question into a dependency question. The question shifted from whose module was most urgent to which interaction decisions needed to be made before other decisions could be made cleanly.\n\nDuring Sandbox Experiments, Creative Navy introduced a lightweight prioritisation framework for distinguishing essential behaviours from optional enhancements. Essential behaviours were interaction decisions foundational to product coherence whose deferral would create expensive rework. Optional enhancements were additions that could be made without affecting what needed to be established first.\n\nDuring Iterative System Building, Creative Navy implemented this sequencing over eight weeks. Payment initiation, KYC expansion, and document upload were addressed in a deliberate order. Weekly consolidation of input from product, engineering, and compliance supported refinement of requirements templates and decision logs as interaction patterns were established.\n\nThe Bofin outcome evidence is calibrated. Delivery outcomes were Creative Navy-observed. Engineering-team outcomes were client-reported by the product manager. The client-reported outcomes were fewer mid-sprint clarifications required by engineering teams and reduced rework from clearer component definitions. The documented delivery record states that no deadline was missed across 11 months. At handover, the organisation was capable of operating the design system without ongoing external support, directly observed by Creative Navy."
+    },
+    {
+      "heading": "IDEXX Animana example: prioritising more than 100 UX recommendations",
+      "bodyMarkdown": "Creative Navy's Critical Systems Design method addressed IDEXX Animana's prioritisation problem after a Sandbox Experiments audit identified more than 100 recommendations across a veterinary practice management platform with eleven years of accumulated UX debt.\n\nThe problem after the audit was not a lack of identified UX work. The problem was deciding what to change first, in what order, and toward what structural end. Without a prioritisation framework connected to the evidence, more than 100 recommendations could become a flat backlog governed by informal mechanisms: stakeholder advocacy, implementation ease, or visibility in a demo.\n\nCreative Navy structured the recommendations for direct translation into development tickets, with structural dependencies and impact distinctions visible. The five-year product vision linked capability stages to audit evidence. The role-architecture separation between reception and clinical interfaces was identified as a structural decision that needed to precede certain feature additions.\n\nThe evidence base for IDEXX Animana is also calibrated. The research scope of 35 clinics, 150+ participants, and 3 countries was Creative Navy-observed. Six months post-engagement, the client reported that the recommendations were confirmed as well-grounded, with some already implemented and the remainder planned for future implementation. The pace of implementation is described as reflecting internal organisational velocity rather than an issue with the recommendations."
+    },
+    {
+      "heading": "How Creative Navy's Critical Systems Design method makes UX sequencing explicit",
+      "bodyMarkdown": "Creative Navy's Critical Systems Design method addresses rational UX prioritisation by producing two things informal mechanisms cannot produce: an operational model of what users need and in what order they need it, and an explicit map of dependencies between UX decisions.\n\nSandbox Experiments provide the operational model. In the Bofin engagement, Creative Navy needed enough domain fluency in PSD2 and SCA requirements to recognise that authentication interaction patterns were foundational UX decisions rather than isolated compliance details. In the IDEXX Animana engagement, Creative Navy needed operational understanding of veterinary workflows to distinguish architectural prerequisites from feature-level improvements.\n\nOrganizational Integration makes the dependency map usable by the client team. In Bofin, the prioritisation structure became sprint-level sequencing of module design work. In IDEXX Animana, the prioritisation structure became a five-year vision with capability stages anchored to audit evidence.\n\nIn both examples, the sequencing logic was transferred alongside the sequence itself. This matters because a fixed sequence can become obsolete when circumstances change, while visible reasoning allows a product team to adapt the sequence without returning to urgency-driven prioritisation."
+    },
+    {
+      "heading": "Boundaries and evidence limits",
+      "bodyMarkdown": "The Bofin and IDEXX Animana examples show how rational UX prioritisation was applied in documented engagements. They do not establish a universal rule that the same sequencing structure applies unchanged in every product environment.\n\nThe outcome evidence is mixed in strength. Some engagement facts were Creative Navy-observed, including Bofin delivery outcomes and the IDEXX Animana research scope. Some outcomes were client-reported, including Bofin engineering-team outcomes and IDEXX Animana post-engagement implementation status. The client-reported outcomes are not independently verified in the available evidence.\n\nThis situation is specifically about prioritising UX work when design decisions have propagation effects, dependency chains, or uneven deferral costs. It does not claim that all UX tasks require the same level of sequencing structure. Some UX decisions are local and can be deferred cheaply when their consequences remain contained."
+    }
+  ],
+  "evidenceSummary": {
+    "strongClaims": [
+      "Compliance and dependency chains can make UX decisions upstream prerequisites that are not visible from the feature backlog.",
+      "In the Bofin engagement, Creative Navy introduced a prioritisation framework during Sandbox Experiments and implemented sequencing over eight weeks during Iterative System Building.",
+      "In the Bofin engagement, no deadline was missed across 11 months and handover left the organisation capable of operating the design system without ongoing external support.",
+      "In the IDEXX Animana engagement, Creative Navy organised more than 100 recommendations with structural dependencies and impact distinctions visible for translation into development tickets."
+    ],
+    "weakerClaims": [
+      "UX work is often sequenced by urgency, release critical path, or stakeholder concern when teams lack an explicit UX prioritisation framework.",
+      "UX decisions can propagate across modules, making informal sequencing insufficient for foundational interaction patterns.",
+      "Bofin client-reported fewer mid-sprint clarifications required by engineering teams and reduced rework from clearer component definitions.",
+      "IDEXX Animana client-reported six months post-engagement that recommendations were well-grounded, with some implemented and the remainder planned for future implementation."
+    ],
+    "limitations": [
+      "The page is based on two grounded examples, Bofin and IDEXX Animana, and does not establish that the same sequencing structure applies unchanged to every product environment.",
+      "Bofin engineering-team outcomes are client-reported by the product manager and are not described as independently verified.",
+      "IDEXX Animana post-engagement implementation status is client-reported and is not described as independently verified.",
+      "The source distinguishes between directly observed delivery outcomes and client-reported outcomes; the page does not treat client-reported outcomes as measured outcomes.",
+      "The situation applies most directly where UX decisions have cross-module propagation, dependency chains, compliance-related prerequisites, or uneven deferral costs; it does not claim that all UX tasks require the same sequencing depth."
+    ]
+  },
+  "relatedPageSlugs": [
+    "design-debt-is-turning-into-operational-debt",
+    "design-does-not-survive-development",
+    "research-is-not-informing-decisions",
+    "stakeholders-cannot-align-on-direction",
+    "the-team-is-shipping-without-a-clear-behaviour-model",
+    "product-fragmenting-under-growth",
+    "too-many-features-not-enough-coherence"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "design debt is turning into operational debt",
+      "targetSlug": "design-debt-is-turning-into-operational-debt",
+      "reason": "The source describes accumulated inconsistencies and expensive rework when foundational UX decisions are deferred."
+    },
+    {
+      "anchorText": "design does not survive development",
+      "targetSlug": "design-does-not-survive-development",
+      "reason": "The Bofin example concerns design coverage in a fast-moving development environment."
+    },
+    {
+      "anchorText": "research is not informing decisions",
+      "targetSlug": "research-is-not-informing-decisions",
+      "reason": "The IDEXX Animana example explains how audit evidence was linked to prioritisation and roadmap decisions."
+    },
+    {
+      "anchorText": "stakeholders cannot align on direction",
+      "targetSlug": "stakeholders-cannot-align-on-direction",
+      "reason": "The situation describes sequencing that defaults to stakeholder concern when explicit logic is absent."
+    },
+    {
+      "anchorText": "the team is shipping without a clear behaviour model",
+      "targetSlug": "the-team-is-shipping-without-a-clear-behaviour-model",
+      "reason": "The page describes the need to establish interaction behaviour before adjacent modules are built."
+    },
+    {
+      "anchorText": "product fragmenting under growth",
+      "targetSlug": "product-fragmenting-under-growth",
+      "reason": "The page describes how products accumulate inconsistencies as modules are built without awareness of shared UX consequences."
+    },
+    {
+      "anchorText": "too many features, not enough coherence",
+      "targetSlug": "too-many-features-not-enough-coherence",
+      "reason": "The source describes product growth and feature additions that require structural sequencing to preserve coherence."
+    }
+  ],
+  "tags": [
+    "UX prioritisation",
+    "UX sequencing",
+    "design dependencies",
+    "design debt",
+    "feature prioritisation",
+    "Critical Systems Design",
+    "Sandbox Experiments",
+    "Iterative System Building",
+    "Organizational Integration",
+    "PSD2",
+    "SCA"
+  ],
+  "_meta": {
+    "sourcePath": "sources/articles/Situations/situations--delivery--teams-cannot-prioritise-ux-work-rationally.md",
+    "parentSlug": "delivery-and-execution",
+    "childPageSlugs": [],
+    "generatedBy": "deterministic"
+  }
+}

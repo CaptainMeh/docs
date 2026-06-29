@@ -1,0 +1,177 @@
+{
+  "_type": "documentationPage",
+  "sourceFile": "Articles/Failures/failures--interpretation--users-see-information-but-cannot-judge-what-matters.md",
+  "sourcePath": "sources/articles/Failures/failures--interpretation--users-see-information-but-cannot-judge-what-matters.md",
+  "sanityDocumentIdCandidate": "documentationPage.users-see-information-but-cannot-judge-what-matters",
+  "title": "Users See Information But Cannot Judge What Matters",
+  "slug": {
+    "_type": "slug",
+    "current": "users-see-information-but-cannot-judge-what-matters"
+  },
+  "pageType": "failure",
+  "category": "failures",
+  "parentSlug": "interpretation-failures",
+  "childPageSlugs": [],
+  "excerpt": "This failure occurs when users can see and interpret information but cannot judge which items are significant, relevant, or worth acting on. It appears as undifferentiated operational information, opaque information spaces, or blended signal types.",
+  "metaTitle": "Users See Information But Cannot Judge What Matters",
+  "metaDescription": "A UX failure where visible information lacks contextual significance, leaving users unable to judge relevance, priority, or required attention.",
+  "summary": "Users see information but cannot judge what matters when an interface provides data without the contextual scaffolding needed to determine significance, relevance, or priority. The documented examples include Triopsis workforce management, Owkin / K, and eToro multi-asset social trading.",
+  "definition": "A judgment failure is a UX failure in which users can interpret visible information but cannot determine which information is significant, relevant, or action-worthy in the current task context.",
+  "keyFacts": [
+    "Judgment follows interpretation: the user may understand each value but still be unable to decide what requires attention.",
+    "In operational workflow software, the failure appears when routine items, exceptions, conflicts, and conditions requiring attention are presented at similar weight.",
+    "In specialist and AI-assisted systems, the failure appears when users cannot see the boundaries of the available information space or capability space.",
+    "In Triopsis workforce management, scheduling exceptions were present in a uniform job list but were not surfaced as structurally distinct.",
+    "Triopsis product analytics recorded 62% faster job discovery, 83% faster job sequence optimisation, and 58% faster weekly planning in the live product.",
+    "In Owkin / K, clinicians could not form productive query judgments until they understood which datasets were available to query.",
+    "Owkin attributed approximately £5M in investment to the design work; this figure is client-reported, approximate, and causally attributed by the client.",
+    "In eToro multi-asset social trading, market movement, social activity, and volatility signals were blended so users could not judge what kind of signal they were responding to.",
+    "eToro client-measured A/B figures recorded discovery-to-trade conversion rising from 5.1% to 7.4% and median time to first trade falling from 11.8 to 8.6 minutes."
+  ],
+  "tags": [
+    "judgment failure",
+    "interpretation failure",
+    "contextual scaffolding",
+    "information prioritisation",
+    "relevance judgment",
+    "exception surfacing",
+    "AI information space",
+    "signal provenance",
+    "microtask analysis",
+    "domain learning"
+  ],
+  "bodyMarkdown": "## Summary\n\nCreative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nUsers see information but cannot judge what matters when an interface provides data without the contextual scaffolding needed to determine significance, relevance, or priority. The user may understand what each visible item means, but still be unable to decide what requires attention now, what is safe to ignore, what should be queried, or what should be acted on.\n\nThis failure is a judgment failure, not a raw visibility failure. The information may be visible. The values may be individually interpretable. The missing element is the structural context that tells users which information matters in the current operational situation.\n\n## Judgment failure after successful interpretation\n\nJudgment is the cognitive task that follows interpretation. A user who can read a value but cannot determine whether it requires attention has completed interpretation and stalled at judgment.\n\nThe interface has provided data, but it has not provided contextual significance. The user must supply that significance from prior expertise, intensive familiarity, or manual comparison across the full information set.\n\nThis distinction matters because interpretation and judgment fail in different ways. A difficult-to-interpret value prevents the user from understanding what a piece of information represents. A judgment failure occurs after that understanding exists, when the user still cannot determine which pieces of information matter most.\n\n## Operational workflow software can hide exceptions inside a uniform information field\n\nIn operational workflow software, this failure appears when items of different operational significance are presented at similar visual and informational weight. Routine schedule items, tasks, parameters, exceptions, conflicts, and urgent conditions may all appear in the same list, grid, or table.\n\nThe user who needs to manage exceptions cannot scan directly for them because the interface does not communicate which items are exceptional. The user must examine the full set to find what requires attention. The cost of that scanning task grows with the size of the set and becomes most damaging when operational load is highest.\n\nIn scheduling platforms, monitoring dashboards, and inspection management tools, this can mean that weather delays, equipment conflicts, partial completions, crew shortages, and conflicting assignments are technically present but not structurally distinguished. The failure is not that exceptions are absent. The failure is that the interface leaves exception categorisation to the user at the moment when the user is least able to perform it.\n\n## Specialist and AI-assisted systems can make the information space opaque\n\nIn specialist and AI-assisted systems, users may be unable to form relevance judgments because they cannot see the boundaries of the information space. The problem is not prioritising within a known set. The problem is orienting toward an unknown set.\n\nThis form appears in AI products operating on bounded datasets, specialist tools with capability sets that do not map to familiar software conventions, and research platforms whose scope and coverage are not visible at entry. A user cannot judge whether a query is relevant if the user does not know which datasets are available, which queries engage the system's genuine capability, or which part of the interface corresponds to the task.\n\nThe common behaviour is predictable. Users default to the most obvious entry point because they lack a better map. Users formulate queries based on what the interface makes easy to access rather than what is most relevant to the question. Users may disengage after early unhelpful results, even when the relevant capability exists but is not discoverable.\n\n## Blended signal types can prevent users from judging signal provenance\n\nA third form of this failure appears when different kinds of signals are blended into one discovery surface. In eToro multi-asset social trading, market movement, social or copy-trading activity, and volatility-driven changes were mixed together.\n\nThe information was individually interpretable. A user could read a price move, a most-copied badge, or a trending indicator. The interface did not clearly communicate which kind of signal each item represented. The user could not readily judge whether a decision was being based on market performance, social momentum, or a volatility spike.\n\nThis form had a regulatory dimension in the eToro case. When an unqualified popularity signal cannot be distinguished from a recommendation, the interface risks implying endorsement or advice. The documented design response separated social signals from market signals and made signal type legible: market performance, social momentum, and volatility.\n\n## How this failure differs from buried status and hard-to-interpret data\n\nThis failure differs from important status information being buried. Buried status is a presentation failure: operationally significant information is present but not prominent enough to be noticed under routine attention. Judgment failure is a cognitive scaffolding failure: the user can access the information, and the visual hierarchy may be adequate, but the interface does not communicate the contextual significance needed to allocate attention correctly.\n\nThis failure also differs from data being available but hard to interpret. Hard-to-interpret data prevents users from understanding what individual values mean. Judgment failure assumes that interpretation has succeeded. The user understands what each item represents but cannot determine which items matter most.\n\nThe sequential relationship is important. Interpretation answers what the information means. Judgment answers whether that information is significant, relevant, exceptional, routine, or action-worthy in the current context.\n\n## Triopsis workforce management showed exceptions inside a uniform job list\n\nIn the Triopsis workforce management case, schedulers managed thousands of weekly interventions for utilities and road maintenance operations. The documented user roles were schedulers optimising job sequences, operations managers monitoring exceptions across broader time horizons, and field technicians completing work items.\n\nThe scheduling environment combined routine jobs with exception conditions requiring active management, including weather delays, equipment unavailability, partial completions, conflicting assignments, and crew shortages. The legacy interface presented jobs as a uniform list. Exceptions were present, but they were not distinguished from the full job population.\n\nCreative Navy-observed evidence came from three in-situ observation sessions that specifically observed schedulers during peak-load conditions. The observed peak-load conditions included simultaneous weather incidents, equipment conflicts, and crew shortages. Under those conditions, the absence of exception surfacing became a compound failure: the interface imposed the maximum scanning burden at the moment of maximum operational load.\n\nCreative Navy's Critical Systems Design method addressed this through a 47-task microtask analysis across three personas. The analysis documented what each user role needed to attend to at each step of the scheduling workflow, under what conditions, and what the interface was requiring users to supply from their own knowledge.\n\nThe direction that emerged through Concept Convergence was a scheduling interface that communicated scheduling priority rather than merely presenting scheduling data. Predictive conflict indicators surfaced scheduling problems before users encountered them mid-task. Weather incidents, partial completions, and delayed jobs received first-class interface treatment with direct action paths.\n\nThe available product analytics recorded live-product outcomes with real users: 62% faster job discovery, 83% faster job sequence optimisation, and 58% faster weekly planning. The 62% faster job discovery figure is most directly connected to the judgment-failure resolution because surfaced exceptions reduce the time required to locate the item requiring action.\n\n## Owkin / K showed the need to make bounded AI datasets visible\n\nK is an AI copilot for biomedical research built on curated biological datasets, including proprietary, public, and user-uploaded data sources. K does not draw on the general internet. K integrates a biology-specific reasoning model capable of answering complex research questions that previously required a data science team to execute.\n\nThe user population Creative Navy was engaged to serve was clinicians with low to medium scientific background. That audience had a different cognitive starting point from the expert biologists for whom K had been built.\n\nThe judgment failure was that K operated on bounded datasets, but the boundaries of those datasets were not visible to users at entry. A clinician trying to formulate a useful query first needed to know what data was available to query, whether a relevant dataset was present in K's holdings, and whether K's biological reasoning model was appropriate for the question.\n\nCreative Navy's Critical Systems Design method addressed this through Sandbox Experiments that benchmarked 20+ competing and adjacent AI research tools. Creative Navy specifically examined how tools handled the entry-point problem: how users formed a first productive interaction with a system whose capability space was not self-evident.\n\nFive iterations on the Explore page led to a specific finding for K's data-bounded architecture. For this clinician audience, understanding what data was available to query was more generative than understanding what the tool could do in the abstract. A clinician who could see that a specific relevant dataset was present had a concrete basis for forming a starting query.\n\nThe convergent direction was dataset-and-mode framing. K's data holdings became the primary orientation structure rather than a secondary technical detail. The map users needed was not only what the AI could do; it was what the AI knew.\n\nThe Owkin engagement produced a prototype that became the central artefact in Owkin's investment pitch. Owkin attributed approximately £5M in investment to the design work. That figure is client-reported, approximate, and causally attributed by the client. No measured user metrics from deployment are available for this engagement. Creative Navy's notes assess the data discoverability improvement as significant but not fully solved, because the engagement addressed the beginning of the user journey most directly and subsequent stages required further design investment.\n\n## eToro showed judgment failure in blended market, social, and volatility signals\n\nIn the eToro multi-asset social trading case, discovery surfaces presented market movement, social or copy-trading activity, and volatility-driven changes together. Users could interpret individual items, but they could not readily judge what kind of signal each item represented.\n\nThe downstream effect was documented in eToro-commissioned directional qualitative research. Users found the discovery surfaces hard to act on with confidence, and the most-recognised feature, copy trading, went largely unused partly because users could not judge what the social signals warranted.\n\nCreative Navy's Critical Systems Design method addressed this through option space mapping on the explore surface. Four structural concepts were considered before convergence. The selected multi-signal direction strictly separated social signals and market signals so users could distinguish market performance, social momentum, and volatility.\n\nThe behavioural evidence was a randomised A/B with a persistent holdout, client-measured by eToro. Discovery-to-trade conversion rose from 5.1% to 7.4%, and median time to first trade fell from 11.8 to 8.6 minutes. The test recorded no increase in early-session drop-off and no reduction in exploration depth. The source interpretation is that the result is consistent with users forming relevance judgments more efficiently, not with users being pushed toward action.\n\nThe eToro example did not involve AI. The discriminated signals were human and market signals surfaced by the interface, not model outputs.\n\n## How Creative Navy's Critical Systems Design method addresses judgment failures\n\nCreative Navy's Critical Systems Design method addresses judgment failures by identifying what contextual scaffolding users need and then building that scaffolding into the interface. The documented design commitment is that users should not have to supply significance and relevance judgments from accumulated expertise when the interface can communicate those judgments structurally.\n\nMicrotask analysis makes judgment failures visible as structural gaps rather than user competence gaps. In the Triopsis case, the 47-task analysis across three personas documented what contextual judgment each user needed to make, what the interface provided, and what the interface should have communicated at each task step.\n\nDomain learning made the Owkin / K judgment failure diagnosable. Expert biologists who built K arrived with an implicit map of the available data and productive questions. Clinicians did not have that map. Understanding the gap between expert assumptions and clinician needs required comparative understanding of K's data-bounded architecture and the benchmarked AI research tools.\n\nIn all three examples, Creative Navy's design work did not primarily add information. It supplied contextual significance: exception status in Triopsis, dataset availability in Owkin / K, and signal provenance in eToro.\n\n## Boundaries and limits of this failure pattern\n\nThis page concerns judgment within or toward visible information. It does not describe cases where users cannot see the information at all, cannot interpret what individual values mean, or cannot understand system state because status information is buried.\n\nThe evidence base is case-specific. Triopsis includes live-product analytics with real users. eToro includes client-measured A/B figures and eToro-commissioned directional qualitative research. Owkin / K does not include measured deployment metrics; the available outcome evidence is the client-reported, approximate investment attribution and Creative Navy's assessment that data discoverability improved but was not fully solved.\n\n## Related pages\n\nThe adjacent failure on data that is available but hard to interpret describes the prior cognitive step: understanding what individual values mean. The adjacent failure on important status information being buried describes insufficient visual prominence. The rapid-judgment and pressure-related failure pages are also relevant when the cost of judgment rises under operational load.\n\nThe Triopsis and Owkin / K case-study pages provide the closest documented examples for this failure pattern where case-study pages are available in the knowledge base.",
+  "claims": [
+    {
+      "claim": "Users see information but cannot judge what matters when visible and interpretable information lacks contextual significance for attention, relevance, or action.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "Defined directly in the situation and distinction sections of the current page."
+    },
+    {
+      "claim": "Operational workflow systems can create judgment failure when routine items, exceptions, conflicts, and attention-requiring conditions are presented at similar weight.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "Supported by the operational workflow description and Triopsis example."
+    },
+    {
+      "claim": "Specialist and AI-assisted systems can create judgment failure when users cannot see the boundaries of the available information or capability space.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "Supported by the opaque information space section and Owkin / K example."
+    },
+    {
+      "claim": "Triopsis schedulers had to scan a uniform job list to find exceptions during peak-load scheduling conditions.",
+      "evidenceType": "Creative Navy-observed",
+      "sourceStrength": "case evidence",
+      "notes": "Supported by three in-situ observation sessions during simultaneous weather incidents, equipment conflicts, and crew shortages."
+    },
+    {
+      "claim": "Triopsis product analytics recorded 62% faster job discovery, 83% faster job sequence optimisation, and 58% faster weekly planning in the live product.",
+      "evidenceType": "field-measured",
+      "sourceStrength": "strong",
+      "notes": "The current page describes these as productivity measured in the live product through product analytics with real users."
+    },
+    {
+      "claim": "In Owkin / K, clinicians needed visibility into available datasets before they could form productive query judgments.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "Supported by the Owkin / K discussion of bounded datasets, clinician users, and dataset-and-mode framing."
+    },
+    {
+      "claim": "Owkin attributed approximately £5M in investment to the design work.",
+      "evidenceType": "client-reported",
+      "sourceStrength": "anecdotal",
+      "notes": "The figure is described as client-reported, approximate, and causally attributed by the client; no deployment user metrics are available."
+    },
+    {
+      "claim": "In eToro, market, social, and volatility signals were blended so users could not judge what kind of signal they were responding to.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "Supported by the eToro example and eToro-commissioned directional qualitative research."
+    },
+    {
+      "claim": "eToro client-measured A/B figures recorded discovery-to-trade conversion rising from 5.1% to 7.4% and median time to first trade falling from 11.8 to 8.6 minutes, with no increase in early-session drop-off and no reduction in exploration depth.",
+      "evidenceType": "client-measured",
+      "sourceStrength": "moderate",
+      "notes": "The current page describes the A/B as randomised with a persistent holdout and the figures as client-measured by eToro."
+    }
+  ],
+  "limitations": [
+    "This failure pattern assumes that interpretation has succeeded; it does not cover cases where users cannot understand what individual values mean.",
+    "This failure pattern is distinct from buried status information, where operationally significant information is present but not visually prominent enough to be noticed.",
+    "The Triopsis outcome figures are tied to the live product and the documented scheduling context; they should not be generalised to all workflow software.",
+    "The Owkin / K engagement has no measured user metrics from deployment in the current evidence.",
+    "The Owkin investment figure is client-reported, approximate, and causally attributed by the client.",
+    "The Owkin / K data discoverability improvement is described as significant but not fully solved.",
+    "The eToro discovery-difficulty findings are from eToro-commissioned directional qualitative research, while the A/B figures are client-measured by eToro.",
+    "The eToro example did not involve AI; the signals were human and market signals surfaced by the interface."
+  ],
+  "publicationBlockers": [],
+  "questionsForReview": [
+    "The paragraph about the Owkin investment pitch appears after the eToro example in the current material but refers to Owkin; this was preserved as Owkin evidence in the public body.",
+    "The eToro example is named in the current material, but no allowed eToro case-study slug was provided in the linking context; no internal case-study link was added for eToro."
+  ],
+  "relatedPageSlugs": [
+    "data-is-available-but-hard-to-interpret",
+    "important-status-information-is-buried",
+    "the-system-does-not-support-rapid-judgment",
+    "the-interface-gets-harder-when-pressure-rises",
+    "too-much-attention-is-required-for-routine-use",
+    "triopsis-workforce-management-saas",
+    "owkin-k"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "data that is available but hard to interpret",
+      "targetSlug": "data-is-available-but-hard-to-interpret",
+      "placementHint": "Related pages section or the section distinguishing judgment from interpretation",
+      "reason": "The current page explicitly distinguishes judgment failure from the prior interpretation failure."
+    },
+    {
+      "anchorText": "important status information being buried",
+      "targetSlug": "important-status-information-is-buried",
+      "placementHint": "Section explaining adjacent failures",
+      "reason": "The current page explicitly distinguishes judgment failure from buried status as a visual hierarchy failure."
+    },
+    {
+      "anchorText": "rapid judgment",
+      "targetSlug": "the-system-does-not-support-rapid-judgment",
+      "placementHint": "Related pages section",
+      "reason": "Judgment failure is closely related to the ability to make rapid judgments under operational conditions."
+    },
+    {
+      "anchorText": "pressure-related interface degradation",
+      "targetSlug": "the-interface-gets-harder-when-pressure-rises",
+      "placementHint": "Related pages section",
+      "reason": "The Triopsis example describes the cost of exception scanning rising during peak-load conditions."
+    },
+    {
+      "anchorText": "attention required for routine use",
+      "targetSlug": "too-much-attention-is-required-for-routine-use",
+      "placementHint": "Related pages section",
+      "reason": "Undifferentiated information fields require users to spend attention on routine scanning."
+    },
+    {
+      "anchorText": "Triopsis workforce management",
+      "targetSlug": "triopsis-workforce-management-saas",
+      "placementHint": "Triopsis example section",
+      "reason": "Triopsis is a documented case example named in the current page and available in the linking context."
+    },
+    {
+      "anchorText": "Owkin / K",
+      "targetSlug": "owkin-k",
+      "placementHint": "Owkin / K example section",
+      "reason": "Owkin / K is a documented case example named in the current page and available in the linking context."
+    }
+  ],
+  "qualityChecks": {
+    "factsOnlyFromCurrentSource": true,
+    "documentationStyle": true,
+    "noMarketingLanguage": true,
+    "noInventedClaims": true,
+    "linksOnlyFromLinkingContext": true,
+    "internalNotesNotPublished": true,
+    "readyForSanityImport": true
+  }
+}

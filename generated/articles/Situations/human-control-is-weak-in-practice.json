@@ -1,0 +1,175 @@
+{
+  "_type": "documentationPage",
+  "sourceFile": "Articles/Situations/situations--ai--human-control-is-weak-in-practice.md",
+  "sourcePath": "sources/articles/Situations/situations--ai--human-control-is-weak-in-practice.md",
+  "sanityDocumentIdCandidate": "documentationPage.human-control-is-weak-in-practice",
+  "title": "Human Control Is Weak In Practice",
+  "slug": {
+    "_type": "slug",
+    "current": "human-control-is-weak-in-practice"
+  },
+  "pageType": "situation",
+  "category": "situations",
+  "parentSlug": "ai-and-automation",
+  "childPageSlugs": [],
+  "excerpt": "AI products often include overrides, configuration panels, and approval workflows, but those mechanisms do not create operational human control unless the interface makes intervention informed, domain-relevant, and auditable.",
+  "metaTitle": "Human Control Is Weak In Practice",
+  "metaDescription": "Why AI overrides, configuration panels, and approval workflows often fail to create meaningful, auditable human control in practice.",
+  "summary": "Human control is weak in practice when AI systems provide formal intervention mechanisms but fail to provide the interface conditions that make those mechanisms usable for informed judgement, domain reasoning, and audit evidence.",
+  "definition": "Weak human control in AI products is the gap between nominal technical capacity to intervene in AI decision-making and operational interface conditions that make intervention meaningful, informed, and demonstrable.",
+  "keyFacts": [
+    "Human control in AI products is often available as a technical capacity through overrides, configuration panels, and approval workflows.",
+    "Operational human control requires interface conditions that expose decision basis, domain logic, and decision records.",
+    "One failure pattern occurs when users can approve, reject, or modify an AI output without seeing the reasoning, signals, criteria, or evidence behind it.",
+    "A second failure pattern occurs when configuration interfaces expose model structure rather than the reasoning vocabulary of domain experts.",
+    "A third failure pattern occurs when decisions lack a demonstrable audit trail showing which human made which decision, on what basis, and with what effect.",
+    "In the Callsign case, analysts could not express real fraud strategies because rules were scattered across database views and configuration tables, conflicts were hard to identify, and audit trails were absent or ambiguous.",
+    "In the Callsign case, Creative Navy separated the fraud detection model from the policy layer so analysts controlled policy rather than model internals.",
+    "In the Puraite case, the AI suggestion display exposed direct supporting text so reviewers could make informed inclusion or exclusion override decisions.",
+    "In the Puraite case, blinded screening mode was identified as a product requirement, but its implementation was technically outside direct scope.",
+    "Callsign commercial outcomes were client-reported; the roughly six-month time-to-market reduction was an engagement-inferred estimate, not a measured parallel comparison."
+  ],
+  "tags": [
+    "AI governance",
+    "human control",
+    "AI oversight",
+    "audit trail",
+    "AI configuration",
+    "policy layer",
+    "override design",
+    "Critical Systems Design",
+    "domain learning",
+    "constraint respecting"
+  ],
+  "bodyMarkdown": "## Human control in AI products requires more than an override mechanism\n\nCreative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nHuman control is weak in practice when an AI product gives users the technical capacity to intervene but does not give them the interface conditions needed to intervene meaningfully. Many AI products include override mechanisms, configuration panels, and approval workflows. Those mechanisms create nominal control, but not necessarily operational control.\n\nOperational human control requires three conditions. The interface must give the human enough information to understand the AI output. The interface must express the domain logic through which the human reasons about the problem. The interface must produce a record of the decision made, the person who made it, and the basis for the decision.\n\nThe gap between nominal control and operational control is an AI governance failure because the mechanism may exist while the conditions for meaningful use are absent. An audit trail may show that a human approved or rejected an AI decision, while failing to show whether the human had enough information to evaluate that decision.\n\n## Override controls fail when users cannot act on AI outputs informedly\n\nAn AI override is nominal when the user can approve, reject, or modify an AI output without seeing the reasoning basis for that output. The interface may present a decision and an action button, but the user may not see what signals the AI weighted, what criteria it applied, or what evidence in the source material it acted on.\n\nThis creates a distinction between reflexive intervention and epistemic intervention. Reflexive intervention records that a human acted. Epistemic intervention gives the human the information needed to evaluate the AI judgement before acting.\n\nIn governance-sensitive AI products, the difference matters because the audit record can make oversight appear stronger than it was. The record may show that a human made a decision, but the interface may not have supported a genuine evaluation of the AI output.\n\n## Configuration controls fail when they expose model structure instead of domain reasoning\n\nAI configuration becomes weak human control when it exposes model components in model terms rather than decision logic in the vocabulary of domain experts. The system may be technically configurable while remaining practically unavailable to the people accountable for the decisions.\n\nThe source example is fraud detection. An analyst may need to configure a policy for a specific combination of customer behaviour signals. If the only usable interface is a database table or a set of engineering-facing model parameters, the analyst cannot express the fraud strategy in the form required for operational work.\n\nThis produces formal control without practical control. Engineers may be able to modify model parameters, while fraud analysts, risk teams, compliance directors, and governance leads cannot configure or evaluate AI behaviour in the terms they use to reason about fraud risk.\n\n## Human control is not demonstrable without audit traceability\n\nHuman control is incomplete in regulated or governance-sensitive AI contexts when the system cannot demonstrate who made a decision, what rule or policy they set, on what basis they set it, and what effect it has in specific circumstances. The system may be under human control as an operational fact, but it cannot evidence that control.\n\nThe documentary failure is distinct from the interaction failure. A user may be able to configure rules, and the rules may influence AI-driven decisions, but regulators, auditors, and enterprise buyers may still require traceability from configuration to decision outcome.\n\nIn the Callsign context, enterprise banking buyers operated under SCA and PCI DSS requirements. The issue described was not simply whether fraud control decisions existed, but whether the interface could produce an auditable account of how a policy was constructed and what it would do in which circumstances.\n\n## Callsign shows the difference between model control and policy control\n\nThe Callsign case illustrates weak human control in an AI-driven fraud detection product. Callsign had a working fraud detection model that scored behavioural events, including device fingerprint, location change, spend velocity, and previous failure history. Callsign also had a policy engine concept intended to translate those scores into decisions such as allow, block, or step-up authentication.\n\nThe operational failure was that analysts could not express real fraud strategies in the interface. Rules were scattered across database views and configuration tables. Conflicts between rules were hard to identify. Audit trails were absent or ambiguous.\n\nCreative Navy's Critical Systems Design method addressed the governance problem by separating the fraud detection model from the policy layer. The model scored events. The policy layer applied thresholds, overrides, and workflow decisions to those scores. This distinction made clear where human control should be exercised: analysts should not modify the model, but they should be able to configure the policy that expresses the organisation's fraud strategy.\n\nThe Callsign information architecture was designed around policy as the central object. Each policy bundled its conditions, actions, history, and links to related rules into a unit that an analyst could understand and modify without engineering access. Policies could be followed from definition through evaluation to outcome. Conflicts between policies were made visible at configuration time, before they affected live decisions.\n\nThe evaluation environment was separate from configuration. Analysts could run simulated scenarios through the model and policy engine, then observe where traffic concentrated and where policies created bottlenecks. The representations used D3-based graph and flow forms calibrated to how analysts interpreted policy impact.\n\nThe interaction model used three gestures: drag to create or reposition nodes, click to open and edit rule parameters inline, and draw a connection to link nodes and define sequencing. Creative Navy's design work applied constraint respecting by making the interface expressive enough for analysts modelling complex fraud scenarios while keeping it accessible to risk team decision-makers without technical background.\n\nAvailable Callsign outcomes are calibrated as case evidence. Contracts with Lloyds Bank and HSBC were client-reported as won following demonstrations using the redesigned policy engine interface. The roughly six-month time-to-market reduction was an engagement-inferred estimate, not a measured parallel comparison. Use of the design system for at least two years after the engagement was client-reported.\n\n## Puraite shows how evidence display changes override quality\n\nThe Puraite case illustrates weak human control where an override exists but is not necessarily informed. The AI-assisted systematic review tool made inclusion and exclusion decisions that reviewers could approve or override. The design question was whether reviewers could see enough evidence to make that override decision with understanding.\n\nCreative Navy's Critical Systems Design method addressed this through the AI suggestion display. The design challenge went through four iterations to present AI inclusion and exclusion decisions in a form where the reviewer could see the decision and the specific text the AI had used to reach it, while keeping the display compact enough to maintain screening pace.\n\nThe direct-quote-in-side-panel solution made the override mechanism operational rather than nominal. Reviewers who could see the evidence behind the AI's decision could make an informed choice about whether to accept or override it. Reviewers who could see only the decision could not.\n\nPuraite also raised a system-level human control question through blinded screening mode. In blinded screening mode, AI decisions are withheld during initial reviewer screening to prevent the AI judgement from anchoring the human reviewer's independent assessment. The engagement identified this as a product requirement, but implementation was technically outside direct scope.\n\nThe confidence percentage display in the data extraction flow addressed the audit dimension of human control. By making the AI's confidence level explicit per extraction, the interface created a traceable record of which extractions were high-confidence and which were low-confidence. That record could guide verification effort by project managers and reviewers and document the AI's epistemic state at each extraction point.\n\n## Creative Navy's Critical Systems Design method treats human control as an interface condition\n\nCreative Navy's Critical Systems Design method treats weak human control as a design problem in the relationship between AI behaviour, domain reasoning, and accountability evidence. The relevant question is not only whether a user can intervene, but whether the interface supports the reasoning and documentation required for that intervention to count as oversight.\n\nDomain learning is the analytical precondition described in the Callsign and Puraite examples. In the Callsign engagement, workshops with Callsign's product, engineering, and security specialists made the mechanics of the policy engine explicit before interface design began. The work mapped existing rule structures, fraud scenarios, and points where conflicts or gaps appeared.\n\nThe model/policy separation from the Callsign case is described as a design principle for AI governance rather than a UI pattern. It separates what the AI detects or scores from what humans decide to do with that result. Designing the human interface around the policy layer makes human control available in the logic and vocabulary of the domain experts accountable for the decisions.\n\n## Boundaries of the documented evidence\n\nThe evidence for this situation is grounded in the Callsign and Puraite examples. The Callsign example provides detailed case evidence about fraud detection policy configuration, auditability, and enterprise banking demonstrations. The Puraite example provides case evidence about informed override conditions in AI-assisted systematic review and confidence display in data extraction.\n\nThe Callsign commercial outcomes are not presented as independently measured outcomes. Contracts with Lloyds Bank and HSBC were client-reported. The roughly six-month time-to-market reduction was an engagement-inferred estimate. Design system longevity was client-reported.\n\nThe Puraite blinded screening mode requirement was identified during the engagement, but implementation was technically outside direct scope. The page therefore treats blinded screening as a documented product requirement, not as an implemented outcome.",
+  "claims": [
+    {
+      "claim": "AI products often provide nominal human control through overrides, configuration panels, and approval workflows without providing the interface conditions needed for operational human control.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "moderate",
+      "notes": "Supported by the situation description distinguishing technical capacity to intervene from meaningful, informed, and demonstrable control."
+    },
+    {
+      "claim": "An override mechanism is weak when the user can approve, reject, or modify an AI output without seeing the reasoning, signals, criteria, or source evidence behind the AI decision.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "moderate",
+      "notes": "Supported by the first structural failure described in the source."
+    },
+    {
+      "claim": "AI configuration can fail as human control when it exposes model structure rather than the domain logic through which accountable users reason about the problem.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "moderate",
+      "notes": "Supported by the second structural failure and the fraud analyst example."
+    },
+    {
+      "claim": "A system that cannot trace which human set which rule, on what basis, and with what effect cannot demonstrate human oversight in regulated or governance-sensitive contexts.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "moderate",
+      "notes": "Supported by the third structural failure concerning audit traceability."
+    },
+    {
+      "claim": "In the Callsign case, Creative Navy separated the fraud detection model from the policy layer so analysts controlled policy rather than model internals.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "Supported by the Callsign example describing the model/policy separation as the architectural foundation."
+    },
+    {
+      "claim": "In the Puraite case, direct supporting text in a side panel made reviewer override decisions more informed than a display that showed only the AI decision.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "Supported by the Puraite example describing the direct-quote-in-side-panel solution."
+    },
+    {
+      "claim": "Callsign contracts with Lloyds Bank and HSBC were reported as won following demonstrations using the redesigned policy engine interface.",
+      "evidenceType": "client-reported",
+      "sourceStrength": "case evidence",
+      "notes": "The source explicitly labels these commercial outcomes as client-reported."
+    },
+    {
+      "claim": "The roughly six-month Callsign time-to-market reduction is an engagement-inferred estimate, not a measured parallel comparison.",
+      "evidenceType": "inferred",
+      "sourceStrength": "weak",
+      "notes": "The source explicitly states the evidence basis and limitation."
+    }
+  ],
+  "limitations": [
+    "The situation is evidenced through the documented Callsign and Puraite examples and should not be generalised as a measured finding across all AI products.",
+    "The Callsign commercial outcomes are client-reported and not independently verified in the provided evidence.",
+    "The Callsign time-to-market reduction is an engagement-inferred estimate, not a measured parallel comparison.",
+    "The Callsign design system longevity is client-reported.",
+    "The Puraite blinded screening mode was identified as a product requirement, but implementation was technically outside direct scope."
+  ],
+  "publicationBlockers": [],
+  "questionsForReview": [
+    "None"
+  ],
+  "relatedPageSlugs": [
+    "callsign-fraud-authentication",
+    "puraite",
+    "enterprise-buyers-ask-governance-questions-the-team-cannot-answer",
+    "teams-cannot-define-good-ai-behaviour",
+    "the-model-may-be-good-but-the-product-behaviour-is-not",
+    "uncertainty-is-hidden-at-the-point-of-decision",
+    "oversight-exists-in-policy-but-not-in-workflow",
+    "users-trust-the-ai-too-much"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "Callsign fraud authentication",
+      "targetSlug": "callsign-fraud-authentication",
+      "placementHint": "Use on the first Callsign mention in the Callsign example section.",
+      "reason": "The page discusses Callsign as a grounded example and a matching allowed case-study slug is available."
+    },
+    {
+      "anchorText": "Puraite",
+      "targetSlug": "puraite",
+      "placementHint": "Use on the first Puraite mention in the Puraite example section.",
+      "reason": "The page discusses Puraite as a grounded example and a matching allowed case-study slug is available."
+    },
+    {
+      "anchorText": "enterprise buyers ask governance questions the team cannot answer",
+      "targetSlug": "enterprise-buyers-ask-governance-questions-the-team-cannot-answer",
+      "placementHint": "Use near the discussion of Callsign demonstrations and enterprise banking buyer concerns.",
+      "reason": "The Callsign example describes enterprise buyer questions about traceability and governance."
+    },
+    {
+      "anchorText": "teams cannot define good AI behaviour",
+      "targetSlug": "teams-cannot-define-good-ai-behaviour",
+      "placementHint": "Use near the discussion of policy configuration and domain expert reasoning.",
+      "reason": "Weak human control is connected to the inability to express desired AI behaviour in domain terms."
+    },
+    {
+      "anchorText": "the model may be good but the product behaviour is not",
+      "targetSlug": "the-model-may-be-good-but-the-product-behaviour-is-not",
+      "placementHint": "Use near the model/policy separation section.",
+      "reason": "The Callsign case distinguishes model scoring from the product policy layer that turns scores into decisions."
+    },
+    {
+      "anchorText": "uncertainty is hidden at the point of decision",
+      "targetSlug": "uncertainty-is-hidden-at-the-point-of-decision",
+      "placementHint": "Use near the Puraite confidence percentage discussion.",
+      "reason": "The Puraite example describes displaying confidence per extraction so reviewers could direct verification effort."
+    },
+    {
+      "anchorText": "oversight exists in policy but not in workflow",
+      "targetSlug": "oversight-exists-in-policy-but-not-in-workflow",
+      "placementHint": "Use near the summary of nominal versus operational human control.",
+      "reason": "The situation concerns oversight mechanisms that exist formally but fail in operational workflow."
+    },
+    {
+      "anchorText": "users trust the AI too much",
+      "targetSlug": "users-trust-the-ai-too-much",
+      "placementHint": "Use near the Puraite blinded screening mode discussion.",
+      "reason": "Blinded screening mode is described as a way to prevent AI judgement from anchoring independent reviewer assessment."
+    }
+  ],
+  "qualityChecks": {
+    "factsOnlyFromCurrentSource": true,
+    "documentationStyle": true,
+    "noMarketingLanguage": true,
+    "noInventedClaims": true,
+    "linksOnlyFromLinkingContext": true,
+    "internalNotesNotPublished": true,
+    "readyForSanityImport": true
+  }
+}

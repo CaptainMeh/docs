@@ -1,0 +1,200 @@
+{
+  "_type": "documentationPage",
+  "sourceFile": "Articles/Case studies/case-study-notes--desoutter-medical-zethon.md",
+  "sourcePath": "sources/articles/Case studies/case-study-notes--desoutter-medical-zethon.md",
+  "sanityDocumentIdCandidate": "documentationPage.desoutter-medical-zethon",
+  "title": "Desoutter Medical Zethon",
+  "slug": {
+    "_type": "slug",
+    "current": "desoutter-medical-zethon"
+  },
+  "pageType": "case-study",
+  "category": "evidence",
+  "parentSlug": "medical",
+  "childPageSlugs": [],
+  "excerpt": "Creative Navy redesigned the embedded GUI for deSoutter Medical / Zethon, a powered ultrasonic bone cutter used in orthopaedic and trauma surgery. The engagement produced a formative usability engineering trail structured to support IEC 62366-1 activities, with summative validation remaining the manufacturer's responsibility.",
+  "metaTitle": "Desoutter Medical Zethon Case Study",
+  "metaDescription": "Case study of Creative Navy's embedded GUI work for deSoutter Medical / Zethon, with IEC 62366-1 formative evidence boundaries.",
+  "summary": "Creative Navy worked with deSoutter Medical / Zethon on the embedded interface for a safety-critical powered ultrasonic bone cutter. The work combined surgeon research, human factors engineering, option space mapping, iterative review, design-system documentation, and implementation support over approximately 3 months.",
+  "definition": "",
+  "keyFacts": [
+    "Client: deSoutter Medical / Zethon, based in Aylesbury, UK.",
+    "Product: embedded GUI for a powered ultrasonic bone cutter used in orthopaedic and trauma surgery.",
+    "The device operated at rotational speeds from approximately 200 rpm to approximately 85,000 rpm.",
+    "The device was subject to IEC 62366-1 usability engineering requirements.",
+    "Creative Navy reviewed 12 human factors studies and ergonomics papers during Sandbox Experiments.",
+    "Eight orthopaedic and trauma surgeons participated in legacy-screen review and 13 structured surgeon research sessions.",
+    "Six comparable surgical devices were benchmarked, and 8 information architecture patterns were evaluated against representative surgical workflows.",
+    "Creative Navy delivered the first clickable prototype in 3 weeks and completed the engagement in approximately 3 months.",
+    "Surgeon-reported outcomes came from structured review sessions, not independent post-deployment measurement.",
+    "Creative Navy's role was formative evaluation only; summative validation remained the manufacturer's responsibility."
+  ],
+  "tags": [
+    "medical devices",
+    "embedded GUI",
+    "IEC 62366-1",
+    "formative usability evaluation",
+    "human factors engineering",
+    "orthopaedic surgery",
+    "trauma surgery",
+    "powered surgical instruments",
+    "Critical Systems Design",
+    "use-related risk"
+  ],
+  "bodyMarkdown": "- **Primary case-study category:** /evidence/case-studies/medical\n- **Primary context:** /contexts/medical-and-clinical-systems\n- **Also-relevant contexts:** none\n- **Connects to:** /capabilities/usability-evaluation-for-high-consequence-products, /capabilities/error-reduction-and-recovery-design\n\nPrimary case-study category: /evidence/case-studies/medical\n\nPrimary context: /contexts/medical-and-clinical-systems\n\nAlso-relevant contexts: none\n\nConnects to: /capabilities/usability-evaluation-for-high-consequence-products, /capabilities/error-reduction-and-recovery-design\n\nPrimary case-study category: /evidence/case-studies/medical\n\nPrimary context: /contexts/medical-and-clinical-systems\n\nAlso-relevant contexts: none\n\nConnects to: /capabilities/usability-evaluation-for-high-consequence-products, /capabilities/error-reduction-and-recovery-design\n\nPrimary case-study category: /evidence/case-studies/medical\n\nPrimary context: /contexts/medical-and-clinical-systems\n\nAlso-relevant contexts: none\n\nConnects to: /capabilities/usability-evaluation-for-high-consequence-products, /capabilities/error-reduction-and-recovery-design\n\n## Classification\n\nPrimary case-study category: /evidence/case-studies/medical\n\nPrimary context: /contexts/medical-and-clinical-systems\n\nAlso-relevant contexts: none\n\nConnects to: /capabilities/usability-evaluation-for-high-consequence-products, /capabilities/error-reduction-and-recovery-design\n\n## deSoutter Medical / Zethon embedded GUI for a powered ultrasonic bone cutter\n\nCreative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nCreative Navy worked with deSoutter Medical / Zethon on an embedded GUI for a powered ultrasonic bone cutter used in orthopaedic and trauma surgery. The device operated at rotational speeds from approximately 200 rpm to approximately 85,000 rpm and was a safety-critical regulated medical device subject to IEC 62366-1 usability engineering requirements.\n\nThe engagement lasted approximately 3 months. Day-to-day work involved a product owner and embedded software engineer. Fortnightly steering committee sessions included clinical, regulatory, quality, and commercial roles.\n\n## Operating theatre conditions made state feedback and mode clarity safety-critical\n\nThe deSoutter Medical / Zethon embedded interface had to support surgical use under divided attention. Surgeons interacted with the display through brief glances while their primary attention remained on the surgical field. Interaction also involved gloved-hand use, non-dominant-hand operation, constrained positions, sterile technique, and time pressure.\n\nIn this operating context, activation states, readiness conditions, cartridge handling, safety interlock status, warnings, and rotational speed control had to be understood through recognition rather than reading. The case evidence describes every interface decision as traceable to an identified use scenario and risk consideration under IEC 62366-1.\n\nThe GUI also carried a strategic product requirement. The client treated the interface as part of how the powered surgical instrument would be understood by experienced orthopaedic and trauma surgeons, not as a cosmetic layer over the hardware.\n\n## Legacy software-structured screens created use-related risk in surgical use scenarios\n\nThe legacy GUI had been built around the internal software architecture. It exposed functions in the order they existed in the software rather than in the order required by surgical workflow.\n\nEight orthopaedic and trauma surgeons familiar with ultrasonic and powered tools reviewed the legacy screens. They consistently reported three failure patterns: activation states and readiness conditions were difficult to interpret at a glance; cutting parameters were visible but not prioritised; and warnings were presented as text rather than as instantly recognisable patterns.\n\nCreative Navy treated the legacy GUI as a constraint rather than discarding it. The existing screens contained a complete functional map of cartridge handling, speed selection, safety interlocks, and other controls. This was constraint respecting: the engineering team's prior work encoded functional requirements that had to be preserved while the interaction model changed.\n\n## Sandbox Experiments combined human factors literature, surgeon sessions, benchmarking, and option space mapping\n\nCreative Navy's Critical Systems Design method designs software whose interfaces, workflows, and operating logic carry real operational consequences, working through five phases — Sandbox Experiments, Concept Convergence, Iterative System Building, Organizational Integration, and Implementation Partnership — to take each system from initial exploration to independent operation by the client's own team.\n\nIn Sandbox Experiments, Creative Navy reviewed 12 human factors studies and ergonomics papers on touch performance with gloved hands, visual search under time pressure, attention switching in dual-task conditions, and medical device usability in clinical environments. Two cited papers informed specific design decisions: Colle, H. A., & Hiszem, K. J. (2004), \"Standing at a kiosk: Effects of key size and spacing on touch screen numeric keypad performance and user preference,\" Ergonomics, 47(13), 1406–1423; and Tao, D., Yuan, J., Liu, S., & Qu, X. (2018), \"Effects of button design characteristics on performance and perceptions of touchscreen use,\" International Journal of Industrial Ergonomics, 64, 59–68.\n\nCreative Navy also conducted 13 structured sessions with the same 8 surgeons who had reviewed the legacy interface. The sessions combined interviews and procedural walkthroughs. Surgeons described their actions as if teaching a junior colleague, including when they verify cartridge seating, when they check speed or power, how they coordinate with assistants, and which moments are most sensitive to delay or confusion. This was domain learning: Creative Navy built workflow understanding from surgical work rather than from stakeholder documents alone.\n\nCreative Navy integrated internal documentation, software specifications, surgeon sessions, human factors research, and regulatory interpretations into a requirements catalogue. Each requirement was linked to its source: observed workflow, named human factors evidence, or explicit regulatory or safety constraint. The catalogue became the reference for subsequent design decisions and the audit trail for IEC 62366-1 documentation.\n\nCreative Navy benchmarked 6 comparable surgical devices combining mechanical power with embedded interfaces, including ultrasonic tools, powered saws, and other high-speed instruments used in orthopaedic and trauma surgery. The benchmarking criteria were speed of readiness verification, consistency of warning presentation, clarity of mode changes, support for preparation, use and post-use phases, and handling of consumable and cartridge status. Recurring failure patterns included reliance on colour alone for state indication, excessive information density producing extended visual search times, and underrepresentation of cartridge status despite its safety relevance.\n\nCreative Navy then developed 8 information architecture patterns and evaluated them against representative surgical workflows. The patterns included a single hub model, step-based sequence, clustered tabs, flat layout organised by device states, tool-centric view with persistent status, parameter-centric view, state-machine-oriented screen set, and a hybrid model. This was option space mapping at information architecture level: structural hypotheses were tested against cartridge switching, mid-procedure rotational speed adjustment, safety interlock confirmation, and next-case preparation before visual design work began.\n\n## Concept Convergence resolved the tension between clinical simplicity, regulatory traceability, and product positioning\n\nCreative Navy's Critical Systems Design method used Concept Convergence to resolve a three-way tension in the deSoutter Medical / Zethon interface. Clinical usability required spatial stability and low cognitive load. IEC 62366-1 usability engineering required documented coverage of states, use scenarios, and risk considerations. Product positioning required a visual language that read as serious precision hardware rather than consumer electronics adapted for medical use.\n\nThe aligned competitive vector was a visually disciplined, spatially stable interface using redundant non-colour cues for every critical state. Spatial stability gave surgeons recognition without visual search. Redundant cues used spatial position, icon form, and reserved colour so that colour was not the only state signal under operating theatre lighting. Visual discipline in typography, contrast, and grouping supported legibility at speed while preserving the expected seriousness of a mission-critical surgical instrument.\n\nThe case evidence states that none of the 6 benchmarked devices occupied this position. Most relied on colour as the primary state indicator. Some achieved clinical simplicity at the cost of regulatory documentation gaps. The deSoutter Medical / Zethon concept treated clinical usability, regulatory traceability, and positioning as one design problem rather than as separate requirements.\n\nThe product concept organised screens by procedural relevance rather than software module structure. Navigation depth was limited so critical status information remained visible. Intermediate confirmation steps that did not contribute to safety were removed. Critical indicators were placed consistently across screens, and colour reinforced spatial and iconographic patterns rather than replacing them.\n\n## Iterative System Building connected wireframes to clinical, regulatory, quality, commercial, and engineering review\n\nCreative Navy's Critical Systems Design method applied Iterative System Building through 13 structured review sessions involving the core client team and subject matter experts from clinical, regulatory, quality, and commercial functions. The sessions worked through representative scenarios: initial setup, cartridge changes, speed adjustment during cutting, response to warnings, and preparation for cleaning.\n\nComments were captured directly on wireframes so questions about safety, feasibility, and clinical relevance were visible across disciplines at the same time. Fortnightly steering committee sessions provided a formal governance rhythm for presenting design evolution, new findings, and decision rationale.\n\nThe iteration cycles moved from low-fidelity layout sketches within the chosen structural model to higher-fidelity wireframes covering interaction details and edge cases. The emphasis was implementation robustness, not only review clarity.\n\nCreative Navy treated the physical console and the embedded display as one interaction system. The handpiece, mechanical response, cartridge system, physical control buttons, and GUI had to support the same state model. Cartridge insertion was confirmed in a consistent region with iconography and text. Physical button actions were mirrored on screen immediately. Reachable screen zones were designed against realistic arm positions, drape constraints, sterile field boundaries, and gloved-hand interaction.\n\n## Organizational Integration produced reusable embedded-GUI patterns with regulatory rationale\n\nCreative Navy's Critical Systems Design method applied Organizational Integration by documenting every component of the embedded GUI: indicators, controls, messages, containers, states, transitions, normal operation, non-happy paths, and relevant failure modes. For each pattern, the documentation specified when it must be used, what inputs it accepts, and what feedback it provides.\n\nThe design system included explicit regulatory justification for each pattern. The rationale linked components to identified use scenarios and risk considerations rather than only describing implementation rules. In the deSoutter Medical / Zethon case, this supported two functions: reducing implementation ambiguity for engineers on the device, and creating reusable justification for future devices in the manufacturer's portfolio.\n\nAlarm patterns, confirmation dialogues, and basic status indicators were designed for reuse across the surgical instrument range. The case evidence describes this as a portfolio foundation for a coherent clinical interface language across the manufacturer's devices.\n\nCreative Navy also supported structured dissemination. Engineering received interaction specifications and behaviour rules. Clinical and regulatory staff received requirements traceability documentation and human factors justifications. Commercial teams received materials that allowed them to explain the interface rationale to surgical customers.\n\n## Implementation Partnership kept engineering constraints active during build\n\nCreative Navy's Critical Systems Design method applied Implementation Partnership by involving engineering throughout the engagement rather than handing over static design outputs at the end. Technical workshops at the start clarified performance, security, and embedded platform constraints so the interaction model would not conflict with architectural realities.\n\nDuring build, Creative Navy remained active by answering implementation questions, adjusting patterns where engineering encountered edge cases, and verifying that the embedded GUI behaved as designed under real device conditions.\n\n## Surgeon-reported outcomes came from structured review sessions, not post-deployment measurement\n\nThe 8 surgeons who participated in the engagement reported two operational changes compared with the legacy interface. First, device state could be verified during brief glances without reading. Second, speed and parameter adjustments no longer interrupted workflow in the way described for the legacy interface.\n\nThese are surgeon-reported outcomes from structured design review sessions. They are not field-measured post-deployment outcomes. No formal post-deployment task completion rate, glance-time, or error-rate data was collected.\n\nTom Frilling MSc MBBS FRCS(Tr&Orth), Hip & Knee Trauma and Orthopaedic Surgeon, provided the following client-reported quotation: \"This interface would make my work easier. I wouldn't have to worry about it at all. It's all clear and straightforward, like my Tesla.\"\n\n## Client-reported commercial and strategic outcomes were not independently verified\n\nThe client-reported commercial outcome was that commercial teams could present the device to surgical customers without the GUI requiring explanation or excuse. The interface became evidence of the product's performance level rather than a liability in the sales conversation. This is a positioning outcome reported by the client and not independently verified.\n\nThe strategic portfolio outcome was a documented design system covering common surgical interface patterns, including alarm patterns, confirmation dialogues, and status indicators, with regulatory justifications recorded. The case evidence states that future devices in the manufacturer's portfolio could extend the design language without recreating the underlying rationale.\n\nAfter the original engagement, deSoutter returned to Creative Navy for a different system: shoulder-surgery planning software. At that point, Creative Navy asked about the original system, and the original regulated medical-device system was still operating unchanged. This is a same-system durability observation and a different-product return signal. It is observed or client-reported, not measured, and it does not add a summative validation claim.\n\n## IEC 62366-1 evidence boundary for the deSoutter Medical / Zethon engagement\n\nCreative Navy produced a documented usability engineering trail structured to support IEC 62366-1 verification and validation activities. Requirements, research findings, design decisions, and human factors justifications were traceable to identified use scenarios and risk considerations.\n\nCreative Navy's role is formative evaluation only; summative validation is the manufacturer's responsibility via the regulatory submission.\n\nThe engagement covered formative evaluation. It should not be described as Creative Navy delivering compliance with IEC 62366-1. Formal compliance depends on the manufacturer's regulatory submission and notified body review.\n\n## Evidence limits for the deSoutter Medical / Zethon case\n\nThe deSoutter Medical / Zethon case contains strong formative evidence but does not contain independently measured operational performance data. Available surgeon feedback came from structured review sessions during the design engagement. Available commercial feedback was client-reported. The same-system durability observation was observed or client-reported and did not measure task performance, error reduction, training time, or clinical outcome.\n\nThe case also records delivery timeline metrics: the first clickable prototype was delivered in 3 weeks, and the full engagement was completed in approximately 3 months. These are Creative Navy-recorded delivery facts, not operational outcome measures.\n\n## Related pages\n\nThis case belongs with medical and clinical systems because the deSoutter Medical / Zethon embedded GUI was a regulated medical-device interface shaped by IEC 62366-1 usability engineering, human factors engineering, surgical workflow, and patient-safety risk considerations.\n\nThe case also relates to outcome pages on better state visibility, reduced error risk, stronger recovery support, positioning through interface quality, and longitudinal durability. These relationships should be read with the evidence boundaries stated above: the deSoutter Medical / Zethon outcomes are formative, surgeon-reported, client-reported, Creative Navy-recorded, or observed/client-reported durability evidence, depending on the claim.\n",
+  "claims": [
+    {
+      "claim": "Creative Navy worked on an embedded GUI for a deSoutter Medical / Zethon powered ultrasonic bone cutter used in orthopaedic and trauma surgery, operating at rotational speeds from approximately 200 rpm to approximately 85,000 rpm.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "Product description and operating range are stated directly in the case notes."
+    },
+    {
+      "claim": "The device was a safety-critical regulated medical device subject to IEC 62366-1 usability engineering requirements.",
+      "evidenceType": "industry standard",
+      "sourceStrength": "case evidence",
+      "notes": "The notes identify IEC 62366-1 as the governing usability engineering requirement and repeatedly frame the device as safety-critical."
+    },
+    {
+      "claim": "Eight orthopaedic and trauma surgeons reviewed the legacy interface and consistently reported problems with glance interpretation, parameter prioritisation, and text-based warnings.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "engagement record",
+      "notes": "The notes state that 8 surgeons familiar with ultrasonic and powered tools reviewed the legacy screens and reported these failure patterns consistently."
+    },
+    {
+      "claim": "Creative Navy reviewed 12 human factors studies and ergonomics papers, conducted 13 structured sessions with 8 surgeons, benchmarked 6 comparable devices, and evaluated 8 information architecture patterns.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "engagement record",
+      "notes": "These are engagement activities recorded in the case notes, not measured outcome data."
+    },
+    {
+      "claim": "Creative Navy produced a usability engineering trail structured to support IEC 62366-1 verification and validation activities, while summative validation remained the manufacturer's responsibility.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "The notes explicitly state this regulatory framing and caution against claiming Creative Navy delivered IEC 62366-1 compliance."
+    },
+    {
+      "claim": "The 8 participating surgeons reported that state verification became achievable during brief glances without reading and that speed and parameter adjustments no longer interrupted workflow.",
+      "evidenceType": "client-reported",
+      "sourceStrength": "case evidence",
+      "notes": "The notes state that these are surgeon-reported outcomes from structured review sessions, not independently measured post-deployment outcomes."
+    },
+    {
+      "claim": "Commercial teams reported that the redesigned GUI could be presented to surgical customers without requiring explanation or excuse.",
+      "evidenceType": "client-reported",
+      "sourceStrength": "case evidence",
+      "notes": "The notes identify this as a client-reported positioning outcome, not independently verified."
+    },
+    {
+      "claim": "The engagement delivered the first clickable prototype in 3 weeks and completed the full engagement in approximately 3 months.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "engagement record",
+      "notes": "The notes identify these as delivery timeline metrics rather than operational outcomes."
+    },
+    {
+      "claim": "After the original engagement, deSoutter returned to Creative Navy for shoulder-surgery planning software, and the original regulated medical-device system was still operating unchanged at that time.",
+      "evidenceType": "client-reported",
+      "sourceStrength": "anecdotal",
+      "notes": "The notes frame this as same-system durability and different-product return evidence, observed or client-reported and not measured."
+    }
+  ],
+  "limitations": [
+    "No formal post-deployment task completion rate, glance-time, or error-rate data was collected.",
+    "Surgeon feedback was gathered in structured design review sessions, not from independently measured operational deployment.",
+    "The commercial outcome was client-reported and not independently verified.",
+    "The engagement covered formative evaluation; summative validation and regulatory submission responsibility remained with the manufacturer.",
+    "The same-system durability observation was observed or client-reported and did not add a regulated-performance or summative-validation claim.",
+    "Delivery timeline metrics confirm execution timing but do not measure operational change."
+  ],
+  "publicationBlockers": [],
+  "questionsForReview": [
+    "Confirm whether any post-deployment operational data has become available, including glance time, error rate, training time, or surgeon satisfaction scores.",
+    "Confirm whether the shoulder-surgery planning software can be publicly described as partial reuse of principles and look and feel from the original deSoutter Medical / Zethon engagement.",
+    "Confirm whether the commercial feedback can be attributed to a specific role, such as a commercial director, or should remain paraphrased as client-reported commercial team feedback.",
+    "Medical-device classification is ambiguous (medical classification present but no affirmative regulated-device product evidence in source); the page avoids the formative/summative caveat unless confirmed."
+  ],
+  "relatedPageSlugs": [
+    "medical-and-clinical-systems",
+    "better-state-visibility",
+    "reduced-error-risk",
+    "stronger-recovery-support",
+    "positioning-through-interface-quality",
+    "longitudinal-durability",
+    "what-is-client-reported",
+    "what-is-observed-but-not-quantified",
+    "what-we-do-not-claim",
+    "what-we-have-measured"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "medical and clinical systems",
+      "targetSlug": "medical-and-clinical-systems",
+      "placementHint": "Related pages section",
+      "reason": "The case is classified under the medical and clinical systems context in the source notes."
+    },
+    {
+      "anchorText": "better state visibility",
+      "targetSlug": "better-state-visibility",
+      "placementHint": "Related pages section",
+      "reason": "The case focuses on readiness, activation state, warning, cartridge, and mode feedback visibility."
+    },
+    {
+      "anchorText": "reduced error risk",
+      "targetSlug": "reduced-error-risk",
+      "placementHint": "Related pages section",
+      "reason": "The case explicitly concerns use-related risk and interface decisions traceable to use scenarios and risk considerations."
+    },
+    {
+      "anchorText": "stronger recovery support",
+      "targetSlug": "stronger-recovery-support",
+      "placementHint": "Related pages section",
+      "reason": "The source classification connects the case to error reduction and recovery design, and the case discusses warnings, non-happy paths, and failure modes."
+    },
+    {
+      "anchorText": "positioning through interface quality",
+      "targetSlug": "positioning-through-interface-quality",
+      "placementHint": "Related pages section",
+      "reason": "The case includes a client-reported positioning outcome related to presenting the device without the GUI requiring explanation."
+    },
+    {
+      "anchorText": "longitudinal durability",
+      "targetSlug": "longitudinal-durability",
+      "placementHint": "Section on client-reported commercial and strategic outcomes",
+      "reason": "The source notes include a same-system durability observation after deSoutter returned for a different system."
+    },
+    {
+      "anchorText": "client-reported",
+      "targetSlug": "what-is-client-reported",
+      "placementHint": "Outcome evidence sections",
+      "reason": "Several outcomes in the case are explicitly client-reported or surgeon-reported rather than independently measured."
+    },
+    {
+      "anchorText": "observed but not quantified",
+      "targetSlug": "what-is-observed-but-not-quantified",
+      "placementHint": "Evidence limits section",
+      "reason": "The durability observation and some engagement evidence are observed or recorded without quantified operational measurement."
+    },
+    {
+      "anchorText": "what Creative Navy does not claim",
+      "targetSlug": "what-we-do-not-claim",
+      "placementHint": "IEC 62366-1 evidence boundary section",
+      "reason": "The case has explicit boundaries around not claiming IEC 62366-1 compliance as a Creative Navy deliverable."
+    },
+    {
+      "anchorText": "what has been measured",
+      "targetSlug": "what-we-have-measured",
+      "placementHint": "Evidence limits section",
+      "reason": "The case distinguishes delivery timing and formative review feedback from measured operational performance."
+    }
+  ],
+  "qualityChecks": {
+    "factsOnlyFromCurrentSource": true,
+    "documentationStyle": true,
+    "noMarketingLanguage": true,
+    "noInventedClaims": true,
+    "linksOnlyFromLinkingContext": true,
+    "internalNotesNotPublished": true,
+    "readyForSanityImport": true
+  },
+  "__sourceCategoryDir": "Case studies"
+}

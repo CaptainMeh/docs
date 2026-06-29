@@ -1,0 +1,173 @@
+{
+  "slug": "warning-and-alarm-clarity-improvement",
+  "title": "Warning And Alarm Clarity Improvement",
+  "pageType": "capability",
+  "category": "capabilities",
+  "section": "Capabilities",
+  "summary": "Warning and alarm clarity improvement is a Creative Navy capability for designing alarm hierarchies, warning architecture, redundant cues, mute behaviour, recovery indication, and actionable warning content. The case evidence spans medical devices, surgical devices, marine displays, consumer embedded devices, expert simulation software, e-bike displays, and industrial HMI alarm management.",
+  "keyFacts": [
+    "Alarm hierarchy and priority tiering organise alerts by urgency and consequence.",
+    "Alarm rationalisation in process industries is associated with ISA-18.2 and IEC 62682; IEC 62366-1 governs alarm design in medical devices.",
+    "Alert fatigue occurs when users encounter too many alarms or too many low-priority alarms and become trained to ignore alarms.",
+    "Root-cause alarm hierarchy collapses secondary alarms beneath the originating fault so operators address the cause rather than the effects.",
+    "Redundant communication channels use spatial position, icon form, and colour so that the failure of one cue does not remove the alarm signal.",
+    "Mute behaviour must keep an active alarm visually present and prevent a muted alarm from becoming invisible.",
+    "The Kardion MCS Controller alarm architecture was derived from identified use-related hazards and governed by IEC 62366-1; FDA approval was recorded with no design changes required.",
+    "In the deSoutter Medical / Zethon evidence, 6 of 8 competitor devices used colour as the primary and often sole indicator of device state and warning conditions.",
+    "In Gexcon CFD simulation evidence, configuration errors reduced from 5–8 to 1–2 and corrective load reduced from 4–6 hours to approximately 20 minutes.",
+    "In Gericke industrial HMI evidence, repeat-alarm rates more than halved at three sites: 42% to 18%, 58% to 28%, and 73% to 35%, client-measured."
+  ],
+  "bodySections": [
+    {
+      "heading": "Summary",
+      "bodyMarkdown": "Creative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nWarning and alarm clarity improvement is the design of alarm and warning systems so that users can distinguish urgency, identify the source condition, understand required action, and avoid desensitisation from nuisance alarms or alarm flooding.\n\nCreative Navy's warning and alarm work covers alarm hierarchy, priority tiering, alarm rationalisation, root-cause alarm hierarchy, redundant communication channels, mute behaviour, recovery indication, visual differentiation beyond colour, and warning architecture. These mechanisms apply differently across medical devices, surgical devices, industrial HMI, marine displays, consumer embedded devices, e-bike displays, and expert simulation software."
+    },
+    {
+      "heading": "When warning and alarm clarity improvement is needed",
+      "bodyMarkdown": "Warning and alarm clarity improvement is needed when alarms are technically visible but operationally unclear. In the Gericke industrial HMI case, operator testing found operators attending to the most visible alarm rather than the most relevant one. The same case also showed alarm flooding, where a single fault generated secondary alarms that operators handled symptom by symptom.\n\nWarning and alarm clarity improvement is needed when warning signals depend too heavily on one cue. In the deSoutter Medical / Zethon benchmarking evidence, 6 of 8 competitor devices used colour as the primary and often sole indicator of device state and warning conditions. Under variable theatre lighting, colour coding becomes unreliable, so the warning signal can degrade even when the interface is functioning.\n\nWarning and alarm clarity improvement is needed when the user cannot interpret technical fault information. In the Elsner Elektronik embedded-device evidence, non-technical occupants had no ability to address sensor faults directly. A technical fault code for that audience would function as noise rather than an alarm.\n\nWarning and alarm clarity improvement is needed when errors complete silently. In the Gexcon CFD simulation evidence, configuration errors did not stop the system; the simulation completed normally and produced output that appeared valid while being structurally incorrect.\n\nWarning and alarm clarity improvement is needed when warnings are added after the screen architecture has already been designed. In the Stromer e-bike embedded display evidence, warnings had been added as visual overlays after the screen architecture was created. The consequences included warnings covering screen content, interfering with active interactions, persisting too long, being too easy to dismiss, and appearing without enough context for riders to understand what they referred to."
+    },
+    {
+      "heading": "What the capability does",
+      "bodyMarkdown": "Creative Navy's warning and alarm clarity work establishes alarm structure before individual warning components are designed. Warning architecture defines how warnings, overlays, and interruptive elements relate to the screen layout. In the Stromer e-bike display evidence, Creative Navy redesigned the layout and overlay system, the information architecture, and the rules governing how warnings and interruptive elements relate to the screen structure across states.\n\nCreative Navy's warning and alarm clarity work uses priority tiering when alarm conditions differ in urgency and consequence. In the [Kardion](kardion) MCS Controller evidence, priority tiering ranked alarms by clinical urgency, and each priority level required an unambiguously distinguishable visual language. In the Elsner Elektronik evidence, general alerts communicated routine conditions while critical notifications communicated conditions requiring immediate attention.\n\nCreative Navy's warning and alarm clarity work uses root-cause hierarchy when a single initiating condition can create a cascade of secondary alarms. In the Gericke industrial HMI evidence, secondary alarms were collapsed beneath their originating event, probable cause was indicated, and contextual explanations replaced raw error codes with plain explanations of the condition and what to do.\n\nCreative Navy's warning and alarm clarity work uses redundant cues when operating conditions can degrade a single communication channel. In the deSoutter Medical / Zethon evidence, every critical state and warning was communicated through spatial position, icon form, and colour simultaneously. The purpose was to preserve the signal if lighting, divided attention, or colour perception made one channel unreliable.\n\nCreative Navy's warning and alarm clarity work uses actionability as a standard for warning content. In the Gexcon CFD simulation evidence, warnings were designed to communicate what was wrong and what to do. A warning that communicates an error code without a corrective path is not actionable in time-pressured or expert environments."
+    },
+    {
+      "heading": "What warning and alarm clarity improvement produces",
+      "bodyMarkdown": "Warning and alarm clarity improvement can produce an alarm hierarchy that separates alarm priority levels by urgency and consequence. In IEC 62366-1 regulated medical-device work, this includes visual differentiation beyond colour, with each priority level distinguished by a combination of colour, icon, border treatment, and spatial behaviour.\n\nWarning and alarm clarity improvement can produce mute behaviour rules. In the Kardion MCS Controller evidence, a muted alarm had to remain visually present at reduced prominence, and the interface could not provide a pathway to a state where an active alarm was invisible.\n\nWarning and alarm clarity improvement can produce absence-of-alarm visibility. In the Kardion MCS Controller evidence, the absence of alarm had to be confirmable. Operators had to be able to confirm that no active alarms existed, rather than merely observe the absence of an alarm indicator.\n\nWarning and alarm clarity improvement can produce a root-cause alarm hierarchy. In the Gericke industrial HMI evidence, a conveying-blockage reconstruction highlighted “Valve V12 failed to reach open position — probable root cause of 6 active alarms” directly on the process path. The design intent was to direct maintenance to the originating fault rather than to secondary effects.\n\nWarning and alarm clarity improvement can produce contextual alarm explanations. In the Gericke industrial HMI evidence, the refill-cycle event was surfaced as “temporary deviation expected — no operator action required,” with secondary alarms grouped beneath it. The design recognised that the correct action for some alarmed states is no action.\n\nWarning and alarm clarity improvement can produce an updateable error library. In the Gericke industrial HMI evidence, previously known error messages were collected so explanations could be designed and improved over time without heavy rework.\n\nWarning and alarm clarity improvement can produce multi-unit fault prioritisation. In the [Cox Marine](cox-marine) cluster-display evidence, a two-level alarm architecture used a fault-summary area to surface the highest-priority condition across engine tiles and per-tile alarm highlighting to identify the engine in fault state."
+    },
+    {
+      "heading": "Evidence from regulated medical-device alarm architecture",
+      "bodyMarkdown": "The [Kardion](kardion) MCS Controller evidence is the most formal alarm-architecture evidence in the documented cases. The alarm architecture was not treated as a design preference. Every requirement was derived from identified use-related hazards and governed by IEC 62366-1.\n\nThe Kardion requirements included priority tiering, visual differentiation beyond colour, mute behaviour, and alarm-state visibility. The alarm architecture also constrained the standard view by reserving certain spatial positions and visual treatments for alarm-layer use, which removed those positions and treatments from the nominal state hierarchy.\n\nThe recorded regulatory result was FDA approval: the design passed evaluation as submitted, with no design changes required. The alarm architecture contributed to the review satisfying identified use-related hazards related to alarm misinterpretation and missed alarms. Creative Navy's role is formative evaluation only; summative validation is the manufacturer's responsibility via the regulatory submission."
+    },
+    {
+      "heading": "Evidence from redundant alarm cues in surgical-device conditions",
+      "bodyMarkdown": "The deSoutter Medical / Zethon evidence shows why warning clarity cannot rely on colour alone. Benchmarking found that 6 of 8 competitor devices used colour as the primary and often sole indicator of device state and warning conditions. Under variable theatre lighting, colour coding becomes unreliable.\n\nThe design resolution communicated every critical state and warning through three independent channels simultaneously: spatial position, icon form, and colour. Spatial position was readable when colour and icon form were unclear. Icon form carried the signal independently of colour. Colour remained the standard visual cue, but it was no longer the only cue.\n\nIEC 62366-1 formative evaluation governed the decision. The redundant-cue design addressed the use-related hazard of state misinterpretation under operating theatre conditions. Surgeon-reported design review feedback indicated that state verification reduced to brief glance recognition; this was design review session feedback, not post-deployment measurement."
+    },
+    {
+      "heading": "Evidence from multi-engine marine fault prioritisation",
+      "bodyMarkdown": "The [Cox Marine](cox-marine) cluster-display evidence shows warning clarity in a multi-unit configuration. When multiple engines are present, a fault condition in one engine must direct attention to the priority engine, not merely signal that a fault exists somewhere.\n\nThe issue was discovered through scenario testing during Concept Convergence. Designs that passed nominal-state evaluation failed the multi-engine fault scenario because they surfaced fault presence without directing attention. The documented design judgement was that forcing captains to scan 6 tiles for the fault source under time pressure is a design failure, even if the fault indicator is technically visible.\n\nThe two-level alarm architecture used a dedicated fault-summary area and per-tile alarm highlighting. Military night vision mode added a hard constraint: all alarm states, including the two-level structure, had to remain distinguishable under night vision goggles. This constraint eliminated several alarm colour and contrast approaches that would otherwise have been viable."
+    },
+    {
+      "heading": "Evidence from consumer alert tiering for non-technical users",
+      "bodyMarkdown": "The Elsner Elektronik evidence shows warning clarity for a non-technical consumer audience. The user base included occupants who had no ability to address sensor faults directly. For that audience, a technical fault code would not be an actionable alarm.\n\nThe design used a dual-priority alert system. General alerts covered routine conditions such as a sensor outside the preferred range, calibration drift, or delayed readings. Critical notifications covered complete sensor failure and safety-relevant state changes.\n\nThe information content differed by priority. A general alert communicated “something to know about.” A critical notification communicated “something to act on now.” This distinction calibrated the alarm system to users who could not interpret technical fault codes."
+    },
+    {
+      "heading": "Evidence from silent failure surfacing in expert simulation software",
+      "bodyMarkdown": "The Gexcon CFD simulation evidence shows warning clarity for expert software where the system can complete successfully while producing structurally incorrect output. Before redesign, each simulation contained 5–8 configuration errors, and each required 4–6 hours of corrective work.\n\nThe warning architecture addressed silent failure at three workflow points. During scenario setup, warnings surfaced incomplete required values before the simulation ran. At contradictory inputs, warnings surfaced internal contradictions before the simulation was initiated. At error detection, post-run warnings specified the error, its location in the configuration, and the corrective action.\n\nThe case evidence records configuration errors reducing from 5–8 to 1–2. The corrective load reduced from 4–6 hours to approximately 20 minutes. The warning architecture is described as a primary mechanism for both reductions."
+    },
+    {
+      "heading": "Evidence from warning architecture redesign in an e-bike embedded display",
+      "bodyMarkdown": "The [Stromer e-bike](stromer-ebike) evidence shows warning architecture in a consumer vehicle display. The previous screen architecture had been designed first, and warnings had been added as visual overlays afterwards. The warnings had no native relationship to the surface they were placed on.\n\nCreative Navy redesigned three layers simultaneously: the layout and overlay system, the information architecture, and explicit rules and principles governing warnings and interruptive elements across screen states. EN 15194:2017 specified requirements for warning device symbology and behaviour. Regulatory colour conventions also constrained decisions, including a tire pressure sensor workstream where the standard specified yellow for sensor malfunction states while severity logic called for red.\n\nThe warning test used 10 participants riding the bike for 3 days each on real routes in Munich and surrounding countryside. Participants logged every issue by severity on a 4-level scale: interference, annoyance, issue needing user intervention, and critical issue. Before redesign, warnings accounted for approximately 30% of all issues rated as requiring user intervention. After redesign, the same test used 10 users, including 6 returning participants and 4 replacements, with the same bikes, routes, and logging protocol. Warnings did not appear on the issues list. Creative Navy ran the same test again two years later, and warnings remained absent.\n\nCreative Navy-measured eye tracking in actual riding conditions used 5 participants on the same routes. Average glance duration at the display fell from 4.32 seconds to 1.89 seconds, moving from more than twice the 2-second threshold established by road safety research to within the safe zone. Glance frequency per kilometre fell by 18%."
+    },
+    {
+      "heading": "Evidence from industrial alarm rationalisation and root-cause hierarchy",
+      "bodyMarkdown": "The Gericke industrial HMI evidence is the documented process-control alarm-management case. ISA-18.2 and IEC 62682 are the relevant alarm-management frameworks for that context. Gericke operated in GMP environments, with GAMP 5 relevant, and was not a regulated medical-device case.\n\nThe legacy interface had no priority hierarchy, produced alarm flooding, and used raw error codes without corrective paths. Creative Navy's design response was alarm rationalisation plus a root-cause hierarchy. Secondary alarms were collapsed beneath the originating event, probable cause was indicated, and contextual explanations replaced raw error codes.\n\nThe client-measured alarm-quality outcome was repeat-alarm rate, used as a process-industry measure of nuisance-alarm burden. Repeat alarms more than halved at every site: 42% to 18% at a Swiss pharma site, 58% to 28% at an Italian food site, and 73% to 35% at a Swiss chemicals site. The evidence basis is client-measured by Gericke across three sites within a confirmed single-variable window.\n\nFault-diagnosis time fell over the same period from 24 to 8 minutes, 38 to 12 minutes, and 68 to 20 minutes. The case evidence describes this as the recovery-cost signature of operators reaching the originating fault rather than chasing the cascade."
+    },
+    {
+      "heading": "Boundaries and limits",
+      "bodyMarkdown": "Warning and alarm clarity improvement does not mean increasing the number of alerts. The documented alarm-management vocabulary treats false positives and nuisance alarms as primary drivers of alert fatigue. Reducing false positives is as important as ensuring genuine alarms surface.\n\nWarning and alarm clarity improvement does not use one universal alarm scheme across domains. IEC 62366-1 governed the Kardion and deSoutter Medical / Zethon medical-device evidence. ISA-18.2 and IEC 62682 governed the Gericke process-industry alarm-management context. EN 15194:2017 constrained the Stromer e-bike warning symbology and behaviour.\n\nThe Kardion evidence is formative-only for Creative Navy's role. Summative validation and regulatory submission are the manufacturer's responsibility.\n\nThe deSoutter Medical / Zethon state-verification observation was surgeon-reported design review feedback, not post-deployment measurement.\n\nThe Stromer warning results came from Creative Navy-designed and run tests using 10 participants per round, and the eye-tracking result used 5 participants in actual riding conditions. These are documented test results, not a guarantee that every warning architecture redesign will produce the same figures.\n\nThe Gericke results were client-measured by Gericke, not Creative Navy-measured. The conveying-blockage and refill-cycle examples are Creative Navy reconstructions of the redesign, not logged incidents."
+    }
+  ],
+  "evidenceSummary": {
+    "strongClaims": [
+      "Warning and alarm clarity improvement addresses alarm hierarchy, alarm management, alarm rationalisation, root-cause alarm hierarchy, alert fatigue, alarm flooding, actionable warnings, redundant cues, mute behaviour, recovery indication, false positives, visual differentiation, silent failure warnings, and warning architecture.",
+      "The Kardion MCS Controller alarm architecture was derived from identified use-related hazards, governed by IEC 62366-1, and passed FDA evaluation as submitted with no design changes required.",
+      "The deSoutter Medical / Zethon design used spatial position, icon form, and colour as redundant channels after benchmarking found that 6 of 8 competitor devices used colour as the primary and often sole indicator.",
+      "The Cox Marine cluster-display design used a fault-summary area and per-tile alarm highlighting to direct attention to the priority engine in multi-engine fault scenarios.",
+      "The Gexcon warning architecture addressed silent failures at setup, contradictory-input, and post-run error-detection points, with configuration errors reduced from 5–8 to 1–2 and corrective load reduced from 4–6 hours to approximately 20 minutes.",
+      "The Stromer e-bike warning architecture redesign was followed by warnings disappearing from the issues list in repeated real-route tests and by Creative Navy-measured average glance duration falling from 4.32 seconds to 1.89 seconds in a 5-participant eye-tracking test.",
+      "The Gericke industrial HMI redesign used alarm rationalisation and root-cause hierarchy, and client-measured repeat-alarm rates more than halved at three sites within a confirmed single-variable window."
+    ],
+    "limitations": [
+      "The capability evidence is drawn from documented case examples across different domains and does not establish a universal alarm design pattern.",
+      "Kardion was formative-only for Creative Navy; summative validation and regulatory submission are the manufacturer's responsibility.",
+      "The Kardion regulatory result is recorded as FDA approval, but no FDA pathway is stated.",
+      "The deSoutter Medical / Zethon state-verification improvement is design review session feedback, not post-deployment measurement.",
+      "The Gexcon evidence records measured reductions but does not specify whether the measurement was Creative Navy-measured, client-measured, or field-measured.",
+      "The Stromer issue-list and eye-tracking evidence used specific sample sizes and routes; the figures should not be generalised beyond the documented testing conditions.",
+      "The Gericke results were client-measured by Gericke, not Creative Navy-measured.",
+      "The Gericke conveying-blockage and refill-cycle examples are Creative Navy reconstructions of the redesign, not logged incidents.",
+      "The Cox Marine and Elsner Elektronik evidence describes design structures and constraints but does not provide measured post-deployment outcome figures in the provided evidence."
+    ]
+  },
+  "relatedPageSlugs": [
+    "design-for-abnormal-and-degraded-scenarios",
+    "error-reduction-and-recovery-design",
+    "state-and-status-visibility-design",
+    "cognitive-load-reduction",
+    "research-in-complex-operational-contexts",
+    "usability-evaluation-for-high-consequence-products",
+    "information-architecture-for-expert-systems",
+    "kardion",
+    "cox-marine",
+    "stromer-ebike"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "Kardion",
+      "targetSlug": "kardion",
+      "reason": "Kardion is a named case example directly used as evidence for IEC 62366-1 alarm architecture."
+    },
+    {
+      "anchorText": "Cox Marine",
+      "targetSlug": "cox-marine",
+      "reason": "Cox Marine is a named case example directly used as evidence for multi-unit alarm prioritisation."
+    },
+    {
+      "anchorText": "Stromer e-bike",
+      "targetSlug": "stromer-ebike",
+      "reason": "Stromer e-bike is a named case example directly used as evidence for warning architecture redesign and eye-tracking results."
+    },
+    {
+      "anchorText": "design for abnormal and degraded scenarios",
+      "targetSlug": "design-for-abnormal-and-degraded-scenarios",
+      "reason": "Warning and alarm clarity is closely connected to abnormal and degraded operating states."
+    },
+    {
+      "anchorText": "error reduction and recovery design",
+      "targetSlug": "error-reduction-and-recovery-design",
+      "reason": "Actionable warnings, recovery indication, and silent failure surfacing support error reduction and recovery."
+    },
+    {
+      "anchorText": "state and status visibility design",
+      "targetSlug": "state-and-status-visibility-design",
+      "reason": "Alarm clarity depends on visible state, absence-of-alarm confirmation, and distinguishable status conditions."
+    },
+    {
+      "anchorText": "cognitive load reduction",
+      "targetSlug": "cognitive-load-reduction",
+      "reason": "Alarm prioritisation and glance recognition reduce scanning burden under time pressure."
+    },
+    {
+      "anchorText": "research in complex operational contexts",
+      "targetSlug": "research-in-complex-operational-contexts",
+      "reason": "Several evidence examples depend on scenario testing, real-route testing, operating theatre conditions, and operator testing."
+    },
+    {
+      "anchorText": "usability evaluation for high-consequence products",
+      "targetSlug": "usability-evaluation-for-high-consequence-products",
+      "reason": "The Kardion and deSoutter evidence both involve formative evaluation in high-consequence medical-device contexts."
+    }
+  ],
+  "tags": [
+    "alarm management",
+    "warning architecture",
+    "alarm hierarchy",
+    "priority tiering",
+    "alert fatigue",
+    "alarm flooding",
+    "root-cause hierarchy",
+    "actionable warnings",
+    "redundant cues",
+    "IEC 62366-1",
+    "ISA-18.2",
+    "IEC 62682",
+    "embedded interfaces",
+    "industrial HMI"
+  ],
+  "_meta": {
+    "sourcePath": "sources/articles/Capabilities/capabilities--warning-and-alarm-clarity-improvement.md",
+    "parentSlug": "capabilities",
+    "childPageSlugs": [],
+    "generatedBy": "deterministic"
+  }
+}

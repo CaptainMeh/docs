@@ -1,0 +1,201 @@
+{
+  "_type": "documentationPage",
+  "sourceFile": "Articles/Contexts/contexts--ai-enabled-products.md",
+  "sourcePath": "sources/articles/Contexts/contexts--ai-enabled-products.md",
+  "sanityDocumentIdCandidate": "documentationPage.ai-enabled-products",
+  "title": "AI Enabled Products",
+  "slug": {
+    "_type": "slug",
+    "current": "ai-enabled-products"
+  },
+  "pageType": "context",
+  "category": "contexts",
+  "parentSlug": "contexts",
+  "childPageSlugs": [],
+  "excerpt": "AI-enabled product design covers interfaces where model outputs, confidence signals, rule-based layers, and human oversight shape real decisions. The documented examples include fraud governance, biomedical copilots, intelligence analysis, systematic review, AI keyboards, and embedded development tools.",
+  "metaTitle": "AI Enabled Products",
+  "metaDescription": "AI-enabled product design context covering AI governance, discoverability, human oversight, confidence signals, and evidence from six cases.",
+  "summary": "Creative Navy's documented AI-enabled product work covers systems where AI behaviour must be made usable, governable, auditable, and bounded by human decision-making. The cases show recurring design issues around trust calibration, uncertainty communication, discoverability, progressive disclosure, policy engines, and capability democratisation.",
+  "definition": "AI-enabled products are software systems where AI outputs, recommendations, predictions, scoring, or copilots are designed into user workflows and decision processes, with explicit attention to human oversight, behavioural requirements, uncertainty communication, and decision boundaries.",
+  "keyFacts": [
+    "Creative Navy is documented in AI-enabled product work across fraud detection, biomedical research, intelligence analysis, systematic review, AI-assisted typing, and embedded development tooling.",
+    "Callsign separated a fraud scoring model from a policy engine / rule-based layer that applied thresholds, overrides, and workflow decisions in enterprise banking.",
+    "Callsign's regulatory context included SCA and PCI DSS, where fraud control decisions had to be documented and evidenced for enterprise banking procurement.",
+    "Owkin / K was a data-bounded AI copilot that operated on proprietary, public, and user-uploaded biological datasets rather than the open internet.",
+    "Hudex used progressive disclosure to place a summary layer before a complex dondogram visualisation for thematic analysis of social media, audio, video, and radio content.",
+    "Puraite used a human-in-the-loop model for AI-assisted systematic literature review, including reviewer approval or override of AI screening decisions.",
+    "Puraite communicated AI confidence as an explicit percentage with colour-coding and included a blinded mode to prevent anchoring bias during initial screening.",
+    "Typewise reported directly measured improvements in a controlled experiment with 60 users: error rates halved versus an iOS native keyboard baseline, and typing speed increased from 38 WPM to 47 WPM.",
+    "Veecle's AI integration challenges included contextless AI behaviour, opaque loading and processing state, and manual terminal compilation without workflow guidance.",
+    "Several outcomes are client-reported, approximate, inferred, or not independently verified, including investment attribution and post-redesign adoption claims."
+  ],
+  "tags": [
+    "AI-enabled products",
+    "AI governance",
+    "human oversight",
+    "trust calibration",
+    "uncertainty communication",
+    "confidence signals",
+    "explainability",
+    "auditability",
+    "policy engine",
+    "discoverability",
+    "progressive disclosure",
+    "data-bounded AI",
+    "capability democratisation"
+  ],
+  "bodyMarkdown": "## AI-enabled products as a Creative Navy context\n\nCreative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nIn Creative Navy's documentation, AI-enabled products are systems where AI outputs are not only displayed in an interface. They influence decisions, workflows, confidence, review effort, and user behaviour. The design problem is therefore not limited to prompt design or model presentation. It includes behavioural governance: defining what the AI system should and should not do, how those behavioural requirements are exposed to users, and where the decision boundary sits between AI recommendation and human judgment.\n\nThe documented examples include enterprise fraud governance, biomedical AI discovery, intelligence analysis, AI-assisted systematic review, AI keyboard adoption, and a cloud-based embedded development IDE. Across these examples, the recurring design questions are whether users can discover what the AI system can do, whether users can calibrate trust in its outputs, whether uncertainty communication is visible and actionable, and whether AI behaviour remains explainable and auditable when decisions affect real work.\n\n## Behavioural governance separates model output from real-world decision logic\n\nBehavioural governance in AI-enabled products requires a designed interface between model output and action. The Callsign fraud detection and authentication case shows this through a model/policy separation: the fraud scoring model and the policy layer applying thresholds, overrides, and workflow decisions were treated as architecturally distinct.\n\nIn the documented Callsign case, behavioural event scoring was translated into real-world decisions such as allow, block, and step-up authentication. That translation depended on a policy engine / rule-based layer rather than on a black-box score alone. The design work clarified the AI behaviour model so risk and compliance professionals could understand how scoring became operational policy.\n\nSCA and PCI DSS shaped the procurement context for Callsign. Financial institutions needed to document and evidence fraud control decisions, and an interface that could not produce an auditable account of how a policy was constructed was described as not saleable to enterprise banking customers. Explainability / auditability therefore became part of the product's commercial and regulatory viability, not an optional transparency feature.\n\nThe Callsign interaction model used three gestures: drag to create or reposition, click to edit inline, and draw a connection to link nodes. This was designed for risk and compliance professionals and calibrated to what they could adopt without retraining. Client-reported evidence states that contracts with Lloyds Bank and HSBC were won following demos using the redesigned interface; the described mechanism was that product managers could present a configuration experience matching how risk teams frame fraud problems, while engineering leads could see a clear path from interface behaviour to implementation.\n\nThe Callsign evidence also includes two calibrated outcome claims. Time to market was reduced by approximately 6 months compared with the previous development approach, but this is a client/engagement-inferred estimate and not a measured comparison. The design system was client-reported as used by Callsign for at least 2 years after the engagement and extended across additional security modules.\n\n## Discoverability makes AI capability visible without requiring prior expertise\n\nDiscoverability is a primary design issue in AI-enabled products when capability is concentrated in the backend and not visible at the surface. Owkin / K is documented as an AI copilot for biomedical researchers and clinicians that queried proprietary and public biological datasets through natural language. K was trained on biology, not the general internet, and the central problem was that users arriving at the platform did not understand what K could do or how to start.\n\nThe Owkin / K case also shows why data-bounded AI requires dataset visibility. K operated only on specific proprietary, public, and user-uploaded datasets. Users did not understand this constraint, and knowing what data was available was as important as knowing what features existed. The design problem was not only how to make an AI chat box usable; it was how to make a bounded data environment understandable enough for clinicians with low to medium scientific background.\n\nCreative Navy's design exploration for Owkin / K covered an Explore page, prompt suggestions, the AI chat box, and dataset presentation, with 5 iterations per topic area. The work used 20+ competitor benchmarks, including Julius AI and Mindtrip as reference cases for discoverability patterns. The design tension was between new user guidance and power user complexity, and the stated design direction was to find a paradigm that dissolved that tension rather than compromising between the two sides.\n\nThe Owkin outcome evidence is client-reported and approximate. Owkin attributed approximately £5M investment to design quality, describing the prototype as the central pitch artefact. The investment question was whether the design demonstrated a viable user paradigm for making expert AI accessible at all. The engagement continued as an 8-month Implementation Partnership.\n\n## Progressive disclosure controls complexity in AI output exploration\n\nProgressive disclosure of AI capability is documented in Hudex, an AI-powered content analysis platform ingesting social media, audio, video, and radio. Hudex semantically clustered content so analysts could explore patterns, themes, and signals. Its users included government analysts and diplomats, broadcasting network workers, and intelligence community operators.\n\nThe Hudex design problem centred on the dondogram, a hierarchical tree structure representing thematic clusters. The dondogram was the primary visualisation but was not intuitive to new users and was described in demos as looking like a spider. Research identified an entry point problem: users arrived without understanding what they were looking at. The specific fix surfaced in research was to start with a list of the main themes so users could understand their data quickly before entering deeper exploration.\n\nCreative Navy's documented design response placed a summary layer before the dondogram. The project overview was treated as a book cover concept, showing high-level theme counts and source counts before users entered deep exploration. Creative Navy-recorded iteration counts were 20 iterations on the project overview alone and 10 on data exploration.\n\nHudex is also documented as an example of capability democratisation. The same platform served ministerial-level non-technical users who needed instant high-level comprehension and expert analysts conducting multi-hour deep explorations, with no role-based configuration required. This is a product capability claim from the documented case evidence, not a general claim about all AI analysis systems.\n\nHudex outcome evidence is calibrated as client-reported. Hudex received £3M investment 3 months into the growth phase following launch, and the client explicitly attributed the design as critical and foundational to the product's ability to sell and to the growth phase. This causal link is client-reported and cannot be independently verified. A client-conducted survey of 45 existing users characterised the redesigned product as significantly better; this reflects the client's characterisation, not a standardised rating instrument. New users in the growth phase were client-reported as rating usability 68% good and 23% very good, with methodology not independently verified.\n\n## Human oversight requires evidence, confidence, and review rhythm in the same workspace\n\nPuraite is documented as a web application for AI-assisted systematic literature reviews. The AI automated initial screening, suggested inclusion and exclusion criteria, and extracted data from publication text, while retaining a human-in-the-loop model throughout. Reviewers had to approve or override AI decisions.\n\nThe central Puraite design tension was AI efficiency versus human epistemic control. Reviewers needed to see which criteria the AI applied, how those criteria were matched, and what text evidence supported the match at the moment of review, without breaking screening rhythm. Creative Navy recorded 4 iterations on the AI criteria recommendation display before convergence: the display had to be compact enough to scan and detailed enough to support informed override.\n\nThe documented resolution placed a direct quote from the publication text used by the AI in a side panel from the outset. The evidence was visible without expansion or navigation. This design decision made uncertainty communication part of the immediate review environment rather than a secondary detail.\n\nPuraite also treated confidence signals as first-class interface elements. AI confidence was communicated as an explicit percentage with colour-coding. The product also included a blinded mode, where AI decisions were withheld from reviewers during initial screening to prevent anchoring bias. The blinded mode was identified as a product-level requirement; the design was in scope, and implementation was described as technically straightforward.\n\nCreative Navy did not have user research access in the Puraite engagement. Creative Navy's project manager used firsthand systematic review experience as a domain learning proxy, and this methodological choice was presented to the client explicitly with its tradeoffs. The navigation was also restructured from 13 top-level menu items to 4; the client described this as one of the most significant contributions of the engagement, and the issue was identified outside the original scope as an instance of the blanks phenomenon.\n\nThe Puraite outcome evidence is client-reported and not independently verified. Users who had previously perceived Puraite as theoretical reportedly began actively using it after the redesign, and the client entered a growth phase. A single user quote was relayed through the client: “Jetzt passt das tool in meine Arbeit” / “Now the tool fits my work”. The engagement continued as a 7-month Implementation Partnership.\n\n## Adoption of AI behaviour depends on transition from existing competence\n\nTypewise is documented as a mobile keyboard with a hexagonal key layout and gesture-based interaction, supported by AI-powered text prediction and error correction. The design issue was not only interaction failure inside an installed product. Creative Navy identified adoption as the strategic constraint: new users had to remain through the transition from the iOS native keyboard.\n\nCreative Navy's domain learning included installing and using the app for several days before presenting the engagement framing. This allowed Creative Navy to identify the adoption gap and confirm the hexagonal layout's functional value. Initial scepticism about the hexagonal layout changed after the team used it and confirmed that the larger key surface reduced mis-taps; the layout was then treated as a fixed parameter.\n\nThe adoption framework was built around the Zone of Proximal Development. Gestures were introduced within reach of existing competence, not all at once. This treated AI-assisted keyboard use as a behavioural transition rather than a feature-exposure problem.\n\nTypewise has the strongest measured evidence among the documented AI-enabled product examples. In a controlled experiment with 60 users, error rates halved versus an iOS native keyboard baseline, and typing speed increased from 38 WPM to 47 WPM. The engagement was delivered in 9 one-week sprints.\n\n## AI-enabled developer tools need system state, workflow guidance, and constrained complexity\n\nVeecle is documented as a cloud-based IDE for automotive and embedded software engineers. The platform allowed engineers to write, test, simulate, and debug vehicle software in a browser without physical hardware. The product was positioned as a paradigm shift from fragmented legacy tooling toward a modern code-first IDE for complex embedded systems.\n\nAt the start of the Veecle engagement, users understood that they could write code, but they did not understand what the platform was capable of, what the workflow was, or what to do when something went wrong. Creative Navy wrote the user research script, and 64 classified feedback points were generated and converted directly into sprint tickets.\n\nVeecle's AI integration challenges included AI behaviour that felt contextless and awkward, opaque system state during loading and processing, and compilation that required manual terminal use without workflow guidance. These problems are examples of trust calibration and uncertainty communication in developer tooling: users needed to know what the system was doing, what capability was available, and how to proceed when the AI-assisted workflow stalled.\n\nThe telemetry design rejected a Grafana-style dashboard model because it required time-consuming configuration and was associated with post-deployment monitoring rather than active development debugging. The replacement was a constrained hierarchical component view. Progressive disclosure was applied as a system-wide principle: simple by default, expert functionality on demand. The documented design rationale was that this resolved a tension between developers who wanted complexity exposed and stakeholders who wanted simplification.\n\nVeecle outcome evidence is client-reported. £2M development funding was unlocked, and designs were used in investor demonstrations where the interface comprised approximately 70% of the pitch. All designs were client-reported as implemented by Veecle's development team.\n\n## Recurring boundaries in AI-enabled product design evidence\n\nThe documented AI-enabled product cases do not support a single universal outcome claim. They show different evidence types: directly measured user performance in Typewise, client-reported investment attribution in Owkin, Hudex, and Veecle, client-reported enterprise contracts in Callsign, and client-reported adoption changes in Puraite.\n\nSeveral claims are approximate, inferred, or not independently verified. Callsign's approximately 6-month time-to-market reduction is a client/engagement-inferred estimate and not a measured comparison. Owkin's approximately £5M investment attribution is client-reported. Hudex's client-reported causal link between design and investment cannot be independently verified. Puraite's user quote is a single quote relayed through the client.\n\nThe strongest shared design pattern is not a guaranteed metric. It is the requirement to make AI behaviour governable at the interface level. Across the documented examples, AI-enabled product design required explicit behavioural requirements, visible confidence signals, explainability / auditability where decisions needed traceability, and decision boundaries where human oversight took over from AI recommendation.\n\n## Related pages\n\nThe Callsign fraud authentication case is the closest documented example for AI behavioural governance in enterprise banking. The Owkin K case is the closest documented example for data-bounded AI, discoverability, and capability democratisation. The Puraite case is the closest documented example for human oversight, blinded mode, and AI confidence communication in review workflows.\n\nAI-enabled product work also overlaps with enterprise software, expert tools and internal systems, regulated products, high-consequence environments, fintech and financial services, medical and clinical systems, and government and public sector contexts when those settings shape the decision boundary, auditability requirements, or operational consequences of AI behaviour.",
+  "claims": [
+    {
+      "claim": "AI-enabled product design in this context includes behavioural governance, trust calibration, uncertainty communication, explainability, auditability, policy engines, decision boundaries, discoverability, and progressive disclosure.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "moderate",
+      "notes": "The domain vocabulary and case evidence in CURRENT_SOURCE_MD define the recurring concerns for this context."
+    },
+    {
+      "claim": "Callsign separated the fraud scoring model from the policy layer applying thresholds, overrides, and workflow decisions.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "The source describes model/policy separation as the core Callsign design insight."
+    },
+    {
+      "claim": "SCA and PCI DSS made auditable fraud control decisions a procurement requirement in the Callsign enterprise banking context.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "The source states that financial institutions had to document and evidence fraud control decisions under SCA and PCI DSS."
+    },
+    {
+      "claim": "Owkin / K was a data-bounded AI copilot operating on specific proprietary, public, and user-uploaded datasets, and users did not understand that constraint.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "The source states the data-bounded constraint and the user understanding problem."
+    },
+    {
+      "claim": "Hudex used progressive disclosure by placing a summary layer before the dondogram and a project overview before deep exploration.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "engagement record",
+      "notes": "The source records the design architecture and iteration counts for Hudex."
+    },
+    {
+      "claim": "Puraite used a human-in-the-loop review model and communicated AI confidence as an explicit percentage with colour-coding.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "The source describes reviewer approval or override, confidence percentage, colour-coding, and blinded mode."
+    },
+    {
+      "claim": "Typewise halved error rates versus an iOS native keyboard baseline and increased typing speed from 38 WPM to 47 WPM in a controlled experiment with 60 users.",
+      "evidenceType": "field-measured",
+      "sourceStrength": "strong",
+      "notes": "The source labels these as directly measured in a controlled experiment with 60 users."
+    },
+    {
+      "claim": "Veecle's AI integration challenges included contextless AI behaviour, opaque system state, and manual terminal compilation without workflow guidance.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "The source describes these as AI integration challenges identified in the engagement."
+    },
+    {
+      "claim": "Several investment and adoption claims in the documented AI-enabled product cases are client-reported, approximate, inferred, or not independently verified.",
+      "evidenceType": "client-reported",
+      "sourceStrength": "moderate",
+      "notes": "The source explicitly calibrates claims for Callsign, Owkin, Hudex, Puraite, and Veecle."
+    }
+  ],
+  "limitations": [
+    "The page covers only the AI-enabled product examples documented in the current material; it does not claim coverage of all AI product categories.",
+    "Several outcome claims are client-reported and not independently verified, including investment attribution and post-redesign adoption claims.",
+    "Callsign's approximately 6-month time-to-market reduction is described as a client/engagement-inferred estimate and not a measured comparison.",
+    "Owkin's approximately £5M investment attribution is client-reported and framed around the prototype answering a specific investor question.",
+    "Hudex's £3M investment attribution and usability survey findings are client-reported; the survey methodology is not independently verified.",
+    "Puraite had no user research access during the engagement; Creative Navy used a project manager's firsthand systematic review experience as a domain learning proxy and presented the tradeoffs to the client.",
+    "Puraite's quoted user feedback is a single quote relayed through the client and not independently verified.",
+    "Typewise performance results are specific to the controlled experiment with 60 users described in the material and should not be generalised to all AI keyboard contexts."
+  ],
+  "publicationBlockers": [],
+  "questionsForReview": [
+    "None"
+  ],
+  "relatedPageSlugs": [
+    "callsign-fraud-authentication",
+    "puraite",
+    "owkin-k",
+    "enterprise-software",
+    "expert-tools-and-internal-systems",
+    "fintech-and-financial-services",
+    "regulated-products",
+    "high-consequence-environments",
+    "medical-and-clinical-systems",
+    "government-and-public-sector"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "Callsign fraud authentication case",
+      "targetSlug": "callsign-fraud-authentication",
+      "placementHint": "Related pages section and the Callsign behavioural governance section",
+      "reason": "The page discusses Callsign as the primary documented example of AI behavioural governance, policy engines, SCA, PCI DSS, and enterprise banking fraud control."
+    },
+    {
+      "anchorText": "Owkin K case",
+      "targetSlug": "owkin-k",
+      "placementHint": "Related pages section and the discoverability section",
+      "reason": "The page discusses Owkin / K as the documented example of data-bounded AI, discoverability, dataset presentation, and making expert AI accessible."
+    },
+    {
+      "anchorText": "Puraite case",
+      "targetSlug": "puraite",
+      "placementHint": "Related pages section and the human oversight section",
+      "reason": "The page discusses Puraite as the documented example of human-in-the-loop review, confidence signals, and blinded mode."
+    },
+    {
+      "anchorText": "enterprise software",
+      "targetSlug": "enterprise-software",
+      "placementHint": "Related pages section",
+      "reason": "The documented AI-enabled product examples include enterprise software concerns such as configuration, implementation, workflow visibility, and stakeholder adoption."
+    },
+    {
+      "anchorText": "expert tools and internal systems",
+      "targetSlug": "expert-tools-and-internal-systems",
+      "placementHint": "Related pages section",
+      "reason": "Several examples involve expert users, including analysts, researchers, reviewers, engineers, and compliance professionals."
+    },
+    {
+      "anchorText": "fintech and financial services",
+      "targetSlug": "fintech-and-financial-services",
+      "placementHint": "Related pages section near the Callsign discussion",
+      "reason": "Callsign is documented as an enterprise banking fraud detection and authentication product governed by SCA and PCI DSS procurement needs."
+    },
+    {
+      "anchorText": "regulated products",
+      "targetSlug": "regulated-products",
+      "placementHint": "Related pages section near auditability and governance discussion",
+      "reason": "The page discusses regulatory and evidence requirements, especially in the Callsign SCA and PCI DSS context."
+    },
+    {
+      "anchorText": "high-consequence environments",
+      "targetSlug": "high-consequence-environments",
+      "placementHint": "Related pages section",
+      "reason": "The page discusses AI-enabled decisions where confidence, auditability, and human oversight affect operational outcomes."
+    },
+    {
+      "anchorText": "medical and clinical systems",
+      "targetSlug": "medical-and-clinical-systems",
+      "placementHint": "Related pages section near Owkin and Puraite references",
+      "reason": "The page discusses biomedical researchers, clinicians, and systematic literature review workflows."
+    },
+    {
+      "anchorText": "government and public sector",
+      "targetSlug": "government-and-public-sector",
+      "placementHint": "Related pages section near Hudex reference",
+      "reason": "Hudex is documented as serving government analysts and diplomats among its user archetypes."
+    }
+  ],
+  "qualityChecks": {
+    "factsOnlyFromCurrentSource": true,
+    "documentationStyle": true,
+    "noMarketingLanguage": true,
+    "noInventedClaims": true,
+    "linksOnlyFromLinkingContext": true,
+    "internalNotesNotPublished": true,
+    "readyForSanityImport": true
+  }
+}

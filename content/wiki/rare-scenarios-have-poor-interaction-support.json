@@ -1,0 +1,153 @@
+{
+  "slug": "rare-scenarios-have-poor-interaction-support",
+  "title": "Rare Scenarios Have Poor Interaction Support",
+  "pageType": "failure",
+  "category": "failures",
+  "section": "Error And Recovery Failures",
+  "summary": "This failure describes the interaction quality gap between the main workflow and the scenarios outside it. It appears when development assumptions define what is rare, when operationally common conditions are absent from design research, or when non-standard states are handled through generic error mechanisms.",
+  "keyFacts": [
+    "The failure concerns the structural treatment of non-standard scenarios as design afterthoughts.",
+    "The development team’s model of rare and common scenarios can reflect testing data, demonstration scenarios, and internal assumptions rather than operational reality.",
+    "Operationally common scenarios may include messy datasets, peak-load conditions, sensor faults, weather incidents, equipment failures, crew shortages, and routing conflicts.",
+    "Generic error handling can communicate that something is wrong without communicating what it means for the current task or what the user should do next.",
+    "In the Polymatica case, independent completion of key operations rose from 2% before redesign to 40% after release 1 and 56% after release 2, measured through product analytics in the live system.",
+    "In the Triopsis case, live product analytics recorded 62% faster job discovery, 83% faster job sequence optimisation, and 58% faster weekly planning after the redesign.",
+    "In the Elsner Cala Touch KNX case, sensor fault handling and firmware-aligned behaviour were confirmed in prototype testing with Elsner’s engineers, but not independently quantified post-deployment.",
+    "A formal usability test with 12 subjects for Elsner confirmed that navigation and temperature comprehension met the requirements of the interface under the conditions of use.",
+    "Creative Navy’s Critical Systems Design method addresses this failure by using domain learning to discover operational reality before design decisions are made and by treating non-standard scenarios as first-class design requirements."
+  ],
+  "bodySections": [
+    {
+      "heading": "Summary",
+      "bodyMarkdown": "Rare scenarios have poor interaction support when scenarios outside the designed happy path receive less interaction design, weaker testing, and generic error handling. The failure creates uneven interaction quality: the main workflow is smooth, while operationally important departures from it are rough, ambiguous, or broken.\n\nCreative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nWhen this failure appears, the user reaches a state that has no designed path forward. The interface may offer no guidance, no useful error communication, and no recovery path. The user stops because the system was designed around the path the user is no longer on."
+    },
+    {
+      "heading": "Failure pattern: non-standard scenarios are treated as design afterthoughts",
+      "bodyMarkdown": "Rare-scenario interaction failure is the structural gap between interaction quality on the designed path and interaction quality off it. The design team usually invests most design, testing, iteration, and refinement in the main workflow. Edge cases may be considered later, added more quickly, tested less thoroughly, and treated defensively as error states rather than explicitly as operational states.\n\nThe critical distinction is that the system may not be globally unusable. It may work well when the data is clean, the workflow is standard, the sensors are behaving ideally, the schedule has no disruptions, or the demonstration scenario matches the training scenario. The failure appears when the user’s operational reality differs from the scenario the design process treated as normal.\n\nThis pattern is not limited to error states. It includes any scenario where the user is outside the main path and the interface does not provide specific, named, actionable support for that state."
+    },
+    {
+      "heading": "Mechanism: the happy-path model excludes operationally common scenarios",
+      "bodyMarkdown": "The most consequential mechanism is that the team’s model of normal use is drawn from scenarios that are easiest to imagine during design. These scenarios may include clean data, standard workflows, ideal conditions, and demonstration datasets. Operationally common scenarios that do not appear in training data, demonstration datasets, or the team’s own use of the system are not represented as design inputs.\n\nThe failure is the absence of empirical knowledge about operational reality during design. The team may understand the system well while knowing less about the conditions under which users first encounter it, the data users bring into it, and the situations users face that the demonstration never includes.\n\nWithout empirical domain learning, the design reflects the development team’s model of use rather than operational reality."
+    },
+    {
+      "heading": "Mechanism: rare is defined by development assumptions instead of operational frequency",
+      "bodyMarkdown": "A scenario can be classified as rare inside the development context and still be common in live operation. Exceptions in a scheduling system, such as weather incidents, equipment failures, crew shortages, and routing conflicts, may occur every working day in deployment. Sensor faults in a home automation device may occur regularly across a large device fleet. Messy, inconsistent data may be the most common form of real-world data a new analytics user encounters.\n\nWhen these scenarios receive edge-case levels of design investment, the system concentrates its weakest interaction quality in the places users most often find themselves outside the happy path. The issue is not only that rare events are unsupported. The deeper issue is that the design process may misclassify ordinary operational conditions as rare."
+    },
+    {
+      "heading": "Mechanism: generic error handling replaces specific operational states",
+      "bodyMarkdown": "Generic error handling occurs when the system detects a non-standard state but does not represent it as a specific interface state. A sensor fault may produce an error dialogue. A data structure inconsistency may trigger an error message. A configuration conflict may generate a warning. Each response may be technically correct while remaining operationally unhelpful.\n\nThe user needs to know what is not normal, what it means for the current task, and what action is available. Generic handling usually communicates only that something has gone wrong. It does not provide the named state, task-level meaning, or path forward that the user needs.\n\nGeneric handling is the default result of treating unusual states as exceptions to manage rather than operational states to communicate. The user receives minimum-viable communication at the moment when maximum-quality support is needed."
+    },
+    {
+      "heading": "Boundaries with adjacent failure patterns",
+      "bodyMarkdown": "Rare-scenario interaction failure differs from the failure pattern in Errors Are Easy To Make. Errors Are Easy To Make concerns interface conditions that make users commit errors during normal operation. Rare Scenarios Have Poor Interaction Support concerns what happens when users reach scenarios the interface was not adequately designed for, including but not limited to error states.\n\nRare-scenario interaction failure also differs from The System Fights The User Task. The System Fights The User Task concerns a fundamental misalignment between the system’s task model and the user’s task model. Rare Scenarios Have Poor Interaction Support concerns thin design coverage for non-standard scenarios. A system can have a well-aligned primary workflow and still provide poor support for rare or misclassified operational scenarios."
+    },
+    {
+      "heading": "Polymatica evidence: messy first-use data was the worst-supported scenario",
+      "bodyMarkdown": "Polymatica’s GPU-backed OLAP analytics engine had a training programme that produced productive users in the training scenario. The interaction quality gap appeared when users moved from clean training data to their own data.\n\nTraining used clean, structurally ideal datasets. The columns contained what their names implied, formats matched system expectations, and structures required no preparation or correction. This was the scenario the training programme covered and the scenario the interface supported most thoroughly.\n\nThe first independent use scenario was different. Users imported their own real data, which could include spreadsheets maintained by multiple teams over several years, database exports with mixed entity types, headers that described one structure and values that followed another, and other inconsistencies. The interface offered no data preparation step, no preview for inspecting what the data contained, and no guidance on what the data should look like for the intended OLAP operations.\n\nThe specific dead end was that users could not identify which column to perform operations on. The system showed users their data, but it did not help them understand why the data produced unexpected results, what was inconsistent, or what had to change to make the intended operation possible.\n\nBefore the redesign, 2% of users could complete key operations independently. After the redesign introduced a data preparation and preview step, independent task completion rose to 40% after release 1 and 56% after release 2, measured through product analytics in the live system. The messy-data failure mode largely disappeared from support requests after the data preparation and preview step allowed users to inspect data, identify structural issues, and rename or exclude columns."
+    },
+    {
+      "heading": "Triopsis evidence: daily scheduling exceptions were treated as edge cases",
+      "bodyMarkdown": "Triopsis served schedulers whose operational environment regularly included weather incidents delaying planned jobs, equipment unavailable due to unplanned maintenance, crew shortages from absent staff, and job conflicts from routing impossibilities. These were daily scheduling conditions in utilities and road maintenance operations, not one-in-ten-thousand events.\n\nThe previous interface was designed around the normal case: jobs assigned, resources available, and the plan executed as written. Exception conditions were detectable by the system, but they were not first-class interface states with dedicated interaction paths. Schedulers had to manage exceptions through the same interface used for non-exceptional scheduling, without dedicated tools for reassigning affected jobs, adjusting sequences, or communicating changes to affected technicians.\n\nThree in-situ observation sessions targeting peak-load, concurrent-exception conditions documented the interaction quality gap between the normal case and the exception case. Under normal conditions, the interface was navigable. Under concurrent-exception conditions, the absence of exception-specific interaction support was documented as a primary cause of workflow failures in the observation sessions.\n\nThe redesign treated exception conditions as first-class operational states. Predictive conflict indicators surfaced exception conditions before they became committed states requiring reversal. Dedicated action paths addressed weather incidents, partial completions, and equipment conflicts directly rather than through routes designed for the non-exceptional case.\n\nMeasured in the live product through product analytics, the redesigned Triopsis product showed 62% faster job discovery, 83% faster job sequence optimisation, and 58% faster weekly planning. The job discovery improvement is the outcome most directly connected in the documented case to exception-specific interaction support, because surfaced exception states reduce the scanning and navigation effort imposed by an undifferentiated interface."
+    },
+    {
+      "heading": "Elsner Cala Touch KNX evidence: sensor faults were designed as named states",
+      "bodyMarkdown": "The Elsner Cala Touch KNX receives inputs from multiple sensors, including weather stations, CO2 probes, humidity sensors, temperature probes, and the main heating unit. Real building installations include delayed readings from sensors with high update latency, contradictory readings from sensors out of calibration with each other, and calibration faults in individual sensors.\n\nThese sensor conditions are known operational conditions across a large device fleet, not simply system failures. A generic error dialogue, blank reading, or generic warning can communicate that something is not normal while failing to communicate what is not normal, what it means, or what the user should do.\n\nCreative Navy’s Critical Systems Design method designed the Elsner sensor fault conditions as named, specific interface states rather than generic error conditions. A delayed reading was displayed as a named pending-reading state that told the user what was happening and that no action was required. A contradictory reading was shown with explicit communication identifying the contradiction. A calibration fault was surfaced as a specific, actionable state rather than routed through generic error handling.\n\nThe alert hierarchy supported the same distinction. Heating unit alerts were treated as primary signals in the visual hierarchy. Minor notifications, such as open window detection, were treated as visually secondary. This avoided equal-weight treatment that would make every sensor state equally assertive in demanding user attention.\n\nSensor fault handling and firmware-aligned behaviour were confirmed in prototype testing with Elsner’s engineers. These were observed outcomes, not independently quantified post-deployment measurement. A formal usability test with 12 subjects confirmed that navigation and temperature comprehension met the requirements of the interface under the conditions of use."
+    },
+    {
+      "heading": "How Creative Navy’s Critical Systems Design method addresses rare-scenario support",
+      "bodyMarkdown": "Creative Navy’s Critical Systems Design method addresses rare-scenario interaction failure by discovering what rare means operationally before design decisions are made. The method uses domain learning to close the gap between the development team’s model of use and the conditions users actually face.\n\nIn the Polymatica engagement, Creative Navy ran the system against real data during the research phase. The team members’ actual datasets contained inconsistencies and structural variations. Encountering the messy-data failure directly under domain learning conditions made it diagnosable as a design requirement rather than as user error.\n\nIn the Triopsis engagement, Creative Navy targeted peak-load, concurrent-exception conditions in three in-situ observation sessions. The research programme was designed to find what operational reality looked like outside the happy path, not only to confirm that the happy path was usable.\n\nIn the Elsner engagement, Creative Navy treated sensor fault conditions as explicit design requirements from the start of the Iterative System Building phase. Each condition was named as a distinct operational state with a specific interface response instead of being routed through generic error handling.\n\nThe design test described in the documented engagements is whether the scenario outside the main path receives the same quality of support as the main path. If the non-standard scenario has no specific orientation, communication, or path forward, the design coverage is incomplete."
+    },
+    {
+      "heading": "Boundaries and limits",
+      "bodyMarkdown": "Rare Scenarios Have Poor Interaction Support does not mean every infrequent scenario deserves the same investment as the primary workflow. The failure concerns scenarios that are operationally important, misclassified as rare, or dangerous to leave unsupported because users need guidance at the moment the main path no longer applies.\n\nThe documented examples provide different evidence strengths. Polymatica and Triopsis include live-product analytics. Elsner includes prototype testing with Elsner’s engineers and a formal usability test with 12 subjects, but the sensor fault handling was not independently quantified post-deployment.\n\nThe page does not establish a universal frequency for rare-scenario failure across all software systems. It defines the failure pattern and documents how it appeared in the Polymatica, Triopsis, and Elsner Cala Touch KNX examples."
+    }
+  ],
+  "evidenceSummary": {
+    "strongClaims": [
+      "In the Polymatica case, independent completion of key operations rose from 2% before redesign to 40% after release 1 and 56% after release 2, measured through product analytics in the live system.",
+      "In the Triopsis case, three in-situ observation sessions documented a gap between normal scheduling conditions and peak-load concurrent-exception conditions.",
+      "In the Triopsis case, live product analytics recorded 62% faster job discovery, 83% faster job sequence optimisation, and 58% faster weekly planning after the redesign.",
+      "In the Elsner Cala Touch KNX case, delayed readings, contradictory readings, and calibration faults were designed as named, specific interface states rather than generic error conditions.",
+      "Elsner sensor fault handling and firmware-aligned behaviour were confirmed in prototype testing with Elsner’s engineers, but not independently quantified post-deployment.",
+      "Creative Navy’s Critical Systems Design method addresses this failure by using domain learning to discover operational reality and by treating non-standard scenarios as first-class design requirements."
+    ],
+    "weakerClaims": [
+      "Rare-scenario interaction failure is the gap between interaction quality on the designed path and interaction quality outside it.",
+      "Development teams may classify operationally common scenarios as rare because their model reflects testing data, demonstration scenarios, and internal assumptions rather than deployment reality.",
+      "Generic error mechanisms can be technically correct but operationally unhelpful when they do not explain the specific state, task meaning, or path forward."
+    ],
+    "limitations": [
+      "The page defines a failure pattern and supports it with documented examples; it does not establish a universal prevalence rate across all software systems.",
+      "The Polymatica and Triopsis outcome figures are reported as product analytics in live systems, but the page does not provide the analytics protocol or measurement methodology.",
+      "The Elsner sensor fault handling evidence was confirmed in prototype testing with Elsner’s engineers and was not independently quantified post-deployment.",
+      "The formal Elsner usability test with 12 subjects confirmed navigation and temperature comprehension under the conditions of use; it is not presented as a quantified post-deployment measure of sensor fault handling.",
+      "The page distinguishes this failure from adjacent error-prevention and workflow-misalignment failures, but real products can exhibit multiple failure patterns at the same time."
+    ]
+  },
+  "relatedPageSlugs": [
+    "errors-are-easy-to-make",
+    "recovery-paths-are-weak",
+    "errors-are-hard-to-correct",
+    "errors-are-hard-to-notice",
+    "edge-cases-break-the-system",
+    "the-system-fights-the-user-task",
+    "data-is-available-but-hard-to-interpret",
+    "warnings-are-visible-but-their-meaning-is-unclear",
+    "users-cannot-see-what-state-the-system-is-in",
+    "triopsis-workforce-management-saas"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "Errors Are Easy To Make",
+      "targetSlug": "errors-are-easy-to-make",
+      "reason": "The source explicitly distinguishes this page from the error-prevention failure pattern during normal operation."
+    },
+    {
+      "anchorText": "The System Fights The User Task",
+      "targetSlug": "the-system-fights-the-user-task",
+      "reason": "The source explicitly distinguishes rare-scenario support from task-model misalignment."
+    },
+    {
+      "anchorText": "Recovery Paths Are Weak",
+      "targetSlug": "recovery-paths-are-weak",
+      "reason": "Weak recovery paths are closely related when a non-standard scenario leaves the user without a designed path forward."
+    },
+    {
+      "anchorText": "Errors Are Hard To Correct",
+      "targetSlug": "errors-are-hard-to-correct",
+      "reason": "Rare-scenario support can overlap with error correction when the user reaches an unsupported state."
+    },
+    {
+      "anchorText": "Data Is Available But Hard To Interpret",
+      "targetSlug": "data-is-available-but-hard-to-interpret",
+      "reason": "The Polymatica example concerns users seeing data without enough interface support to interpret its structure for the task."
+    },
+    {
+      "anchorText": "Warnings Are Visible But Their Meaning Is Unclear",
+      "targetSlug": "warnings-are-visible-but-their-meaning-is-unclear",
+      "reason": "The failure overlaps with cases where warnings or alerts are visible but do not communicate operational meaning."
+    },
+    {
+      "anchorText": "Triopsis Workforce Management SaaS",
+      "targetSlug": "triopsis-workforce-management-saas",
+      "reason": "The body discusses the Triopsis case, and the matching case-study slug is available in the linking context."
+    }
+  ],
+  "tags": [
+    "error and recovery",
+    "edge cases",
+    "non-standard scenarios",
+    "happy path",
+    "domain learning",
+    "operational reality",
+    "generic error handling",
+    "Critical Systems Design",
+    "interaction support"
+  ],
+  "_meta": {
+    "sourcePath": "sources/articles/Failures/failures--error-recovery--rare-scenarios-have-poor-interaction-support.md",
+    "parentSlug": "error-and-recovery-failures",
+    "childPageSlugs": [],
+    "generatedBy": "deterministic"
+  }
+}

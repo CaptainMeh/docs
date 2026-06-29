@@ -1,0 +1,172 @@
+{
+  "_type": "documentationPage",
+  "sourceFile": "Articles/Glossary/glossary--industry-terms--behavioural-requirement.md",
+  "sourcePath": "sources/articles/Glossary/glossary--industry-terms--behavioural-requirement.md",
+  "sanityDocumentIdCandidate": "documentationPage.behavioural-requirement",
+  "title": "Behavioural Requirement",
+  "slug": {
+    "_type": "slug",
+    "current": "behavioural-requirement"
+  },
+  "pageType": "glossary-term",
+  "category": "glossary",
+  "parentSlug": "industry-terms",
+  "childPageSlugs": [],
+  "excerpt": "A behavioural requirement is a specific, testable statement about what a product must do or must not do in a defined situation. It specifies interface behaviour in a scenario rather than a user goal, technical capability, or general design principle.",
+  "metaTitle": "Behavioural Requirement Definition",
+  "metaDescription": "Definition of a behavioural requirement: a specific, testable, interface-level statement of required or prohibited product behaviour.",
+  "summary": "A behavioural requirement specifies product behaviour at the interface level in a defined situation. It is specific, testable, connected to a rationale, and distinct from functional requirements, user stories, and design principles.",
+  "definition": "A behavioural requirement is a specific, testable statement about what a product must do or must not do in a defined situation, at the interface level, connected to a rationale, and precise enough to design against and evaluate.",
+  "keyFacts": [
+    "A behavioural requirement applies to a defined situation or scenario rather than to the product in general.",
+    "A behavioural requirement must be testable as met or not met without ambiguity.",
+    "A behavioural requirement specifies interface behaviour rather than model, backend, or algorithm behaviour.",
+    "A behavioural requirement is connected to a rationale such as an identified risk, governance obligation, design standard, or operational requirement.",
+    "Positive behavioural requirements specify what must happen.",
+    "Constraint behavioural requirements specify what must not happen.",
+    "Behavioural requirements differ from functional requirements, user stories, and design principles because they specify required behaviour in specific situations.",
+    "In regulated medical device development, IEC 62366-1 requires design decisions to be traceable to identified use-related hazards.",
+    "The documented case examples include Callsign fraud detection, Puraite AI systematic review, and Kardion MCS Controller.",
+    "The Kardion MCS Controller examples are identified as formative evaluation only."
+  ],
+  "tags": [
+    "behavioural requirement",
+    "interface behaviour",
+    "requirements specification",
+    "governance",
+    "AI accountability",
+    "human oversight",
+    "IEC 62366-1",
+    "constraint requirements"
+  ],
+  "bodyMarkdown": "## Definition\n\nA behavioural requirement is a specific, testable statement about what a product must do or must not do in a defined situation. It is written at the interface level, connected to a rationale, and precise enough to design against and evaluate.\n\nA behavioural requirement specifies the product's behaviour in a specific scenario. It does not describe a user goal, a technical capability, or a general design principle.\n\nFor example, “the AI should be transparent” is a principle. “When the AI displays a recommendation, the confidence level must be displayed alongside it in a format that communicates gradations of certainty” is a behavioural requirement.\n\n## Behavioural requirements turn governance intent into specification\n\nBehavioural requirements are the foundational unit of behaviour specification. Governance frameworks, safety analyses, and AI accountability documents reduce to behavioural requirements when they move from aspiration to specification.\n\nThis distinction matters because broad governance language is not directly designable or testable. A statement such as “the AI should be transparent” does not specify what the interface must do in a particular situation. A behavioural requirement specifies the interface behaviour that must occur, or must not occur, when that situation arises.\n\n## Four properties of a well-formed behavioural requirement\n\nA well-formed behavioural requirement has four properties: specificity, testability, interface-level scope, and connection to a rationale.\n\n### Specificity\n\nA behavioural requirement applies to a defined situation or scenario, not to the product in general. “The system must be reliable” is not a behavioural requirement. “In the event of a sensor fault, the display must continue showing all remaining sensor values while explicitly indicating which sensor is in fault” is a behavioural requirement.\n\n### Testability\n\nA behavioural requirement can be assessed as met or not met without ambiguity. A reviewer should be able to evaluate whether the specified behaviour occurs in the specified situation without making a judgment call about broad terms such as transparency or reliability.\n\n### Interface-level scope\n\nA behavioural requirement specifies what the interface must do, not what the model, backend, or algorithm must produce. In AI-enabled products, this distinction is important because model outputs cannot be fully specified in advance, while interface responses to model outputs can be specified and evaluated.\n\n### Connection to a rationale\n\nA behavioural requirement traces back to an identified risk, governance obligation, design standard, or operational requirement. Requirements without rationale are preferences. Requirements with rationale are design standards that can be defended in governance review.\n\n## Positive and constraint behavioural requirements\n\nBehavioural requirements can specify required behaviour or prohibited behaviour.\n\nPositive behavioural requirements specify what must happen. Examples include: “The AI's confidence level must be visible when its recommendation is shown” and “The audit trail must be accessible from the same interface as the policy configuration, within the same session.”\n\nConstraint behavioural requirements specify what must not happen. Examples include: “AI recommendations must not be displayed before the reviewer has recorded their own assessment in blinded mode” and “Policy evaluation sessions must not permit live policy modifications.”\n\nBoth forms are necessary. A specification that includes only positive requirements can still allow behaviours that meet every written requirement while violating the governance intent behind the specification. Constraint requirements close those gaps by excluding behaviours that should not be permitted.\n\n## Behavioural requirements differ from adjacent specification types\n\nBehavioural requirements are distinct from functional requirements, user stories, and design principles.\n\nFunctional requirements specify what a feature does. Behavioural requirements specify how the product behaves in specific situations. A product can implement all specified features while still behaving in ways that no functional requirement addressed.\n\nUser stories describe user goals. Behavioural requirements specify what the interface must do to achieve or constrain those goals. A user story can be satisfied by several different interface behaviours; a behavioural requirement specifies which behaviour is required.\n\nDesign principles articulate values and orientations. Behavioural requirements translate principles into specific, testable constraints. “Support human oversight” is a principle. Behavioural requirements specify exactly what the interface must do to support human oversight in each relevant scenario.\n\n## Behavioural requirements in regulated medical device development\n\nIn regulated medical device development, IEC 62366-1 requires design decisions to be traceable to identified use-related hazards. In this context, behavioural requirements form an intermediate layer between the identified hazard and the design decision.\n\nThe traceability chain runs from hazard through requirement to design. For example, the hazard “surgeon activates device in wrong mode” can generate the behavioural requirement “activation state must be recognisable through non-colour cues in the active operating position.” That requirement then generates design decisions intended to address the hazard.\n\n## Examples from documented cases\n\nThe documented cases show behavioural requirements in governance, AI review, and medical-device interface contexts.\n\n### Callsign fraud detection\n\nIn the Callsign fraud detection case, behavioural requirements emerged from governance design work. The documented examples include: “Every fraud control decision resulting in a block or step-up authentication must be attributable to a named, reviewable policy accessible in the same session”; “Policy evaluation sessions must not permit live policy modifications”; and “Risk analysts must be able to reconstruct decision logic for any historical event using only the interface, without system logs.”\n\nEach Callsign example is specific, testable, interface-level, and connected to SCA and PCI DSS compliance rationale.\n\n### Puraite AI systematic review\n\nIn the Puraite AI systematic review case, behavioural requirements were derived from the epistemic independence requirement of systematic review methodology. The documented examples include: “In blinded mode, AI inclusion/exclusion decisions must not be visible before the reviewer has recorded their own decision” and “Override must require no more interaction than acceptance.”\n\nThese examples include both a constraint on when AI decisions may be visible and a requirement about the interaction cost of override.\n\n### Kardion MCS Controller\n\nIn the Kardion MCS Controller case, behavioural requirements were derived from IEC 62366-1 identified use-related hazards. The documented examples include: “Flow rate adjustment must require explicit two-step confirmation before taking effect” and “Muted alarms must remain visually present at reduced prominence.”\n\nThe Kardion MCS Controller evidence is identified as formative evaluation only.\n\n## Evidence basis and limits\n\nThe definition of behavioural requirement is conceptual. The examples are drawn from documented cases and show how the concept appears in specific design and governance contexts.\n\nThe documented case evidence supports the structure of the examples: Callsign relates behavioural requirements to SCA and PCI DSS compliance rationale; Puraite relates behavioural requirements to epistemic independence in systematic review methodology; and Kardion relates behavioural requirements to IEC 62366-1 identified use-related hazards.\n\nThe available examples do not establish that these are the only valid forms of behavioural requirement. They illustrate how behavioural requirements can be written when interface behaviour must be specified, evaluated, and traced to a rationale.\n\n## Related pages\n\nRelated glossary topics include behavioural governance, human oversight, state visibility, trust calibration, and workflow robustness. Documented examples include Callsign fraud detection, Puraite AI systematic review, and Kardion MCS Controller.",
+  "claims": [
+    {
+      "claim": "A behavioural requirement is a specific, testable, interface-level statement about what a product must do or must not do in a defined situation, connected to a rationale.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "Stated directly in the definition section of the current material."
+    },
+    {
+      "claim": "Specificity, testability, interface-level scope, and connection to a rationale distinguish a well-formed behavioural requirement from adjacent types of specification.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "The four properties are enumerated in the current material."
+    },
+    {
+      "claim": "Behavioural requirements can be positive requirements specifying what must happen or constraint requirements specifying what must not happen.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "The current material defines both forms and gives examples of each."
+    },
+    {
+      "claim": "Behavioural requirements are distinct from functional requirements, user stories, and design principles.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "The current material explicitly contrasts behavioural requirements with these adjacent specification types."
+    },
+    {
+      "claim": "In regulated medical device development, IEC 62366-1 requires design decisions to be traceable to identified use-related hazards, with behavioural requirements acting as an intermediate layer between hazard and design.",
+      "evidenceType": "industry standard",
+      "sourceStrength": "strong",
+      "notes": "The current material states this traceability relationship and gives an example hazard-to-requirement chain."
+    },
+    {
+      "claim": "The Callsign fraud detection examples are specific, testable, interface-level behavioural requirements connected to SCA and PCI DSS compliance rationale.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "The current material lists three Callsign behavioural requirements and states the compliance rationale."
+    },
+    {
+      "claim": "The Puraite AI systematic review examples are constraint requirements derived from the epistemic independence requirement of systematic review methodology.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "The current material lists two Puraite behavioural requirements and states their rationale."
+    },
+    {
+      "claim": "The Kardion MCS Controller examples are behavioural requirements derived from IEC 62366-1 identified use-related hazards, and the available evidence is formative evaluation only.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "The current material lists two Kardion behavioural requirements and explicitly labels the evidence as formative evaluation only."
+    }
+  ],
+  "limitations": [
+    "The definition is conceptual rather than based on a single measured outcome.",
+    "The case examples are illustrative and do not define an exhaustive taxonomy of behavioural requirements.",
+    "The Kardion MCS Controller evidence is identified as formative evaluation only.",
+    "The documented examples do not establish implementation outcomes beyond the stated behavioural requirements and rationales."
+  ],
+  "publicationBlockers": [],
+  "questionsForReview": [
+    "None"
+  ],
+  "relatedPageSlugs": [
+    "behavioural-governance",
+    "human-oversight",
+    "state-visibility",
+    "trust-calibration",
+    "workflow-robustness",
+    "callsign-fraud-authentication",
+    "puraite",
+    "kardion"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "behavioural governance",
+      "targetSlug": "behavioural-governance",
+      "placementHint": "Related pages section or the section on governance intent becoming specification",
+      "reason": "The term is closely related to the source discussion of governance frameworks reducing to behavioural requirements."
+    },
+    {
+      "anchorText": "human oversight",
+      "targetSlug": "human-oversight",
+      "placementHint": "Section on how behavioural requirements differ from design principles",
+      "reason": "The source uses support for human oversight as an example of a design principle that behavioural requirements translate into specific interface behaviour."
+    },
+    {
+      "anchorText": "state visibility",
+      "targetSlug": "state-visibility",
+      "placementHint": "Examples section, near confidence display, activation state, or alarm visibility examples",
+      "reason": "Several examples concern making system state visible at the interface level."
+    },
+    {
+      "anchorText": "trust calibration",
+      "targetSlug": "trust-calibration",
+      "placementHint": "Definition section near the AI confidence-level example",
+      "reason": "The confidence-level example is relevant to calibrated interpretation of AI recommendations."
+    },
+    {
+      "anchorText": "workflow robustness",
+      "targetSlug": "workflow-robustness",
+      "placementHint": "Related pages section",
+      "reason": "Constraint requirements such as blinded review order and policy modification restrictions relate to robust workflow behaviour."
+    },
+    {
+      "anchorText": "Callsign fraud detection",
+      "targetSlug": "callsign-fraud-authentication",
+      "placementHint": "Examples from documented cases section",
+      "reason": "The source names Callsign fraud detection and gives specific behavioural requirements from that case."
+    },
+    {
+      "anchorText": "Puraite AI systematic review",
+      "targetSlug": "puraite",
+      "placementHint": "Examples from documented cases section",
+      "reason": "The source names Puraite AI systematic review and gives behavioural requirements from that case."
+    },
+    {
+      "anchorText": "Kardion MCS Controller",
+      "targetSlug": "kardion",
+      "placementHint": "Examples from documented cases section",
+      "reason": "The source names Kardion MCS Controller and gives formative-evaluation behavioural requirements from that case."
+    }
+  ],
+  "qualityChecks": {
+    "factsOnlyFromCurrentSource": true,
+    "documentationStyle": true,
+    "noMarketingLanguage": true,
+    "noInventedClaims": true,
+    "linksOnlyFromLinkingContext": true,
+    "internalNotesNotPublished": true,
+    "readyForSanityImport": true
+  }
+}

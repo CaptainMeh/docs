@@ -1,0 +1,182 @@
+{
+  "_type": "documentationPage",
+  "sourceFile": "Articles/Situations/situations--ai--teams-cannot-define-good-ai-behaviour.md",
+  "sourcePath": "sources/articles/Situations/situations--ai--teams-cannot-define-good-ai-behaviour.md",
+  "sanityDocumentIdCandidate": "documentationPage.teams-cannot-define-good-ai-behaviour",
+  "title": "Teams Cannot Define Good AI Behaviour",
+  "slug": {
+    "_type": "slug",
+    "current": "teams-cannot-define-good-ai-behaviour"
+  },
+  "pageType": "situation",
+  "category": "situations",
+  "parentSlug": "ai-and-automation",
+  "childPageSlugs": [],
+  "excerpt": "AI product teams may know what a model can do while still lacking a specification for good AI behaviour at the point of use. The Puraite case illustrates how behaviour definition can be produced through iterative design when prior patterns are limited.",
+  "metaTitle": "Teams Cannot Define Good AI Behaviour",
+  "metaDescription": "Why AI product teams need behaviour specifications at the interface, illustrated by Puraite's systematic review design work.",
+  "summary": "This situation describes a gap between model performance and product behaviour. It occurs when teams have training data, evaluation metrics, and benchmark results, but have not specified what AI outputs should surface, how confidence should be communicated, or where human override belongs in the workflow.",
+  "definition": "Teams cannot define good AI behaviour when they know the model's capabilities and performance limits but have not specified how the AI should behave for users at the point where its outputs are interpreted and acted on.",
+  "keyFacts": [
+    "AI behaviour at the interface is distinct from model performance on benchmark tasks.",
+    "Undefined AI behaviour often causes interfaces to expose model structure instead of domain logic.",
+    "Without a behaviour specification, decisions about confidence displays, output sequencing, suppression, surfacing, and override can become implementation choices.",
+    "Puraite is an AI-assisted systematic review platform used in academic, clinical, and pharmaceutical research.",
+    "In the Puraite engagement, unresolved behaviour questions included what the AI should surface, how confidence should be communicated, and where human override should sit relative to AI recommendations.",
+    "The Puraite AI suggestion display required four design cycles to resolve the evidence and scan-speed tension.",
+    "The resolved Puraite suggestion display placed the direct quote used by the AI in the side panel from the outset of the decision interaction.",
+    "The Puraite data extraction flow communicated AI confidence as an explicit percentage with colour-coded scanning support.",
+    "Creative Navy identified blinded screening mode as a product requirement during the Puraite engagement; the detailed design was outside the engagement scope, and the mode was retained in the product.",
+    "The Puraite navigation was reduced from 13 top-level items to 4 by reorganising it around the systematic review process; the reported perception shift was client-reported and not independently measured."
+  ],
+  "tags": [
+    "AI behaviour specification",
+    "AI-enabled products",
+    "model performance versus product behaviour",
+    "human override",
+    "confidence communication",
+    "systematic review software",
+    "design-as-research",
+    "domain learning",
+    "Sandbox Experiments",
+    "Critical Systems Design"
+  ],
+  "bodyMarkdown": "## Summary: AI behaviour at the interface is not the same as model performance\n\nCreative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nTeams cannot define good AI behaviour when they know what the model can do but have not specified what good behaviour looks like at the point of use. The team may have training data, evaluation metrics, benchmark performance figures, accuracy data, and known degradation points. Those facts do not define how the AI should present outputs to the people who must interpret and act on them.\n\nGood AI behaviour in the user context depends on what the model produces and on how the output is shaped, framed, sequenced, and presented. A model can perform well on a benchmark task while producing interface behaviour that misleads users, communicates confidence in an operationally unsuitable way, prevents meaningful evaluation, or appears at a point in the workflow where action on the output is counterproductive.\n\n## Undefined AI behaviour makes the interface inherit model structure\n\nUndefined AI behaviour commonly appears when the interface presents what the model produces in the form the model produces it. Confidence scores appear because the model produces them. Criteria are listed because the model applies them. Output formats reflect model data structures. The AI behaviour at the interface becomes implicit in implementation rather than explicit in a design specification.\n\nThis pattern is different from a poorly performing model. The model may be capable, accurate, and well evaluated, while the product still behaves poorly for users because the interface has not translated model output into domain logic. Domain experts such as analysts, clinicians, and researchers need to evaluate AI output against their domain expertise, not against the model's internal vocabulary or feature structure.\n\n## Consequence: the interface exposes model structure rather than domain logic\n\nWhen no behaviour specification exists, interface decisions default to the model's internal organisation. The interface may show features, confidence distributions, classification categories, or matched criteria in the model's own vocabulary.\n\nThis makes professional evaluation harder. Domain experts do not normally reason in the same terms as the model. They need to understand whether the AI output is meaningful in their domain, whether the evidence supports the recommendation, and whether acting on the recommendation fits the operational context.\n\n## Consequence: behaviour decisions accumulate as implementation choices\n\nWhen AI behaviour has not been formally specified, individual behaviour decisions are made incrementally during implementation. These decisions include what to surface, what to suppress, which confidence levels map to which display treatments, where human override applies, and how AI outputs should be sequenced relative to human judgment.\n\nThe issue is not that these decisions are necessarily made badly. The issue is that they are made without a shared behaviour model. Locally sensible implementation choices may not add up to coherent AI behaviour. The product cannot then be evaluated against a standard because no standard was set.\n\n## Consequence: the product cannot improve deliberately\n\nA product whose AI behaviour was not specified cannot be improved against a target. Teams may make local changes and observe what happens, but they lack a counterfactual definition of the behaviour the product should approach.\n\nThis produces iteration without convergence. Changes that make the product worse can be difficult to identify because there is no specified answer to the core question: for the users who will act on this AI's outputs in this operational context, what should the AI do?\n\n## Puraite example: behaviour specification through iterative design\n\nPuraite is an AI-assisted systematic review platform for conducting rigorous literature reviews used in academic, clinical, and pharmaceutical research. The AI integrates into multiple stages of the review process: automating initial screening decisions, suggesting inclusion and exclusion criteria, and extracting structured data from qualifying publications. At each stage, a reviewer or project manager must accept, override, or modify AI outputs.\n\nWhen Creative Navy joined the Puraite engagement, the AI behaviour model had not been fully specified as a design problem. Three core behaviour questions were unresolved: what the AI should surface at each stage of the review process, how confidence should be communicated to reviewers, and where human override should sit in relation to AI recommendations.\n\nThe starting interface presented AI decisions without giving reviewers a basis for evaluating them. The screening view showed inclusion and exclusion decisions but did not show the criteria the AI had applied or the text from the publication the AI had used to reach its conclusion. Reviewers could override, but without supporting information the override was a judgment about the decision rather than a judgment about the evidence.\n\n## Puraite suggestion display: four design cycles defined what the AI should surface\n\nThe Puraite AI suggestion display required four design cycles to resolve. Reviewers needed to see the criteria applied by the AI and the specific text from the publication that the AI used to reach its decision. That information had to be present without additional interaction steps, because extra steps compound across hundreds of decisions in a single review session.\n\nEach iteration tested a different way to balance evidence completeness and screening rhythm. Designs that provided full criteria evidence required expansion or navigation, which broke the screening rhythm. Designs that compressed the display for scan speed removed the evidence needed for substantive override decisions.\n\nThe resolved design placed the direct quote from the publication in the side panel from the outset of the decision interaction. The reviewer could see the AI decision, the criteria applied, and the text evidence simultaneously. This design decision specified what the AI should surface at the decision point and what epistemic position the reviewer should have relative to the AI recommendation.\n\n## Puraite confidence display: confidence became a first-class interface element\n\nThe Puraite data extraction flow required a behaviour decision about whether and how AI confidence should be surfaced to project managers and reviewers scanning extracted data. The model produced confidence estimates, but the design question was how those estimates should function in the interface.\n\nThe design communicated AI confidence as an explicit percentage with colour-coded scanning support. Lower-confidence extractions became visible at a glance, allowing reviewers to allocate verification effort to the extractions most likely to require it.\n\nThis was a behaviour specification decision, not only a visual treatment. The interface made confidence a first-class element of the AI output presentation rather than a background property available only through investigation.\n\n## Puraite blinded mode: human override required protection from anchoring\n\nPuraite raised a further behaviour question: whether AI recommendations should be visible to reviewers during initial screening, or whether initial screening should be conducted independently with AI recommendations revealed only afterwards.\n\nBlinded screening mode addressed an epistemic concern. If AI recommendations are shown during screening, they may anchor the reviewer's independent judgment. In that condition, the human-in-the-loop can become confirmation of AI decisions rather than independent assessment.\n\nCreative Navy identified blinded mode as a product requirement during the engagement. The detailed design was outside the engagement scope, but the mode was retained in the product. Its identification illustrates that rigorous AI behaviour definition can surface additional product requirements as the problem becomes better understood.\n\n## Puraite navigation restructuring: behaviour definition exposed wider workflow issues\n\nThe Puraite engagement began with a defined scope focused on AI screening screens. During the work, Creative Navy identified that the product navigation was also a significant barrier. The navigation contained 13 top-level items organised around the product's internal structure, which made it difficult for users to find workflows relevant to their stage in the systematic review process.\n\nCreative Navy restructured the navigation from 13 top-level items to 4 by organising it around the systematic review process rather than the product architecture. This navigation change was not AI behaviour in itself, but it reflected the same principle as the AI suggestion display: design should follow how users move through work, not how the system is organised internally.\n\nThe outcome evidence is limited. The redesign produced a client-reported shift in user perception: users who had previously perceived Puraite as theoretical or prototype-stage began actively using it following the redesign, and the client launched into a user acquisition and growth phase. A single user quote was relayed by the client: \"Jetzt passt das tool in meine Arbeit\" — \"Now the tool fits my work.\" No measured task-time data, error-rate data, or baseline research was recorded before the engagement.\n\n## Creative Navy's Critical Systems Design method treats behaviour definition as design work\n\nCreative Navy's Critical Systems Design method addressed the Puraite behaviour specification gap through operational grounding and design-as-research. The work did not implement a predefined AI behaviour model. The behaviour model emerged through candidate designs, observed tradeoffs, and iteration.\n\nSandbox Experiments established the operational model under a constraint: direct user research access was not available within the timeline. A member of the Creative Navy team with firsthand experience conducting systematic reviews served as the domain learning proxy. Creative Navy presented this substitution and its tradeoffs explicitly to the client rather than using it silently.\n\nDesign-as-research was the appropriate mode because Puraite sat in a product category with minimal prior art. The engagement could not simply draw on established patterns for AI-assisted systematic review screening, confidence display, criteria presentation, or reviewer decision context. The four iterations on the suggestion display were the process through which the behaviour specification was produced.\n\n## Evidence basis and limits for the Puraite example\n\nThe Puraite example provides case evidence for how undefined AI behaviour can be specified through iterative design. Creative Navy-recorded engagement facts include the unresolved behaviour questions, the four design cycles on the AI suggestion display, the confidence display decision, the identification of blinded mode, and the navigation restructuring from 13 top-level items to 4.\n\nThe strongest evidence in the Puraite example concerns the design reasoning and the design artefact decisions documented during the engagement. Outcome evidence is weaker. The shift in user perception, active use after redesign, the growth phase, and the quoted user reaction were client-reported and indirect. They were not independently measured, and no baseline research was conducted before the engagement.\n\n## Related pages\n\nThis situation is closely related to model performance diverging from product behaviour, uncertainty being hidden at the point of decision, weak practical human control, and teams shipping without a clear behaviour model. The Puraite case is the grounded example for this page.",
+  "claims": [
+    {
+      "claim": "AI behaviour at the point of use is distinct from model performance on benchmark tasks.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "moderate",
+      "notes": "The page distinguishes model capability, training data, evaluation metrics, and benchmark accuracy from how outputs are shaped, framed, and presented to users."
+    },
+    {
+      "claim": "Without a behaviour specification, AI interfaces tend to expose model structure rather than domain logic.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "moderate",
+      "notes": "The source describes default presentation of features, confidence distributions, classification categories, and matched criteria in the model's vocabulary."
+    },
+    {
+      "claim": "When AI behaviour is not specified, behaviour decisions accumulate as implementation choices rather than a coherent behaviour model.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "moderate",
+      "notes": "The source identifies decisions about surfacing, suppression, confidence display, override, and sequencing as implementation-level decisions when no formal behaviour model exists."
+    },
+    {
+      "claim": "In the Puraite engagement, unresolved behaviour questions included what the AI should surface, how confidence should be communicated, and where human override should sit relative to AI recommendations.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "The Puraite example states these three unresolved questions directly."
+    },
+    {
+      "claim": "The Puraite AI suggestion display required four design cycles before the resolved design showed the AI decision, applied criteria, and publication text evidence simultaneously.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "engagement record",
+      "notes": "The iteration count and resolved display arrangement are described as engagement facts."
+    },
+    {
+      "claim": "The Puraite data extraction flow communicated AI confidence as an explicit percentage with colour-coded scanning support.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "The confidence display is described as a behaviour specification decision that made confidence a first-class element of output presentation."
+    },
+    {
+      "claim": "Creative Navy identified blinded screening mode as a product requirement during the Puraite engagement, and the mode was retained in the product.",
+      "evidenceType": "Creative Navy-observed",
+      "sourceStrength": "engagement record",
+      "notes": "The source states that detailed design was outside the engagement scope but that the mode was identified and retained."
+    },
+    {
+      "claim": "Creative Navy reduced Puraite navigation from 13 top-level items to 4 by reorganising navigation around the systematic review process.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "engagement record",
+      "notes": "The source gives both the starting and revised number of top-level navigation items."
+    },
+    {
+      "claim": "The reported shift in Puraite user perception and the quote \"Jetzt passt das tool in meine Arbeit\" were client-reported, indirect, and not independently measured.",
+      "evidenceType": "client-reported",
+      "sourceStrength": "anecdotal",
+      "notes": "The source explicitly states the evidence basis and notes the absence of measured task-time, error-rate, and baseline research data."
+    }
+  ],
+  "limitations": [
+    "The Puraite example is a single case in an AI-assisted systematic review platform and should not be generalised as a measured result across all AI products.",
+    "Direct user research access was not available within the Puraite engagement timeline; a Creative Navy team member with firsthand systematic review experience served as the domain learning proxy, with tradeoffs presented to the client.",
+    "The detailed design of blinded screening mode was outside the Puraite engagement scope.",
+    "The reported shift in user perception after the Puraite redesign was client-reported and indirect, not independently verified.",
+    "No measured task-time data, error-rate data, or baseline research was recorded before the Puraite engagement."
+  ],
+  "publicationBlockers": [],
+  "questionsForReview": [
+    "None"
+  ],
+  "relatedPageSlugs": [
+    "puraite",
+    "the-model-may-be-good-but-the-product-behaviour-is-not",
+    "uncertainty-is-hidden-at-the-point-of-decision",
+    "human-control-is-weak-in-practice",
+    "users-trust-the-ai-too-much",
+    "the-product-behaves-inconsistently-across-scenarios",
+    "the-team-is-shipping-without-a-clear-behaviour-model",
+    "research-is-not-informing-decisions"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "Puraite",
+      "targetSlug": "puraite",
+      "placementHint": "Link the first mention of Puraite in the Puraite example section.",
+      "reason": "Puraite is the named case example used to ground the situation."
+    },
+    {
+      "anchorText": "model performance and product behaviour",
+      "targetSlug": "the-model-may-be-good-but-the-product-behaviour-is-not",
+      "placementHint": "Link in the summary or related pages section where the distinction between model performance and interface behaviour is stated.",
+      "reason": "The situation directly concerns the gap between model capability and product behaviour."
+    },
+    {
+      "anchorText": "uncertainty at the point of decision",
+      "targetSlug": "uncertainty-is-hidden-at-the-point-of-decision",
+      "placementHint": "Link in the confidence display section.",
+      "reason": "The Puraite confidence display example addresses how uncertainty is made visible for review effort allocation."
+    },
+    {
+      "anchorText": "human control over AI recommendations",
+      "targetSlug": "human-control-is-weak-in-practice",
+      "placementHint": "Link in the blinded screening mode section.",
+      "reason": "The blinded mode example concerns whether human judgment remains independent in practice."
+    },
+    {
+      "anchorText": "over-trust in AI recommendations",
+      "targetSlug": "users-trust-the-ai-too-much",
+      "placementHint": "Link in the blinded screening mode section where anchoring is discussed.",
+      "reason": "The source describes a risk that visible AI recommendations may anchor reviewer judgment."
+    },
+    {
+      "anchorText": "inconsistent AI behaviour across scenarios",
+      "targetSlug": "the-product-behaves-inconsistently-across-scenarios",
+      "placementHint": "Link in the consequence section about behaviour decisions accumulating as implementation choices.",
+      "reason": "Undefined implementation choices can produce incoherent behaviour across product scenarios."
+    },
+    {
+      "anchorText": "shipping without a clear behaviour model",
+      "targetSlug": "the-team-is-shipping-without-a-clear-behaviour-model",
+      "placementHint": "Link in the section about behaviour decisions becoming implementation choices.",
+      "reason": "The page describes AI behaviour being implicit in implementation rather than explicit in a behaviour specification."
+    },
+    {
+      "anchorText": "research not informing decisions",
+      "targetSlug": "research-is-not-informing-decisions",
+      "placementHint": "Link in the section on design-as-research and Sandbox Experiments.",
+      "reason": "The Puraite example describes behaviour definition through candidate designs and domain learning rather than unsupported interface implementation."
+    }
+  ],
+  "qualityChecks": {
+    "factsOnlyFromCurrentSource": true,
+    "documentationStyle": true,
+    "noMarketingLanguage": true,
+    "noInventedClaims": true,
+    "linksOnlyFromLinkingContext": true,
+    "internalNotesNotPublished": true,
+    "readyForSanityImport": true
+  },
+  "__sourceCategoryDir": "Situations"
+}

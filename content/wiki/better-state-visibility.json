@@ -1,0 +1,202 @@
+{
+  "slug": "better-state-visibility",
+  "title": "Better State Visibility",
+  "pageType": "outcome",
+  "category": "evidence",
+  "section": "Operational Outcomes",
+  "summary": "Better state visibility describes interface changes that make system state, device state, measurement state, or user-position state recognisable under real operating conditions. The evidence includes directly measured glance reduction, client-measured fault-diagnosis time reductions, client-measured calibration time reduction, surgeon-reported glance verification, formative clinical design evidence, and Creative Navy-observed user-testing findings.",
+  "keyFacts": [
+    "State visibility concerns whether state is communicated clearly enough for users to act, not whether information exists somewhere in the system.",
+    "Mode change and mode clarity are treated as high-risk state transitions because users must recognise operational transitions quickly.",
+    "Layout stability and spatial consistency support glance readability because users rely on spatial memory for critical state indicators.",
+    "Torqeedo maritime HMI evidence records energy state identification becoming 50% faster in a controlled environment experiment with 24 subjects.",
+    "Torqeedo sea trials recorded tasks previously requiring multiple screen transitions becoming confirmable with a single glance, measured by eye tracking with 7 subjects.",
+    "Kardion MCS Controller evidence records a design standard in which no element shifts position across any view transition, above the IEC 62366-1 consistency requirement.",
+    "Stromer e-bike evidence records average glance duration falling from 4.32 seconds to 1.89 seconds in real riding conditions with 5 participants using consistent pre/post methodology.",
+    "Gericke industrial HMI evidence records client-measured fault-diagnosis time falling from 24 to 8 minutes, 38 to 12 minutes, and 68 to 20 minutes across three sites.",
+    "Beissbarth evidence records client-measured calibration time falling from 18 to 12 minutes per vehicle across 8 production deployment locations.",
+    "Squaremind evidence records a Creative Navy-observed body-orientation visibility issue in user testing, resolved through a 3D body model facing the same direction as the patient."
+  ],
+  "bodySections": [
+    {
+      "heading": "Summary",
+      "bodyMarkdown": "State visibility is the degree to which users can understand what a system is doing without active investigation. The relevant question is not whether information exists somewhere in the system. The relevant question is whether state is communicated at the right visual level, in the right spatial position, and through reliable channels under actual conditions of use.\n\nState visibility failures are consequential in high-consequence and embedded systems because users often need to act while attention is divided. The documented examples include a surgeon reading activation state, a captain reading vessel energy state during manoeuvres, a technician distinguishing confirmed from borderline measurements, a rider checking a display during active riding, and an operator interpreting whether a production line is in an alarm condition or a normal refill cycle."
+    },
+    {
+      "heading": "State visibility as an operational outcome",
+      "bodyMarkdown": "Better state visibility means that users can recognise system state rather than reconstruct it from symptoms. In the documented evidence, this outcome appears as faster energy-state identification, shorter glances, reduced fault-diagnosis time, clearer measurement-result state, surgeon-reported glance verification, and user-tested reduction of body-position ambiguity.\n\nState visibility depends on state hierarchy. Primary state must remain immediately visible. Secondary state must remain accessible. Tertiary state must be available without becoming intrusive. When an interface exposes deviation, low level, instability, warning conditions, or raw error codes without explaining the state that produced them, the interface forces interpretation and increases error risk.\n\nState visibility also depends on layout stability. Spatial consistency allows users to build spatial memory for critical state indicators. When state indicators shift position across view transitions, the user must search actively for information that should be recognisable at a glance."
+    },
+    {
+      "heading": "Core vocabulary for state visibility",
+      "bodyMarkdown": "State visibility is the degree to which users can understand system state without active investigation.\n\nSystem state, device state, and operational state refer to the current condition of the system that is relevant to the user's next action.\n\nMode change and mode clarity refer to the communication of transitions between operational modes. The documented evidence treats mode change as the highest-risk state transition.\n\nLayout stability and spatial consistency refer to the requirement that state indicators must not shift spatial position across view transitions. Spatial memory is the mechanism for glance readability, and instability destroys it.\n\nState hierarchy is the organisation of state information by priority: primary state is immediately visible, secondary state is accessible, and tertiary state is available without becoming intrusive.\n\nRecognition over interpretation means that state is recognised at a glance rather than reconstructed from symptoms. An interface that exposes symptoms without explaining the state that produced them forces interpretation and invites error.\n\nPeripheral awareness is the ability to maintain awareness of system state without directed attention. It is especially relevant in monitoring contexts.\n\nGlance readability means that state can be confirmed with a brief glance rather than requiring reading or interpretation.\n\nGlance duration is the time a rider's or driver's eyes are off the forward scene while reading a display. The documented evidence uses the 2-second threshold from Klauer et al. (2006), NHTSA Report No. DOT HS 810 594, NHTSA Driver Distraction Guidelines Phase 1 (2012), and ISO 15007:2020 as the safety-defined boundary for vehicle-mounted embedded displays.\n\nFault-diagnosis time is the time an operator takes to understand what has gone wrong in a process-control context. The documented evidence treats fault-diagnosis time as a direct measure of state visibility because legible state shortens diagnosis and ambiguous state lengthens it."
+    },
+    {
+      "heading": "Torqeedo maritime HMI evidence: faster vessel energy-state identification",
+      "bodyMarkdown": "The Torqeedo maritime HMI case records a state visibility problem in which propulsion status, battery state, and generator information had been distributed across separate screens. Captains had to reconstruct vessel energy state from fragments during manoeuvres.\n\nThe documented redesign created a unified energy-state view that integrated all components into a single coherent display. The mechanism was a combination of stable spatial positions and a grid structure that synchronised components updating at different cadences into a unified visual rhythm.\n\nThe strongest direct measurement in the Torqeedo evidence is energy-state identification. A controlled environment experiment with 24 subjects recorded energy state identification as 50% faster with the redesigned interface.\n\nThe Torqeedo evidence also records glance reduction during manoeuvres. During actual sea trials, eye tracking with 7 subjects recorded that tasks previously requiring multiple screen transitions became confirmable with a single glance. In this maritime context, a single glance to confirm vessel state is the operational definition of improved state visibility."
+    },
+    {
+      "heading": "Kardion MCS Controller evidence: layout stability for clinical state visibility",
+      "bodyMarkdown": "The Kardion MCS Controller case records a clinical state visibility requirement: no element shifts position across any view transition. The documented design standard is described as Creative Navy's own standard, above the IEC 62366-1 consistency requirement.\n\nThe clinical rationale is spatial memory. Surgeons build spatial memory for critical state indicators during procedures and depend on that memory when the clinical situation requires rapid response. Layout instability destroys that memory and forces active visual search when attention is least available.\n\nThe standard shaped 34 directions of exploration for the standard view. Every candidate was evaluated against the standard, and any element that shifted position was redesigned or removed.\n\nThe Kardion state hierarchy kept primary state dominant: device operational status and the min/max flow visualisation remained central. Secondary state, including parameter detail, stayed accessible from the primary view. Alarm states were layered above without disturbing the primary hierarchy.\n\nThe regulatory result is recorded as FDA approval. The submitted design passed evaluation as submitted, with no design changes required. The available evidence states that the state architecture contributed to satisfying identified use-related hazards related to state misinterpretation during clinical use. Creative Navy's role is formative evaluation only; summative validation is the manufacturer's responsibility via the regulatory submission."
+    },
+    {
+      "heading": "deSoutter Medical / Zethon evidence: redundant cues for operating-theatre state recognition",
+      "bodyMarkdown": "The deSoutter Medical / Zethon case records state visibility conditions in an operating theatre: variable lighting, gloved hands, brief glances, and divided attention. The previous design relied on colour as the primary state indicator, which fails under variable theatre lighting.\n\nThe benchmarked competitor evidence recorded that 6 of 8 competitor devices used colour as the primary, and often sole, state indicator. In the documented assessment, this created a state visibility risk under operating-theatre conditions.\n\nThe resolution used redundant non-colour cues for every critical state. Spatial position, icon form, and colour were combined so that failure of any single channel under operating conditions did not remove the signal.\n\nThe available evidence is surgeon-reported from design review sessions with 8 surgeons. Surgeons reported that device state could be verified during brief glances without reading. This is not post-deployment measurement.\n\nActivation state recognition was specifically addressed. The transition from ready to active was treated as the highest-risk state change in surgical instrument use and was made recognisable rather than requiring interpretation."
+    },
+    {
+      "heading": "Cox Marine cluster display evidence: state priority across one to six engines",
+      "bodyMarkdown": "The Cox Marine cluster display case records a state visibility problem across variable configurations. A cluster display serving 1 to 6 engine configurations had to communicate engine state coherently regardless of how many engines were present.\n\nThe engine tile became the invariant unit. Each engine had one tile, and state information was organised consistently inside each tile across all configurations. Captains could read engine state the same way whether monitoring one engine or six.\n\nScenario testing during Concept Convergence revealed a state hierarchy failure. Several candidate designs made fault presence visible but did not direct attention to the priority engine in a multi-engine fault condition. The state was visible, but state priority was not.\n\nThe documented resolution added a fault-summary area surfacing the highest-priority condition across all tiles and per-tile alarm state highlighting that directed attention to the source.\n\nThe available external feedback is client-reported from the distributor network and was not independently verified."
+    },
+    {
+      "heading": "Elsner Elektronik evidence: fault state visibility for non-technical users",
+      "bodyMarkdown": "The Elsner Elektronik case records state visibility for a consumer product used by non-technical occupants. The state visibility requirement was not to explain faults technically. It was to help a non-technical occupant understand what the fault means for them, including when to call an engineer.\n\nFault state communication was calibrated for the audience. It had to be informative without alarming and actionable without requiring technical understanding.\n\nSensor fault states, calibration drift states, and delayed sensor readings were designed as primary design targets rather than edge cases.\n\nThe documented alert hierarchy separated routine notifications from critical notifications visually and behaviourally. This dual-priority alert hierarchy preserved the signal value of critical alerts despite exposure to routine alerts."
+    },
+    {
+      "heading": "Beissbarth automotive calibration evidence: measurement-result state under workshop conditions",
+      "bodyMarkdown": "The Beissbarth automotive calibration case records state visibility at the measurement level. A three-level measurement-result state replaced a binary pass/fail model: confirmed, borderline, and out of range.\n\nThe documented requirement was that technicians could distinguish a confirmed measurement, a borderline measurement requiring repetition, and a failed measurement under workshop conditions. Those conditions included movement, variable lighting, and 2–3 metre viewing distance.\n\nThe client-measured operational result was a calibration time reduction from 18 to 12 minutes per vehicle across 8 production deployment locations. The available evidence states that part of this improvement is state visibility at the measurement stage, because fewer repeated measurements were required when the measurement result state was clearly communicated."
+    },
+    {
+      "heading": "Gericke industrial HMI evidence: fault-diagnosis time as the process-control measure",
+      "bodyMarkdown": "The Gericke industrial HMI case records state visibility in process-control terms. The legacy Easydos Pro interface exposed symptoms: alarm lists, raw error codes, and scattered parameters. It did not explain state clearly enough for operators to answer what was happening, why it was happening, and what to do next.\n\nThe dominant consequence was interpretation failure. Under ambiguity, trained operators stopped or overrode healthy equipment precautionarily rather than risk a deviation.\n\nThe documented redesign made state visible through a live process mimic, graphical error visualisation, and a root-cause alarm hierarchy. State appeared where the equipment was, not only in a separate list. Failed components were highlighted on the mimic rather than represented only as raw error codes. Secondary alarms were collapsed beneath the originating event, with probable cause indicated.\n\nThe clearest illustration is a normal refill cycle. A feeder entering a normal refill cycle had previously surfaced as a cluster of alarms: feed-rate deviation, low hopper level, refill active, and dosing instability. The redesigned mimic showed the feeder in \"Refill Cycle,\" the expected duration, and \"temporary dosing deviation expected — no operator action required,\" with secondary alarms grouped beneath.\n\nThe client-measured fault-diagnosis time reductions were recorded at three sites: 24 to 8 minutes at a Swiss pharma site, 38 to 12 minutes at an Italian food site, and 68 to 20 minutes at a Swiss chemicals site. Repeat alarms more than halved: 42% to 18%, 58% to 28%, and 73% to 35%.\n\nThe evidence basis is client-measured by Gericke, not Creative Navy-measured. The measurement window is described as a confirmed single-variable window, with no hardware, sensor, mechanical, training, recipe, or process changes over the period. The evidence was recorded four months post-go-live. The three sites are described only by type and geography. The refill illustration is a Creative Navy reconstruction of the redesign, not a logged incident."
+    },
+    {
+      "heading": "Stromer e-bike evidence: glance duration crossing a 2-second safety threshold",
+      "bodyMarkdown": "The Stromer e-bike embedded display case records state visibility as glance duration during active riding. A rider using a display during active riding cannot safely hold gaze on the screen beyond the 2-second threshold at which road safety research identifies a doubling of near-crash and crash risk.\n\nBefore the redesign, Creative Navy-recorded eye-tracking evidence measured average glance duration at 4.32 seconds. The measurement was conducted during actual riding on real routes in Munich and surrounding countryside, with 5 participants using the same routes as the broader usability testing programme. Riders also glanced 18% more frequently per kilometre than after the redesign.\n\nThe documented state visibility failure was that warning conditions, ride data, and system status were not communicated in a form that could be confirmed within a brief glance. Riders held their gaze until they understood what they were looking at, because looking away while the information remained ambiguous would leave them without the needed state.\n\nAfter the redesign, Creative Navy re-measured using the same methodology and routes. Average glance duration fell to 1.89 seconds, within the 2-second threshold. Glance frequency per kilometre fell by 18%.\n\nThe reference standards and research cited in the documented evidence are Klauer et al. (2006), The Impact of Driver Inattention on Near-Crash/Crash Risk, NHTSA Report No. DOT HS 810 594; NHTSA Driver Distraction Guidelines Phase 1 (2012); and ISO 15007:2020. These standards are formally defined for four-wheeled vehicles. The documented evidence states that the threshold and principle apply directly to embedded displays used during riding."
+    },
+    {
+      "heading": "Squaremind evidence: patient body position as a state visibility problem",
+      "bodyMarkdown": "The Squaremind dermatology scanning device case records a structurally distinct state visibility problem. The primary state the patient had to understand was not the system's state. It was the patient's own physical position relative to the position the system required.\n\nThe interface had to communicate \"where you are\" and \"where you need to be\" in a constrained embedded context. It also had to support a patient who could be anxious and who was near a moving robot arm.\n\nEarly designs used abstract silhouettes to show the patient's required position. User testing during Iterative System Building surfaced a state visibility failure: patients could not reliably determine which direction the silhouette was facing. They were uncertain whether the image was a mirror-image view or a direct-view matching their own orientation. Left/right positioning confusion followed, including uncertainty about which arm to raise.\n\nThe documented resolution replaced the abstract silhouette with a 3D body model facing the same direction as the patient. The interface model matched the patient's own reference frame, eliminating the need to mentally rotate a mirror image.\n\nThe scan progress state also required state hierarchy design. Across 5 iterations, the progress bar had to communicate current step identity, the patient's position in the front/back scan sequence, approximate time remaining, and overall completion. The display was a 1024×768 4:3 screen at standing-patient reading distance, and the patient could not interact with the display mid-scan.\n\nThe evidence basis is Creative Navy-observed user testing during Iterative System Building, with subsequent prototype rounds confirming the resolution. The finding was not independently quantified."
+    },
+    {
+      "heading": "Evidence basis across documented examples",
+      "bodyMarkdown": "The evidence for better state visibility is mixed in strength and measurement type. The strongest direct measurements are Torqeedo energy-state identification, Torqeedo eye-tracked glance reduction during sea trials, Stromer eye-tracked glance duration during real riding, Gericke client-measured fault-diagnosis time, and Beissbarth client-measured calibration time.\n\nClinical evidence in the Kardion case is formative and regulatory. The design passed FDA evaluation as submitted, with no design changes required, and the case records FDA approval. This is a verifiable regulatory outcome, not a measured performance outcome.\n\nSurgeon evidence in the deSoutter Medical / Zethon case is surgeon-reported from design review sessions with 8 surgeons. Cox Marine distributor feedback is client-reported and not independently verified. Squaremind body-position evidence is Creative Navy-observed in user testing and confirmed through prototype rounds, but it is not independently quantified."
+    },
+    {
+      "heading": "Boundaries and limits",
+      "bodyMarkdown": "Better state visibility is context-specific. In a maritime HMI, the relevant measure can be whether a captain can confirm energy state with a single glance. In a process-control HMI, the relevant measure can be fault-diagnosis time. In an embedded vehicle display, the relevant measure can be glance duration against a 2-second threshold. In patient-operated scanning, the relevant state can be the user's own body position rather than the device state.\n\nThe documented evidence does not establish one universal state visibility metric. It establishes a pattern across contexts: clearer state hierarchy, stable spatial positions, redundant state cues, and recognition over interpretation are associated with better task-specific state recognition under the conditions described.\n\nSeveral evidence types are limited. Some findings are client-measured rather than Creative Navy-measured. Some are surgeon-reported or client-reported. Some are Creative Navy-observed but not independently quantified. The Stromer evidence uses a threshold and standards formally defined for four-wheeled vehicles, applied in the documented evidence to embedded displays used during riding."
+    }
+  ],
+  "evidenceSummary": {
+    "strongClaims": [
+      "State visibility is the degree to which users can understand system state without active investigation.",
+      "Torqeedo energy-state identification was 50% faster with the redesigned interface in a controlled environment experiment with 24 subjects.",
+      "Torqeedo sea trials recorded tasks previously requiring multiple screen transitions becoming confirmable with a single glance, measured by eye tracking with 7 subjects.",
+      "Kardion's state visibility standard required no element to shift position across any view transition, above the IEC 62366-1 consistency requirement.",
+      "The Kardion submitted design passed FDA evaluation as submitted, with no design changes required, and the case records FDA approval.",
+      "Stromer average glance duration fell from 4.32 seconds to 1.89 seconds using consistent pre/post methodology during real riding with 5 participants.",
+      "Squaremind user testing surfaced orientation ambiguity in abstract body silhouettes, and subsequent prototype rounds confirmed the 3D body model resolution."
+    ],
+    "weakerClaims": [
+      "In deSoutter Medical / Zethon design review sessions, 8 surgeons reported that device state could be verified during brief glances without reading.",
+      "Beissbarth calibration time fell from 18 to 12 minutes per vehicle across 8 production deployment locations.",
+      "Gericke client-measured fault-diagnosis time fell from 24 to 8 minutes, 38 to 12 minutes, and 68 to 20 minutes across three sites."
+    ],
+    "limitations": [
+      "The outcome has no single universal metric; the documented measures vary by context, including glance duration, glance reduction, energy-state identification, fault-diagnosis time, calibration time, surgeon-reported recognition, and user-tested orientation clarity.",
+      "Kardion evidence is formative in scope. Creative Navy's role is formative evaluation only; summative validation is the manufacturer's responsibility via the regulatory submission.",
+      "The Kardion FDA result is a regulatory outcome, not a measured performance outcome, and no FDA pathway is specified.",
+      "deSoutter Medical / Zethon evidence is surgeon-reported from design review sessions with 8 surgeons, not post-deployment measurement.",
+      "Cox Marine distributor feedback is client-reported from the client network and not independently verified.",
+      "Beissbarth calibration improvement is client-measured, and the source attributes only part of the improvement to state visibility at the measurement stage.",
+      "Gericke fault-diagnosis and repeat-alarm outcomes are client-measured by Gericke, not Creative Navy-measured; site identities are limited to type and geography.",
+      "The Gericke refill-cycle illustration is a Creative Navy reconstruction of the redesign, not a logged incident.",
+      "Stromer eye-tracking evidence involved 5 participants, and the cited glance-duration standards are formally defined for four-wheeled vehicles.",
+      "Squaremind evidence is Creative Navy-observed and confirmed through prototype rounds, but not independently quantified."
+    ]
+  },
+  "relatedPageSlugs": [
+    "torqeedo-maritime-hmi",
+    "kardion",
+    "desoutter-medical-zethon",
+    "cox-marine",
+    "elsner-smart-home-controller",
+    "beissbarth",
+    "gericke-industrial-hmi",
+    "stromer-ebike",
+    "squaremind",
+    "what-we-have-measured",
+    "what-is-client-reported",
+    "what-is-observed-but-not-quantified",
+    "reduced-error-risk",
+    "improved-operational-clarity"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "Torqeedo Maritime HMI",
+      "targetSlug": "torqeedo-maritime-hmi",
+      "reason": "The Torqeedo case provides direct evidence for faster energy-state identification and glance reduction."
+    },
+    {
+      "anchorText": "Kardion",
+      "targetSlug": "kardion",
+      "reason": "The Kardion case provides the regulated clinical example of layout stability and FDA approval wording."
+    },
+    {
+      "anchorText": "deSoutter Medical / Zethon",
+      "targetSlug": "desoutter-medical-zethon",
+      "reason": "The deSoutter Medical / Zethon case provides surgeon-reported evidence for brief-glance state verification."
+    },
+    {
+      "anchorText": "Cox Marine",
+      "targetSlug": "cox-marine",
+      "reason": "The Cox Marine case provides the multi-engine state hierarchy example."
+    },
+    {
+      "anchorText": "Elsner Smart Home Controller",
+      "targetSlug": "elsner-smart-home-controller",
+      "reason": "The Elsner case provides the consumer fault-state visibility example."
+    },
+    {
+      "anchorText": "Beissbarth Automotive",
+      "targetSlug": "beissbarth",
+      "reason": "The Beissbarth case provides the measurement-result state and calibration-time evidence."
+    },
+    {
+      "anchorText": "Gericke Industrial HMI",
+      "targetSlug": "gericke-industrial-hmi",
+      "reason": "The Gericke case provides client-measured fault-diagnosis time and repeat-alarm evidence."
+    },
+    {
+      "anchorText": "Stromer Ebike",
+      "targetSlug": "stromer-ebike",
+      "reason": "The Stromer case provides eye-tracked glance-duration evidence against the 2-second threshold."
+    },
+    {
+      "anchorText": "Squaremind",
+      "targetSlug": "squaremind",
+      "reason": "The Squaremind case provides the example where the relevant state is the user's own body position."
+    },
+    {
+      "anchorText": "what Creative Navy has measured",
+      "targetSlug": "what-we-have-measured",
+      "reason": "The page relies on evidence calibration across measured, reported, and observed outcome types."
+    },
+    {
+      "anchorText": "client-reported evidence",
+      "targetSlug": "what-is-client-reported",
+      "reason": "Several claims on the page are explicitly client-reported or surgeon-reported and need calibration."
+    },
+    {
+      "anchorText": "observed but not quantified evidence",
+      "targetSlug": "what-is-observed-but-not-quantified",
+      "reason": "The Squaremind body-representation finding is observed evidence rather than quantified measurement."
+    }
+  ],
+  "tags": [
+    "state visibility",
+    "mode clarity",
+    "glance readability",
+    "layout stability",
+    "state hierarchy",
+    "fault diagnosis",
+    "embedded displays",
+    "clinical interfaces",
+    "industrial HMI",
+    "measurement state"
+  ],
+  "_meta": {
+    "sourcePath": "sources/articles/Outcomes/outcomes--better-state-visibility.md",
+    "parentSlug": "operational-outcomes",
+    "childPageSlugs": [],
+    "generatedBy": "deterministic"
+  }
+}

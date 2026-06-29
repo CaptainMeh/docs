@@ -1,0 +1,128 @@
+{
+  "slug": "inform-prevent-correct",
+  "title": "Inform Prevent Correct",
+  "pageType": "concept",
+  "category": "glossary",
+  "section": "Our Concepts",
+  "summary": "Inform–Prevent–Correct defines three layers for designing high-consequence sequential interactions: Inform, Prevent, and Correct. Creative Navy introduced the term during the Squaremind engagement and used it to map the patient-operated dermatology scanning flow, including recovery paths after confusion events.",
+  "keyFacts": [
+    "Inform–Prevent–Correct was introduced by Creative Navy during the Squaremind engagement.",
+    "The framework was delivered as an explicit diagram artefact, not only as an internal structuring tool.",
+    "The three layers are always Inform, Prevent, and Correct, in that order.",
+    "Inform concerns the understanding that must be present in the user's mind before the next action can be performed correctly.",
+    "Prevent concerns proactive design work that removes an error before it arises.",
+    "Correct concerns recovery after something has gone wrong and the branch logic required after recovery.",
+    "The framework is recursive: a correction at any step re-engages Inform–Prevent–Correct for the state the user is corrected into.",
+    "In the Squaremind example, pre-redesign testing had 2 completions out of 14 users and 0 recoveries.",
+    "In the Squaremind example, post-redesign ecological testing had 27 completions out of 29 users, with all 12 users who got stuck recovering and completing the procedure.",
+    "Creative Navy describes Inform–Prevent–Correct as a proprietary term with no prior associations in UX or human factors literature under this specific formulation."
+  ],
+  "bodySections": [
+    {
+      "heading": "Definition of Inform–Prevent–Correct",
+      "bodyMarkdown": "Inform–Prevent–Correct is Creative Navy's structuring framework for designing guided sequential interactions where a user must complete a physical, time-sensitive process without external assistance. It maps, for every step of the experience, what the system must communicate, what the system must stop from going wrong, and what the system must do when something has already gone wrong.\n\nThe three layers are applied recursively. A correction at any step re-engages the Inform–Prevent–Correct cycle for the step or state the user is being corrected into, so that one confusion event does not compound into an unrecoverable process failure.\n\nCreative Navy introduced Inform–Prevent–Correct during Concept Convergence in the [Squaremind case study](squaremind). The framework was delivered as an explicit diagram artefact that mapped the three layers across every step of the scanning flow, making the reasoning available to the client and traceable through later design decisions."
+    },
+    {
+      "heading": "Why Inform–Prevent–Correct is needed in sequential physical processes",
+      "bodyMarkdown": "Inform–Prevent–Correct addresses processes where interactions cannot be treated as independent screens or isolated actions. In a guided physical process where the user cannot ask for help, cannot leave and return, and where a single unrecovered confusion event can end the session, what happens at one step affects whether the user can complete later steps.\n\nThe dependency is causal across time. What the system communicates at step N shapes whether the user can handle a problem at step N+2. What the system prevents at step N+1 determines whether correction is needed at all. Inform–Prevent–Correct makes those dependencies explicit instead of leaving them to be discovered only during testing.\n\nThe framework is most directly applicable when the process is sequential, physical, time-sensitive, and high consequence. The documented examples of relevant contexts include patient-operated medical device procedures, guided industrial setup sequences, field calibration procedures, and emergency shutdown sequences."
+    },
+    {
+      "heading": "Inform defines the understanding required before the next action",
+      "bodyMarkdown": "Inform is the layer that defines what the user must understand at each step, why that understanding is required, and how it changes the user's mental model. Informing is not equivalent to displaying information; the design question is what understanding must be present in the user's mind for the next action to be performed correctly.\n\nIn Creative Navy's definition, Inform includes managing expectations about what is about to happen, communicating system state, and establishing sequence context. In a physical process, the user may need to know that a robot is about to move, why the robot is moving, where the user is in the overall process, and how much remains before the process is complete.\n\nInform is therefore not only a content layer. It is a behavioural prerequisite for correct action in a guided sequence."
+    },
+    {
+      "heading": "Prevent defines what must not go wrong and when it can be stopped",
+      "bodyMarkdown": "Prevent is the layer that defines what must not happen at a given step, why it must be prevented, when prevention is still possible, by what design means, and what effect the design is expected to have on the user's behaviour.\n\nPrevention is proactive rather than reactive. It removes the error before it arises instead of managing the error after it has occurred. In a patient-facing scanning interface, the documented examples include positioning guidance before the robot moves into range, expectation-setting for physical transitions before those transitions are required, and progressive disclosure of the next step's requirements while the current step is still completing.\n\nPrevent also records the failure mode if prevention does not work. That failure mode becomes part of the Correct layer rather than an unstructured exception."
+    },
+    {
+      "heading": "Correct defines recovery and the branch created by recovery",
+      "bodyMarkdown": "Correct is the layer that defines when correction is needed, what triggers correction, what the user must do to correct the situation, and what range of correction options is available. Correct also defines what happens after a successful correction.\n\nIn Inform–Prevent–Correct, correction is not the end of the logic. Correction is a branch point. Once the user has corrected, the user occupies a new mental and physical state that requires its own Inform, its own Prevent, and its own Correct.\n\nA user who has just recovered from a positioning error is not in the same state as a user who never made the positioning error. Creative Navy's Squaremind mapping treated that difference as part of the design problem: after recovery, the system still needed to communicate that recovery had happened, prevent recurrence of the same error, and handle a second correction attempt if the first recovery failed."
+    },
+    {
+      "heading": "Recursive correction turns the framework into a tree",
+      "bodyMarkdown": "Inform–Prevent–Correct is not a three-step checklist applied once at the start of design. At each step of the flow, a Correct event generates a new Inform–Prevent–Correct cycle for the recovery path.\n\nThe result is a tree rather than a single linear sequence. The main flow has Inform–Prevent–Correct logic at each step, and each Correct event that can occur generates a branch with its own logic. Designing only the main flow and leaving correction paths to be handled reactively is the design failure the framework exists to prevent.\n\nThe Squaremind engagement produced an important corrective insight: recovery failure was not a different problem from process failure. A patient who got stuck and could not resume represented the same problem one level deeper in the tree."
+    },
+    {
+      "heading": "Squaremind dermatology scanning example",
+      "bodyMarkdown": "The [Squaremind case study](squaremind) is the grounded example for Inform–Prevent–Correct. Squaremind had developed a dermatology scanning device: a robot arm with an embedded camera performing full-body skin imaging. The commercial premise was that patients could run the procedure unassisted, allowing clinical staff to do other work.\n\nA pre-engagement test conducted by Squaremind with 14 users produced 2 completions. Of the 12 users who failed, 8 users, primarily aged 45–65, got stuck within the first minute. The remaining 4 users, primarily aged 20–35, got stuck around the 3-minute mark. The diagnosis confirmed by two dermatologists was structural: the process had no recovery path.\n\nCreative Navy introduced Inform–Prevent–Correct during Concept Convergence and produced a diagram mapping all three layers across every step of the scanning flow. The diagram identified what the patient needed to understand, what needed to be prevented and when, and when correction was possible, through what means, and how successful correction re-engaged the cycle.\n\nThe design work that followed included interactive prototypes and ecological user testing in London with 12 users and Paris with 17 users. The testing was co-conducted with an independent dermatologist hired by Creative Navy. Post-redesign, 27 of 29 users completed the scan independently. Twelve users got stuck during the flow; all 12 recovered and completed the procedure. Recovery times ranged from 2 to 4 minutes, with older users tending to take longer.\n\nThe documented pre-redesign result was 2 completions out of 14 users and 0 recoveries. The documented post-redesign result was 27 completions out of 29 users and a 100% recovery rate among users who got stuck during the tested flow."
+    },
+    {
+      "heading": "How Inform–Prevent–Correct differs from conventional error handling",
+      "bodyMarkdown": "Inform–Prevent–Correct is not an error-handling framework in the conventional sense. Conventional error handling addresses what happens after an error. Inform–Prevent–Correct addresses the full causal chain: what the user understands before acting, what the design does to prevent the error from occurring, and what happens if the error occurs anyway.\n\nError handling is part of the Correct layer. It is not the whole framework.\n\nThe distinction matters because a process failure may originate before the visible error. If the user did not understand the next physical movement, the visible failure may occur later, but the design failure began in Inform. If the system could have prevented the user from entering the wrong state, the visible failure may belong to Correct, but the missed intervention belongs to Prevent."
+    },
+    {
+      "heading": "How Inform–Prevent–Correct relates to standard UX practice",
+      "bodyMarkdown": "The individual components of Inform–Prevent–Correct map loosely onto familiar UX concepts. Inform relates to mental model formation. Prevent relates to error prevention. Correct relates to error recovery.\n\nWhat distinguishes Inform–Prevent–Correct in Creative Navy's documentation is the explicit mapping of all three layers per step across a sequential process, the articulation of the failure mode if each layer fails, and the recursive application to correction paths.\n\nThe framework does not claim to introduce novel component concepts. Its contribution is making dependencies between those concepts explicit and actionable at the step level, rather than leaving them as general principles applied globally."
+    },
+    {
+      "heading": "Applicability boundaries for Inform–Prevent–Correct",
+      "bodyMarkdown": "Inform–Prevent–Correct is most applicable to high-consequence sequential processes where the user has no external assistance, where an unrecovered error ends the session, and where the process involves physical movement or state transitions that cannot be undone.\n\nThe framework is less applicable to discretionary, non-sequential interactions where the user can freely backtrack and the consequences of individual errors are low. In those contexts, conventional interaction design and error recovery patterns may be sufficient because individual failures do not necessarily end the session.\n\nCreative Navy describes Inform–Prevent–Correct as a proprietary term. The term should be capitalised consistently, and the components should remain in the order Inform, Prevent, Correct to preserve the causal sequence."
+    },
+    {
+      "heading": "Related Creative Navy concepts",
+      "bodyMarkdown": "Inform–Prevent–Correct connects to [option space mapping](option-space-mapping) because iteration counts on pause-button, progress-bar, and positioning elements reflected Inform–Prevent–Correct branches being worked through in the Squaremind engagement.\n\nInform–Prevent–Correct connects to [performance in reality](performance-in-reality) because the ecological testing protocol was designed to validate whether the Inform–Prevent–Correct logic held under real conditions.\n\nInform–Prevent–Correct also connects to [the blanks phenomenon](blanks-phenomenon). The original Squaremind interface had no Prevent layer and no Correct layer; the blanks were not in the client's domain knowledge, but in the causal structure of the guidance experience."
+    }
+  ],
+  "evidenceSummary": {
+    "strongClaims": [
+      "Inform–Prevent–Correct is a structuring framework for guided sequential, physical, time-sensitive processes without external guidance.",
+      "Creative Navy introduced Inform–Prevent–Correct during the Squaremind engagement and delivered it as an explicit diagram artefact.",
+      "The framework has three ordered layers: Inform, Prevent, and Correct.",
+      "Inform–Prevent–Correct is recursive: correction at a step re-engages the cycle for the recovery path.",
+      "In the Squaremind example, pre-engagement testing produced 2 completions out of 14 users and 0 recoveries.",
+      "In the Squaremind example, post-redesign ecological testing produced 27 completions out of 29 users, with all 12 users who got stuck recovering and completing the procedure.",
+      "Inform–Prevent–Correct is not conventional error handling; error handling is a component of the Correct layer.",
+      "Creative Navy describes Inform–Prevent–Correct as a proprietary term with no prior associations in UX or human factors literature under this specific formulation."
+    ],
+    "limitations": [
+      "The strongest grounded example in the page is the Squaremind engagement; the source does not provide equivalent evidence from other contexts.",
+      "The Squaremind post-redesign outcome is reported from ecological user testing with 29 users, not from deployment-scale evidence.",
+      "Inform–Prevent–Correct is less applicable to discretionary, non-sequential interactions where users can freely backtrack and individual errors have low consequences.",
+      "The framework is not a standalone replacement for all UX practice; its components map onto familiar concepts such as mental model formation, error prevention, and error recovery."
+    ]
+  },
+  "relatedPageSlugs": [
+    "squaremind",
+    "option-space-mapping",
+    "performance-in-reality",
+    "blanks-phenomenon"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "Squaremind case study",
+      "targetSlug": "squaremind",
+      "reason": "The source identifies Squaremind as the engagement where Creative Navy introduced Inform–Prevent–Correct."
+    },
+    {
+      "anchorText": "option space mapping",
+      "targetSlug": "option-space-mapping",
+      "reason": "The source names option-space-mapping as a cross-reference for iteration counts on pause-button, progress-bar, and positioning elements."
+    },
+    {
+      "anchorText": "performance in reality",
+      "targetSlug": "performance-in-reality",
+      "reason": "The source names performance-in-reality as a cross-reference for ecological testing under real conditions."
+    },
+    {
+      "anchorText": "the blanks phenomenon",
+      "targetSlug": "blanks-phenomenon",
+      "reason": "The source names the blanks phenomenon as a cross-reference for the missing Prevent and Correct layers in the original Squaremind interface."
+    }
+  ],
+  "tags": [
+    "Inform–Prevent–Correct",
+    "sequential processes",
+    "error prevention",
+    "error recovery",
+    "guided interaction",
+    "patient-operated scanning",
+    "Squaremind",
+    "high-consequence UX"
+  ],
+  "_meta": {
+    "sourcePath": "sources/articles/Glossary/glossary--inform-prevent-correct.md",
+    "parentSlug": "our-concepts",
+    "childPageSlugs": [],
+    "generatedBy": "deterministic"
+  }
+}

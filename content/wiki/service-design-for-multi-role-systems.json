@@ -1,0 +1,162 @@
+{
+  "slug": "service-design-for-multi-role-systems",
+  "title": "Service Design For Multi Role Systems",
+  "pageType": "capability",
+  "category": "capabilities",
+  "section": "Capabilities",
+  "summary": "Service design for multi-role systems examines the full service choreography across roles rather than optimising an interface for a single user type. The documented evidence includes veterinary clinics, intergovernmental enforcement, workforce management, property management, health data governance, commercial finance, and UNICEF planning and reporting systems.",
+  "keyFacts": [
+    "Service design is distinct from interface design for a single user type because it examines the full set of touchpoints, roles, and organisational contexts involved in a service.",
+    "A service blueprint maps front-stage role interactions, back-stage processes, and the connections between them; it is the primary diagnostic tool for multi-role failure points.",
+    "The one-interface question asks whether multiple roles should share one unified interface or use separate role-differentiated surfaces.",
+    "In IDEXX Animana research, 35 clinics and 150+ participants across the Netherlands, the UK, and Germany showed incompatible cognitive requirements between reception and clinical roles.",
+    "In WCO/IPM research, 47 participants across Italy, Romania, Uzbekistan, Algeria, and Spain represented frontline inspection officers, intelligence analysts, and rights holder brand protection teams.",
+    "In Triopsis, 47 microtasks were mapped across 3 personas before design decisions, with product analytics from real users reporting 62% faster job discovery, 83% faster job sequence optimisation, and 58% faster weekly planning.",
+    "In Tetra/Prism, separate mobile and web platforms shared coherent data and visual language while adapting interaction logic to field-based and office-based contexts.",
+    "In UNICEF planning and reporting, the documented failure was definitional misalignment across seven role types and two organisational tiers, not incompatible cognitive requirements.",
+    "UNICEF outcomes were client-measured against a pre-established baseline nine months post-rollout: 45% reduction in compliance issues and 42% reduction in headquarters report-preparation time.",
+    "Some documented outcomes are client-reported rather than independently verified, including WCO/IPM training-cost and adoption figures, Akrivia Health governance-reviewer verification, and Dancerace/Jacko demo-to-paying conversion."
+  ],
+  "bodySections": [
+    {
+      "heading": "Summary",
+      "bodyMarkdown": "Creative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nService design for multi-role systems addresses services where the outcome depends on several roles acting through shared data, handoffs, permissions, and organisational rules. The unit of design is not only the screen used by one role. The unit of design is the service choreography that connects front-stage interactions, back-stage processes, role-specific responsibilities, and shared system state.\n\nA multi-role service can fail even when each individual interface appears usable in isolation. The failure often appears at handoff points, at permissions boundaries, at moments where one role changes shared state for another role, or where different roles hold different definitions of a correct output."
+    },
+    {
+      "heading": "When service design for multi-role systems is needed",
+      "bodyMarkdown": "Service design for multi-role systems is needed when a system serves distinct roles whose work differs in attention pattern, physical environment, authority, data rights, or organisational tier. A receptionist, clinician, field technician, scheduler, analyst, governance reviewer, supplier, debtor, and finance officer are not interchangeable variants of one user type when their decisions, contexts, and responsibilities differ structurally.\n\nThe one-interface question is central in this capability. A single unified interface is appropriate only when the roles' cognitive requirements are compatible enough to share the same interaction model. Role-differentiated interfaces are needed when one interface optimised for one role systematically degrades another role's work.\n\nThe physical environment by role is also a design determinant. The same task can require different interaction models at a desk, in the field, in a vehicle, in a clinic room, or outdoors under sunlight and glove use. In the Tetra/Prism case, field-based property managers and office-based portfolio directors used the same data in different operational contexts, leading to separate platforms with a shared coherent data model and visual design language."
+    },
+    {
+      "heading": "Multi-role failure patterns this capability diagnoses",
+      "bodyMarkdown": "Service design for multi-role systems uses service blueprints and journey maps across roles to locate failure points that single-role interface analysis can miss. A service blueprint maps front-stage interactions, back-stage processes, and the connections between them. Journey mapping across roles maps each role's end-to-end experience separately, then overlays the journeys to identify interactions and conflicts.\n\nHandoff points are a primary failure location in multi-role systems. A handoff occurs when work, context, or responsibility passes from one role to another. Failures at handoffs include missing context, undocumented assumptions, approvals that are assumed but not recorded, changes by one role that invalidate another role's contribution, and downstream receivers interpreting an output differently from its producers.\n\nDefinitional alignment is a separate failure pattern from cognitive incompatibility. In UNICEF planning and reporting, the roles were individually competent but held incompatible interpretations of the same standard. A submission could satisfy a local team's interpretation of complete and still fail central requirements. The service failed because the shared definition of a correct submission had not been made explicit across roles and tiers."
+    },
+    {
+      "heading": "What the capability does",
+      "bodyMarkdown": "Service design for multi-role systems maps the organisational choreography that produces the service outcome. Organisational choreography is the coordinated sequence of actions across roles that turns separate role contributions into a completed service result.\n\nThe capability identifies whether role-specific needs require different interfaces, different permissions, different workflows, clearer shared state, stronger validation, or explicit definitional alignment. The design response depends on the type of multi-role failure. In IDEXX Animana and Tetra/Prism, the architectural answer was role-differentiated surfaces because operational contexts and cognitive requirements were structurally different. In UNICEF planning and reporting, the answer was not to split the interface; the service-design response was to construct definitional alignment and embed it into workflow, validation rules, information architecture, and interaction design.\n\nThe capability also addresses touchpoint coherence. Touchpoint coherence means that the same entity, such as a job, property, patient, shipment, task, action, invoice, or submission, must read consistently across role-specific surfaces even when the interaction models differ."
+    },
+    {
+      "heading": "What service design for multi-role systems produces",
+      "bodyMarkdown": "Service design for multi-role systems produces a structured account of roles, touchpoints, handoffs, shared entities, permissions, governance paths, and cross-role dependencies. The output may include service blueprints, journey maps across roles, microtask analysis, role-differentiated interface architecture, access and governance structures, shared-state models, workflow validation rules, and alignment mechanisms for shared-ownership tasks.\n\nA role-differentiated interface architecture provides different interaction models for different roles while maintaining coherent shared data and system state. This is not the same as giving each role a different view of the same interface. In some multi-role systems, roles require different permissions, not just different views, and role-based access and governance can be a structural or regulatory requirement.\n\nFor shared-ownership tasks, the output includes mechanisms that coordinate contributions whose correctness is interdependent. In UNICEF planning and reporting, a reporting submission was co-produced by several roles working largely in parallel. The service design embedded an agreed standard into workflows, validation rules, information architecture, and interaction design so producing roles could not unknowingly satisfy their own interpretation while violating the receiver's requirements."
+    },
+    {
+      "heading": "IDEXX Animana evidence: incompatible cognitive requirements led to separate role interfaces",
+      "bodyMarkdown": "IDEXX Animana is the clearest documented example of incompatible cognitive requirements leading to an architectural conclusion. Research covered 35 clinics, 150+ participants, 2 weeks, and 3 countries: the Netherlands, the UK, and Germany. The role types were vets, nurses, reception staff, and administrative staff, ranging from first-week users to ten-year veterans.\n\nThe central service design finding was that reception and clinical roles had incompatible cognitive requirements. Reception involved ambient multitasking, divided attention across multiple simultaneous demands, context switches driven by arrivals and calls, and tasks measured in seconds and minutes. The primary reception requirement was breadth and speed. Clinical work involved focused sequential attention, one patient per consultation, sustained context across the appointment, and errors with clinical consequences. The primary clinical requirement was depth and accuracy.\n\nThe documented conclusion was to develop distinct interfaces for reception and clinical roles. The evidence framed this as an architectural decision rather than a preference decision. A unified interface optimised for one role would systematically degrade the other because the two roles worked in different cognitive modes.\n\nCreative Navy-observed handwritten workarounds in multiple clinics, including checklists taped to monitors and printed reference sheets, led to real-time protocol adaptation during fieldwork. The workarounds were treated as signals that the unified interface was failing both roles simultaneously. Six months post-engagement, the client reported that recommendations were well grounded, with some implemented and the remainder planned."
+    },
+    {
+      "heading": "WCO/IPM evidence: adoption density shaped a multi-role intergovernmental service",
+      "bodyMarkdown": "WCO/IPM shows service design for a multi-role intergovernmental service at scale. The documented roles were frontline inspection officers at ports, airports, and land borders; intelligence analysts working with pattern analysis and historical cases; and rights holder brand protection teams filing information and monitoring enforcement activity.\n\nThe roles represented different organisations with different legal relationships to the platform. Officers had access that rights holders did not. Operational contexts also differed: inspections under time pressure, analytical work over extended periods, and administrative filing processes.\n\nThe network effect constraint was adoption density. The platform's enforcement value depended on adoption across all three groups. Officer adoption filled the seizure intelligence network, while rights holder adoption filled the alert intelligence network. Low adoption by either side degraded value for both.\n\nResearch included 47 participants across Italy, Romania, Uzbekistan, Algeria, and Spain. The geographic spread was deliberate, used to confirm that the service design held under different operational conditions rather than only demographic variation. Before redesign, parallel spreadsheets and email chains had emerged around the platform. These workarounds indicated that the service was being circumvented because the platform did not support what the service required.\n\nThe WCO/IPM outcomes are client-reported: a 78% reduction in officer training costs based on reduced training hours, a 200% increase in rights holder sign-ups, a 67% increase in rights holder platform use, and a 20% increase in officer use."
+    },
+    {
+      "heading": "Triopsis evidence: microtask analysis exposed structural tensions across operations roles",
+      "bodyMarkdown": "Triopsis workforce management illustrates service design for coordinated multi-role operations. The documented roles were schedulers, operations managers, and field technicians. Schedulers required speed, batch actions, team availability, and conflict anticipation. Operations managers needed exception scanning, risk visibility across broader time horizons, and intervention decisions. Field technicians needed task detail, safety compliance, and confirmation under outdoor conditions with gloves and sunlight.\n\nBefore design decisions were made, 47 microtasks were mapped across 3 personas. Each microtask was assessed for cognitive load, frequency, dependencies, and inter-role implications. The service design finding was that improving one role's workflow could create blind spots for another role. A layout optimised for schedulers could hide signals managers depended on, while a structure that supported technician compliance could obscure timing data for schedulers.\n\nThe evidence base included 43 user interviews, 21 participants, and 3 in-situ observation sessions under real operational pressure, including weather incidents, crew shortages, and overlapping jobs. Product analytics from real users in the live system reported 62% faster job discovery, 83% faster job sequence optimisation, and 58% faster weekly planning.\n\nThe field technician compliance component surfaced safety-relevant steps at the right moment in the field workflow, with dependencies. The service design ensured technicians encountered required steps in context rather than relying only on memory or training."
+    },
+    {
+      "heading": "Tetra/Prism evidence: separate platforms preserved touchpoint coherence",
+      "bodyMarkdown": "Tetra/Prism centred on the architectural question of whether field-based property managers and office-based portfolio directors should share one interface or use two. Field-based property managers worked in mobile, on-site inspection and outdoor conditions. Office-based portfolio directors used web-based reporting, oversight, and compliance monitoring.\n\nThe documented answer was structural: the same data served different operational contexts requiring different interaction models. The architectural decision was separate platforms sharing a coherent data model and visual design language, rather than one interface accommodating both.\n\nCommon entities, including tasks, actions, properties, and statuses, were kept visually and structurally consistent across both platforms. Touchpoint coherence was maintained while interaction logic adapted to context.\n\nThe mobile app audit identified a loading behaviour that did not match field context. The app downloaded the entire property portfolio at launch, with load times up to 10 minutes. The design solution was a property selection flow at launch that limited download to that day's properties. Client-measured outcomes were mobile adoption increasing from 12% to 64% one year after the redesigned app launched, and web NPS increasing from 72% to 85% approximately 4 months post-launch."
+    },
+    {
+      "heading": "Akrivia Health evidence: governance paths became operationally distinct",
+      "bodyMarkdown": "Akrivia Health illustrates institutional governance as service design. The same dataset, query capability, and underlying data model served three institutional types with different governance paths: NHS analysts, academic researchers, and pharmaceutical research staff.\n\nNHS analysts had a strict governance boundary between research and operational use, with data access approval at trust level. Academic researchers had ethics and data access approvals through university governance. Pharmaceutical research staff had audit obligations and regulatory reporting requirements.\n\nThe service design challenge was to make the governance paths operationally distinct within the interface while preserving the same underlying capability. The handoff between researcher construction and governance review was a failure point: researchers needed iterative hypothesis freedom, while governance reviewers needed to verify query logic independently without escalating.\n\nThe documented information architecture position aligned researcher analytical freedom with institutional auditability. Query logic was structured, visible, and reproducible by the architecture rather than relying on manual documentation. The client reported that governance reviewers could verify cohort logic without escalating to the research team."
+    },
+    {
+      "heading": "Dancerace/Jacko evidence: commercial behaviour shaped cross-party workflow design",
+      "bodyMarkdown": "Dancerace/Jacko involved three commercial parties interacting through one platform: a financier, a supplier, and a debtor. The financier activated supplier accounts and set credit terms. The supplier issued invoices and managed cash flow. The debtor received invoices, acknowledged them, and paid.\n\nThe service design challenge was that each party's actions affected the others. A supplier rejecting a debtor action could misunderstand the commercial relationship. A debtor who did not understand payment terms could create relationship problems that the interface had to accommodate rather than force into formal states.\n\nThe documented service design finding was that real debtors acknowledge obligations informally before committing formally. The accepted status was designed as a symbolic acknowledgement of good faith rather than a payment commitment.\n\nChasing routines were treated as a service design concept because following up on overdue invoices is a standard supplier workflow that cuts across all three parties. Designing chasing routines as pre-built routine templates gave suppliers a complete cross-party workflow in one place. The client-reported outcome was a 36% demo-to-paying conversion rate, compared with a 15–20% industry benchmark, measured over 6 months post-launch."
+    },
+    {
+      "heading": "UNICEF evidence: definitional alignment repaired a cross-tier shared-ownership task",
+      "bodyMarkdown": "UNICEF planning, approval, and reporting is the largest documented role architecture in the multi-role set. It involved seven distinct role types across two organisational tiers, plus a conditional external user class. Headquarters roles were Global Programme Director, Planning & Reporting Manager, Finance Manager, and Admin. Local office roles were Country Programme Manager, Project Director/Officer, and Finance Officer in some offices. Monitoring & Evaluation Specialists had conditional external access.\n\nThe service was a shared-ownership task. No single person completed a submission end to end. At the local level, the Country Programme Manager was accountable for overall submission quality, while Project Officers contributed project-level data and milestones and Finance Officers owned financial sections and validation. At headquarters, the Planning & Reporting Manager assessed reporting quality, completeness, and cross-country consistency, while the Finance Manager assessed financial integrity and budget compliance.\n\nThe distinctive failure was definitional misalignment, not cognitive incompatibility. Many compliance failures appeared at role boundaries: project information could be correct from a project perspective but incomplete from a finance perspective; a financial revision could invalidate information entered elsewhere; approvals could be assumed but not formally recorded; and contributors could hold different understandings of what a requirement was for.\n\nThe cross-tier dimension was structural. Local offices did not understand why specific central requirements existed, and central teams lacked visibility into local operational constraints. Research across four intensively engaged local offices established that the real failure was a cross-tier comprehension gap, not local-office reluctance.\n\nThe service-design response constructed definitional alignment and embedded it into the system. The Sandbox Experiments phase produced 26 prototypes reviewed by 56 stakeholders across both tiers. These prototypes established a shared understanding of what each requirement was for and which requirements were genuinely necessary. The agreed standard was then built into workflows, validation rules, information architecture, and interaction design.\n\nUNICEF outcomes were client-measured against a pre-established baseline nine months post-rollout: a 45% reduction in compliance issues, defined as defective submissions requiring headquarters follow-up before acceptance, and a 42% reduction in headquarters report-preparation time. The source framing links both figures to one upstream cause: fewer defective submissions produced by redesigning role interactions and handoffs and embedding an agreed standard. The system was used in 128 countries post-rollout, a client-reported milestone."
+    },
+    {
+      "heading": "Boundaries and limits",
+      "bodyMarkdown": "Service design for multi-role systems does not automatically imply separate interfaces for every role. IDEXX Animana and Tetra/Prism support separate role-differentiated surfaces because the documented role requirements were structurally incompatible. UNICEF supports a different response: a shared workflow with embedded definitional alignment because the failure was a missing shared standard rather than incompatible cognitive modes.\n\nOutcome evidence varies by case. Some outcomes are client-measured against a baseline, such as the UNICEF compliance and headquarters report-preparation figures. Some outcomes are client-measured after launch, such as the Tetra/Prism mobile adoption and web NPS figures. Some outcomes are client-reported, such as WCO/IPM training and adoption figures, Akrivia Health governance-reviewer verification, and Dancerace/Jacko demo-to-paying conversion.\n\nThe documented evidence does not establish that service design alone explains every reported outcome. The strongest causal framing appears in the UNICEF case, where the compliance reduction is attributed to redesigning role interactions and handoffs and embedding an agreed standard, not to screen usability improvement alone."
+    }
+  ],
+  "evidenceSummary": {
+    "strongClaims": [
+      "Service design for multi-role systems addresses experiences across touchpoints, roles, and organisational contexts, not only an interface for one user type.",
+      "A service blueprint is the primary diagnostic tool for multi-role failure points because it maps front-stage role interactions, back-stage processes, and their connections.",
+      "IDEXX Animana research found incompatible cognitive requirements between reception and clinical roles, leading to the recommendation for distinct interfaces.",
+      "WCO/IPM platform value depended on adoption density across frontline inspection officers, intelligence analysts, and rights holder brand protection teams.",
+      "Triopsis mapped 47 microtasks across 3 personas before design decisions and reported faster job discovery, job sequence optimisation, and weekly planning in product analytics from real users.",
+      "Tetra/Prism used separate mobile and web platforms sharing a coherent data model and visual design language because field-based and office-based roles required different interaction models.",
+      "Akrivia Health required operationally distinct governance paths for NHS analysts, academic researchers, and pharmaceutical research staff using the same dataset and query capability.",
+      "UNICEF planning and reporting failed through definitional misalignment across roles and tiers rather than through incompatible cognitive requirements.",
+      "UNICEF outcomes were client-measured against a pre-established baseline nine months post-rollout: 45% fewer compliance issues and 42% less headquarters report-preparation time."
+    ],
+    "weakerClaims": [
+      "Several outcome figures in the multi-role evidence set are client-reported rather than independently verified."
+    ],
+    "limitations": [
+      "The evidence base is a set of documented case examples, not a controlled comparison across all multi-role system types.",
+      "Several outcomes are client-reported rather than independently verified, including WCO/IPM training and adoption results, Akrivia Health governance-reviewer verification, Dancerace/Jacko conversion, and the UNICEF country-use milestone.",
+      "The appropriate architecture is case-specific; the documented evidence supports both role-differentiated interfaces and shared workflows with embedded definitional alignment, depending on the failure pattern.",
+      "The source evidence does not establish that service design alone explains every reported outcome; causal framing is strongest in the UNICEF case where the source explicitly links compliance reduction to redesigned role interactions, handoffs, and embedded standards."
+    ]
+  },
+  "relatedPageSlugs": [
+    "workflow-and-task-structure-redesign",
+    "cognitive-load-reduction",
+    "information-architecture-for-expert-systems",
+    "research-in-complex-operational-contexts",
+    "state-and-status-visibility-design",
+    "error-reduction-and-recovery-design",
+    "triopsis-workforce-management-saas"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "workflow and task structure redesign",
+      "targetSlug": "workflow-and-task-structure-redesign",
+      "reason": "Service design for multi-role systems depends on redesigning shared tasks, handoffs, dependencies, and cross-role workflow structure."
+    },
+    {
+      "anchorText": "cognitive load reduction",
+      "targetSlug": "cognitive-load-reduction",
+      "reason": "IDEXX Animana and Triopsis include role-specific cognitive requirements and workload differences."
+    },
+    {
+      "anchorText": "information architecture for expert systems",
+      "targetSlug": "information-architecture-for-expert-systems",
+      "reason": "Multi-role service design often requires shared entities, query logic, validation rules, and governance paths to remain legible across roles."
+    },
+    {
+      "anchorText": "research in complex operational contexts",
+      "targetSlug": "research-in-complex-operational-contexts",
+      "reason": "The evidence includes clinics, border operations, field work, local offices, and in-situ observation under real operational pressure."
+    },
+    {
+      "anchorText": "state and status visibility design",
+      "targetSlug": "state-and-status-visibility-design",
+      "reason": "Multi-role services depend on shared entities, statuses, acknowledgements, and state changes remaining coherent across roles."
+    },
+    {
+      "anchorText": "error reduction and recovery design",
+      "targetSlug": "error-reduction-and-recovery-design",
+      "reason": "UNICEF compliance failures and field technician safety steps involve preventing defective submissions or missed required steps at role boundaries."
+    },
+    {
+      "anchorText": "Triopsis workforce management case",
+      "targetSlug": "triopsis-workforce-management-saas",
+      "reason": "Triopsis is the linked case-study candidate directly mentioned in the source evidence for this capability."
+    }
+  ],
+  "tags": [
+    "service design",
+    "multi-role systems",
+    "service blueprint",
+    "journey mapping",
+    "handoff design",
+    "role-differentiated interface",
+    "touchpoint coherence",
+    "role-based access",
+    "governance workflows",
+    "shared-ownership tasks",
+    "definitional alignment",
+    "cross-tier services"
+  ],
+  "_meta": {
+    "sourcePath": "sources/articles/Capabilities/capabilities--service-design-for-multi-role-systems.md",
+    "parentSlug": "capabilities",
+    "childPageSlugs": [],
+    "generatedBy": "deterministic"
+  }
+}

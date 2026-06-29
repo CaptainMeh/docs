@@ -1,0 +1,137 @@
+{
+  "slug": "critical-actions-appear-at-the-wrong-time",
+  "title": "Critical Actions Appear At The Wrong Time",
+  "pageType": "failure",
+  "category": "failures",
+  "section": "Workflow Failures",
+  "summary": "This failure describes workflows where the system surfaces an action when internal system conditions are met rather than when the user's operational context makes the action most useful. It appears as reactive problem surfacing after commitment, or as action timing that conflicts with the user's cognitive readiness.",
+  "keyFacts": [
+    "The failure is not that an action is absent; the action is reachable or visible, but appears at the wrong moment in the workflow.",
+    "The failure occurs when workflow timing is built around system logic rather than operational logic.",
+    "One form is reactive surfacing, where the system surfaces an action after a problem has already occurred rather than before it could be prevented.",
+    "A second form is timing misaligned with cognitive readiness, where the action appears before its context is meaningful or during a sequence that should not be interrupted.",
+    "In the Triopsis workforce management example, three in-situ observation sessions documented that reactive conflict discovery became most costly during peak-load periods with weather incidents, equipment failures, and crew shortages.",
+    "Triopsis product analytics in the live system recorded 62% faster job discovery, 83% faster job sequence optimisation, and 58% faster weekly planning.",
+    "In the Swiss petrol station POS example, Sandbox Experiments produced a 532-transaction corpus from 40 hours of field observation across 7 stations and 36 cashiers.",
+    "The petrol station POS architecture evaluation compared 16 alternative architectures against the transaction corpus and used 29 structured evaluation sessions to confirm performance across high-cost transaction types."
+  ],
+  "bodySections": [
+    {
+      "heading": "Summary",
+      "bodyMarkdown": "Creative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nCritical actions appear at the wrong time when a workflow presents a correct action at a moment that makes the action less useful, harder to take, or more costly to recover from. The failure is not that the action is missing. The action is present, reachable, and potentially visible, but the workflow places it at the wrong point relative to the user's operational task.\n\nThis timing failure occurs when the system surfaces actions according to internal system conditions: when a record exists, when a calculation is complete, or when a state transition has occurred. Operational usefulness may require a different timing point: before commitment, at a natural decision point, or after enough context exists for the user to make the decision effectively."
+    },
+    {
+      "heading": "Failure pattern: action presence does not equal operational usefulness",
+      "bodyMarkdown": "A workflow can contain the correct action and still fail because the action appears too late, too early, or during the wrong cognitive state. A scheduler who sees a job conflict only after assigning affected technicians must undo and redo work that could have been avoided. A cashier who must complete a complex transaction sub-flow during a time-critical sequence faces a different demand than a cashier who sees the same sub-flow at a natural decision point.\n\nThe structural problem is the mismatch between system timing and operational timing. System timing follows internal state availability. Operational timing follows the point at which a user can act with the least reversal, least interruption, and greatest decision usefulness.\n\nThis makes the failure different from ordinary visibility problems. If a status is present but visually buried, improving hierarchy may make it visible. If an action is structurally mistimed, the workflow sequence must be changed so the opportunity to act appears at the operationally useful moment."
+    },
+    {
+      "heading": "Reactive surfacing: the action appears after the problem has already occurred",
+      "bodyMarkdown": "Reactive surfacing occurs when a system presents an action only after a problem has become a detectable state. The user encounters the action under worse conditions than would have existed if the action had appeared earlier: more constrained, more time-pressured, and more consequential to reverse.\n\nThis form is common when the system can detect the visible expression of a problem only after a commitment has been made. The system may detect a conflict after an assignment, a configuration problem after submission, or a commitment problem after entry. The detection point is not necessarily the optimal intervention point.\n\nPredictive surfacing addresses this form by showing the action opportunity before the user's current trajectory produces the problem. Predictive surfacing requires the interface to model the workflow, the task, and the conditions that will create the problem. This is an information-architecture and workflow-model issue, not only a visible-information issue."
+    },
+    {
+      "heading": "Cognitive readiness mismatch: the action appears when the user cannot use it effectively",
+      "bodyMarkdown": "Action timing can also fail when the user is not cognitively ready to take the action. The action may be correct in principle, but it appears before the context that makes it meaningful has been established, during a sequence that the user cannot easily resume, or between two operationally connected actions that should remain together.\n\nThis form appears when workflow timing follows the order in which internal states are resolved rather than the order in which users can address decisions. A configuration requirement may appear before the user has enough context to know what is being configured. A confirmation prompt may interrupt a time-pressured transaction sequence. A secondary task may appear between two steps of a primary task that should not be separated.\n\nThe action is not wrong in these cases. The failure is that the workflow asks for the action at the wrong moment in the user's cognitive sequence."
+    },
+    {
+      "heading": "Triopsis workforce management: conflict discovery after commitment",
+      "bodyMarkdown": "In the Triopsis workforce management example, schedulers managed thousands of weekly interventions for utilities and road maintenance operations. The scheduling workflow required decisions about technicians, vehicles, location routing, equipment availability, and crew constraints.\n\nConflict conditions such as overlapping assignments, unavailable equipment, and routing impossibilities were discovered at the point where the system detected them, rather than at the point where the scheduler's decisions could produce them. Schedulers therefore encountered conflicts after making the assignment decisions that created them.\n\nThe operational cost was the undo-and-redo work imposed by late discovery. Once the system surfaced the conflict state, the scheduler had to unwind the decisions that had created the conflict and remake them with the added constraint in mind. This was more demanding than making the original decision with the conflict information available before commitment.\n\nThree in-situ observation sessions documented that the timing failure was most costly during peak-load periods with simultaneous weather incidents, equipment failures, and crew shortages. Under normal load, reactive conflict discovery was manageable. Under peak load, the same reactive discovery competed with concurrent exceptional conditions that were already demanding attention.\n\nThe design response shifted conflict surfacing from reactive to predictive. Predictive conflict indicators showed scheduling problems before the assignment decisions that would create them had been committed. Weather incidents, partial completions, and equipment conflicts were surfaced as decision inputs rather than as states to respond to after commitment.\n\nProductivity was measured in the live product through product analytics from real users: 62% faster job discovery, 83% faster job sequence optimisation, and 58% faster weekly planning. The 83% faster job sequence optimisation result is the outcome most directly connected to conflict-timing resolution, because sequence decisions could be made with constraint information before commitment rather than retrospectively revised after discovered conflicts."
+    },
+    {
+      "heading": "Swiss petrol station POS: transaction sub-flows during peak throughput",
+      "bodyMarkdown": "The Swiss petrol station POS example documented action timing in a high-frequency transaction context. The POS system supported simple fuel-only payments and complex combinations involving loyalty programmes, fleet card processing, currency conversion, and multi-item retail alongside fuel.\n\nAt peak transaction rate, the documented throughput was 84 transactions per hour. A complex transaction that extended beyond the expected time budget imposed operational cost on both cashier and customer.\n\nSandbox Experiments produced a 532-transaction corpus from 40 hours of field observation across 7 stations and 36 cashiers. The corpus was coded by transaction type, complexity, and required sub-flows. It established which transaction types were common, which sub-flows appeared in combination, and which sequences produced timing failures in the existing POS.\n\nThe timing failures concentrated around specific transaction types. Some required sub-flows appeared at interrupt points that forced attention-switching mid-sequence. Some confirmations appeared before the transaction context that would make their meaning clear. Some optional steps appeared in positions where skipping them was cognitively expensive even when skipping was operationally correct.\n\nThe design response evaluated 16 alternative POS architectures against the transaction corpus. The evaluation asked which architecture produced the fewest timing failures across the actual distribution of observed transactions, rather than which architecture handled individual transactions correctly in isolation.\n\nTwenty-nine structured evaluation sessions confirmed the selected architecture's performance across the transaction types that had produced the highest timing costs in the existing system. The field observations, transaction rate, corpus, and timing failures were directly measured. The architecture evaluation was a structured comparison under realistic conditions. Downstream cashier experience outcomes are client-reported: cashiers reported smoother transaction flows for complex cases."
+    },
+    {
+      "heading": "How Creative Navy's Critical Systems Design method addresses action timing failures",
+      "bodyMarkdown": "Creative Navy's Critical Systems Design method designs software whose interfaces, workflows, and operating logic carry real operational consequences, working through five phases — Sandbox Experiments, Concept Convergence, Iterative System Building, Organizational Integration, and Implementation Partnership — to take each system from initial exploration to independent operation by the client's own team.\n\nCreative Navy's Critical Systems Design method addresses action timing failures by establishing what operational timing requires and by evaluating workflow timing against operational conditions rather than idealised interaction sequences.\n\nIn the Triopsis example, the relevant research practice was in-situ observation during peak-load conditions. Observing only normal operating conditions would have shown reactive conflict discovery as manageable. Observing concurrent-exception conditions showed that reactive conflict discovery became intolerable when the scheduler's capacity to absorb additional work was already consumed.\n\nIn the Swiss petrol station POS example, the 532-transaction corpus made timing evaluation against operational reality possible. Without a real transaction corpus and real distribution of transaction types, architecture evaluation would have used a simplified model of the transaction set and would have missed combination transactions, peak-load sequences, and sub-flow timings that produced failures in practice."
+    },
+    {
+      "heading": "Evidence basis",
+      "bodyMarkdown": "The Triopsis evidence includes three in-situ observation sessions that documented when reactive conflict discovery became operationally costly. The productivity figures were measured in the live product through product analytics from real users: 62% faster job discovery, 83% faster job sequence optimisation, and 58% faster weekly planning.\n\nThe Swiss petrol station POS evidence includes a 532-transaction corpus from 40 hours of field observation across 7 stations and 36 cashiers. It also includes evaluation of 16 alternative POS architectures against that corpus and 29 structured evaluation sessions. Cashier reports of smoother transaction flows for complex cases are client-reported and are not presented as independently measured outcomes."
+    },
+    {
+      "heading": "Boundaries and limits",
+      "bodyMarkdown": "This failure concerns the timing of action opportunities within a workflow. It does not describe actions that are absent, actions that are hidden only because of weak visual hierarchy, or workflows whose overall task model is fundamentally wrong.\n\nA buried status can often be addressed by changing visual prominence. A mistimed action usually requires restructuring the workflow sequence so the action appears at the point where taking it is operationally effective.\n\nA system that fights the user's task represents a broader mismatch between the system's task model and the user's task model. Critical actions appearing at the wrong time can occur inside a workflow that otherwise represents the correct task model but places specific actions at the wrong point in the sequence.\n\nThe evidence examples are context-specific. The Triopsis case concerns scheduling under utility and road maintenance constraints. The Swiss petrol station POS case concerns high-frequency transaction flows. The general failure pattern is defined from those operational examples, but the timing point for any action must be evaluated in the specific workflow where the action is taken."
+    }
+  ],
+  "evidenceSummary": {
+    "strongClaims": [
+      "Critical actions appearing at the wrong time is a workflow failure in which the action is present but appears at a moment that is operationally suboptimal.",
+      "Reactive surfacing presents an action after a problem has already occurred, rather than before the problem could still be prevented.",
+      "Action timing can fail when the user's cognitive readiness does not support taking the action effectively.",
+      "In the Triopsis workforce management example, conflict discovery after assignment forced schedulers to unwind and remake decisions under greater cognitive demand.",
+      "Three in-situ observation sessions documented that reactive conflict discovery was most costly during peak-load periods with simultaneous weather incidents, equipment failures, and crew shortages.",
+      "Triopsis product analytics in the live product recorded 62% faster job discovery, 83% faster job sequence optimisation, and 58% faster weekly planning.",
+      "In the Swiss petrol station POS example, Sandbox Experiments produced a 532-transaction corpus from 40 hours of field observation across 7 stations and 36 cashiers.",
+      "The Swiss petrol station POS design response evaluated 16 alternative architectures against the transaction corpus and used 29 structured evaluation sessions to confirm performance across high-cost transaction types."
+    ],
+    "weakerClaims": [
+      "Cashiers reported smoother transaction flows for complex cases after the Swiss petrol station POS architecture evaluation, but this downstream experience evidence is client-reported."
+    ],
+    "limitations": [
+      "The page addresses timing of action opportunities, not missing actions or merely buried information.",
+      "The page is narrower than a full task-model mismatch: the workflow may be structurally correct while specific actions are mistimed.",
+      "The Triopsis outcome figures are from live product analytics, but the source states that the 83% faster job sequence optimisation result is the metric most directly connected to conflict-timing resolution.",
+      "Downstream cashier experience outcomes in the Swiss petrol station POS example are client-reported.",
+      "The evidence examples are drawn from specific scheduling and POS contexts; action timing must be evaluated against the operational workflow where the action is taken."
+    ]
+  },
+  "relatedPageSlugs": [
+    "important-status-information-is-buried",
+    "the-system-fights-the-user-task",
+    "triopsis-workforce-management-saas",
+    "the-interface-gets-harder-when-pressure-rises",
+    "users-cannot-reorient-quickly-after-interruption",
+    "errors-are-hard-to-correct",
+    "tasks-span-too-many-screens-or-steps"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "Important Status Information Is Buried",
+      "targetSlug": "important-status-information-is-buried",
+      "reason": "The source explicitly distinguishes this failure from state visibility failures where important status information is buried."
+    },
+    {
+      "anchorText": "The System Fights The User Task",
+      "targetSlug": "the-system-fights-the-user-task",
+      "reason": "The source explicitly distinguishes this failure from the adjacent workflow failure where the system fights the user's task."
+    },
+    {
+      "anchorText": "Triopsis workforce management",
+      "targetSlug": "triopsis-workforce-management-saas",
+      "reason": "The source uses Triopsis as the grounded scheduling example for predictive conflict surfacing and product analytics outcomes."
+    },
+    {
+      "anchorText": "The Interface Gets Harder When Pressure Rises",
+      "targetSlug": "the-interface-gets-harder-when-pressure-rises",
+      "reason": "The Triopsis example describes timing failures becoming intolerable under peak-load conditions."
+    },
+    {
+      "anchorText": "Users Cannot Reorient Quickly After Interruption",
+      "targetSlug": "users-cannot-reorient-quickly-after-interruption",
+      "reason": "The failure includes action timing that interrupts cognitive flow and makes resumption difficult."
+    },
+    {
+      "anchorText": "Errors Are Hard To Correct",
+      "targetSlug": "errors-are-hard-to-correct",
+      "reason": "The Triopsis example describes late conflict discovery requiring schedulers to reverse and remake decisions."
+    }
+  ],
+  "tags": [
+    "workflow timing",
+    "action timing",
+    "predictive surfacing",
+    "reactive surfacing",
+    "cognitive readiness",
+    "operational logic",
+    "Critical Systems Design",
+    "Sandbox Experiments",
+    "transaction corpus",
+    "product analytics"
+  ],
+  "_meta": {
+    "sourcePath": "sources/articles/Failures/failures--workflow--critical-actions-appear-at-the-wrong-time.md",
+    "parentSlug": "workflow-failures",
+    "childPageSlugs": [],
+    "generatedBy": "deterministic"
+  }
+}

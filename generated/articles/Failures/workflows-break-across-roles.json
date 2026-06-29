@@ -1,0 +1,151 @@
+{
+  "_type": "documentationPage",
+  "sourceFile": "Articles/Failures/failures--workflow--workflows-break-across-roles.md",
+  "sourcePath": "sources/articles/Failures/failures--workflow--workflows-break-across-roles.md",
+  "sanityDocumentIdCandidate": "documentationPage.workflows-break-across-roles",
+  "title": "Workflows Break Across Roles",
+  "slug": {
+    "_type": "slug",
+    "current": "workflows-break-across-roles"
+  },
+  "pageType": "failure",
+  "category": "failures",
+  "parentSlug": "workflow-failures",
+  "childPageSlugs": [],
+  "excerpt": "Workflows break across roles when one role's output becomes another role's input without the information, task state, or shared definition the receiving role needs. The failure is most costly where role boundaries support compliance, auditability, review, or operational execution.",
+  "metaTitle": "Workflows Break Across Roles",
+  "metaDescription": "A workflow failure where task context, state, or shared meaning breaks when work passes between roles.",
+  "summary": "This failure occurs in multi-role software when each role's interface is specified separately but the workflow crossing between roles is not. It appears as lost handoff context, single-interface mismatch across role groups, or incompatible mental models about what a submitted artefact must satisfy.",
+  "definition": "Workflows break across roles when a system fails to carry context, information, task state, or shared meaning cleanly from one role's interface to another's at the point where one role's completed work becomes another role's starting point.",
+  "keyFacts": [
+    "Multi-role software is often specified role by role, leaving the workflow between roles unspecified.",
+    "The failure occurs at the boundary where one role's output becomes another role's input.",
+    "The source distinguishes this failure from excessive screen-crossing within one role's workflow.",
+    "The source distinguishes this failure from general attention overhead caused by role-mode mismatch.",
+    "Three forms are described: handoffs that lose context, single interfaces with incompatible role requirements, and incompatible mental models across a handoff.",
+    "Akrivia Health is used as an example of researcher-to-governance-reviewer handoff design in clinical research cohort construction.",
+    "IDEXX Animana and Pixelart Fugo are used as examples of single-interface incompatibility across role groups.",
+    "Triopsis is used as an example involving schedulers, operations managers, and field technicians in workforce management.",
+    "UNICEF is used as an example of incompatible mental models across roles and organisational tiers.",
+    "The UNICEF outcome is described as a 45% reduction in compliance issues, client-measured against a pre-established baseline nine months after rollout."
+  ],
+  "tags": [
+    "workflow failure",
+    "role boundaries",
+    "multi-role software",
+    "handoff context",
+    "mental models",
+    "governance review",
+    "workflow handoff",
+    "Critical Systems Design"
+  ],
+  "bodyMarkdown": "## Summary\n\nCreative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nWorkflows break across roles when multi-role software is specified role by role, but the workflow that connects the roles is not specified. The analyst view may be coherent for analysts, the reviewer interface may be coherent for reviewers, and the scheduler screen may be coherent for schedulers, while the handoff between those roles remains undefined.\n\nThe failure appears at the point where one role's output becomes another role's input. A researcher's assembled query becomes a governance reviewer's verification task. A scheduler's job assignment becomes a field technician's instruction. A project officer's submission becomes a finance officer's validation input. If the receiving role does not get the information in a form they can act on, the workflow has failed at the role boundary.\n\nIn high-consequence and regulated contexts, this is not only a usability issue. When governance review, audit trails, approval, or operational execution depend on the handoff, a broken role boundary becomes a structural failure in the oversight process the system is supposed to support.\n\n## Failure pattern: role-by-role specification leaves the crossing unspecified\n\nThe central failure pattern is that each role's interface is designed around that role's own task, while the inter-role transition is treated as incidental. The researcher can build, the reviewer can review, the scheduler can assign, and the technician can execute, but the system may not carry the relevant context from one task to the next.\n\nThis failure is difficult to detect from inside a single role's perspective. Each role group may be able to complete its own local task. The defect becomes visible only when the completed task has to be consumed, checked, corrected, approved, or acted on by another role.\n\nThe source distinguishes this failure from tasks that span too many screens or steps. Excessive screen-crossing is a workflow failure inside one user's workflow. Workflows breaking across roles is a failure at the boundary where one role's completed work becomes another role's starting point.\n\nThe source also distinguishes this failure from the broader cognitive failure where too much attention is required for routine use. Role-mode mismatch can create attention overhead for each role. This page concerns the workflow consequence: the crossing between role groups structurally fails.\n\n## Handoffs lose context when reasoning does not survive the role boundary\n\nThe first form of this failure occurs when a task crosses a role boundary but the context that shaped the task does not cross in interpretable form. The producing role may understand why a condition, field, or decision was added because they were present during the work. The receiving role sees the result without seeing the reasoning.\n\nIn the Akrivia Health clinical research platform, cohort construction required researchers to assemble patient populations using nested logical inclusion and exclusion criteria. Governance reviewers at NHS trusts, academic institutions, and pharmaceutical research organisations needed to verify that the assembled query matched the approved study protocol, even though they had not constructed the cohort.\n\nThis is a role-boundary workflow requirement because building and verifying are different cognitive operations. The researcher needs flexibility to add conditions, test against the dataset, refine logic, and iterate toward the final cohort definition. The governance reviewer needs the completed query structure to be readable enough to verify independently.\n\nGeneric healthcare analytics tools had not resolved this requirement as described. Tools optimised for analyst flexibility expressed query logic in technical representations that governance reviewers could not follow without technical training. Tools optimised for governance auditability imposed rigid step-by-step procedures that prevented iterative clinical research refinement.\n\nCreative Navy's Critical Systems Design method addressed the handoff by modelling the governance reviewer's verification task separately from the researcher's construction task. The resulting query builder preserved the researcher's construction flexibility while maintaining the reasoning structure in independently readable form. Akrivia client-reported that governance reviewers can verify cohort construction without escalating to the research team; this is client-reported and not independently measured in the source.\n\n## Single interfaces fail when role groups have incompatible cognitive requirements\n\nThe second form occurs when multiple roles with different cognitive requirements, task models, and error profiles share a single interface that is calibrated for one role and imposes the wrong overhead on the others. This is not limited to a single crossing point; it affects each role whenever the interface logic reflects a different role's requirements.\n\nAt IDEXX Animana, field research across 35 clinics in three countries established a role split between reception staff and clinical staff. Reception staff worked in ambient multitasking under time pressure and needed breadth, speed, and immediate access to high-frequency actions. Clinical staff, including vets and nurses, worked in focused, sequential case attention and needed depth, completeness, and full case history.\n\nThe diagnostic signal at Animana was role-specific workaround behaviour. Checklists taped to monitors appeared near reception terminals, not clinical workstations. Printed reference sheets near terminals supported reception-specific workflows, not clinical workflows. The source treats this as evidence of role-specific interface failure rather than a general usability problem.\n\nCreative Navy's design recommendation in the Animana case was architectural: distinct UI design for reception and clinical roles. The source states that feature adjustments, option reordering, or progressive disclosure within a shared interface cannot resolve role-mode mismatch when the incompatibility is at the cognitive-mode layer.\n\nAt Pixelart Fugo, the workflow broke between content producers and organisations managing screen deployments. Media agencies needed to schedule content across 20 or 40 locations simultaneously, while the platform had been built around a single-location schedule model. The redesign replaced a wizard organised around the internal playlist object model with an overview structure organised around what content plays, where it plays, and when it plays. NPS moved from 57% to 89% following the redesign, client-measured before and after.\n\n## Incompatible mental models make the same submission mean different things\n\nThe third form occurs when information crosses the boundary intact, and the interface is not necessarily mismatched to either role, but the roles interpret the same requirement, field, or standard differently. The defect is not transmission. The defect is the absence of a shared definition of what the submitted artefact must satisfy.\n\nIn this form, a submission can be complete and correct from the producing role's frame of reference and defective from the receiving role's frame of reference. Neither role has necessarily operated the interface incorrectly. Each role may be applying a locally coherent interpretation of a requirement that was never reconciled across the boundary.\n\nThis differs from context loss. Handoff context-loss means the reasoning exists on one side and does not cross. Mental-model mismatch means the information crosses, but the roles disagree about what correct means. Fixing the first form means carrying the reasoning across. Fixing the third form means establishing a shared standard before embedding that standard into the workflow.\n\nThe diagnostic signal is a high rate of corrected, clarified, or resubmitted work despite competent users. Submissions bounce back because the receiving role applies a different definition of completeness, quality, or compliance than the producing role applied.\n\n## UNICEF example: role and tier boundaries created incompatible reporting standards\n\nThe UNICEF internal planning, approval, and reporting tool is described as the clearest portfolio instance of incompatible mental models across a role boundary. The tool was operated by seven role types across two organisational tiers, plus a conditional external user class. The workflow was structured around shared ownership rather than a single person completing a submission end to end.\n\nAt the local level, a Country Programme Manager was accountable for overall submission quality. Project Directors or Project Officers contributed project-level data and milestones. Where present, Finance Officers owned financial sections and validation. At the central tier, a Planning & Reporting Manager assessed reporting quality, completeness, and cross-country consistency, while a Finance Manager assessed financial integrity and budget compliance.\n\nResearch established that many compliance failures did not originate from users being unable to operate the interface. Information could be technically correct from a project perspective but incomplete from a finance perspective. A financial revision could invalidate information entered elsewhere. Approvals could be assumed to have happened without being formally recorded. Contributors held different interpretations of what a reporting requirement was for.\n\nThe boundary was also a tier boundary. Local offices did not understand why specific central requirements existed, while central teams lacked visibility into local practical constraints. By presenting requirements without their purpose, the interface reproduced the mental-model gap.\n\nCreative Navy's Critical Systems Design method addressed this form upstream of interface design. In Sandbox Experiments, 26 prototypes were reviewed by 56 stakeholders across both tiers. The prototypes were used as instruments for establishing shared understanding of what each requirement was for and which requirements were necessary. Once standards were agreed, they were embedded through workflows, validation rules, information architecture, and interaction design.\n\nThe UNICEF outcome is a 45% reduction in compliance issues, client-measured against a pre-established baseline nine months after rollout. A parallel 42% reduction in headquarters report-preparation time is also client-measured. The source frames these outcomes as resulting from redesigned role interactions and workflow handoffs, not from screen-level usability alone.\n\n## Triopsis example: schedulers, operations managers, and field technicians needed different handoff information\n\nTriopsis served schedulers, operations managers, and field technicians in a workforce management platform. The scheduling workflow connected all three roles: schedulers assigned jobs, operations managers monitored the resulting schedule and managed exceptions, and field technicians executed assigned work.\n\nThe breakdown was not limited to how each role used the system in isolation. Three in-situ observation sessions established where workflow crossed role boundaries and what information was or was not carried across those crossings.\n\nSchedulers needed to know which job sequences could be optimised and which conflicts needed resolution before they became execution failures. Operations managers needed to monitor exceptions across the full schedule without scanning routine items at the same attention level as exceptional items. Field technicians needed clear job instructions without navigating a system designed for planning rather than execution.\n\nCreative Navy's design work addressed the handoff by surfacing predictive conflict indicators where schedulers could still resolve scheduling problems, organising operations management around exceptions first, and providing clear job-level instructions for field technicians. The reported productivity figures are from product analytics in the live product with real users: 62% faster job discovery, 83% faster job sequence optimisation, and 58% faster weekly planning.\n\n## How Creative Navy's Critical Systems Design method addresses role-boundary failures\n\nCreative Navy's Critical Systems Design method addresses role-boundary failures by modelling each role's cognitive requirements separately before designing their interaction. The relevant design task is not to average the roles into one generic user, but to understand what each role needs at the moment work crosses the boundary.\n\nIn Sandbox Experiments, using multiple role groups against each other reveals where differences between groups indicate design problems rather than user preferences. In the Akrivia engagement, research across NHS analysts, academic researchers, and pharmaceutical research staff showed where governance requirements differed institutionally. In the IDEXX engagement, separate research with reception staff and clinical staff showed that workarounds were role-specific. In the UNICEF engagement, research across organisational tiers showed that the client had misdiagnosed a mental-model mismatch as local-office reluctance.\n\nIn Concept Convergence, Creative Navy's Critical Systems Design method applies those role differences to system architecture. The Akrivia query builder held researcher flexibility and governance readability in the same query architecture. The Pixelart Fugo overview structure held media agency multi-location scheduling and single-organisation screen management in the same operational model of content, place, and time.\n\nFor the mental-model form, Creative Navy's Critical Systems Design method begins before interface structure. Where there is no shared standard, designing the handoff first requires constructing the shared standard the handoff is meant to carry. The UNICEF prototypes served that role before the agreed standard was embedded in workflows, validation rules, information architecture, and interaction design.\n\n## Evidence basis and limits\n\nThe evidence for this failure pattern is case-based. The examples include Akrivia Health, IDEXX Animana, Pixelart Fugo, Triopsis, and UNICEF. The source provides different evidence types for different examples, and those distinctions matter.\n\nThe Akrivia outcome is client-reported: governance reviewers can verify cohort construction without escalating to the research team. The source explicitly states that this is not independently measured.\n\nThe Pixelart Fugo NPS change from 57% to 89% is client-measured before and after the redesign. The UNICEF compliance reduction of 45% and headquarters report-preparation time reduction of 42% are client-measured, with the compliance figure measured against a pre-established baseline nine months after rollout.\n\nThe Triopsis productivity figures are reported from product analytics in the live product with real users: 62% faster job discovery, 83% faster job sequence optimisation, and 58% faster weekly planning. The source treats this as product analytics evidence rather than a controlled comparative study.\n\nThese examples support the described failure mechanisms, but they do not establish that every multi-role workflow fails in the same way. The page defines a diagnostic pattern and the forms it can take, not a universal claim about all multi-role software.\n\n## Related pages\n\nThis failure is closely related to handoffs that lose context, which is one form of the broader role-boundary failure described here.\n\nIt is also adjacent to tasks spanning too many screens or steps. That related workflow failure concerns navigation overhead inside a single role's task, while this page concerns the crossing between roles.\n\nThe cognitive failure where too much attention is required for routine use is relevant when one interface serves multiple role groups with incompatible cognitive requirements. This page addresses the role-boundary workflow consequence of that mismatch.\n\nThe Triopsis workforce management SaaS case is a related case example because it documents a scheduling workflow that crossed schedulers, operations managers, and field technicians.",
+  "claims": [
+    {
+      "claim": "Workflows break across roles when one role's completed work becomes another role's starting point without the context, information, task state, or shared definition the receiving role needs.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "Defined directly in the failure description and opening situation."
+    },
+    {
+      "claim": "The failure is distinct from tasks spanning too many screens or steps because this page concerns inter-role handoff, not intra-role navigation overhead.",
+      "evidenceType": "definition",
+      "sourceStrength": "strong",
+      "notes": "The source explicitly distinguishes this page from the adjacent workflow failure page."
+    },
+    {
+      "claim": "The source identifies three forms of the failure: context-losing handoffs, single-interface incompatibility across role groups, and incompatible mental models across a handoff.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "The three forms are separately described in the source."
+    },
+    {
+      "claim": "In the Akrivia Health example, the query builder allowed researchers to retain construction flexibility while making the reasoning structure independently readable for governance reviewers.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "The outcome that governance reviewers can verify without escalating to the research team is client-reported and not independently measured."
+    },
+    {
+      "claim": "In the IDEXX Animana example, role-specific workarounds at reception terminals supported the finding that the interface failure was role-specific rather than general.",
+      "evidenceType": "Creative Navy-observed",
+      "sourceStrength": "engagement record",
+      "notes": "The source describes checklists and printed reference sheets as diagnostic signals observed in the engagement."
+    },
+    {
+      "claim": "In the Pixelart Fugo example, NPS moved from 57% to 89% following the redesign, client-measured before and after.",
+      "evidenceType": "client-measured",
+      "sourceStrength": "case evidence",
+      "notes": "The source states the before-and-after NPS figures and labels them client-measured."
+    },
+    {
+      "claim": "In the Triopsis example, product analytics from real users in the live product showed 62% faster job discovery, 83% faster job sequence optimisation, and 58% faster weekly planning.",
+      "evidenceType": "field-measured",
+      "sourceStrength": "case evidence",
+      "notes": "The source describes the evidence basis as product analytics from real users in the live system."
+    },
+    {
+      "claim": "In the UNICEF example, redesigning role interactions and workflow handoffs corresponded with a 45% reduction in compliance issues and a 42% reduction in headquarters report-preparation time, both client-measured.",
+      "evidenceType": "client-measured",
+      "sourceStrength": "case evidence",
+      "notes": "The compliance figure was measured against a pre-established baseline nine months after rollout; the source frames the result as related to redesigned role interactions and handoffs."
+    },
+    {
+      "claim": "Creative Navy's Critical Systems Design method addresses role-boundary failures by modelling each role's cognitive requirements separately before designing their interaction.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "Supported by the method section and examples from Akrivia, IDEXX, Pixelart Fugo, and UNICEF."
+    }
+  ],
+  "limitations": [
+    "The examples are case-based and do not establish a universal claim about all multi-role software.",
+    "The Akrivia governance-reviewer outcome is client-reported and not independently measured.",
+    "The Pixelart Fugo, UNICEF, and Triopsis figures use different evidence bases, so they should not be treated as directly comparable measurements.",
+    "The source does not provide independent controlled-study evidence for the overall failure taxonomy.",
+    "The page distinguishes forms of role-boundary failure, but real systems may combine more than one form."
+  ],
+  "publicationBlockers": [],
+  "questionsForReview": [
+    "None"
+  ],
+  "relatedPageSlugs": [
+    "handoffs-lose-context",
+    "tasks-span-too-many-screens-or-steps",
+    "too-much-attention-is-required-for-routine-use",
+    "triopsis-workforce-management-saas"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "handoffs that lose context",
+      "targetSlug": "handoffs-lose-context",
+      "placementHint": "Related pages section and the section on context-losing handoffs",
+      "reason": "The source identifies context-losing handoffs as one form of the broader role-boundary workflow failure."
+    },
+    {
+      "anchorText": "tasks spanning too many screens or steps",
+      "targetSlug": "tasks-span-too-many-screens-or-steps",
+      "placementHint": "Failure pattern section and Related pages section",
+      "reason": "The source explicitly distinguishes this page from intra-role navigation overhead."
+    },
+    {
+      "anchorText": "too much attention is required for routine use",
+      "targetSlug": "too-much-attention-is-required-for-routine-use",
+      "placementHint": "Failure pattern section and Related pages section",
+      "reason": "The source explicitly distinguishes this page from the cognitive failure that includes role-mode mismatch."
+    },
+    {
+      "anchorText": "Triopsis workforce management SaaS",
+      "targetSlug": "triopsis-workforce-management-saas",
+      "placementHint": "Triopsis example section and Related pages section",
+      "reason": "Triopsis is a named grounded example in the source and has an allowed case-study slug."
+    }
+  ],
+  "qualityChecks": {
+    "factsOnlyFromCurrentSource": true,
+    "documentationStyle": true,
+    "noMarketingLanguage": true,
+    "noInventedClaims": true,
+    "linksOnlyFromLinkingContext": true,
+    "internalNotesNotPublished": true,
+    "readyForSanityImport": true
+  }
+}

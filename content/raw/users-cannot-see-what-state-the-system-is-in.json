@@ -1,0 +1,142 @@
+{
+  "_type": "documentationPage",
+  "sourceFile": "Articles/Failures/failures--state-visibility--users-cannot-see-what-state-the-system-is-in.md",
+  "sourcePath": "sources/articles/Failures/failures--state-visibility--users-cannot-see-what-state-the-system-is-in.md",
+  "sanityDocumentIdCandidate": "documentationPage.users-cannot-see-what-state-the-system-is-in",
+  "title": "Users Cannot See What State The System Is In",
+  "slug": {
+    "_type": "slug",
+    "current": "users-cannot-see-what-state-the-system-is-in"
+  },
+  "pageType": "failure",
+  "category": "failures",
+  "parentSlug": "state-visibility-failures",
+  "childPageSlugs": [],
+  "excerpt": "Users cannot operate a complex system reliably when the interface does not make current system state visible. This failure includes fragmented state, unreadable readiness or activation states, and logic or configuration state that cannot be independently verified.",
+  "metaTitle": "Users Cannot See System State",
+  "metaDescription": "A state visibility failure where users must infer current system state instead of reading it directly from the interface.",
+  "summary": "This failure occurs when current system state is absent, fragmented, or not legible at the surface of the interface. It is consequential in complex systems because users must reconstruct what is happening from indirect evidence before they can act, verify, or review decisions.",
+  "definition": "A state visibility failure occurs when users cannot directly read what condition the system is currently in, including component state, active mode, reading validity, fault condition, readiness, or assembled logic state.",
+  "keyFacts": [
+    "State is described as the system's answer to what is happening right now and whether that condition is appropriate.",
+    "The failure is distinct from rapid-judgment problems, where state is present but not organised for fast decision-making.",
+    "The failure is distinct from unclear mode changes, which concern transition events rather than continuous absence of state communication.",
+    "The failure is distinct from memory-demand failures, where state may be present but inconsistently positioned or hard to maintain across view states.",
+    "Fragmented state occurs when accurate component information exists but no integrated representation of overall state is provided.",
+    "Activation, readiness, validity, and fault states fail when they require reading or interpretation instead of recognition under real task conditions.",
+    "Logic and configuration state fail when a reviewer cannot independently read and verify the assembled reasoning structure.",
+    "In the Torqeedo engagement, captains identified key energy states 50% faster with the redesigned interface in a controlled experiment with 24 subjects.",
+    "In the Akrivia engagement, the governance outcome was client-reported: reviewers could verify cohort construction without escalating to the research team.",
+    "In the Elsner engagement, sensor state handling was Creative Navy-observed and confirmed with Elsner's engineers, while navigation and temperature comprehension were tested with 12 subjects."
+  ],
+  "tags": [
+    "state visibility",
+    "system state",
+    "mode awareness",
+    "readiness state",
+    "configuration state",
+    "logic readability",
+    "fault visibility",
+    "high-consequence software",
+    "Critical Systems Design",
+    "domain learning"
+  ],
+  "bodyMarkdown": "## Summary\n\nCreative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nA state visibility failure occurs when users cannot read the current condition of a complex system directly from the interface. The missing or unreadable state may involve component condition, active mode, sensor validity, fault presence, readiness, or the logical structure of a configuration.\n\nState is not the same as data. In this failure, the interface may contain values, labels, readings, screens, or logs, but it does not answer the operational question: what is happening right now, and is it what should be happening?\n\nWhen state is not legible, users reconstruct it from indirect evidence. They navigate across views, compare readings, remember values, infer whether labels describe current or past conditions, and reason about whether a displayed value is valid. In low-consequence use, this may be a minor inefficiency. In high-consequence use, it can become a structural operating failure.\n\n## Failure pattern: current state is absent or not legible at the surface\n\nUsers cannot see what state the system is in when the interface does not provide readable state at the point of action or review. The problem is not that the user lacks training, and it is not necessarily that the system lacks the data. The problem is that current state is not available in a form that can be read directly under the conditions of use.\n\nThis failure is especially consequential where the state of one component affects the validity of acting on another. It is also consequential where an evidence trail must be independently verifiable, because the reviewer must be able to read the state of a decision or configuration without relying on the person who created it.\n\nThe failure has three structurally distinct forms: fragmented state, unreadable activation or readiness state, and logic or configuration state that cannot be independently read.\n\n## Fragmented state: component data is present but overall condition is absent\n\nFragmented state occurs when accurate and current information exists in the system but is distributed across separate screens, panels, or data views. Users who need to understand overall system state must move through component views, hold readings in memory, and build their own synthesis.\n\nThis is cognitively expensive. It is also error-prone where component states interact, because the meaning of one reading may depend on the current value of another.\n\nFragmented state often arises when an interface follows the system's internal architecture. Each component is architecturally separate, so each component's data is displayed separately. That structure may be natural to the engineer who built the system, but it does not match the operator's need for an integrated view of current conditions.\n\nThe design response is to shift from displaying components to displaying conditions. An integrated state view does not necessarily remove detail. It organises the same state information around the operational question the user needs to answer: what is the system doing right now, and is that condition acceptable?\n\n## Activation, readiness, validity, and fault states must be recognisable at a glance\n\nActivation and readiness state failures occur when a critical state is technically present but not immediately recognisable. The system may show whether it is active, ready, valid, calibrated, or in fault, but the user must read, parse, or interpret the display to confirm the condition.\n\nThis form of state invisibility is acute in environments where the user cannot devote full attention to the display. A surgeon confirming device readiness before a cutting sequence, a technician checking sensor calibration on a wall-mounted device, and an operator scanning multiple engine tiles for fault conditions each needs recognition rather than interpretation.\n\nThe design response is recognition-based state design. Spatial position, icon form, and redundant non-colour cues can each communicate critical state independently, so that state can be confirmed in a brief glance under the conditions of actual use. The aim is not simply to make the state louder or simpler. The aim is to match the form of communication to the perceptual mode available during the task.\n\n## Logic and configuration state must be independently readable\n\nLogic and configuration state failures occur when the system knows the assembled state of a complex logic structure but the interface does not make that structure readable to a reviewer. This appears in analytical systems, configuration environments, and governance-structured workflows.\n\nExamples include a simulation configuration, a patient cohort query, or a fraud detection policy. In each case, the assembled logic represents a decision structure. If that structure is visible only as code, database logic, or a list of disconnected values, a reviewer cannot independently verify what the system is doing.\n\nThe operational cost differs from immediate readiness failures. The cost is institutional: the inability to verify, audit, or reconstruct the state of a complex decision without involving the person who created it. In regulated research environments this is a governance failure. In safety-critical simulation contexts it is a reliability failure. In fraud detection and financial compliance contexts it is a traceability failure.\n\nThe design response is to make the assembled logic as visible as the result it produces. Query structures need to read as structured conditions rather than technical code. Configuration states need to show relationships between values. Policy logic needs to be followable by a governance reviewer without the analyst present.\n\n## How Creative Navy's Critical Systems Design method addresses state visibility failures\n\nCreative Navy's Critical Systems Design method addresses state visibility failures by establishing what state must be readable, who must read it, and under what operating conditions it must be read. The requirement is not treated as a generic instruction to show more information. It is defined through domain learning and held against view states during Concept Convergence and Iterative System Building.\n\nIn the Torqeedo engagement, Creative Navy used 12 sea trials over 6 months with 15 professional captains to document the moments when energy state understanding was most critical. These included harbour manoeuvres, load transitions, and night operations. Captains' scanning workarounds were treated as a diagnostic signal: where operators had developed compensation patterns, the interface had failed to represent the state they were reconstructing.\n\nIn the Akrivia engagement, Creative Navy reviewed 32 academic papers on electronic health record interface design and healthcare analytics, and conducted 14 individual interviews and 3 focus groups with 24 participants across NHS analysts, academic researchers, and pharmaceutical research staff. This made the governance requirement specific: the query logic had to be independently readable to a governance reviewer months after construction.\n\nIn the Elsner engagement, Creative Navy worked with Elsner's engineers to establish valid reading, delayed reading, contradictory values, and calibration fault as operational states requiring named representation. These states were not treated only as defensive error cases.\n\n## Torqeedo maritime HMI shows fragmented energy state across vessel components\n\nThe Torqeedo hybrid electric vessel control system managed propulsion motors, battery banks of 40–200 kWh, generators, conversion units, and auxiliary loads as a single operational system. The previous interface presented propulsion status, battery state, and generator information on separate views.\n\nEach view was technically accurate. The overall energy state of the vessel was not represented in one place. Captains had to navigate through the views and integrate the readings mentally to understand available power, component performance, and readiness for the next operational demand.\n\nCreative Navy's Critical Systems Design method used the captains' compensation patterns as evidence of missing state representation. The redesign produced a grid-based structure that unified propulsion, battery, and generator into a single display rhythm, synchronising different component update cadences so that overall energy state could be read from a single view.\n\nThe controlled experiment result was that captains identified key energy states 50% faster with the redesigned interface than with the legacy system. The evidence basis was comparative testing with 24 subjects. Glance counts during manoeuvres were reduced and were field-measured using eye tracking in real sea trials with 7 subjects.\n\n## COX Marine shows the same fragmentation pattern in multi-engine fault priority\n\nThe COX Marine multi-engine cluster display engagement encountered the same fragmentation failure in a different configuration. COX deployments range from one to six engines. Each engine has its own state, including rpm, coolant temperature, oil pressure, fuel rate, and trim, updated via NMEA 2000 at load-dependent rates.\n\nA six-engine installation can make each engine tile visible while still leaving overall fault priority to the operator. In that condition, the parts are visible but the whole is not. The operator must scan and establish priority manually.\n\nThe design response followed the same principle as the Torqeedo work. A fixed display area summarised the highest-priority fault condition, directing operator attention rather than requiring the operator to establish priority through scanning.\n\n## Akrivia Health shows query logic state as a governance visibility requirement\n\nAkrivia's platform supports clinical mental health research at NHS trusts, academic institutions, and pharmaceutical research organisations. Its central operation is cohort construction: assembling inclusion and exclusion criteria across diagnostic codes, medication sequences, rating scale scores, service use patterns, and free text markers, nested up to eight logical levels.\n\nThe state visibility requirement came from governance review. A reviewer who did not construct the cohort needed to verify that the assembled query matched the approved study protocol, without requiring the researcher to explain it. This could happen months after the cohort was built.\n\nGeneric healthcare analytics tools had not resolved this requirement in the documented comparison. Tools oriented toward analyst flexibility obscured query logic behind technical representations. Tools oriented toward governance auditability imposed rigid procedures that blocked iterative hypothesis development.\n\nCreative Navy's Critical Systems Design method used tension-driven reasoning during Concept Convergence to make researcher autonomy and institutional auditability the same interface property. The final query builder combined readability and structure from the nested logic model, temporal organisation cues from the timeline model, and fragment reuse capability. The full structure of logical conditions remained visible at all times.\n\nThe governance outcome was client-reported by Akrivia. Reviewers could verify cohort construction without escalating to the research team. Before the redesign, governance review required the researcher's direct involvement. No task-completion or verification-time data was collected during or after the engagement.\n\n## Elsner Cala Touch KNX shows sensor state visibility in an embedded controller\n\nThe Elsner Cala Touch KNX is a wall-mounted smart home and building automation controller with a 4-inch round display format, installed at 140cm and used approximately 25 times per day according to client-reported information. The device receives inputs from weather stations, CO2 sensors, humidity sensors, temperature probes, and the main heating unit.\n\nThe relevant state was not only environmental state, such as current temperature or blind position. The interface also needed to communicate sensor states: valid reading, delayed reading, contradictory reading, and calibration fault.\n\nCreative Navy's Critical Systems Design method addressed these states as normal operating conditions. Delayed sensor readings were shown calmly and without ambiguity. Contradictory sensor values were communicated explicitly rather than suppressed. Calibration faults were surfaced as a named state rather than hidden behind generic error handling.\n\nThe alert hierarchy separated heating unit alerts from minor notifications such as open window detection. Heating unit alerts were treated as primary signals in the visual hierarchy. Minor notifications were treated as visually secondary, so that maintenance-level information did not carry the same weight as a condition affecting the primary function of the system.\n\nSensor fault handling and firmware-aligned behaviour were Creative Navy-observed during the engagement and confirmed as functional with Elsner's engineers before deployment. The engagement also included a formal usability test with 12 subjects on navigation and temperature comprehension. The sensor state outcomes were not independently quantified in post-deployment user measurement.\n\n## Boundaries and limits of this failure category\n\nThis failure concerns state that is absent or not legible at the interface surface. It is different from a rapid-judgment failure, where state is present but not organised for fast decision-making. A state visibility failure requires making state present and readable; a rapid-judgment failure requires organising visible state for decision-making.\n\nThis failure is also broader than unclear mode changes. Mode-change failures concern a specific transition event: the moment when the system changes mode and the user does not recognise it. State visibility failures concern the continuous absence or unreadability of system state, including modes but not limited to modes.\n\nThis failure is related to excessive memory demand, but it has a different source. A memory-demand failure may occur when state information is present but placed inconsistently across view states. A state visibility failure occurs when state is not visible in the first place, or when it is present only in a form that requires interpretation rather than reading.\n\nThe evidence base differs across the examples. Torqeedo includes a controlled comparative experiment with 24 subjects and field-measured eye tracking in real sea trials with 7 subjects. Akrivia's governance result is client-reported and was not independently measured with task-completion or verification-time data. Elsner's sensor state handling was Creative Navy-observed and engineer-confirmed, while navigation and temperature comprehension were tested separately with 12 subjects.\n\n## Related pages\n\nThis failure is closely related to rapid judgment, mode change visibility, and memory demand. The most relevant adjacent pages are The System Does Not Support Rapid Judgment, Mode Changes Are Unclear, and The Interface Demands Too Much Memory.\n\nThe COX Marine case is relevant where fragmented state appears as multi-engine fault-priority scanning rather than vessel energy-state reconstruction.",
+  "claims": [
+    {
+      "claim": "A state visibility failure occurs when users cannot directly read the current condition of a complex system from the interface and must reconstruct it from indirect evidence.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "Supported by the page's definition of state and description of users reconstructing state through separate views, labels, and inferred validity."
+    },
+    {
+      "claim": "Fragmented state is present when component data is accurate but distributed across views with no integrated representation of overall system condition.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "Supported by the documented description of fragmented state as present in parts but absent as a whole."
+    },
+    {
+      "claim": "In the Torqeedo engagement, captains identified key energy states 50% faster with the redesigned interface than with the legacy system in a controlled experiment with 24 subjects.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "The source identifies this as a measurable result from controlled comparative testing."
+    },
+    {
+      "claim": "Glance counts during Torqeedo manoeuvres were reduced and measured using eye tracking in real sea trials with 7 subjects.",
+      "evidenceType": "field-measured",
+      "sourceStrength": "case evidence",
+      "notes": "The source distinguishes this field evidence from the controlled experiment."
+    },
+    {
+      "claim": "In the Akrivia engagement, reviewers could verify cohort construction without escalating to the research team after the redesign, according to client-reported evidence.",
+      "evidenceType": "client-reported",
+      "sourceStrength": "case evidence",
+      "notes": "The source explicitly states that this outcome was client-reported and that no task-completion or verification-time data was collected."
+    },
+    {
+      "claim": "In the Elsner engagement, delayed readings, contradictory sensor values, and calibration faults were treated as named operational states rather than suppressed or handled only as generic errors.",
+      "evidenceType": "Creative Navy-observed",
+      "sourceStrength": "engagement record",
+      "notes": "The source describes these as observed engagement outcomes confirmed with Elsner's engineers, not independently quantified post-deployment."
+    },
+    {
+      "claim": "Creative Navy's Critical Systems Design method addresses state visibility failures through domain learning and design standards applied during Concept Convergence and Iterative System Building.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "engagement record",
+      "notes": "Supported by the section describing how state visibility requirements were established and held against view states across the method."
+    }
+  ],
+  "limitations": [
+    "Akrivia's governance outcome is client-reported, not independently measured; no task-completion or verification-time data was collected during or after the engagement.",
+    "Elsner's sensor state outcomes were Creative Navy-observed and confirmed with Elsner's engineers, but not independently quantified in post-deployment user measurement.",
+    "Torqeedo's 50% faster energy-state identification result and the eye-tracking result come from different evidence conditions: controlled comparative testing and real sea trials respectively.",
+    "This page covers state that is absent or not legible at the surface; it does not cover every problem where visible information is poorly prioritised or cognitively hard to use.",
+    "The design responses described are grounded in documented engagements and should not be treated as universal templates independent of operating context."
+  ],
+  "publicationBlockers": [],
+  "questionsForReview": [
+    "None"
+  ],
+  "relatedPageSlugs": [
+    "the-system-does-not-support-rapid-judgment",
+    "mode-changes-are-unclear",
+    "the-interface-demands-too-much-memory",
+    "cox-marine"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "The System Does Not Support Rapid Judgment",
+      "targetSlug": "the-system-does-not-support-rapid-judgment",
+      "placementHint": "Related pages section, in the sentence naming adjacent rapid-judgment failures.",
+      "reason": "The source explicitly distinguishes state visibility failures from rapid-judgment failures."
+    },
+    {
+      "anchorText": "Mode Changes Are Unclear",
+      "targetSlug": "mode-changes-are-unclear",
+      "placementHint": "Related pages section, in the sentence naming adjacent mode-change failures.",
+      "reason": "The source explicitly identifies unclear mode changes as a specific subset adjacent to the general state visibility failure."
+    },
+    {
+      "anchorText": "The Interface Demands Too Much Memory",
+      "targetSlug": "the-interface-demands-too-much-memory",
+      "placementHint": "Related pages section, in the sentence naming adjacent memory-demand failures.",
+      "reason": "The source explicitly distinguishes this failure from memory-demand failures caused by inconsistent positioning or view-state demands."
+    },
+    {
+      "anchorText": "COX Marine",
+      "targetSlug": "cox-marine",
+      "placementHint": "COX Marine evidence section heading or Related pages section.",
+      "reason": "The source uses COX Marine as a grounded example of fragmented state in multi-engine fault-priority scanning, and the slug is available in the linking context."
+    }
+  ],
+  "qualityChecks": {
+    "factsOnlyFromCurrentSource": true,
+    "documentationStyle": true,
+    "noMarketingLanguage": true,
+    "noInventedClaims": true,
+    "linksOnlyFromLinkingContext": true,
+    "internalNotesNotPublished": true,
+    "readyForSanityImport": true
+  },
+  "__sourceCategoryDir": "Failures"
+}

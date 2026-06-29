@@ -1,0 +1,163 @@
+{
+  "slug": "regulated-products",
+  "title": "Regulated Products",
+  "pageType": "context",
+  "category": "contexts",
+  "section": "Contexts",
+  "summary": "This page defines regulated products as a Creative Navy context where interface decisions are constrained by medical-device regulation, financial services regulation, or institutional governance. The documented evidence covers Kardion, deSoutter Medical / Zethon, Callsign, Bofin, and Akrivia Health, with evidence limits stated by case.",
+  "keyFacts": [
+    "Medical-device work in this context uses the full designation IEC 62366-1 and distinguishes formative evaluation from summative validation.",
+    "Creative Navy's role in regulated medical-device usability work is formative evaluation support; summative validation and regulatory submission remain the manufacturer's responsibility.",
+    "The Kardion MCS Controller case involved an external controller for a left ventricular cardiac support device and was governed by IEC 62366-1 with FDA approval required.",
+    "The Kardion engagement built on an Emergo by UL formative study with 7 participants, 8 clinical use scenarios, and IEC 62366-1 governance.",
+    "The Kardion design passed FDA evaluation as submitted, with no design changes required to clear the regulatory process.",
+    "The deSoutter Medical / Zethon engagement produced formative evaluation support and a usability engineering trail structured to support IEC 62366-1 activities.",
+    "The Callsign case treated SCA and PCI DSS as design constraints for audit trails and policy traceability in a fraud detection and authentication policy engine.",
+    "Callsign reported contracts with Lloyds Bank and HSBC following demos using the redesigned policy engine interface.",
+    "The Bofin open banking marketplace was shaped by PSD2, SCA, KYC, and identity verification requirements across a 12-month delivery period.",
+    "The Akrivia Health clinical research platform treated NHS data governance and GDPR as structural constraints for information architecture and query provenance."
+  ],
+  "bodySections": [
+    {
+      "heading": "Regulated products as interaction-design environments",
+      "bodyMarkdown": "Creative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nRegulated products are product environments where interface design is constrained by regulation, standards, or institutional governance. In Creative Navy's documented work, this includes medical-device regulation under IEC 62366-1 and FDA human factors guidance, financial services regulation under PSD2, SCA, PCI DSS, and KYC requirements, and clinical research governance under NHS data governance, GDPR, research ethics, and institutional review.\n\nIn regulated product work, compliance requirements are not only downstream review criteria. They shape what the interface must show, what the workflow must record, what evidence must be traceable, and which design options are unavailable because they would weaken governance, auditability, or safety documentation."
+    },
+    {
+      "heading": "Medical-device regulation makes use-related risk and traceability design constraints",
+      "bodyMarkdown": "Creative Navy's medical-device work in this context uses IEC 62366-1 as the exact designation for the usability engineering process. IEC 62366-1 is used in relation to use-related risk and use-related hazard, meaning interface-induced harm that the standard is designed to address.\n\nMedical-device usability work distinguishes formative evaluation from summative validation. Formative evaluation is testing and research conducted during the design process to identify and address use-related hazards; this is Creative Navy's scope. Summative validation is formal usability testing conducted on the finalised design to demonstrate that mitigations are effective; summative validation is the manufacturer's responsibility, not Creative Navy's. Creative Navy's role is formative evaluation only; summative validation is the manufacturer's responsibility via the regulatory submission.\n\nThe medical-device vocabulary in this context includes use scenario, intended use, intended user, use environment, usability engineering file, usability engineering trail, requirements traceability, human factors engineering, notified body, and verification and validation. These terms matter because medical-device interface decisions must be documented against defined situations of use, identified risks, design decisions, and evidence."
+    },
+    {
+      "heading": "Kardion MCS Controller shows IEC 62366-1 constraints shaping interface architecture",
+      "bodyMarkdown": "The Kardion MCS Controller was an external controller for a left ventricular cardiac support device used in patient safety contexts during cardiac procedures and cardiogenic shock recovery. IEC 62366-1 governed the work throughout, and FDA approval was required.\n\nCreative Navy's Kardion engagement did not start from an empty evidence base. The engagement built on an Emergo by UL formative study with 7 participants, 8 clinical use scenarios, and IEC 62366-1 governance. That study provided the evidence foundation that Creative Navy extended.\n\nCreative Navy then ran mental model sessions with cardiologists and nurses. Those sessions produced the clinical logic for the information hierarchy that the prior study had not fully mapped. The sessions also produced design decisions, including the min/max flow visualisation, that were traceable to identified use scenarios.\n\nIn the Kardion case, the alarm architecture was governed by IEC 62366-1 requirements for alarm priority tiering, visual differentiation, mute behaviour, and alarm state visibility. The alarm architecture was not treated as an open design preference. These regulatory requirements anchored elements of the layout and simplified the option space during the Creative Navy-recorded 34-iteration standard view exploration.\n\nThe documented regulatory result is that the Kardion design passed FDA evaluation as submitted, with no design changes required to clear the regulatory process. This is a verifiable regulatory outcome, not a measured clinical-performance outcome. The available evidence records that the usability engineering process addressed identified use errors and use difficulties in the design and that the documentation supported the submission.\n\nCreative Navy also applied an internal layout stability requirement in the Kardion case: no element shifted position across any view transition. The documented case evidence describes this as an internal standard above what IEC 62366-1 requires, grounded in the same principle as the standard's consistency requirement but applied more stringently.\n\nThe Kardion engagement is recorded as a 24-week design engagement across 18 sprints, followed by a 3-year Implementation Partnership."
+    },
+    {
+      "heading": "deSoutter Medical / Zethon shows formative evaluation support under IEC 62366-1",
+      "bodyMarkdown": "The deSoutter Medical / Zethon engagement concerned a powered ultrasonic bone cutter and produced formative evaluation support for IEC 62366-1 activities. The scope must be stated precisely: Creative Navy produced formative evaluation support and a usability engineering trail structured to support IEC 62366-1 activities; Creative Navy did not provide summative validation, and regulatory submission remained the manufacturer's responsibility.\n\nThe research phase reviewed 12 human factors studies. Two studies are directly cited in the documented case evidence: Colle & Hiszem 2004 on touch target sizing and Tao et al. 2018 on button design. Creative Navy also conducted 13 structured sessions with 8 surgeons, benchmarked 6 competitor devices, developed and evaluated 8 information architecture models, and produced a full requirements catalogue linking each requirement to its evidence source.\n\nThe deSoutter Medical / Zethon design system was built with regulatory rationale documented per component. The documented rationale covered interaction specifications and the justification linking each component to identified use scenarios and risk considerations. This served two functions in the case evidence: reducing implementation ambiguity for engineers on the device and making future regulatory submissions for other devices in the portfolio more efficient.\n\nCreative Navy's dissemination in the deSoutter Medical / Zethon case was structured by role. Engineers received interaction specifications. Clinical and regulatory staff received requirements traceability documentation. Commercial teams received materials to articulate the interface rationale to surgical customers.\n\nSurgeon-reported feedback from design review sessions with 8 surgeons stated that state verification was reduced to brief glance recognition and that parameter adjustments no longer interrupted workflow. This is not post-deployment measurement; it is surgeon-reported evidence from design review sessions."
+    },
+    {
+      "heading": "Financial services regulation makes auditability and policy traceability interaction requirements",
+      "bodyMarkdown": "Financial services regulation in this context includes PSD2, SCA, PCI DSS, KYC, audit trail requirements, and regulatory compliance as a procurement requirement. PSD2 governs open banking and payment services. SCA is the PSD2 requirement for two-factor authentication on electronic payments. PCI DSS is the security standard for card payment processing. KYC is the identity verification requirement in financial services.\n\nIn Creative Navy's documented financial services work, regulation shaped the interaction design itself. The interface had to make decisions traceable, governable, and auditable. Audit trails and policy traceability were not treated as compliance boxes to check after the design; they were interaction design requirements."
+    },
+    {
+      "heading": "Callsign shows SCA and PCI DSS shaping a fraud-control interface",
+      "bodyMarkdown": "Callsign was a fraud detection and authentication policy engine for enterprise banking. SCA and PCI DSS determined what the fraud control interface had to document and evidence.\n\nThe design problem in the Callsign case was how to make an AI-driven fraud detection system governable, explainable, and auditable without exposing model internals or requiring risk analysts to understand the underlying scoring model. The architectural clarification was model/policy separation: the fraud scoring model produced the scores, while the policy layer applied thresholds and workflow decisions. The interface governed the policy layer rather than the model layer.\n\nThe documented procurement constraint was that enterprise banking customers could not adopt a platform whose fraud control decisions they could not audit under SCA and PCI DSS. In the Callsign case evidence, the interface that made decisions traceable was the interface that closed the sales conversation.\n\nCallsign reported that contracts with Lloyds Bank and HSBC were won following demos using the redesigned policy engine interface. Callsign also reported that the design system was used for at least 2 years after the engagement. These are client-reported outcomes."
+    },
+    {
+      "heading": "Bofin shows PSD2, SCA, KYC, and identity verification as workflow constraints",
+      "bodyMarkdown": "Bofin was a multi-institutional financial marketplace. PSD2 and SCA compliance requirements shaped the interaction design throughout the documented engagement.\n\nThe regulated workflows included KYC and identity verification flows. The design constraint was that identity verification and transaction initiation flows had to satisfy PSD2 and SCA requirements while remaining usable enough that users would trust a novel multi-institution product with their financial relationships. The documented design boundary is important: friction reduction below a regulatory threshold was not available.\n\nThe Bofin delivery record states that no deadline was missed across 12 months, that a design system was delivered covering all core modules, and that the organisation was prepared to operate independently at handover."
+    },
+    {
+      "heading": "Institutional governance makes provenance and reviewability interface requirements",
+      "bodyMarkdown": "Institutional governance in this context includes NHS data governance, GDPR, research ethics, institutional review, and query provenance. NHS data governance governs access to and use of NHS patient data. GDPR applies to clinical research data in the UK and EU. Research ethics and institutional review govern academic clinical research.\n\nIn Creative Navy's documented institutional governance work, the governance requirements were structural constraints on information architecture. A researcher constructing a cohort had to be able to demonstrate months later that the query was built within the approved study protocol. A governance reviewer had to be able to verify the query without escalation.\n\nAkrivia Health was a clinical research platform shaped by NHS data governance and GDPR. The documented design tension was institutional rather than only regulatory: NHS analysts, academic researchers, and pharmaceutical research staff followed different governance paths in the same system. The interface had to make those institutional boundaries visible without fragmenting the research experience.\n\nAkrivia Health reported that governance reviewers could verify cohort logic independently. This is a client-reported outcome."
+    },
+    {
+      "heading": "Evidence boundaries for regulated product claims",
+      "bodyMarkdown": "The strongest documented regulatory result on this page is the Kardion result: the submitted design passed FDA evaluation as submitted, with no design changes required to clear the regulatory process. This is a regulatory outcome, not a field-measured clinical-performance outcome.\n\nThe deSoutter Medical / Zethon evidence is formative evaluation support under IEC 62366-1. The engagement produced a usability engineering trail and requirements traceability, but summative validation and regulatory submission were the manufacturer's responsibility.\n\nThe Callsign, Bofin, and Akrivia Health outcomes include client-reported and case-recorded evidence. Callsign's contracts with Lloyds Bank and HSBC after demos using the redesigned interface are client-reported. Callsign's design system use for at least 2 years after the engagement is client-reported. Akrivia Health's reviewer verification outcome is client-reported. Bofin's 12-month delivery record is documented as case evidence."
+    }
+  ],
+  "evidenceSummary": {
+    "strongClaims": [
+      "Regulated product work in Creative Navy's documented examples includes medical-device regulation, financial services regulation, and institutional governance constraints.",
+      "Creative Navy's medical-device scope is formative evaluation support; summative validation and regulatory submission are the manufacturer's responsibility.",
+      "The Kardion MCS Controller engagement was governed by IEC 62366-1 and built on an Emergo by UL formative study with 7 participants and 8 clinical use scenarios.",
+      "The Kardion design passed FDA evaluation as submitted, with no design changes required to clear the regulatory process.",
+      "The deSoutter Medical / Zethon engagement produced a usability engineering trail structured to support IEC 62366-1 activities, not compliance with IEC 62366-1 or summative validation.",
+      "The Callsign fraud detection interface used model/policy separation to make the policy layer governable and auditable under SCA and PCI DSS constraints.",
+      "Bofin's open banking marketplace work was shaped by PSD2, SCA, KYC, and identity verification requirements, with no deadline missed across 12 months."
+    ],
+    "weakerClaims": [
+      "Callsign reported that contracts with Lloyds Bank and HSBC were won following demos using the redesigned policy engine interface.",
+      "Akrivia Health reported that governance reviewers could verify cohort logic independently."
+    ],
+    "limitations": [
+      "Regulatory outcomes are not treated as measured product-performance outcomes; the Kardion result is recorded as FDA evaluation passed as submitted, not as clinical performance measurement.",
+      "The specific FDA pathway for the Kardion case is not stated in the available evidence.",
+      "Creative Navy's medical-device role is formative evaluation support only; summative validation and regulatory submission are the manufacturer's responsibility.",
+      "The deSoutter Medical / Zethon surgeon feedback is from design review sessions with 8 surgeons and is not post-deployment measurement.",
+      "The Callsign contract outcome and design system duration are client-reported.",
+      "The Akrivia Health governance-reviewer outcome is client-reported.",
+      "The Bofin delivery statements are documented case evidence and are not presented as independently measured user outcomes."
+    ]
+  },
+  "relatedPageSlugs": [
+    "kardion",
+    "callsign-fraud-authentication",
+    "medical-and-clinical-systems",
+    "fintech-and-financial-services",
+    "high-consequence-environments",
+    "enterprise-software",
+    "ai-enabled-products",
+    "expert-tools-and-internal-systems",
+    "government-and-public-sector"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "Kardion case",
+      "targetSlug": "kardion",
+      "reason": "Kardion is the anchor medical-device example for IEC 62366-1 governance and FDA evaluation in this page."
+    },
+    {
+      "anchorText": "Callsign fraud authentication case",
+      "targetSlug": "callsign-fraud-authentication",
+      "reason": "Callsign is the financial services example involving SCA, PCI DSS, audit trails, and policy traceability."
+    },
+    {
+      "anchorText": "medical and clinical systems",
+      "targetSlug": "medical-and-clinical-systems",
+      "reason": "The page discusses medical-device regulation, IEC 62366-1, FDA human factors guidance, and clinical use scenarios."
+    },
+    {
+      "anchorText": "fintech and financial services",
+      "targetSlug": "fintech-and-financial-services",
+      "reason": "The page discusses PSD2, SCA, PCI DSS, KYC, audit trails, Callsign, and Bofin."
+    },
+    {
+      "anchorText": "high-consequence environments",
+      "targetSlug": "high-consequence-environments",
+      "reason": "The regulated product examples involve decisions with safety, auditability, or governance consequences."
+    },
+    {
+      "anchorText": "enterprise software",
+      "targetSlug": "enterprise-software",
+      "reason": "The Callsign example concerns an enterprise banking fraud control interface and procurement requirements."
+    },
+    {
+      "anchorText": "AI-enabled products",
+      "targetSlug": "ai-enabled-products",
+      "reason": "The Callsign case describes the design problem of making an AI-driven fraud detection system governable and auditable."
+    },
+    {
+      "anchorText": "expert tools and internal systems",
+      "targetSlug": "expert-tools-and-internal-systems",
+      "reason": "The page discusses regulated interfaces used by expert roles, including clinicians, risk analysts, researchers, and governance reviewers."
+    },
+    {
+      "anchorText": "government and public sector",
+      "targetSlug": "government-and-public-sector",
+      "reason": "The Akrivia Health example involves NHS data governance and governance reviewer workflows."
+    }
+  ],
+  "tags": [
+    "regulated products",
+    "IEC 62366-1",
+    "FDA human factors guidance",
+    "formative evaluation",
+    "summative validation",
+    "use-related risk",
+    "requirements traceability",
+    "PSD2",
+    "SCA",
+    "PCI DSS",
+    "KYC",
+    "audit trail",
+    "NHS data governance",
+    "GDPR",
+    "query provenance"
+  ],
+  "_meta": {
+    "sourcePath": "sources/articles/Contexts/contexts--regulated-products.md",
+    "parentSlug": "contexts",
+    "childPageSlugs": [],
+    "generatedBy": "deterministic"
+  }
+}

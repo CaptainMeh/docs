@@ -1,0 +1,180 @@
+{
+  "_type": "documentationPage",
+  "sourceFile": "Articles/Situations/situations--risk--oversight-exists-in-policy-but-not-in-workflow.md",
+  "sourcePath": "sources/articles/Situations/situations--risk--oversight-exists-in-policy-but-not-in-workflow.md",
+  "sanityDocumentIdCandidate": "documentationPage.oversight-exists-in-policy-but-not-in-workflow",
+  "title": "Oversight Exists In Policy But Not In Workflow",
+  "slug": {
+    "_type": "slug",
+    "current": "oversight-exists-in-policy-but-not-in-workflow"
+  },
+  "pageType": "situation",
+  "category": "situations",
+  "parentSlug": "risk-and-consequence",
+  "childPageSlugs": [],
+  "excerpt": "Oversight exists in policy but not in workflow when a required review, check, or verification is documented but the interface does not make it practically possible to perform. The result can be skipped oversight, nominal oversight, or an oversight bottleneck.",
+  "metaTitle": "Oversight Policy Not In Workflow",
+  "metaDescription": "A situation where required oversight is documented in policy but not operationally enforced by the interface or workflow.",
+  "summary": "This situation describes a policy-to-workflow gap in regulated, high-consequence, and institutionally governed contexts. Oversight requirements may exist in governance frameworks, regulatory standards, and institutional procedures, while the interface used for the work fails to enforce or support the required verification.",
+  "definition": "Oversight exists in policy but not in workflow when an organisation has a documented requirement for external review, checking, or verification, but the operational interface does not make that oversight required, meaningful, or feasible within the workflow.",
+  "keyFacts": [
+    "Oversight requirements appear in governance frameworks, regulatory standards, and institutional procedures.",
+    "The operational issue is whether the interface makes oversight possible and practically feasible as designed.",
+    "When workflow support is absent, oversight may be skipped entirely.",
+    "Oversight may also be performed nominally, where the review exists but the reviewer cannot verify the underlying activity.",
+    "Oversight can become a bottleneck when required verification depends on effortful manual explanation or retrospective assembly of evidence.",
+    "Akrivia Health is used as an example of governance review becoming nominal or bottlenecked before redesign.",
+    "Callsign is used as an example of audit-trail requirements not being produced by the live fraud-control workflow before redesign.",
+    "Puraite AI systematic review is used as an example of methodological oversight being compromised by premature AI recommendations.",
+    "Triopsis workforce management is used as an example of safety compliance steps not being surfaced at the point of work before redesign."
+  ],
+  "tags": [
+    "oversight",
+    "governance",
+    "workflow design",
+    "policy-to-workflow gap",
+    "nominal oversight",
+    "audit trail",
+    "compliance workflow",
+    "regulated contexts",
+    "risk and consequence"
+  ],
+  "bodyMarkdown": "## Oversight policy becomes ineffective when the workflow does not support verification\n\nCreative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nOversight exists in policy but not in workflow when an organisation has a documented requirement for review, checking, or verification, but the interface used to do the work does not make that oversight required, meaningful, or feasible. The oversight requirement may be present in governance frameworks, regulatory standards, or institutional procedures, while the operational workflow allows the work to continue without the review being substantively performed.\n\nThis situation appears in regulated, high-consequence, and institutionally governed contexts because the activity being performed carries consequences that someone external to the immediate workflow needs to verify. Examples include governance review of a clinical research cohort, risk-team review of fraud-control decisions under SCA and PCI DSS, supervisory confirmation of safety-critical field procedures, and regulatory audit of a medical device design decision against an identified use-related hazard.\n\nThe central issue is not whether the policy exists. The central issue is whether the interface makes it possible for oversight to happen as designed.\n\n## Three failure modes when oversight is not embedded in workflow\n\nOversight fails operationally in three main ways when the interface does not support it: it is skipped, performed nominally, or converted into a bottleneck.\n\nSkipped oversight occurs when the required review, check, or verification is omitted because the interface neither requires it nor makes it easy. Users complete the workflow and continue. The oversight remains present only as a written requirement.\n\nNominal oversight occurs when a review formally happens but the reviewer lacks the information needed to verify anything meaningfully. A governance reviewer may approve a research query they cannot read. A supervisor may sign off on a process they cannot trace. The form of oversight is present, but the substance of verification is absent.\n\nOversight becomes a bottleneck when it is required and performed conscientiously, but the workflow makes it so effortful that it becomes the rate-limiting step. A researcher may need to spend an hour re-explaining each cohort to a governance reviewer. A fraud-policy change may require an engineering ticket to produce the audit trail. In this pattern, the oversight requirement is real, but the workflow imposes disproportionate cost and creates pressure to limit or shortcut the review.\n\n## Domain vocabulary for the policy-to-workflow gap\n\nA policy-to-workflow gap is the distance between a written oversight requirement and the operational process that actually enforces it. The term applies when a requirement exists in policy but the interface does not reliably cause the required oversight to occur.\n\nNominal oversight is oversight that satisfies formal compliance requirements on paper but does not verify what it was designed to verify in practice. Symbolic oversight is closely related: the review is visible, but the reviewer cannot substantively verify the underlying activity.\n\nGovernance friction is the effort required to perform oversight activities. High governance friction can produce selective or absent oversight even when the intention to perform oversight is genuine.\n\nCompliance by workflow design is the principle that oversight requirements should be enforced by the workflow itself rather than left to individual initiative and good intentions. An audit trail as workflow requirement is the related principle that a required audit trail should be produced by the system's workflow, not assembled retrospectively from optional documentation.\n\n## Akrivia Health governance review showed oversight becoming nominal or bottlenecked\n\nIn the Akrivia Health case, NHS governance and institutional research ethics required every patient cohort constructed by researchers to be verifiable by governance reviewers before the study proceeded. The oversight requirement existed because errors in cohort construction, including cohorts outside approved study protocols, had consequences for patient privacy, research integrity, and institutional compliance.\n\nBefore redesign, governance reviewers could not independently read the cohort query logic without the researcher re-explaining it. Each review therefore became either nominal, because the reviewer could not substantively verify the cohort, or bottlenecked, because the researcher had to stop research work to support the review.\n\nThe documented outcome after redesign is client-reported: governance reviewers could verify cohort logic without escalating to the research team. In this case, oversight moved from a policy requirement into the workflow used to perform and review the work.\n\n## Callsign fraud control showed audit trails missing from live decision workflow\n\nIn the Callsign fraud detection case, SCA and PCI DSS compliance requirements obligated enterprise banking clients to produce auditable records of how fraud-control decisions were made. The requirement existed at both the regulatory level and the procurement level, because banks required it before buying.\n\nBefore redesign, the workflow did not produce the audit trail as a natural consequence of using the system. Fraud rules were scattered across database views and configuration tables without a policy-level object, without change history, and without the traceability the compliance requirement demanded. Banks asked for audit trails and were told they could be assembled, but they were not produced by the workflow.\n\nAfter redesign, the policy engine architecture produced audit trails by design. Every policy change was logged, every decision was traceable to a named policy, and every configuration session was separated from evaluation sessions to prevent untracked live modifications. In this case, the oversight requirement became a workflow property rather than an aspiration.\n\n## Puraite AI systematic review showed methodological oversight being compromised by interface order\n\nIn the Puraite AI systematic review case, systematic review methodology required inclusion and exclusion decisions to reflect independent human judgment on the evidence, not anchored responses to prior AI recommendations. This was an oversight requirement of a methodological kind: peer review and scientific validity depended on the independence of the screening process.\n\nBefore redesign, the workflow showed AI recommendations before human review. That interface order systematically compromised the independence the methodology required. Reviewers believed they were evaluating independently, while the interface anchored their judgment to the AI's prior decision.\n\nThe blinded mode design enforced epistemic independence at the workflow level by withholding AI recommendations until after human assessment was recorded. In this case, methodological oversight became operationally enforced rather than only aspirationally present.\n\n## Triopsis workforce management showed field safety compliance not surfaced at the point of work\n\nIn the Triopsis workforce management case, field safety regulations required technicians performing certain utility and road maintenance tasks to complete specific safety compliance steps before beginning work. The requirements existed in documentation and were the formal responsibility of field staff.\n\nBefore redesign, the interface did not surface the required safety steps at the point in the workflow where they needed to be completed. Field technicians focused on the job task could proceed without being prompted by the system to complete the compliance steps.\n\nThe redesign surfaced required safety steps in context, at the moment in the workflow when they needed to be performed, with dependencies visible. In this case, the oversight requirement moved from documentation and training into the operational workflow.\n\n## How Creative Navy's Critical Systems Design method treats oversight as a workflow property\n\nCreative Navy's Critical Systems Design method treats oversight requirements as operational requirements that must be represented in the interface and workflow. In the examples documented here, the design issue is not limited to the presence of policy. The design issue is whether reviewers, supervisors, auditors, or methodological safeguards can actually perform the verification the policy requires.\n\nThe relevant design task is to make the reviewable object, the reviewer role, the verification information, and the audit trail part of normal workflow operation. When that does not happen, oversight depends on memory, manual explanation, retrospective documentation, or individual diligence.\n\nThis situation is therefore closely related to governance questions that enterprise buyers ask before adoption, weak practical human control, fragmented multi-role workflows, and high-consequence user error. Those adjacent situations describe different forms of the same operational problem: the interface may allow work to continue while the control mechanism that should govern the work remains outside the workflow.\n\n## Evidence basis and boundaries\n\nThe evidence for this situation is case-based. The documented examples cover governance review in clinical research, audit trails in fraud control, methodological independence in AI-supported systematic review, and field safety compliance in workforce management.\n\nThe Akrivia Health outcome is explicitly client-reported. The Callsign, Puraite AI systematic review, and Triopsis examples describe workflow conditions before and after redesign, but the available description does not provide independent measurement, numerical performance data, or a general claim that the same intervention would produce the same result in every regulated context.\n\nThis page defines a recurring situation pattern rather than a universal law. The common pattern is that an oversight requirement is documented, but the interface does not enforce or support the verification activity at the point where the work is performed.",
+  "claims": [
+    {
+      "claim": "Oversight exists in policy but not in workflow when a documented review, check, or verification requirement is not made required, meaningful, or feasible by the operational interface.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "Supported by the situation definition and domain vocabulary in the current source."
+    },
+    {
+      "claim": "When workflow support is absent, oversight may be skipped, performed nominally, or become a bottleneck.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "The current source explicitly identifies these three outcomes."
+    },
+    {
+      "claim": "In the Akrivia Health case, governance reviewers could not independently read cohort query logic before redesign, making oversight nominal or bottlenecked.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "Supported by the Akrivia Health case description in the current source."
+    },
+    {
+      "claim": "After the Akrivia Health redesign, governance reviewers could verify cohort logic without escalating to the research team.",
+      "evidenceType": "client-reported",
+      "sourceStrength": "case evidence",
+      "notes": "The current source labels this as a client-reported outcome."
+    },
+    {
+      "claim": "In the Callsign fraud detection case, the pre-redesign workflow did not produce the audit trail required under SCA and PCI DSS as a natural consequence of using the system.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "Supported by the Callsign case description in the current source."
+    },
+    {
+      "claim": "After the Callsign redesign, the policy engine architecture logged policy changes, traced decisions to named policies, and separated configuration sessions from evaluation sessions.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "Supported by the Callsign case description in the current source."
+    },
+    {
+      "claim": "In the Puraite AI systematic review case, showing AI recommendations before human review compromised the independence required by systematic review methodology.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "Supported by the Puraite AI systematic review case description in the current source."
+    },
+    {
+      "claim": "In the Triopsis workforce management case, the pre-redesign interface did not surface required field safety compliance steps at the point in the workflow where they needed to be completed.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "Supported by the Triopsis case description in the current source."
+    }
+  ],
+  "limitations": [
+    "The evidence is case-based and does not include numerical performance measurements.",
+    "The Akrivia Health redesign outcome is client-reported.",
+    "The Callsign, Puraite AI systematic review, and Triopsis examples describe workflow changes but do not provide independent measurement in the current source.",
+    "The page describes a recurring situation pattern and should not be read as a guarantee that a specific workflow intervention will resolve every oversight gap."
+  ],
+  "publicationBlockers": [],
+  "questionsForReview": [
+    "None"
+  ],
+  "relatedPageSlugs": [
+    "enterprise-buyers-ask-governance-questions-the-team-cannot-answer",
+    "human-control-is-weak-in-practice",
+    "multi-role-workflows-are-fragmented",
+    "operators-rely-on-memory-too-much",
+    "the-system-supports-procedure-but-not-judgment",
+    "user-error-has-serious-consequences",
+    "callsign-fraud-authentication",
+    "puraite",
+    "triopsis-workforce-management-saas"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "enterprise buyers ask governance questions",
+      "targetSlug": "enterprise-buyers-ask-governance-questions-the-team-cannot-answer",
+      "placementHint": "In the section discussing adjacent situations and governance questions.",
+      "reason": "The source describes procurement-level governance requirements in the Callsign example."
+    },
+    {
+      "anchorText": "weak practical human control",
+      "targetSlug": "human-control-is-weak-in-practice",
+      "placementHint": "In the section on related operational situations.",
+      "reason": "The situation concerns oversight that exists formally but is weak in operation."
+    },
+    {
+      "anchorText": "fragmented multi-role workflows",
+      "targetSlug": "multi-role-workflows-are-fragmented",
+      "placementHint": "In the section explaining related operational problems.",
+      "reason": "Oversight often involves reviewers, supervisors, auditors, researchers, or technicians across roles."
+    },
+    {
+      "anchorText": "operators rely on memory",
+      "targetSlug": "operators-rely-on-memory-too-much",
+      "placementHint": "Near the explanation that oversight should not depend on individual diligence.",
+      "reason": "The source contrasts workflow-enforced oversight with reliance on initiative, memory, or retrospective documentation."
+    },
+    {
+      "anchorText": "the system supports procedure but not judgment",
+      "targetSlug": "the-system-supports-procedure-but-not-judgment",
+      "placementHint": "In the related situations paragraph.",
+      "reason": "Nominal oversight can preserve procedural form while failing to support substantive verification."
+    },
+    {
+      "anchorText": "user error has serious consequences",
+      "targetSlug": "user-error-has-serious-consequences",
+      "placementHint": "In the section that names high-consequence adjacent situations.",
+      "reason": "The source identifies consequences for privacy, research integrity, institutional compliance, fraud control, and field safety."
+    },
+    {
+      "anchorText": "Callsign fraud detection case",
+      "targetSlug": "callsign-fraud-authentication",
+      "placementHint": "In the Callsign section heading or first paragraph.",
+      "reason": "The Callsign example is explicitly discussed in the page and has an allowed case-study slug."
+    },
+    {
+      "anchorText": "Puraite AI systematic review case",
+      "targetSlug": "puraite",
+      "placementHint": "In the Puraite section heading or first paragraph.",
+      "reason": "The Puraite example is explicitly discussed in the page and has an allowed slug."
+    },
+    {
+      "anchorText": "Triopsis workforce management case",
+      "targetSlug": "triopsis-workforce-management-saas",
+      "placementHint": "In the Triopsis section heading or first paragraph.",
+      "reason": "The Triopsis example is explicitly discussed in the page and has an allowed case-study slug."
+    }
+  ],
+  "qualityChecks": {
+    "factsOnlyFromCurrentSource": true,
+    "documentationStyle": true,
+    "noMarketingLanguage": true,
+    "noInventedClaims": true,
+    "linksOnlyFromLinkingContext": true,
+    "internalNotesNotPublished": true,
+    "readyForSanityImport": true
+  },
+  "__sourceCategoryDir": "Situations"
+}

@@ -1,0 +1,168 @@
+{
+  "_type": "documentationPage",
+  "sourceFile": "Articles/Failures/failures--interpretation--uncertainty-is-not-communicated-usefully.md",
+  "sourcePath": "sources/articles/Failures/failures--interpretation--uncertainty-is-not-communicated-usefully.md",
+  "sanityDocumentIdCandidate": "documentationPage.uncertainty-is-not-communicated-usefully",
+  "title": "Uncertainty Is Not Communicated Usefully",
+  "slug": {
+    "_type": "slug",
+    "current": "uncertainty-is-not-communicated-usefully"
+  },
+  "pageType": "failure",
+  "category": "failures",
+  "parentSlug": "interpretation-failures",
+  "childPageSlugs": [],
+  "excerpt": "Uncertainty is not communicated usefully when AI confidence exists in the system but is not surfaced at the decision point in a form the user can act on. The failure makes AI outputs appear more uniformly reliable than they are.",
+  "metaTitle": "Uncertainty Is Not Communicated Usefully",
+  "metaDescription": "A failure pattern where AI confidence and reasoning are hidden or poorly surfaced at the point where users must decide.",
+  "summary": "This failure describes AI interfaces that present outputs as uniformly reliable results rather than as estimates with varying confidence and evidence quality. It focuses on confidence, reasoning, and evidence being visible at the point where users accept, override, or verify an AI output.",
+  "definition": "Uncertainty is not communicated usefully when an AI system has varying confidence in its outputs, but the interface does not present that confidence and its reasoning at the decision point in a form that supports calibrated human judgment.",
+  "keyFacts": [
+    "AI outputs vary in confidence, evidence basis, inference type, and structural reliability.",
+    "The failure is not the existence of uncertainty; the failure is the interface not surfacing uncertainty in an actionable form.",
+    "Confidence information that requires an additional interaction is likely to be skipped during high-volume review work.",
+    "Useful uncertainty communication distinguishes graded levels of reliability rather than using only a binary reliable/unreliable flag.",
+    "A confidence score is not fully actionable unless the reasoning or evidence behind it can also be evaluated.",
+    "In the Puraite case, the AI screening interface went through four iteration cycles before a resolution was found.",
+    "The resolved Puraite screening design placed the publication quote used by the AI in the side panel from the outset of the decision interaction.",
+    "Puraite data extraction used explicit confidence percentages with colour-coded scanning support for lower-confidence extractions.",
+    "The Puraite engagement ran for 7 months as an Implementation Partnership.",
+    "Puraite outcome evidence is client-reported and indirect; no task-time, error-rate, or baseline research data was collected."
+  ],
+  "tags": [
+    "AI uncertainty",
+    "AI confidence",
+    "human-AI interaction",
+    "interpretation failure",
+    "decision support",
+    "systematic literature review",
+    "calibrated judgment",
+    "Critical Systems Design"
+  ],
+  "bodyMarkdown": "## Summary\n\nCreative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nUncertainty is not communicated usefully when an AI system produces outputs with varying reliability, but the interface presents those outputs as if they had uniform apparent reliability. The user sees an output that appears plausible and complete, but does not see enough information to decide whether to accept it, override it, or verify it.\n\nThe failure is not that uncertainty exists. AI systems that perform non-trivial reasoning produce outputs with varying confidence, varying evidence basis, and varying structural reliability. The failure is that this variation remains inside the model or system and is not surfaced in a form the user can act on.\n\n## Failure pattern: AI outputs appear uniformly reliable\n\nAn AI interface creates this failure when it displays outputs as results rather than as estimates. The user must then choose between over-trusting outputs the AI itself has low confidence in or treating every output with equal scepticism and verifying everything.\n\nBoth responses are miscalibrated relative to the actual reliability profile of the system. Over-trust ignores low-confidence outputs. Uniform scepticism removes the efficiency that AI assistance was supposed to create. The interface has not given the user the distinction needed to allocate attention and verification effort appropriately.\n\nThis failure is a specific AI-context instance of a wider interpretation failure: users can see information but cannot judge what matters. In the AI uncertainty case, the issue is that users cannot determine which AI outputs warrant verification because the interface does not communicate the AI system's confidence and evidence basis.\n\n## Useful confidence information must be present at the decision point\n\nConfidence information must be visible at the moment the user decides whether to accept or override an AI output. If confidence information exists only behind a detail view, explanation panel, or separate confidence summary screen, the cost of accessing it compounds across high-volume review work.\n\nThis is a design failure rather than a user diligence failure. When the cost of exercising oversight is higher than the benefit under real use conditions, the oversight mechanism becomes nominally available and operationally unused. Users may open the confidence detail for edge cases and skip it for routine-seeming decisions, even though the AI system's confidence variation does not necessarily track the user's sense of what is routine.\n\nThe design condition is direct availability. Confidence information needs to appear in the same view from which the user makes the accept or override decision, without requiring an additional interaction before the user can decide whether verification is warranted.\n\n## Useful confidence signals distinguish graded reliability\n\nA binary uncertainty flag communicates less than the variation it represents. AI systems do not produce only two classes of output, such as reliable and unreliable. They produce a distribution of confidence levels.\n\nFor verification work, a 95%-confidence extraction and a 52%-confidence extraction require different responses. The higher-confidence extraction may need quick review. The lower-confidence extraction may need scrutiny closer to the treatment of an unreliable draft.\n\nA useful interface communicates confidence as a graded signal that can be scanned. The user should be able to identify low-confidence outputs without examining every output individually. This supports efficient allocation of verification effort while preserving human oversight where it is needed.\n\n## Useful uncertainty communication includes evaluable reasoning\n\nA confidence score without context is not fully actionable. A 70%-confidence output based on a misread publication is not equivalent to a 70%-confidence output based on a genuinely ambiguous evidence match. The score may be the same while the epistemic basis differs.\n\nUseful uncertainty communication therefore includes enough reasoning or evidence for the user to evaluate the AI system's basis for the output. The user needs to see not only the confidence level, but also the information that explains why the AI system reached that confidence level.\n\nThe design tension is that complete reasoning can slow down review, while too little reasoning prevents meaningful oversight. The structural requirement is to make reasoning visible without additional interaction, organised so that users can scan the confidence signal quickly and examine the underlying reasoning without leaving the decision context.\n\n## Puraite example: AI confidence in systematic literature review\n\nPuraite is a web application for AI-assisted systematic literature reviews in academic, clinical, and pharmaceutical research contexts. The review process involves screening large volumes of publications against inclusion and exclusion criteria, then extracting structured data from qualifying studies.\n\nPuraite integrates AI assistance into screening decisions, suggested inclusion and exclusion criteria, and structured data extraction. Reviewers encounter AI outputs at decision points and must decide whether to accept each output or override it.\n\nIn the Puraite engagement, uncertainty communication was the central design problem in two areas: the AI screening screen and the data extraction flow. The AI system produced outputs with varying reliability, and the interface needed to communicate that variation in a way that supported calibrated review at the pace required by systematic literature review.\n\nNo dedicated user research was possible within the engagement timeline. A member of the Creative Navy team had direct firsthand experience using systematic review software, and this operational knowledge served as the domain learning proxy. The tradeoff was presented to the client explicitly: the proxy was not equivalent to observed user research, but it was the available approach under the engagement constraints.\n\n## Puraite screening design: direct evidence at the decision point\n\nCreative Navy's design work on the Puraite screening interaction addressed two failure modes. A display that was too compact would allow reviewers to move quickly but would not support informed override decisions. A display that was too detailed would support evaluation but would slow review to the point where AI assistance no longer provided the intended efficiency.\n\nFour iteration cycles on the suggestion display were required before a resolution was found. Iterations that provided full criteria and evidence required expansion or navigation, adding an interaction cost across hundreds of decisions. Iterations that compressed the display for scan speed removed the evidence needed for substantive override decisions.\n\nThe resolved design placed the direct quote from the publication visible in the side panel from the outset of the decision interaction. The quote was the specific text the AI used to reach its inclusion or exclusion conclusion. The reviewer could see the AI decision, the criteria applied, and the text evidence simultaneously.\n\nThis design made confidence information and reasoning available at the decision point without an additional step. A reviewer could accept quickly when appropriate, or evaluate the AI system's basis for its conclusion without navigating away from the decision context.\n\n## Puraite extraction design: confidence as a scannable graded signal\n\nThe Puraite data extraction flow required a separate uncertainty communication decision. AI-extracted values appeared across a table that project managers and reviewers needed to scan to identify which extractions warranted attention.\n\nThe design communicated AI confidence as an explicit percentage with colour-coded scanning support. Lower-confidence extractions were visually marked for attention without requiring the reviewer to examine every extraction individually. A 52%-confidence extraction and a 95%-confidence extraction received different visual treatment.\n\nThis supported allocation of verification effort based on the AI system's confidence rather than on uniform scrutiny or uninformed judgment.\n\n## Blinded screening was identified as a product-level requirement\n\nThe Puraite engagement also raised the question of when AI decisions should be withheld from reviewers entirely. A blinded screening mode would prevent the AI system's recommendation from biasing the reviewer's independent judgment.\n\nThe detailed design of blinded screening was not in scope for the engagement. Its identification was a finding, and it shows that uncertainty communication in human-AI interaction can include decisions about when not to show an AI output, not only decisions about how to show confidence.\n\n## eToro analogue: market uncertainty at the point of commitment\n\neToro is a non-AI analogue for this failure pattern. The uncertainty in the eToro buy flow was market and outcome uncertainty, not AI confidence. The analogue is bounded: it demonstrates the broader interpretation principle of communicating uncertainty at the decision point, but it is not evidence about AI confidence communication.\n\nThe pre-redesign buy flow presented a trade as a price-and-quantity confirmation, which communicated an implied single expected result. The redesigned flow introduced structured scenario framing, showing how a position might behave under different market movements. Downside exposure was visible at the moment of commitment rather than discoverable afterwards.\n\nThe regulatory framing in the eToro example was also bounded. The uncertainty was presented as ranges rather than predictions, which the documented case connects to MiFID II / SEC-FINRA rules for risk communication that must not imply a guaranteed outcome.\n\nThe behavioural confirmation was a randomised A/B result: conversion changed from 5.1% to 7.4%, time-to-trade changed from 11.8 minutes to 8.6 minutes, with no increase in drop-off and no reduction in exploration depth. These figures measure decision efficiency and coherence, not uncertainty-communication quality directly. The connection to this failure pattern is the removed single-value framing and the structured-range replacement.\n\n## How Creative Navy's Critical Systems Design method addresses the failure\n\nCreative Navy's Critical Systems Design method treats good AI behaviour as a design problem as well as a model problem. In this failure pattern, the central question is not only whether the AI system can produce a confidence value. The design question is what confidence, reasoning, and evidence the user needs at the decision point to make a calibrated judgment.\n\nThe correct implementation depends on the task, user, decision volume, work pace, and form of AI reasoning in the domain. In systematic review, the relevant evidence unit was a publication and the specific text passage used by the AI. The transferable design principle was reasoning visible at the decision point without additional interaction. The specific implementation was the direct-quote-in-side-panel resolution.\n\nThe Puraite iterations show why this is a structural design problem. Compressing the display violated the requirement for informed override decisions. Expanding the display violated the requirement for scan speed. The resolved design emerged from iterating through those failure modes under conditions that approximated real review pace and volume.\n\n## Evidence basis and known limits\n\nThe strongest evidence on this page is the documented Puraite design record: the engagement ran for 7 months as an Implementation Partnership, the suggestion display went through four iteration cycles, and the final design made the AI decision, applied criteria, and specific publication quote visible in the decision context.\n\nThe Puraite outcome evidence is weaker. The primary documented outcome is client-reported: users who had previously perceived Puraite as theoretical or prototype-stage began actively using it after the redesign, and the client launched into a user acquisition and growth phase on that basis. A single user quote was relayed by the client: “Jetzt passt das tool in meine Arbeit” — “Now the tool fits my work.” This quote is client-reported and not independently verified.\n\nNo task-time, error-rate, or baseline research data was collected during or before the Puraite engagement. No dedicated user research was possible within the engagement timeline. The systematic review domain learning proxy was based on direct firsthand experience from a Creative Navy team member, not on observed user research.\n\nThe eToro analogue has a different evidence boundary. The randomised A/B figures report decision efficiency and coherence, not direct uncertainty-communication quality. eToro should therefore be treated as a non-AI demonstration of the general decision-point uncertainty principle, while Puraite remains the grounded AI-confidence example.\n\n## Related pages\n\nThe related interpretation failure is users seeing information but being unable to judge what matters. That broader failure concerns relevance and priority judgment; this page applies the same mechanism to AI outputs whose confidence and evidence basis are not communicated usefully.\n\nThe Puraite case is the grounded example for this AI-confidence failure. Other related failure patterns include symbolic oversight, unclear product behaviour review, and interfaces that nudge acceptance too easily, because each can appear when an interface presents AI output without enough context for calibrated human judgment.",
+  "claims": [
+    {
+      "claim": "The failure occurs when AI uncertainty exists in the system but is not surfaced in a form the user can act on at the decision point.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "Defined directly in the failure description and repeated across the uncertainty communication requirements."
+    },
+    {
+      "claim": "Confidence information that requires an extra interaction is likely to become nominally available but operationally unused during high-volume review work.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "moderate",
+      "notes": "Reasoned design mechanism described in the section on confidence signals at the decision point."
+    },
+    {
+      "claim": "Useful uncertainty communication requires graded reliability signals rather than only binary reliable/unreliable flags.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "Source gives the 95%-confidence and 52%-confidence comparison as the operative distinction."
+    },
+    {
+      "claim": "In the Puraite screening design, four iteration cycles were required before the direct-quote-in-side-panel resolution was found.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "engagement record",
+      "notes": "Engagement record describes four iteration cycles and the final visible-quote resolution."
+    },
+    {
+      "claim": "The Puraite extraction flow communicated AI confidence as explicit percentages with colour-coded scanning support.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "Source describes lower-confidence extractions being visually marked and compares 52% and 95% confidence values."
+    },
+    {
+      "claim": "A blinded screening mode was identified as a product-level requirement with interface implications, but detailed design was not in scope.",
+      "evidenceType": "Creative Navy-observed",
+      "sourceStrength": "engagement record",
+      "notes": "Source frames this as an identified finding rather than completed design work."
+    },
+    {
+      "claim": "The Puraite engagement outcome evidence is client-reported and indirect, including a single client-relayed user quote and no task-time, error-rate, or baseline research data.",
+      "evidenceType": "client-reported",
+      "sourceStrength": "anecdotal",
+      "notes": "Source explicitly states the quote was relayed by the client and not independently verified."
+    },
+    {
+      "claim": "The eToro analogue reported a randomised A/B change from 5.1% to 7.4% conversion and 11.8 to 8.6 minutes time-to-trade, but those figures measure decision efficiency and coherence rather than uncertainty-communication quality directly.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "Source explicitly bounds the eToro example as non-AI and states the metric limitation."
+    }
+  ],
+  "limitations": [
+    "The Puraite example is the grounded AI-confidence case, but no dedicated user research was possible within the engagement timeline.",
+    "The Puraite domain learning proxy was direct firsthand experience with systematic review software, not observed user research.",
+    "The Puraite outcome evidence is client-reported and indirect; the single quoted user statement was relayed through the client and not independently verified.",
+    "No task-time, error-rate, or baseline research data was collected during or before the Puraite engagement.",
+    "The detailed design of blinded screening was not in scope for the Puraite engagement.",
+    "The eToro example is a bounded non-AI analogue; its uncertainty concerns market outcomes rather than model confidence.",
+    "The eToro A/B figures measure decision efficiency and coherence, not uncertainty-communication quality directly."
+  ],
+  "publicationBlockers": [],
+  "questionsForReview": [
+    "None"
+  ],
+  "relatedPageSlugs": [
+    "puraite",
+    "users-see-information-but-cannot-judge-what-matters",
+    "data-is-available-but-hard-to-interpret",
+    "oversight-is-symbolic-not-functional",
+    "product-behaviour-cannot-be-explained-or-reviewed-cleanly",
+    "the-system-nudges-acceptance-too-easily",
+    "the-system-does-not-support-rapid-judgment"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "Puraite case",
+      "targetSlug": "puraite",
+      "placementHint": "Link the first mention of the Puraite case in the Puraite example section.",
+      "reason": "Puraite is the grounded AI-confidence example named in the page."
+    },
+    {
+      "anchorText": "users seeing information but being unable to judge what matters",
+      "targetSlug": "users-see-information-but-cannot-judge-what-matters",
+      "placementHint": "Link the related interpretation failure in the failure pattern or related pages section.",
+      "reason": "The source explicitly distinguishes this page from the broader relevance and priority judgment failure."
+    },
+    {
+      "anchorText": "symbolic oversight",
+      "targetSlug": "oversight-is-symbolic-not-functional",
+      "placementHint": "Link in the related pages section where oversight failure patterns are named.",
+      "reason": "The page explains that confidence hidden behind extra steps can make oversight nominal rather than operationally used."
+    },
+    {
+      "anchorText": "unclear product behaviour review",
+      "targetSlug": "product-behaviour-cannot-be-explained-or-reviewed-cleanly",
+      "placementHint": "Link in the related pages section when discussing AI outputs without enough review context.",
+      "reason": "The failure concerns whether AI output and reasoning can be evaluated cleanly by users."
+    },
+    {
+      "anchorText": "interfaces that nudge acceptance too easily",
+      "targetSlug": "the-system-nudges-acceptance-too-easily",
+      "placementHint": "Link in the related pages section where acceptance without calibrated judgment is mentioned.",
+      "reason": "The failure can cause users to accept AI outputs because verification costs too much effort."
+    },
+    {
+      "anchorText": "rapid judgment",
+      "targetSlug": "the-system-does-not-support-rapid-judgment",
+      "placementHint": "Link near discussion of scan speed and high-volume review decisions.",
+      "reason": "The page repeatedly discusses the need to preserve review pace while supporting substantive judgment."
+    },
+    {
+      "anchorText": "data that is available but hard to interpret",
+      "targetSlug": "data-is-available-but-hard-to-interpret",
+      "placementHint": "Link near the explanation of confidence scores without context.",
+      "reason": "A confidence score without evaluable reasoning is available data that remains hard to interpret."
+    }
+  ],
+  "qualityChecks": {
+    "factsOnlyFromCurrentSource": true,
+    "documentationStyle": true,
+    "noMarketingLanguage": true,
+    "noInventedClaims": true,
+    "linksOnlyFromLinkingContext": true,
+    "internalNotesNotPublished": true,
+    "readyForSanityImport": true
+  }
+}

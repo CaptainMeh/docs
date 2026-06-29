@@ -1,0 +1,180 @@
+{
+  "_type": "documentationPage",
+  "sourceFile": "Articles/Situations/situations--ai--enterprise-buyers-ask-governance-questions-the-team-cannot-answer.md",
+  "sourcePath": "sources/articles/Situations/situations--ai--enterprise-buyers-ask-governance-questions-the-team-cannot-answer.md",
+  "sanityDocumentIdCandidate": "documentationPage.enterprise-buyers-ask-governance-questions-the-team-cannot-answer",
+  "title": "Enterprise Buyers Ask Governance Questions The Team Cannot Answer",
+  "slug": {
+    "_type": "slug",
+    "current": "enterprise-buyers-ask-governance-questions-the-team-cannot-answer"
+  },
+  "pageType": "situation",
+  "category": "situations",
+  "parentSlug": "ai-and-automation",
+  "childPageSlugs": [],
+  "excerpt": "Enterprise AI products in regulated industries are evaluated not only for capability, but for traceability, configurability, explainability, auditability, and human control. In this situation, governance questions often remain unanswered when the interface cannot demonstrate how accountable decisions are controlled and evidenced.",
+  "metaTitle": "Enterprise AI Governance Questions",
+  "metaDescription": "Why regulated enterprise AI buyers ask governance questions about traceability, configurability, explainability, auditability, and human control.",
+  "summary": "Enterprise AI products in regulated industries can stall during sales evaluation when the product interface cannot show how AI-influenced decisions are traced, configured, explained, audited, and kept under accountable human control. The documented Callsign case shows this pattern in financial services, where governance capability became visible through policy architecture, audit trails, and domain-readable configuration.",
+  "definition": "This situation occurs when an enterprise AI product can demonstrate functional capability but cannot demonstrate, in the interface, that AI-influenced decisions are traceable, configurable by accountable domain experts, explainable to stakeholders, and auditable under regulated operating conditions.",
+  "keyFacts": [
+    "Enterprise AI products in regulated industries face governance evaluation in addition to capability evaluation.",
+    "Governance questions are commonly asked during demonstrations, procurement questionnaires, and technical follow-up sessions.",
+    "The source identifies three main governance question types: traceability, configurability, and explainability.",
+    "Traceability asks whether an AI-influenced decision can be reconstructed in the context where accountability is required, not only from engineering logs.",
+    "Configurability asks whether accountable domain experts can control AI policy in domain terms rather than model parameters or database structures.",
+    "Explainability asks whether product behaviour can be communicated to legal, compliance, board, executive, or regulatory stakeholders who did not see the original decision.",
+    "In the documented Callsign case, governance questions centred on traceability and accountability under SCA and PCI DSS.",
+    "Creative Navy separated the fraud detection model from the policy layer in the Callsign interface architecture, locating human governance at the policy boundary.",
+    "Client-reported commercial outcomes in the Callsign case include contracts with Lloyds Bank and HSBC after demonstrations using the redesigned interface.",
+    "The Callsign time-to-market reduction of roughly six months is described as an engagement-inferred estimate, not a measured parallel comparison."
+  ],
+  "tags": [
+    "enterprise AI",
+    "AI governance",
+    "regulated industries",
+    "traceability",
+    "configurability",
+    "explainability",
+    "audit trails",
+    "human control",
+    "policy configuration",
+    "financial services",
+    "SCA",
+    "PCI DSS",
+    "Callsign",
+    "Critical Systems Design"
+  ],
+  "bodyMarkdown": "## Enterprise AI governance questions are answered in the interface\n\nCreative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nEnterprise AI products in regulated industries face a governance evaluation as well as a capability evaluation. Capability questions ask whether the AI performs its stated task reliably. Governance questions ask whether the buyer's organisation can demonstrate to regulators, compliance functions, boards, and internal risk teams that the AI system is under appropriate human control and that the decisions it influences are accountable and auditable.\n\nThese governance questions are asked during demonstrations, procurement questionnaires, and technical follow-up sessions. They are often asked by people who are not evaluating model accuracy. Their concern is whether the product's governance model fits the institutional accountability requirements of the organisation that would deploy it.\n\nThe interface is central to this evaluation. Governance documentation, compliance certifications, and architecture diagrams can support the conversation, but they do not replace the need to show governance in the product. Enterprise buyers who must account for AI-assisted decisions need to see traceability, auditable configuration logic, and demonstrable human control during evaluation.\n\n## Governance evaluation is separate from AI capability evaluation\n\nA capable enterprise AI product can still fail procurement or sales evaluation when its governance model is not visible in the interface. The product may perform its stated task, but the buyer may still be unable to show how decisions are controlled, reviewed, explained, or audited.\n\nThe distinction matters because the governance evaluator is asking a different question from the technical evaluator. The technical evaluator may ask whether the AI performs accurately. The governance evaluator asks whether the organisation can account for the AI-influenced decision after it has affected a customer, patient, policyholder, transaction, case, or operational workflow.\n\nAn interface that requires engineering access to reconstruct governance information can fail this evaluation in practice. The relevant question is not only whether the data exists somewhere in logs. The relevant question is whether the product surfaces the decision account in the context where the accountability demand arises, such as a compliance review, audit, or regulatory inspection.\n\n## Traceability asks whether an AI-influenced decision can be accounted for\n\nTraceability in enterprise AI governance asks whether the organisation can produce an account of how an AI-influenced decision was reached if that decision is challenged. The source examples include fraud detection, credit assessment, and clinical decision support.\n\nIn fraud detection, traceability means showing which signals triggered which policy rule and what decision followed. In credit assessment, traceability means showing which factors the AI weighted and how. In clinical decision support, traceability means showing what evidence the AI cited and what the clinician acted on.\n\nTraceability is not satisfied merely because information exists in system logs. If the decision trail can be reconstructed only by engineers, the product may be technically storing relevant data while still failing the buyer's practical governance question. The interface needs to make the decision trail accessible in the setting where accountability is required.\n\n## Configurability asks whether accountable domain experts control AI policy\n\nConfigurability in enterprise AI governance asks whether the buyer's organisation can control AI behaviour in terms that match its own policies, risk tolerances, and operating procedures. The requirement is organisational sovereignty over how AI outputs are used, not just technical access to model settings or database fields.\n\nIn financial services, this can mean allowing fraud analysts to define strategies in the language of fraud analysis rather than machine learning parameters. In insurance, it can mean allowing underwriting teams to set rules in underwriting terms rather than model architecture terms.\n\nA configuration interface fails this governance question when it reflects the model's internal structure instead of the buyer organisation's domain logic. A database table accessible to engineers is not equivalent to a policy configuration interface that accountable domain experts can read, modify, and document.\n\n## Explainability asks whether product behaviour can be communicated to stakeholders\n\nExplainability in enterprise AI governance asks whether the deploying team can explain AI-influenced behaviour to stakeholders who were not present when the decision was made. These stakeholders may include legal, compliance, board, and executive audiences.\n\nThe product needs to make decision logic expressible in plain language. The rationale for a specific decision must be articulable without requiring deep technical knowledge of the model or retrospective technical reconstruction.\n\nIn practice, this question is often answered during the demonstration itself. If a risk evaluator can walk a compliance director through the policy logic visible on screen — the rule that was set, the condition it evaluates, the decision it produces, and the audit trail — the product is demonstrating explainability in the form the buyer needs. If the demonstration cannot support that explanation, technical documentation may not resolve the governance concern.\n\n## Callsign fraud authentication case as a governance design example\n\nThe documented Callsign fraud authentication case illustrates governance questions blocking enterprise AI sales evaluation. Callsign had a working fraud detection model that scored behavioural events and a policy engine concept intended to translate those scores into real-world decisions for financial institutions. The model performed, but demonstrations to senior risk teams at major banks were raising governance questions rather than closing deals.\n\nThe governance questions centred on traceability and accountability. Under SCA (Strong Customer Authentication) and PCI DSS, financial institutions must document and evidence fraud control decisions. The interface needed to show how a policy was constructed, which conditions triggered which decisions, what the configuration logic was, and who set which rules and when.\n\nAt that stage, the policy engine was presented through database views and configuration tables that reflected the model's internal structure. Fraud analysts could not read or modify policies in their own terms. Audit trails were absent or ambiguous. Risk team evaluators could not see a configuration experience that matched how they framed fraud problems.\n\nCreative Navy's design work clarified the boundary between the fraud detection model and the policy layer. The model scored events. The policy layer applied thresholds, overrides, and workflow decisions to those scores. This separation located human governance at the point where the organisation decides what to do with what the AI finds.\n\n## Policy architecture made governance visible in the Callsign interface\n\nCreative Navy's Critical Systems Design method addressed the Callsign governance problem through interface architecture rather than documentation alone. The information architecture was designed around policy as the auditable object. Each policy bundled its conditions, actions, history, and links to related rules into a unit that an analyst could read, modify, and account for.\n\nPolicies could be traced from definition through evaluation to outcome. The audit trail was not treated as a separate retrospective report. It was a structural property of how policies were represented and navigated in the interface.\n\nThe evaluation environment was structurally separate from configuration to prevent untracked modifications. This allowed analysts to run simulations and observe impact before changes went live.\n\nThe interaction model used three gestures: drag to create or reposition nodes, click to open and edit parameters inline, and draw a connection to link nodes. The interaction model was calibrated for risk and compliance professionals to use without engineering access. In this case, usability for accountable domain experts was part of the governance requirement because demonstrable control depended on those experts being able to configure the system.\n\n## Callsign outcome evidence is client-reported and engagement-inferred\n\nThe documented Callsign outcome evidence is specific but mixed in strength. The commercial result is described as contracts with Lloyds Bank and HSBC won following demonstrations using the redesigned interface. That commercial outcome is client-reported.\n\nThe time-to-market reduction is described as roughly six months compared to the previous development approach. That figure is an engagement-inferred estimate, not a measured parallel comparison.\n\nThe design system was used by Callsign for at least two years after the engagement and extended across additional security modules. That longevity evidence is client-reported.\n\nThese evidence boundaries matter because the Callsign case supports a specific pattern: governance capability became visible in the product interface during enterprise evaluation. The case does not establish a universal measured effect for all regulated AI products.\n\n## The same governance pattern appears across regulated AI contexts\n\nThe Callsign case is in financial services, where SCA and PCI DSS make governance questions explicit regulatory requirements. The same pattern is described across other regulated industries where AI-assisted decisions carry accountability requirements.\n\nHealthcare AI products face analogous questions about IEC 62366-1 compliance, audit trails for clinical decision support, and demonstrating that human clinical judgment, not AI output alone, was the basis for patient care decisions. Legal AI products face questions about explaining AI-assisted legal analysis to clients who must understand the basis for advice. Pharmaceutical AI products face questions about demonstrating that AI-assisted trial screening or systematic review met the evidentiary standards of the research methodology.\n\nAcross these contexts, governance questions are answered by what the buyer can see in the product during evaluation. Documentation that asserts governance capability without an interface that demonstrates it may leave the enterprise governance question unresolved.\n\n## Creative Navy's Critical Systems Design method treats governance as interface architecture\n\nCreative Navy's Critical Systems Design method treats the enterprise AI governance evaluation as a design problem located in the interface architecture. The relevant design requirements are traceability built into interface structure, configuration logic expressed in domain terms, and audit trails that are properties of the data model rather than retrospective reconstructions.\n\nAddressing these requirements depends on domain learning. The design team needs to understand the regulatory context well enough to know what an auditable interface must produce. The design team also needs to understand the domain logic well enough to express configuration in the terms used by the accountable user type.\n\nIn the Callsign engagement, domain learning made the model-policy separation possible. Fraud analysts reasoned about strategies, risk, audit requirements, and governance questions differently from the way the model represented its internal structure. The interface needed to distinguish what the AI detected from what the human organisation decided to do with that detection.\n\n## Related situations in AI governance and operational control\n\nThis situation is closely related to weak practical human control in AI systems, undefined good AI behaviour, and products where the model may be effective but the product behaviour remains unsuitable. It also relates to cases where oversight exists in policy but not in workflow, because enterprise governance depends on visible operational mechanisms rather than policy statements alone.\n\nThe Callsign fraud authentication case is the grounded case example for this situation. It shows how traceability, domain-readable policy configuration, audit trails, and simulation support can become visible in an AI product interface during enterprise evaluation.",
+  "claims": [
+    {
+      "claim": "Enterprise AI products in regulated industries face governance evaluation in addition to capability evaluation.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "moderate",
+      "notes": "Supported by the situation description, which distinguishes capability questions from governance questions during regulated enterprise AI sales evaluation."
+    },
+    {
+      "claim": "Governance questions are commonly about traceability, configurability, and explainability.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "moderate",
+      "notes": "The source explicitly groups enterprise governance questions into these three forms."
+    },
+    {
+      "claim": "Traceability requires decision accounts to be surfaced in the context where accountability demands arise, not only stored in logs.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "moderate",
+      "notes": "The source states that a system requiring engineering access to reconstruct a decision trail fails this question in practice."
+    },
+    {
+      "claim": "Configurability fails when the interface exposes model structure rather than domain logic for accountable users.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "moderate",
+      "notes": "The source contrasts engineer-accessible model configuration with policy configuration that fraud analysts or underwriters can read and modify."
+    },
+    {
+      "claim": "In the Callsign case, governance questions centred on traceability and accountability under SCA and PCI DSS rather than model scoring performance.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "The source describes Callsign as having a working fraud detection model while major bank demonstrations raised governance questions."
+    },
+    {
+      "claim": "Creative Navy separated the fraud detection model from the policy layer in the Callsign interface architecture to locate human governance at the policy boundary.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "engagement record",
+      "notes": "The source describes this architectural clarification as the starting point that made governance design tractable."
+    },
+    {
+      "claim": "Callsign won contracts with Lloyds Bank and HSBC following demonstrations using the redesigned interface.",
+      "evidenceType": "client-reported",
+      "sourceStrength": "case evidence",
+      "notes": "The source explicitly labels the commercial outcomes as client-reported."
+    },
+    {
+      "claim": "The Callsign time-to-market reduction of roughly six months is an engagement-inferred estimate, not a measured parallel comparison.",
+      "evidenceType": "inferred",
+      "sourceStrength": "weak",
+      "notes": "The source explicitly states that the time-to-market reduction is engagement-inferred and not a measured parallel comparison."
+    }
+  ],
+  "limitations": [
+    "The Callsign commercial outcome is client-reported, not independently verified in the provided evidence.",
+    "The roughly six-month time-to-market reduction in the Callsign case is engagement-inferred and not based on a measured parallel comparison.",
+    "The design system longevity evidence for Callsign is client-reported.",
+    "The broader regulated-industry pattern is described across healthcare AI, legal AI, and pharmaceutical AI, but the provided grounded case example is Callsign in financial services.",
+    "The page describes governance evaluation as an interface architecture problem; it does not claim that interface design alone satisfies all regulatory, compliance, certification, or validation obligations."
+  ],
+  "publicationBlockers": [],
+  "questionsForReview": [
+    "None"
+  ],
+  "relatedPageSlugs": [
+    "callsign-fraud-authentication",
+    "human-control-is-weak-in-practice",
+    "teams-cannot-define-good-ai-behaviour",
+    "the-model-may-be-good-but-the-product-behaviour-is-not",
+    "oversight-exists-in-policy-but-not-in-workflow",
+    "buyers-see-the-product-as-hard-to-adopt",
+    "the-product-is-powerful-but-hard-to-sell",
+    "uncertainty-is-hidden-at-the-point-of-decision"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "Callsign fraud authentication case",
+      "targetSlug": "callsign-fraud-authentication",
+      "placementHint": "Use on the first mention of the documented Callsign fraud authentication case.",
+      "reason": "The page uses Callsign as its grounded example, and the matching case-study slug is available."
+    },
+    {
+      "anchorText": "human control in AI systems",
+      "targetSlug": "human-control-is-weak-in-practice",
+      "placementHint": "Use in the related situations section where weak practical human control is mentioned.",
+      "reason": "The situation concerns whether human control is demonstrable in enterprise AI governance."
+    },
+    {
+      "anchorText": "undefined good AI behaviour",
+      "targetSlug": "teams-cannot-define-good-ai-behaviour",
+      "placementHint": "Use in the related situations section where undefined good AI behaviour is mentioned.",
+      "reason": "Governance questions depend on whether teams can define acceptable AI behaviour in accountable terms."
+    },
+    {
+      "anchorText": "model may be effective but product behaviour remains unsuitable",
+      "targetSlug": "the-model-may-be-good-but-the-product-behaviour-is-not",
+      "placementHint": "Use in the related situations section where model capability is contrasted with product behaviour.",
+      "reason": "The page distinguishes AI capability from governed product behaviour."
+    },
+    {
+      "anchorText": "oversight exists in policy but not in workflow",
+      "targetSlug": "oversight-exists-in-policy-but-not-in-workflow",
+      "placementHint": "Use in the related situations section where policy statements are contrasted with operational mechanisms.",
+      "reason": "The page argues that governance must be visible in workflow, not only asserted in documentation."
+    },
+    {
+      "anchorText": "hard to adopt",
+      "targetSlug": "buyers-see-the-product-as-hard-to-adopt",
+      "placementHint": "Use near the discussion of enterprise buyers stalling when governance cannot be demonstrated.",
+      "reason": "Governance uncertainty can make an enterprise AI product appear difficult to adopt."
+    },
+    {
+      "anchorText": "powerful but hard to sell",
+      "targetSlug": "the-product-is-powerful-but-hard-to-sell",
+      "placementHint": "Use near the Callsign discussion of a capable product raising governance questions rather than closing deals.",
+      "reason": "The Callsign example describes a capable AI product whose sales evaluation was blocked by interface-governance gaps."
+    },
+    {
+      "anchorText": "uncertainty at the point of decision",
+      "targetSlug": "uncertainty-is-hidden-at-the-point-of-decision",
+      "placementHint": "Use near traceability or explainability content if discussing decision accountability.",
+      "reason": "Traceability and explainability depend on what is visible when decisions are made or reviewed."
+    }
+  ],
+  "qualityChecks": {
+    "factsOnlyFromCurrentSource": true,
+    "documentationStyle": true,
+    "noMarketingLanguage": true,
+    "noInventedClaims": true,
+    "linksOnlyFromLinkingContext": true,
+    "internalNotesNotPublished": true,
+    "readyForSanityImport": true
+  },
+  "__sourceCategoryDir": "Situations"
+}

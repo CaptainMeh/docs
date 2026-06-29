@@ -1,0 +1,138 @@
+{
+  "slug": "decision-boundary",
+  "title": "Decision Boundary",
+  "pageType": "glossary-term",
+  "category": "glossary",
+  "section": "Industry Terms",
+  "summary": "A decision boundary defines where an automated or AI-assisted workflow requires active human judgement. The term distinguishes nominal intervention points from functional interaction designs that make informed human decision-making possible in practice.",
+  "keyFacts": [
+    "A decision boundary is a design choice, not only a policy or architecture choice.",
+    "A nominal decision boundary allows human intervention in principle but does not actively support or require human judgement through the interface.",
+    "A functional decision boundary requires relevant information, calibrated acceptance friction, and interaction design that prevents passive acceptance from being the easiest path.",
+    "Functional decision boundaries include three design components: boundary placement, boundary friction calibration, and information provision at the boundary.",
+    "In AI-enabled products, decision boundaries define what the AI decides autonomously, what the AI recommends with human confirmation, and what requires human judgement independent of the AI recommendation.",
+    "Override interaction is the enforcement mechanism at a decision boundary.",
+    "Override parity means overriding an AI recommendation should require no more cognitive effort than accepting it where independent judgement is required.",
+    "The Puraite AI systematic review example used blinded mode and override parity to make the screening boundary functional.",
+    "The Callsign fraud detection example separated evaluation mode from configuration mode by making modification structurally impossible during evaluation.",
+    "The Kardion MCS Controller example used a two-step rotary knob confirmation for flow rate adjustment; the available evidence is formative evaluation only."
+  ],
+  "bodySections": [
+    {
+      "heading": "Definition of a Decision Boundary",
+      "bodyMarkdown": "A decision boundary is the point in an automated or AI-assisted workflow where human judgement must be actively exercised rather than passively supplied through acceptance of a system recommendation.\n\nAt a decision boundary, the system is designed to require a genuine human decision. The boundary does not merely permit a human override as a theoretical option. It structures the interaction so that consequential acceptance cannot occur without deliberate human engagement.\n\nDecision boundaries are design choices. The placement of the boundary, the friction applied at the boundary, and the information available at the boundary all affect whether human judgement is exercised in practice or only in principle."
+    },
+    {
+      "heading": "Nominal and Functional Decision Boundaries Differ by Interface Design",
+      "bodyMarkdown": "A nominal decision boundary exists in policy or architecture, but the interface does not actively support or require human judgement. A human can technically intervene, but the workflow makes passive approval easier than evaluation. An approve button may exist while the information required for informed approval is absent, or the cognitive cost of approving may be lower than the cognitive cost of evaluating the recommendation.\n\nA functional decision boundary is enforced through interaction design. The relevant information is present at the decision point, the friction for acceptance is calibrated to the consequence of acceptance, and passive acceptance of an AI recommendation is not the path of least resistance.\n\nThe difference between a nominal and functional decision boundary is the interface, not the policy. A boundary can be written into a workflow architecture and still fail functionally if the interaction design carries users through the boundary without genuine deliberation."
+    },
+    {
+      "heading": "Functional Decision Boundaries Require Placement, Friction Calibration, and Information Provision",
+      "bodyMarkdown": "Boundary placement identifies where human judgement is required in the workflow. Placement is informed by consequence level, AI confidence reliability, and governance requirements. Higher consequence decisions require more active human judgement. Boundaries are especially important where AI confidence is variable or where the AI operates near the edge of its reliable zone. Some domains require human judgement at specific decision points regardless of AI reliability.\n\nBoundary friction calibration makes the cognitive cost of accepting proportional to the consequence of acceptance. High-consequence decisions need confirmation steps that require active engagement with what is being accepted. Low-consequence reversible decisions can use minimal friction. The calibration should be specific to consequence, not uniform across all decisions.\n\nInformation provision at the boundary gives the user what is required to make an informed decision at the moment of decision. A boundary where the user must approve something they cannot evaluate is a nominal boundary. Relevant context can include AI confidence, supporting evidence, historical performance, and the consequence of approval."
+    },
+    {
+      "heading": "Decision Boundaries in AI-Enabled Products Partition Autonomy, Recommendation, and Judgement",
+      "bodyMarkdown": "In AI-enabled products, decision boundaries define the partition between three kinds of system behaviour: what the AI decides autonomously, what the AI recommends with human confirmation, and what requires human judgement independent of the AI recommendation.\n\nThis partition is a design decision. Where each boundary sits determines whether human oversight in the product is real or nominal. The boundaries must be placed before the interaction design is built around them. Interaction design is the enforcement mechanism, but the boundary itself is a prior conceptual decision."
+    },
+    {
+      "heading": "Override Design Enforces the Decision Boundary",
+      "bodyMarkdown": "The override interaction is the enforcement mechanism at a decision boundary. If an override is technically available but cognitively expensive to execute, the boundary is not functional.\n\nOverride parity is the design standard for boundaries where genuine independent judgement is required. Override parity means that overriding an AI recommendation should require no more cognitive effort than accepting it. Without override parity, acceptance can become the path of least resistance even when the workflow nominally allows human intervention."
+    },
+    {
+      "heading": "Documented Examples of Decision Boundary Design",
+      "bodyMarkdown": "In the Puraite AI systematic review example, the decision boundary was placed at each inclusion or exclusion screening decision. Blinded mode meant that the AI recommendation was not visible until after the human assessment was recorded. This enforced independence at the boundary. Override parity removed the friction asymmetry that was making acceptance the path of least resistance. The available case evidence describes the boundary as functional because of both information sequencing and friction calibration.\n\nIn the Callsign fraud detection example, the separation between evaluation mode and configuration mode acted as a decision boundary. The boundary sat between reviewing how a policy behaves and making changes to live fraud strategy. The interaction design enforced the boundary by making modification structurally impossible during evaluation. In this example, the boundary was enforced architecturally rather than through friction alone.\n\nIn the Kardion MCS Controller example, the two-step rotary knob confirmation for flow rate adjustment was decision boundary design at the device-interaction level. The boundary sat between adjusting the knob and executing the flow adjustment. The second deliberate confirmation step added friction calibrated to the clinical consequence of unintended adjustment. The available evidence for this example is formative evaluation only."
+    },
+    {
+      "heading": "Boundaries and Limits of the Concept",
+      "bodyMarkdown": "A decision boundary does not mean that every decision in an automated workflow requires human confirmation. In AI-enabled contexts, decision boundaries define the partition between autonomous AI action, AI recommendation with human confirmation, and independent human judgement.\n\nA decision boundary is not functional merely because override is technically possible. If the user lacks the information needed to evaluate the recommendation, or if overriding is more cognitively expensive than accepting, the boundary remains nominal.\n\nThe Kardion MCS Controller example is limited to formative evaluation evidence. The available evidence does not establish a summative validation outcome for that example."
+    }
+  ],
+  "evidenceSummary": {
+    "strongClaims": [
+      "A decision boundary is the point in an automated or AI-assisted workflow where human judgement must be actively exercised rather than passively supplied through acceptance of a system recommendation.",
+      "The distinction between nominal and functional decision boundaries depends on interface design rather than policy alone.",
+      "Functional decision boundaries have three design components: boundary placement, boundary friction calibration, and information provision at the boundary.",
+      "In AI-enabled products, decision boundaries partition autonomous AI decisions, AI recommendations with human confirmation, and decisions requiring human judgement independent of the AI recommendation.",
+      "Override interaction is the enforcement mechanism at a decision boundary, and override parity is required where genuine independent judgement is required."
+    ],
+    "weakerClaims": [
+      "The Puraite AI systematic review example made the boundary functional through blinded mode and override parity.",
+      "The Callsign fraud detection example enforced a boundary between evaluation and live strategy changes by making modification structurally impossible during evaluation.",
+      "The Kardion MCS Controller example used a two-step rotary knob confirmation for flow rate adjustment, with evidence limited to formative evaluation."
+    ],
+    "limitations": [
+      "The page defines a design concept and does not provide quantitative outcome evidence.",
+      "The case examples show how decision boundaries were designed or enforced, but they do not establish general performance claims across all automated or AI-assisted workflows.",
+      "The Kardion MCS Controller example is explicitly limited to formative evaluation only."
+    ]
+  },
+  "relatedPageSlugs": [
+    "human-oversight",
+    "high-consequence",
+    "cognitive-load",
+    "state-visibility",
+    "workflow-robustness",
+    "puraite",
+    "callsign-fraud-authentication",
+    "kardion"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "human oversight",
+      "targetSlug": "human-oversight",
+      "reason": "Decision boundaries determine whether human oversight is real or nominal in AI-enabled products."
+    },
+    {
+      "anchorText": "high-consequence decisions",
+      "targetSlug": "high-consequence",
+      "reason": "Higher consequence decisions require more active human judgement and calibrated friction."
+    },
+    {
+      "anchorText": "cognitive load",
+      "targetSlug": "cognitive-load",
+      "reason": "Decision boundary design concerns cognitive cost in approval, evaluation, acceptance, and override interactions."
+    },
+    {
+      "anchorText": "state visibility",
+      "targetSlug": "state-visibility",
+      "reason": "Relevant information must be present at the decision point for informed judgement."
+    },
+    {
+      "anchorText": "workflow robustness",
+      "targetSlug": "workflow-robustness",
+      "reason": "Decision boundaries are workflow design choices in automated and AI-assisted workflows."
+    },
+    {
+      "anchorText": "Puraite",
+      "targetSlug": "puraite",
+      "reason": "The Puraite example illustrates blinded mode, information sequencing, and override parity."
+    },
+    {
+      "anchorText": "Callsign fraud detection",
+      "targetSlug": "callsign-fraud-authentication",
+      "reason": "The Callsign example illustrates evaluation mode and configuration mode separation."
+    },
+    {
+      "anchorText": "Kardion",
+      "targetSlug": "kardion",
+      "reason": "The Kardion example illustrates two-step confirmation at a device-interaction boundary."
+    }
+  ],
+  "tags": [
+    "decision boundary",
+    "AI-assisted workflow",
+    "human judgement",
+    "human oversight",
+    "override design",
+    "override parity",
+    "boundary friction",
+    "AI recommendation",
+    "workflow design"
+  ],
+  "_meta": {
+    "sourcePath": "sources/articles/Glossary/glossary--industry-terms--decision-boundary.md",
+    "parentSlug": "industry-terms",
+    "childPageSlugs": [],
+    "generatedBy": "openai"
+  }
+}

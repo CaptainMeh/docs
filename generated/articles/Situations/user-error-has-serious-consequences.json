@@ -1,0 +1,183 @@
+{
+  "_type": "documentationPage",
+  "sourceFile": "Articles/Situations/situations--risk--user-error-has-serious-consequences.md",
+  "sourcePath": "sources/articles/Situations/situations--risk--user-error-has-serious-consequences.md",
+  "sanityDocumentIdCandidate": "documentationPage.user-error-has-serious-consequences",
+  "title": "User Error Has Serious Consequences",
+  "slug": {
+    "_type": "slug",
+    "current": "user-error-has-serious-consequences"
+  },
+  "pageType": "situation",
+  "category": "situations",
+  "parentSlug": "risk-and-consequence",
+  "childPageSlugs": [],
+  "excerpt": "User error has serious consequences when an interface-induced error creates patient safety, facility safety, financial, liability, or operational-integrity risk rather than a recoverable inconvenience. The design standard shifts from general ease of use to the identification, elimination, mitigation, and documentation of specific failure modes.",
+  "metaTitle": "User Error Has Serious Consequences",
+  "metaDescription": "Defines high-consequence user error in medical, industrial safety, and high-throughput operational software, with calibrated case evidence.",
+  "summary": "This situation describes software contexts where user error is not merely a source of friction. In medical devices, industrial safety engineering, and high-throughput operational systems, interface failure can create use-related risk, unreliable safety assessments, financial discrepancy, supervisor escalation, or stress at operational volume.",
+  "definition": "A high-consequence user-error situation exists when interface-induced error can create patient safety, facility safety, liability, financial, or operational-integrity consequences rather than a simple recoverable inconvenience.",
+  "keyFacts": [
+    "In high-consequence domains, efficiency, learnability, and satisfaction are necessary but not sufficient design metrics.",
+    "IEC 62366-1 is described as requiring manufacturers to identify use scenarios, document use-related hazards, conduct formative evaluation, and demonstrate in summative testing that identified hazards have been mitigated.",
+    "The Kardion MCS Controller formative evaluation by Emergo by UL involved 7 participants and 8 clinical use scenarios under IEC 62366-1.",
+    "Creative Navy's Kardion design standard required no element to shift position across any view transition; the standard view alone went through 34 iterations.",
+    "The Kardion design passed FDA evaluation as submitted, with no design changes required, while FDA approval was determined through Kardion's regulatory submission.",
+    "The deSoutter Medical / Zethon engagement used a design standard that every critical state should be interpretable through recognition in a brief glance, without reading.",
+    "Eight orthopaedic and trauma surgeons in structured review sessions reported that the deSoutter device state could be verified through brief glances without reading.",
+    "Before the Gexcon redesign, configuration errors averaged 5–8 per simulation and each error produced 4–6 hours of corrective load; after the engagement, errors reduced to 1–2 per simulation and corrective load to approximately 20 minutes, measured by Gexcon across real deployment locations.",
+    "Petrol's POS system operated at peak rates of 84 transactions per hour, making transaction errors operationally significant at volume."
+  ],
+  "tags": [
+    "high-consequence user error",
+    "use-related risk",
+    "IEC 62366-1",
+    "medical-device UX",
+    "industrial safety software",
+    "CFD simulation software",
+    "operational integrity",
+    "performance in reality",
+    "domain learning",
+    "Critical Systems Design"
+  ],
+  "bodyMarkdown": "## User error in high-consequence software is not ordinary recoverable friction\n\nCreative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nUser error has serious consequences when an interface-induced mistake creates risk beyond time loss or usability friction. In these contexts, the error may affect patient safety, facility safety, financial accountability, liability exposure, or operational integrity at volume.\n\nThe relevant design question is not only whether the interface is easy to use. The relevant design question is which specific failure mode the interface must not produce, which interface condition creates that risk, and whether the design has eliminated that condition or mitigated it to an acceptable residual risk under the relevant standard.\n\n## High-consequence domains require a design standard beyond efficiency and learnability\n\nStandard UX practice often evaluates interfaces for efficiency, learnability, and satisfaction. In high-consequence domains, those measures remain useful, but they do not establish whether an interface is safe or reliable under the conditions that create consequential failure.\n\nAn interface can be efficient during normal operation and still create use-related risk during abnormal operation. An interface can be learnable by trained users and still fail when an untrained user encounters it in an emergency. An interface can look clear under controlled test conditions and become ambiguous during a procedure, under time pressure, at physical distance, with gloves, or with attention divided between the interface and a patient or physical system.\n\nThe design standard in these contexts asks what the interface communicates under actual operating conditions, what the interface does when something goes wrong, and what failure modes are created by interaction patterns, state representations, or visual hierarchy.\n\n## Medical-device user error creates patient safety risk under IEC 62366-1\n\nMedical-device interfaces create use-related risk when interface-induced error can affect patient safety. IEC 62366-1 is described here as the international standard for usability engineering of medical devices. It requires manufacturers to identify use scenarios, document use-related hazards, conduct formative evaluation, and demonstrate in summative testing that identified hazards have been mitigated.\n\nCreative Navy's medical-device work in this situation includes the Kardion MCS Controller and the deSoutter Medical / Zethon surgical device. In both cases, the consequence profile was patient safety under clinical operating conditions, and that consequence profile determined the design standard from the outset.\n\nIn the Kardion case, the MCS Controller manages blood flow in patients undergoing high-risk cardiac procedures and extended cardiogenic shock support. The controller is operated by scrub nurses, perfusionists, and ICU nurses under divided attention, with primary attention on the patient and procedure and secondary attention on the controller.\n\nThe formative evaluation conducted before Creative Navy's engagement by Emergo by UL involved 7 participants and 8 clinical use scenarios under IEC 62366-1. It identified specific use-related hazards: users misread min/max flow values as device-set safety limits rather than readings of actual variation; the startup sequence was longer than clinical expectations; and scrub nurses, perfusionists, and ICU nurses had different information needs from different physical positions.\n\nCreative Navy's Critical Systems Design method addressed the Kardion risk profile through a strict design standard: no element shifts position across any view transition. This standard was grounded in a specific failure mode: a user managing a patient under time pressure could lose spatial memory for where information lives if layout changes disrupt orientation at the moment when active search is least available. The standard required 34 iterations on the standard view alone. The design passed FDA evaluation as submitted, with no design changes required.\n\nThe Kardion regulatory scope remains bounded. Creative Navy produced a usability engineering trail containing domain research, formative evaluation, and documented design rationale structured to support Kardion's own IEC 62366-1 compliance activities. FDA approval was determined through Kardion's regulatory submission. Creative Navy does not claim compliance as a deliverable.\n\n## Surgical-device user error can occur when critical state requires reading during a procedure\n\nThe deSoutter Medical / Zethon bone cutter operates at rotational speeds from approximately 200 rpm to approximately 85,000 rpm during orthopaedic and trauma surgery. The surgeon operates the embedded GUI in brief glances during live procedures, with primary attention on the surgical field and patient. The non-dominant hand manages the device, the sterile field restricts positioning, and gloves reduce fine touch precision.\n\nThe legacy interface followed the internal software architecture. Its information content was correct, but its interaction profile was wrong for operating theatre conditions. Activation states and readiness conditions required reading to interpret. In the operating theatre context described here, reading means diverting sustained attention from the patient.\n\nCreative Navy's Critical Systems Design method produced a design standard for this surgical-device context: every critical state should be interpretable through recognition in a brief glance, without reading. The design used redundant non-colour cues so that spatial position, icon form, and reserved colour each independently communicated critical state. This was intended to prevent a single channel failure, such as variable theatre lighting, unusual viewing angle, or user distraction, from making a critical state ambiguous.\n\nSix competitor devices were benchmarked during Sandbox Experiments. The most common failure pattern was reliance on colour as the primary state indicator. The surviving design did not rely on colour alone for any critical state.\n\nEight orthopaedic and trauma surgeons in structured review sessions reported that device state could be verified through brief glances without reading, and that parameter adjustments no longer interrupted surgical workflow. This evidence is surgeon-reported from design review sessions, not post-deployment operational measurement. The engagement covered formative evaluation; summative validation remained the manufacturer's responsibility.\n\n## Industrial safety simulation user error creates deferred downstream consequence\n\nGexcon's CFD simulation software is used by engineers for gas dispersion modelling, explosion risk assessment, and facility safety validation for industrial installations. In this context, the consequence of interface failure is deferred rather than immediate. A misconfigured scenario can run, produce outputs that look valid, and become part of a safety assessment used for facility configuration, emergency planning zones, or operational permissions.\n\nBefore Creative Navy's Critical Systems Design engagement, configuration errors averaged 5–8 per simulation. Each error produced 4–6 hours of corrective load. The interface did not communicate where in the simulation setup the error had occurred, so engineers had to identify and trace the error themselves against the outputs.\n\nAfter the engagement, configuration errors reduced to 1–2 per simulation and corrective load reduced to approximately 20 minutes. This result was measured by Gexcon across real deployment locations. The documented mechanism was an explicit error-prevention layer in the interaction architecture: requirements specified which values must remain visible during scenario setup, where warnings were needed, and how the system should respond to incomplete or contradictory input.\n\nThe consequence profile in the Gexcon case does not appear as a reported incident rate. It appears in the reliability of the safety assessments produced by the software and in the reduced uncertainty about whether the simulation configuration was valid.\n\n## High-throughput operational systems make small transaction errors consequential at volume\n\nPetrol's POS system operated at peak rates of 84 transactions per hour. The relevant consequence profile was not patient safety or structural safety. It was operational integrity under high throughput.\n\nCombined transactions involving fuel, shop, voucher, and loyalty activity created conditions where individual transaction errors could accumulate into financial discrepancy, supervisor escalation, and cashier stress. These errors were not individually catastrophic, but they were operationally significant at scale.\n\nIn this profile, the interface design standard is shaped by throughput and cognitive overhead. The interface cannot require additional interpretation from a role already operating at maximum transaction volume.\n\n## Creative Navy's Critical Systems Design method treats operating conditions as the design brief\n\nCreative Navy's Critical Systems Design method addresses high-consequence user error by identifying the operational conditions in which interface failure becomes consequential before design decisions are made.\n\nDomain learning is treated as operational immersion rather than background research. In the Kardion engagement, Creative Navy began with the Emergo formative study and then ran mental model sessions with cardiologists and nurses to establish the clinical logic for information hierarchy. In the deSoutter engagement, Creative Navy reviewed twelve human factors studies on operating theatre performance, gloved-hand interaction, and dual-task conditions under clinical pressure. In the Gexcon engagement, Creative Navy's team studied manuals, ran controlled tests, attended intensive stakeholder sessions, and became productive users of CFD software before making design decisions.\n\nPerformance in reality is the standard that follows from domain learning. The interface is evaluated under the operating conditions where its failure modes become consequential: from 3 metres during a cardiac procedure, in variable theatre lighting with gloves, reading a value while moving around a vehicle under workshop conditions, or at 84 transactions per hour during peak load. These conditions are treated as the design brief, not as edge cases outside the design problem.\n\n## Evidence boundaries for this situation\n\nThe evidence in this situation is case-specific. Kardion evidence includes the Emergo by UL formative evaluation with 7 participants and 8 clinical use scenarios, Creative Navy-recorded design rationale, 34 iterations on the standard view, and the recorded regulatory result that the design passed FDA evaluation as submitted with no design changes required. FDA approval was determined through Kardion's regulatory submission.\n\nThe deSoutter evidence is formative and surgeon-reported from structured review sessions with eight orthopaedic and trauma surgeons. It is not post-deployment operational measurement, and summative validation was not in scope for Creative Navy.\n\nThe Gexcon outcome figures are client-measured across real deployment locations. The available evidence reports configuration errors, corrective load, and the interaction architecture mechanism; it does not report an incident-rate outcome.\n\nThe Petrol example establishes an operational consequence profile at 84 transactions per hour. The available description does not provide post-redesign outcome metrics for this page.\n\n## Related pages\n\nRelated situations in this knowledge base include abnormal conditions breaking the interface, system state being hard to understand, operators relying too much on memory, users being unable to recover cleanly from errors, warnings being visible but not actionable, and the interface increasing cognitive load at the worst moment. The Kardion case study is the related evidence page for the cardiac-support example discussed here.",
+  "claims": [
+    {
+      "claim": "In high-consequence software, user error can create patient safety, facility safety, liability, financial, or operational-integrity consequences rather than only recoverable usability friction.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "moderate",
+      "notes": "Supported by the situation description and the three consequence profiles in the page."
+    },
+    {
+      "claim": "IEC 62366-1 is described as requiring manufacturers to identify use scenarios, document use-related hazards, conduct formative evaluation, and demonstrate in summative testing that identified hazards have been mitigated.",
+      "evidenceType": "industry standard",
+      "sourceStrength": "strong",
+      "notes": "Use only as stated in the source; no additional regulatory pathway or class is inferred."
+    },
+    {
+      "claim": "The Kardion formative evaluation by Emergo by UL involved 7 participants and 8 clinical use scenarios under IEC 62366-1 and identified hazards related to min/max flow interpretation, startup sequence expectations, and role-specific information needs.",
+      "evidenceType": "third-party study",
+      "sourceStrength": "third-party study",
+      "notes": "Third-party formative evaluation details are preserved with participant count and scenario count."
+    },
+    {
+      "claim": "Creative Navy's Kardion design standard required no element to shift position across any view transition, and the standard view required 34 iterations.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "engagement record",
+      "notes": "Engagement fact; not framed as a measured outcome."
+    },
+    {
+      "claim": "The Kardion design passed FDA evaluation as submitted, with no design changes required, while FDA approval was determined through Kardion's regulatory submission.",
+      "evidenceType": "verifiable regulatory outcome",
+      "sourceStrength": "verifiable regulatory result",
+      "notes": "Non-causal regulatory wording is used; Creative Navy does not claim compliance as a deliverable."
+    },
+    {
+      "claim": "In the deSoutter Medical / Zethon engagement, eight orthopaedic and trauma surgeons reported in structured review sessions that device state could be verified through brief glances without reading.",
+      "evidenceType": "client-reported",
+      "sourceStrength": "case evidence",
+      "notes": "The source frames this as surgeon-reported from design review sessions, not post-deployment operational measurement."
+    },
+    {
+      "claim": "Gexcon configuration errors reduced from 5–8 to 1–2 per simulation, and corrective load reduced from 4–6 hours to approximately 20 minutes after Creative Navy's Critical Systems Design engagement.",
+      "evidenceType": "client-measured",
+      "sourceStrength": "strong",
+      "notes": "The source says the figures were measured by Gexcon across real deployment locations."
+    },
+    {
+      "claim": "Petrol's POS system operated at peak rates of 84 transactions per hour, making small transaction errors operationally significant at volume.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "The source provides the throughput figure and consequence profile but does not provide post-redesign outcome metrics."
+    }
+  ],
+  "limitations": [
+    "The page describes consequence profiles from specific cases and should not be read as a universal claim about all medical, industrial, or POS systems.",
+    "Creative Navy's Kardion role is described as producing a usability engineering trail structured to support Kardion's IEC 62366-1 compliance activities; Creative Navy does not claim compliance as a deliverable.",
+    "FDA approval for Kardion was determined through Kardion's regulatory submission; the page does not infer or state a regulatory pathway beyond the wording provided.",
+    "The deSoutter Medical / Zethon evidence is formative and surgeon-reported from structured design review sessions, not post-deployment operational measurement.",
+    "Summative validation for the deSoutter Medical / Zethon device was the manufacturer's responsibility and was not in Creative Navy's scope.",
+    "The Gexcon figures are client-measured across real deployment locations, but the page does not report incident-rate outcomes.",
+    "The Petrol example provides a peak throughput condition and consequence profile, but no post-redesign measured outcome metrics are stated."
+  ],
+  "publicationBlockers": [],
+  "questionsForReview": [
+    "None"
+  ],
+  "relatedPageSlugs": [
+    "kardion",
+    "abnormal-conditions-break-the-interface",
+    "system-state-is-hard-to-understand",
+    "operators-rely-on-memory-too-much",
+    "users-cannot-recover-cleanly-from-errors",
+    "warnings-are-visible-but-not-actionable",
+    "the-interface-increases-cognitive-load-at-the-worst-moment",
+    "delayed-understanding-creates-risk",
+    "expert-workflows-are-hard-to-operate"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "Kardion case study",
+      "targetSlug": "kardion",
+      "placementHint": "Related pages section and the Kardion medical-device example",
+      "reason": "The page discusses Kardion as a named case example and a matching allowed case-study slug is available."
+    },
+    {
+      "anchorText": "abnormal conditions breaking the interface",
+      "targetSlug": "abnormal-conditions-break-the-interface",
+      "placementHint": "Related pages section",
+      "reason": "The page explains that interfaces can be efficient under normal conditions while producing risk under abnormal conditions."
+    },
+    {
+      "anchorText": "system state being hard to understand",
+      "targetSlug": "system-state-is-hard-to-understand",
+      "placementHint": "Related pages section",
+      "reason": "The page repeatedly discusses activation state, readiness conditions, and abnormal state communication as failure modes."
+    },
+    {
+      "anchorText": "operators relying too much on memory",
+      "targetSlug": "operators-rely-on-memory-too-much",
+      "placementHint": "Related pages section",
+      "reason": "The Kardion example describes spatial memory disruption as a specific failure mode under time pressure."
+    },
+    {
+      "anchorText": "users being unable to recover cleanly from errors",
+      "targetSlug": "users-cannot-recover-cleanly-from-errors",
+      "placementHint": "Related pages section",
+      "reason": "The page distinguishes recoverable ordinary errors from errors that are difficult or consequential to recover from."
+    },
+    {
+      "anchorText": "warnings being visible but not actionable",
+      "targetSlug": "warnings-are-visible-but-not-actionable",
+      "placementHint": "Related pages section",
+      "reason": "The Gexcon example discusses warnings and system responses needed for incomplete or contradictory input."
+    },
+    {
+      "anchorText": "the interface increasing cognitive load at the worst moment",
+      "targetSlug": "the-interface-increases-cognitive-load-at-the-worst-moment",
+      "placementHint": "Related pages section",
+      "reason": "The page describes clinical, surgical, simulation, and POS contexts where additional interpretation is most costly under pressure."
+    },
+    {
+      "anchorText": "delayed understanding creates risk",
+      "targetSlug": "delayed-understanding-creates-risk",
+      "placementHint": "Related pages section",
+      "reason": "The page discusses deferred consequences in Gexcon simulations and delayed interpretation in clinical contexts."
+    },
+    {
+      "anchorText": "expert workflows are hard to operate",
+      "targetSlug": "expert-workflows-are-hard-to-operate",
+      "placementHint": "Related pages section",
+      "reason": "The page discusses expert tools and specialist workflows in clinical and industrial safety settings."
+    }
+  ],
+  "qualityChecks": {
+    "factsOnlyFromCurrentSource": true,
+    "documentationStyle": true,
+    "noMarketingLanguage": true,
+    "noInventedClaims": true,
+    "linksOnlyFromLinkingContext": true,
+    "internalNotesNotPublished": true,
+    "readyForSanityImport": true
+  }
+}

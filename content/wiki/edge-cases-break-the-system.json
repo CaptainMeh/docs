@@ -1,0 +1,142 @@
+{
+  "slug": "edge-cases-break-the-system",
+  "title": "Edge Cases Break The System",
+  "pageType": "failure",
+  "category": "failures",
+  "section": "Error And Recovery Failures",
+  "summary": "Edge case breakage is a failure pattern in which a system encounters inputs or conditions outside its designed envelope and enters states that were never designed. The failure concerns undefined or incoherent behaviour, not merely poor support for unusual scenarios.",
+  "keyFacts": [
+    "An edge case is an input or condition outside the designed normal case; it is not necessarily rare.",
+    "Undefined behaviour means system behaviour in a state for which no design intention was specified.",
+    "The failure differs from poor rare-scenario support because the system no longer has a valid designed state.",
+    "The failure differs from weak recovery paths because it occurs when the system fails to maintain coherent state before recovery is attempted.",
+    "Common causes include edge cases left outside scope, invalid state combinations, cascading failures, error handling that creates worse states, and sensor or data edge cases in embedded systems.",
+    "The Gexcon CFD simulation case describes individually valid but collectively contradictory parameter combinations that produced coherent-looking outputs from an incoherent input state.",
+    "The Cox Marine cluster display case describes multi-engine fault scenario testing during Concept Convergence that revealed aggregate display states with no actionable priority signal.",
+    "The Elsner Elektronik case describes sensor fault states, delayed readings, and calibration drift conditions that could otherwise appear as stale, contradictory, or misleading values.",
+    "The Beissbarth automotive calibration case describes equipment communication failure that could leave a sequence partially completed with no designed exit."
+  ],
+  "bodySections": [
+    {
+      "heading": "Summary",
+      "bodyMarkdown": "Creative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nEdge case breakage occurs when a system encounters inputs or conditions outside its designed envelope and enters behaviour that was never designed. The result is not simply poor interaction support. The system may enter an invalid state, produce outputs that do not correspond to any valid operational interpretation, or lock into a condition that prevents the user from continuing.\n\nThis failure is about undefined behaviour. The interface may look coherent, but the underlying state or output may be incoherent, misleading, or non-functional."
+    },
+    {
+      "heading": "Failure pattern: edge cases create undefined system behaviour",
+      "bodyMarkdown": "An edge case is an input or condition outside the designed normal case. It is not necessarily rare. It is outside the assumptions the interface, workflow, data model, or state machinery was designed to handle.\n\nUndefined behaviour occurs when no design intention specifies what the system should do in a given state. In this failure pattern, the system falls back on default state machinery, partial validation, isolated component behaviour, or incomplete error handling. Those responses can produce an interface state that is technically representable but operationally meaningless.\n\nAn invalid state can appear when multiple system components are individually valid but collectively undefined. Complex systems with interdependent parameters are especially exposed to this pattern because a user can create combinations that no single component treats as invalid, while the combined state has no valid operational interpretation."
+    },
+    {
+      "heading": "Edge case breakage differs from poor rare-scenario support and weak recovery",
+      "bodyMarkdown": "Edge case breakage is distinct from rare scenarios having poor interaction support. Poor rare-scenario support means the system still has a valid state but does not support the user well. Edge case breakage means the system has no coherent designed state for the condition it has encountered.\n\nEdge case breakage is also distinct from weak recovery paths. Weak recovery paths concern what happens after an error has been identified. Edge case breakage concerns the system failing to maintain coherent state when edge case conditions are encountered, before recovery is attempted.\n\nThe distinction matters because adding recovery instructions does not solve an undefined state. The system first needs designed behaviour for the edge condition: detection, prevention, graceful degradation, explicit fault state handling, or a controlled exit from the invalid sequence."
+    },
+    {
+      "heading": "What causes edge cases to break the system",
+      "bodyMarkdown": "Edge cases break systems when inputs or operating conditions outside the designed normal case are treated as outside scope, deferred for later, or assumed not to occur. When those conditions do occur, the system has no designed behaviour and may produce whatever its default state machinery allows.\n\nInvalid state combinations are a common cause. A system can accept values or component states that are valid in isolation but undefined in combination. The resulting behaviour is unpredictable because no design intention specified what the combined state means.\n\nCascading failures occur when an edge case in one component triggers unexpected behaviour in other components. The original edge condition may be manageable, but the downstream cascade can create a state the interface cannot represent coherently.\n\nError handling can also produce worse states. An error handler may place the system in the wrong recovery state, a timeout may lock a configuration before it is complete, or a validation rule may reject a valid edge case input without explanation. In these cases, the response to the edge condition becomes part of the failure.\n\nEmbedded systems add sensor and data edge cases. Sensor dropouts, conflicting sensor readings, and out-of-range values can be physically possible while still falling outside the interface's data assumptions. If those cases are not designed for, the interface may display stale values, contradictory values, or misleading state changes."
+    },
+    {
+      "heading": "How edge case breakage appears in documented cases",
+      "bodyMarkdown": "The Gexcon CFD simulation case shows edge case breakage through contradictory parameter combinations. The simulation setup allowed parameter combinations that were individually valid but collectively contradictory. Before redesign, the system accepted the inputs, ran the simulation, and produced outputs that appeared valid even though the physical model was internally inconsistent. The redesign added contradictory-input detection before the simulation run, preventing the system from entering the undefined output state.\n\nThe Cox Marine cluster display case shows edge case breakage through multi-engine fault scenario testing during Concept Convergence. Several candidate layouts displayed fault indicators across multiple engine tiles but gave no priority signal to direct attention. Each component display could be technically valid, while the aggregate display state failed to communicate anything actionable about the fault condition. The designed response included a dedicated fault-summary area and per-tile alarm highlighting.\n\nThe Elsner Elektronik case shows edge case breakage through sensor fault states and delayed readings. Smart home controllers can encounter sensor faults, calibration drift, lost connections, and delayed readings. Without explicit design for those conditions, the interface could show stale values, contradictory values, or values that conflated a fault with a real state change. Explicit design for fault states, delayed readings, and calibration drift converted these from undefined-behaviour states into designed-behaviour states.\n\nThe Torqeedo maritime HMI case shows edge case breakage through sensor cadence conflicts. The system integrated sensors updating at different rates. Under edge case hardware conditions such as sensor dropouts, intermittent connectivity, and physical shock from hull impacts, the synchronisation architecture could be pushed into states where sensor values were inconsistent in ways the display was not designed to handle. The design work addressed these conditions by building defensive handling for sensor edge cases into the display architecture.\n\nThe Beissbarth automotive calibration case shows edge case breakage through equipment communication failure. A communication failure with a hardware component could leave the calibration sequence in a partially completed state with no designed exit: the sequence could not proceed because the component was unavailable, and it could not cleanly roll back because partial measurements had already been recorded. The design specified explicit behaviour for communication failure, including what the display should show, what the technician should do, and where the restart point was."
+    },
+    {
+      "heading": "Defensive design response: graceful degradation instead of undefined states",
+      "bodyMarkdown": "Graceful degradation is the design alternative to edge case breakage. Instead of assuming edge cases will not occur, the system defines how it should behave when capability is reduced, data is incomplete, or a state is outside the normal operational envelope.\n\nDefensive design requires the system to respond to inputs outside the designed case. That response may include contradictory-input detection, explicit fault states, delayed-reading states, calibration drift handling, display prioritisation during aggregate fault conditions, controlled restart points, or prevention of an invalid operation before it produces output.\n\nThe design objective is not to support every edge case with full capability. The objective is to prevent undefined behaviour. A reduced-capability state is safer and more interpretable than an apparently valid interface state built on incoherent inputs."
+    },
+    {
+      "heading": "Boundaries and limits",
+      "bodyMarkdown": "Edge case breakage should not be used as a label for every rare or difficult scenario. If the system remains coherent but gives weak support to a scenario outside the normal case, the closer failure is rare scenarios having poor interaction support.\n\nEdge case breakage should also not be used only for visible crashes or visual defects. A system can break while appearing visually coherent if the displayed output is built on an incoherent input state or if individually valid component displays produce an aggregate state with no actionable meaning.\n\nThe available evidence for this failure pattern is case-based. The documented examples show mechanisms and design responses, but they do not provide quantified frequency rates for edge case breakage across systems."
+    }
+  ],
+  "evidenceSummary": {
+    "strongClaims": [
+      "Edge case breakage occurs when inputs or conditions outside the designed envelope produce undefined behaviour, invalid states, misleading outputs, or non-functional lock-in.",
+      "The failure is distinct from rare scenarios having poor interaction support because edge case breakage concerns the system entering no valid designed state at all.",
+      "The failure is distinct from weak recovery paths because it occurs before recovery is attempted, when the system fails to maintain coherent state.",
+      "Common causes include unhandled edge cases, invalid state combinations, cascading failures, error handling that creates worse states, and sensor or data edge cases in embedded systems.",
+      "In the Gexcon CFD simulation case, individually valid but collectively contradictory parameter combinations produced coherent-looking outputs from an incoherent input state before contradictory-input detection was added.",
+      "In the Cox Marine cluster display case, multi-engine fault scenario testing during Concept Convergence revealed aggregate display states that were technically valid per component but practically incoherent for the fault condition.",
+      "In the Elsner Elektronik case, explicit design for sensor fault states, delayed readings, and calibration drift converted undefined-behaviour states into designed-behaviour states.",
+      "In the Beissbarth automotive calibration case, explicit behaviour for equipment communication failure addressed the risk of a partially completed calibration sequence with no designed exit."
+    ],
+    "limitations": [
+      "The documented evidence is case-based and does not provide quantified frequency rates for edge case breakage across systems.",
+      "The failure should not be conflated with poor interaction support for rare scenarios when the system still has a valid designed state.",
+      "The failure should not be limited to visible crashes; a coherent-looking output can still be an undefined or misleading state when the input state is incoherent."
+    ]
+  },
+  "relatedPageSlugs": [
+    "rare-scenarios-have-poor-interaction-support",
+    "recovery-paths-are-weak",
+    "errors-are-hard-to-correct",
+    "errors-are-hard-to-notice",
+    "users-cannot-see-what-state-the-system-is-in",
+    "warnings-are-visible-but-their-meaning-is-unclear",
+    "data-is-available-but-hard-to-interpret",
+    "cox-marine",
+    "beissbarth"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "rare scenarios having poor interaction support",
+      "targetSlug": "rare-scenarios-have-poor-interaction-support",
+      "reason": "The source explicitly distinguishes edge case breakage from poor interaction support for rare scenarios."
+    },
+    {
+      "anchorText": "recovery paths being weak",
+      "targetSlug": "recovery-paths-are-weak",
+      "reason": "The source explicitly distinguishes edge case breakage from weak recovery paths."
+    },
+    {
+      "anchorText": "errors being hard to correct",
+      "targetSlug": "errors-are-hard-to-correct",
+      "reason": "Edge case breakage can leave users without a designed exit or correction path, which is adjacent to correction difficulty."
+    },
+    {
+      "anchorText": "errors being hard to notice",
+      "targetSlug": "errors-are-hard-to-notice",
+      "reason": "Coherent-looking outputs from incoherent states can make failures difficult to detect."
+    },
+    {
+      "anchorText": "users being unable to see what state the system is in",
+      "targetSlug": "users-cannot-see-what-state-the-system-is-in",
+      "reason": "Invalid and undefined states often manifest as unclear or incoherent system state presentation."
+    },
+    {
+      "anchorText": "warnings whose meaning is unclear",
+      "targetSlug": "warnings-are-visible-but-their-meaning-is-unclear",
+      "reason": "The Cox Marine example concerns fault indicators that were present but did not communicate an actionable priority signal."
+    },
+    {
+      "anchorText": "data that is available but hard to interpret",
+      "targetSlug": "data-is-available-but-hard-to-interpret",
+      "reason": "Sensor edge cases can produce technically representable values that are operationally misleading."
+    },
+    {
+      "anchorText": "Cox Marine",
+      "targetSlug": "cox-marine",
+      "reason": "The source names Cox Marine as a case example of multi-engine fault scenario testing revealing incoherent aggregate display states."
+    },
+    {
+      "anchorText": "Beissbarth automotive calibration",
+      "targetSlug": "beissbarth",
+      "reason": "The source names Beissbarth as a case example of equipment communication failure producing a partially completed sequence with no designed exit."
+    }
+  ],
+  "tags": [
+    "edge cases",
+    "undefined behaviour",
+    "invalid state",
+    "error recovery",
+    "graceful degradation",
+    "cascading failure",
+    "sensor edge cases",
+    "defensive design",
+    "embedded systems",
+    "failure pattern"
+  ],
+  "_meta": {
+    "sourcePath": "sources/articles/Failures/failures--error-recovery--edge-cases-break-the-system.md",
+    "parentSlug": "error-and-recovery-failures",
+    "childPageSlugs": [],
+    "generatedBy": "deterministic"
+  }
+}

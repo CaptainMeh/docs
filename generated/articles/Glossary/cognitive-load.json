@@ -1,0 +1,146 @@
+{
+  "_type": "documentationPage",
+  "sourceFile": "Articles/Glossary/glossary--industry-terms--cognitive-load.md",
+  "sourcePath": "sources/articles/Glossary/glossary--industry-terms--cognitive-load.md",
+  "sanityDocumentIdCandidate": "documentationPage.cognitive-load",
+  "title": "Cognitive Load",
+  "slug": {
+    "_type": "slug",
+    "current": "cognitive-load"
+  },
+  "pageType": "glossary-term",
+  "category": "glossary",
+  "parentSlug": "industry-terms",
+  "childPageSlugs": [],
+  "excerpt": "Cognitive load is the total mental effort required to work with a system at a given moment. In interface design, the useful distinction is between task-inherent mental effort and unnecessary effort imposed by the interface.",
+  "metaTitle": "Cognitive Load Definition",
+  "metaDescription": "Cognitive load is the mental effort required to use a system, including task-inherent demand and unnecessary interface-imposed demand.",
+  "summary": "Cognitive load describes the mental effort required to work with a system. In interface design, cognitive load reduction focuses on removing extraneous interface-imposed demands without reducing the capability or domain complexity of the underlying task.",
+  "definition": "Cognitive load is the total mental effort required to work with a system at a given moment, including both task-inherent cognitive demand and unnecessary interface-imposed demand.",
+  "keyFacts": [
+    "Cognitive load has two relevant components in interface design: effort inherent to the task and effort imposed unnecessarily by the interface.",
+    "The task-inherent component cannot be reduced without reducing capability.",
+    "The interface-imposed component can be reduced by design.",
+    "Extraneous cognitive load often comes from memory dependency, interpretation requirement, and navigation overhead.",
+    "Cognitive load that is manageable during baseline workload may become limiting under operational pressure.",
+    "Interface-imposed extraneous load can increase training requirements because users must learn idiosyncrasies, locations, and steps.",
+    "Polymatica OLAP analytics case evidence reports independent task completion changing from 2% to 56% after technical vocabulary was replaced with domain vocabulary and an orientation layer.",
+    "Gexcon CFD simulation case evidence reports configuration errors changing from 5–8 per simulation to 1–2 per simulation after required values were surfaced in context.",
+    "WCO/IPM customs intelligence case evidence reports a 78% training cost reduction as client-reported evidence."
+  ],
+  "tags": [
+    "cognitive load",
+    "extraneous cognitive load",
+    "intrinsic load",
+    "working memory",
+    "interface design",
+    "complex interfaces",
+    "training requirements",
+    "operational pressure"
+  ],
+  "bodyMarkdown": "## Definition\n\nCognitive load is the total mental effort required to work with a system at a given moment. In interface design, cognitive load includes the cognitive effort the underlying task genuinely requires and the cognitive effort the interface imposes on top of the task.\n\nThe task-inherent component includes domain complexity, decisions that must be made, and information that must be held in mind. This component cannot be reduced without reducing capability.\n\nThe interface-imposed component is extraneous cognitive load. It can be reduced by design when the interface requires mental effort that the task itself does not require.\n\n## Meaning in interface design\n\nCognitive load is useful in interface design because it separates the cognitive demands that are inherent to work from the cognitive demands that an interface imposes unnecessarily. This distinction matters most in complex domains, where the goal is not to remove the complexity of the work but to avoid adding avoidable mental effort.\n\nA CFD simulation engineer must hold complex physical parameters in mind while configuring scenarios. That is intrinsic load because the task genuinely requires it. If the interface also requires the engineer to remember configuration values set on a prior screen that is no longer visible, that additional working-memory demand is extraneous. It is imposed by the interface architecture, not by the simulation task.\n\nRemoving extraneous cognitive load does not reduce the engineer's ability to perform the simulation. It removes an unnecessary burden on working memory.\n\n## Cognitive load reduction is not simplification\n\nCognitive load reduction is not the same as simplifying a system by reducing what it can do. In complex professional software, the goal is to make the cognitive effort required by the interface correspond more accurately to the difficulty of the work itself.\n\nThe domain complexity of a task may need to remain intact. The design opportunity is to remove unnecessary memory demands, interpretation demands, and navigation overhead that do not belong to the task.\n\n## Three sources of extraneous cognitive load in complex interfaces\n\nMemory dependency occurs when an interface requires users to hold information in working memory that the interface should provide. Examples include prior values not shown at the current step, system state not visible in context, and information from a previous screen not persisted to the current one.\n\nInterpretation requirement occurs when an interface presents information that must be actively decoded before it can be used. Examples include a symbol that must be decoded, a status that must be translated into an action implication, or a data value whose significance requires a mental calculation.\n\nNavigation overhead occurs when an interface requires users to navigate to find information relevant to the current task. Every navigation step consumes working memory and attention that is not being applied to the task itself.\n\n## Peak workload makes extraneous cognitive load more consequential\n\nCognitive load that is manageable at baseline workload may become critically limiting under operational pressure. The documented examples include a time-pressured scheduler handling a live incident, a surgeon monitoring a device state during a procedure, and a captain making manoeuvre decisions under adverse conditions.\n\nIn these situations, interface interpretation competes directly with the cognitive demands of the operational situation. An interface that imposes manageable translation overhead during routine operations may impose unbearable overhead during the exceptions that matter most.\n\n## Interface-imposed cognitive load can become a training requirement\n\nWhen interface design imposes extraneous cognitive load, training compensates for it. Users learn interface idiosyncrasies, build mental models of where information is, and memorise the steps required to reach functions.\n\nThis training cost is the organisational expression of extraneous cognitive load. When extraneous load is reduced by design, training requirements can reduce because recognition replaces recall and relevant information is surfaced in context.\n\n## Examples in practice\n\nIn the Polymatica OLAP analytics case, the primary source of extraneous cognitive load was a mental model mismatch. The interface required users to maintain an internal model of OLAP technical concepts, including cubes, facts, and dimensions, before any operation could begin. Available case evidence reports independent task completion changing from 2% to 56% using product analytics measurement. The redesign replaced technical vocabulary with domain vocabulary and provided an orientation layer before operations.\n\nIn the Gexcon CFD simulation case, extraneous cognitive load came from the need to hold configuration state in working memory. Values set in prior screens were not visible at the current configuration step. Available case evidence reports that this contributed to 5–8 configuration errors per simulation before the redesign. Gexcon measured the redesigned interface in real deployments and recorded 1–2 configuration errors per simulation after required values were surfaced in context.\n\nIn the WCO/IPM customs intelligence case, recognition over recall was used as the explicit cognitive design standard. Relevant information was surfaced in context rather than requiring officers to recall it from training. Available case evidence reports a 78% training cost reduction as client-reported evidence.\n\n## Evidence basis\n\nThe evidence basis for this glossary term includes three documented case examples: Polymatica OLAP analytics, Gexcon CFD simulation, and WCO/IPM customs intelligence.\n\nThe Polymatica evidence is reported as product analytics measurement for independent task completion. The Gexcon evidence is reported as measurement by Gexcon in real deployments for configuration errors per simulation. The WCO/IPM training cost reduction is client-reported.\n\nThese examples support the practical distinction between task-inherent cognitive effort and extraneous interface-imposed cognitive effort. They do not establish a universal outcome level for all systems or all domains.\n\n## Boundaries and limits\n\nCognitive load reduction cannot remove the cognitive effort that the underlying work genuinely requires. Reducing that component would reduce capability.\n\nCognitive load reduction can remove unnecessary interface-imposed effort, especially memory dependency, interpretation requirement, and navigation overhead.\n\nThe available outcome figures are case-specific. The Polymatica, Gexcon, and WCO/IPM examples describe documented cases, not a general benchmark for all interface redesign work.\n\n## Related pages\n\nCognitive load is closely related to state visibility when an interface fails to show prior values, current system state, or information needed at the current step.\n\nCognitive load is also related to operational clarity when users must interpret system information under pressure, and to error-likely conditions when interface-imposed memory or navigation demands increase the likelihood of mistakes.",
+  "claims": [
+    {
+      "claim": "Cognitive load is the total mental effort required to work with a system at a given moment.",
+      "evidenceType": "definition",
+      "sourceStrength": "strong",
+      "notes": "Defined directly in the source definition."
+    },
+    {
+      "claim": "In interface design, cognitive load separates task-inherent demand from unnecessary interface-imposed demand.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "The source identifies this as the essential distinction that makes the concept useful for interface design."
+    },
+    {
+      "claim": "Extraneous cognitive load in complex interfaces can arise from memory dependency, interpretation requirement, and navigation overhead.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "The source lists these as three practical sources of extraneous cognitive load."
+    },
+    {
+      "claim": "Cognitive load that is manageable at baseline workload may become critically limiting under operational pressure.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "moderate",
+      "notes": "The source describes this as the peak-load problem and gives operational examples."
+    },
+    {
+      "claim": "Polymatica OLAP analytics case evidence reports independent task completion changing from 2% to 56% after redesign work that reduced a mental model mismatch.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "The source describes the figure as product analytics, measured."
+    },
+    {
+      "claim": "Gexcon CFD simulation case evidence reports configuration errors changing from 5–8 per simulation to 1–2 per simulation after required values were surfaced in context.",
+      "evidenceType": "client-measured",
+      "sourceStrength": "case evidence",
+      "notes": "The source states that both figures were measured by Gexcon in real deployments."
+    },
+    {
+      "claim": "WCO/IPM customs intelligence case evidence reports a 78% training cost reduction after recognition over recall was applied as the explicit cognitive design standard.",
+      "evidenceType": "client-reported",
+      "sourceStrength": "case evidence",
+      "notes": "The source labels the training cost reduction as client-reported."
+    }
+  ],
+  "limitations": [
+    "The definition distinguishes between task-inherent cognitive effort and extraneous interface-imposed effort; it does not claim that all cognitive effort should be removed.",
+    "The task-inherent component cannot be reduced without reducing capability.",
+    "The Polymatica, Gexcon, and WCO/IPM figures are case-specific and should not be treated as universal benchmarks.",
+    "The WCO/IPM training cost reduction is client-reported rather than independently verified in the source."
+  ],
+  "publicationBlockers": [],
+  "questionsForReview": [
+    "None"
+  ],
+  "relatedPageSlugs": [
+    "state-visibility",
+    "operational-clarity",
+    "error-likely-condition",
+    "decision-quality",
+    "degraded-mode",
+    "high-consequence",
+    "workflow-robustness"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "state visibility",
+      "targetSlug": "state-visibility",
+      "placementHint": "Related pages section and sections discussing memory dependency",
+      "reason": "The source describes extraneous cognitive load caused by prior values, system state, or previous-screen information not being visible in context."
+    },
+    {
+      "anchorText": "operational clarity",
+      "targetSlug": "operational-clarity",
+      "placementHint": "Related pages section and peak workload discussion",
+      "reason": "The source describes interface interpretation overhead competing with operational demands under pressure."
+    },
+    {
+      "anchorText": "error-likely conditions",
+      "targetSlug": "error-likely-condition",
+      "placementHint": "Related pages section and examples in practice",
+      "reason": "The source links extraneous working-memory demand to configuration errors in the Gexcon CFD simulation case."
+    },
+    {
+      "anchorText": "decision quality",
+      "targetSlug": "decision-quality",
+      "placementHint": "Peak workload discussion",
+      "reason": "The source describes cognitive overhead affecting schedulers, surgeons, and captains while decisions must be made under pressure."
+    },
+    {
+      "anchorText": "degraded mode",
+      "targetSlug": "degraded-mode",
+      "placementHint": "Peak workload discussion",
+      "reason": "The source emphasises that average-load usability may not hold during exceptional or pressured conditions."
+    }
+  ],
+  "qualityChecks": {
+    "factsOnlyFromCurrentSource": true,
+    "documentationStyle": true,
+    "noMarketingLanguage": true,
+    "noInventedClaims": true,
+    "linksOnlyFromLinkingContext": true,
+    "internalNotesNotPublished": true,
+    "readyForSanityImport": true
+  }
+}

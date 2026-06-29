@@ -1,0 +1,158 @@
+{
+  "_type": "documentationPage",
+  "sourceFile": "Articles/Glossary/glossary--industry-terms--workflow-robustness.md",
+  "sourcePath": "sources/articles/Glossary/glossary--industry-terms--workflow-robustness.md",
+  "sanityDocumentIdCandidate": "documentationPage.workflow-robustness",
+  "title": "Workflow Robustness",
+  "slug": {
+    "_type": "slug",
+    "current": "workflow-robustness"
+  },
+  "pageType": "glossary-term",
+  "category": "glossary",
+  "parentSlug": "industry-terms",
+  "childPageSlugs": [],
+  "excerpt": "Workflow robustness is the degree to which a designed workflow continues to support users when conditions depart from the nominal case. It concerns exceptions, role variation, interruptions, non-nominal operating conditions, and graceful degradation at the workflow level.",
+  "metaTitle": "Workflow Robustness",
+  "metaDescription": "Workflow robustness defines how workflows continue supporting users when exceptions, interruptions, role variation, or non-standard conditions occur.",
+  "summary": "Workflow robustness describes how well a workflow continues to function when users, inputs, sequences, or operating conditions differ from the expected case. A robust workflow handles exceptions as designed workflow states and degrades gracefully when parts of the workflow cannot proceed.",
+  "definition": "Workflow robustness is the degree to which a designed workflow continues to support users effectively when conditions deviate from the designed normal case, including exceptions, out-of-sequence behaviour, changed operational conditions, edge cases, and non-standard inputs.",
+  "keyFacts": [
+    "A robust workflow functions correctly in the nominal case and degrades gracefully rather than failing completely when conditions depart from the nominal case.",
+    "A brittle workflow works only when everything proceeds exactly as designed and can produce confusion, errors, or dead ends outside that envelope.",
+    "Workflow robustness includes exception handling at the workflow level, role variation, interruption recovery, non-nominal operating conditions, and graceful degradation at the workflow level.",
+    "Workflow correctness concerns correct outcomes in the nominal case; workflow robustness concerns acceptable outcomes or known degradation in non-nominal cases.",
+    "In complex professional environments, exceptions are described as regular occurrences rather than rare edge cases.",
+    "The Triopsis workforce management case treated weather incidents, job delays, scheduling conflicts, partial completions, and crew shortages as primary workflow states.",
+    "The Gexcon CFD simulation case used pre-run validation to handle incomplete or contradictory simulation inputs before invalid-looking outputs were produced.",
+    "The WCO/IPM customs intelligence case involved deployment across 107 member administrations with different connectivity conditions, device fleets, languages, and institutional cultures.",
+    "The Swiss petrol forecourt research documented and coded 532 transactions, including complex mixed transactions running up to 7 minutes."
+  ],
+  "tags": [
+    "workflow design",
+    "workflow robustness",
+    "workflow brittleness",
+    "exception handling",
+    "interruption recovery",
+    "graceful degradation",
+    "operational variation",
+    "non-nominal conditions"
+  ],
+  "bodyMarkdown": "## Definition\n\nWorkflow robustness is the degree to which a designed workflow continues to support users effectively when conditions deviate from the designed normal case. Deviations include exceptions, unintended sequence changes, changed operational conditions, edge cases, and non-standard inputs.\n\nA robust workflow functions correctly in the nominal case and degrades gracefully rather than failing completely when conditions depart from the nominal case. A brittle workflow functions correctly only when everything proceeds exactly as designed; anything outside that envelope can produce confusion, errors, or dead ends.\n\n## Meaning in workflow design documentation\n\nWorkflow robustness identifies the difference between a workflow that works under designed conditions and a workflow that still supports real operational use when those conditions change. Workflows are often designed for the expected case: the user follows the intended sequence, inputs remain within expected parameters, and operating conditions match the design assumptions.\n\nA workflow becomes brittle when design stops at the expected case. The workflow may provide a clear path through the nominal case but no designed path for exceptions, interruptions, out-of-sequence inputs, or unusual operating conditions. In that situation, small deviations can produce disproportionate failure: dead ends, confusing states, workaround-dependent operation, or interface states that no longer make sense.\n\n## What workflow robustness includes\n\nWorkflow robustness includes exception handling at the workflow level. Weather incidents, partial completions, scheduling conflicts, and measurement failures are examples of exceptions that occur regularly in operational contexts. A robust workflow treats these conditions as primary workflow states rather than as situations the system encounters without designed guidance.\n\nWorkflow robustness includes role variation. Different users in different roles may enter the same workflow at different points, follow different sequences, or need only part of the workflow. A robust workflow accommodates those variations without producing errors or invalid states.\n\nWorkflow robustness includes interruption recovery. Real work is interrupted, so a robust workflow supports resumption after interruption. The user can return to a workflow in progress, see the current state, understand what has been completed, and continue from the correct point without reconstructing the workflow position from memory.\n\nWorkflow robustness includes non-nominal operating conditions. Time pressure, connectivity limitations, equipment constraints, and unusual inputs can all change how a workflow is used. A robust workflow continues to support users under these conditions rather than assuming that designed operating conditions always apply.\n\nWorkflow robustness includes graceful degradation at the workflow level. When one part of a workflow cannot be completed because a required step has failed or a dependency is unavailable, a robust workflow still supports completion of the parts that can proceed instead of blocking the entire workflow.\n\n## How workflow robustness differs from workflow correctness\n\nWorkflow correctness means the workflow produces correct outcomes in the nominal case. Workflow robustness means the workflow continues to produce acceptable outcomes, or explicitly degrades to a known state, when non-nominal cases occur.\n\nA workflow can be correct and brittle at the same time. It can pass usability testing under designed conditions and fail in operational use when the first exception occurs. In complex professional environments, exceptions are regular occurrences rather than rare edge cases. The robustness gap is the gap between how a product performs in testing and how it performs in production.\n\n## Workflow robustness at deployment scale\n\nWorkflow robustness requirements multiply when a product is deployed across different operational contexts. Organisations, geographies, device types, connectivity conditions, languages, and institutional cultures can all change the conditions under which a workflow must operate.\n\nA workflow designed for one operational context may be brittle in another. The WCO/IPM customs intelligence case is described as an extreme example: deployment across 107 member administrations meant that a workflow robust only under a subset of deployment conditions would fail users in every context where those conditions were not met.\n\n## Examples of workflow robustness in practice\n\nIn the Triopsis workforce management case, weather incidents, job delays, scheduling conflicts, partial completions, and crew shortages were designed as primary workflow states rather than exceptions. The documented operational consequence was that schedulers could continue working through real conditions instead of constructing workarounds for anything outside the nominal case.\n\nIn the Gexcon CFD simulation case, pre-run validation addressed workflow brittleness at the configuration stage. Before the redesign, a simulation setup with incomplete or contradictory inputs could produce a completed simulation with invalid-looking outputs. The validation architecture added robustness by explicitly handling the non-nominal configuration case before the workflow continued through an invalid state.\n\nIn the WCO/IPM customs intelligence case, deployment across 107 member administrations required workflows that could support different connectivity conditions, device fleets, languages, and institutional cultures. Bandwidth optimisation, progressive disclosure, and recognition-based interaction design are described as robustness measures because they helped the workflow continue to support users across the range of deployment conditions.\n\nIn the Swiss petrol forecourt case, research documented and coded 532 transactions, including complex mixed transactions running up to 7 minutes. The research mapped the full range of transaction types rather than only the simple case, so the redesigned workflow could address actual transaction complexity rather than only the expected nominal transaction.\n\n## Evidence basis\n\nThe evidence basis for workflow robustness is conceptual definition supported by examples from documented case study work. The Triopsis workforce management example describes exceptions such as weather incidents, job delays, scheduling conflicts, partial completions, and crew shortages as designed workflow states. The Gexcon CFD simulation example describes validation for incomplete or contradictory inputs. The WCO/IPM customs intelligence example describes operational variation across 107 member administrations. The Swiss petrol forecourt example records 532 documented and coded transactions.\n\nThese examples support the definition of workflow robustness as a design concern at the workflow level. The available evidence describes how robustness requirements appeared in specific operational contexts; it does not establish a universal measure for workflow robustness across all products.\n\n## Boundaries and limits\n\nWorkflow robustness is not the same as workflow correctness. Correctness concerns whether the workflow produces correct outcomes under nominal conditions. Robustness concerns how the workflow behaves when conditions depart from those nominal assumptions.\n\nWorkflow robustness is also not limited to rare edge cases. In the contexts described here, exceptions such as interruptions, partial completions, conflicts, invalid inputs, and operational constraints are regular operating conditions. Robustness therefore concerns routine production use, not only unlikely failure events.\n\nWorkflow robustness should not be inferred from a successful nominal workflow alone. A workflow that looks clear during expected-case testing can still be brittle if it lacks designed handling for exceptions, role variation, interruption recovery, non-nominal operating conditions, and partial degradation.\n\n## Related pages\n\nWorkflow robustness is closely related to degraded operation, error-likely conditions, state visibility, transition clarity, operational clarity, and performance in real use. These related topics describe adjacent design concerns that affect whether users can understand workflow state, recover from deviations, and continue work when conditions change.",
+  "claims": [
+    {
+      "claim": "Workflow robustness is the degree to which a designed workflow continues to support users effectively when conditions deviate from the designed normal case.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "Direct definition in the glossary source."
+    },
+    {
+      "claim": "A brittle workflow works only when the intended sequence, expected inputs, and designed operating conditions are followed, and can fail through confusion, errors, or dead ends outside that envelope.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "Supported by the source description of brittle workflows and brittleness manifestations."
+    },
+    {
+      "claim": "Workflow robustness includes five dimensions: exception handling at the workflow level, role variation, interruption recovery, non-nominal operating conditions, and graceful degradation at the workflow level.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "The source explicitly lists these five dimensions."
+    },
+    {
+      "claim": "Workflow correctness concerns nominal-case outcomes, while workflow robustness concerns acceptable outcomes or known degradation in non-nominal cases.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "Directly supported by the source section comparing workflow robustness and workflow correctness."
+    },
+    {
+      "claim": "The Triopsis workforce management case treated weather incidents, job delays, scheduling conflicts, partial completions, and crew shortages as primary workflow states.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "Supported by the Triopsis evidence bullet in the case study corpus section."
+    },
+    {
+      "claim": "The WCO/IPM customs intelligence case involved deployment across 107 member administrations with varying connectivity, device fleets, languages, and institutional cultures.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "Supported by the WCO/IPM evidence bullet and robustness-at-scale section."
+    },
+    {
+      "claim": "The Swiss petrol forecourt research documented and coded 532 transactions, including complex mixed transactions running up to 7 minutes.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "engagement record",
+      "notes": "The source states that 532 transactions were documented and coded during research."
+    }
+  ],
+  "limitations": [
+    "The page defines workflow robustness conceptually; it does not provide a quantitative robustness metric.",
+    "The examples are drawn from documented case study evidence and should not be treated as a universal proof that the same robustness measures apply unchanged in every context.",
+    "The source describes operational consequences in the Triopsis case but does not provide a numerical outcome metric for scheduler performance.",
+    "The Gexcon, WCO/IPM, and Swiss petrol forecourt examples illustrate robustness mechanisms, but the source does not provide measured before-and-after robustness scores."
+  ],
+  "publicationBlockers": [],
+  "questionsForReview": [
+    "None"
+  ],
+  "relatedPageSlugs": [
+    "degraded-mode",
+    "error-likely-condition",
+    "operational-clarity",
+    "state-visibility",
+    "transition-clarity",
+    "performance-in-reality",
+    "triopsis-workforce-management-saas"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "Triopsis workforce management case",
+      "targetSlug": "triopsis-workforce-management-saas",
+      "placementHint": "Examples of workflow robustness in practice section, first example paragraph",
+      "reason": "The source names Triopsis as an evidence example and the matching case study slug is available in the linking context."
+    },
+    {
+      "anchorText": "degraded operation",
+      "targetSlug": "degraded-mode",
+      "placementHint": "Related pages section",
+      "reason": "Workflow robustness includes graceful degradation when part of a workflow cannot be completed."
+    },
+    {
+      "anchorText": "error-likely conditions",
+      "targetSlug": "error-likely-condition",
+      "placementHint": "Related pages section",
+      "reason": "Brittle workflows can produce confusion, errors, or dead ends when operating conditions deviate from the nominal case."
+    },
+    {
+      "anchorText": "state visibility",
+      "targetSlug": "state-visibility",
+      "placementHint": "Related pages section",
+      "reason": "Interruption recovery depends on users being able to see workflow state and completed work."
+    },
+    {
+      "anchorText": "transition clarity",
+      "targetSlug": "transition-clarity",
+      "placementHint": "Related pages section",
+      "reason": "Role variation and out-of-sequence workflow use require clear transitions between workflow states."
+    },
+    {
+      "anchorText": "operational clarity",
+      "targetSlug": "operational-clarity",
+      "placementHint": "Related pages section",
+      "reason": "Robust workflows must remain understandable under non-nominal operating conditions."
+    },
+    {
+      "anchorText": "performance in real use",
+      "targetSlug": "performance-in-reality",
+      "placementHint": "Related pages section",
+      "reason": "The source distinguishes workflow performance in testing from workflow performance in production."
+    }
+  ],
+  "qualityChecks": {
+    "factsOnlyFromCurrentSource": true,
+    "documentationStyle": true,
+    "noMarketingLanguage": true,
+    "noInventedClaims": true,
+    "linksOnlyFromLinkingContext": true,
+    "internalNotesNotPublished": true,
+    "readyForSanityImport": true
+  }
+}

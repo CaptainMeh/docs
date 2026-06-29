@@ -1,0 +1,186 @@
+{
+  "_type": "documentationPage",
+  "sourceFile": "Articles/Outcomes/outcomes--stronger-recovery-support.md",
+  "sourcePath": "sources/articles/Outcomes/outcomes--stronger-recovery-support.md",
+  "sanityDocumentIdCandidate": "documentationPage.stronger-recovery-support",
+  "title": "Stronger Recovery Support",
+  "slug": {
+    "_type": "slug",
+    "current": "stronger-recovery-support"
+  },
+  "pageType": "outcome",
+  "category": "evidence",
+  "parentSlug": "operational-outcomes",
+  "childPageSlugs": [],
+  "excerpt": "Stronger recovery support concerns what happens after errors, faults, interrupted workflows, or abnormal conditions occur. It describes interface behaviour that makes recovery fast, clear, and actionable rather than dependent on escalation, workarounds, or abandonment.",
+  "metaTitle": "Stronger Recovery Support",
+  "metaDescription": "Interface recovery support for errors, faults, abnormal states, and interrupted workflows, with calibrated evidence from documented cases.",
+  "summary": "Stronger recovery support is an operational outcome in which an interface gives users a clear path back to a known good state after an error, fault, abnormal condition, or workflow interruption. The documented evidence includes client-measured recovery cost reduction at Gexcon, Creative Navy-recorded process recovery at Squaremind, and case evidence from Triopsis, Elsner Elektronik, Kardion, and Beissbarth.",
+  "definition": "Stronger recovery support is the interface outcome in which recovery paths, error communications, and fault-state behaviours are designed explicitly so users can understand what happened, know what action is required, and return to a known good state after an error or abnormal condition.",
+  "keyFacts": [
+    "Stronger recovery support is distinct from reduced error risk: reduced error risk concerns prevention, while recovery support concerns what happens after problems occur.",
+    "A recovery path is the sequence of interface actions that returns a user to a known good state after an error, fault, or abnormal condition.",
+    "At Gexcon, client-measured corrective load per configuration error changed from 4–6 hours to approximately 20 minutes across real deployment locations.",
+    "At Gexcon, configuration errors per simulation also reduced from 5–8 to 1–2, according to the documented measured figures.",
+    "At Squaremind, pre-redesign completion was 2 of 14 patients, with zero recoveries among the 12 who could not complete the scan.",
+    "At Squaremind, post-redesign completion was 27 of 29 patients; all 12 patients who got stuck during the flow recovered and completed the scan.",
+    "Squaremind post-redesign recovery times ranged from 2 to 4 minutes and were timed to the second under an ecological protocol at two sites.",
+    "At Triopsis, support ticket \"how can I\" queries fell to approximately 5% of previous volume, client-reported.",
+    "At Kardion, the documented regulatory result is FDA approval, with scope limited to formative evaluation.",
+    "At Beissbarth, training was eliminated; part of the removed training had taught technicians how to interpret and recover from error states."
+  ],
+  "tags": [
+    "recovery support",
+    "error recovery",
+    "fault states",
+    "abnormal workflows",
+    "actionable error communication",
+    "corrective load",
+    "graceful degradation",
+    "operational outcomes"
+  ],
+  "bodyMarkdown": "## Summary\n\nStronger recovery support describes the interface outcome where users can recover from errors, faults, interrupted workflows, or abnormal conditions without unnecessary escalation, workaround, or abandonment.\n\nStronger recovery support is complementary to reduced error risk, but it is not the same outcome. Reduced error risk concerns preventing errors from occurring in the first place. Stronger recovery support concerns what happens after errors, sensor faults, interrupted workflows, or abnormal conditions occur.\n\nIn complex operational systems, these conditions will occur even when the nominal workflow is well designed. The interface behaviour at the moment of error or fault determines whether recovery is fast, straightforward, and low-cost, or slow, uncertain, and potentially consequential.\n\n## Outcome described: explicit recovery paths after errors and abnormal states\n\nStronger recovery support depends on recovery paths being designed with the same rigour as primary workflows. A recovery path is the sequence of interface actions that returns a user to a known good state after an error, fault, or abnormal condition.\n\nThe characteristic failure pattern is an error state that communicates that something went wrong but not what went wrong, where it happened, or what the user should do next. Users then escalate, work around the system, or abandon the task. None of those behaviours is the recovery the system should support.\n\nThe design response is explicit recovery design: recovery paths are treated as primary design targets, error communications are specific enough to be actionable, and fault states are communicated clearly enough that users can distinguish immediate attention from conditions that can wait.\n\n## Recovery vocabulary used in this outcome\n\nRecovery cost is the time, attention, and operational resources required to execute a recovery. Recovery cost includes the cost of understanding what happened and what to do next.\n\nCorrective load is the work required to correct a detected error. In this evidence base, corrective load specifically refers to downstream work generated by an error that was not caught before its effects propagated.\n\nActionable error communication means an error message that specifies what went wrong, where it happened, and what to do. It contrasts with informational error messages that only state that something went wrong.\n\nGraceful degradation means the system continues to function at reduced capability during a fault condition rather than failing completely. The relevant design work concerns partial functionality states.\n\nExplicit recovery design means treating recovery paths as primary design targets rather than designing only the nominal workflow and leaving recovery to improvisation.\n\n## Gexcon: client-measured reduction in deferred error recovery cost\n\nGexcon is the strongest documented before-and-after recovery cost measurement in this outcome area. The recovery problem in CFD simulation was deferred: a configuration error not caught before the simulation ran could produce outputs that appeared valid. The error was discovered during analysis or review, sometimes hours or days after the simulation completed.\n\nBefore the redesign, recovery required identifying the configuration error, understanding which outputs were affected, re-running the correct simulation, and reconciling the new outputs with work based on the original. Gexcon measured corrective load per error changing from 4–6 hours to approximately 20 minutes across real deployment locations.\n\nThe documented mechanism was error communication design. Before the redesign, errors were surfaced after the fact with generic messages that required engineers to diagnose both the nature and location of the error independently. After the redesign, error communications specified what went wrong, where in the configuration it occurred, and what corrective action was needed. This reduced the diagnosis component of corrective load from hours to minutes.\n\nGexcon also measured configuration errors per simulation reducing from 5–8 to 1–2. The two figures describe related but distinct effects: fewer errors required recovery, and errors that still occurred required less recovery work.\n\n## Squaremind: Creative Navy-recorded in-process recovery during autonomous scanning\n\nSquaremind is the strongest documented process-level recovery outcome in this evidence base. The recovery problem was autonomous patient scanning: the scan required 3–5 minutes of patient cooperation in a specific physical sequence. Any confusion event that produced deviation from the sequence ended the session or required clinical intervention.\n\nBefore the redesign, the interface had no recovery architecture. When a patient became confused, the interface had no recovery path to offer. Pre-redesign completion was 2 of 14 patients. Of the 12 patients who could not complete the scan, 8, primarily aged 45–65, got stuck within the first minute, and 4, primarily aged 20–35, got stuck around the 3-minute mark. The documented background records zero recoveries and is client-reported from Squaremind's own testing before Creative Navy's involvement.\n\nThe redesign mechanism was the Inform–Prevent–Correct framework applied recursively across every step of the scan flow. The Correct layer treated recovery as a primary element at each step: what the interface should communicate when a patient had deviated from the correct state, how the interface should guide the patient back, and what the system should do after a successful correction to re-engage the guidance cycle for the next step.\n\nAfter the redesign, 27 of 29 patients completed the scan independently. Of the 12 patients who got stuck during the flow, all 12 recovered and completed the scan. Recovery times ranged from 2 to 4 minutes and were timed to the second. The documented evidence basis is Creative Navy-recorded under an ecological protocol at two sites, with 12 users in London and 17 users in Paris, co-conducted by an independent dermatologist.\n\n## Triopsis: client-reported reduction in escalation for abnormal workflow states\n\nTriopsis documents recovery support for abnormal workflow states in workforce management. Weather incidents, job delays, partial completions, crew shortages, and equipment failures were regular operational conditions that required a fast, clear path back to a valid schedule.\n\nBefore the redesign, these conditions produced states the interface had not anticipated and offered no structured path through. Users improvised, escalated, or accepted degraded schedules they could not efficiently correct.\n\nAfter the redesign, recovery states were designed explicitly as part of the primary workflow architecture. Weather incidents surfaced with the specific affected jobs highlighted. Partial completions became reconcilable from the exception-handling view without requiring a return to the full schedule view. The interface distinguished between conditions requiring immediate attention and conditions that could be addressed in the next planning cycle.\n\nThe documented outcome is that support ticket \"how can I\" queries fell to approximately 5% of previous volume, client-reported. A portion of that reduction is described as reduced escalation when abnormal conditions occurred because the interface provided the recovery path users had previously sought through support.\n\n## Elsner Elektronik: fault-state recovery for non-technical users\n\nElsner Elektronik documents recovery support for non-technical users in consumer embedded systems. The recovery problem was a sensor fault or calibration drift producing a state the occupant could not interpret or address technically.\n\nThe design task was to communicate which recovery options were available to the occupant and which were not. Calling an engineer had to be clearly communicated when required. Reconfiguring the sensor was not an available local action, so the interface had to avoid implying that the occupant should take technical action.\n\nSensor fault states were designed explicitly. The display communicated the fault state clearly, distinguished it from normal operating variation, and communicated the level of action required, such as contacting an engineer or waiting for automatic recalibration, without requiring technical interpretation by the occupant.\n\nA recovery-adjacent design decision concerned firmware update timing. Animation timing was aligned with firmware update cycles so that display states never appeared to require recovery when the system was actually mid-update. The documented result is that false recovery prompts were eliminated.\n\n## Kardion MCS Controller: alarm recovery paths in a regulated context\n\nKardion MCS Controller documents recovery support in alarm handling for cardiac support device operation. When an alarm state is triggered, the operator must understand what is happening, respond correctly, and return the system to a monitored nominal state without losing the alarm record.\n\nThe mute behaviour was a recovery-path issue. A muted alarm had to remain visually present at reduced prominence so that acknowledging or resolving the alarm remained accessible. If an alarm disappears when muted, the interface removes the recovery prompt and requires the operator to remember that the alarm was muted.\n\nAlarm history visibility after acknowledgement was also part of recovery support. The alarm history had to remain accessible from the nominal view, so confirming that an alarm event had been resolved was achievable from the same screen where the alarm had been visible.\n\nThe documented regulatory result is FDA approval, with the design passing evaluation as submitted. The alarm recovery paths contributed to satisfying the identified use-related hazards related to alarm acknowledgement and post-alarm recovery. Scope is formative evaluation only.\n\n## Beissbarth: recovery guidance inside sequential calibration procedures\n\nBeissbarth documents recovery support in sequential automotive calibration procedures. When a measurement failed or fell in the borderline range, the technician needed to understand what happened, know whether to repeat the measurement or address a different issue, and resume the calibration sequence from the correct point.\n\nBefore the redesign, measurement communication was binary pass/fail without recovery guidance. Technicians had to diagnose from a generic error state what to do next.\n\nAfter the redesign, measurement result communication used three levels: confirmed, borderline, and out of range. Error states specified the type of issue, including measurement confidence, equipment communication, or out-of-tolerance result. Sequence state remained visible so the technician knew where in the calibration to resume.\n\nThe documented commercial consequence is that training was eliminated. Part of the previous training had taught technicians how to interpret and recover from error states; when the interface communicated recovery paths explicitly, that training component was no longer required.\n\n## Evidence basis for stronger recovery support\n\nThe evidence for stronger recovery support is strongest where the documented case includes before-and-after recovery data or observed recovery completion. Gexcon provides the strongest deferred-error recovery cost reduction: corrective load per configuration error changed from 4–6 hours to approximately 20 minutes, measured by Gexcon across real deployment locations.\n\nSquaremind provides the strongest process-level recovery evidence. Before the redesign, 12 of 14 patients could not complete the scan and zero recovered. After the redesign, 27 of 29 patients completed the scan independently, and all 12 patients who became stuck recovered and completed the scan. Recovery times ranged from 2 to 4 minutes and were timed to the second under the documented ecological protocol.\n\nTriopsis, Elsner Elektronik, Kardion, and Beissbarth provide additional case evidence across workforce management, consumer embedded systems, regulated alarm handling, and sequential calibration. The evidence strength varies by case: Triopsis support ticket reduction is client-reported, Kardion is formative evaluation only, and Beissbarth records training elimination as a commercial consequence rather than a quantified recovery-time measure.\n\n## Boundaries and limits of the outcome evidence\n\nStronger recovery support should not be read as a guarantee that errors will not occur. The outcome concerns recovery after an error, fault, interrupted workflow, or abnormal condition has occurred.\n\nThe evidence does not have the same strength in every case. Gexcon includes client-measured recovery cost data. Squaremind includes Creative Navy-recorded process recovery data under an ecological protocol. Triopsis support ticket reduction is client-reported. Kardion is limited to formative evaluation. Elsner Elektronik and Beissbarth provide case evidence of designed recovery states and consequences, but the available evidence does not provide the same recovery-time measurement as Gexcon or Squaremind.\n\nThe cases describe different recovery problems. Gexcon concerns deferred-error recovery cost after a configuration error has propagated into apparently valid outputs. Squaremind concerns in-process guidance recovery during an autonomous scanning sequence. Triopsis concerns abnormal operational scheduling states. Elsner Elektronik concerns fault-state interpretation by non-technical users. Kardion concerns alarm acknowledgement and post-alarm recovery. Beissbarth concerns recovery within sequential measurement procedures.\n\n## Related pages\n\nReduced error risk is the closest related outcome because prevention and recovery are complementary but distinct. Gexcon and Squaremind are the strongest documented recovery evidence examples in this outcome area. Triopsis, Elsner Elektronik, Kardion, and Beissbarth show how recovery support appears in abnormal workflow states, fault states, alarm states, and sequential procedures.",
+  "claims": [
+    {
+      "claim": "Stronger recovery support concerns recovery after errors, faults, interrupted workflows, or abnormal conditions occur, while reduced error risk concerns preventing errors from occurring.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "Directly defined in the outcome description."
+    },
+    {
+      "claim": "At Gexcon, corrective load per configuration error changed from 4–6 hours to approximately 20 minutes.",
+      "evidenceType": "client-measured",
+      "sourceStrength": "strong",
+      "notes": "Measured by Gexcon across real deployment locations; described as the strongest before/after recovery cost measurement."
+    },
+    {
+      "claim": "At Gexcon, configuration errors per simulation reduced from 5–8 to 1–2.",
+      "evidenceType": "client-measured",
+      "sourceStrength": "strong",
+      "notes": "The source describes the figure as measured and related to the recovery outcome."
+    },
+    {
+      "claim": "At Squaremind, pre-redesign completion was 2 of 14 patients, and the 12 patients who could not complete had zero recoveries.",
+      "evidenceType": "client-reported",
+      "sourceStrength": "moderate",
+      "notes": "Client-reported background from Squaremind's own testing before Creative Navy's involvement."
+    },
+    {
+      "claim": "At Squaremind, post-redesign completion was 27 of 29 patients, and all 12 patients who got stuck during the flow recovered and completed the scan.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "strong",
+      "notes": "Recorded under an ecological protocol at two sites, with recovery times timed to the second and an independent dermatologist co-conducting."
+    },
+    {
+      "claim": "At Triopsis, support ticket \"how can I\" queries fell to approximately 5% of previous volume.",
+      "evidenceType": "client-reported",
+      "sourceStrength": "moderate",
+      "notes": "The source states that a portion of this reduction reflects reduced escalation when abnormal conditions occurred."
+    },
+    {
+      "claim": "At Elsner Elektronik, sensor fault states were designed to distinguish faults from normal operating variation and communicate whether the occupant should contact an engineer or wait for automatic recalibration.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "The source provides qualitative case evidence, not a quantified recovery-time result."
+    },
+    {
+      "claim": "At Kardion, the documented regulatory result is FDA approval, and scope is formative evaluation only.",
+      "evidenceType": "verifiable regulatory outcome",
+      "sourceStrength": "verifiable regulatory result",
+      "notes": "The source states FDA approval and says the design passed evaluation as submitted; it also states scope is formative evaluation only."
+    },
+    {
+      "claim": "At Beissbarth, training was eliminated after recovery guidance was made explicit in sequential calibration procedures.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "The source records training elimination as a commercial consequence and explains that part of training had addressed recovery from error states."
+    }
+  ],
+  "limitations": [
+    "The outcome concerns recovery after problems occur; it does not claim that errors, faults, or abnormal conditions will be eliminated.",
+    "Evidence strength varies by case: Gexcon is client-measured, Squaremind is Creative Navy-recorded under an ecological protocol, Triopsis is client-reported, and Kardion is formative evaluation only.",
+    "The Kardion evidence is limited to formative evaluation and should not be treated as summative validation evidence.",
+    "The Beissbarth training result is documented as a commercial consequence, but the source does not provide a quantified recovery-time measurement for Beissbarth.",
+    "The Elsner Elektronik evidence describes designed fault-state recovery and false recovery prompt elimination, but the source does not provide a quantified before-and-after recovery metric."
+  ],
+  "publicationBlockers": [],
+  "questionsForReview": [
+    "None"
+  ],
+  "relatedPageSlugs": [
+    "reduced-error-risk",
+    "gexcon",
+    "squaremind",
+    "triopsis-workforce-management-saas",
+    "elsner-smart-home-controller",
+    "kardion",
+    "beissbarth",
+    "lower-training-burden",
+    "outcomes"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "reduced error risk",
+      "targetSlug": "reduced-error-risk",
+      "placementHint": "Related pages section and summary discussion of prevention versus recovery",
+      "reason": "The source explicitly distinguishes stronger recovery support from reduced error risk."
+    },
+    {
+      "anchorText": "Gexcon",
+      "targetSlug": "gexcon",
+      "placementHint": "Gexcon evidence section",
+      "reason": "Gexcon is a documented case named in the page and provides the strongest deferred-error recovery cost measurement."
+    },
+    {
+      "anchorText": "Squaremind",
+      "targetSlug": "squaremind",
+      "placementHint": "Squaremind evidence section",
+      "reason": "Squaremind is a documented case named in the page and provides the strongest process-level recovery outcome."
+    },
+    {
+      "anchorText": "Triopsis",
+      "targetSlug": "triopsis-workforce-management-saas",
+      "placementHint": "Triopsis evidence section",
+      "reason": "Triopsis is a documented case named in the page and provides client-reported support ticket reduction evidence."
+    },
+    {
+      "anchorText": "Elsner Elektronik",
+      "targetSlug": "elsner-smart-home-controller",
+      "placementHint": "Elsner Elektronik evidence section",
+      "reason": "Elsner Elektronik is a documented case named in the page and illustrates fault-state recovery for non-technical users."
+    },
+    {
+      "anchorText": "Kardion MCS Controller",
+      "targetSlug": "kardion",
+      "placementHint": "Kardion evidence section",
+      "reason": "Kardion is a documented case named in the page and illustrates alarm recovery paths in a regulated context."
+    },
+    {
+      "anchorText": "Beissbarth",
+      "targetSlug": "beissbarth",
+      "placementHint": "Beissbarth evidence section",
+      "reason": "Beissbarth is a documented case named in the page and illustrates recovery guidance in sequential calibration procedures."
+    },
+    {
+      "anchorText": "lower training burden",
+      "targetSlug": "lower-training-burden",
+      "placementHint": "Beissbarth section where training elimination is discussed",
+      "reason": "The source connects explicit recovery guidance at Beissbarth with elimination of a training component."
+    },
+    {
+      "anchorText": "outcomes",
+      "targetSlug": "outcomes",
+      "placementHint": "Related pages section",
+      "reason": "This page is an outcome page and belongs in the broader outcomes evidence cluster."
+    }
+  ],
+  "qualityChecks": {
+    "factsOnlyFromCurrentSource": true,
+    "documentationStyle": true,
+    "noMarketingLanguage": true,
+    "noInventedClaims": true,
+    "linksOnlyFromLinkingContext": true,
+    "internalNotesNotPublished": true,
+    "readyForSanityImport": true
+  }
+}

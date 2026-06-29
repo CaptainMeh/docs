@@ -1,0 +1,169 @@
+{
+  "_type": "documentationPage",
+  "sourceFile": "Articles/Capabilities/capabilities--behavioural-governance-for-ai-products.md",
+  "sourcePath": "sources/articles/Capabilities/capabilities--behavioural-governance-for-ai-products.md",
+  "sanityDocumentIdCandidate": "documentationPage.behavioural-governance-for-ai-products",
+  "title": "Behavioural Governance For AI Products",
+  "slug": {
+    "_type": "slug",
+    "current": "behavioural-governance-for-ai-products"
+  },
+  "pageType": "capability",
+  "category": "capabilities",
+  "parentSlug": "capabilities",
+  "childPageSlugs": [],
+  "excerpt": "Behavioural governance defines, documents, and makes auditable what an AI system does and does not do at the interface layer. It covers behavioural requirements, policy separation, audit trails, accountability separation, explainability, blinded evaluation, and data-boundary communication.",
+  "metaTitle": "Behavioural Governance for AI Products",
+  "metaDescription": "Behavioural governance defines auditable AI interface behaviour, policy separation, audit trails, blinded evaluation and data boundaries.",
+  "summary": "Behavioural governance for AI products is the capability of making AI-influenced behaviour explicit, reviewable, and auditable in the interface layer. The documented evidence covers fraud policy configuration, systematic review screening, and biomedical AI data-boundary communication.",
+  "definition": "Behavioural governance is the practice of defining, documenting, and making auditable what an AI system does and does not do, applied to the interface layer rather than to model training or model evaluation.",
+  "keyFacts": [
+    "Behavioural governance is applied to the interface layer, not to model training or model evaluation.",
+    "Behavioural requirements specify what an AI system should and should not do; governance reviewers evaluate against these requirements.",
+    "Model/policy separation distinguishes model outputs, such as risk scores, from policy decisions, such as allow, block, or escalate.",
+    "In the documented Callsign case, bank risk teams under SCA and PCI DSS needed audit evidence for significant fraud control decisions.",
+    "In the Callsign case, each policy became a central governance object bundling conditions, triggered actions, performance data, relationships, and complete change history.",
+    "In the Puraite case, blinded mode withheld AI screening decisions from human reviewers during initial screening by default to reduce anchoring risk.",
+    "In the Owkin K case, dataset transparency and data provenance were treated as governance communication requirements because K operated on specified datasets rather than the general internet.",
+    "Callsign outcomes are client-reported, including contracts with Lloyds Bank and HSBC and design-system use for at least 2 years post-engagement.",
+    "The Callsign time-to-market reduction is approximately 6 months and is described as client/engagement-inferred, not as a measured comparison."
+  ],
+  "tags": [
+    "behavioural governance",
+    "AI governance",
+    "AI product design",
+    "policy engine",
+    "model policy separation",
+    "audit trail",
+    "explainability",
+    "blinded evaluation",
+    "data governance",
+    "SCA",
+    "PCI DSS"
+  ],
+  "bodyMarkdown": "## Summary\n\nCreative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nBehavioural governance for AI products is the design capability of making AI-influenced system behaviour explicit, reviewable, and auditable at the interface layer. In Creative Navy's documentation, behavioural governance does not refer to model training or model evaluation. It refers to the designed layer through which users, operations teams, risk teams, auditors, ethics committees, or other governance consumers can understand what the AI system does and what the product decides to do with AI outputs.\n\nA behavioural governance capability is needed when an AI product influences decisions that must later be explained, reviewed, or evidenced. The documented cases include AI-driven fraud detection for enterprise banking, systematic review screening, and biomedical AI operating on defined datasets.\n\n## Behavioural governance applies to the AI interface layer rather than the model layer\n\nBehavioural governance defines what an AI system does and does not do in terms that governance consumers can evaluate. Behavioural requirements are more precise than user stories and less technical than model specifications. They specify what the system should and should not do, and they are the reference point for governance review.\n\nThe design boundary is important. Behavioural governance is applied to the interface layer, not to model training or model evaluation. The capability concerns how AI behaviour is represented, constrained, explained, configured, overridden, and audited in product use.\n\nExplainability is treated as a design problem in this context. The goal is to make AI decisions traceable in terms that a governance consumer can evaluate, even when the underlying model is not interpretable.\n\n## Governance consumers differ from end users\n\nA governance consumer is the stakeholder who evaluates AI behaviour for compliance, procurement, or oversight. The documented vocabulary names risk teams, regulatory auditors, notified bodies, institutional review boards, and ethics committees as governance consumers. These stakeholders are distinct from end users.\n\nBehavioural governance therefore requires interface structures that support oversight work, not only task completion by the direct user. A bank risk team evaluating fraud controls, a systematic review methodologist evaluating human independence, and a clinical research institution evaluating data-use boundaries each needs different governance evidence.\n\nAccountability separation is part of this design problem. The interface must make clear which layer is responsible for which action: model outputs belong to the AI system, policy decisions belong to the operations team, and human actions belong to the user.\n\n## Model and policy separation makes AI-driven fraud control governable\n\nIn the documented [Callsign fraud authentication](callsign-fraud-authentication) case, the governance problem was AI-driven fraud scoring for enterprise banking. The model produced behavioural risk scores based on signals such as device fingerprint, location change, spend velocity, and prior failures. Automated policies acted on those scores through actions such as allow, block, and step-up authentication.\n\nAt the start of the engagement, fraud rules were scattered across database views and configuration tables. There was no policy-level object, no audit trail of policy changes, and no separation between current policy and historical policy. In enterprise banking demos, the interface generated governance questions instead of closing them.\n\nModel/policy separation was the foundational architectural decision. The fraud scoring model and the policy layer were made architecturally distinct. Analysts governed the policy layer, while the model layer remained below it. This separation made it possible to design governance infrastructure around policy decisions rather than around opaque model behaviour.\n\n## Policy objects make fraud strategy auditable and configurable\n\nIn the Callsign case, policy became the central governance object. Each policy bundled the conditions it evaluated, the actions it triggered, the performance data showing historical effectiveness, the relationships to other policies, and the complete change history.\n\nThis structure allowed a governance reviewer to navigate a policy and get a complete audit picture without escalating to engineering. The policy engine acted as a designed layer between AI model outputs and real-world decisions. It made AI-driven fraud detection auditable and configurable at the level risk teams needed to review.\n\nConfiguration mode and evaluation mode were separated. Policies were configured in a distinct environment. The evaluation environment, which showed the effect of a policy on real or simulated transaction data, was read-only during analysis. This separation was a governance control because analytical sessions could not produce untracked modifications to live fraud strategy.\n\nThe audit trail was treated as a design requirement from the first sprint. Every screen was treated as part of the design system from the first sprint, and the audit architecture was not retrofitted onto a completed design.\n\n## Governance tooling must be usable by the responsible stakeholders\n\nThe Callsign interface used a three-gesture interaction model: drag, click, and draw connection. The interaction model was calibrated to risk and compliance professionals with operations backgrounds rather than engineering backgrounds.\n\nThis design detail is part of behavioural governance because governance fails if only engineering can operate the governance tooling. In the documented Callsign case, the people responsible for fraud strategy and compliance needed to configure and evaluate the policy layer directly.\n\nThe documented competitive vector in the Callsign case was fraud strategy configuration that was transparent, auditable, and explainable to bank risk teams under regulatory requirements. The case describes the interface as governance evidence in sales contexts where automated black-box approaches could not satisfy enterprise banking governance requirements.\n\n## Blinded AI evaluation protects human independence in systematic review\n\nIn the documented [Puraite](puraite) case, behavioural governance was epistemic rather than financial. Systematic review methodology requires inclusion and exclusion decisions to be made by human reviewers exercising independent judgment. When AI performs initial screening, AI recommendations can anchor human judgment.\n\nThe governance requirement was that the AI should not corrupt the human decision-making process even when it assists the review. Blinded mode withheld AI screening decisions from human reviewers during initial screening by default. The AI had screened, and its decisions were stored, but reviewers did not see them unless they specifically requested them.\n\nThis design made reviewers evaluate the primary evidence, such as title, abstract, and full text, rather than the AI's prior decision. The interface treated human independence as a governance requirement rather than as a matter of reviewer intent.\n\n## Confidence, override, and direct evidence make AI screening reviewable\n\nIn the Puraite case, AI screening decisions were shown as explicit confidence percentages with colour coding when reviewers chose to see them. The decisions were not presented as binary include or exclude recommendations. Uncertainty was made visible so the reviewer's task became informed override rather than rubber-stamping.\n\nOverride was designed as a primary action. Overriding the AI was as easy as confirming it. This is a behavioural governance decision because a design that makes override cognitively expensive can produce systematic under-override.\n\nThe text the AI used to make its screening decision appeared as a direct quote in a side panel without additional interaction. The reviewer could verify the AI's reasoning against the evidence rather than relying on a summary or log.\n\n## Data governance requires visible data boundaries in bounded AI systems\n\nIn the documented [Owkin K](owkin-k) case, K operated on defined datasets: proprietary Owkin data, public biological databases, and user-uploaded institutional data. K did not have access to the general internet or to data outside these specified sources.\n\nThe governance problem was that users did not understand this boundary. Users did not know what K knew or did not know, and they could not assess whether a K response was based on data relevant to their research context or was a generalised response.\n\nDataset transparency became a primary design target. The interface made which datasets K could access visible and navigable before users formed questions. The governance question, \"what data is this based on?\", was answered at the entry point rather than buried in documentation.\n\nData provenance was also visible at the point of output. K's responses included the data sources they drew from, so governance reviewers could verify that responses were consistent with the approved data-sharing agreements under which the platform operated.\n\n## Known outcomes and evidence calibration across documented cases\n\nIn the Callsign case, contracts with Lloyds Bank and HSBC are client-reported. The described mechanism was that product managers could present a configuration experience matching how risk teams framed fraud problems, engineering leads could see a clear path from interface behaviour to implementation, and risk teams could see the audit trail required under SCA and PCI DSS.\n\nCallsign's design system use for at least 2 years post-engagement is client-reported. The approximately 6 months reduction in time to market is client/engagement-inferred. It is described through the mechanism of design system and frontend overlap enabling parallel delivery, not as a measured comparison.\n\nIn the Puraite case, client-reported outcomes were that users who had perceived Puraite as theoretical began actively using it post-redesign, and that the client entered a growth phase. The navigation restructuring from 13 items to 4 items was identified outside the original scope, and the client described it as one of the engagement's most significant contributions.\n\nIn the Owkin K case, the client reported an approximately £5M investment and attributed design as central. The figure is approximate and client-reported.\n\n## Boundaries and limits of behavioural governance evidence\n\nBehavioural governance for AI products does not make claims about improving model accuracy, training data quality, or model interpretability. The capability described here concerns interface-layer behaviour, policy separation, auditability, explainability, accountability separation, and communication of AI boundaries.\n\nThe documented Callsign, Puraite, and Owkin K outcomes are not all measured in the same way. Callsign contracts and design-system use are client-reported. The Callsign time-to-market reduction is approximate and client/engagement-inferred. Puraite usage and growth-phase outcomes are client-reported. The Owkin K investment attribution is client-reported and approximate.\n\nBehavioural governance also varies by context. Fraud detection governance required policy audit trails under SCA and PCI DSS. Systematic review governance required blinded evaluation and easy override. Biomedical AI governance required data-boundary and data-provenance communication.\n\n## Related pages\n\nBehavioural governance for AI products is closely related to [human AI interaction design](human-ai-interaction-design), because both concern how AI behaviour is represented to users and reviewers. It also relates to [information architecture for expert systems](information-architecture-for-expert-systems), because governance consumers need navigable structures for policies, evidence, data sources, and decision histories.\n\nThe documented cases most directly associated with behavioural governance are [Callsign fraud authentication](callsign-fraud-authentication), [Puraite](puraite), and [Owkin K](owkin-k).",
+  "claims": [
+    {
+      "claim": "Behavioural governance is the practice of defining, documenting, and making auditable what an AI system does and does not do at the interface layer, not at the model training or evaluation layer.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "Directly supported by the domain vocabulary definition."
+    },
+    {
+      "claim": "Model/policy separation distinguishes model outputs, such as risk scores, from policy decisions, such as allow, block, or escalate.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "Directly supported by the domain vocabulary and the Callsign governance design description."
+    },
+    {
+      "claim": "In the Callsign case, fraud rules initially lacked a policy-level object, an audit trail of policy changes, and separation between current and historical policy.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "Supported by the documented Callsign governance problem."
+    },
+    {
+      "claim": "In the Callsign case, each policy was designed as a central governance object containing conditions, triggered actions, historical performance data, relationships, and complete change history.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "Supported by the documented Callsign governance design solution."
+    },
+    {
+      "claim": "Callsign outcomes include client-reported contracts with Lloyds Bank and HSBC, client-reported design-system use for at least 2 years, and an approximately 6 months time-to-market reduction described as client/engagement-inferred rather than measured.",
+      "evidenceType": "client-reported",
+      "sourceStrength": "case evidence",
+      "notes": "The time-to-market claim is explicitly approximate and not a measured comparison."
+    },
+    {
+      "claim": "In the Puraite case, blinded mode withheld AI screening decisions from human reviewers during initial screening by default to reduce anchoring risk.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "Supported by the Puraite governance design solution."
+    },
+    {
+      "claim": "In the Puraite case, AI confidence was shown as explicit percentages with colour coding, override was made as easy as confirmation, and direct quotes were shown so reviewers could verify AI reasoning.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "Supported by the Puraite governance design solution."
+    },
+    {
+      "claim": "In the Owkin K case, dataset transparency and data provenance were treated as governance design requirements because K operated on specified datasets rather than the general internet.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "Supported by the Owkin K governance problem and design solution."
+    },
+    {
+      "claim": "In the Owkin K case, the client reported an approximately £5M investment and attributed design as central.",
+      "evidenceType": "client-reported",
+      "sourceStrength": "case evidence",
+      "notes": "The figure is explicitly approximate and client-reported."
+    }
+  ],
+  "limitations": [
+    "Behavioural governance, as defined here, applies to the interface layer and does not cover model training or model evaluation.",
+    "The Callsign contracts and design-system continuation are client-reported.",
+    "The Callsign approximately 6 months time-to-market reduction is client/engagement-inferred and is not a measured comparison.",
+    "The Puraite usage and growth-phase outcomes are client-reported.",
+    "The Owkin K investment attribution is client-reported, and the £5M figure is approximate.",
+    "The documented examples cover fraud detection, systematic review, and biomedical AI data governance; they should not be generalised as evidence for all AI product contexts."
+  ],
+  "publicationBlockers": [],
+  "questionsForReview": [
+    "None"
+  ],
+  "relatedPageSlugs": [
+    "callsign-fraud-authentication",
+    "puraite",
+    "owkin-k",
+    "human-ai-interaction-design",
+    "information-architecture-for-expert-systems",
+    "state-and-status-visibility-design",
+    "usability-evaluation-for-high-consequence-products"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "Callsign fraud authentication",
+      "targetSlug": "callsign-fraud-authentication",
+      "placementHint": "Use in the section about model and policy separation for AI-driven fraud control.",
+      "reason": "The Callsign case is the primary documented governance case in the page."
+    },
+    {
+      "anchorText": "Puraite",
+      "targetSlug": "puraite",
+      "placementHint": "Use in the section about blinded AI evaluation in systematic review.",
+      "reason": "The Puraite case provides the documented example of epistemic governance and blinded evaluation."
+    },
+    {
+      "anchorText": "Owkin K",
+      "targetSlug": "owkin-k",
+      "placementHint": "Use in the section about data governance and bounded AI systems.",
+      "reason": "The Owkin K case provides the documented example of dataset transparency and data provenance."
+    },
+    {
+      "anchorText": "human AI interaction design",
+      "targetSlug": "human-ai-interaction-design",
+      "placementHint": "Use in the Related pages section.",
+      "reason": "Behavioural governance and human AI interaction design both address how AI behaviour is represented and acted on in the interface."
+    },
+    {
+      "anchorText": "information architecture for expert systems",
+      "targetSlug": "information-architecture-for-expert-systems",
+      "placementHint": "Use in the Related pages section.",
+      "reason": "Governance consumers need navigable structures for policies, evidence, data sources, and decision histories."
+    },
+    {
+      "anchorText": "state and status visibility design",
+      "targetSlug": "state-and-status-visibility-design",
+      "placementHint": "Use as a supporting related capability if the page is expanded with more cross-references.",
+      "reason": "Policy state, evaluation mode, audit state, confidence, and data provenance all depend on visible system status."
+    }
+  ],
+  "qualityChecks": {
+    "factsOnlyFromCurrentSource": true,
+    "documentationStyle": true,
+    "noMarketingLanguage": true,
+    "noInventedClaims": true,
+    "linksOnlyFromLinkingContext": true,
+    "internalNotesNotPublished": true,
+    "readyForSanityImport": true
+  }
+}

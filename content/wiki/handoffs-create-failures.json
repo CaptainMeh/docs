@@ -1,0 +1,136 @@
+{
+  "slug": "handoffs-create-failures",
+  "title": "Handoffs Create Failures",
+  "pageType": "situation",
+  "category": "situations",
+  "section": "Risk And Consequence",
+  "summary": "Handoffs create failures when a system does not preserve the context needed by the receiving party at the moment work, information, or responsibility changes hands. The situation is visible through escalation, workarounds, and repeated reliance on parallel communication channels.",
+  "keyFacts": [
+    "A handoff is any moment where one party's output becomes another party's input.",
+    "A handoff failure is described as a design failure rather than a colloquial communication breakdown.",
+    "The receiving party needs information, state, or context in an actionable form at the moment of the handoff.",
+    "Escalation is the characteristic signal of a handoff failure.",
+    "Workaround communication channels include email, phone calls, and spreadsheets running alongside the primary system.",
+    "Role-boundary failure occurs at boundaries between roles with different information needs, operating conditions, or institutional contexts.",
+    "State persistence is the design property that makes relevant prior-stage context available at the next stage.",
+    "Akrivia Health is presented as the canonical handoff failure in the portfolio.",
+    "The Akrivia Health redesign made the full cohort query structure permanently visible and independently readable for governance reviewers.",
+    "Triopsis workforce management and WCO/IPM are described as examples of cross-role or cross-institutional handoff failure."
+  ],
+  "bodySections": [
+    {
+      "heading": "Handoff failure as a design failure",
+      "bodyMarkdown": "In Creative Navy's documentation, a handoff is any moment where one party's output becomes another party's input. Examples include a scheduler's job assignment reaching a field technician, a researcher's cohort query reaching a governance reviewer, a nurse's device setting reaching a surgeon, or an officer's field inspection reaching an intelligence analyst.\n\nA handoff failure is not treated as a communication breakdown in the colloquial sense. It is a design failure: the interface has not made the information, state, or context that the receiving party needs available to them, in a form they can act on, at the moment they need it."
+    },
+    {
+      "heading": "Escalation as the diagnostic signal of handoff failure",
+      "bodyMarkdown": "Escalation is the characteristic signal of a handoff failure. When the receiving party contacts the sending party to obtain context they should have received through the system, the system has failed its handoff design responsibility.\n\nWorkarounds and parallel communication channels are the aggregate expression of repeated handoff failures across an organisation. Email, phone calls, and spreadsheets running alongside the primary system indicate that the primary system is not carrying the context needed at the handoff point."
+    },
+    {
+      "heading": "Role-boundary failure and state persistence",
+      "bodyMarkdown": "A role-boundary failure is a handoff failure at the boundary between roles with different information needs, operating conditions, or institutional contexts. The sending party may have established the relevant context, but the receiving party may still be forced to act without it if the interface does not persist that context across the role boundary.\n\nState persistence is the design property that makes relevant context from a prior stage available at the next stage. In handoff design, state persistence means that the next role can see the necessary prior information at the point where their work begins, rather than reconstructing it through escalation or parallel channels."
+    },
+    {
+      "heading": "Consequences in high-consequence and operational systems",
+      "bodyMarkdown": "Handoff failures have consequences beyond inconvenience in high-consequence and operationally demanding systems. A field technician who arrives at a job without communicated safety conditions may begin without performing required checks. A governance reviewer who cannot verify cohort construction logic must escalate, delaying the research process and creating a governance bottleneck. A surgeon who reads the wrong device state at the transition from setup to active procedure may act on incorrect information.\n\nThe common mechanism is context loss. The receiving party acts, waits, escalates, or works around the system because the interface did not carry forward information already established by the sending party."
+    },
+    {
+      "heading": "Akrivia Health governance review as a cohort-query handoff failure",
+      "bodyMarkdown": "Akrivia Health is described as the canonical handoff failure in the portfolio. Researchers constructed patient cohorts using complex nested logical conditions, while governance reviewers needed to verify those conditions before a study could proceed.\n\nThe pre-redesign interface made information available but did not persist it in the form required by the governance reviewer at the handoff point. Governance reviewers could not read the cohort query structure independently, so the researcher had to re-explain the query logic in every review cycle. That persistent escalation created a governance bottleneck.\n\nThe redesign made the full query structure permanently visible and independently readable. The client-reported outcome was that governance reviewers could verify cohort logic without escalating to the research team."
+    },
+    {
+      "heading": "Triopsis workforce management as a cross-role scheduling handoff failure",
+      "bodyMarkdown": "The Triopsis workforce management system contained two significant handoff points: scheduler to operations manager, and operations manager to field technician. The first handoff moved from individual job assignment to exception monitoring. The second handoff moved from operational planning to physical task execution.\n\nThe handoff failure appeared when the exception state at a job was not communicated through the system. If a field technician arrived without knowing the site conditions, safety requirements, or prior issues, the technician had to acquire that context through other channels or proceed without it.\n\nThe redesign addressed both handoffs through state persistence across the role boundary. Relevant context from the prior stage surfaced in the interface at the point where the next stage began."
+    },
+    {
+      "heading": "WCO/IPM as a cross-institutional enforcement handoff failure",
+      "bodyMarkdown": "The WCO/IPM customs intelligence platform required three distinct handoff flows: from rights holder filing to intelligence analyst processing, from analyst processing to field officer inspection, and from the filed intellectual property information to the officers acting in the field.\n\nThe enforcement workflow degraded when any of these handoffs carried insufficient context. An officer could arrive at an inspection without the intelligence that rights holders had filed, or an analyst's pattern work could fail to reach the officers who needed to act on it.\n\nLow adoption before the redesign is described as partly a handoff failure at scale. The system did not persist the context across roles that made the cross-institutional workflow function, so users routed around it with parallel channels."
+    },
+    {
+      "heading": "Boundaries and evidence limits",
+      "bodyMarkdown": "The evidence for this situation is case-based. The page describes handoff mechanisms and examples from Akrivia Health, Triopsis workforce management, and WCO/IPM; it does not quantify the frequency of handoff failures across organisations.\n\nOnly the Akrivia Health outcome is explicitly labelled as client-reported. The available material states that governance reviewers could verify cohort logic without escalating to the research team, but it does not provide an independent measurement or numeric before-and-after comparison.\n\nThe WCO/IPM adoption issue is described as partly caused by handoff failure at scale. The available material does not state that handoff failure was the only cause of low adoption."
+    }
+  ],
+  "evidenceSummary": {
+    "strongClaims": [
+      "A handoff failure occurs when the interface does not make the information, state, or context required by the receiving party available in an actionable form at the moment of transition.",
+      "Escalation is the characteristic diagnostic signal of a handoff failure.",
+      "Workaround communication channels such as email, phone calls, and spreadsheets express repeated handoff failures across an organisation.",
+      "In the Akrivia Health case, the pre-redesign interface did not make the cohort query structure readable to governance reviewers, requiring researchers to re-explain query logic.",
+      "In the Triopsis workforce management case, the redesign addressed scheduler-to-operations-manager and operations-manager-to-field-technician handoffs through state persistence across role boundaries.",
+      "In the WCO/IPM case, low adoption before the redesign was partly a handoff failure at scale because the system did not persist context across cross-institutional roles."
+    ],
+    "weakerClaims": [
+      "In the Akrivia Health case, the client-reported outcome was that governance reviewers could verify cohort logic without escalating to the research team after the redesign."
+    ],
+    "limitations": [
+      "The evidence is case-based and does not quantify handoff failure frequency across organisations.",
+      "Only the Akrivia Health outcome is explicitly described as client-reported.",
+      "The Akrivia Health outcome is not presented with an independent measurement or numeric comparison.",
+      "The WCO/IPM low-adoption issue is described as partly a handoff failure at scale, not as solely caused by handoff failure.",
+      "The page describes design mechanisms and consequences, but it does not provide implementation details beyond state persistence and interface visibility."
+    ]
+  },
+  "relatedPageSlugs": [
+    "multi-role-workflows-are-fragmented",
+    "system-state-is-hard-to-understand",
+    "operators-rely-on-memory-too-much",
+    "delayed-understanding-creates-risk",
+    "user-error-has-serious-consequences",
+    "oversight-exists-in-policy-but-not-in-workflow",
+    "triopsis-workforce-management-saas"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "Triopsis workforce management",
+      "targetSlug": "triopsis-workforce-management-saas",
+      "reason": "The current page discusses Triopsis as a case example, and the matching case-study slug is available in the linking context."
+    },
+    {
+      "anchorText": "Multi Role Workflows Are Fragmented",
+      "targetSlug": "multi-role-workflows-are-fragmented",
+      "reason": "Handoff failures in the page occur at boundaries between roles and are closely adjacent to multi-role workflow fragmentation."
+    },
+    {
+      "anchorText": "System State Is Hard To Understand",
+      "targetSlug": "system-state-is-hard-to-understand",
+      "reason": "The page defines handoff failure partly as failure to make relevant system state available at the next stage."
+    },
+    {
+      "anchorText": "Operators Rely On Memory Too Much",
+      "targetSlug": "operators-rely-on-memory-too-much",
+      "reason": "The page describes receiving parties needing to reconstruct missing context through memory, escalation, or parallel channels."
+    },
+    {
+      "anchorText": "Delayed Understanding Creates Risk",
+      "targetSlug": "delayed-understanding-creates-risk",
+      "reason": "The page describes operational risk caused when receiving parties lack needed context at the point of action."
+    },
+    {
+      "anchorText": "User Error Has Serious Consequences",
+      "targetSlug": "user-error-has-serious-consequences",
+      "reason": "The page gives high-consequence examples where acting on missing or incorrect handoff context can create serious operational consequences."
+    },
+    {
+      "anchorText": "Oversight Exists In Policy But Not In Workflow",
+      "targetSlug": "oversight-exists-in-policy-but-not-in-workflow",
+      "reason": "The Akrivia Health example concerns governance review that could not function without readable cohort-query context in the workflow."
+    }
+  ],
+  "tags": [
+    "handoff failure",
+    "context loss",
+    "state persistence",
+    "role-boundary failure",
+    "escalation",
+    "workaround channels",
+    "multi-role workflow",
+    "operational risk"
+  ],
+  "_meta": {
+    "sourcePath": "sources/articles/Situations/situations--risk--handoffs-create-failures.md",
+    "parentSlug": "risk-and-consequence",
+    "childPageSlugs": [],
+    "generatedBy": "deterministic"
+  }
+}

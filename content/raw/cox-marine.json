@@ -1,0 +1,156 @@
+{
+  "_type": "documentationPage",
+  "sourceFile": "Articles/Case studies/case-study-notes--cox-marine.md",
+  "sourcePath": "sources/articles/Case studies/case-study-notes--cox-marine.md",
+  "sanityDocumentIdCandidate": "documentationPage.cox-marine",
+  "title": "Cox Marine",
+  "slug": {
+    "_type": "slug",
+    "current": "cox-marine"
+  },
+  "pageType": "case-study",
+  "category": "evidence",
+  "parentSlug": "marine",
+  "childPageSlugs": [],
+  "excerpt": "Cox Marine is a Creative Navy case study for marine diesel outboard engine cluster displays. The engagement covered embedded HMI architecture for 1–6 engine configurations across three display families, with client-reported post-deployment outcomes.",
+  "metaTitle": "Cox Marine HMI Case Study",
+  "metaDescription": "Creative Navy case study for Cox Marine embedded HMI displays across 1–6 engine configurations and three display families.",
+  "summary": "Creative Navy worked with COX Marine Ltd. on marine diesel outboard engine cluster displays for professional and high-performance vessels. The 12-week engagement applied Sandbox Experiments, Concept Convergence, and Implementation Partnership to produce a modular, tile-based display architecture for 1–6 engine configurations across three display families.",
+  "definition": "",
+  "keyFacts": [
+    "Client: COX Marine Ltd.",
+    "Domain: marine diesel outboard engine cluster displays and embedded HMI for professional and high-performance vessels.",
+    "Geography: Shoreham-by-Sea, UK.",
+    "Delivery: 12 weeks.",
+    "Engagement covered Sandbox Experiments, Concept Convergence, and Implementation Partnership.",
+    "The engagement did not include ongoing Iterative System Building or Organizational Integration phases.",
+    "The design had to support 1–6 engine configurations across three display families.",
+    "Telemetry arrived via NMEA 2000, including rpm, coolant temperature, oil pressure, fuel rate, and trim.",
+    "Approximately 32 layout variants were explored during Sandbox Experiments.",
+    "Client-reported post-deployment outcomes included shipping, vessel deployment, distributor praise, and independent extension by COX engineering."
+  ],
+  "tags": [
+    "marine HMI",
+    "embedded HMI",
+    "cluster displays",
+    "NMEA 2000",
+    "multi-engine displays",
+    "alarm design",
+    "scenario testing",
+    "implementation handover",
+    "positioning through interface quality",
+    "reduced maintenance and downtime"
+  ],
+  "bodyMarkdown": "- **Primary case-study category:** /evidence/case-studies/marine\n- **Primary context:** /contexts/embedded-devices-and-constrained-interfaces\n- **Also-relevant contexts:** /contexts/high-consequence-environments\n- **Connects to:** /failures/state-visibility-failures/users-cannot-see-what-state-the-system-is-in, /failures/cognitive-failures/the-interface-gets-harder-when-pressure-rises, /evidence/outcomes/positioning-through-interface-quality, /evidence/outcomes/reduced-maintenance-and-downtime\n\nPrimary case-study category: /evidence/case-studies/marine\n\nPrimary context: /contexts/embedded-devices-and-constrained-interfaces\n\nAlso-relevant contexts: /contexts/high-consequence-environments\n\nConnects to: /failures/state-visibility-failures/users-cannot-see-what-state-the-system-is-in, /failures/cognitive-failures/the-interface-gets-harder-when-pressure-rises, /evidence/outcomes/positioning-through-interface-quality, /evidence/outcomes/reduced-maintenance-and-downtime\n\nPrimary case-study category: /evidence/case-studies/marine\n\nPrimary context: /contexts/embedded-devices-and-constrained-interfaces\n\nAlso-relevant contexts: /contexts/high-consequence-environments\n\nConnects to: /failures/state-visibility-failures/users-cannot-see-what-state-the-system-is-in, /failures/cognitive-failures/the-interface-gets-harder-when-pressure-rises, /evidence/outcomes/positioning-through-interface-quality, /evidence/outcomes/reduced-maintenance-and-downtime\n\nPrimary case-study category: /evidence/case-studies/marine\n\nPrimary context: /contexts/embedded-devices-and-constrained-interfaces\n\nAlso-relevant contexts: /contexts/high-consequence-environments\n\nConnects to: /failures/state-visibility-failures/users-cannot-see-what-state-the-system-is-in, /failures/cognitive-failures/the-interface-gets-harder-when-pressure-rises, /evidence/outcomes/positioning-through-interface-quality, /evidence/outcomes/reduced-maintenance-and-downtime\n\n## Classification\n\nPrimary case-study category: /evidence/case-studies/marine\n\nPrimary context: /contexts/embedded-devices-and-constrained-interfaces\n\nAlso-relevant contexts: /contexts/high-consequence-environments\n\nConnects to: /failures/state-visibility-failures/users-cannot-see-what-state-the-system-is-in, /failures/cognitive-failures/the-interface-gets-harder-when-pressure-rises, /evidence/outcomes/positioning-through-interface-quality, /evidence/outcomes/reduced-maintenance-and-downtime\n\n## Cox Marine embedded HMI for diesel outboard cluster displays\n\nCreative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nIn the COX Marine engagement, Creative Navy worked on marine diesel outboard engine cluster displays for professional and high-performance vessels. COX Marine builds diesel outboard engines used on fast patrol craft, racing boats, and workboats. The interface work concerned embedded HMI displays intended to sit beside established marine electronics from Garmin and Simrad and meet comparable expectations for professional instrumentation.\n\nThe engagement was a 12-week R&D phase engagement covering Sandbox Experiments, Concept Convergence, and Implementation Partnership. The available case evidence states that there were no ongoing Iterative System Building or Organizational Integration phases. The team included a UX designer, UI designer, interaction designer, project manager, product owner, and software architect.\n\n## Marine helm conditions shaped the Cox Marine display architecture\n\nThe Cox Marine display architecture was shaped by harsh helm conditions rather than by decorative screen requirements. A planing boat at speed produces sustained vibration, hull slamming, and spray. Operators may brace with both feet and wear gloves. Displays must remain readable in direct sunlight, heavy overcast, and night conditions, including military night vision modes.\n\nThe case evidence identifies NMEA 2000 as the telemetry protocol. The display had to handle rpm, coolant temperature, oil pressure, fuel rate, and trim, with update rates that vary by load state. At high load, the frequency and criticality of these values change, so the interface had to support rapid attention prioritisation without requiring the operator to scan every value.\n\n## One to six engines across three display families created the core scalability problem\n\nThe structural design challenge in the Cox Marine case was the matrix of engine counts and display types. COX engines are deployed from single-engine vessels to six-engine installations. The display hardware spans three product families, from a compact auxiliary screen to a large primary helm display with both touch and physical controls.\n\nDesigning separately for each engine count and display family would have produced locally optimised interfaces with inconsistent mental models. Creative Navy's design work therefore had to support configuration-specific information richness while preserving cross-configuration coherence. The case describes this as the central tension between configuration-specific richness and cross-configuration coherence.\n\n## Creative Navy's Critical Systems Design method across three engagement phases\n\nCreative Navy's Critical Systems Design method was applied in the Cox Marine case across Sandbox Experiments, Concept Convergence, and Implementation Partnership. These phases were used to explore layout structures, converge on an architecture that worked across the product matrix, and hand the system over to COX engineering for independent extension.\n\nDuring Sandbox Experiments, Creative Navy worked with COX engineering and product teams in a joint R&D structure. UX exploration and engineering feasibility were evaluated concurrently. Engine telemetry specialists, cluster display engineers, software developers, and product managers worked in a combined structure rather than through sequential handover.\n\nDomain learning in the Cox Marine case covered NMEA 2000 protocol behaviour, telemetry update rates under varying load states, sunlight-readable LCD constraints, military night vision mode requirements, gloved touch interaction under vibration, and helm perception during fast transit or docking manoeuvres. This domain learning was used to evaluate layout options against operating conditions rather than screen aesthetics.\n\nOption space mapping produced approximately 32 layout variants. The variants addressed engine count scaling, display size adaptation, telemetry prioritisation under different operational states, alarm surfacing, and module behaviour at minimum viable size.\n\n## Concept Convergence used user feedback, technical possibility, and cross-display coherence\n\nCreative Navy's Critical Systems Design method used Concept Convergence in the Cox Marine case to resolve the explored layout options through three forces: user feedback, technical possibilities, and cross-display coherence. User feedback came from scenario testing with experienced operators and internal experts using a simulator environment that replayed representative engine data and vessel states.\n\nTechnical possibility covered what the hardware display families could render and what the COX engineering team could implement and maintain. Cross-display coherence covered which layout directions remained legible and structurally consistent across all three display types.\n\nThe case evidence describes layout elimination and revision through this triangulation. A layout that performed well for one operator scenario but collapsed on the compact auxiliary display was eliminated. A layout that worked across displays but produced operator hesitation during the fault-at-speed scenario was revised. The surviving architecture was the position where user feedback, technical possibility, and cross-display coherence aligned.\n\n## Engine tiles became the invariant unit across Cox Marine configurations\n\nThe central design resolution in the Cox Marine case was the engine tile as the invariant unit. One engine corresponds to one tile. Each tile carries key telemetry for that engine in a consistent spatial arrangement.\n\nFor a single engine, one tile can occupy the primary display with full detail. For six engines, six tiles repeat in a grid, with secondary values simplified and alarms consolidated in a shared strip. A detail view provides depth on demand for an individual engine.\n\nThis tile-based architecture allowed the operator to look for the same patterns in the same places regardless of engine count. The same principle extended to display families through modular components: engine tiles, fuel blocks, alarm banners, status bars, and context panels were defined with content rules, minimum size constraints, and behaviour specifications.\n\n## Scenario testing refined Cox Marine fault visibility and night operation\n\nScenario testing during Concept Convergence changed specific interface behaviours in the Cox Marine display architecture. A multi-engine fault scenario showed that early layouts made fault presence visible but did not help operators identify which engine required priority attention. Creative Navy's response was to redesign alarm state highlighting within engine tiles and establish a fixed display area where the highest-priority fault is always summarised.\n\nA night conditions scenario showed that initial colour choices interfered with military night vision equipment. The palette and contrast were revised. Scenario testing also led to optimisation of the overall layout and instrument readings, including instrument grouping and value presentation based on how operators scanned displays during high-load states.\n\n## Implementation Partnership handed over a modular design system to COX engineering\n\nCreative Navy's Critical Systems Design method closed the Cox Marine engagement through Implementation Partnership. Handover to software developers and hardware engineers was conducted through joint working sessions rather than document transfer. The sessions covered module structure, interaction behaviour, data range definitions, and day, dusk, and night mode specifications.\n\nCreative Navy delivered a layout architecture supporting 1–6 engine configurations across three display families. The delivered system included the engine tile system as the core invariant unit, modular component specifications, day, dusk, and night mode specifications including military night vision palette, interaction design for touch and physical controls, and a design system documented for engineering implementation.\n\nThe design system included component libraries, layout rules, colour and typography tokens mappable to code, and a scenario-validated alarm architecture with fault-priority surfacing and per-engine alarm state design. The case evidence states that all deliverables were produced by Creative Navy and handed over to the COX engineering team for independent extension.\n\n## Client-reported Cox Marine outcomes and evidence calibration\n\nThe Cox Marine system shipped and was deployed on vessels, according to client-reported evidence. Distributor feedback, relayed by the client to Creative Navy, described the cluster display interface using the phrase \"best in the industry\". The client also reported that the system became an informal standard within its product category.\n\nThese competitive-standing claims are not independently verified in the available case evidence. The case evidence calibrates the distributor praise as distributor-reported to the client and relayed by the client to Creative Navy. The informal standard status is client-reported based on distributor and market feedback.\n\nThe deliverable-level outcomes are stronger as engagement records. Creative Navy-recorded and case-level facts include approximately 32 layout variants explored during Sandbox Experiments, three display families covered by a single modular architecture, a 1–6 engine configuration range supported by one tile-based mental model, and delivery in 12 weeks.\n\nThe client also reported that the modular architecture enabled COX engineering to extend the system to new engine variants and display updates using the delivered framework without redesigning from the foundation. This outcome is client-reported and consistent with the modular architecture delivered, but it is not independently measured in the available evidence.\n\n## Evidence boundaries for Cox Marine performance and positioning claims\n\nThe Cox Marine case does not contain independently measured operator performance outcomes. The case evidence does not report field-measured reductions in operator error, maintenance time, downtime, or fault-response time.\n\nThe strongest evidence concerns deliverables and engagement activity: the explored layout variants, the display-family coverage, the engine-count range, the modular architecture, the phase structure, and the 12-week delivery. The post-deployment evidence is client-reported and should be treated as reported outcome evidence rather than independent measurement.\n\nThe competitive vector identified in the engagement was dependability under real operating conditions, expressed through visual consistency and information reliability at speed. The available evidence supports this as the case interpretation and as client-reported market feedback, not as an independently measured competitive benchmark.\n\n## Related pages\n\nThe Cox Marine case is related to embedded devices and constrained interfaces because the design work was shaped by constrained display hardware, NMEA 2000 telemetry behaviour, physical controls, touch interaction, and harsh operating conditions.\n\nThe case is also related to high-consequence environments because fast patrol craft, racing boat, and workboat operation can involve fault handling at speed with safety implications.\n\nThe client-reported distributor feedback connects the case to positioning through interface quality. The client-reported ability for COX engineering to extend the modular architecture connects the case to reduced maintenance and downtime as an outcome type, with the evidence boundary that this extension outcome was client-reported rather than independently measured.\n",
+  "claims": [
+    {
+      "claim": "The Cox Marine engagement concerned marine diesel outboard engine cluster displays for professional and high-performance vessels.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "Supported by the Basic facts and situation sections."
+    },
+    {
+      "claim": "The engagement lasted 12 weeks and covered Sandbox Experiments, Concept Convergence, and Implementation Partnership, with no ongoing Iterative System Building or Organizational Integration phases.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "engagement record",
+      "notes": "Supported by the Basic facts section."
+    },
+    {
+      "claim": "The design had to support 1–6 engine configurations across three display families.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "Supported by the situation and deliverables sections."
+    },
+    {
+      "claim": "Approximately 32 layout variants were explored during Sandbox Experiments.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "engagement record",
+      "notes": "The source frames this as option space mapping during Sandbox Experiments."
+    },
+    {
+      "claim": "Scenario testing led to refinements in alarm state highlighting, fixed highest-priority fault surfacing, night vision palette and contrast, and instrument grouping.",
+      "evidenceType": "Creative Navy-observed",
+      "sourceStrength": "engagement record",
+      "notes": "Supported by the Concept Convergence scenario testing description."
+    },
+    {
+      "claim": "The engine tile became the invariant unit for scaling from one to six engines.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "Supported by the central tension and resolution section."
+    },
+    {
+      "claim": "The cluster display system shipped and was deployed on COX Marine vessels.",
+      "evidenceType": "client-reported",
+      "sourceStrength": "moderate",
+      "notes": "The source explicitly calibrates deployment and shipping as client-reported."
+    },
+    {
+      "claim": "Distributor feedback described the interface as best in the industry, as relayed by the client to Creative Navy.",
+      "evidenceType": "client-reported",
+      "sourceStrength": "anecdotal",
+      "notes": "The source states this claim is distributor-reported to the client, relayed to Creative Navy, and not independently verified."
+    },
+    {
+      "claim": "The modular architecture enabled COX engineering to extend the system to new engine variants and display updates without redesigning from the foundation.",
+      "evidenceType": "client-reported",
+      "sourceStrength": "moderate",
+      "notes": "The source reports this as client-reported and consistent with the delivered modular architecture."
+    }
+  ],
+  "limitations": [
+    "The \"best in the industry\" claim is distributor-reported to the client, relayed by the client to Creative Navy, and not independently verified.",
+    "The shipping and vessel deployment outcome is client-reported.",
+    "The informal product-category standard status is client-reported based on distributor and market feedback.",
+    "No independent measurement of operator performance outcomes was conducted.",
+    "The available case evidence does not report field-measured reductions in error, maintenance time, downtime, or fault-response time.",
+    "The engagement did not include ongoing Iterative System Building or Organizational Integration phases.",
+    "Findings are specific to COX Marine diesel outboard engine cluster displays and the documented 1–6 engine, three-display-family matrix."
+  ],
+  "publicationBlockers": [],
+  "questionsForReview": [
+    "The Classification block Connects to field lists two failure slugs, while the later site-cluster section also names /failures/cognitive-failures/the-system-does-not-support-rapid-judgment as a failure this engagement addressed. The completed Classification block was preserved exactly, but the difference may need review."
+  ],
+  "relatedPageSlugs": [
+    "embedded-devices-and-constrained-interfaces",
+    "high-consequence-environments",
+    "positioning-through-interface-quality",
+    "reduced-maintenance-and-downtime"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "embedded devices and constrained interfaces",
+      "targetSlug": "embedded-devices-and-constrained-interfaces",
+      "placementHint": "Related pages section or the paragraph on constrained display hardware and NMEA 2000 telemetry.",
+      "reason": "The source identifies this as the primary context for the Cox Marine case."
+    },
+    {
+      "anchorText": "high-consequence environments",
+      "targetSlug": "high-consequence-environments",
+      "placementHint": "Related pages section or the paragraph on fault handling at speed.",
+      "reason": "The source identifies this as an also-relevant context for the Cox Marine case."
+    },
+    {
+      "anchorText": "positioning through interface quality",
+      "targetSlug": "positioning-through-interface-quality",
+      "placementHint": "Related pages section or the outcome section discussing distributor feedback.",
+      "reason": "The source identifies this outcome page as supported by the client-reported distributor feedback and informal standard status."
+    },
+    {
+      "anchorText": "reduced maintenance and downtime",
+      "targetSlug": "reduced-maintenance-and-downtime",
+      "placementHint": "Related pages section or the outcome section discussing independent extension by COX engineering.",
+      "reason": "The source identifies this outcome page as supported by the modular architecture enabling COX engineering to extend the system."
+    }
+  ],
+  "qualityChecks": {
+    "factsOnlyFromCurrentSource": true,
+    "documentationStyle": true,
+    "noMarketingLanguage": true,
+    "noInventedClaims": true,
+    "linksOnlyFromLinkingContext": true,
+    "internalNotesNotPublished": true,
+    "readyForSanityImport": true
+  },
+  "__sourceCategoryDir": "Case studies"
+}

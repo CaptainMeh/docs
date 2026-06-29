@@ -1,0 +1,155 @@
+{
+  "_type": "documentationPage",
+  "sourceFile": "Articles/Glossary/glossary--industry-terms--behavioural-governance.md",
+  "sourcePath": "sources/articles/Glossary/glossary--industry-terms--behavioural-governance.md",
+  "sanityDocumentIdCandidate": "documentationPage.behavioural-governance",
+  "title": "Behavioural Governance",
+  "slug": {
+    "_type": "slug",
+    "current": "behavioural-governance"
+  },
+  "pageType": "glossary-term",
+  "category": "glossary",
+  "parentSlug": "industry-terms",
+  "childPageSlugs": [],
+  "excerpt": "Behavioural governance is the set of mechanisms that define, constrain, document, and make verifiable how a product behaves in specific situations. It treats governance as a design problem as well as a management problem.",
+  "metaTitle": "Behavioural Governance",
+  "metaDescription": "Definition of behavioural governance: mechanisms for specifying, enforcing, documenting, and verifying product behaviour.",
+  "summary": "Behavioural governance covers behaviour specification, behaviour enforcement, behaviour documentation, and behaviour verifiability. It focuses on the operational behaviour a product produces in use, not only on the technical integrity of the code.",
+  "definition": "Behavioural governance is the set of mechanisms through which a product's behaviour is defined, constrained, documented, and made verifiable to the people responsible for it.",
+  "keyFacts": [
+    "Behavioural governance defines, constrains, documents, and makes product behaviour verifiable.",
+    "The term covers what a product does in specific situations, how it makes decisions, and how it responds to inputs.",
+    "Behavioural governance requires designed artefacts, not only policy statements.",
+    "The main components are behaviour specification, behaviour enforcement, behaviour documentation, and behaviour verifiability.",
+    "In AI-enabled products, behavioural governance must operate at the interface layer as well as the model layer because model outputs cannot be fully pre-specified.",
+    "Governance consumers include risk teams, regulatory auditors, institutional review boards, ethics committees, and clinical governance committees.",
+    "Technical governance addresses code integrity, while behavioural governance addresses product behaviour as experienced in production.",
+    "The Callsign fraud detection case describes a policy engine architecture with configurable policies, logged policy changes, historical performance visibility, and separated evaluation and configuration modes.",
+    "The Akrivia Health clinical research case describes cohort construction governance that institutional reviewers could verify without researcher involvement, according to client-reported evidence.",
+    "The Puraite AI systematic review case describes audit trails, blinded mode, and confidence display as methodological governance documentation."
+  ],
+  "tags": [
+    "behavioural governance",
+    "product governance",
+    "behaviour specification",
+    "behaviour enforcement",
+    "audit trail",
+    "verifiability",
+    "governance consumers",
+    "AI-enabled products",
+    "policy engine"
+  ],
+  "bodyMarkdown": "## Definition\n\nBehavioural governance is the set of mechanisms through which a product's behaviour is defined, constrained, documented, and made verifiable to the people responsible for it. Product behaviour includes what the product does in specific situations, how it makes decisions, and how it responds to inputs.\n\nBehavioural governance includes the specification of intended behaviour, the infrastructure that enforces that specification, the documentation that makes behaviour traceable, and the interface design that makes governance activities practically possible for the people who must perform them.\n\n## Behavioural governance as a design discipline\n\nBehavioural governance is a design discipline as well as a management discipline. A policy statement about how a product should behave is not, by itself, governance. Without designed artefacts, the policy remains an aspiration rather than an operational control.\n\nBehavioural governance requires interfaces through which behaviour can be specified and configured, audit trails that document behaviour as it occurs, and review interfaces through which governance consumers can verify that behaviour matches specification.\n\n## What behavioural governance includes\n\n### Behaviour specification\n\nBehaviour specification is the explicit definition of what a product should do in specific situations and what it should not do. In AI-enabled products, behaviour specification must operate at the interface layer rather than only at the model layer, because model outputs cannot be fully pre-specified.\n\n### Behaviour enforcement\n\nBehaviour enforcement is the set of designed mechanisms that constrain a product to behave as specified. In a fraud detection policy engine, the enforcement mechanism is the policy layer that applies specified rules to model outputs. In a systematic review tool, the enforcement mechanism can be a blinded mode that enforces methodological independence.\n\nBehavioural governance requires enforcement mechanisms to be designed, not assumed.\n\n### Behaviour documentation\n\nBehaviour documentation is the audit trail produced as the product operates. It records what decisions were made, on what basis, by what rules, and at what time.\n\nWithout designed documentation infrastructure, audit trails are retrospectively assembled from system logs. That is a weaker and less complete form of governance documentation than an audit trail designed as part of the product's governance infrastructure.\n\n### Behaviour verifiability\n\nBehaviour verifiability is the ability of governance consumers to verify that product behaviour matches specification without requiring access to source code, model internals, or engineering support.\n\nVerifiability is a user experience problem for governance consumers. The interface must make behaviour legible to people who are not engineers.\n\n## Governance consumers as a primary design audience\n\nGovernance consumers are a design audience distinct from operational users. Risk teams, regulatory auditors, institutional review boards, ethics committees, and clinical governance committees need to verify product behaviour against specification independently.\n\nTheir information needs differ from the operational user's information needs. A risk team evaluating a fraud detection product under SCA and PCI DSS, a clinical governance committee reviewing a medical device's design history file, and an institutional review board examining a research cohort construction record each needs information that supports independent assessment without requiring the prior party's explanation.\n\nBehavioural governance therefore requires explicit interface design for review workflows. The governance consumer's workflow needs relevant information at the decision point, without excessive cognitive overhead, in a form that supports independent assessment.\n\n## How behavioural governance differs from technical governance\n\nTechnical governance addresses the integrity of code through practices such as code review, version control, security scanning, and deployment controls. Behavioural governance addresses what the product does as experienced by users when the code runs in production.\n\nA product can be technically correct while producing behaviour that is not what governance specifications require. A product can also produce behaviour that no governance specification addressed. Behavioural governance closes this gap by making operational behaviour specifiable, enforceable, documented, and verifiable.\n\n## Examples in practice\n\nThe documented Callsign fraud detection case describes a policy engine architecture as a behavioural governance design. The model produced risk scores, while the policy layer specified what the product did with those scores. Every policy was configurable, every change was logged with timestamp and attribution, every policy's historical performance was visible to risk reviewers, and evaluation mode was separated from configuration mode to prevent untracked live modifications.\n\nIn the Callsign case, risk teams under SCA and PCI DSS compliance requirements could verify fraud control behaviour against specification independently. Lloyds Bank and HSBC contracts followed; that contract sequence is client-reported.\n\nThe documented Akrivia Health clinical research case describes cohort construction governance infrastructure. Institutional governance reviewers could verify research cohort logic from the interface without requiring researcher involvement. The statement that reviewers could verify without escalating is client-reported.\n\nThe Puraite AI systematic review case describes methodological governance documentation. The audit trail of inclusion and exclusion decisions, combined with blinded mode and confidence display, allowed reviewers to verify that screening decisions were made independently and to trace the basis for each decision.\n\n## Evidence basis\n\nThe evidence for behavioural governance in practice comes from documented case examples. The Callsign example is the most complete behavioural governance design described here because it includes a policy layer, configurability, timestamped and attributed change logging, historical policy performance visibility, and separation between evaluation and configuration modes.\n\nThe Akrivia Health and Puraite examples show different governance consumers and different governance artefacts. Akrivia Health focuses on institutional review of cohort construction logic. Puraite focuses on methodological governance for systematic review screening decisions.\n\n## Boundaries and limits\n\nBehavioural governance is not the same as policy writing. Policy statements can describe intended behaviour, but governance requires designed mechanisms that specify, enforce, document, and make behaviour verifiable.\n\nBehavioural governance is not the same as technical governance. Technical governance can establish code integrity, but it does not by itself establish that production behaviour matches governance specification.\n\nThe available examples do not establish a universal measurement of governance effectiveness. They show how behavioural governance appeared in specific product contexts: fraud detection, clinical research cohort construction, and systematic review screening.",
+  "claims": [
+    {
+      "claim": "Behavioural governance is the set of mechanisms through which a product's behaviour is defined, constrained, documented, and made verifiable to responsible parties.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "Directly supported by the definition section."
+    },
+    {
+      "claim": "Behavioural governance covers behaviour specification, enforcement, documentation, and verifiability.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "Directly supported by the source section on what behavioural governance covers."
+    },
+    {
+      "claim": "In AI-enabled products, behaviour specification must operate at the interface layer rather than only at the model layer because model outputs cannot be fully pre-specified.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "Directly stated in the behaviour specification description."
+    },
+    {
+      "claim": "Governance consumers have information needs that differ from operational users and require review workflows designed for independent assessment.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "Supported by the governance consumers section."
+    },
+    {
+      "claim": "Technical governance addresses code integrity, while behavioural governance addresses operational behaviour as experienced by users in production.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "Supported by the section explaining why technical governance is not sufficient."
+    },
+    {
+      "claim": "The Callsign fraud detection case describes a policy engine architecture with configurable policies, timestamped and attributed change logging, historical performance visibility, and separated evaluation and configuration modes.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "Supported by the Callsign evidence bullet; Lloyds Bank and HSBC contract sequence is client-reported."
+    },
+    {
+      "claim": "The Akrivia Health clinical research case describes cohort construction governance that institutional reviewers could verify without researcher involvement.",
+      "evidenceType": "client-reported",
+      "sourceStrength": "case evidence",
+      "notes": "The source labels the reviewer verification statement as client-reported."
+    },
+    {
+      "claim": "The Puraite AI systematic review case describes audit trails, blinded mode, and confidence display as methodological governance documentation.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "Supported by the Puraite evidence bullet."
+    }
+  ],
+  "limitations": [
+    "The examples are case-based and do not establish a universal measurement of governance effectiveness.",
+    "The Callsign statement that Lloyds Bank and HSBC contracts followed is client-reported.",
+    "The Akrivia Health statement that reviewers could verify without escalating is client-reported.",
+    "The source evidence does not provide quantitative measured outcomes for behavioural governance.",
+    "The term distinguishes behavioural governance from technical governance but does not replace technical governance practices such as code review, version control, security scanning, or deployment controls."
+  ],
+  "publicationBlockers": [],
+  "questionsForReview": [
+    "None"
+  ],
+  "relatedPageSlugs": [
+    "behavioural-requirement",
+    "human-oversight",
+    "operational-clarity",
+    "cognitive-load",
+    "decision-quality",
+    "callsign-fraud-authentication",
+    "puraite"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "Callsign fraud detection",
+      "targetSlug": "callsign-fraud-authentication",
+      "placementHint": "Use in the Examples in practice section where the Callsign fraud detection case is discussed.",
+      "reason": "The source names Callsign as the most complete behavioural governance design in the portfolio, and the matching case-study slug is available."
+    },
+    {
+      "anchorText": "Puraite AI systematic review",
+      "targetSlug": "puraite",
+      "placementHint": "Use in the Examples in practice section where Puraite audit trails, blinded mode, and confidence display are discussed.",
+      "reason": "The source names Puraite as an example of methodological governance documentation, and the matching allowed slug is available."
+    },
+    {
+      "anchorText": "behavioural requirement",
+      "targetSlug": "behavioural-requirement",
+      "placementHint": "Use near the Behaviour specification subsection if the published page includes related glossary references.",
+      "reason": "Behaviour specification is central to the definition, and behavioural requirement is the closest available glossary relation."
+    },
+    {
+      "anchorText": "human oversight",
+      "targetSlug": "human-oversight",
+      "placementHint": "Use near the Governance consumers section if related glossary links are displayed.",
+      "reason": "Governance consumers verify behaviour independently, which makes human oversight a relevant adjacent glossary topic."
+    },
+    {
+      "anchorText": "cognitive load",
+      "targetSlug": "cognitive-load",
+      "placementHint": "Use in the Governance consumers section where excessive cognitive overhead is discussed.",
+      "reason": "The source explicitly refers to cognitive overhead in governance review workflows."
+    }
+  ],
+  "qualityChecks": {
+    "factsOnlyFromCurrentSource": true,
+    "documentationStyle": true,
+    "noMarketingLanguage": true,
+    "noInventedClaims": true,
+    "linksOnlyFromLinkingContext": true,
+    "internalNotesNotPublished": true,
+    "readyForSanityImport": true
+  }
+}

@@ -1,0 +1,141 @@
+{
+  "_type": "documentationPage",
+  "sourceFile": "Articles/Failures/failures--interpretation--data-is-available-but-hard-to-interpret.md",
+  "sourcePath": "sources/articles/Failures/failures--interpretation--data-is-available-but-hard-to-interpret.md",
+  "sanityDocumentIdCandidate": "documentationPage.data-is-available-but-hard-to-interpret",
+  "title": "Data Is Available But Hard To Interpret",
+  "slug": {
+    "_type": "slug",
+    "current": "data-is-available-but-hard-to-interpret"
+  },
+  "pageType": "failure",
+  "category": "failures",
+  "parentSlug": "interpretation-failures",
+  "childPageSlugs": [],
+  "excerpt": "Data can be technically available while remaining hard to interpret. This failure pattern occurs when visible values, results, or structures do not give the relevant audience enough meaning, reasoning, or context to act independently.",
+  "metaTitle": "Data Available But Hard To Interpret",
+  "metaDescription": "A failure pattern where users can see relevant data but cannot form reliable understanding because representation, reasoning, or context is missing.",
+  "summary": "This page defines an interpretation failure in which data is present but not represented in a form that supports reliable understanding. It covers failures of conceptual language, absent reasoning, missing contextual scaffolding, and two documented examples from Polymatica and Akrivia.",
+  "definition": "Data is available but hard to interpret is a failure pattern in which users can see technically relevant data but cannot form reliable understanding from it because the representation does not match the audience, the reasoning behind a result is absent, or the context needed for orientation is missing.",
+  "keyFacts": [
+    "This failure concerns interpretation, not access: the data is visible but not meaningful enough for the audience that needs to use it.",
+    "The pattern differs from state visibility failure, where the required state is absent or inaccessible.",
+    "The pattern is upstream of judgment failure: users cannot judge what matters until they can interpret what individual values mean.",
+    "One mechanism is representation in the wrong conceptual language, such as exposing technical architecture terminology directly to non-specialist users.",
+    "A second mechanism is presenting a result without the reasoning that produced it, making independent verification difficult.",
+    "A third mechanism is missing contextual scaffolding for unfamiliar data structures, including empty-by-default interfaces without entry-point guidance.",
+    "In the Polymatica case, product analytics from the live system showed independent completion of key analytical operations rising from 2% before redesign to 40% after release 1 and 56% after release 2.",
+    "In the Akrivia case, Akrivia reported that governance reviewers could verify cohort construction without escalating to the research team, but no task-completion or verification-time data was collected.",
+    "Creative Navy's Critical Systems Design method addresses this pattern through domain learning and interface architecture that represents complexity in terms the relevant audience can read."
+  ],
+  "tags": [
+    "interpretation failure",
+    "data interpretation",
+    "conceptual language",
+    "reasoning visibility",
+    "contextual scaffolding",
+    "empty-by-default interfaces",
+    "OLAP analytics",
+    "clinical research software",
+    "domain learning",
+    "Sandbox Experiments",
+    "Concept Convergence",
+    "Critical Systems Design"
+  ],
+  "bodyMarkdown": "## Summary\n\nCreative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nData is available but hard to interpret when a system shows technically relevant values, results, or structures but does not give the relevant audience enough meaning to understand them reliably. The failure is not missing information. The failure is the gap between what the system communicates and what the audience needs in order to interpret it.\n\nThis interpretation failure often produces a bottleneck rather than a visible error. Users who cannot interpret the system independently consult the person who can: a founder who personally onboards customers, a researcher who explains each cohort to governance reviewers, or a specialist whose knowledge remains necessary because the interface requires specialist translation.\n\n## Failure pattern: visible data without reliable meaning\n\nData is visible but not interpretable when the interface assumes knowledge the audience does not have, omits the context that would make values meaningful, or separates a result from the reasoning that produced it. A system can surface every value technically relevant to a question and still leave users unable to answer that question.\n\nThe failure is diagnostic when capable specialists can operate the product but the intended wider audience cannot. The product works for people who already understand the technical or domain language. It does not work for users who need the same capability but do not have the translation layer that specialists carry in memory.\n\nThis pattern is distinct from a failure to show system state. When state is absent or inaccessible, the design response is to make information visible. When data is visible but hard to interpret, the design response is to make visible information understandable for the audience that must use it.\n\n## Representation in the wrong conceptual language\n\nRepresentation in the wrong conceptual language occurs when the interface exposes the terminology, structural metaphors, and organisational logic of the system builders rather than the operational language of the product users. The internal language may be accurate within the technical frame, but it requires users to translate before interpretation can begin.\n\nTranslation can be learned, but learning it requires sustained exposure, access to domain expertise, or dedicated onboarding. When only some users have those resources, the interface creates an access barrier. The data is present, but independent interpretation depends on specialist knowledge outside the interface.\n\nThe design response is not to remove analytical depth. The design response is to represent the same capability in the language of the operational audience. Terminology, structural metaphors, and visual organisation change so that the audience can relate the system's data structures to the questions they are trying to answer.\n\n## Results without visible reasoning\n\nA result without visible reasoning is interpretable only to someone who already knows how the result was produced. A patient cohort count is a result. The inclusion and exclusion criteria applied across eight nested logical levels are the reasoning that produced that result.\n\nThis failure is common when a system has been optimised for the person who creates the result. For the creator, the reasoning may be fresh in working memory and easy to explain. For a reviewer, verifier, or collaborator who arrives later, the result alone does not show whether the system has applied the right logic.\n\nThe design response is to make the reasoning structure a first-class interface surface. In a query builder, policy editor, or simulation configuration, the reasoning process and the result need to be inseparable enough that someone who did not build the result can follow, verify, and reconstruct it independently.\n\n## Missing contextual scaffolding for unfamiliar data structures\n\nMissing contextual scaffolding occurs when users encounter data structures without the orientation needed to begin interpreting them. Users may need to know what the dimensions of a dataset are, which values are significant, what a field contains, what its range means, and what actions are possible from the current screen.\n\nEmpty-by-default interfaces are a specific version of this failure. They show the capability set, but they do not communicate the user's entry point. The user can see the system, but cannot determine what to do first or how to relate the visible structure to a productive action.\n\nThe design response is to build orientation into the interface. Progressive disclosure, visual structure, and contextual guidance help users move from unfamiliarity to productive use without requiring a separate documentation search before first use.\n\n## Polymatica: OLAP data was present but lacked interpretive scaffolding\n\nPolymatica's GPU-backed OLAP analytics engine processed full-volume data queries 50–100 times faster than competing solutions and served clients including HSBC and Barclays with data at a scale that Tableau and Domo could not match. The technical capability was genuine, but the interface had been designed for and by OLAP specialists.\n\nThe interface exposed the cube metaphor for data structures, used “dimensions” and “facts” where the industry used the more accessible term “measures,” surfaced SQL queries directly during database connection, left advanced analytical features unlabelled, and presented empty-by-default screens at almost every entry point. The interpretation failure was not that data was absent. The failure was that the representation assumed OLAP expertise.\n\nProduct analytics from the live system showed the failure quantitatively. Before redesign, 2% of users could complete key analytical operations independently without consulting help documentation or tutorial videos. A further 9% could complete them with documentation.\n\nA diagnostic failure point appeared when users trained on clean, structurally ideal data arrived with real, messy datasets. A column could mix city names with other categories, contain malformed values, or have structural inconsistencies. The interface offered no data preparation or preview step and no guidance on what the data should look like, so users could see the data but had no framework for diagnosing the gap between training data and operational reality.\n\nCreative Navy's Critical Systems Design method addressed the Polymatica interpretation failure through domain learning during Sandbox Experiments. The Creative Navy team became productive OLAP users through daily structured exercises for two weeks and then weekly exercises for the rest of the engagement. This made it possible to understand the conceptual translation required by the redesign rather than relying only on the founder's explanation of what users needed.\n\nConcept Convergence produced an architecture that replaced the cube metaphor with “dataset,” renamed “facts” to “measures,” and introduced a lobby structure that communicated what was available and how to begin before the user had committed to a specific operation. After release 1, independent task completion rose from 2% to 40%. After release 2, it rose to 56%. The evidence basis is product analytics from real users in the live system.\n\n## Akrivia Health: cohort results were visible but cohort reasoning needed to be independently readable\n\nAkrivia Health's clinical research platform supports mental health research, with cohort construction as the central operation. Researchers assemble patient cohorts by specifying inclusion and exclusion criteria across diagnostic codes, medication sequences, rating scale scores, and service use patterns, nested up to eight logical levels.\n\nThe interpretation failure in existing clinical analytics tools was identified through benchmarking of nine commercial healthcare analytics tools during Sandbox Experiments. The tools showed final cohort results, such as counts, patient lists, and aggregate statistics, while obscuring or presenting only technically the query logic that produced those results.\n\nThe governance reviewer's interpretation task differed from the researcher's construction task. The researcher builds a query from inside the logic, with a clinical rationale for each condition and nesting level. The governance reviewer arrives from outside the construction process and needs to verify that the completed query implements the approved protocol. A count alone does not support that verification.\n\nCreative Navy's Critical Systems Design method used Sandbox Experiments to examine the interpretation requirements across NHS analysts, academic researchers, and pharmaceutical research staff. The work included review of 32 academic papers on electronic health record interface design and 14 individual interviews plus 3 focus groups with 24 participants across those groups.\n\nConcept Convergence identified a position where researcher autonomy and institutional auditability could be treated as the same interface property. The resulting query builder combined elements from three of the five interaction models explored during Sandbox Experiments: nested logic blocks for readability, temporal organisation cues for clinical research context, and fragment reuse capability for iterative hypothesis development. The query logic remained visible at all times so that a governance reviewer could follow the construction independently.\n\nAkrivia reported that governance reviewers could verify cohort construction without escalating to the research team. Before redesign, governance review required the researcher's direct involvement to explain which conditions had been applied and why. This outcome is client-reported by Akrivia; no task-completion data or verification-time data was collected.\n\n## How Creative Navy's Critical Systems Design method addresses this failure\n\nCreative Navy's Critical Systems Design method addresses this interpretation failure by identifying what interpretation requires for each audience and by building that requirement into the interface architecture. The relevant work is not only subject-domain learning. It is learning the cognitive position of the audience that must interpret the interface.\n\nIn the Polymatica case, Creative Navy's domain learning exposed the gap between OLAP specialists and business analysts. The redesign preserved analytical depth while changing the entry point, terminology, and visual structure so that the interface matched the audience's first-use position.\n\nIn the Akrivia case, Creative Navy's research across NHS analysts, academic researchers, and pharmaceutical research staff made the governance reviewer's interpretation challenge distinct from the researcher's construction challenge. The query builder represented query logic in a form that both the researcher constructing it and the governance reviewer verifying it could read.\n\nThe common design standard is audience-appropriate representation rather than simplification. An interface that hides complexity because it cannot be made interpretable is a different product. An interface that represents the same complexity in terms the relevant audience can read keeps the capability but changes the surface through which users understand it.\n\n## Boundaries and related interpretation failures\n\nThis failure pattern is about interpretation: users can see the data but cannot form reliable understanding from it. It differs from state visibility failures, where information is absent or inaccessible and users must reconstruct system state because it is not at the surface.\n\nThis failure pattern is also upstream of failures in rapid judgment. Users who cannot understand what individual values mean are not yet in a position to decide which values matter most, which exceptions require action, or which signals should govern the next decision.\n\nWarnings with unclear meaning are a specific high-consequence instance of the same general mechanism. A warning may be present but still fail if the user cannot read its meaning accurately under operating conditions.\n\n## Evidence basis and limits\n\nThe Polymatica evidence includes product analytics from real users in the live system. The figures reported are 2% independent task completion before redesign, 9% task completion with documentation before redesign, 40% independent task completion after release 1, and 56% independent task completion after release 2.\n\nThe Akrivia evidence includes benchmarking of nine commercial healthcare analytics tools, review of 32 academic papers on electronic health record interface design, and 14 individual interviews plus 3 focus groups with 24 participants across NHS analysts, academic researchers, and pharmaceutical research staff. The governance outcome is client-reported by Akrivia and was not supported by task-completion or verification-time data.\n\nThe two grounded examples show how interpretation failures can appear in OLAP analytics software and clinical research software. They should not be treated as evidence that the same metrics or outcomes generalise to every system where data is visible but hard to interpret.",
+  "claims": [
+    {
+      "claim": "Data can be available but hard to interpret when visible values, results, or structures do not provide the audience with enough meaning, reasoning, or context to understand them reliably.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "Defined directly in the failure pattern and situation sections."
+    },
+    {
+      "claim": "This failure differs from state visibility failure because the data is present and accessible, but not in a form that supports understanding.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "The source explicitly distinguishes this page from the adjacent state visibility failure page."
+    },
+    {
+      "claim": "One mechanism of interpretation failure is representation in the wrong conceptual language, where users must translate technical terminology and structure before interpretation can begin.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "Supported by the source section on representation in the wrong conceptual language."
+    },
+    {
+      "claim": "A second mechanism of interpretation failure is presenting a result without the reasoning structure that produced it.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "Supported by the source section on present result, absent reasoning."
+    },
+    {
+      "claim": "A third mechanism of interpretation failure is presenting unfamiliar data structures without contextual scaffolding that allows initial orientation.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "Supported by the source section on missing contextual scaffolding for unfamiliar data structures."
+    },
+    {
+      "claim": "In the Polymatica case, product analytics from the live system showed independent completion of key analytical operations rising from 2% before redesign to 40% after release 1 and 56% after release 2.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "The source identifies these figures as product analytics from real users in the live system."
+    },
+    {
+      "claim": "In the Akrivia case, Akrivia reported that governance reviewers could verify cohort construction without escalating to the research team after the redesign.",
+      "evidenceType": "client-reported",
+      "sourceStrength": "moderate",
+      "notes": "The source explicitly states this outcome is client-reported by Akrivia and that no task-completion or verification-time data was collected."
+    },
+    {
+      "claim": "Creative Navy's Critical Systems Design method addresses the interpretation gap through domain learning and interface architecture that makes complexity readable to the relevant audience.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "Supported by the Polymatica and Akrivia examples and the source section on how the method addresses this failure."
+    }
+  ],
+  "limitations": [
+    "The Polymatica outcome figures are specific to product analytics from that live system and should not be generalised as expected outcomes for all interpretation-failure redesigns.",
+    "The Akrivia governance outcome is client-reported by Akrivia and was not independently quantified through task-completion or verification-time data.",
+    "The grounded examples cover OLAP analytics software and clinical research software; the page does not provide measured evidence from every domain where this failure pattern may appear.",
+    "The page distinguishes interpretation failure from visibility and judgment failures, while noting that these failures can co-occur in the same system."
+  ],
+  "publicationBlockers": [],
+  "questionsForReview": [
+    "None"
+  ],
+  "relatedPageSlugs": [
+    "users-cannot-see-what-state-the-system-is-in",
+    "users-see-information-but-cannot-judge-what-matters",
+    "warnings-are-visible-but-their-meaning-is-unclear"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "state visibility failures",
+      "targetSlug": "users-cannot-see-what-state-the-system-is-in",
+      "placementHint": "Use in the section “Failure pattern: visible data without reliable meaning” or “Boundaries and related interpretation failures.”",
+      "reason": "The current page explicitly distinguishes visible-but-uninterpretable data from absent or inaccessible system state."
+    },
+    {
+      "anchorText": "failures in rapid judgment",
+      "targetSlug": "users-see-information-but-cannot-judge-what-matters",
+      "placementHint": "Use in the section “Boundaries and related interpretation failures.”",
+      "reason": "The current page states that interpretation failure is upstream of the related failure where users can interpret information but cannot judge relative significance."
+    },
+    {
+      "anchorText": "warnings with unclear meaning",
+      "targetSlug": "warnings-are-visible-but-their-meaning-is-unclear",
+      "placementHint": "Use in the section “Boundaries and related interpretation failures.”",
+      "reason": "The current page identifies unclear warnings as a specific subset of the same general interpretation mechanism."
+    }
+  ],
+  "qualityChecks": {
+    "factsOnlyFromCurrentSource": true,
+    "documentationStyle": true,
+    "noMarketingLanguage": true,
+    "noInventedClaims": true,
+    "linksOnlyFromLinkingContext": true,
+    "internalNotesNotPublished": true,
+    "readyForSanityImport": true
+  },
+  "__sourceCategoryDir": "Failures"
+}

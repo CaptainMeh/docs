@@ -1,0 +1,165 @@
+{
+  "_type": "documentationPage",
+  "sourceFile": "Articles/Glossary/glossary--industry-terms--decision-quality.md",
+  "sourcePath": "sources/articles/Glossary/glossary--industry-terms--decision-quality.md",
+  "sanityDocumentIdCandidate": "documentationPage.decision-quality",
+  "title": "Decision Quality",
+  "slug": {
+    "_type": "slug",
+    "current": "decision-quality"
+  },
+  "pageType": "glossary-term",
+  "category": "glossary",
+  "parentSlug": "industry-terms",
+  "childPageSlugs": [],
+  "excerpt": "Decision quality is the degree to which system-supported decisions are based on accurate, relevant, and appropriately weighted information. It concerns the process and informational foundation of a decision, not only its speed, tools, or outcome.",
+  "metaTitle": "Decision Quality",
+  "metaDescription": "Decision quality means decisions are based on accurate, relevant, appropriately weighted information without interface-induced bias.",
+  "summary": "Decision quality describes how well an interface supports informed judgment at the moments when judgment matters. It is affected by state accuracy, information completeness, cognitive load, trust calibration, and whether the interface supports judgment rather than replacing it with procedure.",
+  "definition": "Decision quality is the degree to which decisions made within or supported by a system are based on accurate, relevant, and appropriately weighted information, applied with judgment that is neither artificially constrained by interface limitations nor distorted by interface-induced biases.",
+  "keyFacts": [
+    "Decision quality concerns the informational foundation and judgment process behind a decision.",
+    "Decision quality is distinct from decision speed, because fast decisions made on incomplete information are not high quality.",
+    "Decision quality is distinct from decision accuracy, because a decision can be correct by chance or incorrect for reasons outside the interface's control.",
+    "Decision support features do not automatically produce decision quality; the tools must present relevant information at the decision point in a form that enables judgment.",
+    "Interface design affects decision quality through state accuracy, information completeness at the decision point, cognitive load, trust calibration, and support for judgment in non-standard cases.",
+    "In AI-assisted contexts, over-trust and under-trust in AI recommendations can both reduce decision quality.",
+    "High-consequence contexts make decision quality more important because poorly founded decisions can have consequences that are harder to reverse.",
+    "The Torqeedo maritime HMI example reported 50% faster energy state identification in a controlled experiment with 24 subjects.",
+    "The Gexcon CFD simulation example reported configuration errors decreasing from 5–8 to 1–2 per simulation."
+  ],
+  "tags": [
+    "decision quality",
+    "decision-making",
+    "interface design",
+    "cognitive load",
+    "trust calibration",
+    "state visibility",
+    "high-consequence systems",
+    "AI-assisted decisions"
+  ],
+  "bodyMarkdown": "## Definition\n\nDecision quality is the degree to which decisions made within or supported by a system are based on accurate, relevant, and appropriately weighted information, applied with judgment that is neither artificially constrained by interface limitations nor distorted by interface-induced biases.\n\nDecision quality is the aggregate outcome of how well the interface supports informed judgment at the moments when judgment matters. It focuses on whether the decision-maker had the right information, at the right moment, in a form that enabled judgment.\n\n## Meaning in interface-supported decision-making\n\nDecision quality is a process and information concept. It asks whether the decision was made on a sound informational foundation and whether the interface helped or hindered the judgment required at that point.\n\nA decision can be quick, correct in hindsight, and supported by available tools while still being low quality. This can happen when relevant information was not surfaced, when the interface created artificial cognitive pressure, or when trust in an AI recommendation was miscalibrated.\n\n## What decision quality includes\n\nDecision quality includes state accuracy. Decisions made on an incorrect understanding of the current system state are structurally flawed regardless of the decision-maker's skill. State visibility failures directly reduce decision quality.\n\nDecision quality includes information completeness at the decision point. Relevant context available somewhere in the system does not improve decision quality if it is not surfaced when the decision is made. The design issue is information relevance and timing, not information availability alone.\n\nDecision quality includes cognitive load. Cognitive work imposed by the interface reduces the cognitive resources available for the decision itself. When an interface requires active interpretation before information can be acted on, it consumes decision-making capacity on translation overhead.\n\nDecision quality includes trust calibration in AI-assisted contexts. Over-trust can produce decisions driven by AI recommendations rather than independent judgment. Under-trust can produce decisions that ignore reliable AI signals.\n\nDecision quality includes judgment support rather than only procedure replacement. Interfaces that guide users through defined procedures can support standard cases. Interfaces that also support judgment in non-standard cases support decision quality across a wider operational envelope.\n\n## How decision quality differs from related terms\n\nDecision quality is different from decision speed. Fast decisions made on incomplete information are not high quality. In time-pressured contexts, the design challenge is to provide relevant information quickly, not simply to facilitate faster decision-making.\n\nDecision quality is different from decision accuracy. Decision accuracy concerns whether the outcome was correct in hindsight. Decision quality concerns the process and informational foundation behind the decision. A decision can produce the correct outcome by chance, and a well-informed decision can still produce an incorrect outcome because of factors outside the interface's control.\n\nDecision quality is different from decision support features. Analytical tools, dashboards, and AI recommendations do not automatically create decision quality. Decision quality depends on whether those tools present relevant information at the decision point in a form that enables judgment rather than substituting for it.\n\n## Why decision quality matters in high-consequence contexts\n\nDecision quality is particularly important in high-consequence contexts because decisions with poor informational foundations have consequences that are harder to reverse. A surgeon who adjusts a device parameter based on a misread state may affect patient safety before the decision can be corrected.\n\nA fraud analyst who approves a policy configuration without seeing its historical performance may implement a configuration that misses a fraud pattern for weeks before the gap is detected.\n\nTime pressure compounds the issue in high-consequence operational contexts. There is often limited time for deliberate information-gathering that would compensate for interface-induced information gaps. The interface must provide decision-relevant information at the decision point because the operating context may not permit pausing to find it.\n\n## Examples in practice\n\nIn the Torqeedo maritime HMI example, 50% faster energy state identification in a controlled experiment with 24 subjects is partly a decision quality improvement. Captains making vessel management decisions had a more accurate and more readily available picture of energy state, improving the informational foundation for those decisions.\n\nIn the Puraite AI systematic review example, blinded mode and explicit confidence display are decision quality interventions. They are designed to ensure that inclusion and exclusion decisions by reviewers are based on independent assessment of evidence rather than anchoring to AI recommendations.\n\nIn the Triopsis workforce management example, predictive conflict indicators surface future scheduling conflicts before they become present crises. This improves scheduler decision quality by providing relevant context at the planning stage rather than at the crisis stage.\n\nIn the Gexcon CFD simulation example, configuration errors decreased from 5–8 to 1–2 per simulation. The improvement reflects better decision quality at each configuration step because the interface provides warnings for incomplete and contradictory inputs before the simulation runs.\n\n## Evidence basis\n\nThe evidence basis for decision quality in this documentation is conceptual definition supported by case-study illustrations. The examples show different mechanisms by which interface design can affect the informational foundation of decisions: state identification, AI confidence display, predictive conflict indicators, and warnings for incomplete or contradictory inputs.\n\nThe evidence examples should not be read as a universal measurement model for decision quality. They illustrate how decision quality can be affected in specific systems and contexts.\n\n## Boundaries and limits\n\nDecision quality does not guarantee a correct outcome. It describes whether the decision was made with accurate, relevant, and appropriately weighted information and with judgment not distorted by interface limitations or interface-induced bias.\n\nDecision quality also does not mean maximum information. Presenting more information can still reduce decision quality if the information is poorly timed, poorly weighted, or cognitively costly to interpret.\n\nIn AI-assisted contexts, decision quality does not mean automatic acceptance or rejection of AI recommendations. It requires trust calibration so that reliable AI signals inform judgment without replacing independent assessment.\n\n## Related pages\n\nDecision quality is closely related to cognitive load, state visibility, trust calibration, operational clarity, and high-consequence contexts. These related concepts describe specific conditions that can support or undermine the informational foundation of decisions.",
+  "claims": [
+    {
+      "claim": "Decision quality is the degree to which system-supported decisions are based on accurate, relevant, and appropriately weighted information applied with judgment not constrained or biased by the interface.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "Directly defined in the current glossary entry."
+    },
+    {
+      "claim": "Decision quality is distinct from decision speed, decision accuracy, and decision support features.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "The source explicitly distinguishes decision quality from these three related terms."
+    },
+    {
+      "claim": "Interface design affects decision quality through state accuracy, information completeness at the decision point, cognitive load, trust calibration, and support for judgment in non-standard cases.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "The source lists these mechanisms as ways interface design contributes to or detracts from decision quality."
+    },
+    {
+      "claim": "Decision quality is particularly important in high-consequence contexts because poorly founded decisions can have consequences that are harder to reverse and time pressure limits compensating information-gathering.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "moderate",
+      "notes": "The source explains this relationship using surgical device adjustment and fraud policy configuration examples."
+    },
+    {
+      "claim": "The Torqeedo maritime HMI example reported 50% faster energy state identification in a controlled experiment with 24 subjects, which is partly a decision quality improvement.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "The source provides this as an illustrative case-study example, not as the definition."
+    },
+    {
+      "claim": "The Puraite AI systematic review example used blinded mode and explicit confidence display as decision quality interventions.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "The source identifies these design elements as intended to prevent anchoring to AI recommendations."
+    },
+    {
+      "claim": "The Triopsis workforce management example used predictive conflict indicators to surface future scheduling conflicts before they became present crises.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "The source frames this as improving scheduler decision quality by providing relevant context at the planning stage."
+    },
+    {
+      "claim": "The Gexcon CFD simulation example reported configuration errors decreasing from 5–8 to 1–2 per simulation through warnings for incomplete and contradictory inputs before the simulation ran.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "The source labels the error reduction as measured and describes it as better decision quality at each configuration step."
+    }
+  ],
+  "limitations": [
+    "The page defines decision quality as a process and informational foundation concept, not as a guarantee of correct outcomes.",
+    "The case-study examples are illustrations and are not presented as the definition of decision quality.",
+    "The available examples do not establish a universal measurement model for decision quality.",
+    "Decision quality can be affected by factors outside the interface's control, especially when outcomes are judged in hindsight."
+  ],
+  "publicationBlockers": [],
+  "questionsForReview": [
+    "None"
+  ],
+  "relatedPageSlugs": [
+    "cognitive-load",
+    "state-visibility",
+    "trust-calibration",
+    "high-consequence",
+    "operational-clarity",
+    "human-oversight",
+    "puraite",
+    "triopsis-workforce-management-saas"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "cognitive load",
+      "targetSlug": "cognitive-load",
+      "placementHint": "Related pages section or the paragraph describing cognitive load as a decision quality mechanism.",
+      "reason": "Cognitive load is named in the source as a mechanism that reduces decision-making capacity."
+    },
+    {
+      "anchorText": "state visibility",
+      "targetSlug": "state-visibility",
+      "placementHint": "Related pages section or the paragraph describing state accuracy.",
+      "reason": "State visibility failures are named in the source as directly reducing decision quality."
+    },
+    {
+      "anchorText": "trust calibration",
+      "targetSlug": "trust-calibration",
+      "placementHint": "Related pages section or the paragraph on AI-assisted contexts.",
+      "reason": "Trust calibration is named in the source as a decision quality mechanism in AI-assisted contexts."
+    },
+    {
+      "anchorText": "high-consequence contexts",
+      "targetSlug": "high-consequence",
+      "placementHint": "Section on why decision quality matters in high-consequence contexts.",
+      "reason": "The source explicitly explains decision quality in high-consequence contexts."
+    },
+    {
+      "anchorText": "operational clarity",
+      "targetSlug": "operational-clarity",
+      "placementHint": "Related pages section.",
+      "reason": "Operational clarity is relevant to decision quality because the source emphasises clear state and decision-relevant information at the decision point."
+    },
+    {
+      "anchorText": "Puraite AI systematic review",
+      "targetSlug": "puraite",
+      "placementHint": "Examples in practice section, in the Puraite paragraph.",
+      "reason": "The source names Puraite as an illustrative case where blinded mode and confidence display support decision quality."
+    },
+    {
+      "anchorText": "Triopsis workforce management",
+      "targetSlug": "triopsis-workforce-management-saas",
+      "placementHint": "Examples in practice section, in the Triopsis paragraph.",
+      "reason": "The source names Triopsis as an illustrative case where predictive conflict indicators support scheduler decision quality."
+    }
+  ],
+  "qualityChecks": {
+    "factsOnlyFromCurrentSource": true,
+    "documentationStyle": true,
+    "noMarketingLanguage": true,
+    "noInventedClaims": true,
+    "linksOnlyFromLinkingContext": true,
+    "internalNotesNotPublished": true,
+    "readyForSanityImport": true
+  }
+}

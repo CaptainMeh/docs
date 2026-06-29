@@ -1,0 +1,135 @@
+{
+  "slug": "errors-are-hard-to-correct",
+  "title": "Errors Are Hard To Correct",
+  "pageType": "failure",
+  "category": "failures",
+  "section": "Error And Recovery Failures",
+  "summary": "Error correction can fail at several points: finding where the error occurred, knowing the intended state, taking the corrective action, and confirming that the system is now correct. This failure applies when recovery structures nominally exist but do not support the user well enough during correction.",
+  "keyFacts": [
+    "Error correction includes localisation, correct-state identification, correction action, and confirmation of successful correction.",
+    "The failure is distinct from errors that are hard to notice; detection comes before correction.",
+    "The failure is distinct from weak recovery paths; it concerns inadequate correction support even where recovery structures nominally exist.",
+    "Error localisation failure occurs when the user knows an error happened but cannot determine where it occurred in the workflow, configuration, or dataset.",
+    "No explicit undo path forces the user to reconstruct the correct state manually from the current incorrect state.",
+    "Correction-side-effect errors occur when the action used to correct one error changes other elements unintentionally.",
+    "Uncertain correction confirmation leaves the user unable to know whether the corrective action succeeded.",
+    "In the Gexcon CFD simulation case, corrective load fell from 4–6 hours to approximately 20 minutes after redesign, measured by Gexcon across real deployments.",
+    "In the Kardion MCS Controller case, muted alarms remaining visible prevented incomplete correction sequences from becoming invisible.",
+    "In the Beissbarth automotive calibration case, sequence resumption depended on visibility of completed steps, failed steps, and steps needing repetition."
+  ],
+  "bodySections": [
+    {
+      "heading": "Summary",
+      "bodyMarkdown": "Creative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nErrors are hard to correct when the user has detected that something is wrong but the interface does not adequately support the correction process. Correction can fail at several independent points: localising where the error occurred, understanding what the correct state should be, taking the correction action, and confirming that the correction succeeded.\n\nWhen any component is unclear, correction becomes longer, more effortful, and more error-prone than the original error warranted. The user may have a recovery structure available in principle, but still lacks the information and control needed to use it safely."
+    },
+    {
+      "heading": "Failure pattern: detected errors become difficult to repair",
+      "bodyMarkdown": "The failure pattern is not that the user fails to notice the error. The failure begins after detection, when the user is trying to correct the error and the interface does not support the attempt.\n\nThe correction process depends on four questions. Where did the error occur? What should the state be instead? How can the user change it? How can the user know that the change worked? If the interface fails to answer any of these questions, the correction process becomes diagnostic work rather than a direct repair.\n\nThis failure is also distinct from weak recovery paths. Weak recovery paths concern the structural absence of recovery support. Errors are hard to correct when recovery structures nominally exist but are inadequate for the correction the user is trying to perform."
+    },
+    {
+      "heading": "How hard-to-correct errors appear in interfaces",
+      "bodyMarkdown": "Error localisation failure appears when the user knows that an error has occurred but cannot determine where in the workflow, configuration, or dataset it happened. Without localisation, the user must search the system or guess which element needs correction.\n\nA missing undo path appears when the system has no direct reversal mechanism for the error category. The user cannot undo the error and must reconstruct the correct state manually from the current incorrect state.\n\nCorrection-side-effect errors appear when the correction action changes other elements that the user did not intend to change. Correcting one field in a complex configuration may change dependent fields. Correcting one policy rule may change interactions with other rules. Correcting one parameter may change outputs that the user had already verified.\n\nUncertain correction confirmation appears when the user takes the corrective action but cannot tell whether it succeeded. The system state has changed, but the interface does not confirm whether the intended correction has been achieved.\n\nHidden prior state appears when correction requires knowing what the state was before the error. If the interface does not show the prior value, previous configuration, or interrupted sequence position, the user must reconstruct that state from memory or from external sources."
+    },
+    {
+      "heading": "Why correction difficulty matters",
+      "bodyMarkdown": "Hard-to-correct errors amplify correction overhead. Correction overhead is the time and cognitive effort required to correct a detected error beyond the minimum work that the error itself warranted.\n\nThe extra overhead often comes from diagnosis rather than from the correction action. In the Gexcon CFD simulation case, changing a configuration value was fast. The expensive part was finding the right value to change.\n\nCorrection difficulty also increases the risk that a remaining error propagates. If the user cannot confirm that the correction succeeded, the user either re-investigates the state, which adds overhead, or accepts uncertainty, which creates a risk that the remaining error continues through the workflow."
+    },
+    {
+      "heading": "Causes of hard-to-correct errors",
+      "bodyMarkdown": "### Error localisation failure\n\nError localisation failure is the absence of enough interface support to identify where the error occurred. The user may know that something is wrong but not know which workflow step, configuration parameter, or dataset element caused the problem.\n\nLocalisation is a prerequisite for targeted correction. Without it, correction becomes a search task across the whole system.\n\n### No explicit undo path\n\nA missing undo path means that the system does not provide a direct sequence of interface actions that reverses the error and restores the prior state. The user must manually reconstruct the correct state from the current incorrect state.\n\nIn complex configurations, manual reconstruction requires the user to understand the dependency chain created by the error. The absence of undo therefore transfers recovery work from the interface to the user.\n\n### Correction-side-effect errors\n\nCorrection-side-effect errors occur when the correction action changes other parts of the system unintentionally. The user may fix one element and create a new error in another element.\n\nThis can extend the correction cycle indefinitely. Each correction may need its own localisation, state identification, action, and confirmation steps.\n\n### Uncertain correction confirmation\n\nUncertain correction confirmation occurs when the system does not signal whether the corrective action succeeded. The user cannot tell whether the system is now in the intended state.\n\nThe absence of confirmation forces the user to choose between re-investigation and accepting unresolved uncertainty.\n\n### Prior state not visible\n\nPrior state visibility is necessary when the correction requires restoring a previous value, configuration, or sequence position. If the interface does not expose the prior state, the user must reconstruct it externally or from memory.\n\nThis makes correction vulnerable to memory limits and interruption effects, especially when the workflow has multiple completed, failed, and upcoming steps."
+    },
+    {
+      "heading": "Evidence basis from documented case studies",
+      "bodyMarkdown": "### Gexcon CFD simulation: localisation dominated the correction cost\n\nIn the Gexcon CFD simulation case, a configuration error detected in simulation outputs required four correction steps: identifying which configuration parameter was responsible, understanding what value should have been set, making the change, and re-running the simulation for verification.\n\nBefore the redesign, the error message communicated that something was wrong but did not communicate where or what. The source evidence describes localisation as the dominant component of the 4–6 hour corrective load.\n\nAfter the redesign, corrective load fell to approximately 20 minutes, measured by Gexcon across real deployments. The documented mechanism was localisation support: redesigned error communication specified what was wrong and where in the configuration. The correction action itself was always fast; the expensive work was finding the right value to change.\n\n### Kardion MCS Controller: alarm correction required a complete sequence\n\nIn the Kardion MCS Controller case, alarm acknowledgement required a sequence: perceive the alarm, understand what it means, take the appropriate clinical action, acknowledge the alarm, and confirm that the condition has resolved.\n\nThe case evidence describes correction as incomplete if an alarm is muted but not acknowledged, or acknowledged without confirmation that the condition has resolved. Muted alarms remaining visible was the interface mechanism that prevented incomplete correction sequences from becoming invisible.\n\n### Beissbarth automotive calibration: resumption depended on sequence state visibility\n\nIn the Beissbarth automotive calibration case, an interrupted calibration sequence required the technician to resume from the correct point. Resumption depended on knowing which steps had been completed and verified, which step failed and why, and which steps needed to be repeated.\n\nA sequence state display that showed only the current step left technicians without enough information to assess correction scope. The user could redo steps that had already been completed correctly or skip steps that needed repetition.\n\n### Dancerace / Jacko: irreversible actions shift correction into prevention\n\nIn the Dancerace / Jacko financial portal case, some actions were irreversible. The documented design response was not to make correction easier after the action, because correction was structurally impossible for those actions.\n\nThe response was proportional confirmation friction before the irreversible action. This is the boundary case of errors being hard to correct: when correction cannot be supported after the error, the design response moves to preventing accidental triggering before the error occurs."
+    },
+    {
+      "heading": "Boundaries and adjacent failure patterns",
+      "bodyMarkdown": "Errors that are hard to notice concern detection. Errors that are hard to correct concern what happens after detection. The two patterns can occur in sequence: an error that is hard to notice may later become hard to correct because the time gap allows the error to propagate.\n\nWeak recovery paths concern the absence of recovery structures. Errors that are hard to correct concern the inadequacy of the correction process when recovery structures nominally exist.\n\nIrreversible actions are a boundary case. When correction is structurally impossible, the correction problem must be addressed before the error occurs through prevention mechanisms such as confirmation friction."
+    }
+  ],
+  "evidenceSummary": {
+    "strongClaims": [
+      "Errors are hard to correct when localisation, correct-state identification, correction action, or correction confirmation is unclear after an error has been detected.",
+      "This failure is distinct from errors that are hard to notice because it concerns correction after detection rather than error detection itself.",
+      "This failure is distinct from weak recovery paths because it concerns inadequate correction support where recovery structures nominally exist.",
+      "In the Gexcon CFD simulation case, lack of error localisation support made localisation the dominant part of a 4–6 hour corrective load, and after redesign the corrective load fell to approximately 20 minutes measured by Gexcon across real deployments.",
+      "In the Kardion MCS Controller case, alarm correction required perception, understanding, clinical action, acknowledgement, and confirmation that the condition had resolved.",
+      "In the Beissbarth automotive calibration case, technicians needed prior state visibility, error localisation, and correction scope to resume after interruption without redoing completed steps or skipping steps that needed repetition.",
+      "In the Dancerace / Jacko case, irreversible actions made post-error correction structurally impossible, so the documented design response was proportional confirmation friction before the action."
+    ],
+    "limitations": [
+      "The page defines a failure pattern and uses case evidence; it does not establish prevalence across all software systems.",
+      "The Gexcon corrective-load reduction is described as measured by Gexcon across real deployments; the current source does not describe it as independently measured.",
+      "The Kardion, Beissbarth, and Dancerace / Jacko examples support specific mechanisms within the failure pattern, not a general quantitative estimate of correction difficulty.",
+      "Where actions are irreversible, the source frames correction as structurally impossible and shifts the design response to prevention rather than post-error repair."
+    ]
+  },
+  "relatedPageSlugs": [
+    "errors-are-hard-to-notice",
+    "recovery-paths-are-weak",
+    "users-cannot-reorient-quickly-after-interruption",
+    "the-interface-demands-too-much-memory",
+    "warnings-are-visible-but-their-meaning-is-unclear",
+    "users-cannot-see-what-state-the-system-is-in",
+    "kardion",
+    "beissbarth"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "errors that are hard to notice",
+      "targetSlug": "errors-are-hard-to-notice",
+      "reason": "The current source explicitly distinguishes this failure from errors that are hard to notice."
+    },
+    {
+      "anchorText": "weak recovery paths",
+      "targetSlug": "recovery-paths-are-weak",
+      "reason": "The current source explicitly distinguishes this failure from recovery paths that are weak."
+    },
+    {
+      "anchorText": "users cannot reorient quickly after interruption",
+      "targetSlug": "users-cannot-reorient-quickly-after-interruption",
+      "reason": "The Beissbarth example concerns resuming a sequence after interruption."
+    },
+    {
+      "anchorText": "the interface demands too much memory",
+      "targetSlug": "the-interface-demands-too-much-memory",
+      "reason": "The source states that hidden prior state forces users to reconstruct correct state from memory or external sources."
+    },
+    {
+      "anchorText": "warnings are visible but their meaning is unclear",
+      "targetSlug": "warnings-are-visible-but-their-meaning-is-unclear",
+      "reason": "The Kardion example concerns alarm understanding and completion of alarm correction sequences."
+    },
+    {
+      "anchorText": "users cannot see what state the system is in",
+      "targetSlug": "users-cannot-see-what-state-the-system-is-in",
+      "reason": "The source identifies hidden prior state and uncertain correction confirmation as causes of the failure."
+    },
+    {
+      "anchorText": "Kardion MCS Controller",
+      "targetSlug": "kardion",
+      "reason": "The body mentions the Kardion case and the slug is allowed in the linking context."
+    },
+    {
+      "anchorText": "Beissbarth automotive calibration",
+      "targetSlug": "beissbarth",
+      "reason": "The body mentions the Beissbarth case and the slug is allowed in the linking context."
+    }
+  ],
+  "tags": [
+    "error correction",
+    "error recovery",
+    "undo",
+    "error localisation",
+    "correction confirmation",
+    "prior state visibility",
+    "correction side effects",
+    "recovery design"
+  ],
+  "_meta": {
+    "sourcePath": "sources/articles/Failures/failures--error-recovery--errors-are-hard-to-correct.md",
+    "parentSlug": "error-and-recovery-failures",
+    "childPageSlugs": [],
+    "generatedBy": "deterministic"
+  }
+}

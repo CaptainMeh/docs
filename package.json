@@ -1,0 +1,26 @@
+{
+  "name": "wiki-creativenavy",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "generate:wiki-pages": "tsx scripts/generate-wiki-pages.ts",
+    "generate:link-graph": "tsx scripts/generate-link-graph.ts",
+    "validate:content": "tsx scripts/validate-content.ts",
+    "build:content": "npm run generate:wiki-pages && npm run generate:link-graph && npm run validate:content",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "sanity": "^6.2.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.0.3",
+    "dotenv": "^17.4.2",
+    "tsx": "^4.22.4",
+    "typescript": "^5.9.3",
+    "vite": "^8.1.0"
+  }
+}

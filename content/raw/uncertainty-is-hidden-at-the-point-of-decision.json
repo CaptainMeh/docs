@@ -1,0 +1,173 @@
+{
+  "_type": "documentationPage",
+  "sourceFile": "Articles/Situations/situations--ai--uncertainty-is-hidden-at-the-point-of-decision.md",
+  "sourcePath": "sources/articles/Situations/situations--ai--uncertainty-is-hidden-at-the-point-of-decision.md",
+  "sanityDocumentIdCandidate": "documentationPage.uncertainty-is-hidden-at-the-point-of-decision",
+  "title": "Uncertainty Is Hidden At The Point Of Decision",
+  "slug": {
+    "_type": "slug",
+    "current": "uncertainty-is-hidden-at-the-point-of-decision"
+  },
+  "pageType": "situation",
+  "category": "situations",
+  "parentSlug": "ai-and-automation",
+  "childPageSlugs": [],
+  "excerpt": "AI uncertainty becomes operationally costly when users must act on AI outputs without knowing which outputs warrant trust and which require verification. The design problem is to make confidence and supporting reasoning visible at the decision point without slowing the work the AI is meant to support.",
+  "metaTitle": "Uncertainty Hidden at Decision Points",
+  "metaDescription": "How hidden AI uncertainty affects user decisions, verification effort, oversight, and interface design at the point of action.",
+  "summary": "This situation describes a failure pattern in AI-enabled products: model outputs vary in confidence, but the interface presents them with uniform apparent authority. At decision points, this forces users either to verify everything or to trust everything, both of which undermine effective human oversight.",
+  "definition": "Uncertainty hidden at the point of decision is the situation where an AI system has varying confidence across outputs, but the interface does not communicate that uncertainty when the user must act on the output.",
+  "keyFacts": [
+    "Every AI model produces outputs at varying levels of confidence, and that variation is embedded in the probability distribution over outputs.",
+    "Many AI product interfaces present outputs in the same visual container, with the same formatting and apparent weight, creating a uniform confidence signal.",
+    "When uncertainty is hidden, users must either verify everything or trust everything; neither option works at scale.",
+    "Uncertainty becomes operationally costly at decision points, where users must approve, override, act on, accept, or reject an AI output.",
+    "A confidence number alone is not sufficient; users also need enough of the AI's reasoning or evidence to evaluate whether the confidence signal is warranted.",
+    "In the Puraite case, Creative Navy worked on the AI screening screen for AI-assisted systematic literature review.",
+    "Creative Navy applied option space mapping across four design cycles to resolve the tension between scan speed and epistemic control in the Puraite AI suggestion display.",
+    "The Puraite resolution placed the direct quote from the publication visible in the side panel from the outset of the decision interaction, without requiring an additional interaction step.",
+    "Puraite also used explicit confidence percentages with colour-coded scanning support for AI data extraction.",
+    "The documented outcome is client-reported and indirect: users began actively using Puraite after the redesign, and one user quote was relayed by the client; no task-time, error-rate, or baseline research data was collected."
+  ],
+  "tags": [
+    "AI uncertainty",
+    "AI interface design",
+    "decision points",
+    "human oversight",
+    "epistemic control",
+    "confidence display",
+    "AI-assisted review",
+    "option space mapping",
+    "Puraite",
+    "Critical Systems Design"
+  ],
+  "bodyMarkdown": "## AI uncertainty becomes operational at the moment of action\n\nCreative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nEvery AI model produces outputs at varying levels of confidence. Some AI outputs are grounded in strong signal and are highly reliable. Other AI outputs are extrapolations from sparse or ambiguous evidence and should be treated cautiously. The distinction exists in the model's probability distribution over outputs, but whether the interface communicates it to the user is a design decision.\n\nUncertainty is present throughout an AI-assisted workflow, but it becomes operationally costly at decision points. A decision point is the moment when the user must act on the AI's output. At that moment, uncertainty is no longer an abstract property of the system; it becomes a direct input to the user's decision.\n\n## Uniform AI output presentation creates a false confidence signal\n\nMany AI product interfaces present all AI outputs in the same visual container, with the same formatting and the same apparent weight. This creates a uniform confidence signal: every AI output appears equally authoritative, even when the model's own confidence varies across outputs.\n\nWhen uncertainty is hidden, users face a choice they cannot make well. They can trust each output enough to act without verification, or they can verify everything. Verifying everything removes the efficiency gain the AI was meant to provide. Trusting everything creates a predictable failure pattern: low-confidence outputs are accepted without scrutiny, errors become embedded in decisions, and confidence in the system declines when those errors surface.\n\nIn this situation, the system may be blamed for unreliability even when the immediate failure is not the model's inability to estimate uncertainty. The failure is that the interface does not communicate the model's uncertainty about specific outputs at the moment when the user needs that information.\n\n## Decision points require users to allocate scrutiny\n\nAI uncertainty matters most when the user must approve, override, accept, reject, or investigate an AI output. A reviewer approving or overriding an AI screening decision is at a decision point. A fraud analyst acting on an AI-generated risk assessment is at a decision point. A clinician responding to an AI-surfaced finding is at a decision point. An information specialist accepting or rejecting an AI-generated inclusion criterion is at a decision point.\n\nAt each decision point, the user needs to know whether the AI output is high-confidence enough to act on quickly or low-confidence enough to require verification. If the interface does not answer that question, the user has to treat every decision point as if it requires the same level of scrutiny.\n\nThe cost compounds under volume. In a systematic review involving hundreds of publications, a reviewer cannot realise the efficiency benefit of AI-assisted screening if every AI recommendation requires the same verification effort. The benefit appears when high-confidence outputs can be handled quickly and attention can be concentrated on low-confidence outputs.\n\n## A confidence number alone does not provide enough basis for oversight\n\nDisplaying AI confidence is necessary but not sufficient. A confidence score without context is not actionable enough for informed human judgment. A 70% confidence rating attached to a clearly wrong inference is less useful than a 70% confidence rating accompanied by the specific evidence the model used to reach its conclusion.\n\nThe design problem is not only whether to show confidence. The design problem is how to show enough of the AI's reasoning for the user to evaluate whether the confidence signal is warranted. Users need a basis for oversight, not only a number.\n\nThis creates a specific design tension. Full reasoning supports informed human judgment, but dense reasoning information can slow review. Minimal displays support scanning speed, but can remove the evidence that makes meaningful oversight possible. A usable AI interface at the decision point has to preserve both properties: the user must have the information needed for epistemic control, and the information must be presented at the pace the work requires.\n\n## Puraite case: AI-assisted systematic review screening\n\nIn the [Puraite](puraite) case, Creative Navy worked on a web application for conducting AI-assisted systematic literature reviews. Puraite integrates AI assistance into review stages including initial screening decisions, suggested inclusion and exclusion criteria, and structured data extraction from qualifying publications.\n\nThe specific design challenge Creative Navy addressed was the AI screening screen. This was the interface where reviewers encountered AI inclusion and exclusion decisions and decided whether to accept or override them. The decision point mattered because reviewers could be working through hundreds of publications, while each acceptance or override remained a substantive judgment about whether a publication qualified for inclusion in a research synthesis used in academic, clinical, and pharmaceutical research contexts.\n\nWhen Creative Navy arrived at the engagement, the AI behaviour model had not been fully specified as a design problem. The product needed decisions about what the AI should surface, how confidence should be communicated, and where human override should sit. The issue was not simply that confidence information was absent. The issue was that the interface did not yet present confidence and evidence in a form that supported screening pace while preserving epistemic control.\n\n## Four option space mapping cycles tested the AI suggestion display\n\nCreative Navy applied option space mapping across four design cycles for the Puraite AI suggestion display. Each cycle committed to a different theory of how to hold scan speed and epistemic control together.\n\nThe repeated failure mode was specific. Designs that gave reviewers enough criteria evidence to make informed decisions often required extra interaction steps, such as expanding a panel, navigating to a detail view, or loading supporting text. Each step was small in isolation, but across hundreds of screening decisions those steps accumulated into friction. Designs that compressed the display for fast scanning removed the evidence that made override decisions meaningful rather than reflexive.\n\nThe resolved design placed the direct quote from the publication visible in the side panel from the outset of the decision interaction. The reviewer could see the AI's decision, the criteria applied, and the specific text evidence used by the AI simultaneously, without an additional interaction step.\n\nThe difference between evidence that is available after clicking through and evidence that is visible at the decision point is operational. In the first case, oversight exists in principle. In the second case, oversight is possible within the pace of the review task.\n\n## Confidence display in Puraite data extraction\n\nPuraite's data extraction component required a further uncertainty communication decision. AI extractions vary in confidence, and reviewers and project managers scanning extracted data need to identify which extractions warrant attention without examining every extraction in the same way.\n\nCreative Navy's design communicated AI confidence as an explicit percentage with colour-coded visual scanning support. Lower-confidence extractions were made easier to notice. This made the AI's reliability model visible and scannable, so verification effort could be allocated to the outputs most likely to need attention.\n\nThe behavioural implication is direct. A project manager reviewing an extraction table does not need to treat a 95%-confidence extraction and a 52%-confidence extraction with the same scrutiny. The interface communicates which is which, making the allocation of verification effort explicit rather than forcing uniform scrutiny.\n\n## Blinded screening mode changes when AI judgment is shown\n\nThe Puraite engagement also identified a product-level uncertainty communication question: when should AI decisions be shown to reviewers at all? A blinded screening mode was identified as a requirement in which AI recommendations are withheld during initial screening to prevent the AI's judgment from biasing the human reviewer's independent assessment.\n\nThe detailed design of the blinded screening mode was not in scope for the engagement. Its identification still matters because it shows that uncertainty communication is not limited to how AI outputs are displayed when visible. In some workflows, showing the AI output changes the epistemic status of the human decision.\n\n## Creative Navy's Critical Systems Design method addresses the task-specific tension\n\nCreative Navy's Critical Systems Design method designs software whose interfaces, workflows, and operating logic carry real operational consequences, working through five phases — Sandbox Experiments, Concept Convergence, Iterative System Building, Organizational Integration, and Implementation Partnership — to take each system from initial exploration to independent operation by the client's own team.\n\nIn the situation of hidden uncertainty at the decision point, Creative Navy's Critical Systems Design method addresses a task-specific tension rather than applying a generic confidence-display pattern. The right interface depends on the task, user, volume and pace of decisions, and form of AI reasoning in the domain.\n\nIn the Puraite engagement, domain learning was constrained because direct user research access was not available within the timeline. Creative Navy used a team member with firsthand experience using systematic review software as a domain learning proxy. This substitution was presented to the client explicitly with its tradeoffs acknowledged, rather than treated as equivalent to observed user research.\n\nThe four-iteration option space mapping process was the mechanism for finding the direct-quote-in-side-panel resolution. The resolution was not derived from a general principle alone. It emerged from evaluating candidate designs and identifying how each failed to preserve both review speed and epistemic control.\n\n## Evidence basis and limits for the Puraite example\n\nThe Puraite engagement ran for 7 months as an Implementation Partnership. The documented outcome is client-reported and indirect: users who had previously perceived Puraite as theoretical or prototype-stage began actively using it after the redesign, and the client launched into a user acquisition and growth phase on that basis.\n\nThe available quote is from a single user and was relayed by the client: \"Jetzt passt das tool in meine Arbeit\" — \"Now the tool fits my work.\" The quote is not independently verified.\n\nNo task-time data was collected. No error-rate data was collected. No baseline research was conducted before the engagement. The Puraite example therefore supports a calibrated design claim about how uncertainty was presented at the decision point, but it does not establish a measured effect on screening speed or decision accuracy.\n\n## Related pages\n\nThe Puraite case is the documented example for this situation. Related AI and oversight situations include [Human Control Is Weak In Practice](human-control-is-weak-in-practice), [Users Trust The AI Too Much](users-trust-the-ai-too-much), [Users Do Not Trust The AI Enough](users-do-not-trust-the-ai-enough), and [Oversight Exists In Policy But Not In Workflow](oversight-exists-in-policy-but-not-in-workflow).",
+  "claims": [
+    {
+      "claim": "AI outputs vary in confidence, and hiding that variation at the interface creates a uniform confidence signal.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "Supported by the situation description, which states that model outputs vary in confidence and that many interfaces present all outputs with the same apparent weight."
+    },
+    {
+      "claim": "Hidden AI uncertainty forces users toward either verifying everything or trusting everything, neither of which is viable at scale.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "Supported by the source's explanation of the verification burden and the failure pattern created by accepting low-confidence outputs without scrutiny."
+    },
+    {
+      "claim": "Uncertainty becomes operationally costly at decision points where users must act on AI outputs.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "Supported by the source's examples of reviewers, fraud analysts, clinicians, and information specialists acting on AI outputs."
+    },
+    {
+      "claim": "A confidence score alone is insufficient because users also need the evidence or reasoning that supports the AI output.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "Supported by the source's discussion of the limits of a 70% confidence score without the specific evidence used by the model."
+    },
+    {
+      "claim": "Creative Navy applied option space mapping across four design cycles to the Puraite AI suggestion display.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "engagement record",
+      "notes": "Supported by the Puraite example, which describes four design cycles and their repeated failure mode."
+    },
+    {
+      "claim": "The Puraite screening resolution made the AI decision, applied criteria, and direct quote from the publication visible simultaneously without an additional interaction step.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "Supported by the described resolution for the AI screening screen."
+    },
+    {
+      "claim": "Puraite's data extraction design used explicit confidence percentages with colour-coded scanning support to direct attention to lower-confidence extractions.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "Supported by the source's description of confidence as a first-class interface element."
+    },
+    {
+      "claim": "The documented Puraite outcome is client-reported and indirect, with no task-time, error-rate, or baseline research data collected.",
+      "evidenceType": "client-reported",
+      "sourceStrength": "anecdotal",
+      "notes": "Supported by the outcome section, which states that the user perception shift and quote were relayed by the client and not independently verified."
+    }
+  ],
+  "limitations": [
+    "The Puraite example does not establish measured effects on task time, error rate, or decision accuracy because no task-time or error-rate data was collected.",
+    "No baseline research was conducted before the Puraite engagement.",
+    "The main documented Puraite outcome is client-reported and indirect, not independently verified.",
+    "The quoted user feedback is from a single user and was relayed through the client.",
+    "Direct user research access was not available within the Puraite timeline; a Creative Navy team member with firsthand experience using systematic review software acted as a domain learning proxy.",
+    "The detailed design of Puraite's blinded screening mode was identified as out of scope for the engagement.",
+    "The page describes a design situation and one grounded example; it does not claim a generic solution for all AI uncertainty displays."
+  ],
+  "publicationBlockers": [],
+  "questionsForReview": [
+    "None"
+  ],
+  "relatedPageSlugs": [
+    "puraite",
+    "human-control-is-weak-in-practice",
+    "users-trust-the-ai-too-much",
+    "users-do-not-trust-the-ai-enough",
+    "teams-cannot-define-good-ai-behaviour",
+    "the-model-may-be-good-but-the-product-behaviour-is-not",
+    "oversight-exists-in-policy-but-not-in-workflow",
+    "the-interface-increases-cognitive-load-at-the-worst-moment",
+    "warnings-are-visible-but-not-actionable"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "Puraite",
+      "targetSlug": "puraite",
+      "placementHint": "Use on the first mention of the Puraite case in the section about AI-assisted systematic review screening.",
+      "reason": "Puraite is the grounded example named in the page and has an allowed case-study slug."
+    },
+    {
+      "anchorText": "Human Control Is Weak In Practice",
+      "targetSlug": "human-control-is-weak-in-practice",
+      "placementHint": "Use in the Related pages section.",
+      "reason": "Hidden uncertainty at decision points directly affects whether human control is meaningful in practice."
+    },
+    {
+      "anchorText": "Users Trust The AI Too Much",
+      "targetSlug": "users-trust-the-ai-too-much",
+      "placementHint": "Use in the Related pages section.",
+      "reason": "The page describes the failure pattern where low-confidence AI outputs are accepted without scrutiny."
+    },
+    {
+      "anchorText": "Users Do Not Trust The AI Enough",
+      "targetSlug": "users-do-not-trust-the-ai-enough",
+      "placementHint": "Use in the Related pages section.",
+      "reason": "The page describes how surfaced errors can reduce confidence in the system."
+    },
+    {
+      "anchorText": "Oversight Exists In Policy But Not In Workflow",
+      "targetSlug": "oversight-exists-in-policy-but-not-in-workflow",
+      "placementHint": "Use in the Related pages section.",
+      "reason": "The page distinguishes nominal availability of evidence from operationally possible oversight."
+    },
+    {
+      "anchorText": "The Interface Increases Cognitive Load At The Worst Moment",
+      "targetSlug": "the-interface-increases-cognitive-load-at-the-worst-moment",
+      "placementHint": "Use as a supporting related link near the discussion of decision points or verification burden.",
+      "reason": "The page describes cognitive cost at the moment when the user must act."
+    },
+    {
+      "anchorText": "Warnings Are Visible But Not Actionable",
+      "targetSlug": "warnings-are-visible-but-not-actionable",
+      "placementHint": "Use as an optional related link near the discussion of confidence scores without supporting evidence.",
+      "reason": "The page explains that a confidence number without context is not actionable enough for oversight."
+    }
+  ],
+  "qualityChecks": {
+    "factsOnlyFromCurrentSource": true,
+    "documentationStyle": true,
+    "noMarketingLanguage": true,
+    "noInventedClaims": true,
+    "linksOnlyFromLinkingContext": true,
+    "internalNotesNotPublished": true,
+    "readyForSanityImport": true
+  },
+  "__sourceCategoryDir": "Situations"
+}

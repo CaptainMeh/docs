@@ -1,0 +1,197 @@
+{
+  "_type": "documentationPage",
+  "sourceFile": "Articles/Capabilities/capabilities--error-reduction-and-recovery-design.md",
+  "sourcePath": "sources/articles/Capabilities/capabilities--error-reduction-and-recovery-design.md",
+  "sanityDocumentIdCandidate": "documentationPage.error-reduction-and-recovery-design",
+  "title": "Error Reduction And Recovery Design",
+  "slug": {
+    "_type": "slug",
+    "current": "error-reduction-and-recovery-design"
+  },
+  "pageType": "capability",
+  "category": "capabilities",
+  "parentSlug": "capabilities",
+  "childPageSlugs": [],
+  "excerpt": "Error reduction and recovery design addresses use-related errors, foreseeable misuse, silent errors, confirmation friction, and recovery paths in complex software interfaces. The capability is evidenced across medical devices, simulation software, workforce management, calibration, financial workflows, typing interfaces, and patient-operated scanning.",
+  "metaTitle": "Error Reduction And Recovery Design",
+  "metaDescription": "Use-related error reduction, foreseeable misuse handling, confirmation friction, silent error prevention, and recovery path design.",
+  "summary": "Error reduction and recovery design is the capability of identifying interactions that can produce harm, operational disruption, incorrect outputs, or unrecovered process failure, then designing prevention, warning, tolerance, and recovery mechanisms around those risks. The available evidence includes measured reductions in configuration errors, recovery time, repeated measurements, typing errors, support questions, and independent scan completion, with evidence strength varying by case.",
+  "definition": "Error reduction and recovery design is the design of interfaces, workflows, warnings, confirmations, and recovery paths so that foreseeable use-related errors are prevented where possible, surfaced before harm where feasible, tolerated where appropriate, and recoverable when prevention alone is insufficient.",
+  "keyFacts": [
+    "Use-related error and use-related hazard refer to errors caused by interface design rather than user negligence.",
+    "IEC 62366-1 is used in the source evidence as the medical-device usability engineering process for identifying use-related hazards, designing mitigations, documenting traceability, evaluating through formative testing, and confirming mitigation effectiveness.",
+    "Silent errors are treated as the most dangerous category because users continue as if the system is functioning correctly.",
+    "Gexcon configuration errors reduced from 5–8 to 1–2 per simulation, measured by Gexcon in real deployments.",
+    "Gexcon corrective load per configuration error reduced from 4–6 hours to approximately 20 minutes, measured by Gexcon.",
+    "Squaremind pre-redesign testing had 2 completions among 14 patients and 0 recoveries among the 12 who got stuck; post-redesign testing had 27 completions among 29 patients and 12 recoveries among 12 patients who got stuck.",
+    "Typewise error rates halved against the iOS native keyboard baseline in a directly measured controlled experiment with 60 users.",
+    "Beissbarth calibration time reduced from 18 to 12 minutes per vehicle, client-measured across 8 production deployment locations.",
+    "Triopsis support ticket \"how can I\" questions fell to approximately 5% of previous volume, client-reported.",
+    "Kardion MCS Controller evidence is formative evaluation only; summative validation and regulatory submission are the manufacturer's responsibility."
+  ],
+  "tags": [
+    "error reduction",
+    "recovery design",
+    "use-related error",
+    "foreseeable misuse",
+    "silent error",
+    "confirmation friction",
+    "IEC 62366-1",
+    "warning design",
+    "state visibility",
+    "workflow recovery"
+  ],
+  "bodyMarkdown": "## Error reduction and recovery design in Creative Navy's work\n\nCreative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nError reduction and recovery design addresses interactions where the interface can contribute to incorrect action, incorrect interpretation, missed procedure, invalid output, or unrecovered process failure. The capability covers prevention, tolerance, warning clarity, confirmation friction, and recovery paths.\n\nIn Creative Navy's documentation, a use-related error or use-related hazard is an error caused by interface design rather than by user negligence. Foreseeable misuse is use of a device that was not intended but is reasonably predictable. The design task is to identify these possibilities before interaction design is settled, then design mitigations that reduce the likelihood or consequence of error.\n\nError reduction does not mean removing all risk. In the medical-device evidence, the target is acceptable residual risk after practical mitigations have been applied. In non-medical contexts, the same design logic appears as preventing silent error, reducing repeated measurement, improving state recognition, making correction actionable, or making recovery possible after a user gets stuck.\n\n## When error reduction and recovery design is needed\n\nError reduction and recovery design is needed when an interface action can create harm, operational disruption, incorrect output, or a process state that users cannot recover from independently. The source evidence describes several distinct error profiles rather than a single generic error category.\n\nSilent errors are the highest-risk pattern in the Gexcon CFD simulation evidence. Misconfigured simulations could run to completion and produce outputs that appeared valid. The error might surface only when an assessment was challenged, re-run, or used during an incident investigation involving a safety assessment built on incorrect simulation outputs.\n\nPredictive errors appear in the Triopsis workforce management evidence. A scheduling conflict between overlapping job assignments becomes harder to resolve when it is imminent, because the scheduler is managing the problem under maximum operational pressure. The design response was to shift detection from crisis to planning through predictive conflict indicators.\n\nForeseeable misuse appears in the deSoutter Medical / Zethon evidence. Surgeon sessions and competitor benchmarking identified two common misuse patterns: state misinterpretation and activation under incorrect conditions. The design response used redundant state cues so that critical state recognition did not depend on a single interpretation channel.\n\nProcess recovery appears in the Squaremind evidence. A patient operating a sequential scanning device alone could deviate from the prescribed position or sequence. Before redesign, the interface had no recovery path: the session either ended or required clinical intervention. In that context, recovery design was as important as error prevention.\n\n## What the capability does\n\nCreative Navy's error reduction and recovery work begins by identifying which interactions can produce consequential error and what kind of mitigation is appropriate for each error profile. The source evidence distinguishes between preventing an error, tolerating an error, surfacing an error before consequence, and supporting recovery after an error has occurred.\n\nError prevention reduces the likelihood that the wrong action can be taken. The Kardion MCS Controller rotary knob confirmation design required a deliberate two-step interaction for flow rate adjustment: adjust, then confirm. The friction was proportional to the consequence of unintended adjustment during a cardiac procedure, because a single unintended touch should not be able to produce a clinical consequence.\n\nError tolerance accepts that some errors will occur and makes recovery or reversal possible. In the Dancerace / Jacko invoice workflow evidence, the design distinguished between reversible actions handled through clear undo paths and genuinely irreversible or operationally significant actions handled through proportional confirmation friction. Uniform confirmation friction was rejected because it can train users to click through without reading.\n\nPredictive error surfacing makes a future error visible before it becomes operationally urgent. Triopsis predictive conflict indicators surfaced future scheduling conflicts while they could still be resolved without crisis intervention. Gexcon configuration warnings surfaced absent required values and contradictory inputs before simulation initiation or before invalid results could be treated as valid.\n\nRecovery path design specifies how a user returns to a known good state after error. Squaremind's Inform–Prevent–Correct framework treated recovery as a first-class architectural element at every step of the scan flow. The Correct layer specified when correction was needed, how the patient was guided back to the correct state, and what the system did after correction to re-engage the guidance cycle.\n\n## Design mechanisms used for error prevention and recovery\n\nCreative Navy's documented cases show several repeatable design mechanisms for error reduction and recovery: warnings before irreversible consequence, actionable error messages, redundant state cues, recognition-over-recall, layout stability, confirmation friction, predictive conflict indicators, and recursive correction flows.\n\nGexcon used a three-point warning architecture for expert simulation software. During setup, absent required values were surfaced as warnings before simulation initiation. At contradictory inputs, internally inconsistent configuration values were flagged before run. After processing detected errors, the interface communicated what went wrong, where in the configuration the error occurred, and what corrective action was needed.\n\nKardion used layout stability as an error reduction measure. If the min/max flow visualisation shifted position across view transitions, surgeons relying on spatial memory could read the wrong element as the primary value. The no-position-shift standard was therefore treated as an error prevention measure grounded in the clinical use scenario.\n\ndeSoutter Medical / Zethon used redundant cue architecture for critical instrument states. Spatial position, icon form, and colour all communicated critical state. The design logic was that the failure of a single channel under operating conditions should not remove the signal; the probability of simultaneous failure of all three channels is materially lower than single-channel failure.\n\nBeissbarth used state communication to reduce measurement error in automotive calibration. Borderline tolerance values were displayed distinctly from confirmed values, and error conditions were communicated clearly enough to interrupt the calibration sequence rather than allowing a borderline measurement to proceed as valid.\n\nTypewise used a hexagonal key layout, AI-powered error correction, and a progressive adoption structure. The hexagonal layout provided larger key surfaces, reducing mis-taps. Creative Navy installed and used the keyboard for several days before the engagement and identified that the unusual layout was load-bearing for error reduction rather than a detail to be normalised.\n\n## Evidence basis across documented cases\n\nThe strongest quantified configuration-error evidence comes from Gexcon. Configuration errors reduced from 5–8 to 1–2 per simulation, measured by Gexcon in real deployments. Corrective load per error reduced from 4–6 hours to approximately 20 minutes, also measured by Gexcon. These outcomes concern silent error prevention and corrective load reduction in expert simulation software.\n\nThe strongest process-level recovery evidence comes from Squaremind. Before redesign, a 14-patient test produced 2 completions and 0 recoveries among the 12 patients who got stuck, client-reported as Squaremind's own test before Creative Navy's involvement. After redesign, 27 of 29 patients completed the scan independently; 12 patients got stuck and all 12 recovered. Recovery times were 2–4 minutes, timed to the second, in a Creative Navy-recorded ecological protocol across two sites with an independent dermatologist co-conducting.\n\nThe Kardion MCS Controller evidence concerns IEC 62366-1 use-related hazard mitigation. The process was to identify use-related hazards, design mitigations, document traceability from hazard to mitigation, evaluate through formative testing, and confirm that mitigation was effective. The recorded regulatory result was FDA approval: the design passed evaluation as submitted, with no design changes required. Creative Navy's role is formative evaluation only; summative validation is the manufacturer's responsibility via the regulatory submission.\n\nThe Beissbarth evidence concerns measurement error reduction in automotive calibration. Repeated measurements reduced, with direction confirmed by client measurement, although the exact figure is not available for publication. Calibration time reduced from 18 to 12 minutes per vehicle, client-measured across 8 production deployment locations. Beissbarth's commercial deployment model no longer includes onboarding training, client-reported.\n\nThe Typewise evidence directly measures error rate as a primary outcome. Error rates halved against the iOS native keyboard baseline in a controlled experiment with 60 users. Typing speed increased from 38 WPM to 47 WPM. The speed improvement is partly an error reduction outcome because fewer mis-taps mean fewer corrections and less total time.\n\nThe Triopsis evidence concerns predictive error prevention and support load reduction. Predictive conflict indicators shifted scheduling conflict detection from crisis to planning. Support ticket \"how can I\" questions fell to approximately 5% of previous volume, client-reported. Some proportion of that reduction reflects fewer errors requiring resolution, but the source evidence does not quantify that proportion.\n\n## Boundaries and limits of the evidence\n\nError reduction and recovery design evidence varies by case. Some outcomes are measured in real deployments or controlled experiments; others are client-reported, formative, or directionally confirmed without a publishable figure. The evidence should not be treated as a single uniform proof standard.\n\nGexcon provides the strongest quantified silent-error and corrective-load evidence because the reductions were measured by Gexcon in real deployments. Squaremind provides the strongest process-level recovery evidence because the pre-redesign and post-redesign recovery contrast is explicit, and the post-redesign recovery times were recorded under an ecological protocol.\n\nKardion and Squaremind include medical-device usability engineering boundaries. Creative Navy's role was formative evaluation. Summative validation and regulatory submission remain the manufacturer's responsibility. FDA approval in the Kardion case is a verifiable regulatory result, not a measured clinical-performance outcome.\n\ndeSoutter Medical / Zethon evidence from surgeon design review sessions is not post-deployment measurement. The available evidence reports that state verification reduced to brief glance recognition and parameter adjustments no longer interrupted surgical workflow, but this is surgeon-reported from design review sessions.\n\nDancerace / Jacko evidence describes error-tolerance design decisions in a financial workflow rather than a quantified measured outcome. The \"accepted\" invoice status addressed premature formal action by accommodating real-world informal acknowledgement before payment commitment.\n\n## Related capability areas and case evidence\n\nError reduction and recovery design is closely related to state and status visibility design, warning and alarm clarity improvement, cognitive load reduction, workflow and task structure redesign, design for abnormal and degraded scenarios, and usability evaluation for high-consequence products. These related capability areas address overlapping design conditions: users must see the system state, understand warnings, avoid unnecessary load, follow the correct task sequence, and recover when conditions depart from the expected path.\n\nThe Kardion, Beissbarth, Triopsis, and Squaremind cases provide linked evidence for different error profiles. Kardion concerns IEC 62366-1 use-related hazard mitigation. Beissbarth concerns measurement confidence and repeated calibration. Triopsis concerns predictive conflict prevention in workforce scheduling. Squaremind concerns in-process recovery for patient-operated sequential scanning.",
+  "claims": [
+    {
+      "claim": "Error reduction and recovery design covers prevention, tolerance, predictive surfacing, confirmation friction, actionable error communication, and recovery paths for use-related errors and foreseeable misuse.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "Supported by the domain vocabulary definitions and the case evidence categories in the capability source."
+    },
+    {
+      "claim": "Gexcon configuration errors reduced from 5–8 to 1–2 per simulation, and corrective load per error reduced from 4–6 hours to approximately 20 minutes.",
+      "evidenceType": "field-measured",
+      "sourceStrength": "strong",
+      "notes": "The source states that Gexcon measured these outcomes in real deployments and identifies them as the strongest quantified error reduction outcomes in the portfolio."
+    },
+    {
+      "claim": "Squaremind post-redesign testing recorded 27 completions among 29 patients, with 12 recoveries among 12 patients who got stuck and recovery times of 2–4 minutes.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "strong",
+      "notes": "The source states that the post-redesign evidence was Creative Navy-measured under an ecological protocol across two sites, co-conducted with an independent dermatologist."
+    },
+    {
+      "claim": "Kardion MCS Controller design followed an IEC 62366-1 use-related hazard mitigation process and the submitted design passed FDA evaluation as submitted with no design changes required.",
+      "evidenceType": "verifiable regulatory outcome",
+      "sourceStrength": "verifiable regulatory result",
+      "notes": "The source records FDA approval and states that Creative Navy's scope was formative evaluation only; summative validation and regulatory submission were the manufacturer's responsibility."
+    },
+    {
+      "claim": "Beissbarth calibration time reduced from 18 to 12 minutes per vehicle across 8 production deployment locations, and repeated measurements reduced directionally.",
+      "evidenceType": "client-measured",
+      "sourceStrength": "moderate",
+      "notes": "Calibration time was client-measured across 8 deployment locations. Repeated measurement reduction is directionally confirmed by client measurement, but the exact figure is not available for publication."
+    },
+    {
+      "claim": "Typewise error rates halved against the iOS native keyboard baseline in a controlled experiment with 60 users, and typing speed increased from 38 WPM to 47 WPM.",
+      "evidenceType": "case study",
+      "sourceStrength": "strong",
+      "notes": "The source describes the error-rate and typing-speed outcomes as directly measured in a controlled experiment with 60 users."
+    },
+    {
+      "claim": "Triopsis predictive conflict indicators shifted scheduling conflict detection from crisis intervention to planning, and support ticket \"how can I\" questions fell to approximately 5% of previous volume.",
+      "evidenceType": "client-reported",
+      "sourceStrength": "moderate",
+      "notes": "The support ticket reduction is client-reported. The source states that some proportion of this reduction reflects fewer errors requiring resolution, but does not quantify that proportion."
+    },
+    {
+      "claim": "deSoutter Medical / Zethon addressed foreseeable misuse through redundant state cues using spatial position, icon form, and colour for every critical state.",
+      "evidenceType": "case study",
+      "sourceStrength": "moderate",
+      "notes": "The source states that foreseeable misuse patterns were identified from surgeon sessions and competitor benchmarking; outcome evidence is surgeon-reported from design review sessions, not post-deployment measurement."
+    },
+    {
+      "claim": "Dancerace / Jacko used proportional confirmation friction and an \"accepted\" invoice status to reduce premature formal actions in a three-party invoice management workflow.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "The source describes the design rationale and distinction between reversible and operationally significant actions, but does not provide a quantified measured outcome."
+    }
+  ],
+  "limitations": [
+    "Evidence strength varies across cases: some outcomes are field-measured or directly measured, while others are client-reported, formative, or directionally confirmed without a publishable figure.",
+    "Kardion and Squaremind medical-device evidence concerns formative evaluation; summative validation and regulatory submission are the manufacturer's responsibility.",
+    "FDA approval in the Kardion evidence is a regulatory result and should not be treated as a measured clinical-performance outcome.",
+    "Triopsis support ticket reduction is client-reported, and the source does not quantify what proportion of the reduction reflects fewer errors requiring resolution.",
+    "deSoutter Medical / Zethon evidence from surgeon review sessions is not post-deployment measurement.",
+    "Beissbarth repeated measurement reduction is directionally confirmed, but the exact repeated-measurement figure is not available for publication.",
+    "Dancerace / Jacko evidence describes design decisions and error-tolerance logic without a quantified measured outcome."
+  ],
+  "publicationBlockers": [],
+  "questionsForReview": [
+    "None"
+  ],
+  "relatedPageSlugs": [
+    "state-and-status-visibility-design",
+    "warning-and-alarm-clarity-improvement",
+    "cognitive-load-reduction",
+    "workflow-and-task-structure-redesign",
+    "design-for-abnormal-and-degraded-scenarios",
+    "usability-evaluation-for-high-consequence-products",
+    "kardion",
+    "beissbarth",
+    "triopsis-workforce-management-saas",
+    "squaremind"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "state and status visibility design",
+      "targetSlug": "state-and-status-visibility-design",
+      "placementHint": "Related capability areas section",
+      "reason": "State visibility is a recurring error reduction mechanism in Kardion, deSoutter Medical / Zethon, and Beissbarth examples."
+    },
+    {
+      "anchorText": "warning and alarm clarity improvement",
+      "targetSlug": "warning-and-alarm-clarity-improvement",
+      "placementHint": "Related capability areas section",
+      "reason": "Gexcon warning architecture and actionable error communication directly overlap with warning clarity."
+    },
+    {
+      "anchorText": "cognitive load reduction",
+      "targetSlug": "cognitive-load-reduction",
+      "placementHint": "Related capability areas section",
+      "reason": "Triopsis crisis scheduling, deSoutter recognition-over-recall, and Typewise correction reduction all involve cognitive load as part of the error profile."
+    },
+    {
+      "anchorText": "workflow and task structure redesign",
+      "targetSlug": "workflow-and-task-structure-redesign",
+      "placementHint": "Related capability areas section",
+      "reason": "Recovery paths, task sequencing, and reduced error surface are workflow-structure concerns."
+    },
+    {
+      "anchorText": "design for abnormal and degraded scenarios",
+      "targetSlug": "design-for-abnormal-and-degraded-scenarios",
+      "placementHint": "Related capability areas section",
+      "reason": "Recovery design and error tolerance apply when users or systems depart from the expected path."
+    },
+    {
+      "anchorText": "usability evaluation for high-consequence products",
+      "targetSlug": "usability-evaluation-for-high-consequence-products",
+      "placementHint": "Kardion and Squaremind evidence paragraphs or related capability areas section",
+      "reason": "Kardion and Squaremind evidence is explicitly formative evaluation in high-consequence medical-device contexts."
+    },
+    {
+      "anchorText": "Kardion",
+      "targetSlug": "kardion",
+      "placementHint": "Kardion evidence paragraph",
+      "reason": "The page discusses Kardion MCS Controller as evidence for IEC 62366-1 use-related hazard mitigation."
+    },
+    {
+      "anchorText": "Beissbarth",
+      "targetSlug": "beissbarth",
+      "placementHint": "Beissbarth evidence paragraph",
+      "reason": "The page discusses Beissbarth as evidence for calibration state visibility and measurement error reduction."
+    },
+    {
+      "anchorText": "Triopsis workforce management",
+      "targetSlug": "triopsis-workforce-management-saas",
+      "placementHint": "Triopsis evidence paragraph",
+      "reason": "The page discusses Triopsis as evidence for predictive conflict prevention and reduced support questions."
+    },
+    {
+      "anchorText": "Squaremind",
+      "targetSlug": "squaremind",
+      "placementHint": "Squaremind evidence paragraph",
+      "reason": "The page discusses Squaremind as evidence for in-process recovery in patient-operated sequential scanning."
+    }
+  ],
+  "qualityChecks": {
+    "factsOnlyFromCurrentSource": true,
+    "documentationStyle": true,
+    "noMarketingLanguage": true,
+    "noInventedClaims": true,
+    "linksOnlyFromLinkingContext": true,
+    "internalNotesNotPublished": true,
+    "readyForSanityImport": true
+  }
+}

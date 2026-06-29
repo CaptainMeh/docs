@@ -1,0 +1,236 @@
+{
+  "slug": "reduced-error-risk",
+  "title": "Reduced Error Risk",
+  "pageType": "outcome",
+  "category": "evidence",
+  "section": "Operational Outcomes",
+  "summary": "Reduced error risk describes fewer or less costly errors because the interface no longer creates the structural conditions that produce them. The documented evidence spans selection errors, mode errors, omission errors, misinterpretation errors, and process deviation errors, with evidence strength varying by engagement.",
+  "keyFacts": [
+    "Reduced error risk is framed as a structural design outcome, not as a training outcome.",
+    "The page distinguishes selection errors, mode errors, omission errors, misinterpretation errors, and Squaremind-introduced process deviation errors.",
+    "Gexcon configuration errors per simulation fell from 5–8 to 1–2, with corrective load per error falling from 4–6 hours to approximately 20 minutes, measured by Gexcon across real deployments.",
+    "Typewise error rates halved versus the iOS native keyboard baseline in a directly measured controlled experiment with 60 users.",
+    "Stromer warnings accounted for approximately 30% of issues needing user intervention before redesign and were absent from the issues list after redesign and at a two-year follow-up.",
+    "Squaremind post-redesign evidence recorded 27 of 29 patients completing the scan independently; 12 patients deviated and all 12 recovered without external intervention.",
+    "UNICEF compliance issues reduced 45%, client-measured against a pre-established baseline nine months post-rollout.",
+    "Gericke operator-caused stoppages roughly halved across three sites in a confirmed single-variable window.",
+    "Kardion passed FDA evaluation as submitted with no design changes required; the engagement evidence is formative, with summative validation the manufacturer's responsibility.",
+    "eToro has behaviour A/B evidence consistent with reduced misinterpretation, but no directly measured error-rate figure."
+  ],
+  "bodySections": [
+    {
+      "heading": "Summary",
+      "bodyMarkdown": "Creative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nReduced error risk is the outcome of redesigning the interface conditions that produce use-related error. In this evidence page, errors are treated as structural: they occur at specific interactions, in specific conditions, for specific reasons.\n\nThe documented outcome is not fewer errors because users receive more training. The documented outcome is fewer errors, or lower recovery cost, because required information, system state, warnings, confirmation steps, workflow constraints, and recovery paths are made more legible at the moment they matter."
+    },
+    {
+      "heading": "Reduced error risk as a structural interface outcome",
+      "bodyMarkdown": "Reduced error risk means that an error-likely interaction has been identified analytically and redesigned so that the interface no longer creates the same conditions for error. Examples include a required value being surfaced during setup, a mode change being made visible, a warning being grounded in screen architecture, or a recovery path being provided when a physical process deviates.\n\nThe relevant distinction is between an error mechanism and an error consequence. The error mechanism is the structural interface condition that produces the error. The error consequence is what happens when the error occurs, including its reversibility and magnitude.\n\nIn regulated contexts, the target is acceptable residual risk rather than zero risk. IEC 62366-1 language describes this as use-related error and formative evaluation. Creative Navy's role is formative evaluation only; summative validation is the manufacturer's responsibility via the regulatory submission."
+    },
+    {
+      "heading": "Error categories that require different design responses",
+      "bodyMarkdown": "Selection errors occur when the user chooses the wrong option. Selection errors are produced by insufficient visual differentiation between options, misleading labelling, or interface logic that groups unlike things.\n\nMode errors occur when the user acts in the wrong system state while believing the system is in a different mode. Mode errors are produced by mode changes that are not clearly communicated, or by layouts that look identical across modes with different consequences.\n\nOmission errors occur when the user misses a required step. Omission errors are produced by required steps that are not visible in context, incomplete inputs that are not flagged before they matter, or workflows that allow progression without required completion.\n\nMisinterpretation errors occur when the user acts on incorrectly understood information. Misinterpretation errors are produced by ambiguous state communication, insufficient visual hierarchy, single-channel cues that fail under operating conditions, or warnings that appear without contextual grounding.\n\nPrecautionary over-intervention is a misinterpretation sub-pattern documented in the Gericke industrial HMI case. The operator reads the surface signal correctly but holds an incomplete model of system state, and under ambiguity takes an unnecessary protective action such as stopping or overriding healthy equipment. The cost appears as lost availability and unnecessary maintenance rather than as a single incident.\n\nProcess deviation errors are a Squaremind-introduced category for sequential physical processes without an external guide. The user deviates from a required physical sequence, and the interface must detect the deviation, communicate what happened, and provide recovery. This category is distinct from incorrect action in a digital workflow because the deviation occurs in the real-world sequence."
+    },
+    {
+      "heading": "Gexcon evidence for configuration error reduction and recovery-cost reduction",
+      "bodyMarkdown": "In the Gexcon CFD simulation engagement, the documented error class was misinterpretation and omission in scenario configuration. The downstream consequence was high because a misconfigured simulation could produce a safety assessment that appeared valid while being incorrect.\n\nGexcon client-measured configuration errors per simulation falling from 5–8 to 1–2 across real deployment locations. Gexcon also client-measured corrective load per error falling from 4–6 hours to approximately 20 minutes across real deployments.\n\nThe documented mechanism was state visibility redesign combined with an explicit error-prevention layer in the interaction architecture. Required values were surfaced during setup. Incomplete and contradictory inputs were warned before run. Error messages specified what went wrong and what to do.\n\nThe Gexcon case is one of the strongest quantified examples on this page because it documents both error reduction and error recovery cost reduction in the same engagement, using real deployment evidence rather than usability testing conditions."
+    },
+    {
+      "heading": "deSoutter Medical / Zethon evidence for mode error prevention under divided attention",
+      "bodyMarkdown": "In the deSoutter Medical / Zethon operating-theatre engagement, the documented error classes were mode errors and misinterpretation errors under divided attention. The operating theatre context involved divided attention, variable lighting, gloved hands, and brief glances.\n\nEight surgeons reported in structured design review sessions that device state verification was reduced to brief glance recognition. The previous interface required reading to interpret activation state, which was not an acceptable interaction profile when the surgeon's primary attention was on the patient.\n\nThe same structured design review sessions reported that speed and parameter adjustments no longer interrupted surgical workflow. The previous interface required attention that competed with the surgical task.\n\nThe documented mechanism was redundant non-colour cueing for critical states. Spatial position, icon form, and colour were used together, removing single-channel dependency on colour under variable theatre lighting. Critical indicator positions were spatially stable and did not change between screens.\n\nThe evidence is surgeon-reported from structured design review sessions during the engagement, not post-deployment operational measurement. IEC 62366-1 formative evaluation governed the engagement. Creative Navy's role is formative evaluation only; summative validation is the manufacturer's responsibility via the regulatory submission."
+    },
+    {
+      "heading": "Kardion evidence for use-related hazard mitigation and FDA evaluation",
+      "bodyMarkdown": "In the Kardion MCS Controller engagement, specific error-likely interactions were identified through IEC 62366-1 use-related hazard analysis and addressed in design. The documented error classes were mode errors in a clinical device context, misinterpretation errors, and omission errors involving missed alarm states.\n\nFlow rate adjustment had insufficient confirmation friction for a high-consequence action. The design response was a two-step rotary knob confirmation.\n\nMin/max flow value interpretation had visual ambiguity in a prior Emergo by UL formative study with 7 participants. The design response was an unambiguous flow visualisation hierarchy.\n\nAlarm state during mute carried the risk that alarm disappearance on mute would allow active alarms to be forgotten. The design response kept muted alarms visible at reduced prominence.\n\nThe design passed FDA evaluation as submitted, with no design changes required. This regulatory result is recorded as FDA approval in the case evidence and confirms that the submitted use-related hazard mitigation structure was accepted in that evaluation. Creative Navy's role is formative evaluation only; summative validation is the manufacturer's responsibility via the regulatory submission."
+    },
+    {
+      "heading": "Beissbarth evidence for calibration measurement accuracy errors",
+      "bodyMarkdown": "In the Beissbarth automotive calibration engagement, the documented error class was measurement accuracy errors. These are readings taken under conditions below the confidence threshold, producing a certified vehicle that is not within the safety specification.\n\nBeissbarth client-measured repeated measurements reducing across 8 production deployment locations. The direction of reduction is confirmed, but the exact frequency is not available for publication.\n\nBeissbarth also client-measured calibration time falling from 18 to 12 minutes per vehicle across 8 production deployment locations. Part of that reduction reflects fewer repeated measurements required.\n\nThe documented mechanism was a three-level measurement result communication model: confirmed, borderline, and out of range. This replaced binary pass/fail communication. The design also made sequence state explicit, reducing omission errors in multi-step calibration procedures."
+    },
+    {
+      "heading": "Triopsis evidence for operational omission and mode error reduction",
+      "bodyMarkdown": "In the Triopsis workforce management engagement, the documented error classes were omission errors and mode errors. Omission errors appeared as missed safety compliance steps. Mode errors appeared as scheduling conflicts that were not detected before they became live operational crises.\n\nTriopsis client-reported operational data showed support ticket volume for \"how can I\" questions falling to approximately 5% of previous volume. Some portion of this reduction reflects fewer interface-induced errors requiring resolution.\n\nThe documented mechanism included predictive conflict indicators that surfaced future scheduling conflicts before they became crisis-mode errors requiring reactive correction. The field technician compliance component surfaced required safety steps in context, addressing omission errors that training alone cannot prevent."
+    },
+    {
+      "heading": "Typewise evidence for selection error reduction in a controlled experiment",
+      "bodyMarkdown": "In the Typewise AI keyboard engagement, the documented error class was selection errors caused by mis-taps. The mechanism was key size and layout: a hexagonal key layout provided a larger key surface and reduced mis-tap probability.\n\nThe Typewise case provides the most methodologically clean error-rate measurement on this page. Error rates halved versus the iOS native keyboard baseline in a directly measured controlled experiment with 60 users.\n\nThis evidence has a defined baseline, a defined population, and a directly measured outcome. It is narrower than the industrial and medical examples because it concerns selection errors in keyboard input rather than multi-step operational risk."
+    },
+    {
+      "heading": "Stromer evidence for warning architecture failure and longitudinal confirmation",
+      "bodyMarkdown": "In the Stromer e-bike embedded display engagement, the documented error class was misinterpretation errors produced by warning architecture failure. The previous screen layout and interaction logic had been established before warnings were added as overlays, so warnings had no native structural relationship to the screen states they occupied.\n\nBefore redesign, warnings covered content they should not cover, appeared without contextual grounding, and interfered with active interactions. This created misinterpretation errors and interference errors during riding.\n\nIn a structured 3-day riding test with 10 participants, before redesign, warnings accounted for approximately 30% of all issues rated as \"issue needing user intervention\". The test was Creative Navy-designed and run with real bikes, real routes, and a consistent severity-logging protocol.\n\nAfter redesign, the same test method with 10 participants, including 6 returning participants and 4 replacements, recorded no warnings on the issues list at any severity level. A two-year longitudinal follow-up run by Creative Navy recorded warnings remaining absent from the issues list.\n\nThe documented mechanism was not a component-level warning redesign alone. Creative Navy established rules and principles governing how warnings, overlays, and interruptive elements relate to screen structure across all states, as architectural decisions before component design.\n\nThe pre-redesign safety consequence extended beyond warning interpretation. Average glance duration at the embedded display was 4.32 seconds, more than twice the 2-second threshold at which road safety research by Klauer et al. (2006), NHTSA Report No. DOT HS 810 594, identifies a doubling of near-crash/crash risk. The redesign reduced average glance duration to 1.89 seconds. The eye-tracking evidence basis was Creative Navy-recorded in real riding conditions with 5 participants."
+    },
+    {
+      "heading": "Squaremind evidence for process deviation recovery in patient-operated scanning",
+      "bodyMarkdown": "In the Squaremind dermatology scanning device engagement, the documented error class was process deviation errors. Patient-operated scanning required users to follow a physical sequence without external guidance. Patients could not be prevented from moving incorrectly, so the interface had to detect deviations and provide a correction path.\n\nBefore redesign, the interface had no correction architecture. When a patient deviated from the expected sequence, the interface had nothing to offer. The session ended or required clinical intervention.\n\nThe pre-redesign baseline was a 14-patient Squaremind test that produced 2 completions and 0 recoveries among the 12 patients who deviated. This is client-reported background from Squaremind's own test before Creative Navy's involvement.\n\nThe design response introduced explicit error management at every step of the scan flow through the Inform–Prevent–Correct framework. The prevention layer delivered positioning guidance before the robot arm reached the relevant body zone. The correction layer specified what happened, how to return to the correct state, and how to re-engage the guidance cycle after recovery.\n\nPost-redesign, 27 of 29 patients completed the scan independently. Twelve patients deviated during the flow, and all 12 recovered without external intervention. Recovery times were 2–4 minutes, timed to the second. The evidence basis was Creative Navy-recorded under an ecological protocol at two sites, age-stratified, and co-conducted by an independent dermatologist.\n\nCreative Navy's role was formative evaluation only; summative validation and regulatory submission are Squaremind's responsibility."
+    },
+    {
+      "heading": "UNICEF evidence for workflow-level omission and categorisation error reduction",
+      "bodyMarkdown": "In the UNICEF planning, approval, and reporting tool engagement, the documented error classes were omission errors and selection or categorisation errors. Defective submissions included missing information, incomplete approval chains, incorrect categorisation, missing supporting documentation, and inconsistencies between data fields.\n\nThe error mechanism was organisational rather than a single interaction. Seven roles across two organisational tiers held incompatible interpretations of what a correct submission required. A submission could be complete and correct from the producing role's frame and deficient from the receiving role's frame.\n\nThe prevention mechanism was structural and upstream. The design first established an agreed reporting standard across both tiers through the Sandbox Experiments prototyping process. That standard was then embedded into workflows, validation rules, information architecture, and interaction design.\n\nThe submission workflow also used an orientation step, priming questions, and an explicit revision-and-quality-check step before final submission. The revision step acted as a correction layer that caught omissions before the submission crossed the role boundary.\n\nUNICEF client-measured compliance issues reducing 45% against a pre-established baseline, nine months post-rollout. Compliance issues are defective submissions requiring headquarters follow-up before acceptance. UNICEF also client-measured a parallel 42% reduction in headquarters report-preparation time as the downstream consequence of fewer defective submissions requiring correction.\n\nThe evidence calibration is important. UNICEF produced the measurements. Creative Navy helped identify which owned operational metrics were relevant. The causal account is analytically derived, with the client-measured compliance reduction as corroboration."
+    },
+    {
+      "heading": "Gericke evidence for interpretation-failure errors in industrial HMI operation",
+      "bodyMarkdown": "In the Gericke industrial HMI engagement, Creative Navy built an operator-error taxonomy, OE01–OE20, as the analytical instrument. The taxonomy was a Creative Navy analytical synthesis derived from site observation, contextual interviews, stakeholder interviews, existing-system review, and incident and maintenance records. It was not a field instrument, and operators did not report errors using OE labels.\n\nThe documented error class was misinterpretation, with precautionary over-intervention as the dominant and most expensive variant. Operators read surface signals such as alarm lists and deviations correctly but held an incomplete model of process state. Under ambiguity, they stopped or overrode healthy equipment.\n\nThe structural mechanism was insufficient system transparency. The interface exposed symptoms but did not explain state. The documented design response included a live process mimic showing state on the diagram, graphical error visualisation highlighting failed components, and a root-cause alarm hierarchy that collapsed secondary alarms beneath the originating event and indicated probable cause.\n\nGericke client-measured operator-caused stoppages roughly halving across three deployment-and-research sites in a confirmed single-variable window: 3 to 1 per month, 7 to 3 per month, and 15 to 6 per month. The sites were described by type and geography as Swiss pharma, Italian food, and Swiss chemicals.\n\nGericke client-measured repeat alarms reducing from 42% to 18%, 58% to 28%, and 73% to 35%. Gericke also client-measured fault-diagnosis time falling from 24 to 8 minutes, 38 to 12 minutes, and 68 to 20 minutes.\n\nThe confirmed window was four months post-go-live with no hardware, sensor, mechanical, training, recipe, or process changes. The per-plant error frequencies were client-reported by plant managers from operational statistics, not telemetry. Gericke is not a regulated device; it operates in GMP environments where GAMP 5 is relevant, and the validation boundary is the manufacturer's."
+    },
+    {
+      "heading": "eToro evidence for removing a misinterpretation mechanism without a direct error-rate measure",
+      "bodyMarkdown": "In the eToro multi-asset social trading engagement, the documented error class was misinterpretation at the point of financial commitment. The pre-redesign buy flow displayed profit alongside deposits, allowing users to misattribute gains and losses across the whole account rather than the specific position being opened.\n\nThe documented mechanism was exposure illegibility. Surface numbers were present and correct, but the interface allowed users to form the wrong understanding of what a trade meant for their portfolio, particularly around downside and relative position sizing.\n\nThe eToro A/B evidence did not measure an error rate directly. The client-measured randomised controlled A/B with a persistent holdout recorded conversion moving from 5.1% to 7.4% and time-to-trade moving from 11.8 to 8.6 minutes, with no increase in early-session drop-off and no reduction in exploration depth.\n\nThe error-reduction reading is analytically derived. The redesign removed a specific identified misinterpretation mechanism, and the behavioural result is consistent with reduced misinterpretation rather than simply increased trading. No error-rate figure is available for eToro.\n\nThe eToro case is not a regulated-device example. The relevant constraints are financial, including MiFID II financial promotion and SEC/FINRA fair balance. The engagement involved no AI."
+    },
+    {
+      "heading": "Evidence boundaries across the reduced error risk cases",
+      "bodyMarkdown": "The evidence strength varies by case. Typewise has a directly measured controlled experiment with a defined baseline and 60 users. Gexcon has client-measured deployment evidence for both error count and corrective load. Stromer has Creative Navy-recorded structured riding tests and a two-year longitudinal follow-up. Gericke has client-measured operational metrics within a confirmed single-variable window.\n\nSome evidence is formative or reported rather than operationally measured. deSoutter Medical / Zethon relies on surgeon-reported structured design review sessions, not post-deployment operational measurement. Kardion records use-related hazard mitigation and a submitted design passing FDA evaluation, but the work is formative and summative validation is the manufacturer's responsibility. Squaremind includes a client-reported pre-redesign baseline and Creative Navy-recorded post-redesign recovery evidence.\n\nSome evidence is analytically derived. UNICEF's compliance reduction is client-measured, while the causal account of cross-role standard agreement and structural embedding is analytical. eToro's behaviour A/B evidence is client-measured, but error reduction is not directly measured as an error rate."
+    }
+  ],
+  "evidenceSummary": {
+    "strongClaims": [
+      "Reduced error risk is a structural interface outcome rather than a training outcome.",
+      "Gexcon configuration errors per simulation fell from 5–8 to 1–2, and corrective load per error fell from 4–6 hours to approximately 20 minutes.",
+      "Typewise error rates halved versus the iOS native keyboard baseline in a controlled experiment with 60 users.",
+      "Stromer warnings fell from approximately 30% of issues needing user intervention to absent from the issues list after redesign and remained absent at a two-year follow-up.",
+      "Squaremind post-redesign evidence recorded 27 of 29 patients completing the scan independently, with all 12 deviating patients recovering without external intervention.",
+      "Gericke operator-caused stoppages roughly halved across three sites in a confirmed single-variable window.",
+      "Kardion passed FDA evaluation as submitted with no design changes required."
+    ],
+    "weakerClaims": [
+      "UNICEF compliance issues reduced 45% against a pre-established baseline nine months post-rollout.",
+      "deSoutter Medical / Zethon surgeons reported brief glance recognition for device state and less interruption during speed and parameter adjustment.",
+      "eToro behaviour A/B evidence is consistent with reduced misinterpretation but does not directly measure an error rate."
+    ],
+    "limitations": [
+      "Evidence strength varies across cases and should not be treated as a single uniform measurement category.",
+      "deSoutter Medical / Zethon evidence is surgeon-reported from structured design review sessions, not post-deployment operational measurement.",
+      "Kardion evidence concerns formative evaluation and FDA evaluation of the submitted design; summative validation is the manufacturer's responsibility.",
+      "Squaremind's pre-redesign baseline is client-reported background from Squaremind's own test before Creative Navy's involvement.",
+      "Beissbarth repeated-measurement reduction has confirmed direction across 8 production deployment locations, but the exact frequency is not available for publication.",
+      "Triopsis support ticket reduction reflects some reduction in interface-induced errors, but the exact portion attributable to error reduction is not isolated.",
+      "UNICEF's compliance reduction is client-measured, while the causal account linking the reduction to cross-role standard agreement and structural embedding is analytical.",
+      "Gericke per-plant error frequencies are client-reported by plant managers from operational statistics, not telemetry.",
+      "eToro has behaviour A/B evidence consistent with reduced misinterpretation, but no directly measured error-rate figure.",
+      "Regulated medical-device examples are formative evaluation only; summative validation and regulatory submission remain the manufacturer's responsibility."
+    ]
+  },
+  "relatedPageSlugs": [
+    "gexcon",
+    "desoutter-medical-zethon",
+    "kardion",
+    "beissbarth",
+    "triopsis-workforce-management-saas",
+    "typewise",
+    "stromer-ebike",
+    "squaremind",
+    "unicef",
+    "gericke-industrial-hmi",
+    "etoro",
+    "what-we-have-measured",
+    "what-is-client-reported",
+    "what-is-inferred",
+    "verifiable-performance-claims",
+    "better-state-visibility",
+    "stronger-recovery-support"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "Gexcon",
+      "targetSlug": "gexcon",
+      "reason": "The page cites Gexcon as a quantified deployment example for configuration error and corrective-load reduction."
+    },
+    {
+      "anchorText": "deSoutter Medical / Zethon",
+      "targetSlug": "desoutter-medical-zethon",
+      "reason": "The page cites deSoutter Medical / Zethon for mode and misinterpretation error prevention under operating-theatre conditions."
+    },
+    {
+      "anchorText": "Kardion",
+      "targetSlug": "kardion",
+      "reason": "The page cites Kardion for IEC 62366-1 use-related hazard mitigation and FDA evaluation wording."
+    },
+    {
+      "anchorText": "Beissbarth Automotive",
+      "targetSlug": "beissbarth",
+      "reason": "The page cites Beissbarth for calibration measurement accuracy errors and client-measured production deployment outcomes."
+    },
+    {
+      "anchorText": "Triopsis Workforce Management SaaS",
+      "targetSlug": "triopsis-workforce-management-saas",
+      "reason": "The page cites Triopsis for operational omission and mode error reduction evidence."
+    },
+    {
+      "anchorText": "Typewise",
+      "targetSlug": "typewise",
+      "reason": "The page cites Typewise as the controlled-experiment example for selection error reduction."
+    },
+    {
+      "anchorText": "Stromer Ebike",
+      "targetSlug": "stromer-ebike",
+      "reason": "The page cites Stromer for warning architecture failure, riding-test evidence, and two-year longitudinal confirmation."
+    },
+    {
+      "anchorText": "Squaremind",
+      "targetSlug": "squaremind",
+      "reason": "The page cites Squaremind for process deviation errors and recovery evidence."
+    },
+    {
+      "anchorText": "UNICEF",
+      "targetSlug": "unicef",
+      "reason": "The page cites UNICEF for workflow-level omission and categorisation error reduction measured as a compliance metric."
+    },
+    {
+      "anchorText": "Gericke Industrial HMI",
+      "targetSlug": "gericke-industrial-hmi",
+      "reason": "The page cites Gericke for interpretation-failure errors, precautionary over-intervention, and client-measured operational metrics."
+    },
+    {
+      "anchorText": "eToro",
+      "targetSlug": "etoro",
+      "reason": "The page cites eToro for analytically derived misinterpretation error reduction supported by behaviour A/B evidence."
+    },
+    {
+      "anchorText": "what Creative Navy has measured",
+      "targetSlug": "what-we-have-measured",
+      "reason": "The page distinguishes direct measurement, client-measured evidence, Creative Navy-recorded evidence, and inferred evidence."
+    },
+    {
+      "anchorText": "client-reported evidence",
+      "targetSlug": "what-is-client-reported",
+      "reason": "Several claims require client-reported evidence calibration."
+    },
+    {
+      "anchorText": "inferred evidence",
+      "targetSlug": "what-is-inferred",
+      "reason": "The page explicitly distinguishes analytically derived error-reduction accounts from directly measured error rates."
+    },
+    {
+      "anchorText": "verifiable performance claims",
+      "targetSlug": "verifiable-performance-claims",
+      "reason": "The page contains multiple calibrated claims with different evidence strengths and measurement conditions."
+    },
+    {
+      "anchorText": "better state visibility",
+      "targetSlug": "better-state-visibility",
+      "reason": "State visibility is a repeated mechanism in the documented error-risk reduction cases."
+    },
+    {
+      "anchorText": "stronger recovery support",
+      "targetSlug": "stronger-recovery-support",
+      "reason": "The page documents recovery cost reduction and explicit recovery architecture as error-risk outcomes."
+    }
+  ],
+  "tags": [
+    "reduced error risk",
+    "use-related error",
+    "error mechanisms",
+    "mode errors",
+    "omission errors",
+    "selection errors",
+    "misinterpretation errors",
+    "process deviation errors",
+    "state visibility",
+    "warning architecture",
+    "formative evaluation",
+    "IEC 62366-1"
+  ],
+  "_meta": {
+    "sourcePath": "sources/articles/Outcomes/outcomes--reduced-error-risk.md",
+    "parentSlug": "operational-outcomes",
+    "childPageSlugs": [],
+    "generatedBy": "deterministic"
+  }
+}

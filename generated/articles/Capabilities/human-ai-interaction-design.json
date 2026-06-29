@@ -1,0 +1,181 @@
+{
+  "_type": "documentationPage",
+  "sourceFile": "Articles/Capabilities/capabilities--human-ai-interaction-design.md",
+  "sourcePath": "sources/articles/Capabilities/capabilities--human-ai-interaction-design.md",
+  "sanityDocumentIdCandidate": "documentationPage.human-ai-interaction-design",
+  "title": "Human AI Interaction Design",
+  "slug": {
+    "_type": "slug",
+    "current": "human-ai-interaction-design"
+  },
+  "pageType": "capability",
+  "category": "capabilities",
+  "parentSlug": "capabilities",
+  "childPageSlugs": [],
+  "excerpt": "Human-AI interaction design covers the interface structures that make AI outputs reviewable, overridable, understandable, and auditable. It includes trust calibration, uncertainty communication, capability discoverability, progressive disclosure, and workflow integration.",
+  "metaTitle": "Human AI Interaction Design",
+  "metaDescription": "Human-AI interaction design for review, override, trust calibration, uncertainty, discoverability, auditability, and workflow integration.",
+  "summary": "Human AI Interaction Design is a Creative Navy capability for designing the decision surfaces around AI-enabled systems. The capability is documented through cases involving fraud scoring, biomedical AI, intelligence analysis, systematic review, AI keyboards, and automotive embedded engineering tools.",
+  "definition": "Human-AI interaction design is the design of interfaces, workflows, controls, and explanations that let users understand, evaluate, review, override, and audit AI outputs in context.",
+  "keyFacts": [
+    "Human-in-the-loop design means AI outputs are subject to human review, approval, or override before consequential action.",
+    "Trust calibration addresses both automation bias and inappropriate rejection of AI outputs.",
+    "Uncertainty communication makes AI confidence visible and actionable at the point of decision.",
+    "AI capability discoverability is treated as an interface design problem, not only a documentation problem.",
+    "Model/policy separation distinguishes what an AI model scores from what a policy layer decides to do about those scores.",
+    "Blinded mode withholds AI decisions during initial screening to reduce anchoring bias.",
+    "Data-bounded AI requires the interface to communicate which datasets the AI can and cannot use.",
+    "In the Puraite case, navigation was restructured from 13 to 4 top-level items, and the AI suggestion display went through 4 iterations.",
+    "In the Typewise case, a controlled experiment with 60 users recorded error rates halved versus the iOS native keyboard baseline and typing speed rising from 38 WPM to 47 WPM."
+  ],
+  "tags": [
+    "human-AI interaction",
+    "AI UX",
+    "human-in-the-loop",
+    "trust calibration",
+    "uncertainty communication",
+    "explainability",
+    "auditability",
+    "AI discoverability",
+    "progressive disclosure",
+    "automation bias"
+  ],
+  "bodyMarkdown": "## Summary\n\nCreative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nHuman-AI interaction design concerns the decision surface between AI outputs and human action. In Creative Navy's documented work, the capability covers human review, approval, override, trust calibration, uncertainty communication, capability discoverability, explainability, auditability, progressive disclosure, and workflow integration.\n\nHuman-AI interaction design is not limited to adding an AI chat interface. In the documented cases, the design work often involves deciding whether the appropriate interface should be a policy engine, a structured analytical surface, a progressive entry point, a confidence display, a blinded review mode, or another interaction structure that fits the user's task.\n\n## When human-AI interaction design is needed\n\nHuman-AI interaction design is needed when AI output affects consequential decisions and users must retain meaningful control. Human-in-the-loop design, in this sense, means that AI outputs are subject to human review, approval, or override before consequential action. The review path must be usable in practice, not only present as a nominal feature.\n\nHuman-AI interaction design is needed when users may trust AI outputs too much or too little. Trust calibration addresses both automation bias, where users follow AI recommendations without sufficient critical evaluation, and rejection, where users discount useful AI outputs. The interface determines which failure mode becomes more likely.\n\nHuman-AI interaction design is needed when AI uncertainty affects the decision. Uncertainty communication makes AI confidence visible and actionable at the point of decision. Confidence display can use percentages, visual coding, or verbal descriptors, but the design problem is communicating gradations usefully rather than reducing the interaction to binary trust or distrust.\n\nHuman-AI interaction design is needed when AI capability is opaque. AI capability discoverability is the user's ability to understand what an AI system can do without prior expertise. In the documented Owkin / K case, users did not understand what K could do, what data it had access to, or how to start a conversation with it.\n\nHuman-AI interaction design is needed when an AI system is data-bounded. A data-bounded AI system operates on defined datasets rather than the open internet. The interface must communicate that boundary because it determines what questions the AI can and cannot answer.\n\n## What the capability does\n\nCreative Navy's human-AI interaction design work makes AI output legible at the point where a user must act. This includes showing what the AI recommended, why it recommended it where explainability is required, how confident the AI is, what data boundary applies, and what the user can do if the recommendation is wrong or incomplete.\n\nCreative Navy's human-AI interaction design work also separates AI scoring from human governance where that distinction matters. In the Callsign fraud detection case, the model/policy separation distinguished what the AI model scored from what the policy layer decided to do about those scores. The AI model produced scores; the policy layer defined thresholds, workflow triggers, and overrides.\n\nCreative Navy's human-AI interaction design work uses progressive disclosure when AI output is too complex for a single flat interface. In the Hudex intelligence analysis platform, the dondogram was the main way users interacted with AI-generated analysis, but it was not intuitive to new users. The project overview acted as a \"book cover\" before detailed exploration, showing high-level theme counts, source volumes, and orientation information.\n\nCreative Navy's human-AI interaction design work also addresses adoption when AI benefit depends on behaviour change. In the Typewise AI keyboard case, the AI benefits of error correction, text prediction, and larger key surface from the hexagonal layout were only available after users learned a new interaction pattern. The design response used the Zone of Proximal Development as an adoption framework, introducing new gestures and capabilities in sequence.\n\n## Design outputs in documented human-AI interaction work\n\nCreative Navy's documented human-AI interaction design outputs include policy layers, confidence displays, side-panel evidence displays, blinded review modes, progressive entry screens, structured optimisation surfaces, and onboarding sequences for behaviour transition.\n\nIn the Callsign fraud detection case, policy became the central object of the interface. Each policy bundled conditions, actions, historical performance data, and links to related rules. Analysts could follow a complete picture of a policy from definition through operational consequences without losing context.\n\nIn the Puraite AI systematic review case, the AI suggestion display was redesigned so that the direct quote from the publication was visible in the side panel from the outset. The text the AI used to make its decision was present without requiring interaction. Confidence was shown as an explicit percentage with colour-coding.\n\nIn the Puraite case, blinded mode withheld AI decisions from reviewers during initial screening to reduce anchoring bias. When the AI had already screened an item, showing its decision first could affect human judgement even when reviewers believed they were evaluating independently.\n\nIn the Veecle automotive embedded IDE case, the AI Optimisation screen was designed as a structured analytical tool for scenario simulation and comparative decision-making. The documented design decision was that the appropriate interface paradigm for that AI capability was not a general chatbot but a purpose-built workflow surface aligned with optimisation decisions.\n\n## Auditability through model and policy separation in Callsign\n\nThe Callsign fraud detection case is the clearest documented example of auditability in an enterprise governance context. Fraud scoring models generated risk scores, human analysts and automated policies acted on those scores, and bank risk teams needed to audit the resulting decisions. Under SCA and PCI DSS, auditability was described as a regulatory requirement rather than a product preference.\n\nCreative Navy's design insight in the Callsign case was model/policy separation. The model layer produced scores. The policy layer, designed as the interface's central object, defined what happened to those scores. Human analysts controlled the policy layer while the model layer remained underneath.\n\nThis separation made the human decision-making surface legible. Analysts could read, configure, and modify policies without needing to understand the model's internals. Governance reviewers could audit policies without needing access to model training data. Engineering leads could trace interface behaviour to policy definitions.\n\nThe Callsign case evidence records that evaluation mode was separated from configuration mode. Policies were edited in configuration, while the evaluation environment that showed their effect was read-only during analysis. This design decision prevented untracked modifications to live fraud strategy during analytical sessions.\n\nClient-reported evidence states that contracts with Lloyds Bank and HSBC followed demos of the redesigned policy engine. The reported mechanism was that product managers could present a configuration experience matching how risk teams frame fraud problems, and engineering leads could see a clear path from interface behaviour to implementation. Client-reported evidence also states that the design system was used by Callsign for at least 2 years post-engagement.\n\n## Discoverability and data boundaries in Owkin / K\n\nThe Owkin / K biomedical AI case documents human-AI interaction design as an entry point problem. Users arriving at the platform did not understand what K could do, what data it had access to, or how to start a conversation with it. The AI capability existed in the backend, but the interface did not make it visible or approachable.\n\nCreative Navy's documented analysis treated capability opacity as the product failure. The research, training, and data behind the AI were invisible to users. The first user question — whether the system could answer a specific question — had no interface response, which prevented users from starting.\n\nThe Owkin / K case also documents the importance of data-bounded constraint communication. K operated on specific proprietary, public, and user-uploaded datasets, not the open internet. The interface had to communicate the data boundary as a feature because knowing what data was available was as important as knowing what features existed.\n\nThe documented design work included 20+ competitor benchmarks, with Julius AI and Mindtrip referenced as discoverability reference cases, and 5 iterations per topic area. The case evidence states that the design problem required resolving the tension between new user guidance and power user complexity without splitting the interface into modes or compromising between extremes.\n\nClient-reported evidence states that an approximately £5M investment followed, with the client attributing design as central to demonstrating that the AI was accessible. The reported investor question was whether the AI capability could be made accessible to clinicians who were not expert biologists. The case also records an 8-month Implementation Partnership.\n\n## Progressive disclosure for complex AI output in Hudex\n\nThe Hudex intelligence analysis platform documents progressive disclosure for complex AI output. The underlying AI output consisted of semantic clustering of thousands of media sources into thematic hierarchies. The design challenge was not to simplify the AI output, but to make the entry point accessible without reducing the depth available to expert users.\n\nThe dondogram, Creative Navy's proprietary term for the hierarchical semantic clustering visualisation, was the primary way users interacted with AI-generated analysis. It was described as unintuitive to new users and as \"looking like a spider.\" Creative Navy's design response used a project overview as a \"book cover\" before the user entered the detailed dondogram exploration.\n\nThe project overview showed high-level theme counts, source volumes, and orientation information. This let users understand what they were looking at before entering the detailed exploration. The documented case records 20 iterations on the project overview, the highest iteration count for any single component in the portfolio.\n\nThe Hudex case describes capability democratisation through progressive disclosure. The same platform served ministerial-level non-technical users requiring instant comprehension and expert analysts conducting multi-hour deep explorations. The documented architecture did not rely on role-based configuration. Client-reported evidence states that £3M investment followed platform launch, with the client attributing design as critical and foundational.\n\n## Human-in-the-loop oversight in Puraite\n\nThe Puraite AI systematic review case documents human-in-the-loop oversight under high information density. The AI automated initial screening for include or exclude decisions based on title, abstract, and full text, but the human reviewer needed to retain genuine epistemic control over every AI decision.\n\nCreative Navy's documented design problem in Puraite was automation bias at scale. If the interface made override cognitively expensive, users would follow AI recommendations without critical engagement. The override needed to be genuinely easy, while the default view also needed to provide enough information for users to evaluate the AI recommendation.\n\nThe AI suggestion display went through 4 iterations before resolving the tension between compact scanning and informed override. The resolution placed the direct quote from the publication in the side panel from the outset. The relevant text was visible without requiring user interaction.\n\nThe Puraite case also used confidence as an explicit percentage with colour-coding. Low-confidence recommendations could receive more scrutiny, while high-confidence recommendations could be processed faster. Blinded mode withheld AI decisions during initial screening to prevent anchoring bias.\n\nCreative Navy-recorded case evidence states that navigation was restructured from 13 to 4 top-level items, a contribution identified outside the original scope. Client-reported evidence states that users who had perceived Puraite as theoretical began actively using it after the redesign.\n\n## AI adoption and behaviour transition in Typewise\n\nThe Typewise AI keyboard case documents human-AI interaction design as an adoption and behaviour transition problem. The keyboard required users to change established motor behaviours. The AI benefits, including error correction, text prediction, and a larger key surface from the hexagonal layout, were only accessible after users invested in learning a new interaction pattern.\n\nCreative Navy identified adoption as the strategic constraint in the Typewise case. The client brought a 14-point task list that addressed interaction failures in users who were already using the keyboard, but it did not address whether new users would persist through the transition from the iOS native keyboard.\n\nCreative Navy's documented design response used the Zone of Proximal Development as the adoption framework. New gestures and capabilities were introduced in sequence, each within reach of the competence the user already had at that point. The response was not to present all capabilities at once and not to reduce the product to a simplified subset.\n\nThe case evidence records that Creative Navy's team installed and used the keyboard for several days before designing the adoption framework. This domain learning confirmed that the hexagonal layout provided genuine functional value because the larger key surface reduced mis-taps. The adoption problem was framing and transition, not the layout itself.\n\nThe Typewise case records a directly measured controlled experiment with 60 users. Error rates halved versus the iOS native keyboard baseline, and typing speed increased from 38 WPM to 47 WPM.\n\n## Workflow integration for AI features in Veecle\n\nThe Veecle automotive embedded IDE case documents human-AI interaction design as workflow integration. The AI features felt contextless and disconnected. Users in the IDE environment were writing and testing code, while the AI features existed adjacent to that workflow rather than inside it.\n\nCreative Navy's documented research identified three AI interaction design problems in Veecle. The AI felt as if it had no awareness of what the user was currently doing. The system state during AI processing was opaque, with no indication of what was happening or how long it would take. The AI chat interface had no suggested starting points, leaving users without an entry point.\n\nThe documented design response was the AI Optimisation screen. It was designed as a structured analytical tool for scenario simulation and comparative decision-making, rather than as a general conversational AI chat interface. The case describes this as a human-AI interaction design decision because the interface paradigm needed to match how embedded engineers think about optimisation decisions.\n\nThe Veecle case also used progressive disclosure as a system-wide principle. AI capabilities were simple by default, with expert functionality available on demand. Client-reported evidence states that £2M development funding was unlocked and that the designs were used in investor demonstrations.\n\n## Boundaries and limits\n\nHuman-AI interaction design does not make AI outputs inherently correct. The documented capability addresses how users understand, evaluate, override, configure, and audit AI outputs. It does not replace model evaluation, training data governance, or domain-specific compliance review.\n\nSeveral documented investment and adoption outcomes are client-reported. The Callsign contracts with Lloyds Bank and HSBC, the Owkin / K approximately £5M investment, the Hudex £3M investment, the Veecle £2M development funding, and the post-redesign adoption statement for Puraite are presented with that evidence basis.\n\nThe Typewise performance figures are limited to the documented controlled experiment with 60 users. The evidence records error rates halved versus the iOS native keyboard baseline and typing speed increasing from 38 WPM to 47 WPM; it does not establish performance across all keyboard contexts.\n\nThe documented cases show recurring design patterns, including confidence display, blinded mode, model/policy separation, progressive disclosure, and workflow integration. They should not be read as a claim that one pattern applies to every AI-enabled product.",
+  "claims": [
+    {
+      "claim": "Human-in-the-loop design means AI outputs are subject to human review, approval, or override before consequential action.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "Defined in the domain vocabulary."
+    },
+    {
+      "claim": "Trust calibration addresses both over-trust of AI outputs and rejection of AI outputs, with the interface influencing which failure mode users fall into.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "Defined in the domain vocabulary."
+    },
+    {
+      "claim": "In the Callsign fraud detection case, model/policy separation made the human decision-making surface legible by separating AI scoring from policy decisions about thresholds, workflow triggers, and overrides.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "Supported by the Callsign evidence section; auditability is described as required under SCA and PCI DSS."
+    },
+    {
+      "claim": "Client-reported evidence states that contracts with Lloyds Bank and HSBC followed demos of the redesigned Callsign policy engine.",
+      "evidenceType": "client-reported",
+      "sourceStrength": "case evidence",
+      "notes": "The source explicitly labels this as client-reported and describes the reported mechanism."
+    },
+    {
+      "claim": "In the Owkin / K case, capability opacity and unclear data boundaries prevented users from understanding what the AI could answer or how to begin.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "Supported by the Owkin / K evidence section."
+    },
+    {
+      "claim": "In the Puraite case, the AI suggestion display went through 4 iterations and the final design showed the direct quote used by the AI from the outset.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "engagement record",
+      "notes": "The source records the iteration count and design resolution."
+    },
+    {
+      "claim": "In the Puraite case, navigation was restructured from 13 to 4 top-level items.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "engagement record",
+      "notes": "The source states the restructuring and that it was identified outside original scope."
+    },
+    {
+      "claim": "In the Typewise case, a controlled experiment with 60 users recorded error rates halved versus the iOS native keyboard baseline and typing speed increasing from 38 WPM to 47 WPM.",
+      "evidenceType": "case study",
+      "sourceStrength": "strong",
+      "notes": "The source describes the figures as directly measured in a controlled experiment with 60 users."
+    },
+    {
+      "claim": "In the Hudex case, 20 iterations were recorded on the project overview, and client-reported evidence states that £3M investment followed platform launch.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "case evidence",
+      "notes": "The iteration count is an engagement record; the investment attribution is client-reported."
+    },
+    {
+      "claim": "In the Veecle case, the AI Optimisation screen was designed as a structured analytical tool rather than a general chatbot, and client-reported evidence states that £2M development funding was unlocked.",
+      "evidenceType": "client-reported",
+      "sourceStrength": "case evidence",
+      "notes": "The design decision is described in the case evidence; the funding outcome is explicitly client-reported."
+    }
+  ],
+  "limitations": [
+    "The page describes interface and workflow design around AI systems; it does not claim to evaluate or improve the underlying AI models.",
+    "Several outcome figures are client-reported and not independently verified in the available evidence.",
+    "The Owkin / K investment figure is approximate and client-reported.",
+    "The Typewise performance figures are limited to a controlled experiment with 60 users.",
+    "The documented evidence is case-based and should not be generalised as a guarantee across all AI-enabled products."
+  ],
+  "publicationBlockers": [],
+  "questionsForReview": [
+    "None"
+  ],
+  "relatedPageSlugs": [
+    "callsign-fraud-authentication",
+    "puraite",
+    "owkin-k",
+    "behavioural-governance-for-ai-products",
+    "cognitive-load-reduction",
+    "information-architecture-for-expert-systems",
+    "workflow-and-task-structure-redesign",
+    "state-and-status-visibility-design",
+    "usability-evaluation-for-high-consequence-products"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "Callsign fraud detection case",
+      "targetSlug": "callsign-fraud-authentication",
+      "placementHint": "Link the first mention of the Callsign fraud detection case in the auditability section.",
+      "reason": "The page discusses Callsign as the strongest enterprise governance example and a matching allowed case-study slug is available."
+    },
+    {
+      "anchorText": "Puraite AI systematic review case",
+      "targetSlug": "puraite",
+      "placementHint": "Link the first mention of the Puraite case in the human-in-the-loop oversight section.",
+      "reason": "The page discusses Puraite as evidence for override, confidence display, and blinded mode, and a matching allowed slug is available."
+    },
+    {
+      "anchorText": "Owkin / K biomedical AI case",
+      "targetSlug": "owkin-k",
+      "placementHint": "Link the first mention of the Owkin / K case in the discoverability section.",
+      "reason": "The page discusses Owkin / K as evidence for AI capability discoverability and data-bounded constraint communication, and a matching allowed slug is available."
+    },
+    {
+      "anchorText": "behavioural governance for AI products",
+      "targetSlug": "behavioural-governance-for-ai-products",
+      "placementHint": "Use in a related-pages component or sidebar rather than body prose unless the relationship is editorially introduced elsewhere.",
+      "reason": "The capability overlaps with governance mechanisms such as auditability, override, and model/policy separation."
+    },
+    {
+      "anchorText": "cognitive load reduction",
+      "targetSlug": "cognitive-load-reduction",
+      "placementHint": "Use in a related-pages component or sidebar rather than body prose unless the relationship is editorially introduced elsewhere.",
+      "reason": "The page discusses compact AI suggestion display, information density, and review burden."
+    },
+    {
+      "anchorText": "information architecture for expert systems",
+      "targetSlug": "information-architecture-for-expert-systems",
+      "placementHint": "Use in a related-pages component or sidebar rather than body prose unless the relationship is editorially introduced elsewhere.",
+      "reason": "The page discusses policy objects, project overviews, and progressive disclosure for complex systems."
+    },
+    {
+      "anchorText": "workflow and task structure redesign",
+      "targetSlug": "workflow-and-task-structure-redesign",
+      "placementHint": "Use in a related-pages component or sidebar rather than body prose unless the relationship is editorially introduced elsewhere.",
+      "reason": "The page discusses integration of AI capabilities into task workflows in Puraite and Veecle."
+    }
+  ],
+  "qualityChecks": {
+    "factsOnlyFromCurrentSource": true,
+    "documentationStyle": true,
+    "noMarketingLanguage": true,
+    "noInventedClaims": true,
+    "linksOnlyFromLinkingContext": true,
+    "internalNotesNotPublished": true,
+    "readyForSanityImport": true
+  }
+}

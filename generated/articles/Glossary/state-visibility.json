@@ -1,0 +1,141 @@
+{
+  "_type": "documentationPage",
+  "sourceFile": "Articles/Glossary/glossary--industry-terms--state-visibility.md",
+  "sourcePath": "sources/articles/Glossary/glossary--industry-terms--state-visibility.md",
+  "sanityDocumentIdCandidate": "documentationPage.state-visibility",
+  "title": "State Visibility",
+  "slug": {
+    "_type": "slug",
+    "current": "state-visibility"
+  },
+  "pageType": "glossary-term",
+  "category": "glossary",
+  "parentSlug": "industry-terms",
+  "childPageSlugs": [],
+  "excerpt": "State visibility is the degree to which users can determine what a system is currently doing without actively investigating or leaving their current task. It covers operational mode, active conditions, fault states, readiness level, and managed-component status.",
+  "metaTitle": "State Visibility",
+  "metaDescription": "State visibility defines how users read current system mode, status, fault state, readiness, and component condition without leaving the task.",
+  "summary": "State visibility describes whether users can read the current condition of a system under real operating conditions. It is especially important in complex systems where multiple components can occupy simultaneous states and transition independently of user action.",
+  "definition": "State visibility is the degree to which users can determine what the system is currently doing — including its operational mode, active conditions, fault states, readiness level, and managed-component status — without actively investigating or navigating away from the current task.",
+  "keyFacts": [
+    "State visibility concerns what the system is currently doing, not whether all system data exists somewhere in the interface.",
+    "State visibility is a prerequisite for action because users need to read system state before deciding whether to act, how to act, or whether a previous action worked.",
+    "Effective state visibility requires readability under real operating conditions, spatial consistency, and redundant communication channels.",
+    "Readability under operating conditions includes divided attention, time pressure, variable lighting, physical movement, and gloved hands.",
+    "Spatial consistency keeps state indicators in the same position across view changes, modes, and workflow transitions so users can rely on spatial memory.",
+    "Redundant communication channels combine spatial position, icon form, and colour so that the loss of one channel does not remove the signal.",
+    "In the Torqeedo maritime HMI case, a controlled experiment with 24 subjects recorded 50% faster energy state identification.",
+    "In the Torqeedo maritime HMI case, eye tracking with 7 subjects during sea trials recorded glance reduction during manoeuvres.",
+    "In the Kardion MCS Controller case, the layout stability standard specified that no element shifts position across any view transition; the evidence is formative evaluation only.",
+    "In the deSoutter Medical case, critical device states used spatial position, icon form, and colour because variable theatre lighting degraded single-channel colour communication."
+  ],
+  "tags": [
+    "state visibility",
+    "system state",
+    "complex systems",
+    "high-consequence systems",
+    "interface architecture",
+    "spatial consistency",
+    "redundant cues",
+    "operational mode",
+    "fault states"
+  ],
+  "bodyMarkdown": "## Definition\n\nState visibility is the degree to which users can determine what the system is currently doing — its operational mode, active conditions, fault states, readiness level, and the status of the components it is managing — without having to actively investigate or navigate away from their current task.\n\nState visibility is a prerequisite for action. Users who cannot read system state cannot know whether to act, how to act, or whether a prior action had the intended effect. In high-consequence and time-pressured contexts, state visibility is not a convenience feature; it is the condition that makes correct operational decisions possible.\n\n## Meaning in complex systems\n\nState visibility becomes an architectural problem when a system has many simultaneously active states across multiple components. Medical devices, maritime vessels, industrial control systems, and multi-role enterprise platforms may have state transitions that occur independently of user action.\n\nIn complex systems, state visibility requires a legible picture of the current multi-component condition without overloading the user with detail that is not currently being used. The interface must make relevant state available at the right visual level and at the right moment.\n\n## What effective state visibility includes\n\nEffective state visibility has three required conditions: readability under operating conditions, spatial consistency, and redundant communication channels.\n\nReadability under operating conditions means that state must remain communicable during actual use. Relevant conditions include divided attention, time pressure, variable lighting, physical movement, and gloved hands. A state indicator that is readable in a quiet office may be unreadable under operating theatre lighting or on a rolling vessel in heavy weather.\n\nSpatial consistency means that state indicators remain in the same spatial position across view changes, modes, and workflow transitions. Spatial memory is the cognitive mechanism that makes glance-readable state possible. If state indicators move, users must actively search for state information at the moment they most need it.\n\nRedundant communication channels mean that critical state is communicated through multiple simultaneous channels, such as spatial position, icon form, and colour. This protects the signal when a single channel degrades under variable lighting, noise, vibration, or other operating conditions.\n\n## How state visibility differs from related terms and UI components\n\nState visibility is not synonymous with operational clarity. Operational clarity is broader: it concerns whether users can understand information and act on it without unnecessary cognitive translation. State visibility is the subset concerned with what the system is currently doing. A system may communicate current condition clearly, while still requiring a better information hierarchy for the decisions users need to make.\n\nState visibility is not the same as data availability. A system can hold complete state data and still have poor state visibility if that data is buried in a secondary screen or communicated through a single channel that fails under operating conditions.\n\nState visibility is not a status bar, dashboard feature, or individual UI component. It is a property of the interface as a whole. A dedicated status bar can still fail state visibility if it is outside the user's primary visual field, fails under divided attention, or relies on colour alone.\n\n## Examples in practice\n\nThe Torqeedo maritime HMI case illustrates state visibility in a multi-component energy system. The vessel's propulsion, battery, and generation state were unified into a single coherent state display with stable spatial positions and synchronised update cadences. In the available case evidence, a controlled experiment with 24 subjects recorded 50% faster energy state identification, and eye tracking with 7 subjects during sea trials recorded glance reduction during manoeuvres.\n\nThe Kardion MCS Controller case illustrates spatial consistency as a clinical state visibility requirement. The layout stability standard specified that no element shifts position across any view transition because surgeons build spatial memory during procedures and depend on it for rapid state verification. The evidence basis is formative evaluation only; summative validation is the manufacturer's responsibility.\n\nThe deSoutter Medical case illustrates redundant communication channels for critical device states. Critical device states used spatial position, icon form, and colour because variable theatre lighting degrades single-channel colour-based communication. In the benchmark described, 6 of 8 competitor devices relied on colour alone. This evidence is surgeon-reported from design review sessions.\n\n## Evidence basis\n\nThe evidence for state visibility in this documentation combines conceptual definition with case evidence from complex-system interfaces.\n\nThe Torqeedo maritime HMI evidence includes a controlled experiment with 24 subjects and eye tracking with 7 subjects during sea trials. The documented result was 50% faster energy state identification and glance reduction during manoeuvres.\n\nThe Kardion MCS Controller evidence is limited to formative evaluation. The available case evidence supports the layout stability requirement and the rationale for spatial memory during procedures, but summative validation remains the manufacturer's responsibility.\n\nThe deSoutter Medical evidence is surgeon-reported from design review sessions. It supports the use of redundant non-colour cues for critical device states under variable theatre lighting, but it is not presented as independent measurement.\n\n## Boundaries and limits\n\nState visibility does not require every possible state detail to be visible at all times. In complex systems, the design problem is maintaining a legible current-state picture without overloading the user with information they are not using.\n\nState visibility does not guarantee correct action by itself. It establishes the condition for action by making system state readable; users still need appropriate information hierarchy, decision support, and workflow fit to act correctly.\n\nThe examples are context-specific. Torqeedo, Kardion, and deSoutter Medical illustrate different mechanisms of state visibility, but the evidence should not be generalised as proof that the same implementation pattern applies in all systems.\n\n## Related pages\n\nState visibility is closely related to operational clarity because both concern whether users can understand and act on interface information. State visibility is narrower: it concerns current system state.\n\nState visibility is also relevant to high-consequence contexts, where poor state reading can affect operational decisions under time pressure.",
+  "claims": [
+    {
+      "claim": "State visibility is the degree to which users can determine what the system is currently doing without actively investigating or navigating away from their current task.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "Direct definition from the glossary source."
+    },
+    {
+      "claim": "State visibility is a prerequisite for action because users need to read system state before deciding whether to act, how to act, or whether a prior action worked.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "Directly stated in the definition section."
+    },
+    {
+      "claim": "Effective state visibility requires readability under operating conditions, spatial consistency, and redundant communication channels.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "The source identifies these as the three conditions for effective state visibility."
+    },
+    {
+      "claim": "In the Torqeedo maritime HMI case, a controlled experiment with 24 subjects recorded 50% faster energy state identification, and eye tracking with 7 subjects during sea trials recorded glance reduction during manoeuvres.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "The source gives the participant counts, measured result, and sea-trial eye-tracking context."
+    },
+    {
+      "claim": "In the Kardion MCS Controller case, the layout stability standard that no element shifts position across any view transition was derived from the clinical state visibility requirement.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "The source states that the evidence is formative evaluation only and that summative validation is the manufacturer's responsibility."
+    },
+    {
+      "claim": "In the deSoutter Medical case, critical device states used redundant non-colour cues because variable theatre lighting degrades colour-only communication; 6 of 8 benchmarked competitor devices relied on colour alone.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "The source states that this evidence is surgeon-reported from design review sessions."
+    }
+  ],
+  "limitations": [
+    "State visibility is a property of the interface as a whole, not a guarantee that any individual status bar or dashboard element will work under operating conditions.",
+    "Data availability alone does not establish state visibility; the state data must be surfaced at the right visual level, through reliable channels, and at the right moment.",
+    "The Torqeedo evidence is case-specific and tied to the described maritime HMI design and study conditions.",
+    "The Kardion MCS Controller evidence is formative evaluation only; summative validation is the manufacturer's responsibility.",
+    "The deSoutter Medical evidence is surgeon-reported from design review sessions and is not presented as independent measurement."
+  ],
+  "publicationBlockers": [],
+  "questionsForReview": [
+    "None"
+  ],
+  "relatedPageSlugs": [
+    "operational-clarity",
+    "high-consequence",
+    "cognitive-load",
+    "transition-clarity",
+    "kardion"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "operational clarity",
+      "targetSlug": "operational-clarity",
+      "placementHint": "Use in the section “How state visibility differs from related terms and UI components.”",
+      "reason": "The source explicitly distinguishes state visibility from operational clarity."
+    },
+    {
+      "anchorText": "high-consequence contexts",
+      "targetSlug": "high-consequence",
+      "placementHint": "Use in the definition or related pages section where high-consequence and time-pressured contexts are discussed.",
+      "reason": "The source states that state visibility is especially important in high-consequence and time-pressured contexts."
+    },
+    {
+      "anchorText": "Kardion MCS Controller",
+      "targetSlug": "kardion",
+      "placementHint": "Use in the examples in practice section where the Kardion case is described.",
+      "reason": "The source names Kardion as a case illustration, and the linking context allows the Kardion page."
+    },
+    {
+      "anchorText": "transition clarity",
+      "targetSlug": "transition-clarity",
+      "placementHint": "Use near the discussion of state indicators across view changes, modes, and workflow transitions if an editorial link is desired.",
+      "reason": "The source discusses state transitions and spatial consistency across workflow transitions."
+    },
+    {
+      "anchorText": "cognitive load",
+      "targetSlug": "cognitive-load",
+      "placementHint": "Use near the complex-systems section where the page discusses avoiding overload while maintaining a legible state picture.",
+      "reason": "The source describes the need to maintain state visibility without overloading the user."
+    }
+  ],
+  "qualityChecks": {
+    "factsOnlyFromCurrentSource": true,
+    "documentationStyle": true,
+    "noMarketingLanguage": true,
+    "noInventedClaims": true,
+    "linksOnlyFromLinkingContext": true,
+    "internalNotesNotPublished": true,
+    "readyForSanityImport": true
+  }
+}

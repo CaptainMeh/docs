@@ -1,0 +1,188 @@
+{
+  "_type": "documentationPage",
+  "sourceFile": "Articles/Glossary/glossary--performance-in-reality__2_.md",
+  "sourcePath": "sources/articles/Glossary/glossary--performance-in-reality__2_.md",
+  "sanityDocumentIdCandidate": "documentationPage.performance-in-reality",
+  "title": "Performance In Reality",
+  "slug": {
+    "_type": "slug",
+    "current": "performance-in-reality"
+  },
+  "pageType": "concept",
+  "category": "glossary",
+  "parentSlug": "our-concepts",
+  "childPageSlugs": [],
+  "excerpt": "Performance in reality is the principle that product performance must be designed and assessed under the real conditions in which the product is used. It contrasts with performance in demos, performance in theory, and performance at launch.",
+  "metaTitle": "Performance In Reality Definition",
+  "metaDescription": "Performance in reality means designing and measuring products under real operating conditions rather than demos, theory, or launch-day assumptions.",
+  "summary": "Performance in reality is Creative Navy's recurring principle that useful product performance is concrete, condition-dependent, and evidenced under operational constraints rather than assumed from controlled demonstrations or abstract design reasoning.",
+  "definition": "Performance in reality is the principle that product performance must be anchored in the concrete conditions, constraints, and operational realities of actual use, not derived from demos, theory, or launch-day assumptions.",
+  "keyFacts": [
+    "Performance in reality is described as a recurring principle rather than a single narrow term.",
+    "The principle states that performance is always concrete and anchored in specific conditions, constraints, and operational realities.",
+    "It is contrasted with performance in demos, performance in theory, and performance at launch.",
+    "Real conditions named for design include pressure, interruption, edge cases, degraded states, high cognitive load, multi-role coordination, shift changes, time constraints, recoverable errors, and unfamiliar scenarios.",
+    "User observation and domain learning matter because teams cannot design for real conditions they have not observed.",
+    "Torqeedo maritime HMI testing included 12 sea trials over 6 months with 15 professional captains under real maritime conditions.",
+    "Triopsis workforce management SaaS outcomes were measured in the live product through product analytics from real users in operational conditions.",
+    "Beissbarth automotive calibration time fell from 18 to 12 minutes per vehicle, client-measured across 8 real deployment locations.",
+    "Stromer e-bike testing used 3-day real-route usability tests and eye tracking during actual riding, with a two-year follow-up using the same methodology.",
+    "Squaremind post-redesign ecological testing recorded 27 of 29 independent completions and 12 of 12 recoveries among users who got stuck."
+  ],
+  "tags": [
+    "performance in reality",
+    "operational conditions",
+    "demo performance",
+    "domain learning",
+    "field measurement",
+    "product analytics",
+    "cognitive load",
+    "degraded states",
+    "real-use testing"
+  ],
+  "bodyMarkdown": "## Definition\n\nPerformance in reality is the principle that product performance must be designed and assessed under the concrete conditions in which the product is actually used. In Creative Navy's documentation, the phrase refers to performance that is anchored in specific constraints, operating pressures, and domain realities rather than inferred from controlled demonstrations or abstract design reasoning.\n\nPerformance in reality is a recurring principle rather than a single narrow term. The consistent framing is \"performance in reality, not in demos\": a product should be grown from observed operational reality if it is expected to perform competitively under real use.\n\n## The problem addressed by performance in reality\n\nPerformance in reality addresses the gap between systems that appear to work under controlled conditions and systems that survive real operational use. Demo users are not under pressure, edge cases do not reliably appear, real cognitive load is absent, workarounds do not show up, and the interface has not been used for 8 hours.\n\nThe failure pattern is that a product works in demos but not in real use. Creative Navy's documentation treats this as common because demos remove many of the conditions that determine whether a system actually works: interruption, time pressure, degraded states, unfamiliar scenarios, and errors that need recovery.\n\nPerformance in reality is also contrasted with performance in theory and performance at launch. Performance in theory derives design from best practices rather than observed reality. Performance at launch optimises for launch-day presentation rather than operational longevity.\n\n## Real operating conditions that define performance\n\nPerformance in reality treats pressure, interruption, edge cases, degraded states, high cognitive load, multi-role coordination, shift changes, time constraints, recoverable errors, and unfamiliar scenarios as design inputs. These conditions are not secondary details; they are part of what defines whether a product performs.\n\nThis is why user observation and domain learning matter in Creative Navy's documentation. A team cannot design reliably for real conditions it has not observed, and it cannot account for workarounds, decision pressure, and operational constraints from abstract requirements alone.\n\nPerformance in reality is also the operational expression of Creative Navy's infrastructure stewardship philosophy. The underlying claim is that infrastructure must work under real conditions, not only in idealised demonstrations.\n\n## Torqeedo maritime HMI as measured performance under real maritime conditions\n\nThe Torqeedo maritime HMI example shows performance in reality through systematic testing against actual operating conditions. The documented work covered 12 sea trials over 6 months with 15 professional captains, including temperatures from −5°C to +35°C, night operations from late evening through early morning, vibration, sharp vessel movement, glare from cold water, rain, and gloved touchscreen interaction.\n\nThese conditions were treated as normal operating conditions for professional maritime work rather than as edge cases. The interface was designed for them from the start, not adapted after the fact.\n\nThe comparative trials used real maritime conditions rather than lab simulations. Captains identified key energy states 50% faster in a controlled experiment with 24 subjects, and glance counts during manoeuvres were measured using eye tracking in actual sea trials with 7 subjects. The performance claim was tied to the conditions that define performance in that domain.\n\n## Triopsis workforce management SaaS as live-product performance under peak load\n\nThe Triopsis workforce management SaaS example shows performance in reality in a scheduling environment where users work under peak load. Schedulers handled weather incidents, conflicting job locations, overlapping assignments, and sudden crew shortages simultaneously.\n\nCreative Navy documented this operational reality through 3 in-situ observation sessions before redesign decisions were made. The redesign addressed these conditions directly: predictive conflict indicators surfaced problems before users encountered them mid-task under pressure, and weather incidents, partial completions, and delayed jobs were treated as normal workflow states rather than exceptional cases requiring workarounds.\n\nPerformance was measured in the live product through product analytics from real users in operational conditions. The documented outcomes were 62% faster job discovery, 83% faster job sequence optimisation, and 58% faster weekly planning.\n\n## Elsner smart home controller as performance shaped by physical installation conditions\n\nThe Elsner smart home controller example shows performance in reality at the level of physical installation and everyday use. The controller is installed at 140cm height and used primarily in daylight, with evening use under limited luminance as a secondary context.\n\nThese physical conditions were treated as design inputs. Touch target sizing was calibrated to ergonomics research minimum dimensions and tested specifically for standing-height use. Automatic dark mode was triggered at sunset based on observed real use patterns.\n\nThe design also treated sensor fault states as normal operational conditions. Delayed readings, contradictory values, and calibration drift were designed for explicitly rather than treated only as exceptional error cases. The interface was tested in prototype on actual hardware under real conditions, not only on screen simulations.\n\n## Beissbarth automotive calibration as client-measured field performance\n\nThe Beissbarth automotive calibration example shows performance in reality in a workshop setting where the interface conditions were not reproducible in a lab. Technicians read the embedded OEM display from 2–3 metres while moving around the vehicle, gloves restricted fine touch interaction, lighting varied, and reflective surfaces reduced contrast.\n\nThe calibration sequence did not pause for interface interpretation. A delay in reading a value slowed the calibration itself and could introduce measurement error. Creative Navy treated these as design conditions from the start, including option space mapping variants evaluated under reproduced workshop lighting and viewing distances rather than only on a desk screen.\n\nThe outcome evidence was client-measured across 8 real deployment locations. Calibration time fell from 18 to 12 minutes per vehicle. The result is described as field measurement from production deployments rather than usability testing data.\n\n## Gexcon CFD simulation software as deployment-measured performance in non-linear workflows\n\nThe Gexcon CFD simulation software example shows performance in reality for engineers who used the system alongside a 3-dimensional facility view. The interface ran in parallel with a complex spatial representation of the physical installation being assessed.\n\nHigh-fidelity prototypes were tested in this configuration rather than in isolation. The interaction model had to remain stable as attention shifted between the facility view, simulation parameters, and system controls. Non-linear workflows, where engineers moved between configuration, verification, and interpretation without following a fixed path, were treated as the normal operating condition.\n\nPerformance was measured in real deployments. Time to first successful simulation fell from 4 days to 6 hours, and configuration errors per simulation fell from 5–8 to 1–2. Both figures are described as operational deployment data rather than controlled testing data.\n\n## Stromer e-bike embedded display as longitudinal performance in actual riding\n\nThe Stromer e-bike embedded display example applies performance in reality to an interface used while riding. The display is read during physical activity under variable conditions, including urban streets, countryside terrain, varying light, and weather, while the rider's eyes must leave the road to read the display.\n\nCreative Navy designed the usability testing methodology around actual operating conditions. 10 participants rode the bike for 3 days each on real routes in Munich and surrounding countryside, logging issues as they occurred on a 4-level severity scale. The 3-day duration was used to encounter the range of system states, warning types, and terrain conditions that constitute actual use.\n\nThe eye tracking component measured glance duration during actual riding on the same routes. 5 participants rode the same terrain used in the usability test. Average glance duration before redesign was 4.32 seconds. The 2-second safety threshold cited from Klauer et al. (2006), NHTSA Report No. DOT HS 810 594, came from naturalistic driving study data. The post-redesign figure was 1.89 seconds under the same real conditions.\n\nThe two-year follow-up used the same test methodology after continued real-world use. Warnings remained absent from the issues list. In Creative Navy's documentation, this is treated as a direct example of performance in reality over the timescale that determines whether an operational improvement is durable or transient.\n\n## Squaremind dermatology scanning device as ecological evidence before demos\n\nThe Squaremind dermatology scanning device example shows performance in reality as the condition for a commercial claim. The product's core claim was that patients could complete a full-body dermatology scan without clinical supervision. Clinics considering purchase needed to know whether real patients of varying ages and physical literacy could complete the process unassisted in a real clinic environment.\n\nAn internal Squaremind test before the redesign had produced 2 completions from 14 attempts. Creative Navy designed the post-redesign testing to match the conditions under which the commercial claim would have to hold.\n\nTesting was conducted in 2 real locations: London with 12 users and Paris with 17 users. Participants received a free measurement as they would in an actual clinic, with no researcher guidance during the process. The sample was age-stratified into 20–35, 35–45, and 45–65 groups. An independent dermatologist was hired by Creative Navy to co-conduct the sessions. Binary completion was the primary measure, and failure points and recovery times were catalogued.\n\nThe 29-user total was not large by research standards, but the protocol was designed to produce ecological, age-stratified, clinically co-validated evidence. The result was 27 of 29 independent completions and 12 of 12 recoveries among users who got stuck. 9 clinics subsequently purchased the system, and Creative Navy attended 5 of the 9 demos as silent observers.\n\n## How performance in reality differs from related performance claims\n\nPerformance in reality differs from performance in demos because demo performance removes many of the conditions that determine whether a product works under real use. A system can appear stable when users are calm, workflows are scripted, and edge cases are absent, while failing when interruptions, fatigue, degraded states, or recovery paths appear.\n\nPerformance in reality differs from performance in theory because theoretical performance is derived from best practices or abstract reasoning. Performance in reality requires observation of the domain and testing against the concrete conditions that define use.\n\nPerformance in reality differs from performance at launch because launch-day optimisation does not establish operational longevity. The Stromer two-year follow-up is the clearest documented example of the distinction: the redesign was re-tested after continued real-world use using the same methodology.\n\n## Evidence basis and limits of the concept\n\nThe evidence for performance in reality is case-based and varies by engagement. The examples include controlled experiments under real maritime conditions, eye tracking during actual sea trials and actual riding, live-product analytics, client-measured deployment data, operational deployment data, prototype testing on actual hardware, and ecological testing in real clinic settings.\n\nThe evidence should not be read as a universal guarantee that any design process will produce the same outcomes. The principle is narrower: outcomes are more credible when they are measured under the operational conditions that define performance in the relevant domain.\n\nThe Squaremind test also shows a stated evidence limit. The 29-user total was not large by research standards, even though the protocol was designed to produce the right class of ecological evidence for the commercial claim.\n\nCreative Navy's longitudinal evidence set is described as broader but lower-resolution than the Stromer two-year re-test. The Stromer re-test used the same instrument 2 years later, while the broader longitudinal return set is described as observed or client-reported across many engagements.\n\n## Related pages\n\nRelated concept pages include domain learning, cognitive load, degraded mode, option space mapping, and workflow robustness. Related documented examples include Stromer, Beissbarth, Triopsis, and Squaremind where those case pages are available in the knowledge base.",
+  "claims": [
+    {
+      "claim": "Performance in reality means that product performance is concrete and anchored in specific conditions, constraints, and operational realities rather than demos, theory, or launch-day assumptions.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "moderate",
+      "notes": "The definition follows the recurring principle described in the current concept material."
+    },
+    {
+      "claim": "Demo performance can hide real-use failure because demo users are not under pressure, edge cases do not appear, real cognitive load is absent, workarounds do not show up, and extended use is not represented.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "moderate",
+      "notes": "The claim is stated as the problem with demo performance in the concept material."
+    },
+    {
+      "claim": "The Torqeedo maritime HMI example tested performance under real maritime conditions through 12 sea trials over 6 months with 15 professional captains.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "Conditions included temperature range, night operation, vibration, vessel movement, glare, rain, and gloved touchscreen interaction."
+    },
+    {
+      "claim": "The Triopsis workforce management SaaS redesign was measured in the live product through product analytics showing 62% faster job discovery, 83% faster job sequence optimisation, and 58% faster weekly planning.",
+      "evidenceType": "field-measured",
+      "sourceStrength": "case evidence",
+      "notes": "The concept material states these figures came from real users in real operational conditions."
+    },
+    {
+      "claim": "The Beissbarth automotive calibration outcome was client-measured across 8 real deployment locations, with calibration time falling from 18 to 12 minutes per vehicle.",
+      "evidenceType": "client-measured",
+      "sourceStrength": "case evidence",
+      "notes": "The source frames this as field measurement from production deployments rather than usability testing data."
+    },
+    {
+      "claim": "The Gexcon CFD simulation software outcomes came from operational deployment data: time to first successful simulation fell from 4 days to 6 hours, and configuration errors per simulation fell from 5–8 to 1–2.",
+      "evidenceType": "field-measured",
+      "sourceStrength": "case evidence",
+      "notes": "The concept material states both figures came from real deployments."
+    },
+    {
+      "claim": "The Stromer e-bike embedded display was evaluated through 3-day real-route usability tests and eye tracking during actual riding, with a two-year follow-up using the same methodology.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "case evidence",
+      "notes": "The source describes three rounds: pre-redesign, post-redesign, and two-year follow-up."
+    },
+    {
+      "claim": "The Stromer e-bike display reduced average glance duration from 4.32 seconds before redesign to 1.89 seconds after redesign under the same real riding conditions.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "case evidence",
+      "notes": "The source compares the figures with the 2-second safety threshold cited from Klauer et al. (2006), NHTSA Report No. DOT HS 810 594."
+    },
+    {
+      "claim": "The Squaremind dermatology scanning device post-redesign ecological test recorded 27 of 29 independent completions and 12 of 12 recoveries among users who got stuck.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "The source notes that the 29-user sample was not large by research standards but was ecological, age-stratified, and clinically co-validated."
+    }
+  ],
+  "limitations": [
+    "Performance in reality is described as a recurring principle rather than a single narrow defined term.",
+    "The examples use different evidence types, including controlled experiments, live-product analytics, client-measured deployment data, operational deployment data, prototype testing, eye tracking, ecological testing, and longitudinal follow-up.",
+    "The documented Squaremind test had 29 users, which the source explicitly states was not large by research standards.",
+    "The broader longitudinal return evidence is described as broader but lower-resolution than the Stromer two-year re-test.",
+    "The concept supports claims about evidence under real conditions; it does not establish a universal guarantee of outcome replication across domains."
+  ],
+  "publicationBlockers": [],
+  "questionsForReview": [
+    "None"
+  ],
+  "relatedPageSlugs": [
+    "domain-learning",
+    "cognitive-load",
+    "degraded-mode",
+    "workflow-robustness",
+    "option-space-mapping",
+    "stromer-ebike",
+    "beissbarth",
+    "triopsis-workforce-management-saas",
+    "squaremind"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "domain learning",
+      "targetSlug": "domain-learning",
+      "placementHint": "In the section on real operating conditions and observation.",
+      "reason": "The concept material states that user observation and having the team attempt to do the user's job matter because real conditions must be observed."
+    },
+    {
+      "anchorText": "cognitive load",
+      "targetSlug": "cognitive-load",
+      "placementHint": "In the section listing real operating conditions that define performance.",
+      "reason": "High cognitive load is one of the real conditions named in the concept material."
+    },
+    {
+      "anchorText": "degraded mode",
+      "targetSlug": "degraded-mode",
+      "placementHint": "In the section listing real operating conditions that define performance.",
+      "reason": "Degraded states are listed as real conditions that products must be designed for."
+    },
+    {
+      "anchorText": "option space mapping",
+      "targetSlug": "option-space-mapping",
+      "placementHint": "In the Beissbarth automotive calibration example.",
+      "reason": "The Beissbarth example explicitly mentions option space mapping variants evaluated under workshop lighting and viewing distances."
+    },
+    {
+      "anchorText": "Stromer e-bike embedded display",
+      "targetSlug": "stromer-ebike",
+      "placementHint": "In the Stromer longitudinal performance section.",
+      "reason": "The Stromer example is one of the detailed grounded examples of performance in reality."
+    },
+    {
+      "anchorText": "Beissbarth automotive calibration",
+      "targetSlug": "beissbarth",
+      "placementHint": "In the Beissbarth client-measured field performance section.",
+      "reason": "The Beissbarth example is one of the detailed grounded examples of performance in reality."
+    },
+    {
+      "anchorText": "Triopsis workforce management SaaS",
+      "targetSlug": "triopsis-workforce-management-saas",
+      "placementHint": "In the Triopsis live-product performance section.",
+      "reason": "The Triopsis example is one of the detailed grounded examples of performance in reality."
+    },
+    {
+      "anchorText": "Squaremind dermatology scanning device",
+      "targetSlug": "squaremind",
+      "placementHint": "In the Squaremind ecological evidence section.",
+      "reason": "The Squaremind example is one of the detailed grounded examples of performance in reality."
+    },
+    {
+      "anchorText": "workflow robustness",
+      "targetSlug": "workflow-robustness",
+      "placementHint": "In the related pages section.",
+      "reason": "The concept concerns whether workflows continue to perform under real operational constraints."
+    }
+  ],
+  "qualityChecks": {
+    "factsOnlyFromCurrentSource": true,
+    "documentationStyle": true,
+    "noMarketingLanguage": true,
+    "noInventedClaims": true,
+    "linksOnlyFromLinkingContext": true,
+    "internalNotesNotPublished": true,
+    "readyForSanityImport": true
+  },
+  "__sourceCategoryDir": "Glossary"
+}

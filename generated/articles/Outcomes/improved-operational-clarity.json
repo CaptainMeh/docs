@@ -1,0 +1,195 @@
+{
+  "_type": "documentationPage",
+  "sourceFile": "Articles/Outcomes/outcomes--improved-operational-clarity.md",
+  "sourcePath": "sources/articles/Outcomes/outcomes--improved-operational-clarity.md",
+  "sanityDocumentIdCandidate": "documentationPage.improved-operational-clarity",
+  "title": "Improved Operational Clarity",
+  "slug": {
+    "_type": "slug",
+    "current": "improved-operational-clarity"
+  },
+  "pageType": "outcome",
+  "category": "evidence",
+  "parentSlug": "operational-outcomes",
+  "childPageSlugs": [],
+  "excerpt": "Operational clarity is the degree to which system information can be understood and acted on without active interpretation or reconstruction. The documented evidence includes controlled experiments, product analytics, field observations, client-measured results, client-reported changes, and one randomised A/B test.",
+  "metaTitle": "Improved Operational Clarity",
+  "metaDescription": "Definition and evidence for operational clarity, with quantified results from Torqeedo, Triopsis, Gericke, Gexcon, WCO/IPM, Akrivia and eToro.",
+  "summary": "Improved operational clarity means reducing the cognitive translation effort between what an interface shows and what a user needs to do. The available evidence spans maritime HMI, workforce management, clinical governance, customs intelligence, CFD simulation, industrial process control, and consumer finance.",
+  "definition": "Operational clarity is the degree to which information in a system can be understood and acted on without active interpretation or reconstruction.",
+  "keyFacts": [
+    "Operational clarity is distinct from information availability: information may be present in a system but still require users to reconstruct state from fragments.",
+    "Information hierarchy, state legibility, recognition over recall, and action-readiness are mechanisms through which operational clarity is achieved.",
+    "The Torqeedo maritime HMI evidence records 50% faster energy state identification in a controlled environment experiment with 24 subjects.",
+    "Torqeedo sea trials recorded tasks previously requiring multiple screen transitions becoming confirmable with a single glance, measured via eye tracking with 7 subjects.",
+    "Triopsis live product analytics recorded 62% faster job discovery, 83% faster job sequence optimisation, and 58% faster weekly planning.",
+    "Akrivia Health reported that governance reviewers could verify cohort construction logic without escalating to the research team after redesign.",
+    "WCO/IPM reported a 78% training cost reduction, framed partly as an operational clarity outcome.",
+    "Gexcon recorded time to first successful simulation falling from 4 days to 6 hours across real deployments.",
+    "Gericke client-measured fault-diagnosis time fell from 24 to 8 min, 38 to 12 min, and 68 to 20 min across three sites within a confirmed single-variable window.",
+    "eToro client-measured A/B evidence recorded median time to first trade falling from 11.8 to 8.6 min and discovery-to-trade conversion rising from 5.1% to 7.4%, with stated framing conditions."
+  ],
+  "tags": [
+    "operational clarity",
+    "information hierarchy",
+    "state legibility",
+    "recognition over recall",
+    "action-readiness",
+    "cognitive load",
+    "evidence",
+    "operational outcomes"
+  ],
+  "bodyMarkdown": "## Summary\n\nOperational clarity describes whether users can understand system state and act on it without active interpretation or reconstruction. It is not the same as information availability. A system can contain all required information while still forcing users to cross-reference screens, infer state from fragments, or decide for themselves which information matters most.\n\nThe operational problem is cognitive translation effort: the mental work required to convert interface information into an actionable understanding. Under time pressure or elevated cognitive load, this translation effort accumulates across a working shift and creates the conditions for errors.\n\nAn interface with improved operational clarity reduces the translation from \"what does the system show?\" to \"what do I need to do?\" to the minimum required by the task. Users read system state rather than reconstructing it. Information relevant to the current decision appears at the point of decision. Visual hierarchy communicates importance and urgency without requiring active assessment.\n\n## Outcome described: operational clarity as action-ready state legibility\n\nOperational clarity is achieved when the interface makes the current operating situation legible enough for action. The relevant vocabulary is precise:\n\n- **Operational clarity** is the degree to which information in a system can be understood and acted on without active interpretation or reconstruction.\n- **Information hierarchy** is the visual and structural organisation of information by importance and urgency. It is the mechanism through which operational clarity is achieved.\n- **State legibility** is the ability to read system state without interpretation. It differs from state visibility, which concerns whether the state is shown; legibility concerns whether the shown state can be understood.\n- **Recognition over recall** is the cognitive principle that recognising information from an interface element costs less than recalling it from memory. It is a mechanism for operational clarity under time pressure and divided attention.\n- **Action-readiness** means having sufficient context at a decision point to act without additional lookup. It is the operational expression of information hierarchy done correctly.\n- **The three operational questions** are \"what is happening?\", \"why is it happening?\", and \"what should I do next?\" In monitoring-and-intervention interfaces, inability to answer these questions without reconstruction indicates information availability without operational clarity.\n- **Cognitive translation effort** is the mental work required to convert interface information into actionable understanding. Operational clarity reduces this effort.\n\n## Torqeedo maritime HMI evidence: faster energy state identification and fewer glances during manoeuvres\n\nThe Torqeedo maritime HMI evidence is the strongest quantified evidence for improved operational clarity in the documented set. The clarity problem was that propulsion status, battery state, and generator information had been distributed across separate screens. Captains had to reconstruct vessel energy state from fragments during manoeuvres, when navigational demands were highest.\n\nA redesigned interface produced 50% faster energy state identification compared with the legacy UI. This was directly measured in a controlled environment experiment with 24 subjects.\n\nDuring actual sea trials, tasks that had previously required multiple screen transitions became confirmable with a single glance. This was measured via eye tracking with 7 subjects during live vessel manoeuvres. The operational context matters because eye tracking during live manoeuvres measures visual attention under the conditions that determine whether the design works, rather than under controlled lab conditions.\n\nThe documented mechanism was a unified energy state view that integrated propulsion, battery, and generation into a single coherent display with stable spatial positions. Captains could read vessel state as a single object instead of assembling it from three sources.\n\n## Triopsis workforce management evidence: faster discovery, sequencing, and weekly planning in live product analytics\n\nThe Triopsis workforce management evidence records improved operational clarity in a live product environment. The clarity problem was that schedulers needed to find jobs, assess their state, and sequence them efficiently, but the previous interface required multiple lookups and cross-references to assemble the information needed for each decision.\n\nProduct analytics from real users operating the live system recorded 62% faster job discovery, 83% faster job sequence optimisation, and 58% faster weekly planning. These figures were not usability testing task times; they were measured in live product analytics.\n\nThe documented mechanism was a redesigned information hierarchy. State information relevant to each decision was present at the decision point, and predictive conflict indicators surfaced future problems before they required active scanning.\n\n## Akrivia Health evidence: cohort logic became independently reviewable by governance reviewers\n\nThe Akrivia Health clinical research platform evidence describes operational clarity in a governance context. Governance reviewers needed to verify cohort construction logic built by researchers, but the query structure was not independently readable. Reviews required the researcher's direct involvement to explain what had been done.\n\nAfter redesign, client-reported evidence indicated that governance reviewers could verify cohort construction logic without escalating to the research team. This is a client-reported operational change, not an independently measured result.\n\nThe documented mechanism was that cohort query structure became permanently visible and readable in a format that a governance reviewer unfamiliar with the original research hypothesis could follow independently. The information had already been present in the system; the redesign made it legible to a different role under different conditions.\n\n## WCO/IPM evidence: recognition-based interaction reduced training dependency at global deployment scale\n\nThe WCO/IPM customs intelligence evidence describes operational clarity at global deployment scale. Inspection officers across 107 member administrations needed to act on alert and case information quickly during time-pressured inspections with variable connectivity and device conditions.\n\nThe documented design standard applied recognition over recall, reduced choices per screen, and progressive disclosure. These choices were directed at reducing the cognitive translation effort between seeing information and knowing what to do.\n\nThe client-reported training cost reduction was 78%. The evidence frames this partly as an operational clarity outcome: when the interface encodes contextual guidance that previously required formal instruction, training requirements reduce as a direct consequence.\n\nThe documented mechanism was an information architecture rebuilt around recognition-based interaction. Relevant information was surfaced in context rather than requiring navigation, and micro-hints supported first use of complex actions.\n\n## Gexcon CFD simulation evidence: reduced reconstruction effort during expert simulation setup\n\nThe Gexcon CFD simulation evidence describes operational clarity in an expert workflow. Simulation setup required engineers to cross-reference requirements, hold configuration state in working memory, and reconstruct what had been set at each stage. Before redesign, this clarity failure produced 5–8 configuration errors per simulation.\n\nGexcon measured time to first successful simulation across real deployments as falling from 4 days to 6 hours. The documented interpretation is that a substantial portion of this reduction was operational clarity: engineers could follow the simulation setup logic without the reconstruction effort required by the previous interface.\n\nThe documented mechanism was that required values were surfaced at the step where they were needed, configuration state remained persistently visible across the setup workflow, and warning architecture made incomplete and contradictory inputs visible before the simulation ran.\n\n## Gericke industrial HMI evidence: fault-diagnosis time fell across three process sites\n\nThe Gericke industrial HMI evidence describes operational clarity in a process-control context. The legacy Easydos Pro interface made information available through alarm lists, parameters, and error codes, but operators could not reliably translate that information into action.\n\nAcross three sites, the research found operators unable to reliably answer the three operational questions: what is happening, why is it happening, and what should I do next. Under ambiguity, operators reconstructed state slowly, diagnosed faults wrongly, or stopped healthy equipment precautionarily.\n\nThe success criterion for redesign was stated in operational-clarity terms: whether operators could answer the three questions with less navigation and fewer interpretation errors. Client-measured fault-diagnosis time fell by roughly two-thirds at every site: 24 to 8 min at a Swiss pharma site, 38 to 12 min at an Italian food site, and 68 to 20 min at a Swiss chemicals site. Manual interventions per shift also fell sharply, including 10 to 4, 19 to 8, and 42 to 15.\n\nThe documented mechanism combined a live process mimic showing state on the diagram, a root-cause alarm hierarchy that collapsed secondary alarms beneath their cause, contextual error explanation replacing raw codes, and a three-tier progressive-complexity model for operational, diagnostic, and engineering detail.\n\nThe Gericke evidence basis is client-measured by Gericke, not Creative Navy-measured. The figures are described within a confirmed single-variable window: no hardware, sensor, mechanical, training, recipe, or process changes; four months post-go-live; and three sites described by type and geography only. The figures should be framed as interface-attributable within that window, not as caused.\n\n## eToro evidence: exposure became legible at the point of financial decision\n\nThe eToro multi-asset social trading evidence describes operational clarity at the point of a financial decision. The pre-redesign buy flow was price- and quantity-driven: users entered an amount, reviewed a simplified summary, and confirmed. Users had information, but not a structured understanding of exposure or what a given trade implied for their portfolio in risk terms.\n\nA concrete symptom was that profit was displayed alongside deposits, so users misattributed gains and losses across the whole account rather than the specific position they were opening. Decisions were made in a state of partial comprehension, particularly around downside scenarios and relative position sizing.\n\nThe redesign restructured the buy flow from execution-based to exposure-based decision-making. Portfolio impact was established first, then structured scenario framing described how the position might behave across market movements as uncertainty ranges rather than predictions, then position sizing used downside-limiting guardrails. On the explore surface, separating social signals from market performance from volatility made the kind of signal legible rather than blended.\n\nClient-measured evidence from a randomised A/B with a persistent holdout recorded median time to first trade falling from 11.8 to 8.6 min, a 27% reduction. Discovery-to-trade conversion rose from 5.1% to 7.4%. The evidence also records no increase in early-session drop-off and no reduction in exploration depth, which is the framing condition that supports reading the result as less reconstruction effort and fewer hesitation loops rather than faster or more impulsive trading.\n\nThe eToro evidence basis differs from the other evidence on this page. It is a causal behavioural measurement from an A/B test, while Torqeedo and Gericke measure read-and-act speed directly and Triopsis measures downstream productivity. The evidence also states that eToro involved no AI.\n\n## Evidence basis across the documented examples\n\nThe evidence for improved operational clarity uses different measurement types and should not be treated as a single uniform evidence category.\n\nTorqeedo combines a controlled environment experiment with 24 subjects and eye tracking with 7 subjects during actual sea trials. Triopsis uses product analytics from real users operating the live system. Akrivia Health uses a client-reported operational change. WCO/IPM uses a client-reported training cost reduction. Gexcon uses Gexcon-measured deployment data. Gericke uses client-measured process-site data within a confirmed single-variable window. eToro uses a client-measured randomised A/B with a persistent holdout.\n\nThe common pattern is not that every result proves the same causal mechanism in the same way. The common pattern is that redesigned information hierarchy, state legibility, recognition-based interaction, and action-readiness reduced the effort required to convert available information into action.\n\n## Boundaries and limits\n\nOperational clarity should not be interpreted as a guarantee that users will always make correct decisions. The documented outcome concerns reduced reconstruction and interpretation effort, not elimination of all operational error.\n\nThe evidence strengths differ by case. Akrivia Health and WCO/IPM include client-reported evidence. Gericke is client-measured by Gericke and explicitly not Creative Navy-measured. The Gericke figures should be framed as interface-attributable within the stated single-variable window, not as caused. Gexcon states that a substantial portion of the 4 days to 6 hours reduction was operational clarity, not that the entire reduction should be attributed only to clarity.\n\nThe eToro time-to-trade reduction must retain its framing condition: no increase in early-session drop-off and no reduction in exploration depth. Without that condition, the same metric could be misread as a volume or impulsivity result rather than an operational clarity result.\n\n## Related pages\n\nThe most directly related evidence pages are the documented examples that support the outcome: Torqeedo Maritime HMI, Triopsis Workforce Management SaaS, Akrivia Health, WCO/IPM, Gexcon, Gericke Industrial HMI, and eToro. Evidence-standard pages on measured claims and verifiable performance claims are also relevant where the distinction between controlled experiments, product analytics, client-reported evidence, client-measured evidence, and A/B evidence matters.",
+  "claims": [
+    {
+      "claim": "Operational clarity is distinct from information availability because information can be present while still requiring users to reconstruct state from fragments.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "Defined directly in the outcome description and domain vocabulary."
+    },
+    {
+      "claim": "Torqeedo energy state identification was 50% faster with the redesigned interface than with the legacy UI.",
+      "evidenceType": "case study",
+      "sourceStrength": "strong",
+      "notes": "Directly measured in a controlled environment experiment with 24 subjects."
+    },
+    {
+      "claim": "Torqeedo manoeuvre tasks that previously required multiple screen transitions became confirmable with a single glance.",
+      "evidenceType": "field-measured",
+      "sourceStrength": "strong",
+      "notes": "Measured via eye tracking with 7 subjects during actual sea trials."
+    },
+    {
+      "claim": "Triopsis product analytics recorded 62% faster job discovery, 83% faster job sequence optimisation, and 58% faster weekly planning.",
+      "evidenceType": "client-measured",
+      "sourceStrength": "strong",
+      "notes": "Measured in product analytics from real users operating the live system, not usability testing task times."
+    },
+    {
+      "claim": "Akrivia Health governance reviewers could verify cohort construction logic without escalating to the research team after redesign.",
+      "evidenceType": "client-reported",
+      "sourceStrength": "moderate",
+      "notes": "Client-reported operational change; not independently measured in the available evidence."
+    },
+    {
+      "claim": "WCO/IPM reported a 78% training cost reduction, partly framed as an operational clarity outcome.",
+      "evidenceType": "client-reported",
+      "sourceStrength": "moderate",
+      "notes": "Client-reported training cost reduction; the source frames it partly as a clarity outcome because contextual guidance was encoded in the interface."
+    },
+    {
+      "claim": "Gexcon measured time to first successful simulation falling from 4 days to 6 hours across real deployments.",
+      "evidenceType": "client-measured",
+      "sourceStrength": "strong",
+      "notes": "Measured by Gexcon across real deployments; the source states that a substantial portion of the reduction is operational clarity."
+    },
+    {
+      "claim": "Gericke client-measured fault-diagnosis time fell from 24 to 8 min, 38 to 12 min, and 68 to 20 min across three sites.",
+      "evidenceType": "client-measured",
+      "sourceStrength": "strong",
+      "notes": "Client-measured by Gericke, not Creative Navy-measured; within a confirmed single-variable window and four months post-go-live."
+    },
+    {
+      "claim": "eToro A/B evidence recorded median time to first trade falling from 11.8 to 8.6 min and discovery-to-trade conversion rising from 5.1% to 7.4%.",
+      "evidenceType": "client-measured",
+      "sourceStrength": "strong",
+      "notes": "Client-measured randomised controlled A/B with a persistent holdout; must be framed with no increase in early-session drop-off and no reduction in exploration depth."
+    }
+  ],
+  "limitations": [
+    "Operational clarity concerns reduced interpretation and reconstruction effort; it does not establish that all operational errors are eliminated.",
+    "The evidence basis differs across examples and includes controlled experiment data, eye tracking during sea trials, live product analytics, client-reported evidence, client-measured evidence, and A/B evidence.",
+    "Akrivia Health and WCO/IPM evidence is client-reported and not independently measured in the available evidence.",
+    "Gericke figures are client-measured by Gericke, not Creative Navy-measured, and should be framed as interface-attributable within the confirmed single-variable window rather than as caused.",
+    "Gexcon evidence states that a substantial portion of the 4 days to 6 hours reduction is operational clarity; it does not attribute the entire reduction solely to clarity.",
+    "The eToro time-to-trade reduction must retain the framing condition that there was no increase in early-session drop-off and no reduction in exploration depth.",
+    "The eToro case involved no AI."
+  ],
+  "publicationBlockers": [],
+  "questionsForReview": [
+    "None"
+  ],
+  "relatedPageSlugs": [
+    "torqeedo-maritime-hmi",
+    "triopsis-workforce-management-saas",
+    "akrivia-health",
+    "wco-ipm",
+    "gexcon",
+    "gericke-industrial-hmi",
+    "etoro",
+    "what-we-have-measured",
+    "verifiable-performance-claims",
+    "lower-training-burden"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "Torqeedo Maritime HMI",
+      "targetSlug": "torqeedo-maritime-hmi",
+      "placementHint": "Use on the first mention of Torqeedo in the Torqeedo evidence section.",
+      "reason": "The page cites Torqeedo as the strongest quantified evidence for the outcome."
+    },
+    {
+      "anchorText": "Triopsis Workforce Management SaaS",
+      "targetSlug": "triopsis-workforce-management-saas",
+      "placementHint": "Use on the first mention of Triopsis in the live product analytics section.",
+      "reason": "The page cites Triopsis product analytics as evidence for faster discovery, sequencing, and weekly planning."
+    },
+    {
+      "anchorText": "Akrivia Health",
+      "targetSlug": "akrivia-health",
+      "placementHint": "Use on the first mention of Akrivia Health in the governance clarity section.",
+      "reason": "The page cites Akrivia Health as client-reported evidence of cohort logic becoming independently reviewable."
+    },
+    {
+      "anchorText": "WCO/IPM",
+      "targetSlug": "wco-ipm",
+      "placementHint": "Use on the first mention of WCO/IPM in the global deployment section.",
+      "reason": "The page cites WCO/IPM as evidence for recognition-based interaction and training cost reduction."
+    },
+    {
+      "anchorText": "Gexcon",
+      "targetSlug": "gexcon",
+      "placementHint": "Use on the first mention of Gexcon in the expert workflow section.",
+      "reason": "The page cites Gexcon as evidence for reduced reconstruction effort in CFD simulation setup."
+    },
+    {
+      "anchorText": "Gericke Industrial HMI",
+      "targetSlug": "gericke-industrial-hmi",
+      "placementHint": "Use on the first mention of Gericke in the process-control section.",
+      "reason": "The page cites Gericke as client-measured evidence for reduced fault-diagnosis time."
+    },
+    {
+      "anchorText": "eToro",
+      "targetSlug": "etoro",
+      "placementHint": "Use on the first mention of eToro in the financial decision section.",
+      "reason": "The page cites eToro as A/B-confirmed evidence for exposure legibility at the decision point."
+    },
+    {
+      "anchorText": "what Creative Navy has measured",
+      "targetSlug": "what-we-have-measured",
+      "placementHint": "Use in the evidence basis section where measurement types are distinguished.",
+      "reason": "The page distinguishes controlled experiment, product analytics, client-reported, client-measured, and A/B evidence."
+    },
+    {
+      "anchorText": "verifiable performance claims",
+      "targetSlug": "verifiable-performance-claims",
+      "placementHint": "Use in the eToro evidence section where the A/B design is referenced.",
+      "reason": "The source explicitly directs cross-reference to verifiable performance claims rather than restating the A/B design."
+    },
+    {
+      "anchorText": "lower training burden",
+      "targetSlug": "lower-training-burden",
+      "placementHint": "Use in the WCO/IPM section near the 78% training cost reduction.",
+      "reason": "The WCO/IPM evidence connects operational clarity with reduced training requirements."
+    }
+  ],
+  "qualityChecks": {
+    "factsOnlyFromCurrentSource": true,
+    "documentationStyle": true,
+    "noMarketingLanguage": true,
+    "noInventedClaims": true,
+    "linksOnlyFromLinkingContext": true,
+    "internalNotesNotPublished": true,
+    "readyForSanityImport": true
+  }
+}

@@ -1,0 +1,136 @@
+{
+  "slug": "design-governance-through-delivery",
+  "title": "Design Governance Through Delivery",
+  "pageType": "practice",
+  "category": "practices",
+  "section": "Practices",
+  "summary": "Design governance through delivery keeps design decisions from fragmenting during implementation. It treats the design system as a reasoning record, provides structured development support, reviews implementation divergence, and prepares the client team to maintain the system independently.",
+  "keyFacts": [
+    "The practice has four components: a design system as a reasoning record, structured support availability, implementation review, and organisational integration.",
+    "A reasoning record documents why design decisions were made, what alternatives were considered, and what would break if a decision changed.",
+    "Structured support availability is measured by response time within working hours, not constant presence.",
+    "Implementation review is used diagnostically to identify divergence, understand its cause, and correct either the implementation or the design.",
+    "Successful governance is indicated by low support ticket volume, fast response times, low rework, proactive build reviews, and client independence at engagement close.",
+    "The practice begins during Organizational Integration and continues through implementation until the client team is operating independently.",
+    "Triopsis recorded a 2-year Implementation Partnership with 68 components, 200+ documented states, 15 workflow type specifications, and client-reported support ticket volume falling to approximately 5% of previous volume.",
+    "Polymatica recorded a 2-year Implementation Partnership with 67 support requests across the full period and an average response time of 2 hours.",
+    "Tetra/Prism recorded a 2-year Implementation Partnership with 12 support tickets total and an average response time of 1 hour.",
+    "CDR Foodlab recorded a 7-month Implementation Partnership with 3 developer contacts total, including 2 build reviews initiated by the development team and one question session producing approximately 5 questions."
+  ],
+  "bodySections": [
+    {
+      "heading": "Summary",
+      "bodyMarkdown": "Design governance through delivery is a practice for preserving design intent during software implementation. It addresses the gap between designed behaviour and built behaviour that appears when development encounters states, constraints, interactions, or business logic that the design did not explicitly anticipate.\n\nThe practice does not assume that developers are careless. It assumes that development always creates situations where decisions are needed. Without a governance structure, those decisions are made by whoever is available, using local implementation logic, and the cumulative result is design fragmentation.\n\nWithin Creative Navy's Critical Systems Design method, design governance through delivery runs across the transition from Organizational Integration into Implementation Partnership. The endpoint is not continued dependence on Creative Navy. The endpoint is a client team that can maintain and extend the design system independently."
+    },
+    {
+      "heading": "What design governance through delivery does",
+      "bodyMarkdown": "Design governance through delivery keeps implementation decisions aligned with the reasoning behind the design. The practice uses the design system as the primary governance tool, not only as an implementation specification.\n\nA component library tells developers what to build. A reasoning record explains why the component, state, interaction, or workflow was designed that way. It records what alternatives were considered and what would break if the decision changed.\n\nThis distinction matters when development exposes an unanticipated state, an implementation constraint, or an interaction that cannot be built exactly as specified. A development team with access to the reasoning behind the design can make a decision that preserves design intent. A development team with only a component specification is more likely to make a local decision."
+    },
+    {
+      "heading": "The four components of design governance through delivery",
+      "bodyMarkdown": "Design governance through delivery has four components: the design system as a reasoning record, structured support availability, implementation review, and organisational integration.\n\nThe design system as a reasoning record documents why design decisions were made. Its governance function is to let developers handle edge cases without requiring Creative Navy to decide every implementation detail.\n\nStructured support availability means that the right person can be reached at a known cadence and with a fast response time during working hours. The purpose is not constant presence. The purpose is to answer implementation questions before developers make independent design decisions by default.\n\nImplementation review is a periodic review of what has been built against what was designed. It is used as a diagnostic rather than a quality gate. The review identifies where implementation has diverged from design intent, why the divergence happened, and whether the correct response is implementation correction or design adjustment.\n\nOrganisational integration prepares the client team to maintain and extend the design system after Creative Navy's engagement ends. In this practice, Implementation Partnership is explicitly a transition towards independence rather than a subscription service."
+    },
+    {
+      "heading": "Successful design governance indicators",
+      "bodyMarkdown": "Successful design governance through delivery is indicated by low support ticket volume, fast response times, low rework, proactive build reviews by the development team, and client independence at engagement close.\n\nLow support ticket volume indicates that the design system contains enough reasoning for developers to answer most implementation questions independently. High ticket volume is treated as a governance failure signal because it suggests that the design system is not carrying enough reasoning.\n\nFast response time matters when tickets do arise. If implementation questions are not answered quickly, they are answered by developers making their own decisions. In the documented engagements, response time is treated as a governance metric because unresolved questions can become design deviations.\n\nLow rework indicates that implementation divergence is being found early. Periodic implementation review is intended to identify divergence while correction is still relatively cheap.\n\nProactive build reviews initiated by the development team are a stronger governance signal than reviews scheduled by Creative Navy. They indicate that the development team has internalised enough of the design standard to know when external review is needed.\n\nClient independence at engagement close is the clearest governance measure described for this practice. The practice is successful when the client team can extend and maintain the design system without Creative Navy support."
+    },
+    {
+      "heading": "When design governance through delivery is used",
+      "bodyMarkdown": "Design governance through delivery is used after design delivery and alongside development. It is the practice that makes the Implementation Partnership phase functional rather than nominal.\n\nThe practice begins during Organizational Integration, when the design system is prepared for handover and the support structure is established. It continues through implementation until the client team is operating independently.\n\nDesign governance through delivery follows the design practices that create the system being governed. It depends on design work having been completed because the governance structure maintains design outputs through development."
+    },
+    {
+      "heading": "The design system as governance infrastructure",
+      "bodyMarkdown": "In design governance through delivery, the design system has an implementation function and a governance function.\n\nAs an implementation tool, the design system tells developers what to build: components, states, interactions, and specifications. As a governance tool, the design system explains why those decisions were made: what the design was solving for, what alternatives were considered, and what would break if the decision changed.\n\nA design system without documented reasoning is only an implementation tool. When a developer encounters an edge case such as an unanticipated state, an unmodelled screen size, or a business logic interaction the designer did not specify, the developer has no basis for making an appropriate design decision. The developer can only make a local decision.\n\nDesign governance through delivery treats the design system as the knowledge transfer mechanism between the design team and the development team. Its purpose is to transfer the design logic well enough that the development team can extend the system without recreating the complexity the design work replaced."
+    },
+    {
+      "heading": "Evidence from Implementation Partnership engagements",
+      "bodyMarkdown": "Creative Navy-recorded engagement evidence links design governance through delivery to support volumes, response times, build review patterns, and independence at engagement close. The evidence is case-based and varies by engagement in measurement strength.\n\nIn the Triopsis workforce management engagement, the Implementation Partnership lasted 2 years. The design system included 68 components, 200+ documented states, and 15 workflow type specifications. The documented governance outcome was that support ticket \"how can I\" questions fell to approximately 5% of previous volume, client-reported. Rework from implementation issues was described as minimal.\n\nIn the Polymatica OLAP analytics engagement, the Implementation Partnership lasted 2 years. The engagement recorded 67 support requests across the full period and an average response time of 2 hours. The documented endpoint was a design system that the development team could extend to new features without continued Creative Navy input.\n\nIn the Tetra/Prism property compliance engagement, the Implementation Partnership lasted 2 years. The engagement recorded 12 support tickets total and an average response time of 1 hour. The documented endpoint was organisational independence at engagement close, including extension of both the mobile app and the web platform without Creative Navy involvement.\n\nIn the Pixelart Fugo digital signage CMS engagement, the Implementation Partnership lasted 2 years and was structured as monthly developer show-and-tell sessions. The development team was unfamiliar with the new design system at the start of the Implementation Partnership phase. The sessions provided a regular checkpoint for identifying and resolving implementation divergence. NPS changed from 57% to 89%, client-measured pre/post. Available case evidence treats the NPS change as an indicator of implemented product quality rather than as a direct governance measurement.\n\nIn the Bofin open banking marketplace engagement, implementation governance was used without a formal Implementation Partnership phase. The documented outcomes were no deadline missed across 12 months, fewer mid-sprint clarifications reported by engineering teams, and reduced rework from clearer component definitions. These outcomes are client-reported.\n\nIn the Gexcon CFD simulation engagement, a 2-year Implementation Partnership followed a 7-month design execution phase. The governance function was to preserve the new architectural logic during development after 15 years of accumulated complexity had been removed. The documented risk was that implementation edge-case decisions could recreate the accumulated complexity pattern if the development team did not understand the reasoning behind the redesign.\n\nIn the CDR Foodlab chemical analysis instrument engagement, the Implementation Partnership lasted 7 months and recorded 3 developer contacts total. Two contacts were build reviews initiated by the development team. The remaining contact was a question session producing approximately 5 questions. Creative Navy directly observed the developer contact counts and contact types; the interpretation of what those figures mean is analytical."
+    },
+    {
+      "heading": "CDR Foodlab as a structurally complete governance record",
+      "bodyMarkdown": "The CDR Foodlab engagement separates proactive governance contacts from reactive clarification contacts. The 2 build reviews initiated by the development team indicate that developers sought review against design intent rather than making local decisions. The approximately 5 questions from the question session indicate low clarification demand across 7 months of development.\n\nThe deliverable scope before the CDR Foodlab Implementation Partnership included a full UX redesign, full UI across the complete screen set, a design system with variant architecture, inline tutorial animations, a new working-lists feature, and a formal handover session with the development team.\n\nThe documented evidence basis for CDR Foodlab is Creative Navy-observed developer contact counts and contact type. The inference that low question volume indicates reasoning sufficiency, and that developer-initiated build reviews indicate governance health, is analytical rather than directly measured."
+    },
+    {
+      "heading": "Boundaries and limits",
+      "bodyMarkdown": "Design governance through delivery does not eliminate implementation questions. It aims to make questions rare, answer them quickly when they occur, and prevent unresolved questions from becoming design deviations.\n\nSupport ticket volume is not interpreted on its own. Low support volume is meaningful only when the design system contains enough reasoning for development teams to make appropriate decisions independently.\n\nImplementation review is not described as a quality gate. It is a diagnostic practice for identifying divergence, understanding its cause, and deciding whether to correct the implementation or update the design.\n\nSeveral evidence points are client-reported or client-measured rather than independently verified. The Triopsis support ticket reduction is client-reported. The Bofin deadline, clarification, and rework outcomes are client-reported. The Pixelart Fugo NPS change is client-measured pre/post."
+    }
+  ],
+  "evidenceSummary": {
+    "strongClaims": [
+      "Design governance through delivery is the discipline of ensuring that design decisions made during design survive development through a governance structure.",
+      "The practice has four components: a design system as a reasoning record, structured support availability, implementation review, and organisational integration.",
+      "Successful governance is indicated by low support ticket volume, fast response times, low rework, proactive build reviews initiated by development teams, and client independence at engagement close.",
+      "Polymatica recorded 67 support requests across a 2-year Implementation Partnership, with an average response time of 2 hours.",
+      "Tetra/Prism recorded 12 support tickets across a 2-year Implementation Partnership, with an average response time of 1 hour.",
+      "Pixelart Fugo recorded a client-measured NPS change from 57% to 89% before and after a 2-year Implementation Partnership structured as monthly developer show-and-tell sessions.",
+      "CDR Foodlab recorded a 7-month Implementation Partnership with 3 developer contacts total, including 2 developer-initiated build reviews and one question session producing approximately 5 questions."
+    ],
+    "weakerClaims": [
+      "Triopsis recorded a 2-year Implementation Partnership with 68 components, 200+ documented states, 15 workflow type specifications, and client-reported support ticket volume falling to approximately 5% of previous volume.",
+      "Bofin recorded implementation governance without a formal Implementation Partnership phase, with no deadline missed across 12 months, fewer mid-sprint clarifications, and reduced rework, all client-reported."
+    ],
+    "limitations": [
+      "The evidence is case-based rather than a controlled comparison across engagements.",
+      "Some outcomes are client-reported rather than independently verified, including Triopsis support ticket reduction and Bofin deadline, clarification, and rework outcomes.",
+      "The Pixelart Fugo NPS change is client-measured pre/post and is not presented as an independent causal measurement of governance.",
+      "The CDR Foodlab interpretation distinguishes observed contact counts from analytical inference about reasoning sufficiency and governance health.",
+      "Low support ticket volume is meaningful only in relation to the design system's documented reasoning and cannot be interpreted as a standalone quality measure."
+    ]
+  },
+  "relatedPageSlugs": [
+    "triopsis-workforce-management-saas",
+    "edge-case-and-degraded-mode-analysis",
+    "state-and-transition-review",
+    "behavioural-requirements-definition",
+    "workflow-analysis",
+    "decision-boundary-design"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "Triopsis workforce management case",
+      "targetSlug": "triopsis-workforce-management-saas",
+      "reason": "Triopsis is a named engagement in the practice evidence and has an allowed case-study slug."
+    },
+    {
+      "anchorText": "edge-case and degraded-mode analysis",
+      "targetSlug": "edge-case-and-degraded-mode-analysis",
+      "reason": "The practice explains how governance helps developers handle edge cases without local design decisions."
+    },
+    {
+      "anchorText": "state and transition review",
+      "targetSlug": "state-and-transition-review",
+      "reason": "The practice discusses documented states, unanticipated states, and review of divergence between designed and built behaviour."
+    },
+    {
+      "anchorText": "behavioural requirements definition",
+      "targetSlug": "behavioural-requirements-definition",
+      "reason": "The practice depends on design reasoning being explicit enough for development teams to preserve intended behaviour."
+    },
+    {
+      "anchorText": "workflow analysis",
+      "targetSlug": "workflow-analysis",
+      "reason": "The Triopsis evidence includes 15 workflow type specifications as part of the governance artefact."
+    },
+    {
+      "anchorText": "decision boundary design",
+      "targetSlug": "decision-boundary-design",
+      "reason": "The practice is concerned with where implementation decisions are made and how those decisions remain aligned with design intent."
+    }
+  ],
+  "tags": [
+    "design governance",
+    "implementation partnership",
+    "design systems",
+    "reasoning record",
+    "implementation review",
+    "organisational integration",
+    "development support",
+    "client independence"
+  ],
+  "_meta": {
+    "sourcePath": "sources/articles/Practices/practices--design-governance-through-delivery.md",
+    "parentSlug": "practices",
+    "childPageSlugs": [],
+    "generatedBy": "deterministic"
+  }
+}

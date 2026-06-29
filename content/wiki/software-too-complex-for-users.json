@@ -1,0 +1,157 @@
+{
+  "slug": "software-too-complex-for-users",
+  "title": "Software Too Complex For Users",
+  "pageType": "situation",
+  "category": "situations",
+  "section": "Complexity",
+  "summary": "This situation describes products whose interfaces reflect internal architecture, specialist abstractions, or ideal test conditions instead of the operational reality of intended users. The source examples show the pattern in analytics, intelligence analysis, AI biomedical research, and smart home control.",
+  "keyFacts": [
+    "The failure is a mismatch between the system's internal structure and the user's operational task logic.",
+    "This situation is distinct from expert workflows that are correctly structured for a domain but difficult for non-experts to enter.",
+    "Three recurring patterns are identified: no entry point, a conceptual model built for the wrong audience, and testing under ideal conditions.",
+    "In the Polymatica example, 2% of users could complete key operations independently without help documentation before redesign, and 9% could complete them with documentation.",
+    "Polymatica users trained on clean sample data stopped when importing real inherited data with inconsistent column names and ambiguous structures.",
+    "In the Hudex example, non-expert users could not orient themselves when arriving at the dondogram visualisation without training.",
+    "In the Owkin / K example, users needed to understand the available bounded datasets before they could formulate useful queries.",
+    "In the Elsner example, users needed up to 10 laggy swipe gestures to reach a target function on the Cala Touch KNX smart home controller.",
+    "Creative Navy's Critical Systems Design method addresses this situation through Sandbox Experiments, domain learning, Concept Convergence, entry architecture, and progressive disclosure."
+  ],
+  "bodySections": [
+    {
+      "heading": "Software complexity as a mismatch between system structure and task logic",
+      "bodyMarkdown": "Creative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nSoftware is too complex for users when the interface communicates how the system was built rather than how the user's work is organised. The domain may be genuinely complex, and the system's capability may be real, but users encounter data models, feature categories, engineering structures, or specialist abstractions before they can form a usable model of the task.\n\nThis situation is not the same as difficulty in expert workflows. Expert workflows may be correctly structured for a demanding domain while still being hard for non-experts to enter. Software that is too complex for users has a more basic mismatch: the product's conceptual model is wrong for the intended audience. Users are not only facing a hard domain; they are facing an interface that represents internal architecture rather than operational reality."
+    },
+    {
+      "heading": "Common interface patterns that make capable software inaccessible",
+      "bodyMarkdown": "Software becomes inaccessible when users meet full system complexity before they have an entry point. In this pattern, the product has no summary, no orientation layer, and no path from arrival to first understanding. Users who do not already know what they are looking at cannot form a starting hypothesis.\n\nA second pattern is a conceptual model built for the wrong audience. The product may use abstractions that make sense to builders or domain specialists, but not to the broader user population the product later needs to reach. The system was designed for people who understood it and then sold to people who did not, without changing the interface model accordingly.\n\nA third pattern is design and testing under ideal conditions. Users may be trained on clean, structured, representative data under guided conditions with expert facilitation. Those users may pass training, but then stop when they encounter their own imperfect data, unstructured starting conditions, or failure cases that were absent from testing and demos."
+    },
+    {
+      "heading": "Commercial and operational effects of an accessibility ceiling",
+      "bodyMarkdown": "Software that is too complex for users creates an accessibility ceiling. The usable market becomes limited to people who can complete training, have specialist knowledge, or persist through early failure. Expansion to new user types, geographies, or organisational buyers is blocked by the product's accessibility rather than by the product's technical capability.\n\nThe commercial effects described for this situation include longer sales cycles, weak trial value, and adoption plateaus. Prospects cannot demonstrate value to themselves if the self-service path fails. New customers may depend on training or expert mediation before the product becomes usable.\n\nThe operational effect is that trained users still stop when real conditions differ from training conditions. The product may contain the needed capability, but that capability is not available in practice when the interface gives no route through unexpected data, missing context, or unfamiliar conditions."
+    },
+    {
+      "heading": "Polymatica: OLAP interface structure limited independent task completion",
+      "bodyMarkdown": "Polymatica had built a GPU-backed OLAP analytics engine that was faster than competing solutions at a fraction of the cost of enterprise alternatives. The documented interface problem was not lack of system capability. The interface had been built for OLAP specialists, exposed the cube metaphor, showed SQL queries during database connection, and surfaced advanced analytical features such as clustering, forecasting, and association rules without guidance or orientation.\n\nBefore the redesign, 2% of Polymatica users could complete key operations independently without consulting help documentation. 9% could complete the same operations with documentation. Every new customer required the founder to deliver training personally before the system was usable.\n\nPolymatica also showed the ideal-conditions failure pattern. Users trained on clean, structured sample data encountered real inherited data from acquisitions, inconsistent column naming, ambiguous structures, and multiple partially overlapping datasets. The interface provided no diagnostic support for those conditions, so users who had passed training stopped at the first import of real data."
+    },
+    {
+      "heading": "Hudex: core intelligence visualisation without an entry layer",
+      "bodyMarkdown": "Hudex served both expert intelligence analysts and ministerial-level government officials. Expert analysts spent multiple hours daily in deep exploration, while government officials needed a fast, actionable overview of hundreds of data items. The platform's dondogram visualisation was correct and useful for expert users, but non-expert users had no entry point into it.\n\nResearch on Hudex confirmed that users without training could not orient themselves on arrival. A user in a client-facing role described the dondogram as \"not very inviting for someone working in a bank.\" The platform had no project overview page and no entry-level view that explained what a project contained before the full visualisation appeared.\n\nThe operational consequence was dependence on mediation. Demos required analyst involvement to communicate value, and non-expert clients could not navigate the system independently."
+    },
+    {
+      "heading": "Owkin K: AI biomedical research users needed data discoverability before useful queries",
+      "bodyMarkdown": "K was an AI copilot for biomedical research built on biology-specific datasets and reasoning models. The backend capability was described as genuinely capable, but users arriving on the platform did not know what the system could do or how to start.\n\nThe structure of K created an additional discoverability requirement. K operated on bounded datasets rather than the general internet, so users needed to understand what data was available before they could ask useful questions. Data discoverability was therefore as important as feature discoverability.\n\nThe interface had been built by and for expert biologists. When the user base expanded to include clinicians with lower scientific backgrounds, the gap between what the interface communicated and what users needed to know became the primary adoption barrier."
+    },
+    {
+      "heading": "Elsner: smart home controller navigation exposed capability rather than daily use",
+      "bodyMarkdown": "The Cala Touch KNX smart home controller had accumulated features that reflected the device's technical capability: RGBW lighting, Tuneable White, HCL, FanCoil control, Split Control, and multiple timer and automation modules. Users surveyed by Elsner independently rated several modules as unnecessarily complicated.\n\nThe documented navigation problem was that reaching a target function required up to 10 laggy swipe gestures. This structure reflected how the system had been built rather than how users moved through daily interactions with the device.\n\nElsner illustrates how equal prominence for daily and rarely used functions can make a product harder to operate. The interface was organised around what the device could do, not around what users did most often."
+    },
+    {
+      "heading": "How Creative Navy's Critical Systems Design method addresses excessive interface complexity",
+      "bodyMarkdown": "Creative Navy's Critical Systems Design method designs software whose interfaces, workflows, and operating logic carry real operational consequences, working through five phases — Sandbox Experiments, Concept Convergence, Iterative System Building, Organizational Integration, and Implementation Partnership — to take each system from initial exploration to independent operation by the client's own team.\n\nCreative Navy's Critical Systems Design method addresses this situation first through Sandbox Experiments. Sandbox Experiments begins with domain learning before redesign decisions are made. In this situation, domain learning distinguishes essential complexity from accidental complexity. Essential complexity is structure required for the system to produce correct outputs in its domain. Accidental complexity is structure that accumulated because of how the system was built rather than because the domain requires it.\n\nCreative Navy's Critical Systems Design method then uses Concept Convergence to identify the entry architecture. Entry architecture defines what users need to understand before they can begin using the system and what structural layer can provide orientation without making expert knowledge a prerequisite.\n\nProgressive disclosure is one expression of that response. Expert depth is preserved and remains accessible, but it is not imposed as the entry condition. The goal described for this situation is to remove the accessibility ceiling that prevents technically capable products from being used by the users they were built for."
+    },
+    {
+      "heading": "Boundaries and evidence basis for this situation",
+      "bodyMarkdown": "The examples on this page document recurring failure patterns, not a universal claim about every complex software product. Polymatica provides specific pre-redesign task completion figures of 2% without help documentation and 9% with documentation. Hudex, Owkin / K, and Elsner provide case examples of orientation failure, discoverability failure, and navigation burden.\n\nThe evidence described here does not provide a quantified post-redesign outcome for every example. The page establishes the situation, its mechanisms, the documented costs, and the way Creative Navy's Critical Systems Design method addresses the problem through domain learning, entry architecture, and progressive disclosure."
+    },
+    {
+      "heading": "Related situations in complex software adoption",
+      "bodyMarkdown": "This situation is closely adjacent to expert workflows that are hard to operate, because both involve complex systems and user difficulty. The distinction is that software too complex for users has a conceptual model problem, while expert workflow difficulty may involve a domain-correct system that remains difficult under real working conditions.\n\nThis situation also connects to products that work in demos but not in real use, products that cannot scale without specialist onboarding, training burden, and products that are technically capable but hard to sell. In each case, the common issue is that capability does not become usable value unless the interface supports independent understanding under real conditions."
+    }
+  ],
+  "evidenceSummary": {
+    "strongClaims": [
+      "Before redesign, 2% of Polymatica users could complete key operations independently without help documentation, and 9% could complete them with documentation.",
+      "Hudex had no summary layer before the dondogram visualisation, and non-expert users without training could not orient themselves on arrival.",
+      "Owkin / K users needed data discoverability as well as feature discoverability because K operated on bounded datasets rather than the general internet.",
+      "Elsner's Cala Touch KNX controller required up to 10 laggy swipe gestures to reach a target function, reflecting capability structure rather than daily interaction patterns."
+    ],
+    "weakerClaims": [
+      "Software becomes too complex for users when its interface communicates internal system construction instead of the user's task logic.",
+      "The situation is distinct from expert workflow difficulty because the failure is a wrong conceptual model for the intended audience, not only a demanding domain.",
+      "Three patterns produce this failure: missing entry point, conceptual model wrong for the audience, and design for ideal conditions.",
+      "Creative Navy's Critical Systems Design method addresses this situation through Sandbox Experiments, domain learning, Concept Convergence, entry architecture, and progressive disclosure."
+    ],
+    "limitations": [
+      "The page describes a situation pattern and grounded examples; it does not establish that all complex software has this failure.",
+      "The Polymatica figures are pre-redesign task completion figures and should not be generalised beyond that example.",
+      "The Hudex evidence includes a user quote and research finding about orientation without training, but no quantified task completion figure is provided for Hudex.",
+      "The page does not provide quantified post-redesign outcomes for every example described.",
+      "The examples cover analytics, intelligence analysis, AI biomedical research, and smart home control; other domains may show different forms of the same situation."
+    ]
+  },
+  "relatedPageSlugs": [
+    "expert-workflows-are-hard-to-operate",
+    "the-product-works-in-demos-but-not-in-real-use",
+    "product-cannot-scale-without-specialist-onboarding",
+    "training-burden-is-too-high",
+    "buyers-see-the-product-as-hard-to-adopt",
+    "the-product-is-powerful-but-hard-to-sell",
+    "too-many-features-not-enough-coherence",
+    "abnormal-conditions-break-the-interface",
+    "owkin-k"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "expert workflows that are hard to operate",
+      "targetSlug": "expert-workflows-are-hard-to-operate",
+      "reason": "CURRENT_SOURCE_MD explicitly distinguishes this situation from difficulty in expert workflows."
+    },
+    {
+      "anchorText": "products that work in demos but not in real use",
+      "targetSlug": "the-product-works-in-demos-but-not-in-real-use",
+      "reason": "The page describes users succeeding under guided or sample-data conditions and failing with real data."
+    },
+    {
+      "anchorText": "products that cannot scale without specialist onboarding",
+      "targetSlug": "product-cannot-scale-without-specialist-onboarding",
+      "reason": "The page describes adoption limited by training, founder-led onboarding, and inability to use the product independently."
+    },
+    {
+      "anchorText": "training burden is too high",
+      "targetSlug": "training-burden-is-too-high",
+      "reason": "The page describes users requiring training before the product becomes usable."
+    },
+    {
+      "anchorText": "buyers see the product as hard to adopt",
+      "targetSlug": "buyers-see-the-product-as-hard-to-adopt",
+      "reason": "The page describes longer sales cycles, failed trials, and blocked adoption caused by accessibility limits."
+    },
+    {
+      "anchorText": "products that are powerful but hard to sell",
+      "targetSlug": "the-product-is-powerful-but-hard-to-sell",
+      "reason": "The page describes technically capable products whose value is hard for prospects to demonstrate independently."
+    },
+    {
+      "anchorText": "too many features without enough coherence",
+      "targetSlug": "too-many-features-not-enough-coherence",
+      "reason": "The Elsner example describes accumulated features receiving equal prominence regardless of daily use frequency."
+    },
+    {
+      "anchorText": "abnormal conditions that break the interface",
+      "targetSlug": "abnormal-conditions-break-the-interface",
+      "reason": "The page describes users stopping when real data and failure conditions differ from clean training data."
+    },
+    {
+      "anchorText": "Owkin K",
+      "targetSlug": "owkin-k",
+      "reason": "The body discusses the Owkin / K example and a matching allowed case-study slug is available."
+    }
+  ],
+  "tags": [
+    "interface complexity",
+    "conceptual model",
+    "entry architecture",
+    "domain learning",
+    "progressive disclosure",
+    "adoption barrier",
+    "training burden",
+    "complex software",
+    "operational reality"
+  ],
+  "_meta": {
+    "sourcePath": "sources/articles/Situations/situations--complexity--software-too-complex-for-users.md",
+    "parentSlug": "complexity",
+    "childPageSlugs": [],
+    "generatedBy": "deterministic"
+  }
+}

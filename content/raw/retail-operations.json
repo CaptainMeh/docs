@@ -1,0 +1,149 @@
+{
+  "_type": "documentationPage",
+  "sourceFile": "Articles/Contexts/contexts--retail-operations.md",
+  "sourcePath": "sources/articles/Contexts/contexts--retail-operations.md",
+  "sanityDocumentIdCandidate": "documentationPage.retail-operations",
+  "title": "Retail Operations",
+  "slug": {
+    "_type": "slug",
+    "current": "retail-operations"
+  },
+  "pageType": "context",
+  "category": "contexts",
+  "parentSlug": "contexts",
+  "childPageSlugs": [
+    "socar-petrol-forecourt"
+  ],
+  "excerpt": "Retail operations work in this documentation covers point-of-sale, forecourt, outdoor terminal, mobile concept, and in-vehicle interfaces that must remain coherent under peak transaction load. The documented Swiss petrol forecourt engagement used 532 coded transactions, 40 hours of field observation, and a peak design condition of 84 transactions per hour.",
+  "metaTitle": "Retail Operations UX Context",
+  "metaDescription": "Retail operations UX for POS, forecourt and outdoor terminals, grounded in a Swiss petrol forecourt programme with 532 coded transactions.",
+  "summary": "Retail operations systems combine cashier till interfaces, forecourt operations, outdoor payment terminals, multi-language and multi-currency requirements, and peak-load transaction constraints. The documented evidence base comes from a three-year Swiss petrol forecourt programme across seven stations in the Zurich area.",
+  "definition": "Retail operations in this documentation refers to design work for cashier, forecourt, outdoor payment, mobile concept, and in-vehicle interfaces where transaction flow, operational pressure, hardware constraints, and cross-surface coherence shape the interface design.",
+  "keyFacts": [
+    "Retail operations vocabulary includes point-of-sale, till interface, cashier interface, forecourt management, forecourt operations, and outdoor payment terminal.",
+    "The documented design condition for peak throughput is 84 transactions per hour on a single till.",
+    "The Swiss petrol forecourt engagement covered seven stations in the Zurich area for a large Swiss petrol station operator.",
+    "The programme ran for three years and was governed as a programme, not a single project.",
+    "Five platform types were delivered or defined: cashier till, outdoor terminal, CarPlay in-vehicle, mobile loyalty concept, and shared design system.",
+    "The mobile app element was a defined concept and roadmap, not an implemented product.",
+    "Research before design decisions included 40 hours of structured field observation, 532 documented and coded transactions, 36 cashiers observed, and 24 interviews.",
+    "The pre-redesign benchmark for complex mixed transactions was up to 7 minutes.",
+    "The outdoor terminal design used a 1024×768px hardware resolution and an operating temperature range of −20°C to +40°C.",
+    "German, French, Italian, English, CHF, and EUR were built in from the first sprint."
+  ],
+  "tags": [
+    "retail operations",
+    "point-of-sale",
+    "forecourt operations",
+    "outdoor payment terminal",
+    "peak transaction load",
+    "multi-channel coherence",
+    "workaround patterns",
+    "transaction corpus",
+    "programme governance"
+  ],
+  "bodyMarkdown": "## Retail operations interfaces under peak transaction load\n\nCreative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nRetail operations in this documentation refers to point-of-sale, till, cashier, forecourt, outdoor payment, mobile concept, and in-vehicle interfaces that must support live operational work. In the documented Swiss petrol forecourt programme, the relevant surfaces were the cashier till, outdoor terminal, CarPlay in-vehicle interface, mobile loyalty concept, and shared design system.\n\nThe central operating condition was peak transaction load. The documented design condition was 84 transactions per hour on a single till. At that rate, a cashier has approximately 43 seconds per transaction on average, while complex mixed transactions take longer and compress the time available for other transactions.\n\n## Swiss petrol forecourt programme as the main evidence base\n\nThe main documented retail operations evidence comes from a large Swiss petrol station operator with seven stations in the Zurich area. The engagement was structured as a three-year programme rather than a single project, with governance across operations, digital, engineering, and finance functions.\n\nThe programme sequence was POS for 6 months, outdoor terminals for 7 months, CarPlay for 2 months, and then design system consolidation. The governance structure included a 6-person core client team covering operations, digital, engineering, and finance, plus a 5-person executive steering committee that met at defined milestones.\n\nThe five platform types were not all equivalent in implementation status. The cashier till, outdoor terminal, CarPlay in-vehicle surface, and shared design system were delivered as programme surfaces. The mobile loyalty element was a defined concept and roadmap, not an implemented product.\n\n## Field research before retail interface decisions\n\nCreative Navy-recorded research was conducted before design decisions were made in the Swiss petrol forecourt programme. The documented research programme included 40 hours of structured field observation across the seven stations, 532 transactions documented and coded by type and complexity, 36 cashiers observed during live operation, and 24 interviews with cashiers, supervisors, and trainees.\n\nThe peak transaction rate of 84 transactions per hour on a single till was documented during field observation, not taken from self-report. This figure set the peak-load design condition for the till interface.\n\nThe transaction corpus of 532 documented and coded transactions is the evidence base for the retail operations claims in this context. The corpus included complex and mixed transactions involving combinations of fuel types, payment methods, vouchered transactions, and fleet cards. These were treated as normal operational conditions, not as edge cases.\n\n## Peak-load interaction design standard for cashier tills\n\nThe retail operations design standard was not simply that the cashier interface should be easy to use under average conditions. The design standard was that the interface should remain predictable and unambiguous under peak conditions.\n\nAt 84 transactions per hour, any interaction that requires active interpretation adds operational cost. Reading labels, navigating to find functions, or reconstructing transaction state creates cognitive load that can compound across a shift. In this environment, the interface has to make the next action clear under time pressure.\n\nCreative Navy's Critical Systems Design method addressed this retail operations condition through option space mapping during the POS design work. Sixteen alternative POS architectures were modelled, and each architecture took a different structural position on the peak-load challenge.\n\n## Workaround patterns as diagnostic evidence and operational constraints\n\nWorkaround patterns were a documented feature of the Swiss petrol forecourt research. Cashiers had developed bypass sequences and shortcuts to survive peak periods.\n\nCreative Navy treated these workaround patterns in two ways. They were diagnostic signals because they showed where the existing interface failed under pressure. They were also operational constraints because some workarounds encoded genuine operational knowledge that the redesign had to preserve rather than remove.\n\nThis distinction matters in retail operations because eliminating every informal behaviour can remove working knowledge from the system. The design task was to understand which bypasses indicated interface failure and which behaviours reflected legitimate operational adaptation.\n\n## Hardware, language, and currency constraints in forecourt interfaces\n\nThe retail operations programme had explicit hardware constraints. The till interface was designed at 1920×1080px, and latency-sensitive sequences were identified as affecting interaction patterns. The outdoor terminal was designed at 1024×768px, with weather exposure, touch interaction under cold conditions, and an operating temperature range from −20°C to +40°C.\n\nThe outdoor payment terminal was not treated as a screen variant of the till. It operated under different physical constraints, including weather exposure and cold-condition touch interaction. These constraints shaped the interaction design for the terminal surface.\n\nMulti-language and multi-currency requirements were built in from the first session. The programme included German, French, Italian, and English, and it supported CHF and EUR. These were baseline requirements, not late localisation additions.\n\n## Multi-channel coherence across till, terminal, mobile concept, and CarPlay\n\nMulti-channel coherence in retail operations means that till, outdoor terminal, mobile, and in-vehicle surfaces share an interaction logic. The purpose is to support transfer of cashier and customer mental models across surfaces.\n\nIn the Swiss petrol forecourt programme, Creative Navy's design work connected the cashier till, outdoor terminal, CarPlay in-vehicle surface, mobile loyalty concept, and shared design system. The mobile loyalty element was a defined concept and roadmap, not an implemented product.\n\nThe CarPlay work consisted of 2 design sprints and was designed within an existing automotive UI framework, Kanzi. The design system consolidation then aligned the interaction logic across the till, outdoor terminal, and CarPlay surfaces.\n\n## Prototyping and evaluation at actual hardware resolution\n\nCreative Navy-recorded design work in the Swiss petrol forecourt programme included 16 alternative POS architectures, 6 concepts prototyped at actual hardware resolution, and 29 structured evaluation sessions with cashiers and supervisors.\n\nThe till prototypes used 1920×1080px resolution. The outdoor terminal prototypes used 1024×768px resolution. The use of actual hardware resolution was material because spatial layout, target size, and screen constraints affected the operational validity of the prototypes.\n\nThe pre-redesign benchmark for complex mixed transactions was up to 7 minutes. This benchmark was documented during research and used as the baseline for evaluating design alternatives. No published post-redesign timing comparison is available.\n\n## Client-reported operational outcomes and evidence limits\n\nThe documented retail operations outcomes are structural and operational rather than measured performance metrics. Client-reported outcomes included more predictable cashier flows under pressure, fewer instances of working around the system during peaks, and smoother handling of complex transactions.\n\nThe reduction in workaround behaviour is an operational health signal in this context. It indicates that the design was serving the actual workflow more directly instead of being routed around during peak periods. This outcome is client-reported, not independently verified in the available documentation.\n\nThe pre-redesign benchmark for complex mixed transactions was up to 7 minutes, but post-redesign comparison data is not available for publication. The documented direction is smoother handling of complex transactions, not a measured before-and-after timing result.\n\n## Boundaries of the retail operations evidence\n\nThe retail operations evidence currently rests on one documented Swiss petrol forecourt programme. The programme provides detailed evidence about POS, outdoor terminal, CarPlay, mobile concept, and design system work in that forecourt environment, but it should not be generalised as measured evidence across all retail operations settings.\n\nThe mobile loyalty element should be described as a defined concept and roadmap whenever it is mentioned. It should not be described as an implemented mobile product.\n\nThe published outcome evidence is client-reported for cashier flow predictability, reduced workaround behaviour, and smoother handling of complex transactions. The available documentation does not provide independently verified post-redesign timing data.\n\n## Related pages\n\nThe Swiss petrol forecourt case notes provide the detailed case record for the retail operations context. Related context pages may be useful when the retail operations question overlaps with embedded devices, constrained interfaces, multi-stakeholder operational environments, or enterprise software, but the retail operations evidence described here is specifically grounded in the documented forecourt programme.",
+  "claims": [
+    {
+      "claim": "The documented retail operations design condition was 84 transactions per hour on a single till, recorded during field observation.",
+      "evidenceType": "field-measured",
+      "sourceStrength": "strong",
+      "notes": "The source states that the peak transaction rate was documented during field observation and not from self-report."
+    },
+    {
+      "claim": "The Swiss petrol forecourt research programme included 40 hours of structured field observation, 532 documented and coded transactions, 36 cashiers observed, and 24 interviews.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "engagement record",
+      "notes": "These figures are presented as the research conducted before design decisions were made."
+    },
+    {
+      "claim": "The programme covered cashier till, outdoor terminal, CarPlay in-vehicle, mobile loyalty concept, and shared design system surfaces.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "The mobile loyalty element is explicitly a defined concept and roadmap, not an implemented product."
+    },
+    {
+      "claim": "Creative Navy modelled 16 alternative POS architectures, prototyped 6 concepts at actual hardware resolution, and conducted 29 structured evaluation sessions with cashiers and supervisors.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "engagement record",
+      "notes": "The source provides the counts and hardware resolutions used for till and outdoor terminal prototypes."
+    },
+    {
+      "claim": "Cashiers had developed workaround patterns during peak periods, and these were treated as both diagnostic signals and operational constraints.",
+      "evidenceType": "Creative Navy-observed",
+      "sourceStrength": "case evidence",
+      "notes": "The source describes bypass sequences and shortcuts observed during research."
+    },
+    {
+      "claim": "Client-reported outcomes included more predictable flows under pressure, fewer instances of working around the system during peaks, and smoother handling of complex transactions.",
+      "evidenceType": "client-reported",
+      "sourceStrength": "case evidence",
+      "notes": "The source explicitly labels these outcomes as client-reported and states no post-redesign timing data is available for publication."
+    },
+    {
+      "claim": "The outdoor terminal had a 1024×768px design resolution, weather exposure, touch interaction under cold conditions, and an operating temperature range of −20°C to +40°C.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "These are hardware and environmental constraints stated in the source."
+    },
+    {
+      "claim": "German, French, Italian, English, CHF, and EUR were built in from the first session rather than added at the end.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "The source states that four languages and two currencies were baseline requirements from the first sprint/session."
+    }
+  ],
+  "limitations": [
+    "The retail operations evidence is grounded in one documented Swiss petrol forecourt programme rather than a broad multi-client retail operations dataset.",
+    "The mobile loyalty element was a defined concept and roadmap, not an implemented product.",
+    "Post-redesign timing comparison data for complex mixed transactions is not available for publication.",
+    "Outcome evidence for predictable flows, fewer workarounds, and smoother complex transaction handling is client-reported and not independently verified in the available documentation.",
+    "The documented outcomes are structural and operational rather than measured performance metrics."
+  ],
+  "publicationBlockers": [],
+  "questionsForReview": [
+    "None"
+  ],
+  "relatedPageSlugs": [
+    "socar-petrol-forecourt",
+    "embedded-devices-and-constrained-interfaces",
+    "multi-stakeholder-operational-environments",
+    "enterprise-software"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "Swiss petrol forecourt case notes",
+      "targetSlug": "socar-petrol-forecourt",
+      "placementHint": "Related pages section or first mention of the documented Swiss petrol forecourt programme",
+      "reason": "The linked case notes are the direct case record for the retail operations context."
+    },
+    {
+      "anchorText": "embedded devices and constrained interfaces",
+      "targetSlug": "embedded-devices-and-constrained-interfaces",
+      "placementHint": "Related pages section",
+      "reason": "The retail operations page discusses outdoor terminals, hardware resolution, operating temperature, and constrained touch interaction."
+    },
+    {
+      "anchorText": "multi-stakeholder operational environments",
+      "targetSlug": "multi-stakeholder-operational-environments",
+      "placementHint": "Related pages section",
+      "reason": "The retail operations programme involved governance across operations, digital, engineering, finance, and executive steering stakeholders."
+    },
+    {
+      "anchorText": "enterprise software",
+      "targetSlug": "enterprise-software",
+      "placementHint": "Related pages section",
+      "reason": "The cashier till and shared operational platform aspects may overlap with enterprise software context navigation."
+    }
+  ],
+  "qualityChecks": {
+    "factsOnlyFromCurrentSource": true,
+    "documentationStyle": true,
+    "noMarketingLanguage": true,
+    "noInventedClaims": true,
+    "linksOnlyFromLinkingContext": true,
+    "internalNotesNotPublished": true,
+    "readyForSanityImport": true
+  },
+  "__sourceCategoryDir": "Contexts"
+}

@@ -1,0 +1,184 @@
+{
+  "_type": "documentationPage",
+  "sourceFile": "Articles/Situations/situations--ai--the-model-may-be-good-but-the-product-behaviour-is-not.md",
+  "sourcePath": "sources/articles/Situations/situations--ai--the-model-may-be-good-but-the-product-behaviour-is-not.md",
+  "sanityDocumentIdCandidate": "documentationPage.the-model-may-be-good-but-the-product-behaviour-is-not",
+  "title": "The Model May Be Good But The Product Behaviour Is Not",
+  "slug": {
+    "_type": "slug",
+    "current": "the-model-may-be-good-but-the-product-behaviour-is-not"
+  },
+  "pageType": "situation",
+  "category": "situations",
+  "parentSlug": "ai-and-automation",
+  "childPageSlugs": [],
+  "excerpt": "AI model quality and AI product quality are separate variables. A capable model can still produce product behaviour that users cannot engage with, govern, or access through the interface.",
+  "metaTitle": "AI Model Quality vs Product Behaviour",
+  "metaDescription": "AI products can fail when capable models are made invisible, ungovernable, or inaccessible by product behaviour and interface design.",
+  "summary": "This situation describes the gap between model capability and product behaviour in AI-enabled products. The documented pattern appears as capability invisibility, a configuration-behaviour gap, or accessibility failure, with Owkin K, Callsign, and Hudex used as grounded cases.",
+  "definition": "The model/product behaviour gap is a product-design situation in which an AI model produces valid or capable outputs, but the product interface does not translate that capability into behaviour that intended users can understand, govern, trust, or access.",
+  "keyFacts": [
+    "AI model quality and AI product quality are treated as distinct variables in this situation.",
+    "The documented gap has three structural expressions: capability invisibility, configuration-behaviour gap, and accessibility failure.",
+    "Capability invisibility appears when users cannot understand what a bounded or specialised AI system can do or what data it can reason over.",
+    "The configuration-behaviour gap appears when a capable model lacks product controls, explanations, configuration logic, or auditability needed for human governance.",
+    "Accessibility failure appears when valid AI outputs are presented in a form usable by experts but not by non-expert, new, or demo-context users.",
+    "In the Owkin K case, five iterations on the Explore page tested different theories of what users needed to see first.",
+    "Owkin attributed approximately £5M in investment to the design quality; the figure and attribution are client-reported.",
+    "In the Callsign case, SCA and PCI DSS are named as requirements for documented and evidenced fraud control decisions.",
+    "Contracts with Lloyds Bank and HSBC followed the Callsign redesign; the commercial outcomes are client-reported.",
+    "In the Hudex case, a client-conducted survey of 45 existing users found the redesign significantly better than the previous version, and new users rated usability as good (68%) or very good (23%)."
+  ],
+  "tags": [
+    "AI product behaviour",
+    "AI interface design",
+    "model-product gap",
+    "capability invisibility",
+    "AI governance",
+    "human control",
+    "progressive disclosure",
+    "domain learning",
+    "Critical Systems Design"
+  ],
+  "bodyMarkdown": "## AI model quality and AI product behaviour are separate variables\n\nCreative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nAI model quality and AI product quality are not the same thing. A model can produce accurate outputs under evaluation conditions while the product built around it remains difficult to engage with, difficult to govern, or difficult to trust.\n\nThis situation is not always visible as a model failure. Teams may have internal benchmarks showing that the AI is capable. When engagement remains low, the causes may be attributed to market readiness, user education, or adoption timing, while the design of product behaviour remains under-examined.\n\nThe documented gap is a design problem. It occurs when the interface does not translate the model's capability into product behaviour that intended users can understand, configure, supervise, or access.\n\n## Capability invisibility means the model's capability does not reach users\n\nCapability invisibility occurs when an AI system produces valuable outputs but users cannot form a working model of what the AI can do. Users may not know what data the system can reason over, what questions it can answer, or where to begin a useful interaction.\n\nThis expression is specific to AI products with bounded or specialised capability. These systems may operate over defined datasets rather than general knowledge, or answer some question types better than generic ones. For these systems, capability is not self-evident at the interface.\n\nWhen capability invisibility is present, users disengage before the model has a chance to perform. The model may be accurate for users who know how to query it, but the wider intended audience cannot yet ask the questions that would reveal the model's value.\n\n## The configuration-behaviour gap means the model is capable but the product is not governable\n\nThe configuration-behaviour gap occurs when a model scores, classifies, or recommends correctly, but the product does not give humans the interface conditions required to govern those outputs. Users may be unable to configure how model outputs translate into decisions, understand why the system behaves as it does, or demonstrate meaningful human control.\n\nThis expression appears in AI products where accountability for AI-assisted decisions is a regulatory, operational, or commercial requirement. In those contexts, a capable model inside an ungovernable product is not viable.\n\nThe documented pattern is especially visible when buyers or operators must evidence oversight. A system that cannot produce an audit trail, or whose configuration interface does not match domain logic, may fail evaluation even when the model's predictions are not the issue.\n\n## Accessibility failure means valid AI outputs remain expert-only\n\nAccessibility failure occurs when an AI model produces correct or useful outputs, but the interface presents them in a form that requires domain expertise, prior system knowledge, or navigation fluency that much of the intended audience does not have.\n\nThis expression appears when an AI product is built by and for domain experts and is later deployed to a broader user population. Expert users may interpret the model's outputs directly. Non-expert users, new users, or demo-context users may not be able to orient themselves.\n\nThe design response described in the documented cases is progressive disclosure: a summary layer before complexity, and a path into depth rather than immediate immersion in it. Without that structure, users can experience the product as difficult rather than capable.\n\n## Owkin K showed capability invisibility in a data-bounded research AI\n\nOwkin's K is described as an AI copilot for biomedical research that allows clinicians and researchers to query biological datasets through natural language. The model is trained on biology rather than the general internet, and operates across clinical records, imaging, and genomics.\n\nThe documented capability was specific: K could answer complex research questions that previously required a data science team to execute. The interface problem was that users arriving on the platform did not understand what K could do, and more importantly did not understand what data was available to query.\n\nFor a data-bounded AI system, knowing what can be asked requires knowing what the system can reason over. Users without a model of the data landscape could not formulate queries that engaged K's genuine capability.\n\nCreative Navy's Critical Systems Design method addressed this through four design challenge areas in Sandbox Experiments: an Explore page communicating K's capabilities at entry, prompt suggestions, the AI chat box, and dataset presentation. Creative Navy-recorded work included five iterations on the Explore page, with each iteration testing a different theory of what users most needed to see first.\n\nThe convergent finding was that dataset-and-mode framing was more generative for K's users than capability listing. For users with a concrete data need, seeing that the relevant dataset was available gave them a starting point for a query. Seeing a list of capabilities did not.\n\nOwkin attributed approximately £5M in investment to the design quality. The investment figure is client-reported and approximate, and causal attribution is stated by Owkin. Discoverability improvement is directional and based on internal product launch feedback; no measured user metrics are available in the documented evidence.\n\n## Callsign showed a configuration-behaviour gap in AI fraud detection\n\nCallsign had a working fraud detection model that scored behavioural events, including device fingerprint, location change, spend velocity, and failure history. Callsign also had a policy engine concept intended to translate those scores into real-world decisions.\n\nThe model was performing, but the product built around it was not governable. Analysts could not express real fraud strategies in the interface. Rules were scattered across database views and configuration tables that reflected the model's internal structure rather than the logic fraud analysts used to reason about risk.\n\nConflicts between rules were not visible. Audit trails were absent or ambiguous. When Callsign demonstrated the platform to senior risk teams at major banks, the demonstrations raised governance questions rather than closing deals.\n\nThe documented commercial and regulatory gap was specific. SCA and PCI DSS are described as requiring fraud control decisions to be documented and evidenced. An interface that could not produce an auditable account of how a policy was constructed and what it would do was not compliant in that account.\n\nCreative Navy's Critical Systems Design method established the design foundation through a separation between the fraud detection model, which scores events, and the policy layer, which applies thresholds, overrides, and workflow decisions to those scores. With that separation explicit in the information architecture, Creative Navy's design work treated policy as the central object.\n\nEach policy bundled its conditions, actions, history, and audit trail into a coherent unit that analysts could configure in domain terms rather than model terms. The three-gesture interaction model — drag, click, connect — was calibrated to what fraud analysts and risk team evaluators could use without engineering access.\n\nContracts with Lloyds Bank and HSBC followed. Time-to-market was reduced by roughly six months. The commercial outcomes are client-reported; the time-to-market reduction is an engagement-inferred estimate, not a measured parallel comparison.\n\n## Hudex showed accessibility failure in an AI intelligence platform\n\nHudex is described as an AI-powered content analysis platform that ingests unstructured data from social media, audio, video, and reports, clustering it semantically so analysts can explore thematic patterns across large datasets. The core visualisation is a dondogram, a hierarchical tree structure representing clusters at multiple depth levels.\n\nThe documented algorithm worked, but the v1 interface was not accessible to non-expert users. Users arriving without prior knowledge of dondograms did not understand what they were looking at. The v1 interface presented the dondogram at entry without a summary layer, project overview, or progressive path from orientation into deeper exploration.\n\nUsers in demo contexts could not orient themselves quickly enough to find value before losing confidence in the product. The documented examples include business developers presenting the platform to potential clients and government ministers reviewing intelligence briefings. One user described the experience as: \"For someone working in a bank, having something that looks like a spider is not very inviting.\"\n\nThe documented capability was real. Hudex ingested hundreds of diplomatic cables per day and surfaced thematic structure in ways that no prior manual process could produce. Expert users already familiar with the tool could use the dondogram; non-expert users, potential clients, and business development contexts could not access that capability at entry.\n\nCreative Navy's Critical Systems Design method addressed this through user research with three internal Hudex users, supplemented by 10 domain learning training tasks completed by the design team as full platform users. Research identified the entry point problem: users needed a summary layer before the dondogram.\n\nCreative Navy's design work developed a project overview that provided high-level theme counts, source counts, and key information before the user entered exploration. The documented \"book cover\" metaphor emerged through twenty iterations on the project overview alone: simple, visual, high-level summary information as the project entry point, with the dondogram accessible but not imposed.\n\nThe resulting progressive disclosure architecture served users ranging from non-technical government ministers requiring instant high-level comprehension to expert intelligence analysts conducting multi-hour deep explorations, without creating two separate products.\n\nA client-conducted survey of 45 existing users found the redesign significantly better than the previous version. New users in the growth phase rated usability as good (68%) or very good (23%). Three months into the growth phase, Hudex received £3M in investment, with the client explicitly attributing the design as critical and foundational to the product's ability to sell. The survey results, usability ratings, investment outcome, and causal attribution are client-reported.\n\n## Creative Navy's Critical Systems Design method separates model capability from product behaviour\n\nCreative Navy's Critical Systems Design method addresses this situation by separating what the model does from what the product needs to do with what the model produces. The documented cases describe the design response as interface work, not model improvement.\n\nIn the Owkin K case, domain learning established what K could reason about and what kinds of questions engaged its genuine capability rather than its limits. That understanding shaped the entry point that communicated K's capability to users who arrived without a working model of the system.\n\nIn the Callsign case, domain learning established how fraud analysts reason about risk, including how they frame strategies, identify conflicts, and account for decisions. That understanding shaped the policy layer that translated model scoring into a governable system.\n\nIn the Hudex case, Creative Navy became productive users of the platform before design work began by completing ten training tasks across all three user archetypes. That work produced the operational understanding of where the entry point failed and what a summary layer needed to contain.\n\nAcross the three documented cases, the design response was not to improve the model. The design response was to create the interface conditions the model's capability required in order to reach the users who needed it.\n\n## Evidence boundaries for the model/product behaviour gap\n\nThe documented evidence is case-based. Owkin K, Callsign, and Hudex show three concrete expressions of the same structural distinction between model capability and product behaviour, but they do not establish a universal measurement model for all AI products.\n\nSeveral outcomes are client-reported. Owkin's approximately £5M investment attribution is client-reported and approximate. Callsign's commercial outcomes are client-reported, and the roughly six-month time-to-market reduction is an engagement-inferred estimate rather than a measured parallel comparison. Hudex's survey results, usability ratings, investment outcome, and causal attribution are client-reported.\n\nThe documented evidence also distinguishes product behaviour from model performance. The cases do not claim that Creative Navy improved the underlying AI models. The claims concern interface design, product governance, capability communication, progressive disclosure, and the translation of model outputs into usable product behaviour.\n\n## Related pages\n\nThe Owkin K and Callsign cases are directly related because they are used as grounded examples in this situation. Related situation pages cover adjacent AI product problems, including governance questions buyers ask, weak human control in practice, undefined AI behaviour, low user trust, and products that are difficult to adopt or sell.",
+  "claims": [
+    {
+      "claim": "AI model quality and AI product quality are distinct variables; a capable model can still produce product behaviour users do not engage with, cannot govern, or do not trust.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "moderate",
+      "notes": "Directly stated in the situation framing; supported conceptually rather than by a quantitative study."
+    },
+    {
+      "claim": "The model/product behaviour gap takes three documented structural forms: capability invisibility, configuration-behaviour gap, and accessibility failure.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "moderate",
+      "notes": "The source explicitly defines the three forms and describes the design response required for each."
+    },
+    {
+      "claim": "In the Owkin K case, users experienced capability invisibility because they did not understand what data was available to query or what the AI could reason over.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "Grounded in the documented Owkin K case; discoverability improvement is directional and based on internal product launch feedback."
+    },
+    {
+      "claim": "Creative Navy's work on Owkin K used Sandbox Experiments across an Explore page, prompt suggestions, the AI chat box, and dataset presentation, including five iterations on the Explore page.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "engagement record",
+      "notes": "The iteration count and design challenge areas are described as engagement work."
+    },
+    {
+      "claim": "Owkin attributed approximately £5M in investment to the design quality.",
+      "evidenceType": "client-reported",
+      "sourceStrength": "weak",
+      "notes": "The figure is approximate, client-reported, and causally attributed by Owkin; no measured user metrics are available."
+    },
+    {
+      "claim": "In the Callsign case, the fraud detection model was performing but the product was not governable because analysts could not express fraud strategies, see rule conflicts, or access clear audit trails.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "Grounded in the documented Callsign case and framed as a configuration-behaviour gap."
+    },
+    {
+      "claim": "Contracts with Lloyds Bank and HSBC followed the Callsign redesign, and time-to-market was reduced by roughly six months.",
+      "evidenceType": "client-reported",
+      "sourceStrength": "weak",
+      "notes": "Commercial outcomes are client-reported; the time-to-market reduction is an engagement-inferred estimate, not a measured parallel comparison."
+    },
+    {
+      "claim": "In the Hudex case, the v1 dondogram-first interface was accessible to expert users but not to non-expert users, new users, or demo-context users.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "Grounded in the documented Hudex case, including the quoted user reaction to the visual form."
+    },
+    {
+      "claim": "Hudex's redesign introduced a summary-layer project overview before dondogram exploration, developed through twenty iterations on the project overview.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "engagement record",
+      "notes": "Iteration count and design direction are described in the documented engagement evidence."
+    },
+    {
+      "claim": "Hudex reported that a client-conducted survey of 45 existing users found the redesign significantly better than the previous version, and new users rated usability as good (68%) or very good (23%).",
+      "evidenceType": "client-reported",
+      "sourceStrength": "weak",
+      "notes": "Survey results and usability ratings are client-reported; no independent verification is stated."
+    }
+  ],
+  "limitations": [
+    "The evidence is case-based and does not establish a universal quantitative model for all AI-enabled products.",
+    "Several outcomes are client-reported rather than independently verified.",
+    "Owkin's investment attribution is approximate and client-reported; no measured user metrics are available for discoverability improvement.",
+    "Callsign's time-to-market reduction is an engagement-inferred estimate, not a measured parallel comparison.",
+    "Hudex's survey results, usability ratings, investment outcome, and causal attribution are client-reported.",
+    "The documented design responses concern product behaviour and interface design, not improvement of the underlying AI models."
+  ],
+  "publicationBlockers": [],
+  "questionsForReview": [
+    "None"
+  ],
+  "relatedPageSlugs": [
+    "owkin-k",
+    "callsign-fraud-authentication",
+    "enterprise-buyers-ask-governance-questions-the-team-cannot-answer",
+    "human-control-is-weak-in-practice",
+    "teams-cannot-define-good-ai-behaviour",
+    "users-do-not-trust-the-ai-enough",
+    "the-product-is-powerful-but-hard-to-sell",
+    "buyers-see-the-product-as-hard-to-adopt",
+    "software-too-complex-for-users",
+    "product-cannot-scale-without-specialist-onboarding"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "Owkin K",
+      "targetSlug": "owkin-k",
+      "placementHint": "Use on the first mention of Owkin K in the Owkin K section or in the Related pages section.",
+      "reason": "Owkin K is one of the grounded cases described in the page and has an allowed case-study slug."
+    },
+    {
+      "anchorText": "Callsign",
+      "targetSlug": "callsign-fraud-authentication",
+      "placementHint": "Use on the first mention of Callsign in the Callsign section or in the Related pages section.",
+      "reason": "Callsign is one of the grounded cases described in the page and has an allowed case-study slug."
+    },
+    {
+      "anchorText": "enterprise buyers ask governance questions the team cannot answer",
+      "targetSlug": "enterprise-buyers-ask-governance-questions-the-team-cannot-answer",
+      "placementHint": "Use near the discussion of Callsign demonstrations raising governance questions.",
+      "reason": "The situation describes buyer governance questions as a consequence of ungovernable AI product behaviour."
+    },
+    {
+      "anchorText": "human control is weak in practice",
+      "targetSlug": "human-control-is-weak-in-practice",
+      "placementHint": "Use near the configuration-behaviour gap section.",
+      "reason": "The page describes products that cannot demonstrate meaningful human control over AI-assisted decisions."
+    },
+    {
+      "anchorText": "teams cannot define good AI behaviour",
+      "targetSlug": "teams-cannot-define-good-ai-behaviour",
+      "placementHint": "Use in the Related pages section.",
+      "reason": "The page distinguishes model performance from the product behaviour users need to understand and govern."
+    },
+    {
+      "anchorText": "users do not trust the AI enough",
+      "targetSlug": "users-do-not-trust-the-ai-enough",
+      "placementHint": "Use near the opening section on users not engaging with or trusting AI product behaviour.",
+      "reason": "The page describes a situation where users disengage or lose confidence despite capable model outputs."
+    },
+    {
+      "anchorText": "buyers see the product as hard to adopt",
+      "targetSlug": "buyers-see-the-product-as-hard-to-adopt",
+      "placementHint": "Use in the Related pages section near adoption and demo-context discussion.",
+      "reason": "The documented cases include buyer and demo-context friction caused by product behaviour rather than model capability."
+    }
+  ],
+  "qualityChecks": {
+    "factsOnlyFromCurrentSource": true,
+    "documentationStyle": true,
+    "noMarketingLanguage": true,
+    "noInventedClaims": true,
+    "linksOnlyFromLinkingContext": true,
+    "internalNotesNotPublished": true,
+    "readyForSanityImport": true
+  },
+  "__sourceCategoryDir": "Situations"
+}

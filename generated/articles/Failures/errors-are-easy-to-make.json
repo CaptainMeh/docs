@@ -1,0 +1,167 @@
+{
+  "_type": "documentationPage",
+  "sourceFile": "Articles/Failures/failures--error-recovery--errors-are-easy-to-make.md",
+  "sourcePath": "sources/articles/Failures/failures--error-recovery--errors-are-easy-to-make.md",
+  "sanityDocumentIdCandidate": "documentationPage.errors-are-easy-to-make",
+  "title": "Errors Are Easy To Make",
+  "slug": {
+    "_type": "slug",
+    "current": "errors-are-easy-to-make"
+  },
+  "pageType": "failure",
+  "category": "failures",
+  "parentSlug": "error-and-recovery-failures",
+  "childPageSlugs": [],
+  "excerpt": "Errors are easy to make when an interface leaves predictable incorrect paths as accessible as correct ones during normal operation. The failure is usually caused by absent constraints, ambiguous feedback, or complexity that hides which element is operative.",
+  "metaTitle": "Errors Are Easy To Make",
+  "metaDescription": "A failure pattern where missing constraints, ambiguous feedback, or interface complexity makes predictable user errors likely during standard operation.",
+  "summary": "Errors are easy to make when technically complete software does not provide enough scaffolding for users to avoid predictable mistakes during normal, intentional operation. The pattern appears when valid and invalid actions are not distinguishable before action, when feedback does not make the result of an action readable, or when interface complexity hides the operative element.",
+  "definition": "Errors are easy to make when an interface makes predictable incorrect actions, inputs, or selections as accessible as correct ones during standard operation because constraints, guidance, and feedback are insufficient before the user acts.",
+  "keyFacts": [
+    "This failure concerns predictable errors during normal, intentional operation, not rare or non-standard scenarios.",
+    "Three recurring conditions are absence of pre-action constraint and validation, absent or ambiguous feedback at decision points, and interface complexity that masks which element or condition is operative.",
+    "A technically complete interface can still make errors easy if it does not communicate what the user is supposed to do well enough before action.",
+    "In the Polymatica analytics platform, users could not distinguish which columns were operable for which OLAP operations when real datasets contained mixed content, inconsistent formats, or incompatible values.",
+    "After Polymatica introduced a data preparation and preview step, the messy-data column-identification failure mode largely disappeared from support requests; this was observed operationally, not quantified as a measured error-rate reduction.",
+    "The broader Polymatica outcome of independent task completion rising from 2% to 40% and then 56% was measured through product analytics from the live system, but it included more than the errors-easy improvement.",
+    "In the Enhesa legal compliance platform, review of 95 session recordings produced a catalogue of 12 error types, each with measured time-to-redress.",
+    "In the Enhesa redesign, 3 error types were made structurally impossible, 5 were made easier to recover from, and 6 were expected to reduce in frequency; these post-redesign outcomes were inferred from design decisions and not independently measured post-deployment.",
+    "Of 31 workarounds documented in the Enhesa session recording analysis, 80% were addressed in the redesign; 17 of 31 workarounds were in the primary content area, \"Using legal texts\".",
+    "Creative Navy's Critical Systems Design method addresses error-easy interfaces through microtask analysis, domain learning, and session recording analysis that identify specific points where errors occur."
+  ],
+  "tags": [
+    "error prevention",
+    "error recovery",
+    "pre-action validation",
+    "interface constraints",
+    "decision-point feedback",
+    "interface complexity",
+    "microtask analysis",
+    "domain learning",
+    "Sandbox Experiments",
+    "Critical Systems Design"
+  ],
+  "bodyMarkdown": "## Summary\n\nCreative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nErrors are easy to make when an interface leaves the incorrect path too accessible relative to the correct one during normal, intentional operation. The interface may be technically complete and may perform all required functions correctly, but it does not provide enough constraints, guidance, or feedback for users to avoid predictable mistakes.\n\nThe cost of this failure is not always visible as error counts. It can appear as training investment required to produce reliable users, recurring support burden across the user population, and an adoption ceiling where non-specialist users cannot operate the system reliably without specialist assistance.\n\n## Failure pattern: predictable errors during standard operation\n\nThe errors-easy failure pattern concerns interface conditions that produce errors while users are on the designed path. The user is trying to perform a valid task, but the interface does not distinguish valid from invalid actions in terms the user can read before acting.\n\nThis failure is distinct from poor interaction support for rare or non-standard scenarios. Rare-scenario support concerns what happens when the user is outside the standard path. Errors-easy design concerns what happens when the user is on the standard path, but the design does not adequately prevent the user from going wrong on it.\n\nA system can satisfy functional requirements and still make errors easy. The failure is not that the software cannot perform the operation. The failure is that the software does not communicate what conditions, selections, inputs, or sequence steps are required before the user commits to an action.\n\n## Absence of pre-action constraint and validation\n\nThe most preventable errors-easy condition occurs when an interface accepts an action or input that is structurally invalid for the current context. The user provides data in a format the operation cannot use, selects an element that is incompatible with the current operation, or starts a sequence that requires an unmet precondition. The interface accepts the action, and the error occurs.\n\nPre-action constraint and validation are architecturally different from post-action error messages. A field that accepts only certain formats communicates constraints before entry. A column list that distinguishes operable from non-operable columns communicates operability before selection. A workflow that cannot proceed without a necessary precondition makes the precondition visible before the user attempts to pass it.\n\nThe design requirement is to make valid choices substantially more visible than invalid ones before the user acts. The correct action becomes easier not because users have memorised the rules, but because the interface exposes the relevant constraints at the decision point.\n\n## Absent or ambiguous feedback at decision points\n\nErrors are also easy to make when an interface does not clearly communicate whether the action just taken was the intended one. The user makes a selection, the interface updates, and the user cannot read from the update whether the expected result occurred.\n\nThis condition appears at decision points where several actions are available and the difference between them is not visually or interactively clear. If the user cannot tell whether the right element was operated on, whether the right configuration was applied, or whether a required step was completed correctly, the error may only become visible much later.\n\nLate feedback makes the origin of the error harder to trace. The user sees the consequence in a later context, but the interface did not provide actionable feedback at the moment when the error was still easy to identify and correct.\n\n## Interface complexity can hide the operative element\n\nA third errors-easy condition occurs when interface complexity prevents users from identifying which element or condition is currently operative. The user's intended action may be correct, but the user applies it to the wrong element because the interface does not make the relevant element sufficiently distinct.\n\nThis condition is common in data-heavy interfaces where multiple elements look similar but serve different operational functions. It appears when columns contain multiple types of content, when the current operative element depends on a state that is not surfaced clearly, or when many similar items have similar visual weight.\n\nThe same structural failure appears in information-dense content systems. A user navigating dense legislative text who cannot distinguish which regulatory item is correct for the current purpose is experiencing a retrieval and orientation version of the same failure: the interface does not communicate which element is relevant before the user commits to it.\n\n## Polymatica analytics platform: column operability was not visible before operation\n\nIn the Polymatica analytics platform, users needed to perform OLAP operations on imported datasets. The workflow required identifying the relevant column, applying the appropriate operation type, and obtaining the intended analytical output.\n\nBefore the redesign, the interface did not visually distinguish which columns were operable for which operations and under what conditions. When users imported real datasets, they encountered columns with mixed content, inconsistent formats, or values the system could not operate on for the intended purpose. The interface presented all columns without distinction.\n\nThe specific error condition was column selection without operability guidance. Users could not tell which column would support the intended operation, which column contained the issue preventing the operation, or what the issue was. Users attempted operations on columns that would not produce the intended result, received errors or unexpected outputs, and had no designed path for diagnosing what had gone wrong.\n\nThe design response introduced a data preparation and preview step between data import and operations. Users could inspect their actual data before committing to operations, see a sample of what their columns contained, rename columns to match their mental model, and identify structural inconsistencies before errors occurred downstream.\n\nThe Polymatica outcome is evidence-calibrated. The messy-data failure mode, specifically the inability to identify which column to operate on, largely disappeared from support requests after the data preparation step was introduced. This was a Creative Navy-observed operational change, not a measured error-rate reduction.\n\nThe broader Polymatica outcome was that independent task completion rose from 2% to 40% and then 56%, measured through product analytics from the live system. That broader independence gain includes but is not limited to the errors-easy improvement.\n\n## Enhesa legal compliance platform: orientation and retrieval errors in dense content\n\nIn the Enhesa legal compliance platform, regulatory affairs managers, compliance officers, and legal teams navigated dense baseline regulation pages. These pages aggregated legislative text, implementation timelines, requirements, and changes for individual regulations across jurisdictions.\n\nA systematic review of 95 session recordings produced a catalogue of 12 error types, each with measured time-to-redress. Known error types included clicking into the wrong legislative text, creating the wrong filter, and missing a correct search result that was present in the system.\n\nThese were orientation and retrieval errors. Users were not necessarily misunderstanding their task. They were arriving at or acting on the wrong element because the interface did not make the relevant element sufficiently distinct from irrelevant elements at the moment of selection.\n\nThe Enhesa design response used three levels of intervention. Three error types were made structurally impossible because the interaction conditions that produced them were eliminated. Five error types were made easier to recover from because the interface provided clearer feedback and a shorter correction path. Six error types were expected to reduce in frequency because the correct path became more visible and the incorrect path less accessible.\n\nThe Enhesa evidence has a stated limit. The 12 error types and 31 workarounds were Creative Navy-recorded from session recording analysis during Sandbox Experiments. The post-redesign outcomes of 3 error types made impossible, 5 easier to recover from, and 6 reduced in frequency were inferred from design decisions and were not independently measured post-deployment.\n\nOf the 31 workarounds documented in the same session recording analysis, 80% were addressed in the redesign. The concentration of 17 of 31 workarounds in the primary content area, \"Using legal texts\", indicated that the errors-easy condition was concentrated where the platform's core function operated.\n\n## How Creative Navy's Critical Systems Design method addresses errors-easy interfaces\n\nCreative Navy's Critical Systems Design method addresses errors-easy interfaces by identifying the specific points where predictable errors occur and by making the correct path substantially more accessible than the incorrect one at those points.\n\nMicrotask analysis is the practice that makes error-point identification specific. A generic usability finding might say that users struggled with column selection. Microtask analysis produces a design requirement such as: users could not distinguish operable from non-operable columns because the interface presented all columns with equal visual treatment and provided no preview of what operations would produce with actual data.\n\nIn the Polymatica engagement, domain learning included Creative Navy performing operations on real data. That activity exposed the messy-data column-identification problem as an experienced failure rather than only an inferred one. The resulting design requirement was that the interface needed to communicate column operability status before the user selected a column.\n\nIn the Enhesa engagement, session recording analysis provided the equivalent evidence practice for a content-heavy platform. The systematic review of 95 recorded usage sessions surfaced actual error patterns at scale, and the time-to-redress measurement added a cost dimension to the error catalogue.\n\n## Boundaries and limits\n\nThis failure pattern is limited to errors made during standard operation. It does not cover rare scenarios where the user is outside the standard path and needs interaction support for a non-standard situation.\n\nThe Polymatica error-specific outcome is directional and observed rather than quantified as a measured error-rate reduction. The broader independent task completion figures of 2%, 40%, and 56% were measured through product analytics from the live system, but those figures include more than the errors-easy improvement.\n\nThe Enhesa post-redesign error outcomes were inferred from design decisions. The available evidence does not state that the 3 impossible, 5 easier-to-recover, and 6 frequency-reduced error outcomes were independently measured after deployment.\n\n## Related pages\n\nThe most directly adjacent related page is Rare Scenarios Have Poor Interaction Support, which separates errors during standard operation from interaction support for non-standard scenarios.\n\nErrors Are Hard To Notice is related where feedback is too late or too generic to let users detect that an error has occurred.\n\nErrors Are Hard To Correct and Recovery Paths Are Weak are related where prevention is not feasible and the design response must focus on clearer feedback and a shorter correction path.",
+  "claims": [
+    {
+      "claim": "Errors are easy to make when an interface leaves predictable incorrect paths too accessible relative to correct ones during normal, intentional operation.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "Defined directly in the failure pattern and situation sections of the page source."
+    },
+    {
+      "claim": "Three conditions make errors easy: absence of pre-action constraint and validation, absent or ambiguous feedback at decision points, and interface complexity that masks which element or condition is operative.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "The source explicitly names and explains these three conditions."
+    },
+    {
+      "claim": "In the Polymatica analytics platform, users could not distinguish operable from non-operable columns before applying OLAP operations on real datasets with mixed content, inconsistent formats, or incompatible values.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "The source gives Polymatica as a grounded example of the errors-easy condition."
+    },
+    {
+      "claim": "After Polymatica introduced a data preparation and preview step, the messy-data column-identification failure mode largely disappeared from support requests.",
+      "evidenceType": "Creative Navy-observed",
+      "sourceStrength": "engagement record",
+      "notes": "The source explicitly calibrates this as an observed operational change, not a measured error-rate reduction."
+    },
+    {
+      "claim": "The broader Polymatica outcome of independent task completion rising from 2% to 40% and then 56% was measured through product analytics from the live system, but includes more than the errors-easy improvement.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "The source reports the product-analytics measurement and states that the improvement includes but is not limited to the errors-easy improvement."
+    },
+    {
+      "claim": "In the Enhesa legal compliance platform, systematic review of 95 session recordings produced a catalogue of 12 error types, each with measured time-to-redress.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "engagement record",
+      "notes": "The source identifies the session recording review and error catalogue as Creative Navy-recorded during Sandbox Experiments."
+    },
+    {
+      "claim": "In the Enhesa redesign, 3 error types were made structurally impossible, 5 were made easier to recover from, and 6 were expected to reduce in frequency.",
+      "evidenceType": "inferred",
+      "sourceStrength": "moderate",
+      "notes": "The source states these outcomes but explicitly says they were inferred from design decisions and not independently measured post-deployment."
+    },
+    {
+      "claim": "Of 31 workarounds documented in Enhesa session recording analysis, 80% were addressed in the redesign, with 17 of 31 concentrated in the primary content area, \"Using legal texts\".",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "engagement record",
+      "notes": "The source provides the workaround counts, percentage, and primary content-area concentration."
+    },
+    {
+      "claim": "Creative Navy's Critical Systems Design method addresses errors-easy interfaces through research practices such as microtask analysis, domain learning, and session recording analysis that identify where and why errors occur.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "The source section on Creative Navy's Critical Systems Design method explicitly names these practices and their role."
+    }
+  ],
+  "limitations": [
+    "This page concerns predictable errors during standard operation, not interaction support for rare or non-standard scenarios.",
+    "The Polymatica error-specific improvement was observed operationally through support request patterns and was not quantified as a measured error-rate reduction.",
+    "The broader Polymatica independent task completion figures include more than the errors-easy improvement.",
+    "The Enhesa post-redesign error outcomes were inferred from design decisions and were not independently measured post-deployment.",
+    "The examples are grounded in the Polymatica and Enhesa engagements and should not be generalised as universal performance metrics."
+  ],
+  "publicationBlockers": [],
+  "questionsForReview": [
+    "None"
+  ],
+  "relatedPageSlugs": [
+    "rare-scenarios-have-poor-interaction-support",
+    "errors-are-hard-to-notice",
+    "errors-are-hard-to-correct",
+    "recovery-paths-are-weak",
+    "users-see-information-but-cannot-judge-what-matters",
+    "data-is-available-but-hard-to-interpret"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "Rare Scenarios Have Poor Interaction Support",
+      "targetSlug": "rare-scenarios-have-poor-interaction-support",
+      "placementHint": "Related pages section and failure-pattern boundary section",
+      "reason": "The source explicitly distinguishes this page from rare-scenario interaction support."
+    },
+    {
+      "anchorText": "Errors Are Hard To Notice",
+      "targetSlug": "errors-are-hard-to-notice",
+      "placementHint": "Related pages section after the discussion of ambiguous feedback",
+      "reason": "The page discusses feedback that does not enable users to detect an error at the decision point."
+    },
+    {
+      "anchorText": "Errors Are Hard To Correct",
+      "targetSlug": "errors-are-hard-to-correct",
+      "placementHint": "Related pages section after the Enhesa recovery discussion",
+      "reason": "The Enhesa example distinguishes prevention from easier recovery when errors can still occur."
+    },
+    {
+      "anchorText": "Recovery Paths Are Weak",
+      "targetSlug": "recovery-paths-are-weak",
+      "placementHint": "Related pages section after the three-tier Enhesa response",
+      "reason": "The source discusses errors that remain possible but need clearer feedback and shorter correction paths."
+    },
+    {
+      "anchorText": "Users See Information But Cannot Judge What Matters",
+      "targetSlug": "users-see-information-but-cannot-judge-what-matters",
+      "placementHint": "Related pages section or near the interface-complexity section",
+      "reason": "The errors-easy pattern includes cases where users can see elements but cannot identify which one is relevant."
+    },
+    {
+      "anchorText": "Data Is Available But Hard To Interpret",
+      "targetSlug": "data-is-available-but-hard-to-interpret",
+      "placementHint": "Related pages section or near the Polymatica example",
+      "reason": "The Polymatica example concerns users seeing data columns without being able to interpret operability for the intended operation."
+    }
+  ],
+  "qualityChecks": {
+    "factsOnlyFromCurrentSource": true,
+    "documentationStyle": true,
+    "noMarketingLanguage": true,
+    "noInventedClaims": true,
+    "linksOnlyFromLinkingContext": true,
+    "internalNotesNotPublished": true,
+    "readyForSanityImport": true
+  }
+}

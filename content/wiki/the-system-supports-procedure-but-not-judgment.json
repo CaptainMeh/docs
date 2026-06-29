@@ -1,0 +1,158 @@
+{
+  "slug": "the-system-supports-procedure-but-not-judgment",
+  "title": "The System Supports Procedure But Not Judgment",
+  "pageType": "situation",
+  "category": "situations",
+  "section": "Risk And Consequence",
+  "summary": "A system supports procedure but not judgment when it guides known sequences for standard cases while leaving non-standard cases without contextual information, state visibility, or structured decision support. The documented examples span simulation, scheduling, clinical research, surgical devices, fraud detection, and consumer finance.",
+  "keyFacts": [
+    "Procedure applies when the situation fits the designed case and the correct sequence is known.",
+    "Judgment applies when the practitioner must weigh competing factors, apply domain experience, and consider context-specific information not captured in a procedure.",
+    "Procedural rigidity is the failure mode where an interface supports standard-case sequences but provides no scaffold for non-standard situations.",
+    "Working around the system can leave judgment without documentation, oversight, or informational support.",
+    "In the documented Gexcon CFD simulation case, time to first successful simulation changed from 4 days to 6 hours, but the expert-judgment improvements are harder to isolate from the overall workflow improvement.",
+    "In the documented Gexcon case, active users per team changed from 1 to 3–4 according to client-reported evidence.",
+    "In the documented eToro case, a randomised A/B with a persistent holdout recorded conversion changing from 5.1% to 7.4% and time-to-trade from 11.8 to 8.6 minutes, with no increase in drop-off and no reduction in exploration depth.",
+    "The documented eToro case involved no AI, and its regulatory framing is described in relation to MiFID II / SEC-FINRA."
+  ],
+  "bodySections": [
+    {
+      "heading": "Procedure and judgment are different operating modes",
+      "bodyMarkdown": "Creative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nA system supports procedure but not judgment when it works for designed cases but fails to support the practitioner when the case falls outside the designed sequence. Procedure is the defined sequence for a standard case: the steps are known, the order is specified, and following the sequence produces the correct outcome.\n\nJudgment is the cognitive mode used when the situation does not fit the designed case. The practitioner must weigh competing factors, apply domain experience, consider information that is specific to the situation, and make a decision that no procedure book could predetermine.\n\nIn complex professional systems, operational significance often lies in the judgment cases. Standard cases proceed through procedure. Non-standard cases include borderline measurements, unusual patient responses, exceptional scheduling conflicts, and ambiguous risk signals. These are the cases where expert authority matters and where decisions often carry the most consequence."
+    },
+    {
+      "heading": "Procedural rigidity creates two failure modes",
+      "bodyMarkdown": "Procedural rigidity occurs when an interface guides standard-case sequences but provides no judgment scaffold for non-standard situations. The practitioner can use the guided workflow when the situation matches the designed case. For everything else, the practitioner must either force the situation into a procedural mould or work outside the system.\n\nForcing a non-standard situation into a standard procedure can produce an incorrect outcome because the procedure was not designed for that case. Working outside the system creates a different risk: judgment happens without the documentation, oversight, and informational support the system could otherwise provide.\n\nA judgment scaffold is not decision replacement. It supports expert decision-making by making relevant information, context, state, and structure available at the point of judgment. It does not predetermine the expert decision."
+    },
+    {
+      "heading": "Gexcon CFD simulation shows judgment in scientific configuration",
+      "bodyMarkdown": "In the documented Gexcon CFD simulation case, industrial safety simulation required expert practitioners to make judgment calls about simulation parameters. These calls included which simplifications were scientifically justified for a specific facility configuration, when a borderline result warranted a sensitivity analysis, and how to interpret outputs that fell in an ambiguous range relative to safety thresholds.\n\nThe pre-redesign system was structured around procedural workflow for standard cases. Expert practitioners handling non-standard judgments found the interface actively unhelpful because it did not surface the information needed for judgment calls and implicitly treated non-standard situations as execution errors rather than legitimate expert decisions.\n\nThe redesign maintained procedural support for standard cases while creating information structures and state visibility for non-standard ones. Time to first successful simulation changed from 4 days to 6 hours, but the documented evidence states that the expert-judgment improvements are harder to isolate from the overall workflow improvement. Active users per team changed from 1 to 3–4 according to client-reported evidence."
+    },
+    {
+      "heading": "Triopsis workforce management shows judgment in scheduling exceptions",
+      "bodyMarkdown": "In the documented Triopsis workforce management case, standard job scheduling was procedural: assign available crew to an available job within a time window. Exception-state scheduling required judgment when weather incidents, crew unavailability, conflicting priorities, or equipment failures changed the operating conditions.\n\nThe pre-redesign system supported the procedural scheduling flow. It did not support the exception-judgment workflow, even though exception handling absorbed much of a skilled scheduler's cognitive effort. Schedulers handling exceptions worked outside the intended workflow and constructed their own decision frameworks without informational support or documentation.\n\nThe redesign treated exception handling as a primary workflow. It surfaced relevant contextual information at the moment of judgment and provided structure for the decision without predetermining it."
+    },
+    {
+      "heading": "Akrivia Health shows judgment in clinical research cohort construction",
+      "bodyMarkdown": "In the documented Akrivia Health case, clinical research cohort construction was iterative and judgmental. A researcher developed a hypothesis, tested it against available data, revised the hypothesis based on what appeared, and iterated.\n\nThe pre-design workflow treated cohort construction procedurally through sequential filter application in a guided interface. The documented case describes that procedural model as systematically wrong for the task because it impeded iterative hypothesis development and produced cohorts that reflected the procedure's structure rather than the researcher's scientific question.\n\nThe redesign supported the judgment model of the work: iterative, revisable, and hypothesis-driven. The design response did not impose a procedural model on an inherently non-procedural research task."
+    },
+    {
+      "heading": "deSoutter Medical / Zethon shows judgment in surgical-device parameters",
+      "bodyMarkdown": "In the documented deSoutter Medical / Zethon case, the powered surgical instrument required surgeons to adjust speed and operating mode during procedures. These adjustments depended on real-time clinical judgment about tissue behaviour, patient response, and surgical conditions.\n\nThe parameter decisions were not procedure steps. They were expert clinical decisions made under time pressure, with the surgical field as the primary information source and the device interface as a secondary one.\n\nThe interface needed to support the surgeon's judgment by making current device state unambiguously readable and making adjustment actions achievable without interrupting primary clinical attention. The design did not attempt to proceduralise the parameter judgment; it supported the conditions under which judgment could be exercised."
+    },
+    {
+      "heading": "Callsign fraud detection shows judgment beyond policy thresholds",
+      "bodyMarkdown": "In the documented Callsign fraud detection case, fraud policy operated procedurally: when a risk score exceeded a threshold, the specified action applied. Fraud risk management also included legitimate cases outside threshold-based procedure.\n\nExamples included a fraud pattern that scored just below a policy threshold but showed an unusual combination of signals recognised by an experienced analyst, and an account that triggered a policy rule but had context that made the rule's application inappropriate.\n\nThe pre-design system allowed policy configuration, but analysts handling borderline cases had no structured way to exercise judgment beyond or around the policy. The redesign provided informational structure for expert risk judgment, including the policy's historical performance, the transaction pattern, and the policy rationale."
+    },
+    {
+      "heading": "eToro shows judgment about exposure before the procedure of trading",
+      "bodyMarkdown": "In the documented eToro multi-asset social trading case, the pre-redesign buy flow supported the procedure of executing a trade: enter an amount, review a summary, and confirm. It did not support the judgment that should precede the transaction: whether to take the position, and at what size, given the impact on the user's portfolio and the position's behaviour under different market conditions.\n\nThe interface presented a single implied expected result and showed profit alongside deposits. Users committed to trades while holding an incorrect model of their own exposure. The procedure ran smoothly, but the judgment it should have supported was unsupported.\n\nThe redesign rebuilt the flow around exposure-based decision-making. The sequence placed portfolio impact first, then structured scenario framing using outcome ranges rather than predictions, then position sizing with downside guardrails. The documented case describes this as a judgment scaffold rather than decision replacement.\n\nBehavioural confirmation came from a randomised A/B with a persistent holdout. Client-measured figures recorded conversion changing from 5.1% to 7.4% and time-to-trade changing from 11.8 to 8.6 minutes, with no increase in drop-off and no reduction in exploration depth. The documented evidence characterises this as consistent with better-supported judgment rather than a faster procedure pushing more trades. The eToro case involved no AI, and the regulatory framing is described in relation to MiFID II / SEC-FINRA without implying a recommended outcome."
+    },
+    {
+      "heading": "Boundaries of this situation",
+      "bodyMarkdown": "This situation is not an argument against procedure. Procedure remains appropriate when the case is designed, known, and sequence-dependent. The failure appears when the interface treats all work as if it were standard-case execution.\n\nThis situation is also not an argument for replacing expert decision-making with automation or rigid rules. The documented pattern is decision support rather than decision replacement: the system provides information, state visibility, context, and structure so that human judgment can act on a clearer basis.\n\nThe evidence base contains different strengths of evidence. The Gexcon time-to-first-successful-simulation change is measured, but the documented expert-judgment improvements are harder to isolate from the overall workflow improvement. The Gexcon active-user change is client-reported. The eToro figures are client-measured by eToro. Other examples describe design reasoning and case evidence rather than isolated measured outcomes."
+    }
+  ],
+  "evidenceSummary": {
+    "strongClaims": [
+      "Procedure is the defined sequence for designed cases, while judgment is expert decision-making for cases outside that definition.",
+      "A system that supports procedure but not judgment creates two failure modes: forcing non-standard situations into standard procedures or working outside the system.",
+      "In the Gexcon CFD simulation case, time to first successful simulation changed from 4 days to 6 hours, but expert-judgment improvements are harder to isolate from overall workflow improvement.",
+      "In the Triopsis workforce management case, the redesign treated exception handling as a primary workflow and surfaced contextual information at the moment of judgment.",
+      "In the Akrivia Health case, cohort construction required an iterative, hypothesis-driven judgment model rather than sequential procedural filtering.",
+      "In the deSoutter Medical / Zethon case, the interface needed to make device state readable and adjustment actions achievable without interrupting the surgeon's primary clinical attention.",
+      "In the Callsign fraud detection case, analysts needed structured support for borderline risk cases beyond or around policy thresholds.",
+      "In the eToro case, client-measured A/B evidence recorded conversion changing from 5.1% to 7.4% and time-to-trade from 11.8 to 8.6 minutes, with no increase in drop-off and no reduction in exploration depth."
+    ],
+    "weakerClaims": [
+      "In the Gexcon CFD simulation case, active users per team changed from 1 to 3–4 according to client-reported evidence."
+    ],
+    "limitations": [
+      "The Gexcon expert-judgment improvements are described as harder to isolate from the overall workflow improvement.",
+      "The Gexcon active-user signal is client-reported rather than independently verified in the current material.",
+      "The eToro A/B figures are client-measured by eToro.",
+      "The eToro case involved no AI, so it should not be used as evidence for AI-specific behaviour.",
+      "Several case examples describe design reasoning and workflow changes rather than isolated measured outcomes."
+    ]
+  },
+  "relatedPageSlugs": [
+    "uncertainty-is-hidden-at-the-point-of-decision",
+    "human-control-is-weak-in-practice",
+    "expert-workflows-are-hard-to-operate",
+    "system-state-is-hard-to-understand",
+    "oversight-exists-in-policy-but-not-in-workflow",
+    "the-interface-increases-cognitive-load-at-the-worst-moment",
+    "user-error-has-serious-consequences",
+    "warnings-are-visible-but-not-actionable",
+    "callsign-fraud-authentication",
+    "triopsis-workforce-management-saas"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "uncertainty is hidden at the point of decision",
+      "targetSlug": "uncertainty-is-hidden-at-the-point-of-decision",
+      "reason": "The situation describes judgment cases where missing uncertainty and context affect the decision basis."
+    },
+    {
+      "anchorText": "human control is weak in practice",
+      "targetSlug": "human-control-is-weak-in-practice",
+      "reason": "The page distinguishes decision support from decision replacement and describes cases where human judgment needs usable support."
+    },
+    {
+      "anchorText": "expert workflows are hard to operate",
+      "targetSlug": "expert-workflows-are-hard-to-operate",
+      "reason": "The source examples involve expert practitioners whose non-standard workflows are not adequately supported."
+    },
+    {
+      "anchorText": "system state is hard to understand",
+      "targetSlug": "system-state-is-hard-to-understand",
+      "reason": "Several examples depend on state visibility as a basis for judgment."
+    },
+    {
+      "anchorText": "oversight exists in policy but not in workflow",
+      "targetSlug": "oversight-exists-in-policy-but-not-in-workflow",
+      "reason": "The Callsign example describes policy thresholds without structured support for analyst judgment beyond the policy."
+    },
+    {
+      "anchorText": "the interface increases cognitive load at the worst moment",
+      "targetSlug": "the-interface-increases-cognitive-load-at-the-worst-moment",
+      "reason": "The surgical-device example involves judgment under time pressure where interface burden must not interrupt primary clinical attention."
+    },
+    {
+      "anchorText": "user error has serious consequences",
+      "targetSlug": "user-error-has-serious-consequences",
+      "reason": "The situation concerns high-consequence judgment cases where incorrect procedure application can produce incorrect outcomes."
+    },
+    {
+      "anchorText": "warnings are visible but not actionable",
+      "targetSlug": "warnings-are-visible-but-not-actionable",
+      "reason": "The need for actionable decision support is adjacent to the distinction between displaying information and scaffolding judgment."
+    },
+    {
+      "anchorText": "Callsign fraud detection",
+      "targetSlug": "callsign-fraud-authentication",
+      "reason": "The source names Callsign as a case example and the allowed linking context includes the matching case-study slug."
+    },
+    {
+      "anchorText": "Triopsis workforce management",
+      "targetSlug": "triopsis-workforce-management-saas",
+      "reason": "The source names Triopsis as a case example and the allowed linking context includes the matching case-study slug."
+    }
+  ],
+  "tags": [
+    "procedure versus judgment",
+    "judgment scaffold",
+    "procedural rigidity",
+    "exception handling",
+    "decision support",
+    "risk and consequence",
+    "expert workflows",
+    "non-standard cases"
+  ],
+  "_meta": {
+    "sourcePath": "sources/articles/Situations/situations--risk--the-system-supports-procedure-but-not-judgment.md",
+    "parentSlug": "risk-and-consequence",
+    "childPageSlugs": [],
+    "generatedBy": "deterministic"
+  }
+}

@@ -1,0 +1,132 @@
+{
+  "slug": "fintech-and-financial-services",
+  "title": "Fintech And Financial Services",
+  "pageType": "context",
+  "category": "contexts",
+  "section": "Contexts",
+  "summary": "This context covers Creative Navy's documented work in financial-services products where interface decisions are constrained by PSD2, SCA, PCI DSS, KYC/AML, MiFID II, SEC anti-fraud rules, FINRA Reg BI, and related financial-promotion constraints. The main evidence examples are Callsign's fraud policy engine, Bofin's open banking marketplace, and eToro's multi-asset social trading surfaces.",
+  "keyFacts": [
+    "PSD2, SCA, PCI DSS, KYC/AML, open banking, MiFID II, SEC anti-fraud rules, FINRA Reg BI, and the SEC Marketing Rule appear as domain vocabulary for this context.",
+    "Callsign involved a fraud detection and authentication policy engine for enterprise banking, where behavioural event scoring was translated into allow, block, or step-up authentication decisions.",
+    "Callsign's redesigned policy engine separated the fraud scoring model from the policy layer and treated policy as the central object for governance and auditability.",
+    "Callsign outcomes include client-reported contracts with Lloyds Bank and HSBC following demos using the redesigned policy engine interface.",
+    "Bofin involved a mobile marketplace for financial services across onboarding, identity verification, account aggregation, and transaction initiation.",
+    "Bofin outcomes include no missed deadlines across 12 months, a first MVP within 2 weeks, and a full design system covering core modules.",
+    "eToro involved mobile landing, buy, and discovery surfaces for a social trading and multi-asset brokerage platform operating across EU and US markets.",
+    "eToro's client-measured A/B test reported discovery-to-trade conversion moving from 5.1% to 7.4% and median time to first trade moving from 11.8 to 8.6 minutes.",
+    "Creative Navy did not act as a compliance authority or legal approver in the eToro work; regulation was an integrated design input subject to client compliance review."
+  ],
+  "bodySections": [
+    {
+      "heading": "Fintech and financial-services design context",
+      "bodyMarkdown": "Creative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nIn fintech and financial services, Creative Navy's documented work treats regulation, trust, auditability, fraud control, and decision-making under uncertainty as interface constraints. The financial-services interface is not only a screen layer over a regulated backend. It is often the place where users, analysts, risk teams, and compliance reviewers encounter the product's operating logic.\n\nThe documented cases cover three distinct financial-services problems: enterprise fraud governance in [Callsign fraud authentication](/callsign-fraud-authentication), multi-institutional coherence in [Bofin](/bofin), and retail investing decision formation in eToro's social trading and multi-asset brokerage product."
+    },
+    {
+      "heading": "Regulatory vocabulary that defines the fintech design surface",
+      "bodyMarkdown": "Financial-services design in this context uses specific regulatory and operational vocabulary rather than generic risk language. PSD2 governs open banking and payment services in the EU. SCA is the two-factor authentication requirement under PSD2 for electronic payments. PCI DSS is the security and documentation standard for card payment environments. KYC and KYC/AML refer to identity verification requirements in financial services.\n\nOpen banking introduces a multi-institutional integration problem. A product may connect multiple financial providers in a single user experience, but each provider brings its own product logic, terminology, authentication behaviour, and error states. In Bofin, this made coherence and trust first-order design constraints rather than cosmetic consistency issues.\n\nInvestment products introduce a separate regulatory surface. MiFID II governs investor protection, transparency of information, appropriateness of instruments, and avoidance of misleading financial promotion in the EU/UK product. For the US product, the relevant source vocabulary includes the SEC anti-fraud regime, FINRA Regulation Best Interest and the fair-balance principle, and the SEC Marketing Rule. In eToro's case, these constraints affected how social signals, market signals, performance information, and risk information could appear in the interface."
+    },
+    {
+      "heading": "Callsign fraud governance required explainable policy control without exposing model internals",
+      "bodyMarkdown": "The Callsign work concerned a fraud detection and authentication policy engine for enterprise banking. Behavioural event scoring, including device fingerprint, location change, spend velocity, and previous failure history, was translated into real-world decisions: allow, block, or trigger step-up authentication.\n\nThe core design problem was how to make an AI-driven fraud detection system governable, explainable, and auditable without exposing model internals or requiring risk analysts to understand the underlying scoring model. The regulatory context was structural. SCA and PCI DSS shaped how financial institutions had to document and evidence fraud control decisions, so an interface that could not produce an auditable account of policy construction and policy behaviour was not compliant and was not saleable to enterprise banking customers.\n\nAt the start of the Callsign engagement, rules were scattered across database views and configuration tables. Conflicts between rules were hard to identify. Audit trails were absent or ambiguous. Demonstrations to senior risk teams at major banks raised governance questions instead of resolving them.\n\nCreative Navy's design response separated the fraud scoring model from the policy layer that applied thresholds, overrides, and workflow decisions. This model/policy separation made the interface designable because risk analysts could work with policy logic without needing access to model internals. Policy became the central object, bundling conditions, actions, history, and links to related rules so that analysts could follow a policy from definition through evaluation without losing context.\n\nThe Callsign interface also separated configuration mode from evaluation mode. Policies were edited in configuration. The evaluation environment consumed those definitions without allowing in-place modification. This was a governance design decision because it prevented untracked modifications during analysis.\n\nThe available Callsign evidence is calibrated. Contracts with Lloyds Bank and HSBC were client-reported as won following demos using the redesigned policy engine interface. The documented mechanism is that product managers could present a configuration experience aligned with how risk teams frame fraud problems, while engineering leads could see a clear path from interface behaviour to implementation. Time to market was reduced by approximately 6 months compared with the previous development approach; this is a client/engagement-inferred estimate, not a measured comparison. The Callsign design system was client-reported as used for at least 2 years post-engagement and extended across additional security modules beyond fraud and authentication."
+    },
+    {
+      "heading": "Bofin open banking required coherence across multiple financial institutions",
+      "bodyMarkdown": "Bofin was a mobile marketplace for financial services where users compared and accessed products from multiple institutions in a single app. When Creative Navy joined, development was already in progress across onboarding, identity verification, account aggregation, and transaction initiation, and the engineering team had exceeded 50 developers.\n\nPSD2 and SCA compliance requirements shaped interaction design throughout the Bofin work. KYC and identity verification flows were treated as regulated workflows where friction reduction had to be balanced against compliance rigour. The source evidence frames this as a core fintech tension: neither compliance rigour nor friction reduction is optional.\n\nThe design problem was multi-institutional fragmentation. Aggregation platforms can allow each institution's product logic to intrude into the interface, producing inconsistent labelling, interaction patterns, and error behaviour across providers. For a new entrant asking users to manage significant financial relationships through one mobile app, this fragmentation was a trust problem as well as a usability problem.\n\nCreative Navy's design response used a design system covering onboarding, account aggregation, identity verification, and transaction flows. The system was built to create consistency across providers from the start rather than being retrofitted after implementation. Progressive specification moved the work from early alignment and prioritisation through requirements definition to documented interaction patterns and system components.\n\nThe available Bofin outcomes are structural and organisational. No deadline was missed across 12 months. The first MVP was delivered within 2 weeks of engagement start. A full design system was delivered across all core modules. Fewer mid-sprint clarifications and reduced rework from clearer component definitions were client-reported. Creative Navy observed that the organisation was prepared to operate the design system independently at handover. No user performance metrics, such as task completion, error rates, or conversion, are available for this engagement."
+    },
+    {
+      "heading": "eToro treated social trading as decision-making under uncertainty",
+      "bodyMarkdown": "eToro's documented work concerned a social trading and multi-asset brokerage platform operating in more than 140 countries with millions of users across EU and US markets. Creative Navy redefined the three earliest mobile surfaces: the landing experience, the buy flow, and exploratory discovery. These surfaces were treated as a connected behavioural system governing how users moved from curiosity to financial commitment.\n\nThe starting condition was not a basic usability failure. eToro had spent roughly a year on an internal redesign that refined the existing product language without shifting user behaviour. The documented problem was conceptual: how to increase the quality of decision formation without collapsing engagement into either paralysis or manipulation, in a system that monetises trading activity.\n\nThe central design move was to reframe the product from a trading tool to a decision environment. The buy flow shifted from execution-based interaction — amount, summary, confirm — to exposure-based decision-making. Portfolio impact was established first. Scenario framing was then presented as uncertainty ranges, explicitly not as predictions. Position sizing followed with downside-limiting guardrails. This addressed confusion where profit shown alongside deposits led users to misattribute gains and losses across the whole account.\n\nThe eToro explore surface used trust calibration by separating social signals, market signals, and volatility-driven movement. This helped users distinguish the type of signal they were responding to and reduced the risk that popularity indicators would read as endorsement. The landing surface also used distinct informational layers for market movement, social activity, and volatility rather than a blended feed, deliberately avoiding recommendation framing.\n\nThe eToro evidence includes a client-measured user-level randomised A/B test with a persistent holdout. The test used a 50/50 split, 1,625 users per arm, and a 6-week measurement window across both high- and low-volatility market conditions. Discovery-to-trade conversion moved from 5.1% to 7.4%, a 45% relative increase. Median time to first trade moved from 11.8 to 8.6 minutes, a 27% reduction. The source evidence states that the result was statistically significant under eToro's predefined thresholds and that both arms experienced identical market conditions over the same period, making the differences attributable to the redesigned decision surfaces rather than to market movement.\n\nThe eToro result should not be framed as users trading more, faster. The time-to-trade reduction occurred without an increase in early-session drop-off and without a reduction in exploration depth. The documented interpretation is that users converged faster while exploring as much, which supports a framing of more coherent decision formation rather than impulsivity."
+    },
+    {
+      "heading": "Financial-services design patterns across the documented cases",
+      "bodyMarkdown": "Across Callsign, Bofin, and eToro, financial-services design is presented as tension-driven reasoning under regulation. Callsign balanced AI-driven behavioural scoring with auditability and policy traceability. Bofin balanced open banking friction reduction with PSD2, SCA, and KYC/AML rigour. eToro balanced engagement, decision quality, and financial-promotion constraints under MiFID II, the SEC anti-fraud regime, FINRA Reg BI, and the SEC Marketing Rule.\n\nTrust is treated as a design requirement in this context. In Callsign, trust was required by bank risk teams evaluating policy governance and audit trails. In Bofin, trust depended on coherent interaction across institutions. In eToro, trust calibration depended on users being able to distinguish social popularity, market movement, volatility, and risk information.\n\nThe competitive vector differs by case. In Callsign, the competitive vector was fraud strategy configuration that was transparent, auditable, and explainable to bank risk teams under SCA and PCI DSS requirements. In Bofin, the competitive vector was coherent, predictable interaction across institutions as the trust foundation for a marketplace model. In eToro, the competitive vector was the interface as a structured decision environment under uncertainty, with social and market signals separated in a way that was clearer for users and aligned with financial-promotion constraints."
+    },
+    {
+      "heading": "Evidence boundaries and compliance limits in this context",
+      "bodyMarkdown": "The evidence base for this context is mixed and should not be collapsed into a single strength level. eToro's A/B test is client-measured and causal within the stated conditions. Callsign's bank contract outcomes are client-reported, and the time-to-market reduction is approximate and client/engagement-inferred. Bofin's outcomes are delivery, design-system, and organisational outcomes; no user performance metrics are available.\n\nCreative Navy did not act as a compliance authority or legal approver in the eToro work, and the work was not a compliance-validation exercise. Regulation was an integrated design input subject to client compliance review. The documented review loops checked financial-promotion constraints against UI hierarchy decisions, reviewed risk-disclosure placement and prominence within design iterations, and applied suitability and appropriateness considerations to what could be personalised in early flows.\n\nThe eToro research basis also has a stated boundary. Creative Navy worked from eToro's existing evidence base, including a commissioned third-party qualitative study by Provoke Insights and eToro's competitive benchmarking, rather than running primary research. In eToro's own commissioned research, prospects asked which platform looked best for usability chose eToro 67%, Binance 19%, and Cash App 15%. This is a client-commissioned directional finding, not a Creative Navy measurement."
+    }
+  ],
+  "evidenceSummary": {
+    "strongClaims": [
+      "Callsign's work concerned a fraud detection and authentication policy engine for enterprise banking where behavioural event scoring was translated into allow, block, or step-up authentication decisions.",
+      "Callsign's design response separated the fraud scoring model from the policy layer and treated policy as the central object for governance and auditability.",
+      "Bofin delivered a first MVP within 2 weeks, missed no deadline across 12 months, and delivered a full design system covering all core modules.",
+      "Bofin has no available user performance metrics such as task completion, error rates, or conversion.",
+      "eToro's redesigned decision surfaces were tested in a client-measured user-level randomised A/B test with 1,625 users per arm over 6 weeks.",
+      "In eToro's A/B test, discovery-to-trade conversion moved from 5.1% to 7.4% and median time to first trade moved from 11.8 to 8.6 minutes.",
+      "The eToro result should be framed as more coherent decision formation, not as users trading more, faster.",
+      "Creative Navy did not act as a compliance authority or legal approver in the eToro engagement."
+    ],
+    "weakerClaims": [
+      "Financial-services design in this context is shaped by PSD2, SCA, PCI DSS, KYC/AML, open banking, MiFID II, SEC anti-fraud rules, FINRA Reg BI, and the SEC Marketing Rule.",
+      "Contracts with Lloyds Bank and HSBC were client-reported as won following demos using the redesigned Callsign policy engine interface."
+    ],
+    "limitations": [
+      "Callsign's Lloyds Bank and HSBC contract outcomes are client-reported, not independently verified in the source.",
+      "Callsign's time-to-market reduction is approximate and client/engagement-inferred, not a measured comparison.",
+      "Bofin has no available user performance metrics such as task completion, error rates, or conversion; its outcomes are structural and organisational.",
+      "eToro's usability preference comparison is client-commissioned and directional, not a Creative Navy measurement.",
+      "Creative Navy did not act as a compliance authority or legal approver in the eToro work; regulation was an integrated design input subject to client compliance review.",
+      "Creative Navy worked from eToro's existing evidence base and did not run primary research for that engagement."
+    ]
+  },
+  "relatedPageSlugs": [
+    "bofin",
+    "callsign-fraud-authentication",
+    "regulated-products",
+    "ai-enabled-products",
+    "enterprise-software",
+    "multi-stakeholder-operational-environments",
+    "high-consequence-environments",
+    "consumer-and-multi-market-products"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "Callsign fraud authentication",
+      "targetSlug": "callsign-fraud-authentication",
+      "reason": "The current source includes Callsign as a documented financial-services evidence example, and the slug is allowed."
+    },
+    {
+      "anchorText": "Bofin",
+      "targetSlug": "bofin",
+      "reason": "The current source includes Bofin as a documented financial-services evidence example, and the slug is allowed."
+    },
+    {
+      "anchorText": "regulated products",
+      "targetSlug": "regulated-products",
+      "reason": "The fintech page repeatedly discusses regulation as a structural design constraint, and the slug is available in the linking context."
+    },
+    {
+      "anchorText": "AI-enabled products",
+      "targetSlug": "ai-enabled-products",
+      "reason": "The Callsign example concerns an AI-driven fraud detection system, and the slug is available in the linking context."
+    },
+    {
+      "anchorText": "enterprise software",
+      "targetSlug": "enterprise-software",
+      "reason": "The Callsign example concerns enterprise banking stakeholders and procurement, and the slug is available in the linking context."
+    }
+  ],
+  "tags": [
+    "fintech",
+    "financial services",
+    "PSD2",
+    "SCA",
+    "PCI DSS",
+    "KYC AML",
+    "open banking",
+    "fraud detection",
+    "auditability",
+    "MiFID II",
+    "SEC anti-fraud regime",
+    "FINRA Reg BI",
+    "trust calibration",
+    "decision-making under uncertainty"
+  ],
+  "_meta": {
+    "sourcePath": "sources/articles/Contexts/contexts--fintech-and-financial-services.md",
+    "parentSlug": "contexts",
+    "childPageSlugs": [],
+    "generatedBy": "deterministic"
+  }
+}

@@ -1,0 +1,173 @@
+{
+  "_type": "documentationPage",
+  "sourceFile": "Articles/Glossary/glossary--industry-terms--trust-calibration.md",
+  "sourcePath": "sources/articles/Glossary/glossary--industry-terms--trust-calibration.md",
+  "sanityDocumentIdCandidate": "documentationPage.trust-calibration",
+  "title": "Trust Calibration",
+  "slug": {
+    "_type": "slug",
+    "current": "trust-calibration"
+  },
+  "pageType": "glossary-term",
+  "category": "glossary",
+  "parentSlug": "industry-terms",
+  "childPageSlugs": [],
+  "excerpt": "Trust calibration is the alignment between user confidence in a system's outputs and the actual reliability of those outputs in specific contexts. It fails through over-trust or under-trust when interface signals misrepresent reliability.",
+  "metaTitle": "Trust Calibration",
+  "metaDescription": "Trust calibration aligns user confidence with actual system reliability, avoiding over-trust and under-trust through clear interface signals.",
+  "summary": "Trust calibration describes whether users trust system outputs, recommendations, or decisions at a level that matches their actual reliability. In AI interfaces, calibration depends on confidence communication, uncertainty communication, capability and boundary transparency, override parity, and temporal sequencing.",
+  "definition": "Trust calibration is the alignment between the degree of confidence users place in a system's outputs, recommendations, or decisions and the actual reliability of those outputs in specific contexts.",
+  "keyFacts": [
+    "Trust calibration concerns the fit between user confidence and actual system reliability in specific contexts.",
+    "Over-trust, also described as automation bias, occurs when users follow AI outputs without independent judgment where judgment is needed.",
+    "Under-trust occurs when users reject AI assistance in cases where the AI is reliable and would improve decisions.",
+    "Interface presentation can implicitly claim more or less reliability through visual authority, placement, cautionary labels, and the presence or absence of uncertainty indicators.",
+    "Design mechanisms for calibrated trust include confidence communication, uncertainty communication, capability and boundary transparency, override parity, and temporal sequencing.",
+    "Explainability can support trust calibration, but explainability is a mechanism and trust calibration is the outcome.",
+    "The Puraite AI systematic review used blinded mode and explicit confidence percentages with colour coding as trust calibration design decisions.",
+    "The Owkin / K biomedical AI case used data boundary transparency to help users assess the basis for outputs.",
+    "The Callsign fraud detection case made fraud policy historical performance visible at the evaluation stage to support calibrated trust.",
+    "The eToro example is non-AI and is included because social-signal calibration has a structurally analogous trust problem."
+  ],
+  "tags": [
+    "trust calibration",
+    "AI interface design",
+    "automation bias",
+    "over-trust",
+    "under-trust",
+    "uncertainty communication",
+    "confidence communication",
+    "explainability",
+    "human judgment"
+  ],
+  "bodyMarkdown": "## Definition\n\nTrust calibration is the alignment between the degree of confidence users place in a system's outputs, recommendations, or decisions and the actual reliability of those outputs in specific contexts.\n\nA well-calibrated user trusts AI outputs more when the outputs are reliable and less when they are not. An interface that supports trust calibration gives users the signals they need to distinguish reliable outputs from uncertain or unreliable outputs.\n\nTrust calibration fails in two directions. Over-trust, also described as automation bias, occurs when users follow AI outputs without exercising independent judgment in cases where judgment is needed. Under-trust occurs when users reject AI assistance in cases where the AI is reliable and the assistance would improve decisions.\n\n## Meaning in Creative Navy's documentation\n\nTrust calibration is treated as a design responsibility because user trust is dynamically shaped by what the interface communicates about reliability at each interaction.\n\nAn interface that presents AI outputs with prominent positioning, confident visual treatment, and no uncertainty indicators implicitly claims a higher level of reliability. An interface that buries AI outputs in secondary panels with multiple cautionary labels implicitly claims a lower level of reliability. These implicit reliability claims shape the level of confidence users develop in the system.\n\nIn this usage, miscalibrated trust is not only a user attitude problem. It is also an interface problem, because the interface determines which reliability signals users see, when they see them, and how much effort is required to accept or reject an AI recommendation.\n\n## What trust calibration includes\n\nTrust calibration includes the design mechanisms that help users assign scrutiny in proportion to actual reliability.\n\nConfidence communication shows the AI's confidence level explicitly. The confidence signal may be a percentage, a visual indicator, or a verbal descriptor. The purpose is to help users process high-confidence outputs faster and evaluate low-confidence outputs more carefully.\n\nUncertainty communication makes uncertainty visible as a first-class design element. It does not hide uncertainty in order to create a feeling of reliability.\n\nCapability and boundary transparency communicates what the AI can do, what it cannot do, what data it draws on, and which types of queries are within its reliable operating zone.\n\nOverride parity means that overriding an AI recommendation should require no more cognitive effort than accepting it. If acceptance is easier than rejection, the interface can discourage independent judgment through asymmetric friction.\n\nTemporal sequencing means presenting AI recommendations after, rather than before, the user's own assessment in contexts that require independent judgment. This reduces anchoring effects that can contribute to over-trust.\n\n## How over-trust is produced\n\nOver-trust is produced when interface signals make AI outputs appear more reliable than they are.\n\nInterfaces can produce over-trust by presenting AI recommendations with visual authority that does not reflect actual confidence levels. They can also produce over-trust by showing AI outputs before users have formed their own assessment, which creates anchoring. Over-trust is further reinforced when accepting recommendations is easier than overriding them, or when the same confident-looking presentation is used regardless of AI confidence level.\n\nThe consequence of over-trust is that users accept AI recommendations at rates that do not reflect their own critical assessment. In consequential domains, this can produce errors that independent human judgment would have caught.\n\n## How under-trust is produced\n\nUnder-trust is produced when users lack the information needed to understand when AI assistance is reliable.\n\nInterfaces can produce under-trust by failing to communicate what the AI can do or what data it draws on. They can also produce under-trust by presenting AI outputs without context about when those outputs are most reliable. If high-confidence and low-confidence outputs are not distinguished, users may distrust all outputs uniformly.\n\nThe consequence of under-trust is that users reject AI assistance in cases where it would have improved their decisions. In that situation, the AI capability may be present in the product but not accessible in practice.\n\n## How trust calibration differs from explainability\n\nExplainability and trust calibration are related but not equivalent.\n\nExplainability is the ability to trace an AI decision back to its inputs and reasoning. Explainability can contribute to trust calibration by giving users information they can evaluate. Trust calibration is the outcome: user confidence matches the actual reliability of system outputs in context.\n\nA system can be explainable and still produce miscalibrated trust if the explanation is too complex to use or is provided in the wrong context. Explanation is one possible mechanism; calibrated trust is the target state.\n\n## Examples in practice\n\nIn the Puraite AI systematic review, blinded mode and explicit confidence percentage with colour coding were trust calibration design decisions. Blinded mode withheld AI decisions until after independent human assessment, addressing temporal anchoring as a source of over-trust. The confidence display addressed uniform-confidence presentation by helping users distinguish reliable outputs from uncertain outputs.\n\nIn the Owkin / K biomedical AI case, data boundary transparency addressed an under-trust mechanism. Users who did not understand what data K had access to could not assess the basis for its outputs and could not form appropriately calibrated trust. Making the data holdings visible provided information users needed to calibrate confidence in the outputs.\n\nIn the Callsign fraud detection case, historical performance data for fraud policies was made visible at the evaluation stage. Risk analysts evaluating policies could not calibrate trust in a policy's reliability without seeing its historical behaviour. The performance data made calibrated trust possible in that evaluation context.\n\nThe eToro multi-asset social trading example is not an AI case. It is included because the calibration structure is analogous: users had to calibrate trust in social signals such as copy-trading activity, \"most copied\" and \"top performer\" indicators, popularity, and trending signals. The documented issue was that copy trading was highly recognised but barely used, with users wary of manipulation, asking for historical performance and trader verification, and reporting limited domain knowledge for judgment. The design response separated social signals from market performance and volatility-driven movement so users could tell what kind of signal they were responding to.\n\n## Evidence basis\n\nThe evidence basis for trust calibration in this documentation is case evidence from Puraite, Owkin / K, Callsign, and eToro.\n\nThe Puraite, Owkin / K, and Callsign examples concern AI or AI-adjacent decision support contexts where interface design shaped how users assessed reliability. The eToro example is a non-AI case and is included only as a structurally analogous social-signal calibration problem.\n\nThe evidence calibration for eToro is limited. The research was eToro-commissioned, directional, and qualitative. The signal-separation design was Creative Navy's work. The eToro example does not establish that the case involved AI, and it does not establish that the copy feature names were changed.\n\n## Boundaries and limits\n\nTrust calibration does not mean increasing trust uniformly. The goal is not more trust; the goal is confidence that matches actual reliability in context.\n\nTrust calibration also does not mean adding explanations everywhere. Explanations can support calibration, but only when users can use them at the point where they need to judge reliability.\n\nTrust calibration is not exclusive to AI. The eToro case shows a structurally analogous calibration problem in social signals, where popularity could be misread as endorsement. This boundary matters because the design problem is the user's interpretation of reliability signals, not only the presence of an AI model.\n\n## Related pages\n\nThe documented Puraite, Owkin / K, and Callsign cases provide examples of trust calibration mechanisms in applied design contexts.",
+  "claims": [
+    {
+      "claim": "Trust calibration is the alignment between user confidence in system outputs and the actual reliability of those outputs in specific contexts.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "Defined directly in the term definition."
+    },
+    {
+      "claim": "Over-trust occurs when users follow AI outputs without independent judgment where judgment is needed; under-trust occurs when users reject reliable AI assistance that would improve decisions.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "The source defines both failure directions explicitly."
+    },
+    {
+      "claim": "Interfaces produce over-trust through visual authority, anchoring, override friction asymmetry, and lack of uncertainty communication.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "The source lists these mechanisms as causes of over-trust."
+    },
+    {
+      "claim": "Interfaces produce under-trust when they fail to communicate AI capability, data basis, reliability contexts, or differences between high-confidence and low-confidence outputs.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "The source lists these mechanisms as causes of under-trust."
+    },
+    {
+      "claim": "Design mechanisms for calibrated trust include confidence communication, uncertainty communication, capability and boundary transparency, override parity, and temporal sequencing.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "The source enumerates these five mechanisms."
+    },
+    {
+      "claim": "Explainability can contribute to trust calibration, but explainability is a mechanism and trust calibration is the outcome.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "The source explicitly distinguishes explainability from trust calibration."
+    },
+    {
+      "claim": "The Puraite AI systematic review used blinded mode and explicit confidence percentage with colour coding as trust calibration design decisions.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "The source describes blinded mode and confidence display as trust calibration decisions."
+    },
+    {
+      "claim": "The Owkin / K biomedical AI case used data boundary transparency to address an under-trust mechanism.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "The source states that visibility of data holdings helped users calibrate trust."
+    },
+    {
+      "claim": "The Callsign fraud detection case made fraud policy historical performance visible at the evaluation stage to support calibrated trust.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "The source states that analysts needed historical behaviour to calibrate trust in policy reliability."
+    },
+    {
+      "claim": "The eToro example is a non-AI case used as a structurally analogous trust calibration problem involving social signals rather than AI outputs.",
+      "evidenceType": "case study",
+      "sourceStrength": "weak",
+      "notes": "The source states that eToro involved no AI and that the eToro-commissioned research is directional and qualitative."
+    }
+  ],
+  "limitations": [
+    "Trust calibration is context-specific; the page does not define a universal trust level that should apply across all AI outputs.",
+    "The evidence basis is case-based rather than a general empirical measurement across all AI systems.",
+    "The eToro example is explicitly non-AI and should be used only as a structurally analogous calibration example.",
+    "The eToro research is described as eToro-commissioned, directional, and qualitative.",
+    "The source states that eToro's calibration work was signal separation, not renaming copy features."
+  ],
+  "publicationBlockers": [],
+  "questionsForReview": [
+    "None"
+  ],
+  "relatedPageSlugs": [
+    "puraite",
+    "owkin-k",
+    "callsign-fraud-authentication",
+    "human-oversight",
+    "decision-quality",
+    "state-visibility"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "Puraite",
+      "targetSlug": "puraite",
+      "placementHint": "Link the first mention of the Puraite AI systematic review in the Examples in practice section.",
+      "reason": "The source uses Puraite as an evidence example for blinded mode and confidence display in trust calibration."
+    },
+    {
+      "anchorText": "Owkin / K biomedical AI",
+      "targetSlug": "owkin-k",
+      "placementHint": "Link the first mention of Owkin / K in the Examples in practice section.",
+      "reason": "The source uses Owkin / K as an evidence example for data boundary transparency and under-trust."
+    },
+    {
+      "anchorText": "Callsign fraud detection",
+      "targetSlug": "callsign-fraud-authentication",
+      "placementHint": "Link the first mention of the Callsign fraud detection case in the Examples in practice section.",
+      "reason": "The source uses Callsign as an evidence example for historical performance visibility in trust calibration."
+    },
+    {
+      "anchorText": "human oversight",
+      "targetSlug": "human-oversight",
+      "placementHint": "Use where the page discusses independent human judgment in over-trust contexts, if cross-linking is desired.",
+      "reason": "The over-trust definition concerns users following AI outputs without independent judgment where judgment is needed."
+    },
+    {
+      "anchorText": "decision quality",
+      "targetSlug": "decision-quality",
+      "placementHint": "Use where the page discusses AI assistance improving decisions or errors that judgment would have caught, if cross-linking is desired.",
+      "reason": "The definition connects trust calibration failures to decision improvement and decision errors."
+    },
+    {
+      "anchorText": "state visibility",
+      "targetSlug": "state-visibility",
+      "placementHint": "Use near discussion of visible confidence, uncertainty, data holdings, and historical performance, if cross-linking is desired.",
+      "reason": "The design mechanisms in the source depend on making reliability-relevant system state visible to users."
+    }
+  ],
+  "qualityChecks": {
+    "factsOnlyFromCurrentSource": true,
+    "documentationStyle": true,
+    "noMarketingLanguage": true,
+    "noInventedClaims": true,
+    "linksOnlyFromLinkingContext": true,
+    "internalNotesNotPublished": true,
+    "readyForSanityImport": true
+  },
+  "__sourceCategoryDir": "Glossary"
+}

@@ -1,0 +1,128 @@
+{
+  "slug": "high-consequence",
+  "title": "High Consequence",
+  "pageType": "glossary-term",
+  "category": "glossary",
+  "section": "Industry Terms",
+  "summary": "High-consequence is a consequence-profile term. It describes contexts where interface failure is difficult to undo, whether the harm is immediate or deferred.",
+  "keyFacts": [
+    "High-consequence is defined by the difficulty of recovering from interface failure, not by the importance of the work alone.",
+    "High-consequence outcomes may be immediate, such as patient safety incidents, industrial accidents, or navigation errors at sea.",
+    "High-consequence outcomes may be deferred, such as regulatory non-compliance, safety assessments based on misconfigured simulations, or financial harm from uncaught fraud patterns.",
+    "High-consequence is broader than safety-critical because it includes regulatory, financial, research integrity, and operational disruption consequences.",
+    "A system can be regulated without being high-consequence, and a system can be high-consequence without formal regulation.",
+    "Complexity describes cognitive demand; high-consequence describes what happens when the system fails.",
+    "Interfaces can amplify or reduce the consequence profile of a high-consequence operational context.",
+    "Time pressure and divided attention shape the design standard in high-consequence environments.",
+    "In high-consequence contexts, interface performance under actual operating conditions matters more than performance under ideal conditions."
+  ],
+  "bodySections": [
+    {
+      "heading": "Definition",
+      "bodyMarkdown": "High-consequence describes software, systems, or operational environments where interface failures produce outcomes that are materially harder to recover from than in standard software.\n\nThe relevant failures include errors, misinterpretations, missed signals, and incorrect state communication. The consequences may be immediate, such as patient safety incidents, industrial accidents, or navigation errors at sea. The consequences may also be deferred, such as regulatory non-compliance discovered months later, industrial safety assessments based on misconfigured simulations, or financial harm from uncaught fraud patterns.\n\nHigh-consequence is defined by the consequence profile. The defining issue is not whether the work is important, complex, or formally regulated. The defining issue is how difficult it is to undo what goes wrong after an interface failure."
+    },
+    {
+      "heading": "Meaning in Creative Navy's documentation",
+      "bodyMarkdown": "In Creative Navy's documentation, high-consequence is used to describe the operating condition that makes interface behaviour materially consequential. The term applies when interface design affects whether people can recognise system state, interpret signals correctly, avoid configuration errors, and act safely or correctly under the conditions that actually apply.\n\nHigh-consequence is not mainly an industry label. Medical, industrial, maritime, financial, research, and enforcement contexts may all contain high-consequence systems, but the term is not defined by the sector. It is defined by the recovery difficulty created when an interface failure enters the operational workflow.\n\nCreative Navy's documentation uses the term to distinguish consequence profile from system complexity, regulatory status, and stakeholder importance. A complex system may be high-consequence, but complexity and consequence describe different properties."
+    },
+    {
+      "heading": "What high-consequence includes",
+      "bodyMarkdown": "High-consequence includes situations where an interface failure can create immediate harm. A misread device state in a cardiac support context can create a patient safety incident before the error can be corrected. A captain who cannot read vessel energy state during a manoeuvre at sea is operating under high-consequence conditions because the failure happens inside an active operational situation.\n\nHigh-consequence also includes situations where the damage is delayed. An incorrect safety assessment built on a misconfigured industrial safety simulation may not be discovered until downstream effects manifest. Regulatory non-compliance may be discovered months later. Financial harm from uncaught fraud patterns may become visible only after decisions have already been made.\n\nHigh-consequence therefore includes more than physical safety. It can include regulatory failures, financial harm, research integrity violations, and operational disruption with significant cost."
+    },
+    {
+      "heading": "Interfaces can amplify or reduce high-consequence risk",
+      "bodyMarkdown": "High-consequence is a property of the operational context, but the interface determines whether that context's risk profile is amplified or reduced. The same operational setting can become more or less recoverable depending on whether the interface communicates state clearly, prevents misinterpretation, and supports correct action under real conditions.\n\nAn operating theatre is inherently high-consequence. A surgical instrument whose interface makes device state unambiguous under clinical conditions reduces the consequence profile within that context. The context remains high-consequence, but the interface can reduce the likelihood that a state-reading problem becomes an unrecoverable or difficult-to-recover event.\n\nThis distinction matters because high-consequence design is not only about identifying risky domains. It is about specifying how interface behaviour changes the practical recoverability of errors, missed signals, and incorrect state communication."
+    },
+    {
+      "heading": "Time pressure and divided attention define the design standard",
+      "bodyMarkdown": "High-consequence environments are typically time-pressured and involve divided attention. These are the conditions where the gap between adequate and poor interface design becomes largest.\n\nA state indicator may be legible during focused inspection and still be insufficient in a brief glance under divided attention. In high-consequence contexts, the design standard is performance under the conditions that actually apply, not performance under ideal conditions.\n\nThis means that high-consequence interface evaluation must consider whether information remains visible, interpretable, and actionable when the user is time-pressured, attending to other tasks, or working in an operational environment where error recovery is difficult."
+    },
+    {
+      "heading": "How high-consequence differs from related terms",
+      "bodyMarkdown": "High-consequence differs from high-stakes. High-stakes describes the importance of an outcome. High-consequence describes the difficulty of recovering from failures. A high-stakes negotiation is important. A misconfigured medical device is high-consequence because the error may harm a patient before it can be corrected.\n\nHigh-consequence differs from safety-critical. Safety-critical describes systems where failure can cause physical harm or death. High-consequence is broader because it also includes regulatory failures, financial harm, research integrity violations, and operational disruption with significant cost.\n\nHigh-consequence differs from regulated. Regulated describes formal oversight frameworks such as IEC 62366-1, FDA, and SCA. High-consequence describes the underlying condition that regulation attempts to address. A system can be regulated without being high-consequence, and a system can be high-consequence without formal product regulation.\n\nHigh-consequence differs from complex. Complexity describes the cognitive demands of the system. High-consequence describes what happens when the system fails. Complex systems are often high-consequence, but the two terms describe different properties."
+    },
+    {
+      "heading": "Examples in practice",
+      "bodyMarkdown": "Kardion is an example of high-consequence interface design in a cardiac support device context. If device state is misread, the consequence can be a patient safety incident. The device operates in a high-consequence context, which is why IEC 62366-1 governs it.\n\nGexcon is an example of high-consequence interface design in industrial safety simulation. A misconfigured simulation can produce an incorrect safety assessment. The consequence is high because the error may not be discovered until downstream effects manifest.\n\nTorqeedo is an example of high-consequence interface design in maritime vessel control. A captain who cannot read vessel energy state during a manoeuvre at sea is operating under high-consequence conditions, regardless of whether the product is regulated.\n\nThese examples illustrate the concept; they do not define it. The concept is defined by the consequence profile: what happens when an interface failure occurs, and how difficult recovery becomes after that failure enters the operational workflow."
+    },
+    {
+      "heading": "Evidence basis",
+      "bodyMarkdown": "The definition of high-consequence is conceptual. It is based on the distinction between consequence profile and adjacent properties such as importance, safety-criticality, regulation, and complexity.\n\nThe examples are drawn from documented case-study contexts named in Creative Navy's documentation: Kardion, Gexcon, and Torqeedo. The examples are used to illustrate different consequence profiles: immediate patient safety risk, deferred industrial safety assessment error, and operational risk during maritime manoeuvring."
+    },
+    {
+      "heading": "Boundaries and limits",
+      "bodyMarkdown": "High-consequence should not be used as a synonym for high-stakes. Importance alone does not establish that a system is high-consequence.\n\nHigh-consequence should not be reduced to safety-critical. Physical harm and death are within the term, but the term also covers regulatory, financial, research integrity, and operational disruption consequences.\n\nHigh-consequence should not be treated as identical to regulation. Regulation may address high-consequence conditions, but regulatory status and consequence profile are not the same property.\n\nHigh-consequence should not be treated as identical to complexity. Complexity concerns cognitive demand. High-consequence concerns the recoverability and impact of failure."
+    }
+  ],
+  "evidenceSummary": {
+    "strongClaims": [
+      "High-consequence describes software, systems, or operational environments where interface failures produce outcomes that are materially harder to recover from than in standard software.",
+      "High-consequence is distinguished from high-complexity and high-stakes by consequence profile: the difficulty of undoing what goes wrong.",
+      "High-consequence is broader than safety-critical because it includes regulatory failures, financial harm, research integrity violations, and operational disruption with significant cost.",
+      "High-consequence is not identical to regulated because a system can be regulated without being high-consequence and can be high-consequence without formal regulation.",
+      "Interfaces can amplify or mitigate the risk profile of a high-consequence operational context.",
+      "Time pressure and divided attention shape the design standard in high-consequence environments.",
+      "Kardion, Gexcon, and Torqeedo illustrate high-consequence contexts through patient safety risk, deferred industrial safety assessment error, and maritime vessel energy-state readability."
+    ],
+    "limitations": [
+      "The page defines a concept and does not provide measured outcome evidence.",
+      "The case examples are illustrative and do not by themselves define the term.",
+      "The definition does not classify all medical, industrial, maritime, financial, research, or enforcement systems as high-consequence; the consequence profile must be assessed in context.",
+      "The source distinguishes regulated systems from high-consequence systems but does not provide a comprehensive taxonomy of regulatory contexts."
+    ]
+  },
+  "relatedPageSlugs": [
+    "state-visibility",
+    "operational-clarity",
+    "cognitive-load",
+    "error-likely-condition",
+    "degraded-mode",
+    "decision-quality",
+    "workflow-robustness",
+    "performance-in-reality",
+    "kardion"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "state visibility",
+      "targetSlug": "state-visibility",
+      "reason": "The definition names incorrect state communication and state indicators as high-consequence interface failure mechanisms."
+    },
+    {
+      "anchorText": "operational clarity",
+      "targetSlug": "operational-clarity",
+      "reason": "The source frames high-consequence design around clear interpretation under actual operating conditions."
+    },
+    {
+      "anchorText": "cognitive load",
+      "targetSlug": "cognitive-load",
+      "reason": "The source distinguishes complexity and cognitive demand from consequence profile."
+    },
+    {
+      "anchorText": "error-likely condition",
+      "targetSlug": "error-likely-condition",
+      "reason": "The source identifies time pressure and divided attention as conditions in which interface failures become more consequential."
+    },
+    {
+      "anchorText": "Kardion case",
+      "targetSlug": "kardion",
+      "reason": "The source names Kardion as an example of a high-consequence cardiac support device context, and the slug is available in the linking context."
+    }
+  ],
+  "tags": [
+    "high-consequence",
+    "interface failure",
+    "risk profile",
+    "operational context",
+    "state communication",
+    "time pressure",
+    "divided attention",
+    "regulated systems"
+  ],
+  "_meta": {
+    "sourcePath": "sources/articles/Glossary/glossary--industry-terms--high-consequence.md",
+    "parentSlug": "industry-terms",
+    "childPageSlugs": [],
+    "generatedBy": "deterministic"
+  }
+}

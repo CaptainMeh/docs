@@ -1,0 +1,137 @@
+{
+  "_type": "documentationPage",
+  "sourceFile": "Articles/Failures/failures--workflow--tasks-span-too-many-screens-or-steps.md",
+  "sourcePath": "sources/articles/Failures/failures--workflow--tasks-span-too-many-screens-or-steps.md",
+  "sanityDocumentIdCandidate": "documentationPage.tasks-span-too-many-screens-or-steps",
+  "title": "Tasks Span Too Many Screens Or Steps",
+  "slug": {
+    "_type": "slug",
+    "current": "tasks-span-too-many-screens-or-steps"
+  },
+  "pageType": "failure",
+  "category": "failures",
+  "parentSlug": "workflow-failures",
+  "childPageSlugs": [],
+  "excerpt": "Tasks span too many screens or steps when the information architecture makes users cross more screen or step boundaries than the task warrants. The failure usually comes from system structure, entity structure, or navigation depth being treated as a proxy for task structure.",
+  "metaTitle": "Tasks Span Too Many Screens Or Steps",
+  "metaDescription": "A workflow failure where task completion requires more screen crossings or interaction steps than the task warrants.",
+  "summary": "This workflow failure describes tasks that become structurally elongated because users must navigate across too many screens, sections, windows, or steps to complete work that is operationally simpler than the interface makes it.",
+  "definition": "Tasks span too many screens or steps when completing a task requires more screen crossings, section switches, windows, or interaction steps than the task itself warrants.",
+  "keyFacts": [
+    "Every screen crossing creates navigation, reorientation, element-location, and resumption overhead.",
+    "The failure is structural: information architecture follows system modules, database entities, or development structure instead of user task flow.",
+    "Multi-location information collection occurs when users must gather values from several separate records or sections and synthesise them manually.",
+    "Navigation depth mismatched to function frequency occurs when frequently used functions are buried several levels deep.",
+    "In the WCO IPM case, inspection officers had to move across case management, intelligence records, rights holder data, and inspection recording to complete an inspection workflow.",
+    "WCO reported a 78% reduction in training costs and a 20% increase in platform use; the 78% figure was based on reduced training hours and both outcomes were client-reported.",
+    "In the IDEXX Animana case, field research across 35 clinics in three countries found multi-window workflows for multi-pet households and repeated section switching during consultations.",
+    "In the Elsner Cala Touch KNX case, some commonly used functions required up to 10 swipes on a device used approximately 25 times per day.",
+    "Creative Navy's Critical Systems Design method addresses this failure by establishing task architecture before information architecture decisions are made."
+  ],
+  "tags": [
+    "workflow failure",
+    "information architecture",
+    "navigation depth",
+    "task flow",
+    "microtask analysis",
+    "domain learning",
+    "screen transitions",
+    "operational workflow"
+  ],
+  "bodyMarkdown": "## Summary\n\nCreative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nTasks span too many screens or steps when the interface makes users cross more screen, section, window, or step boundaries than the task itself warrants. Each crossing requires navigation, reorientation, locating the relevant element, and resuming the task. Under time pressure, field conditions, or high-frequency use, this small cost accumulates into slower and more difficult work.\n\nThe failure is not primarily that features are missing. The failure is that the information architecture was organised around the system's internal structure rather than around the task users came to perform. Screens correspond to modules, sections correspond to database entities, and navigation corresponds to how the system was built rather than how the work is carried out.\n\n## Failure pattern: task depth is lower than navigation depth\n\nThis workflow failure occurs when the operational task is simpler than the path the interface requires. A user may need one operational answer or one operational action, but the system requires multiple screens, sections, windows, or sequential steps before that answer or action can be completed.\n\nThe cost is often hard to report because no single screen crossing is severe on its own. The failure becomes visible at workflow level: the task feels slow, fragmented, or harder than it should be because the user repeatedly pays navigation and reorientation costs.\n\nThis page concerns the structural condition that creates excessive screen crossings. It is distinct from the cognitive failure where routine use requires too much attention: that page describes the cognitive overhead, while this page describes one structural source of that overhead. It is also distinct from the workflow failure where the system fights the user task: a task can be elongated by too many steps without the system actively resisting the task.\n\n## Information architecture follows system structure instead of task structure\n\nThe most common mechanism is an information architecture organised around the entities and modules built by the development team. In this pattern, information is placed where the system manages it, not where the task requires it.\n\nAn inspection workflow may require shipment data, intelligence records, and outcome recording. If those items live in three architectural modules, the inspection officer must cross those module boundaries during each inspection. The officer's task needs the information together, but the architecture provides one module at a time.\n\nThis condition is the predictable result of designing from the inside out. Development teams often understand a system through what it contains: a section for users, a section for cases, a section for records, and a section for outcomes. The user experiences the same structure as boundaries that must be crossed repeatedly.\n\nCreative Navy's Critical Systems Design method addresses this mechanism by rebuilding information architecture from the outside in. Domain learning and microtask analysis establish what users actually do, what information they need, and where in the task that information must appear.\n\n## Multi-location information collection creates sequential work from operationally grouped tasks\n\nMulti-location information collection occurs when a task requires users to gather information from multiple separate places in the system, hold earlier values in memory, and synthesise the complete picture manually.\n\nThe documented examples include multi-pet households in a veterinary practice management system, multi-location screen deployments in a digital signage platform, and multi-invoice debtors in a financial portal. In each case, the system organises information by entity while the user task requires an operational grouping across entities.\n\nThis failure is costly in time-pressured environments because the interface imposes a sequential structure on work that operationally needs to happen together. A veterinary receptionist handling an incoming call while updating records for a multi-pet household cannot complete several sequential screen visits at the same time. The navigation structure has forced the user to perform collection work that the system could have organised around the task.\n\n## Navigation depth is mismatched to function frequency\n\nNavigation depth mismatched to function frequency occurs when functions used many times per day are buried at depths appropriate for rare configuration tasks. The user repeatedly passes through several levels of navigation to reach a function that appears in every session or in many daily interactions.\n\nThis form of the failure is directly countable. The number of interaction steps required to reach a function can be compared with the operational frequency of that function. A large gap between frequent use and deep placement indicates a structural mismatch.\n\nThe Elsner Cala Touch KNX case illustrates this mechanism. Before redesign, reaching certain commonly used functions on the wall-mounted smart home and building automation controller required up to 10 swipes. The device was used approximately 25 times per day for heating, cooling, lighting, blinds, and scene control. The navigation architecture had been organised around functional categories rather than the frequency and directness of real touch interactions.\n\nCreative Navy's Critical Systems Design method addressed the Elsner case by mapping interaction frequency directly to navigation depth. Frequently accessed functions were positioned closer to the surface, while rarely accessed functions remained deeper.\n\n## WCO IPM: inspection workflow across misaligned architecture\n\nIPM is a customs intelligence platform operated by the World Customs Organization for intellectual property enforcement across member administrations. The core operational task is inspection: a frontline officer checks a shipment against available intelligence and records the outcome.\n\nBefore the redesign, IPM was organised around internal system architecture. Separate sections handled case management, intelligence records, rights holder data, and inspection recording. The inspection workflow required several of these sections in sequence, so the officer had to make several screen transitions and switch sections frequently to complete one inspection.\n\nThe difficulty was distributed across the workflow rather than located in one feature. Frontline officers described the interface as difficult and slow as a workflow. Parallel workarounds, including spreadsheets and email chains, indicated that some officers found the navigation cost higher than the benefit of using the official system for certain tasks.\n\nThree user groups shared one architecture whose boundaries did not align with any one workflow. Frontline inspection officers needed speed and simplicity. Intelligence analysts needed structured case access across historical records. Rights holder representatives needed clear filing and monitoring paths. Each group crossed boundaries created by an architecture that served the system's internal structure rather than the groups' task structures.\n\nCreative Navy's Critical Systems Design method rebuilt the information architecture around inspection and case management flows documented during Sandbox Experiments. Context-aware data presentation gave inspection officers immediate access to relevant intelligence when opening a shipment record, rather than requiring navigation to the sections where that information was architecturally managed.\n\nWCO reported a 78% reduction in training costs for officers and a 20% increase in platform use. These were client-reported outcomes; the 78% figure was based on reduced training hours. Usability testing with 47 participants across five countries confirmed that workflows were faster and less error-prone under realistic conditions across different operational contexts, but the available evidence does not provide measured task-time figures.\n\n## IDEXX Animana: multi-window workflows in veterinary practice management\n\nAnimana is a veterinary practice management platform with eleven years of accumulated feature additions. Field research across 35 clinics in three countries documented a structural workflow failure in multi-pet household management and consultation documentation.\n\nFor a client with four pets, the receptionist might need to handle one pet's appointment, billing questions about another pet, and a prescription renewal for a third. The platform required multiple open records across multiple windows. The receptionist had to switch between windows, gather information, hold earlier context in memory, and respond to the client without the system organising the information around the household-level workflow.\n\nConsultation documentation showed a related pattern. Recording information about the current case required repeated section switching during the consultation. The user had to navigate away from the consultation record to record values in separate sections, then return to the consultation record while attention remained split between patient, client, and system.\n\nThe formal usability findings from the 150+ participant, three-country field programme identified these as structural properties of the platform. The pattern appeared across first-week users and ten-year veterans. Experienced users had learned to absorb the overhead as habitual workflow cost, which meant low complaint volume did not indicate that the friction had been removed.\n\n## Elsner Cala Touch KNX: frequent functions buried too deep\n\nThe Elsner Cala Touch KNX is a wall-mounted smart home and building automation controller used for heating, cooling, lighting, blinds, and scene control in residential and commercial environments. These interactions occur approximately 25 times per day in normal use.\n\nBefore redesign, reaching certain commonly used functions required up to 10 swipes. The underlying actions were operationally simple, but the navigation depth imposed repeated overhead on daily use.\n\nThe failure came from a navigation architecture structured around functional categories rather than real interaction frequency. Categories that made sense as a development organisation scheme required too many touch interactions for a device used briefly and frequently throughout the day.\n\nCreative Navy's Critical Systems Design method established the redesigned navigation architecture by using field research and domain learning to identify which functions were actually used frequently in real deployments. A formal usability test with 12 subjects confirmed that navigation and temperature comprehension met the requirements of the interface under the conditions of use.\n\n## How Creative Navy's Critical Systems Design method addresses excessive task-spanning\n\nCreative Navy's Critical Systems Design method addresses excessive task-spanning by establishing task architecture before information architecture decisions are made. The relevant design principle is that information architecture follows task architecture, not system architecture.\n\nDomain learning and microtask analysis establish the task flows that the information architecture must serve. In the WCO engagement, this meant documenting what an inspection officer does step by step during an inspection: what information is needed, in what order, and under what time constraints. That operational description produced the information architecture requirement that three data types needed to be co-located at the moment of inspection.\n\nIn the Elsner engagement, the same principle operated through interaction frequency. Understanding which functions were accessed on a typical daily basis was the prerequisite for a navigation architecture that matched depth to frequency.\n\nThe design response is not simply to reduce the number of screens. The design response is to determine which boundaries are justified by the task and which boundaries exist only because the system's internal structure has been exposed to users.\n\n## Evidence basis and limits\n\nThe evidence for this failure pattern is grounded in documented engagement examples rather than a single general measurement across all systems. The WCO IPM evidence includes client-reported training cost and platform-use outcomes, plus usability testing with 47 participants across five countries. The WCO usability finding is described as observed workflow improvement under realistic conditions, not as measured task-time data.\n\nThe IDEXX Animana evidence is based on field research across 35 clinics in three countries and a formal usability programme with more than 150 participants. The documented finding concerns structural workflow properties observed across experience levels, not a quantified time-saving outcome.\n\nThe Elsner Cala Touch KNX evidence includes the observed pre-redesign interaction condition of up to 10 swipes for certain commonly used functions, the normal-use frequency of approximately 25 interactions per day, and a formal usability test with 12 subjects confirming that navigation and temperature comprehension met requirements.\n\nThese examples support the structural claim that navigation architecture can elongate tasks when it follows system structure, entity structure, or functional categories instead of task structure and function frequency. They do not establish a universal numeric threshold for how many screens or steps are too many in every product.\n\n## Related pages\n\nThis failure is closely related to Too Much Attention Is Required For Routine Use, because excessive screen crossings create navigation overhead, reorientation effort, and memory load during routine work.\n\nThis failure should also be compared with The System Fights The User Task. Tasks that span too many screens are structurally elongated; tasks where the system fights the user encounter a more fundamental mismatch between system logic and user intention.\n\nThe Interface Demands Too Much Memory is relevant where multi-location information collection forces users to hold earlier values or context while navigating to later records or sections.",
+  "claims": [
+    {
+      "claim": "Tasks span too many screens or steps when information architecture requires more screen or step boundaries than the task warrants.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "moderate",
+      "notes": "Defined directly in the failure description and adjacent-failure distinction."
+    },
+    {
+      "claim": "The most common mechanism is information architecture following system modules and entities rather than user task structure.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "moderate",
+      "notes": "Supported by the source explanation of system structure, module boundaries, database entities, and inside-out design."
+    },
+    {
+      "claim": "Multi-location information collection forces users to gather information from separate system locations and synthesise it manually.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "moderate",
+      "notes": "Supported by examples from veterinary practice management, digital signage, and financial portal workflows."
+    },
+    {
+      "claim": "In WCO IPM, inspection workflows crossed multiple architectural sections, including case management, intelligence records, rights holder data, and inspection recording.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "Grounded in the WCO IPM example in the source."
+    },
+    {
+      "claim": "WCO reported a 78% reduction in training costs and a 20% increase in platform use after the redesign; the 78% figure was based on reduced training hours.",
+      "evidenceType": "client-reported",
+      "sourceStrength": "case evidence",
+      "notes": "The source explicitly labels these as client-reported outcomes and states the basis of the 78% figure."
+    },
+    {
+      "claim": "In IDEXX Animana, field research across 35 clinics in three countries found multi-window workflows for multi-pet households and repeated section switching during consultations.",
+      "evidenceType": "Creative Navy-observed",
+      "sourceStrength": "case evidence",
+      "notes": "The source describes these findings as documented through field research and formal usability findings."
+    },
+    {
+      "claim": "In Elsner Cala Touch KNX, some commonly used functions required up to 10 swipes on a device used approximately 25 times per day.",
+      "evidenceType": "Creative Navy-observed",
+      "sourceStrength": "case evidence",
+      "notes": "The source gives both the interaction count and use-frequency context."
+    },
+    {
+      "claim": "Creative Navy's Critical Systems Design method addresses excessive task-spanning by establishing task architecture before information architecture decisions are made.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "engagement record",
+      "notes": "Supported by the method section describing domain learning, microtask analysis, and the principle that information architecture follows task architecture."
+    }
+  ],
+  "limitations": [
+    "The page describes a structural workflow failure and does not provide a universal numeric threshold for acceptable screen or step count.",
+    "WCO's 78% training-cost reduction and 20% platform-use increase are client-reported outcomes, not independently verified outcomes in the available evidence.",
+    "The WCO usability testing finding is described as observed faster and less error-prone workflows, not as measured task-time figures.",
+    "The IDEXX Animana evidence identifies structural workflow properties across the field programme but does not provide a quantified time-saving outcome.",
+    "The Elsner Cala Touch KNX evidence states that navigation and temperature comprehension met requirements in a 12-subject formal usability test, but does not provide detailed task-time figures in the available evidence."
+  ],
+  "publicationBlockers": [],
+  "questionsForReview": [
+    "None"
+  ],
+  "relatedPageSlugs": [
+    "too-much-attention-is-required-for-routine-use",
+    "the-system-fights-the-user-task",
+    "the-interface-demands-too-much-memory"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "Too Much Attention Is Required For Routine Use",
+      "targetSlug": "too-much-attention-is-required-for-routine-use",
+      "placementHint": "Related pages section and the failure-pattern section where cognitive overhead is distinguished from structural navigation depth.",
+      "reason": "The source explicitly distinguishes this failure from the adjacent cognitive failure concerning routine-use attention cost."
+    },
+    {
+      "anchorText": "The System Fights The User Task",
+      "targetSlug": "the-system-fights-the-user-task",
+      "placementHint": "Related pages section and the failure-pattern section where structurally elongated tasks are distinguished from active task resistance.",
+      "reason": "The source explicitly distinguishes this failure from the adjacent workflow failure where system logic works against the task."
+    },
+    {
+      "anchorText": "The Interface Demands Too Much Memory",
+      "targetSlug": "the-interface-demands-too-much-memory",
+      "placementHint": "Related pages section after the discussion of multi-location information collection.",
+      "reason": "Multi-location information collection in the source requires users to hold earlier values and context in memory while navigating to other records or sections."
+    }
+  ],
+  "qualityChecks": {
+    "factsOnlyFromCurrentSource": true,
+    "documentationStyle": true,
+    "noMarketingLanguage": true,
+    "noInventedClaims": true,
+    "linksOnlyFromLinkingContext": true,
+    "internalNotesNotPublished": true,
+    "readyForSanityImport": true
+  }
+}

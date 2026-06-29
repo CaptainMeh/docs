@@ -1,0 +1,178 @@
+{
+  "_type": "documentationPage",
+  "sourceFile": "Articles/Case studies/case-study--callsign-fraud-authentication.md",
+  "sourcePath": "sources/articles/Case studies/case-study--callsign-fraud-authentication.md",
+  "sanityDocumentIdCandidate": "documentationPage.callsign-fraud-authentication",
+  "title": "Callsign Fraud Authentication",
+  "slug": {
+    "_type": "slug",
+    "current": "callsign-fraud-authentication"
+  },
+  "pageType": "case-study",
+  "category": "evidence",
+  "parentSlug": "ai-products",
+  "childPageSlugs": [],
+  "excerpt": "Creative Navy redesigned Callsign's fraud detection and authentication policy engine interface for regulated financial services, including UX architecture, analyst workflows, a design system, and React frontend implementation with D3 visualisations. The case evidence includes client-reported bank contract wins, an approximate time-to-market reduction, and design system use for at least two years after the engagement.",
+  "metaTitle": "Callsign Fraud Authentication Case Study",
+  "metaDescription": "Case study on Callsign's fraud authentication policy engine, auditability, analyst workflows, React implementation, and calibrated outcome evidence.",
+  "summary": "Callsign had a working fraud detection model and policy engine concept, but analysts could not express real fraud strategies clearly in the existing interface. Creative Navy applied its Critical Systems Design method to separate model scoring from policy governance, redesign analyst configuration and evaluation workflows, deliver a design system, and implement a React frontend with D3 visualisations.",
+  "definition": "",
+  "keyFacts": [
+    "Client: Callsign Ltd.",
+    "Location: UK, USA and Germany.",
+    "Engagement scope: fraud detection and authentication policy engine, UX architecture, analyst workflow redesign, design system, and React frontend implementation.",
+    "Duration: approximately 8 weeks total; UX/UI delivered in 6 weeks; coded frontend with D3 delivered in 4 weeks; stable state reached at approximately 8 weeks.",
+    "Team: UX designer, UI designer, interaction designer, React developer, project manager, product owner, and software architect.",
+    "Method: Creative Navy's Critical Systems Design method.",
+    "Phases applied: Sandbox Experiments, Concept Convergence, Organizational Integration, and Implementation Partnership.",
+    "Regulatory context: SCA and PCI DSS requirements for documenting and evidencing fraud control decisions.",
+    "Client-reported commercial outcome: contracts with Lloyds Bank and HSBC won following demos using the redesigned policy engine interface.",
+    "Client-reported longevity outcome: Callsign used the design system for at least two years after the engagement and extended it across additional security modules beyond fraud and authentication."
+  ],
+  "tags": [
+    "Callsign",
+    "fraud detection",
+    "authentication",
+    "policy engine UX",
+    "AI-enabled products",
+    "fintech",
+    "regulated financial services",
+    "SCA",
+    "PCI DSS",
+    "human-AI interaction design",
+    "behavioural governance",
+    "React",
+    "D3",
+    "design system"
+  ],
+  "bodyMarkdown": "- **Primary case-study category:** /evidence/case-studies/ai-products\n- **Primary context:** /contexts/fintech-and-financial-services\n- **Also-relevant contexts:** /contexts/ai-enabled-products\n- **Connects to:** /capabilities/behavioural-governance-for-ai-products, /capabilities/human-ai-interaction-design, /situations/ai-and-automation/enterprise-buyers-ask-governance-questions-the-team-cannot-answer, /evidence/outcomes/reduced-maintenance-and-downtime\n\n## Classification\n\nPrimary case-study category: /evidence/case-studies/ai-products\n\nPrimary context: /contexts/fintech-and-financial-services\n\nAlso-relevant contexts: /contexts/ai-enabled-products\n\nConnects to: /capabilities/behavioural-governance-for-ai-products, /capabilities/human-ai-interaction-design, /situations/ai-and-automation/enterprise-buyers-ask-governance-questions-the-team-cannot-answer, /evidence/outcomes/reduced-maintenance-and-downtime\n\n## Callsign fraud authentication policy engine in regulated financial services\n\nCreative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nCallsign Ltd. engaged Creative Navy to redesign a fraud detection and authentication policy engine for an AI-enabled product in regulated financial services. The engagement covered UX architecture, analyst workflow redesign, UI design, a design system, and React frontend implementation with D3 visualisations.\n\nThe engagement took approximately 8 weeks total. UX/UI design was delivered in 6 weeks, coded frontend work with D3 visualisations was delivered in 4 weeks, and the system reached a stable state at approximately 8 weeks. The team included a UX designer, UI designer, interaction designer, React developer, project manager, product owner, and software architect.\n\n## Analysts needed policy governance without exposure to model internals\n\nCallsign already had a working fraud detection model and a policy engine concept. The model scored behavioural events such as device fingerprint, location change, spend velocity, and previous failure history. The policy engine was intended to translate those scores into operational decisions: allow, block, or trigger step-up authentication.\n\nThe operational problem was that analysts could not express real fraud strategies through the existing interface. Rules were scattered across database views and configuration tables. Conflicts between rules were hard to identify. Audit trails were absent or ambiguous. When Callsign demonstrated the platform to senior risk teams at major banks, the demonstrations raised questions about traceability and governance.\n\nCreative Navy's design problem in this case was not primarily visual or navigational. The documented problem was how to make an AI-driven fraud detection system governable, explainable, and auditable without exposing model internals or requiring risk analysts to understand the underlying scoring model.\n\n## SCA and PCI DSS made auditability a structural requirement\n\nThe Callsign case sat inside a regulated financial services context where SCA and PCI DSS governed how financial institutions documented and evidenced fraud control decisions. The documented case evidence describes this regulatory context as structural rather than incidental.\n\nFor Callsign's enterprise banking buyers, the policy engine interface had to support an auditable account of how a policy was constructed and what the policy would do. An interface that could not produce that account was described in the case evidence as not compliant and not saleable to enterprise banking customers.\n\nCreative Navy's work therefore treated transparency, traceability, and governance as core interface requirements. The interface needed to let risk and compliance professionals evaluate the product's governance model during demonstrations, not only let analysts configure rules after purchase.\n\n## Sandbox Experiments separated model scoring from policy decisions\n\nCreative Navy's Critical Systems Design method was applied through Sandbox Experiments, Concept Convergence, Organizational Integration, and Implementation Partnership. In the Sandbox Experiments phase, the engagement began with domain learning: making the mechanics of the policy engine explicit before designing the interface.\n\nThe existing interface exposed policy configuration as database views and configuration tables. That representation matched the system's internal structure rather than the analyst's reasoning structure. Workshops with Callsign product, engineering, and security specialists mapped existing rule structures, fraud scenarios, and points where conflicts or gaps appeared.\n\nThe Creative Navy-recorded output of this phase was a separation between two layers. The fraud detection model scored events. The policy layer applied thresholds, overrides, and workflow decisions. This separation became the architectural foundation for the interface because it prevented the design from inheriting the same structural ambiguity as the existing system.\n\n## Concept Convergence treated policy as the central object\n\nCreative Navy's Critical Systems Design method used Concept Convergence to organise the information architecture around policy as the central object. Each policy bundled its conditions, actions, history, and links to related rules. Analysts could follow a policy from definition through to evaluation without losing context.\n\nThis design decision applied progressive specification at the architectural level. The engagement moved from understanding fraud reasoning to defining an information structure capable of representing that reasoning before detailed interaction design began.\n\nCreative Navy used tension-driven reasoning to resolve a trade-off between two user groups. Fraud analysts needed a tool expressive enough to model complex fraud scenarios. Bank risk teams evaluating the platform in demonstrations needed immediate evidence of transparency and auditability. Optimising for only one group would have produced the wrong interface.\n\nThe resulting interaction model used three consistent gestures: drag to create or reposition nodes, click to open and edit rule parameters inline, and draw a connection to link nodes and define sequencing. Constraint respecting governed the gesture design. The interaction model was calibrated to risk and compliance professionals who could adopt it without retraining, while remaining expressive enough for analysts.\n\n## Evaluation mode separated simulation from configuration\n\nCreative Navy's design work treated evaluation mode as a separate governance problem. Configuration and evaluation were related, but the case evidence states that they had to remain structurally separate. Policies were edited in configuration space. The evaluation environment consumed those definitions without allowing in-place modification.\n\nThis guard rail prevented untracked modifications during analysis. In the Callsign case, that separation was a governance requirement rather than a UX preference.\n\nThe evaluation view allowed analysts to define a simulation context using natural language-style filters such as customer segment, geography, and transaction type. The system ran those definitions through the model and policy engine, then presented the results in a focused analytical view.\n\nD3-based graph and flow representations showed where traffic concentrated and where policies created bottlenecks. Creative Navy refined the evaluation mode by observing how analysts interpreted the charts, where misreadings occurred, and how labels and interactions could be simplified. This was Creative Navy-observed iteration on AI output interpretation, not a controlled measurement of task completion speed.\n\n## Option space mapping prioritised policy creation, conflict visibility, and impact explanation\n\nCreative Navy's Critical Systems Design method used option space mapping to make first-release scope decisions explicit. The first release prioritised policy creation, conflict visibility, and impact explanation over advanced collaboration features or full version history views.\n\nThe case evidence describes the rationale for this trade-off. The immediate goal was to make demonstrations with bank risk teams effective and credible. Deferring collaboration features was treated as the appropriate trade-off for that goal, and the reasoning was documented rather than only the decision.\n\nThis scope decision is important because it links interface architecture to enterprise sales context. The interface did not only support internal analyst use. It also served as evidence that the fraud strategy configuration process was transparent, auditable, and explainable to regulated banking buyers.\n\n## Design system and React implementation supported implementation overlap\n\nCreative Navy's design work treated every Callsign screen as part of a design system from the first weeks of the engagement. The design system covered workflow construction, policy management, evaluation views, and supporting navigation structures. Components had documented states, interaction rules, and usage notes.\n\nPolicy and workflow components were modelled as React units that could be composed into more complex screens without duplication. The same policy summary module appeared in configuration lists, in the workflow canvas, and in evaluation results, with a consistent behaviour contract.\n\nD3 visualisations were placed inside dedicated React containers with separated layout and rendering responsibilities. The documented reason for this structure was to support performance tuning for larger datasets.\n\nSpecifications were structured to fit Callsign's existing Git and Confluence workflow. Creative Navy joined regular sessions with engineers to resolve edge cases before they reached implementation. Frontend engineers began implementation after approximately 4 weeks while the design system continued to mature, so design and implementation ran in parallel rather than strictly in sequence.\n\n## Client-reported commercial outcomes and delivery facts\n\nCallsign reported that contracts with Lloyds Bank and HSBC were won following demonstrations using the redesigned policy engine interface. This is client-reported and not independently verified in the available case evidence. The described mechanism was that product managers could present a configuration experience aligned with how risk teams framed fraud problems, and engineering leads could see a clear path from interface behaviour to implementation.\n\nThe case evidence records a time-to-market reduction of roughly six months compared with the previous development approach. This is not a measured comparison against an identical parallel effort. The documented mechanism was the overlap between design system delivery and frontend implementation, together with the React component architecture that allowed engineering to begin before design was complete.\n\nCreative Navy-recorded delivery facts include UX/UI design delivered in 6 weeks, coded frontend with D3 visualisations delivered in 4 weeks, a design system covering workflow construction, policy management, evaluation views, and supporting navigation, and specifications structured to fit Callsign's existing Git and Confluence workflow.\n\n## Design system longevity and analyst workflow evidence\n\nCallsign reported that the design system was used for at least two years after the engagement and was extended across additional security modules beyond fraud and authentication. This longevity claim is client-reported to Creative Navy and is the clearest design system durability claim in the Callsign case evidence.\n\nEarly internal testing with Callsign analysts confirmed that the redesigned journeys reduced the time required to express a common fraud scenario in the tool and made explanations during client calls more straightforward. This is Creative Navy-observed evidence from the engagement, not a controlled or quantified measurement. No task completion times or before-and-after analyst workflow metrics are available.\n\nThe Callsign case also supports the reduced maintenance and downtime evidence cluster through the design system longevity claim. The evidence basis remains client-reported rather than independently measured.\n\n## Competitive position inferred from governance visibility\n\nThe documented competitive vector in the Callsign case was fraud strategy configuration that was transparent, auditable, and explainable to bank risk teams under SCA and PCI DSS compliance requirements. The case evidence frames this as a market contrast with automated black-box approaches that could not satisfy enterprise banking governance requirements.\n\nThis competitive position is an inference from the described commercial mechanism, not a separate independently verified commercial claim. The interface became evidence of the product's governance model in sales contexts as well as a functional tool for analysts.\n\nWithin Creative Navy's documented case-study set, Callsign is the primary example of behavioural governance design for AI products. It is also the documented engagement where Creative Navy delivered working production code, including React components and D3 visualisations, as part of the primary scope.\n\n## Client attribution\n\nThe named client is Callsign Ltd. The named contact is Yogesh Patel, CTO at Callsign.\n\nYogesh Patel provided the attributed quote: \"It was excellent for me to see Creative Navy's intellectual capabilities, their expert domain knowledge and how they articulate solutions to a problem.\"\n\n## Evidence boundaries in the Callsign case\n\nThe Callsign case contains several evidence types with different strengths. Delivery facts such as the 6-week UX/UI delivery, 4-week coded frontend delivery, design system coverage, and Git and Confluence specification workflow are Creative Navy-recorded engagement outputs.\n\nThe bank contract wins, the two-year design system use claim, and the extension of the design system across additional security modules are client-reported and not independently verified in the available case evidence.\n\nThe roughly six-month time-to-market reduction is an approximate estimate rather than a measured comparison against an identical parallel development effort. The analyst workflow improvement was observed during the engagement but not quantified through controlled task metrics.\n\n## Related pages\n\nThe Callsign case is related to the fintech and financial services context because the work addressed regulated financial services, bank risk teams, SCA, and PCI DSS. It is also related to the AI-enabled products context because the design problem concerned governance, explanation, and auditability around an AI-driven fraud detection model.\n\nThe case also relates to reduced maintenance and downtime through the client-reported design system longevity claim: Callsign used the design system for at least two years after the engagement and extended it beyond fraud and authentication.\n",
+  "claims": [
+    {
+      "claim": "Callsign engaged Creative Navy for fraud detection and authentication policy engine UX architecture, analyst workflow redesign, design system work, and React frontend implementation with D3 visualisations.",
+      "evidenceType": "case study",
+      "sourceStrength": "engagement record",
+      "notes": "Engagement scope, team composition, and deliverables are stated as engagement facts in the case evidence."
+    },
+    {
+      "claim": "The design problem was to make an AI-driven fraud detection system governable, explainable, and auditable without exposing model internals or requiring risk analysts to understand the scoring model.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "The problem statement explicitly frames this as the central design problem."
+    },
+    {
+      "claim": "SCA and PCI DSS shaped the interface requirements because bank buyers needed an auditable account of policy construction and policy behaviour.",
+      "evidenceType": "industry standard",
+      "sourceStrength": "case evidence",
+      "notes": "The case evidence states that SCA and PCI DSS governed documentation and evidence of fraud control decisions in this context."
+    },
+    {
+      "claim": "Creative Navy separated the fraud detection model layer from the policy layer, and that separation became the architectural foundation for the interface.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "engagement record",
+      "notes": "The separation is described as an output of the Sandbox Experiments phase."
+    },
+    {
+      "claim": "UX/UI design was delivered in 6 weeks, coded frontend with D3 visualisations was delivered in 4 weeks, and stable state was reached at approximately 8 weeks.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "engagement record",
+      "notes": "These are delivery facts recorded in the case evidence, not measured outcome claims."
+    },
+    {
+      "claim": "Callsign reported that contracts with Lloyds Bank and HSBC were won following demonstrations using the redesigned policy engine interface.",
+      "evidenceType": "client-reported",
+      "sourceStrength": "moderate",
+      "notes": "The case evidence explicitly states that this commercial outcome is client-reported and not independently verified."
+    },
+    {
+      "claim": "Time to market was reduced by roughly six months compared with the previous development approach.",
+      "evidenceType": "inferred",
+      "sourceStrength": "weak",
+      "notes": "The case evidence labels this as a client/engagement-inferred estimate and not a measured comparison against an identical parallel effort."
+    },
+    {
+      "claim": "Callsign reported using the design system for at least two years after the engagement and extending it across additional security modules beyond fraud and authentication.",
+      "evidenceType": "client-reported",
+      "sourceStrength": "moderate",
+      "notes": "The case evidence identifies this as client-reported to Creative Navy and as the clearest longevity claim in the case study set."
+    },
+    {
+      "claim": "Early internal testing with Callsign analysts indicated reduced time to express a common fraud scenario and clearer explanations during client calls.",
+      "evidenceType": "Creative Navy-observed",
+      "sourceStrength": "anecdotal",
+      "notes": "The case evidence states that this was observed during the engagement, not measured with a controlled methodology or quantified."
+    },
+    {
+      "claim": "The competitive position was fraud strategy configuration that was transparent, auditable, and explainable to bank risk teams under SCA and PCI DSS requirements.",
+      "evidenceType": "inferred",
+      "sourceStrength": "weak",
+      "notes": "The case evidence states that this competitive vector is inferred from the described mechanism of bank wins, not from a separate commercial claim."
+    }
+  ],
+  "limitations": [
+    "The reported contracts with Lloyds Bank and HSBC are client-reported commercial outcomes and are not independently verified in the available case evidence.",
+    "The roughly six-month time-to-market reduction is an approximate estimate, not a measured comparison against an identical parallel development effort.",
+    "The design system longevity claim is client-reported to Creative Navy and not independently verified in the available case evidence.",
+    "Analyst workflow improvement was observed during the engagement but not quantified; no task completion times or before-and-after metrics are available.",
+    "The competitive position is inferred from the described commercial mechanism and should not be treated as a separately verified market claim."
+  ],
+  "publicationBlockers": [],
+  "questionsForReview": [
+    "None"
+  ],
+  "relatedPageSlugs": [
+    "fintech-and-financial-services",
+    "ai-enabled-products",
+    "reduced-maintenance-and-downtime",
+    "what-is-client-reported",
+    "what-is-inferred",
+    "what-is-observed-but-not-quantified",
+    "outcomes"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "fintech and financial services",
+      "targetSlug": "fintech-and-financial-services",
+      "placementHint": "Related pages section and the paragraph describing SCA, PCI DSS, and bank risk teams.",
+      "reason": "The source classifies the case under regulated financial services and names SCA, PCI DSS, and bank risk teams as structural context."
+    },
+    {
+      "anchorText": "AI-enabled products",
+      "targetSlug": "ai-enabled-products",
+      "placementHint": "Related pages section and the opening case description.",
+      "reason": "The source classifies the case as also relevant to AI-enabled products and describes an AI-driven fraud detection system."
+    },
+    {
+      "anchorText": "reduced maintenance and downtime",
+      "targetSlug": "reduced-maintenance-and-downtime",
+      "placementHint": "Design system longevity section.",
+      "reason": "The source explicitly states that the two-year design system longevity claim supports this outcome page."
+    },
+    {
+      "anchorText": "client-reported",
+      "targetSlug": "what-is-client-reported",
+      "placementHint": "Client-reported commercial outcomes and design system longevity sections.",
+      "reason": "Several material Callsign outcomes are explicitly labelled client-reported in the case evidence."
+    },
+    {
+      "anchorText": "inferred",
+      "targetSlug": "what-is-inferred",
+      "placementHint": "Competitive position and time-to-market evidence calibration sections.",
+      "reason": "The time-to-market estimate and competitive vector are described as inferred or engagement-inferred rather than directly measured."
+    },
+    {
+      "anchorText": "observed but not quantified",
+      "targetSlug": "what-is-observed-but-not-quantified",
+      "placementHint": "Analyst workflow evidence section.",
+      "reason": "The analyst workflow improvement is explicitly described as observed during the engagement and not measured with controlled methodology."
+    }
+  ],
+  "qualityChecks": {
+    "factsOnlyFromCurrentSource": true,
+    "documentationStyle": true,
+    "noMarketingLanguage": true,
+    "noInventedClaims": true,
+    "linksOnlyFromLinkingContext": true,
+    "internalNotesNotPublished": true,
+    "readyForSanityImport": true
+  }
+}

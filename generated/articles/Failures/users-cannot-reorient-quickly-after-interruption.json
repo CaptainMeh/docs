@@ -1,0 +1,175 @@
+{
+  "_type": "documentationPage",
+  "sourceFile": "Articles/Failures/failures--cognitive--users-cannot-reorient-quickly-after-interruption.md",
+  "sourcePath": "sources/articles/Failures/failures--cognitive--users-cannot-reorient-quickly-after-interruption.md",
+  "sanityDocumentIdCandidate": "documentationPage.users-cannot-reorient-quickly-after-interruption",
+  "title": "Users Cannot Reorient Quickly After Interruption",
+  "slug": {
+    "_type": "slug",
+    "current": "users-cannot-reorient-quickly-after-interruption"
+  },
+  "pageType": "failure",
+  "category": "failures",
+  "parentSlug": "cognitive-failures",
+  "childPageSlugs": [],
+  "excerpt": "This failure occurs when an interface does not help users recover their task position after an interruption, context switch, or surface transition. Users must reconstruct where they were and what they were doing instead of resuming from visible task state.",
+  "metaTitle": "Users Cannot Reorient After Interruption",
+  "metaDescription": "A cognitive failure where users must reconstruct task position after interruption because the interface does not preserve orientation or re-entry guidance.",
+  "summary": "Users cannot reorient quickly after interruption when the interface does not make task position recoverable at the moment of return. The failure appears in module-based operational tools, multi-device workflows, and sequential physical processes where the user needs visible position recovery or active re-entry guidance.",
+  "definition": "Users cannot reorient quickly after interruption is a cognitive failure in which the interface does not support task resumption after an interruption, context switch, surface transition, or process deviation, forcing the user to reconstruct task position from memory.",
+  "keyFacts": [
+    "Interruption is treated as a normal operating condition in this failure pattern, not as an edge case.",
+    "The central user question after interruption is: where was I, and what was I doing?",
+    "Module-based structures can show which module the user is in while hiding where the user is in the task sequence.",
+    "Cross-surface workflows can reset orientation when each device uses a different navigation model or conceptual organisation.",
+    "The MSolutions example describes AV technicians losing context when switching between signal checks across multiple displays.",
+    "In the MSolutions case, the key diagnostic workflow was reduced from 26 interactions to approximately 13, based on client-reported internal task walkthroughs and not independently measured.",
+    "The Squaremind example describes patients losing position in a sequential physical scan process and needing active re-entry guidance.",
+    "In Squaremind post-redesign ecological testing in London and Paris, 27 of 29 users completed independently; 12 got stuck and all 12 recovered and completed the scan.",
+    "Squaremind recovery times were timed to the second and recorded as 2 to 4 minutes, with older users tending toward the longer end.",
+    "The reorientation improvement in MSolutions is not separately quantified; the interaction reduction reflects structural simplification and task-aligned navigation together."
+  ],
+  "tags": [
+    "cognitive failure",
+    "task resumption",
+    "interruption recovery",
+    "reorientation",
+    "context switching",
+    "module-based navigation",
+    "multi-device workflows",
+    "task state",
+    "Inform–Prevent–Correct",
+    "Critical Systems Design"
+  ],
+  "bodyMarkdown": "## Summary\n\nCreative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nUsers cannot reorient quickly after interruption when an interface does not answer the returning user's immediate question: where was I, and what was I doing? The failure occurs when task position, workflow progress, or process state is not visible or recoverable at the moment of return.\n\nThis failure is common in operational software because interruptions and context switches are normal operating conditions. AV technicians switch between signal checks across multiple displays. Customs officers are called away from inspections. Clinical staff leave documentation tasks when a new patient arrives. Engineers on workshop floors interrupt calibration sequences to answer equipment questions.\n\nWhen the interface does not support reorientation, the user must reconstruct task position from memory. The cognitive cost is repeated every time the user resumes work after interruption.\n\n## Failure pattern: task resumption requires reconstruction instead of recovery\n\nUsers cannot reorient quickly after interruption when the interface preserves access to functions but does not preserve the user's position in the work. The system may show the module, screen, or feature area, but it does not show what has already been done, what remains, or what action should come next.\n\nThe failure is often invisible in controlled evaluation. System tests usually assess uninterrupted task flows. Onboarding evaluations often occur in training environments where users are not interrupted. The failure becomes visible after deployment, when workflows are slower than expected, training investment is higher than anticipated, or users describe the system as harder than it should be without being able to isolate why.\n\nThe interface may perform well in uninterrupted evaluation and still perform poorly under real interrupted use. In this failure pattern, the issue is not that real use is unusually demanding. The issue is that the interface was not designed to support recovery after interruption.\n\n## Boundary with memory demand and screen-count failures\n\nThis failure is distinct from the related cognitive failure The Interface Demands Too Much Memory. Memory demand concerns what the interface requires users to hold during sustained use, such as spatial maps, recognition models, or conceptual frameworks. Reorientation failure concerns the acute moment of returning to a task and whether the interface supports position recovery at that moment.\n\nThis failure is also distinct from the workflow failure Tasks Span Too Many Screens Or Steps. Screen and step count describe a structural condition in which task completion crosses many boundaries. Reorientation failure describes the cognitive consequence when those boundaries, or a module-based organisation, remove visible task position and turn each return into a reconstruction event.\n\nStructural fragmentation and reorientation failure frequently occur together. They are not the same failure, and the design response is different.\n\n## Module-based structures can hide task position\n\nModule-based structures create reorientation failure when the interface reflects system architecture rather than user work. Complex software is often organised around data entities, feature sets, or backend functions. This structure may be legible to the development team while remaining uninformative to the operational user.\n\nIn a diagnostic workflow, a technician may return to a module that shows signal diagnostics but not the current point in the diagnostic sequence. The interface identifies the functional area but does not show that link integrity has already been confirmed or that EDID verification is next. Reconstructing task position requires the user to remember what has been done, what has been confirmed, and what should follow.\n\nThe deeper failure is structural. If the task sequence is not encoded in the navigation structure, there is no visible task state for the user to recover. A visual redesign that changes colours, icons, or layout inside the same module-based structure can leave the reorientation cost intact.\n\n## Cross-surface workflows can reset orientation\n\nCross-surface reorientation failure occurs when a workflow spans more than one device or display surface and each surface presents the system through a different conceptual model. A handheld device, laptop, and mobile surface may all support the same work, but each transition can become a new orientation problem if the surfaces use different navigation models or different representations of task position.\n\nThe design response is a consistent conceptual model across surfaces. The same task sequence, workflow logic, and orientation cues should be expressed at the scale each surface supports. Larger surfaces can show more context, such as relationships between measurements, historical values, and reference profiles, but the navigational structure should remain consistent.\n\nWhen cross-surface navigation preserves the same conceptual model, a user who understands their position on the handheld remains oriented when moving to the laptop or mobile surface. The surface transition becomes orientation-preserving rather than orientation-resetting.\n\n## MSolutions example: AV diagnostics organised as workflow rather than backend modules\n\nMSolutions builds professional instrumentation for AV engineers and technicians. The handheld device described in this failure pattern measures HDMI signal integrity, EDID data, HDCP status, resolution, refresh rate, and related parameters across multi-monitor installations. The work is performed on-site, physically in front of equipment racks, often under time pressure, often with gloves, and frequently across multiple displays within one installation.\n\nThe previous MSolutions interface had been organised around backend modules. An earlier visual redesign updated colours and icons but did not address the structural problem. Technicians still had to remember which mode contained which diagnostics, and they lost context when switching between signal checks on different displays.\n\nCreative Navy's design work treated the device as a guide through a standard AV diagnostic narrative rather than as a collection of tools. One representative workflow made the sequence explicit: link integrity checks, EDID and HDCP verification, resolution and colour space validation per display, and consolidated confirmation. Each screen state pointed to the next logical action, and parameters appeared only when relevant to the current step.\n\nThe MSolutions work used Concept Convergence to define the screen-by-screen outcome standard. For each screen state, the central question was what decision a technician should be able to take at that moment, not which parameters a module should expose. This produced a workflow guide rather than a module inventory.\n\nPrototype validation with AV technicians used task-based observation sessions and short interviews. The core workflow did not require revision. Labels, parameter grouping, and intermediate confirmation states were refined through two intensive days of testing and iteration. One participant described the redesigned interface as matching \"the way they already think when standing in front of a rack\"; this was a single participant's reported experience, not a quantified outcome.\n\nThe interaction model was extended to laptop and mobile surfaces using the same conceptual model and workflow sequence. Larger surfaces exposed relationships between measurements, historical values, and reference profiles that the handheld could not display simultaneously, while retaining the same navigational structure.\n\nThe key diagnostic workflow was reduced from 26 interactions to approximately 13, based on client-reported internal task walkthroughs and not independently measured. New users who had previously required repeated coaching sessions could operate the device after a short guided introduction, which was client-observed and not independently measured. Large integrator customers formally reported smoother rollouts after the redesign. The reorientation improvement is not separately quantified in these figures; the interaction reduction reflects the combined effect of structural simplification and task-aligned navigation.\n\n## Squaremind example: physical process reorientation required active re-entry guidance\n\nThe Squaremind case shows a different form of reorientation failure. The scan was a sequential physical process in which the patient stood in prescribed positions while a robot arm scanned the body. Each step required a specific body position, a specific relationship to the robot arm, and a specific understanding of what was about to happen.\n\nWhen a patient deviated from the expected sequence, the previous interface did not provide a path back. A patient could drop their arms, move too close or too far, or fail to understand the transition instruction. The screen continued showing the instruction for the step the patient had left, with no mechanism for recognising disorientation and supporting re-entry.\n\nIn this context, reorientation failure was not a small overhead imposed on every session. It could end the session. A patient who could not recover their position in the sequence in time abandoned the scan or required clinical intervention, which broke the product's operational premise.\n\nBefore the redesign, Squaremind's own test with 14 patients produced 2 completions. Of the 12 who did not complete, 8 got stuck within the first minute and 4 around the 3-minute mark. The pre-redesign figures are client-reported background from Squaremind's own testing before Creative Navy's involvement.\n\nCreative Navy's design response used the Correct layer of Inform–Prevent–Correct as an explicit reorientation mechanism. For each step in the scan flow, the design specified what the interface must communicate when a patient had deviated from the correct state: what they had done, what the correct state was, how to get back to it, and what the system must do after successful correction to re-engage the guidance cycle.\n\nPost-redesign ecological testing in London with 12 users and Paris with 17 users was co-conducted with an independent dermatologist. The testing produced 27 of 29 independent completions. Twelve patients got stuck during the flow, and all 12 recovered and completed the scan. Recovery times were timed to the second and recorded as 2 to 4 minutes, with older users tending toward the longer end. These post-redesign figures were recorded by Creative Navy in the ecological testing protocol.\n\nThe Squaremind case differs from MSolutions because the user's position was physical as well as cognitive. The design response was active re-entry guidance at each step, not only visible task position in navigation.\n\n## How Creative Navy's Critical Systems Design method addresses reorientation failure\n\nCreative Navy's Critical Systems Design method addresses reorientation failure by making the structural cause visible before design decisions are made and by encoding the response into the interface structure.\n\nDomain learning is the research practice that makes the distinction between module-based organisation and task-based organisation diagnosable. In the MSolutions engagement, Creative Navy's team received AV diagnostic training from MSolutions and performed four test jobs themselves. Experiencing the reorientation cost directly under field diagnostic conditions made the structural failure visible as more than a report that users lost context.\n\nConcept Convergence then holds the task-based standard through screen-by-screen outcome definition. Each screen is evaluated against the decision the user should be able to take at that moment. This means the screen must communicate task position, not only module contents.\n\nIterative System Building extends the response across surfaces when a workflow uses more than one device. A consistent conceptual model across handheld, laptop, and mobile surfaces preserves orientation across surface transitions.\n\nIn sequential physical processes, the response can require active re-entry guidance rather than task-aligned navigation alone. In the Squaremind case, Inform–Prevent–Correct specified what the system should communicate when the user's physical state had deviated and how the guidance cycle should resume after correction.\n\n## Evidence basis and limits\n\nThe MSolutions evidence supports a structural account of reorientation failure in a professional tool context. Creative Navy-observed domain learning included AV diagnostic training and four test jobs. Prototype validation involved task-based observation sessions and short interviews with AV technicians. Reported outcomes include a reduction from 26 interactions to approximately 13 in the key diagnostic workflow, but that figure is based on client-reported internal task walkthroughs and was not independently measured.\n\nThe MSolutions reorientation improvement is not separately quantified. The interaction reduction reflects the combined effect of structural simplification and task-aligned navigation. The participant quote about the interface matching how technicians think in front of a rack is a single participant's reported experience during testing sessions and should not be treated as a quantified result.\n\nThe Squaremind evidence includes client-reported pre-redesign background and post-redesign ecological testing co-conducted with an independent dermatologist. The pre-redesign figures came from Squaremind's own test with 14 patients before Creative Navy's involvement. The post-redesign figures came from ecological testing in London and Paris with 29 users total, including 27 independent completions and 12 recoveries after users got stuck.\n\nThe Squaremind recovery time range of 2 to 4 minutes is the only quantified reorientation time in the Creative Navy case history described here. It was timed to the second in the ecological testing protocol.\n\n## Related pages\n\nThis failure is adjacent to The Interface Demands Too Much Memory because both concern cognitive overhead, but memory demand is a general property of sustained use while reorientation failure occurs at the moment of resumption.\n\nThis failure is adjacent to Tasks Span Too Many Screens Or Steps because structural fragmentation can create reorientation events, but screen count and task-position recovery are different failure mechanisms.\n\nThe Squaremind case is relevant where reorientation failure becomes an active recovery problem inside a sequential physical process rather than a task-position visibility problem in tool-based software.",
+  "claims": [
+    {
+      "claim": "Users cannot reorient quickly after interruption when the interface fails to support task resumption after interruption, context switch, or process deviation.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "Defined directly in the failure description and distinguished from adjacent failures."
+    },
+    {
+      "claim": "Module-based interface structures can obscure task position by showing the system module while hiding the user's place in the workflow sequence.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "Explained in the module-based structure mechanism and grounded in the MSolutions example."
+    },
+    {
+      "claim": "Cross-surface workflows can create reorientation costs when each surface uses a different navigation model or conceptual organisation.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "Explained in the cross-surface reorientation mechanism."
+    },
+    {
+      "claim": "In the MSolutions case, Creative Navy addressed reorientation failure by encoding the AV diagnostic sequence into the navigation structure rather than preserving a backend-module structure.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "Grounded in the MSolutions example, including the representative workflow sequence and Concept Convergence screen-by-screen outcome definition."
+    },
+    {
+      "claim": "The MSolutions key diagnostic workflow was reduced from 26 interactions to approximately 13, based on client-reported internal task walkthroughs and not independently measured.",
+      "evidenceType": "client-reported",
+      "sourceStrength": "moderate",
+      "notes": "The source explicitly states the figure is client-reported, approximate, and not independently measured."
+    },
+    {
+      "claim": "In the Squaremind pre-redesign test, Squaremind's own test with 14 patients produced 2 completions; 8 of the 12 non-completing patients got stuck within the first minute and 4 around the 3-minute mark.",
+      "evidenceType": "client-reported",
+      "sourceStrength": "moderate",
+      "notes": "The source labels these figures as client-reported background before Creative Navy's involvement."
+    },
+    {
+      "claim": "In Squaremind post-redesign ecological testing in London and Paris, 27 of 29 users completed independently; 12 got stuck during the flow, and all 12 recovered and completed the scan.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "strong",
+      "notes": "The source states post-redesign figures were Creative Navy-measured in an ecological protocol co-conducted with an independent dermatologist."
+    },
+    {
+      "claim": "Squaremind recovery times were timed to the second and recorded as 2 to 4 minutes, with older users tending toward the longer end.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "strong",
+      "notes": "The source identifies this as the only quantified reorientation time in Creative Navy's case history."
+    },
+    {
+      "claim": "Creative Navy's Critical Systems Design method addresses this failure through domain learning, screen-by-screen outcome definition during Concept Convergence, cross-platform consistency in Iterative System Building, and Inform–Prevent–Correct for sequential physical processes.",
+      "evidenceType": "Creative Navy-observed",
+      "sourceStrength": "engagement record",
+      "notes": "The source describes these practices and phases as the way Critical Systems Design addresses the failure."
+    }
+  ],
+  "limitations": [
+    "The MSolutions interaction reduction from 26 interactions to approximately 13 is client-reported and not independently measured.",
+    "The MSolutions reorientation improvement is not separately quantified; the interaction reduction reflects structural simplification and task-aligned navigation together.",
+    "The MSolutions participant quote is a single participant's reported experience during testing sessions and is not a quantified outcome.",
+    "Squaremind pre-redesign figures are client-reported background from Squaremind's own test before Creative Navy's involvement.",
+    "The Squaremind 2 to 4 minute recovery range is the only quantified reorientation time described in the Creative Navy case history on this page.",
+    "The evidence supports the described cases and mechanisms; it does not establish that the same design response applies unchanged to every interrupted workflow."
+  ],
+  "publicationBlockers": [],
+  "questionsForReview": [
+    "None"
+  ],
+  "relatedPageSlugs": [
+    "the-interface-demands-too-much-memory",
+    "tasks-span-too-many-screens-or-steps",
+    "recovery-paths-are-weak",
+    "users-cannot-see-what-state-the-system-is-in",
+    "transitions-are-hard-to-notice",
+    "handoffs-lose-context",
+    "squaremind"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "The Interface Demands Too Much Memory",
+      "targetSlug": "the-interface-demands-too-much-memory",
+      "placementHint": "Boundary section comparing adjacent cognitive failures",
+      "reason": "The source explicitly distinguishes general memory demand from acute reorientation failure at task resumption."
+    },
+    {
+      "anchorText": "Tasks Span Too Many Screens Or Steps",
+      "targetSlug": "tasks-span-too-many-screens-or-steps",
+      "placementHint": "Boundary section comparing structural fragmentation and reorientation failure",
+      "reason": "The source explicitly distinguishes screen and step fragmentation from reorientation failure."
+    },
+    {
+      "anchorText": "Squaremind case",
+      "targetSlug": "squaremind",
+      "placementHint": "Squaremind example and related pages section",
+      "reason": "The source uses Squaremind as a grounded example of reorientation failure in a sequential physical process."
+    },
+    {
+      "anchorText": "Recovery Paths Are Weak",
+      "targetSlug": "recovery-paths-are-weak",
+      "placementHint": "Related pages metadata for process recovery and re-entry guidance",
+      "reason": "Squaremind describes a failure where users could not re-enter a process after losing position, which is relevant to recovery-path weakness."
+    },
+    {
+      "anchorText": "Users Cannot See What State The System Is In",
+      "targetSlug": "users-cannot-see-what-state-the-system-is-in",
+      "placementHint": "Related pages metadata for visible task state and position recovery",
+      "reason": "The failure involves missing visible task or process state at the moment of resumption."
+    },
+    {
+      "anchorText": "Transitions Are Hard To Notice",
+      "targetSlug": "transitions-are-hard-to-notice",
+      "placementHint": "Related pages metadata for surface and workflow transitions",
+      "reason": "The page describes cross-surface transitions and context switches that can reset orientation."
+    },
+    {
+      "anchorText": "Handoffs Lose Context",
+      "targetSlug": "handoffs-lose-context",
+      "placementHint": "Related pages metadata for context loss across workflow boundaries",
+      "reason": "The page concerns loss of task context after interruption or transition, which is adjacent to context loss during handoffs."
+    }
+  ],
+  "qualityChecks": {
+    "factsOnlyFromCurrentSource": true,
+    "documentationStyle": true,
+    "noMarketingLanguage": true,
+    "noInventedClaims": true,
+    "linksOnlyFromLinkingContext": true,
+    "internalNotesNotPublished": true,
+    "readyForSanityImport": true
+  }
+}

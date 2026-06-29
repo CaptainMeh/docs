@@ -1,0 +1,157 @@
+{
+  "slug": "the-system-does-not-support-rapid-judgment",
+  "title": "The System Does Not Support Rapid Judgment",
+  "pageType": "failure",
+  "category": "failures",
+  "section": "Cognitive Failures",
+  "summary": "This failure describes complex interfaces that contain the necessary information but do not organise it into the conditions required for fast, accurate judgment. The failure appears when users must synthesize distributed data, establish priority through scanning, or infer contextual significance under operational demand.",
+  "keyFacts": [
+    "Rapid judgment is the ability to form accurate, actionable decisions quickly under real operational demand, without time for deliberate analysis.",
+    "The failure is not absence of data; it is the absence of decision-ready organisation around synthesis, priority, and contextual significance.",
+    "Synthesis reorganises information from the architecture of the system to the architecture of the decision.",
+    "Priority surfacing directs attention to the most consequential state instead of requiring users to scan and rank simultaneous conditions.",
+    "Contextual significance presents values with operational reference points, boundaries, and implications for the current decision.",
+    "In the Torqeedo maritime HMI case, captains identified key energy states 50% faster with the redesigned interface in a controlled experiment with 24 subjects.",
+    "In Torqeedo sea trials, eye tracking with 7 subjects showed that tasks previously requiring multiple sequential screen transitions could be confirmed in a single glance.",
+    "In the Gexcon case, time to first successful simulation reduced from four days to six hours, while configuration errors reduced from five to eight per simulation to one to two.",
+    "COX Marine scenario testing found that early layout directions made fault presence visible but did not direct attention to which engine required priority attention first."
+  ],
+  "bodySections": [
+    {
+      "heading": "Summary",
+      "bodyMarkdown": "Creative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nRapid-judgment failure occurs when an interface contains the relevant information but does not organise it into decision-ready form. The data may be technically complete and factually accurate, but users still have to synthesize distributed readings, establish priority among simultaneous demands, or infer what a value means under current conditions.\n\nRapid judgment is not fast guessing. It is the ability to form accurate, actionable decisions quickly at the moment of operational demand, under the conditions of real use, without time for deliberate analysis. This is required when a vessel captain manages multiple engine states during a harbour manoeuvre, when a safety engineer reviews simulation configurations under deadline pressure, or when an operator managing a multi-component system must understand a changed operational situation at a glance."
+    },
+    {
+      "heading": "Failure pattern: present data is not organised for the decision",
+      "bodyMarkdown": "The system does not support rapid judgment when information exists in the interface but remains organised around system architecture rather than decision architecture. Components may be displayed separately because they are architecturally separate. Readings may be grouped by data source rather than by the decision they inform. State may be shown as raw values without the contextual significance that tells the user what the value means now.\n\nThe operational effect is a gap between technical capability and operational performance. The capability exists in the data, logic, and processing. When the user needs to act under pressure, divided attention, or time limits, the interface does not convert that capability into immediately usable judgment.\n\nExpert users may compensate through familiarity with system patterns. That compensation depends on learned scanning sequences, memory, and inference. It is weaker when conditions depart from the familiar, and it does not make the interface usable for less experienced operators who have not accumulated the same patterns."
+    },
+    {
+      "heading": "Synthesis: information integrated rather than aggregated",
+      "bodyMarkdown": "Synthesis is required when separate data points must be combined before they become decision-relevant. A vessel captain assessing power availability during a manoeuvre does not need propulsion status, battery state, and generator output only as separate readings. The captain needs an integrated view of the energy system's current capacity and trajectory.\n\nSynthesis is not simplification. It does not remove information. It reorganises information from the architecture of the system to the architecture of the decision. The synthesized interface performs the organisational work structurally. The unsynthesized interface requires each operator to perform that work repeatedly under the conditions of use.\n\nIn analytical software, synthesis can also mean keeping mutually constrained values visible during configuration. A safety engineer assessing simulation validity does not need configuration values distributed across a setup flow without cross-referencing. The engineer needs the interface to surface the relationships between values that determine whether the configuration is internally consistent."
+    },
+    {
+      "heading": "Priority: the most consequential state surfaced first",
+      "bodyMarkdown": "Priority failure occurs when the interface presents multiple states at equal weight and leaves the user to establish which one matters most. In systems that monitor multiple components, processes, or entities, display completeness is not enough. The interface must provide hierarchy.\n\nThe scanning-and-ranking task is cognitively expensive. Under low operational demand, experienced users may perform it quickly. Under high operational demand, the same task consumes capacity that the operational task itself requires. An interface that surfaces priority explicitly removes that assessment burden from the user.\n\nPriority surfacing has structural expression in the interface. The source examples include fixed areas where the highest-priority state is always summarised, alarm hierarchy that distinguishes severity through redundant cues, and predictive surfacing that identifies emerging priority conditions before they become simultaneous demands."
+    },
+    {
+      "heading": "Contextual significance: values communicate meaning, not only magnitude",
+      "bodyMarkdown": "Contextual significance is missing when numbers are visible but their operational meaning is not. A fuel rate reading means something different during high-speed transit than during idle. A simulation parameter value indicates a configuration problem only in relation to other values it must remain consistent with. A sensor reading in an industrial installation is significant only against the baseline the installation was assessed against.\n\nInterfaces that present values without contextual significance require users to supply meaning from memory or inference. Expert users may do this reliably under normal conditions. Under abnormal conditions, high pressure, unfamiliar edge cases, or degraded display conditions, the inference is less reliable. Non-expert users may not be able to make the inference at all.\n\nContextual significance is embedded when values are presented with the operational reference points required for the current decision: the expected range under current conditions, the boundaries that matter, and the implication for what should happen next."
+    },
+    {
+      "heading": "Distinction from adjacent cognitive and state visibility failures",
+      "bodyMarkdown": "The system does not support rapid judgment is distinct from pressure amplification. An interface can impose no additional physical degradation, attentional division compound, or temporal compression failure and still fail to support rapid judgment because it has not synthesized, prioritised, or contextualised information. Pressure makes the failure worse, but pressure does not create the structural absence.\n\nThis failure is also distinct from state visibility failure. In state visibility failure, information about system state is absent at the surface. In rapid-judgment failure, the information is present but not organised for the decision task. The difference is between an instrument that does not show fuel level and an instrument that shows fuel level, charge state, generator output, and auxiliary load separately while requiring the captain to integrate them during a manoeuvre.\n\nRapid-judgment failure is also distinct from memory demand. Memory failures require users to retain spatial maps, recognition models, or conceptual frameworks because the interface does not maintain them. Rapid-judgment failure requires users to perform synthesis and prioritisation at the point of decision. Interfaces can fail in both ways at the same time, producing compound overload."
+    },
+    {
+      "heading": "Torqeedo maritime HMI: energy state synthesis across a hybrid vessel system",
+      "bodyMarkdown": "The Torqeedo hybrid electric vessel control system integrated propulsion motors, battery banks of 40–200 kWh, generators, conversion units, and auxiliary loads into one operational platform. The previous interface scattered propulsion status, battery state, and generator information across separate screens, with each component updating at its own cadence.\n\nFor a captain managing power during a harbour manoeuvre, the operational problem was not inaccurate data. The problem was unsynthesized data. To understand available energy and propulsion capacity, the captain had to step through multiple screens and mentally integrate readings captured at different times. The captain's understanding of vessel state was therefore slightly behind the vessel's actual behaviour.\n\nCreative Navy's Sandbox Experiments phase ran 12 sea trials over 6 months with 15 professional captains. The research treated compensation patterns as diagnostic evidence: where captains had developed workarounds, the interface had failed to synthesize information those workarounds reconstructed.\n\nCreative Navy's design response was a grid-based structure that synchronised the different update cadences of propulsion, battery, and generator information into a single readable rhythm. The system was presented as one operational organism rather than as three separate data sources.\n\nThe measurable result was that captains identified key energy states 50% faster with the redesigned interface than with the legacy system. The evidence basis was a controlled experiment with 24 subjects comparing the new and legacy interfaces. Glance counts during manoeuvres were also measured with eye tracking equipment during real sea trials with 7 subjects; tasks that previously required multiple sequential screen transitions could be confirmed in a single glance.\n\nStructured feedback from all 15 professional captains who participated in the sea trials indicated unanimous preference for the redesigned interface. This is captain-reported feedback from structured sessions, not an independent evaluation. The Torqeedo engagement preceded the company's acquisition by Yamaha Motor Co.; the CEO reported that the interface strengthened competitive positioning. The causal connection between the interface work and the acquisition is inferred from timing and the CEO's statement, and is not independently documented."
+    },
+    {
+      "heading": "COX Marine: fault priority surfacing in multi-engine configurations",
+      "bodyMarkdown": "COX Marine diesel outboard engines are deployed in configurations from single-engine vessels to six-engine installations on fast patrol craft, racing boats, and workboats. The helm environment included vibration, spray, direct sunlight and night operations, gloved interaction, and braced stance. Under those conditions, rapid judgment on engine state was a safety-relevant operational requirement.\n\nCreative Navy's Sandbox Experiments included domain learning on NMEA 2000 protocol behaviour at varying load states because the criticality of individual telemetry values changed between normal operation and high-load states. Fuel rate and engine temperature that functioned as monitoring data during steady transit became decision-critical data during a fault condition.\n\nScenario testing during Concept Convergence found that early layout directions made fault presence visible but did not direct attention to which engine required priority attention first. In a multi-engine installation with simultaneous fault conditions, the operator had to scan engine tiles and form a priority assessment under helm conditions that made scanning cognitively costly.\n\nCreative Navy's design response was structural. Alarm state highlighting inside engine tiles was redesigned to differentiate severity redundantly across cues. A fixed display area was established where the highest-priority fault is always summarised regardless of how many faults are present simultaneously. When a fault condition arises, attention is directed to the highest-priority engine first.\n\nNight conditions scenario testing also found that initial colour palette choices interfered with military night vision equipment. Palette and contrast were revised in response. This was a rapid-judgment failure because the primary state communication cue became non-functional under a specific operational condition.\n\nThe documented outcome is client-reported. Distributor feedback, relayed to Creative Navy by COX, characterised the interface as best-in-category relative to established marine electronics manufacturers. This is not an independent comparative evaluation."
+    },
+    {
+      "heading": "Gexcon: configuration legibility in CFD simulation workflows",
+      "bodyMarkdown": "Gexcon's computational fluid dynamics software is used by engineers performing gas dispersion modelling, explosion risk assessment, and facility safety validation for industrial installations. The software had genuine scientific capability, but after fifteen years of development the interface organised information around internal architecture rather than around the structure of engineering decisions.\n\nEngineers worked with simulation parameters and a three-dimensional facility view in parallel. Attention shifted continuously between visual context, configuration inputs, and outputs. Workflows were non-linear because scientific reasoning under uncertainty did not follow a fixed sequence, and values in different parts of the setup were mutually constrained.\n\nThe rapid-judgment failure appeared when the interface did not communicate where in the simulation configuration a problem had occurred. When a simulation produced anomalous output, engineers could not see which configuration decision had generated the anomaly. They had to trace it manually by working back through setup values and reconstructing the decision point that produced the incorrect output.\n\nBefore the redesign, time to first successful simulation averaged four days. Configuration errors averaged five to eight per simulation. Corrective load per error averaged four to six hours. One person per team could operate the system with confidence.\n\nCreative Navy's Critical Systems Design method began with domain learning that distinguished essential scientific complexity from accidental complexity accumulated over fifteen years. Creative Navy mapped 102 tasks, created 45 interface variants across ten key challenges, and ran 37 evaluation sessions. The resulting interaction architecture made configuration requirements explicit at each step, kept mutually dependent values visible during decisions, and surfaced conditions for error before simulation runs.\n\nAfter the redesign, time to first successful simulation reduced to six hours, a 93% reduction. Configuration errors reduced to one to two per simulation. Corrective load reduced to approximately twenty minutes per error. Active users per team increased from one to three to four. The four operational metrics were measured by Gexcon across real deployment locations, not in controlled test conditions. The active users figure is client-reported.\n\nThe Gexcon case shows capability democratisation as a rapid-judgment outcome. When the interface synthesizes and contextualises the information required for decisions, the set of people who can make those decisions reliably can expand beyond the specialist who supplied that synthesis from memory."
+    },
+    {
+      "heading": "How Creative Navy's Critical Systems Design method addresses rapid-judgment failure",
+      "bodyMarkdown": "Creative Navy's Critical Systems Design method addresses rapid-judgment failure by establishing the decision structure before design choices are made and maintaining that standard through Iterative System Building. The relevant design standard is not only whether the system performs adequately under pressure. The standard is whether information is organised for the decision mode operational use requires.\n\nDomain learning identifies the decisions users must make, the conditions under which they make them, and the compensation patterns that reveal unsupported judgment. In the Torqeedo engagement, 12 sea trials with 15 professional captains documented decisions during manoeuvres and the workarounds captains had developed. In the Gexcon engagement, a 102-task map documented user goals, frequency, decision dependencies, and moments where contextual information was missing.\n\nConcept Convergence translates system architecture into decision architecture. For Torqeedo, this meant a grid structure that unified three different data update cadences. For COX Marine, this meant a highest-priority fault area that extracted the most severe condition from simultaneous faults. For Gexcon, this meant progressive specification of requirements per interaction, with each step communicating what it needed from the user and what the user needed from it.\n\nPerformance in reality is the evaluation principle. A synthesis design that appears coherent in a mockup but produces hesitation during a multi-component fault scenario under vessel conditions has been evaluated against the wrong criterion. A configuration architecture that reduces specialist configuration time in a structured test but leaves a risk analyst unable to interpret simulation state under real workflow conditions has been evaluated against the wrong task model."
+    },
+    {
+      "heading": "Evidence boundaries and limits",
+      "bodyMarkdown": "The Torqeedo 50% faster energy-state identification result is based on a controlled experiment with 24 subjects comparing the redesigned and legacy interfaces. The Torqeedo glance-count finding is based on eye tracking equipment used during real sea trials with 7 subjects. The unanimous captain preference is structured captain-reported feedback from 15 professional captains, not an independent evaluation.\n\nThe Torqeedo acquisition-related claim is limited. The engagement preceded Torqeedo's acquisition by Yamaha Motor Co., and the CEO reported that the interface strengthened competitive positioning. The causal connection between the interface work and the acquisition is inferred from timing and the CEO's statement, not independently documented.\n\nThe COX Marine competitive standing claim is client-reported through one intermediary. Distributor feedback was relayed to Creative Navy by COX and was not an independent comparative evaluation.\n\nThe Gexcon operational metrics were measured by Gexcon across real deployment locations, not in controlled test conditions. The active users per team figure is client-reported."
+    }
+  ],
+  "evidenceSummary": {
+    "strongClaims": [
+      "Rapid-judgment failure occurs when relevant data is present but not synthesised, prioritised, or contextualised for the decision task.",
+      "Synthesis reorganises information from system architecture to decision architecture rather than simplifying or reducing the underlying information.",
+      "Priority surfacing removes the scanning-and-ranking task from the operator by directing attention to the most consequential state first.",
+      "Contextual significance is missing when values are visible but not presented with operational reference points, boundaries, or implications for the current decision.",
+      "In the Torqeedo engagement, captains identified key energy states 50% faster with the redesigned interface than with the legacy system.",
+      "Torqeedo eye tracking during real sea trials showed that tasks previously requiring multiple sequential screen transitions could be confirmed in a single glance.",
+      "COX Marine scenario testing found that early layout directions showed fault presence but did not direct attention to which engine required priority attention first.",
+      "Gexcon time to first successful simulation reduced from four days to six hours, with configuration errors reduced from five to eight per simulation to one to two.",
+      "Creative Navy's Critical Systems Design method addresses this failure through domain learning, Concept Convergence, and evaluation against performance in reality."
+    ],
+    "weakerClaims": [
+      "Gexcon active users per team increased from one to three to four after the redesign."
+    ],
+    "limitations": [
+      "The Torqeedo captain preference finding is structured captain-reported feedback from 15 professional captains, not an independent evaluation.",
+      "The causal connection between the Torqeedo interface work and the Yamaha Motor Co. acquisition is inferred from timing and the CEO's statement, and is not independently documented.",
+      "The COX Marine competitive standing claim is client-reported through COX and not an independent comparative evaluation.",
+      "The Gexcon operational metrics were measured by Gexcon across real deployment locations, not under controlled test conditions.",
+      "The Gexcon active users per team figure is client-reported.",
+      "The examples are drawn from documented engagements in maritime HMI and CFD simulation workflows and should not be generalised as universal quantitative benchmarks."
+    ]
+  },
+  "relatedPageSlugs": [
+    "the-interface-gets-harder-when-pressure-rises",
+    "users-cannot-see-what-state-the-system-is-in",
+    "the-interface-demands-too-much-memory",
+    "data-is-available-but-hard-to-interpret",
+    "users-see-information-but-cannot-judge-what-matters",
+    "important-status-information-is-buried",
+    "too-much-attention-is-required-for-routine-use",
+    "cox-marine"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "the interface gets harder when pressure rises",
+      "targetSlug": "the-interface-gets-harder-when-pressure-rises",
+      "reason": "The current page explicitly distinguishes rapid-judgment failure from pressure-driven amplification of interface costs."
+    },
+    {
+      "anchorText": "users cannot see what state the system is in",
+      "targetSlug": "users-cannot-see-what-state-the-system-is-in",
+      "reason": "The current page distinguishes present-but-not-decision-ready information from absent state visibility."
+    },
+    {
+      "anchorText": "the interface demands too much memory",
+      "targetSlug": "the-interface-demands-too-much-memory",
+      "reason": "The current page distinguishes memory retention failures from synthesis and prioritisation failures."
+    },
+    {
+      "anchorText": "data is available but hard to interpret",
+      "targetSlug": "data-is-available-but-hard-to-interpret",
+      "reason": "The current failure concerns available data that still requires interpretation before it can support judgment."
+    },
+    {
+      "anchorText": "users see information but cannot judge what matters",
+      "targetSlug": "users-see-information-but-cannot-judge-what-matters",
+      "reason": "The priority and contextual-significance parts of this failure overlap with users seeing information without being able to determine importance."
+    },
+    {
+      "anchorText": "important status information is buried",
+      "targetSlug": "important-status-information-is-buried",
+      "reason": "The priority condition addresses cases where consequential state is not surfaced clearly."
+    },
+    {
+      "anchorText": "too much attention is required for routine use",
+      "targetSlug": "too-much-attention-is-required-for-routine-use",
+      "reason": "Scanning-and-ranking tasks increase attentional demand, which is adjacent to routine attention cost failures."
+    },
+    {
+      "anchorText": "COX Marine",
+      "targetSlug": "cox-marine",
+      "reason": "The current page includes COX Marine as a grounded example, and a matching allowed case-study slug is available."
+    }
+  ],
+  "tags": [
+    "cognitive failure",
+    "rapid judgment",
+    "decision support",
+    "information synthesis",
+    "priority surfacing",
+    "contextual significance",
+    "operational interfaces",
+    "Critical Systems Design"
+  ],
+  "_meta": {
+    "sourcePath": "sources/articles/Failures/failures--cognitive--the-system-does-not-support-rapid-judgment.md",
+    "parentSlug": "cognitive-failures",
+    "childPageSlugs": [],
+    "generatedBy": "deterministic"
+  }
+}

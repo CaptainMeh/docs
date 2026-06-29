@@ -1,0 +1,209 @@
+{
+  "_type": "documentationPage",
+  "sourceFile": "Articles/Outcomes/outcomes--reduced-maintenance-and-downtime.md",
+  "sourcePath": "sources/articles/Outcomes/outcomes--reduced-maintenance-and-downtime.md",
+  "sanityDocumentIdCandidate": "documentationPage.reduced-maintenance-and-downtime",
+  "title": "Reduced Maintenance And Downtime",
+  "slug": {
+    "_type": "slug",
+    "current": "reduced-maintenance-and-downtime"
+  },
+  "pageType": "outcome",
+  "category": "evidence",
+  "parentSlug": "strategic-and-organisational-outcomes",
+  "childPageSlugs": [],
+  "excerpt": "Reduced maintenance and downtime covers two related outcomes: lower software-maintenance burden through documented design reasoning, and lower operational maintenance burden where an interface controls physical equipment. The available evidence combines longitudinal durability, client-reported extension, low clarification volume, and client-measured Gericke operational metrics.",
+  "metaTitle": "Reduced Maintenance And Downtime",
+  "metaDescription": "Defines reduced maintenance and downtime as an evidence outcome, with software-maintenance and operational-maintenance readings kept separate.",
+  "summary": "Reduced maintenance and downtime is an evidence outcome in which a product remains easier to maintain because future developers, operators, or maintainers can understand the system state and the reasoning behind design decisions. The software-maintenance reading is supported mainly by design-system longevity, independent client extension, rework reduction, onboarding evidence, and low support-contact volume. The operational-maintenance reading is grounded most clearly in the Gericke industrial HMI case, where client-measured figures showed lower MTTR and unplanned downtime within a confirmed single-variable window.",
+  "definition": "Reduced maintenance and downtime is the outcome in which a clearer, more legible system costs less to keep running over time: either because future developers can extend software from a documented reasoning record, or because operators and maintainers can diagnose and recover physical-equipment faults faster through a clearer interface.",
+  "keyFacts": [
+    "The outcome has two readings: software-maintenance cost after delivery and operational maintenance or downtime for equipment controlled through an interface.",
+    "The software-maintenance reading depends on a design system functioning as a reasoning record, not only as a component library.",
+    "Sense decay is the erosion of meaning that occurs when later changes are made without access to the reasoning behind earlier design decisions.",
+    "Callsign used the design system for at least 2 years after the engagement closed and extended it across additional security modules beyond the original fraud and authentication scope, client-reported to Creative Navy.",
+    "Across the documented longitudinal set, the original system was still in operation in every case, and in the majority the client's own team had extended or evolved it independently.",
+    "Triopsis received a design system with 68 components, 200+ documented states, and 15 workflow type specifications, followed by a 2-year Implementation Partnership.",
+    "Bofin reported reduced rework due to clearer component definitions and accelerated onboarding for new engineers using the design system as a coherent reference.",
+    "Chemical Watch recorded 5 support requests over 6 months post-handover; CDR Foodlab recorded 3 developer contacts over 7 months of Implementation Partnership, including 2 build reviews and 1 question session.",
+    "Gericke client-measured MTTR reductions from 65 to 42 minutes, 105 to 60 minutes, and 165 to 90 minutes across three sites within a confirmed single-variable window.",
+    "Gericke client-measured unplanned downtime reductions from 22 to 15, 48 to 30, and 165 to 95 hours per year across the same three sites."
+  ],
+  "tags": [
+    "reduced maintenance",
+    "downtime reduction",
+    "design system longevity",
+    "reasoning record",
+    "sense decay",
+    "design debt",
+    "rework reduction",
+    "low contact volume",
+    "MTTR",
+    "unplanned downtime",
+    "Implementation Partnership"
+  ],
+  "bodyMarkdown": "## Reduced maintenance and downtime has two distinct evidence readings\n\nCreative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nReduced maintenance and downtime describes two related outcomes that should be kept separate. The first is software-maintenance cost: the cost of maintaining and extending the product after delivery, shaped by whether future developers can understand why past design decisions were made. The second is operational maintenance and downtime: the equipment-maintenance burden that can fall when an interface to physical equipment makes faults easier to diagnose, dispatch, and repair.\n\nThe two readings share a common mechanism. A system whose state and reasoning are legible costs less to keep running over time. In software, legibility helps developers extend the product consistently. In equipment contexts, legibility helps operators and maintainers understand what is happening, distinguish actual faults from interpretation failures, and recover faster.\n\n## Software-maintenance reduction depends on design systems as reasoning records\n\nThe software-maintenance reading of reduced maintenance and downtime is based on the difference between a component library and a reasoning record. A design system that specifies only what components look like is a component library. A design system that also documents why components were designed that way records the constraints, tensions, and user needs that shaped the design.\n\nThis distinction matters when a developer encounters an edge case that the specification did not anticipate. With only a specification, the developer makes a local decision. With a reasoning record, the developer can make a decision consistent with the original intent.\n\nWithout documented reasoning, every change requires reconstruction of intent. That reconstruction is costly, may be wrong, and is paid repeatedly across the lifetime of the system. Design debt accumulates when decisions that were sensible in their original context lose that context during later implementation and extension.\n\nThis outcome is closely related to sense decay. In Creative Navy's vocabulary, sense decay is the erosion of meaning that occurs when a system is changed by people who cannot access the reasoning behind it. A design that was coherent at delivery can fragment over time if later changes accumulate without understanding what the original coherence was protecting.\n\n## Longitudinal durability is the main support for the software-maintenance reading\n\nThe strongest support for the software-maintenance reading is longitudinal durability: evidence about what happened to systems after delivery. Across the documented longitudinal set, the original system was still in operation in every case. In the majority of documented return engagements, the client's own team had extended or evolved the system independently.\n\nThis is not a direct maintenance-cost metric. It is operational evidence that the reasoning record continued to function after Creative Navy's engagement ended. A system that a client's own team can extend coherently over multiple years provides evidence that ongoing maintenance work did not depend on repeatedly reconstructing the original design intent.\n\nIn the documented [Callsign](callsign-fraud-authentication) case, the design system was used for at least 2 years after the engagement closed and extended across additional security modules beyond the original fraud and authentication scope. That fact was client-reported to Creative Navy. The mechanism described in the case evidence is that the design system was built from sprint 1 as a reasoning record, including the reasoning behind the policy engine architecture, model and policy separation, policy as the central object, and evaluation mode.\n\nThe broader [longitudinal durability](longitudinal-durability) evidence should be treated as the main place for the evolving denominator. The reduced-maintenance page uses the longitudinal evidence as support for the outcome, while the exact case-set count belongs with the longitudinal evidence itself.\n\n## Maintenance through growth appears in Triopsis, Bofin, Gexcon, Torqeedo, and Elsner\n\nThe [Triopsis](triopsis-workforce-management-saas) case shows the software-maintenance outcome as coherence through growth. The design system contained 68 components, 200+ documented states, and 15 workflow type specifications. The 2-year Implementation Partnership maintained coherence during a growth phase, the period when design debt often accumulates quickly as features are added under competitive pressure.\n\nThe [Bofin](bofin) case shows the maintenance problem in parallel development. In a 50+ developer context, the maintenance risk was architectural drift: modules diverging from one another without a shared reference. The product manager directly reported reduced rework due to clearer component definitions. New engineer onboarding also accelerated because the design system provided a coherent reference that could be adopted without direct design team involvement.\n\nThe [Gexcon](gexcon) case shows maintenance as preservation of a legacy-platform transformation. The documented option space contained 45 variants with explicit pros and cons from 37 evaluation sessions. During a 2-year Implementation Partnership, that reasoning record helped preserve the transformation through subsequent development by making the chosen direction and rejected alternatives legible when implementation edge cases appeared.\n\nThe [Torqeedo](torqeedo-maritime-hmi) case shows evolvable architecture as a maintenance outcome. The design system was explicitly structured to accommodate future hardware modules and new hybrid vessel architectures without redesigning the core information architecture. The maintenance value is architectural: growth in the product family does not require the underlying design logic to be remade.\n\nThe [Elsner Elektronik](elsner-smart-home-controller) case shows the maintenance outcome as organisational capability. The design system included organisation-wide design tokens, a component library, and governance models structured for future firmware evolution and new product variants. At engagement close, Elsner's product managers could iterate the UI independently; this was observed and confirmed by the client.\n\n## Low post-handover contact volume is an indirect governance signal\n\nLow contact volume after handover is indirect evidence that a design system carried enough reasoning for the development team to operate without repeated clarification. This evidence does not measure maintenance cost directly. It measures the absence of clarification overhead in bounded implementation periods.\n\nIn the [Chemical Watch](chemical-watch) case, there were 5 support requests over 6 months post-handover, an average of one per month. This figure documents low post-handover support volume rather than direct rework reduction.\n\nIn the [CDR Foodlab](cdr-foodlab) case, there were 3 developer contacts over 7 months of Implementation Partnership, Creative Navy-observed. Two of the 3 contacts were build reviews, where the development team presented what had been built for review against design intent. Only 1 contact was a question session, producing approximately 5 questions over the full 7-month period. The low question volume indicates reasoning sufficiency; the build reviews indicate a proactive governance structure.\n\nThe low-contact cluster also includes [Squaremind](squaremind), with approximately 9 questions over 5 months. The cluster is distinct from longer Implementation Partnership engagements, where contact volume is less meaningful because active multi-year development naturally generates more questions.\n\n## Gericke is the grounded operational-maintenance and downtime case\n\nThe [Gericke industrial HMI](gericke-industrial-hmi) case is the grounded instance of the operational-maintenance reading. In this case, the interface controlled physical equipment, and the legacy interface produced maintenance-cost patterns through interpretation failures. The documented patterns included unnecessary maintenance call-outs for behaviour that turned out to be normal, labelled OE07, and late call-outs where small issues escalated because warning signals were not legible, labelled OE08.\n\nGericke client-measured operational maintenance and downtime metrics within a confirmed single-variable window. The window covered four months post-go-live across three sites described only by type and geography, with no hardware, sensor, mechanical, training, recipe, or process changes.\n\nWithin that window, MTTR fell substantially at every site: 65 to 42 minutes at a Swiss pharma site, 105 to 60 minutes at an Italian food site, and 165 to 90 minutes at a Swiss chemicals site. Unplanned downtime also fell: 22 to 15, 48 to 30, and 165 to 95 hours per year respectively.\n\nOperator-caused stoppages and manual interventions also fell sharply in the client-measured figures. Operator stoppages roughly halved. Manual interventions fell from 10 to 4, 19 to 8, and 42 to 15 per shift across the reported examples.\n\nThe mechanism was interface legibility applied to equipment operation. The redesigned HMI included a live process mimic showing state on the diagram, a root-cause alarm hierarchy that allowed maintenance to be dispatched to the actual fault, and contextual explanations replacing raw codes. One documented example was a conveying-blockage case in which the interface identified “Valve V12 failed to reach open position — probable root cause of 6 active alarms,” so maintenance could be sent directly to the relevant valve.\n\nThe Gericke figures should be framed as interface-attributable within the confirmed window, not as a proven causal claim. The evidence basis is client-measured by Gericke, not Creative Navy-measured. The OE codes are a Creative Navy synthesis, and the per-plant frequencies are client-reported from plant statistics, not telemetry. Gericke is not a regulated device; it operates in GMP environments, GAMP 5 is relevant, and the validation boundary is the manufacturer's.\n\n## Gericke also supports software-maintenance through internal propagation\n\nThe Gericke case also supports the software-maintenance reading. The 89-component design system became Gericke's standard and was propagated internally across other product lines. The 12-month Implementation Partnership included QA against the design, on-panel testing, and in-situ colour calibration during the TwinCAT build.\n\nThis evidence is different from the operational MTTR and downtime figures. The operational figures concern equipment maintenance and downtime. The design-system propagation evidence concerns software-maintenance durability: the design system continued to govern future internal extensions after the original engagement.\n\n## Evidence boundaries for reduced maintenance and downtime\n\nReduced maintenance and downtime is supported by different evidence types, and the evidence should not be collapsed into a single claim type. Longitudinal durability is observed and client-reported across documented return engagements. Callsign is a client-reported longevity case. Bofin rework reduction is product-manager reported. Chemical Watch, CDR Foodlab, and Squaremind provide low-contact governance signals. Gericke provides client-measured operational metrics within a confirmed single-variable window.\n\nThe software-maintenance evidence is mostly not a direct cost metric. It supports the outcome by showing durability, independent extension, lower clarification overhead, reduced rework, and coherent onboarding. The operational-maintenance evidence in Gericke is more quantitative, but it remains client-measured and should be described within its stated window and evidence basis.\n\n## Related evidence pages\n\nRelated evidence pages include [longitudinal durability](longitudinal-durability), [Callsign](callsign-fraud-authentication), [Triopsis](triopsis-workforce-management-saas), [Bofin](bofin), [Gexcon](gexcon), [Torqeedo](torqeedo-maritime-hmi), [Elsner Elektronik](elsner-smart-home-controller), [Chemical Watch](chemical-watch), [CDR Foodlab](cdr-foodlab), [Squaremind](squaremind), and [Gericke industrial HMI](gericke-industrial-hmi).",
+  "claims": [
+    {
+      "claim": "Reduced maintenance and downtime has two distinct readings: software-maintenance cost after delivery and operational maintenance or downtime for physical equipment controlled through an interface.",
+      "evidenceType": "definition",
+      "sourceStrength": "strong",
+      "notes": "Defined explicitly in the opening distinction between the design-system reasoning-record reading and the literal-equipment reading."
+    },
+    {
+      "claim": "A design system that records the reasoning behind design decisions reduces later reconstruction of intent and helps future developers make consistent edge-case decisions.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "Supported by the explanation of design systems as reasoning records and the connection to sense decay and design debt."
+    },
+    {
+      "claim": "Callsign used the design system for at least 2 years after the engagement closed and extended it across additional security modules beyond the original fraud and authentication scope.",
+      "evidenceType": "client-reported",
+      "sourceStrength": "strong",
+      "notes": "Client-reported to Creative Navy; presented as the strongest individual longevity confirmation."
+    },
+    {
+      "claim": "Across the documented longitudinal set, the original system was still in operation in every case, and in the majority the client's own team had extended or evolved it independently.",
+      "evidenceType": "case study",
+      "sourceStrength": "strong",
+      "notes": "The exact denominator is maintained on the longitudinal evidence page; this page should not restate a denominator not present here."
+    },
+    {
+      "claim": "Bofin reported reduced rework due to clearer component definitions and accelerated new engineer onboarding through the design system as a coherent reference.",
+      "evidenceType": "client-reported",
+      "sourceStrength": "moderate",
+      "notes": "The rework reduction was directly reported by the product manager; onboarding acceleration is described as enabled by the design system."
+    },
+    {
+      "claim": "Chemical Watch, CDR Foodlab, and Squaremind provide low-contact-volume evidence as an indirect governance signal of reasoning sufficiency.",
+      "evidenceType": "Creative Navy-observed",
+      "sourceStrength": "moderate",
+      "notes": "Chemical Watch had 5 support requests over 6 months; CDR Foodlab had 3 developer contacts over 7 months; Squaremind had approximately 9 questions over 5 months. The inference is analytical."
+    },
+    {
+      "claim": "Gericke client-measured reductions in MTTR and unplanned downtime across three sites within a confirmed single-variable window.",
+      "evidenceType": "client-measured",
+      "sourceStrength": "strong",
+      "notes": "MTTR fell from 65 to 42, 105 to 60, and 165 to 90 minutes. Unplanned downtime fell from 22 to 15, 48 to 30, and 165 to 95 hours per year. The figures are interface-attributable within the window, not framed as proven causation."
+    },
+    {
+      "claim": "Gericke's 89-component design system became Gericke's standard and was propagated internally across other product lines.",
+      "evidenceType": "case study",
+      "sourceStrength": "strong",
+      "notes": "This supports the software-maintenance reading separately from the operational-maintenance metrics."
+    },
+    {
+      "claim": "Gericke operates in GMP environments, GAMP 5 is relevant, and the validation boundary is the manufacturer's.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "The case is not a regulated device case; the evidence should not be framed as Creative Navy validation or certification."
+    }
+  ],
+  "limitations": [
+    "The software-maintenance reading is mostly supported by durability, independent extension, low contact volume, onboarding, and rework evidence, not by direct maintenance-cost accounting.",
+    "The longitudinal evidence is summarised here; the exact denominator is maintained on the separate longitudinal evidence page.",
+    "Callsign longevity evidence is client-reported to Creative Navy, not independently measured.",
+    "Bofin rework reduction is product-manager reported, not independently measured.",
+    "Low contact volume is an indirect governance signal. The inference that low contact volume indicates sufficient reasoning transfer is analytical, not independently measured.",
+    "CDR Foodlab contact counts were directly observed by Creative Navy, but the interpretation of build reviews and question volume is analytical.",
+    "Gericke operational figures were client-measured by Gericke, not Creative Navy-measured.",
+    "Gericke figures should be framed as interface-attributable within the confirmed single-variable window, not as proven causation.",
+    "Gericke sites are described only by type and geography.",
+    "Gericke per-plant frequencies are client-reported from plant statistics, not telemetry."
+  ],
+  "publicationBlockers": [],
+  "questionsForReview": [
+    "None"
+  ],
+  "relatedPageSlugs": [
+    "longitudinal-durability",
+    "callsign-fraud-authentication",
+    "triopsis-workforce-management-saas",
+    "bofin",
+    "gexcon",
+    "torqeedo-maritime-hmi",
+    "elsner-smart-home-controller",
+    "chemical-watch",
+    "cdr-foodlab",
+    "squaremind",
+    "gericke-industrial-hmi"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "longitudinal durability",
+      "targetSlug": "longitudinal-durability",
+      "placementHint": "Link in the section on longitudinal durability as the main support for the software-maintenance reading.",
+      "reason": "The page explicitly relies on the longitudinal evidence set for durability and independent extension over time."
+    },
+    {
+      "anchorText": "Callsign",
+      "targetSlug": "callsign-fraud-authentication",
+      "placementHint": "Link where Callsign is discussed as the time-anchored longevity case.",
+      "reason": "Callsign is the clearest individual case of post-engagement design-system use and extension."
+    },
+    {
+      "anchorText": "Triopsis",
+      "targetSlug": "triopsis-workforce-management-saas",
+      "placementHint": "Link in the section on maintenance through growth.",
+      "reason": "Triopsis supports the outcome through a large design system and 2-year Implementation Partnership during growth."
+    },
+    {
+      "anchorText": "Bofin",
+      "targetSlug": "bofin",
+      "placementHint": "Link in the section on parallel development and rework reduction.",
+      "reason": "Bofin provides client-reported rework reduction and accelerated onboarding evidence."
+    },
+    {
+      "anchorText": "Gexcon",
+      "targetSlug": "gexcon",
+      "placementHint": "Link in the section on preserving transformation through development.",
+      "reason": "Gexcon supports the reasoning-record mechanism through documented option space and 2-year Implementation Partnership."
+    },
+    {
+      "anchorText": "Torqeedo",
+      "targetSlug": "torqeedo-maritime-hmi",
+      "placementHint": "Link in the section on evolvable architecture for future hardware.",
+      "reason": "Torqeedo supports the outcome through architecture designed for future hardware modules and vessel architectures."
+    },
+    {
+      "anchorText": "Elsner Elektronik",
+      "targetSlug": "elsner-smart-home-controller",
+      "placementHint": "Link in the section on design tokens, governance, and client autonomy.",
+      "reason": "Elsner supports the maintenance outcome as organisational capability and independent UI iteration."
+    },
+    {
+      "anchorText": "Chemical Watch",
+      "targetSlug": "chemical-watch",
+      "placementHint": "Link in the low post-handover contact volume section.",
+      "reason": "Chemical Watch provides a low support-request count after handover."
+    },
+    {
+      "anchorText": "CDR Foodlab",
+      "targetSlug": "cdr-foodlab",
+      "placementHint": "Link in the low post-handover contact volume section.",
+      "reason": "CDR Foodlab provides directly observed developer contact counts and a build-review governance structure."
+    },
+    {
+      "anchorText": "Squaremind",
+      "targetSlug": "squaremind",
+      "placementHint": "Link in the low-contact-volume cluster paragraph.",
+      "reason": "Squaremind is part of the low-contact-volume cluster described in the outcome evidence."
+    },
+    {
+      "anchorText": "Gericke industrial HMI",
+      "targetSlug": "gericke-industrial-hmi",
+      "placementHint": "Link in the section on operational maintenance and downtime.",
+      "reason": "Gericke is the grounded client-measured operational-maintenance and downtime case."
+    }
+  ],
+  "qualityChecks": {
+    "factsOnlyFromCurrentSource": true,
+    "documentationStyle": true,
+    "noMarketingLanguage": true,
+    "noInventedClaims": true,
+    "linksOnlyFromLinkingContext": true,
+    "internalNotesNotPublished": true,
+    "readyForSanityImport": true
+  },
+  "__sourceCategoryDir": "Outcomes"
+}

@@ -1,0 +1,167 @@
+{
+  "_type": "documentationPage",
+  "sourceFile": "Articles/Situations/situations--complexity--system-state-is-hard-to-understand.md",
+  "sourcePath": "sources/articles/Situations/situations--complexity--system-state-is-hard-to-understand.md",
+  "sanityDocumentIdCandidate": "documentationPage.system-state-is-hard-to-understand",
+  "title": "System State Is Hard To Understand",
+  "slug": {
+    "_type": "slug",
+    "current": "system-state-is-hard-to-understand"
+  },
+  "pageType": "situation",
+  "category": "situations",
+  "parentSlug": "complexity",
+  "childPageSlugs": [],
+  "excerpt": "Complex systems become hard to operate when subsystem state is present but not integrated into a coherent picture. Operators then reconstruct system state in working memory, which creates risk under time pressure or high-stakes conditions.",
+  "metaTitle": "System State Is Hard To Understand",
+  "metaDescription": "When complex interfaces scatter subsystem state, operators must reconstruct system condition in working memory, increasing risk under time pressure.",
+  "summary": "This situation describes interfaces where multiple subsystem readings are technically visible but not integrated into a single readable picture of current system state. The documented examples are Torqeedo hybrid vessel control and Cox Marine multi-engine vessel displays.",
+  "definition": "A system-state understanding failure occurs when an interface presents separate subsystem readings without integrating them into a coherent system-level view, forcing users to infer the current condition of the system themselves.",
+  "keyFacts": [
+    "Complex systems often have state distributed across subsystems that update at different rates, exist in different physical locations, and interact in ways that are not visible at the surface.",
+    "The problem is not that information is absent; the problem is that the interface does not integrate separate readings into a coherent picture of system state.",
+    "The situation is most consequential when state changes quickly, when time pressure is high, or when an incorrect inference leads to an incorrect action.",
+    "Subsystems may each display correct local data while still failing to create a coherent global view.",
+    "Operators often compensate through learned scanning patterns that are invisible to builders and may break down with new operators, unfamiliar scenarios, or elevated time pressure.",
+    "In the Torqeedo example, propulsion status, battery state, and generator information were scattered across separate screens in a hybrid electric vessel control system.",
+    "In the Torqeedo example, captains identified key energy states 50% faster with the redesigned interface than with the legacy system in a controlled experiment with 24 subjects.",
+    "In the Cox Marine example, a multi-engine fault scenario showed that early layouts made fault presence visible but did not make fault priority clear.",
+    "Creative Navy's Critical Systems Design method addressed this situation through observed compensation patterns and scenario-based design validation under realistic operating conditions."
+  ],
+  "tags": [
+    "system state",
+    "complex systems",
+    "cognitive load",
+    "operator interfaces",
+    "fault priority",
+    "high-consequence software",
+    "Critical Systems Design",
+    "Sandbox Experiments",
+    "Concept Convergence",
+    "vessel control"
+  ],
+  "bodyMarkdown": "## System-state understanding failure in complex interfaces\n\nCreative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nSystem state is hard to understand when a complex interface shows multiple correct subsystem readings but does not integrate them into one readable picture of the system's current condition. The information may be technically present. The failure is that the interface leaves the user to reconstruct the system state in working memory.\n\nThis reconstruction requires the operator to read each information source, combine the readings, and draw an inference before acting. In systems where state changes quickly or where a wrong inference leads to a wrong action, the reconstruction burden becomes an operational risk rather than a minor usability problem.\n\n## Fragmented subsystem views create cognitive reconstruction work\n\nComplex systems often have state spread across components that update at different rates, occupy different physical locations, and affect one another in ways that are not immediately visible in the interface. When an interface presents those subsystems as separate information sources, the user experiences a collection of local views rather than a coherent global view.\n\nThe underlying system may be functioning correctly. Each instrument, panel, or screen may display its own data accurately. The missing layer is integration: the interface does not convert separate readings into a stable system-level picture that can be read directly.\n\nThe cost appears when the operator must make a decision before the reconstruction is complete. Every second spent inferring what the display means is time and attention taken away from the operational decision that depends on that state understanding.\n\n## Common causes of hard-to-understand system state\n\nSystem-state understanding failures often begin when subsystems are designed in isolation. Each component displays correct local information, but the design does not ask how the component output will combine with other outputs to form a system-level picture.\n\nDifferent update cadences also make state harder to interpret. In the vessel-control example documented here, propulsion sensors update rapidly, battery state follows slower cycles, and generator response to load has its own latency. When those signals appear separately without a structural relationship, the operator experiences them as competing signals rather than as one system rhythm.\n\nInterfaces designed mainly for normal states can also fail when abnormal conditions occur. Fault detection, alarm hierarchy, and priority surfacing may be treated late in development as edge cases. In a multi-subsystem system, simultaneous faults can occur, and an interface that only shows that a fault exists may still fail to show which fault requires priority attention.\n\nOperators frequently compensate through learned scanning patterns. Experienced users learn which readings to check, and in which sequence, to infer system state reliably. This behaviour can look like proficiency, but it may also indicate that the interface has forced the user to perform integration work that the system should support directly.\n\n## Operational cost when state has to be inferred under pressure\n\nThe direct cost of fragmented state presentation is cognitive load. Operators who reconstruct system state are not fully attending to the task the system is supposed to support.\n\nThe risk increases in high-stakes environments. The documented examples include vessel handling during changes in energy state, multi-engine fault handling, and a cardiac-device reading requirement where the device must be read at a glance from three metres. In these contexts, a delayed or incorrect inference can produce an incorrect action.\n\nThe interface does not need to hide information to contribute to error. If the state information is visible but not integrated, the interface can still become a proximate cause of operational error because it requires the user to assemble the meaning under pressure.\n\n## Torqeedo hybrid vessel control showed state scattered across separate screens\n\nThe Torqeedo hybrid electric vessel control system integrated propulsion motors, battery banks of 40–200 kWh, generators, conversion units, and auxiliary loads into a single operational platform. The previous interface scattered propulsion status, battery state, and generator information across separate screens.\n\nCaptains needed to understand power availability during manoeuvres, where both speed and accuracy mattered. In the legacy interface, captains had to step through multiple views, read each view independently, and combine the readings into one picture of system state.\n\nThe state-understanding problem was compounded by different subsystem cadences. Propulsion sensors updated rapidly, batteries followed slower cycles, and generators responded to changing load with their own latency. On separate screens, those cadences appeared as three independently behaving systems rather than one hybrid vessel system.\n\nCreative Navy's Critical Systems Design method addressed this through 12 sea trials over 6 months with 15 professional captains. Creative Navy observed compensation behaviour as a diagnostic signal for where the interface failed to communicate state.\n\nThe redesign used a grid-based structure that synchronised different update cadences into a unified display rhythm. Propulsion, battery, and generator information appeared as one system in stable spatial positions, with state transitions timed to the display's rendering constraints rather than to each subsystem's independent update cycle.\n\nThe documented result was that captains identified key energy states 50% faster with the redesigned interface than with the legacy system in a controlled experiment with 24 subjects. Glance reduction during manoeuvres was measured using eye tracking in actual sea trials with 7 subjects. Tasks that previously required multiple screen transitions could be confirmed with a single glance.\n\n## Cox Marine multi-engine displays showed fault presence without fault priority\n\nCox Marine cluster displays serve engine configurations from one to six engines across three display families, on vessels ranging from fast patrol craft and workboats to racing boats. At the helm of a fast vessel, the operator must understand engine state and fault priority at a glance under vibration, hull slamming, and time pressure.\n\nScenario testing during Concept Convergence produced a specific design finding. A multi-engine fault scenario showed that early layouts made fault presence visible but did not help operators identify which engine required priority attention.\n\nWhen multiple faults are present on a multi-engine display, an interface without explicit priority surfacing requires the operator to scan each engine's state and make a priority assessment. Under high-speed vessel operation, that assessment competes with vessel-handling decisions.\n\nCreative Navy's design response included redesigned alarm state highlighting within engine tiles and a fixed display area where the highest-priority fault is always summarised. The purpose was to direct the operator's attention to the correct location under pressure, not only to indicate that something was wrong somewhere.\n\nNight conditions testing also identified a state-visibility failure in a specific operating context: initial colour choices interfered with military night vision equipment. The engine tile system addressed state understanding structurally by using one engine, one tile, with the same pattern in the same position regardless of configuration.\n\n## Creative Navy's Critical Systems Design method addresses state understanding through observed compensation and scenario testing\n\nCreative Navy's Critical Systems Design method addresses this situation by treating user compensation patterns as diagnostic evidence. When operators reconstruct system state through learned scanning sequences, the behaviour can indicate that the interface has failed to integrate information that should already be integrated.\n\nIn the Sandbox Experiments phase, observing compensation patterns in real operating conditions can reveal structural fragmentation before redesign decisions are made. The important signal is not only what users say is difficult, but what they repeatedly do to make a fragmented interface usable.\n\nCreative Navy's Critical Systems Design method also addresses state-understanding failures through scenario-based design validation under realistic operating conditions. State-visibility failures may not appear in normal conditions and may only emerge under simultaneous faults, unfamiliar scenarios, reduced attention, or time constraints.\n\nTesting against representative fault and pressure scenarios, using real data rhythms rather than simplified test states, surfaces failures before deployment. The intended outcome is that operators read system state directly rather than reconstructing it, so attention can return to the primary task.\n\n## Evidence boundaries for this situation\n\nThe Torqeedo evidence includes specific measured results: 50% faster identification of key energy states in a controlled experiment with 24 subjects, and glance reduction during manoeuvres measured with eye tracking in actual sea trials with 7 subjects.\n\nThe Cox Marine evidence is a documented design finding and design response from scenario testing during Concept Convergence. The available description records the multi-engine fault-priority problem, the alarm and priority-display response, the night-vision colour issue, and the engine tile structure. It does not provide a quantified outcome for the Cox Marine example.\n\nThe general situation described here is grounded in the documented examples and the stated design practices. The page should not be read as claiming that every complex interface with multiple subsystems has this failure, or that any single display structure will solve state-understanding problems in all domains.",
+  "claims": [
+    {
+      "claim": "System-state understanding fails when separate subsystem readings are visible but not integrated into a coherent picture, forcing users to reconstruct system state in working memory.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "moderate",
+      "notes": "Supported by the situation description, which distinguishes technically present information from absent integration."
+    },
+    {
+      "claim": "The failure is most consequential when state changes quickly, time pressure is high, or the stakes of misreading state are high.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "moderate",
+      "notes": "Supported by the source's description of the two consequential conditions and the domains where they coincide."
+    },
+    {
+      "claim": "Operators often compensate for fragmented state presentation through learned scanning patterns that can fail under changed conditions or elevated time pressure.",
+      "evidenceType": "Creative Navy-observed",
+      "sourceStrength": "engagement record",
+      "notes": "Supported by the source's description of operator compensation patterns and the Torqeedo observation of compensation behaviour."
+    },
+    {
+      "claim": "In the Torqeedo example, the previous interface scattered propulsion status, battery state, and generator information across separate screens, requiring captains to combine readings during manoeuvres.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "Supported by the Torqeedo grounded example."
+    },
+    {
+      "claim": "In the Torqeedo example, captains identified key energy states 50% faster with the redesigned interface than with the legacy system in a controlled experiment with 24 subjects.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "The source states the result and the controlled experiment participant count; it does not identify the measuring party."
+    },
+    {
+      "claim": "In the Torqeedo example, glance reduction during manoeuvres was measured using eye tracking in actual sea trials with 7 subjects.",
+      "evidenceType": "field-measured",
+      "sourceStrength": "case evidence",
+      "notes": "Supported by the Torqeedo grounded example, which specifies eye tracking in actual sea trials and the subject count."
+    },
+    {
+      "claim": "In the Cox Marine example, scenario testing showed that early multi-engine display layouts made fault presence visible but did not surface which engine required priority attention.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "Supported by the Cox Marine grounded example."
+    },
+    {
+      "claim": "Creative Navy's Critical Systems Design method addresses this situation through observing compensation patterns and validating design decisions against realistic fault and pressure scenarios.",
+      "evidenceType": "Creative Navy-observed",
+      "sourceStrength": "engagement record",
+      "notes": "Supported by the section on Sandbox Experiments practices and scenario-based design validation."
+    }
+  ],
+  "limitations": [
+    "The documented examples are specific to Torqeedo hybrid electric vessel control and Cox Marine multi-engine vessel displays; the source also names other high-stakes contexts but does not provide equivalent detailed examples for each.",
+    "The Cox Marine example records a design finding and response but does not provide a quantified post-redesign outcome.",
+    "The Torqeedo 50% faster result is described as measured in a controlled experiment with 24 subjects; the source does not provide the full experimental protocol.",
+    "The page describes a situation pattern and documented design responses; it does not establish that any single interface structure solves state-understanding failures in all complex systems."
+  ],
+  "publicationBlockers": [],
+  "questionsForReview": [
+    "None"
+  ],
+  "relatedPageSlugs": [
+    "cox-marine",
+    "operators-rely-on-memory-too-much",
+    "the-interface-increases-cognitive-load-at-the-worst-moment",
+    "delayed-understanding-creates-risk",
+    "abnormal-conditions-break-the-interface",
+    "warnings-are-visible-but-not-actionable",
+    "user-error-has-serious-consequences"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "Cox Marine",
+      "targetSlug": "cox-marine",
+      "placementHint": "Use on the first mention of Cox Marine in the Cox Marine multi-engine display example.",
+      "reason": "The page discusses Cox Marine as a documented example, and a matching allowed case-study slug is available."
+    },
+    {
+      "anchorText": "operators rely on memory too much",
+      "targetSlug": "operators-rely-on-memory-too-much",
+      "placementHint": "Use near the discussion of learned scanning patterns and compensation behaviour.",
+      "reason": "The situation describes operators using remembered scanning sequences to reconstruct system state."
+    },
+    {
+      "anchorText": "the interface increases cognitive load at the worst moment",
+      "targetSlug": "the-interface-increases-cognitive-load-at-the-worst-moment",
+      "placementHint": "Use near the operational cost section discussing reconstruction under pressure.",
+      "reason": "The page describes cognitive work occurring during time-critical operational decisions."
+    },
+    {
+      "anchorText": "delayed understanding creates risk",
+      "targetSlug": "delayed-understanding-creates-risk",
+      "placementHint": "Use near the section on operational cost and delayed inference.",
+      "reason": "The page explains how delayed interpretation of state can create risk in high-stakes environments."
+    },
+    {
+      "anchorText": "abnormal conditions break the interface",
+      "targetSlug": "abnormal-conditions-break-the-interface",
+      "placementHint": "Use near the discussion of simultaneous faults and scenario-based validation.",
+      "reason": "The source describes state-visibility failures emerging under simultaneous faults and pressure scenarios."
+    },
+    {
+      "anchorText": "warnings are visible but not actionable",
+      "targetSlug": "warnings-are-visible-but-not-actionable",
+      "placementHint": "Use near the Cox Marine discussion of visible fault presence without clear priority.",
+      "reason": "The Cox Marine example describes a warning-state problem where fault presence was visible but priority was not clear."
+    },
+    {
+      "anchorText": "user error has serious consequences",
+      "targetSlug": "user-error-has-serious-consequences",
+      "placementHint": "Use near the section explaining how incorrect inference can produce incorrect action.",
+      "reason": "The situation connects misread system state to operational error in high-stakes environments."
+    }
+  ],
+  "qualityChecks": {
+    "factsOnlyFromCurrentSource": true,
+    "documentationStyle": true,
+    "noMarketingLanguage": true,
+    "noInventedClaims": true,
+    "linksOnlyFromLinkingContext": true,
+    "internalNotesNotPublished": true,
+    "readyForSanityImport": true
+  },
+  "__sourceCategoryDir": "Situations"
+}

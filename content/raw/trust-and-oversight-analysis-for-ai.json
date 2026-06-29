@@ -1,0 +1,160 @@
+{
+  "_type": "documentationPage",
+  "sourceFile": "Articles/Practices/practices--trust-and-oversight-analysis-for-ai.md",
+  "sourcePath": "sources/articles/Practices/practices--trust-and-oversight-analysis-for-ai.md",
+  "sanityDocumentIdCandidate": "documentationPage.trust-and-oversight-analysis-for-ai",
+  "title": "Trust And Oversight Analysis For AI",
+  "slug": {
+    "_type": "slug",
+    "current": "trust-and-oversight-analysis-for-ai"
+  },
+  "pageType": "practice",
+  "category": "practices",
+  "parentSlug": "practices",
+  "childPageSlugs": [],
+  "excerpt": "Trust-and-oversight analysis examines whether an AI product interface is producing over-trust, under-trust, weak human control, or insufficient governance visibility. It is used before testing, during redesign, and before enterprise or regulated deployment contexts.",
+  "metaTitle": "Trust And Oversight Analysis For AI",
+  "metaDescription": "A practice for analysing AI trust calibration, human oversight, behavioural visibility, and governance review needs before testing or deployment.",
+  "summary": "Trust-and-oversight analysis identifies interface conditions that cause users to over-trust or under-trust AI outputs, and it assesses whether governance consumers can verify AI behaviour. The practice is used in Sandbox Experiments, Concept Convergence, and before enterprise or regulated deployment contexts.",
+  "definition": "Trust-and-oversight analysis is a design practice for identifying AI trust calibration failures, meaningful human control gaps, behavioural visibility limits, data boundary opacity, and governance consumer requirements before testing or deployment.",
+  "keyFacts": [
+    "Trust calibration can fail through over-trust, where users follow AI recommendations without sufficient critical engagement.",
+    "Trust calibration can also fail through under-trust, where users reject or ignore useful AI assistance.",
+    "The practice identifies automation bias conditions such as high visual authority, weak uncertainty indicators, cognitively expensive overrides, and default acceptance states.",
+    "The practice identifies under-trust conditions such as opacity about AI capability, data basis, confidence, and relevance.",
+    "Anchoring bias is assessed by examining where the AI output appears in the user's decision sequence.",
+    "Meaningful human control is assessed by asking whether override mechanisms are discoverable, understood, functional, and trusted by users.",
+    "Behavioural visibility is assessed by asking whether AI-influenced decisions are explainable, traceable, reproducible, and auditable.",
+    "Governance consumer analysis examines what risk teams, regulatory auditors, ethics boards, institutional reviewers, or similar reviewers need to verify about AI behaviour.",
+    "In the Callsign fraud detection engagement, the analysis produced a requirement for a policy-as-central-object governance layer and a read-only evaluation mode.",
+    "In the Puraite AI systematic review engagement, the analysis produced requirements for blinded mode and explicit confidence display."
+  ],
+  "tags": [
+    "AI trust calibration",
+    "automation bias",
+    "under-trust",
+    "anchoring bias",
+    "meaningful human control",
+    "AI oversight",
+    "behavioural visibility",
+    "data boundary transparency",
+    "governance consumers",
+    "human-AI interaction"
+  ],
+  "bodyMarkdown": "## Summary\n\nTrust-and-oversight analysis is a Creative Navy practice for examining whether an AI product interface is pushing users toward an incorrect relationship with AI output. The practice looks for over-trust, under-trust, anchoring bias, weak human control, limited behavioural visibility, opaque data boundaries, and unmet governance consumer requirements.\n\nOver-trust occurs when users follow AI recommendations without sufficient critical engagement. Under-trust occurs when users do not engage with useful AI assistance. In both cases, the product can fail to work as intended even when the AI model itself is providing useful or correct information.\n\nTrust-and-oversight analysis identifies these conditions analytically before testing. It also examines whether governance consumers such as risk teams, regulatory auditors, ethics boards, or institutional reviewers can verify what the AI did, why it acted, and whether AI-influenced decisions are traceable.\n\n## What trust-and-oversight analysis does\n\nTrust-and-oversight analysis examines the relationship between AI behaviour, interface design, user judgement, and governance review. The practice treats trust as a calibrated relationship rather than as a general user attitude.\n\nThe analysis identifies interface conditions that produce automation bias. These include AI outputs presented with high visual authority and no uncertainty indicators, override interactions that are cognitively expensive compared with acceptance, and default states that accept AI recommendations rather than query them.\n\nThe analysis also identifies interface conditions that produce under-trust. These include opacity about what the AI can do, opacity about what data the AI draws on, and opacity about AI confidence. Under-trust may appear as non-use rather than as a complaint.\n\nTrust-and-oversight analysis also assesses whether an interface supports oversight. For each AI-influenced decision, the practice asks whether the AI's reasoning is visible, whether the decision is traceable to inputs, whether the decision can be reproduced, and whether changes to AI behaviour can be audited.\n\n## Automation bias and under-trust conditions in AI interfaces\n\nAutomation bias conditions occur when an interface systematically encourages users to accept AI recommendations without critical evaluation. The practice identifies where visual authority, default acceptance, low-friction confirmation, or high-friction override makes acceptance easier than scrutiny.\n\nUnder-trust conditions occur when an interface prevents users from understanding why AI assistance is relevant. The practice identifies where users cannot assess what the AI can do, what information it used, or how confident it is. This matters because under-trust often appears as non-engagement rather than explicit negative feedback.\n\nTrust-and-oversight analysis treats both conditions as design problems. The question is not only whether the AI output is correct. The question is whether the interface helps users form an appropriate level of confidence in the AI output under the conditions of actual use.\n\n## Anchoring bias assessment in AI decision sequences\n\nTrust-and-oversight analysis examines where AI output appears in the user's decision process. If the AI recommendation is visible before the user has formed an independent assessment, it can anchor the user's later judgement even when users believe they are evaluating independently.\n\nThis risk is especially acute in professional contexts where epistemic independence is a methodological requirement. The documented examples include systematic review, clinical diagnosis, and legal analysis.\n\nThe practice identifies decision sequences where AI outputs appear before independent human assessment would naturally occur. This analysis can lead to design requirements that change when AI output is shown, how confidence is displayed, or how human assessment is separated from AI recommendation.\n\n## Meaningful human control assessment\n\nTrust-and-oversight analysis distinguishes genuine human override from nominal human override. A technically present override is not meaningful control if it is visually buried, cognitively expensive, not understood, or not trusted by users.\n\nThe practice evaluates override mechanisms against the conditions of actual use. The assessment asks whether the override is discoverable, whether users understand it, whether it functions correctly, and whether users trust that it has the intended effect.\n\nThis part of the practice connects directly to decision boundary work. Trust-and-oversight analysis identifies where human control is only nominal; decision boundary design specifies where human control must be genuine.\n\n## Behavioural visibility and data boundary transparency\n\nTrust-and-oversight analysis examines whether users and reviewers can see what the AI did and why. Behavioural visibility includes the ability to inspect reasoning, trace decisions to inputs, reproduce decisions, and audit changes to AI behaviour.\n\nThe practice also examines data boundary transparency. In bounded AI systems that operate on specific proprietary, public, or institutional datasets, users may not understand the AI's knowledge boundary. This can create misplaced trust when users assume broader knowledge than the system has, or misplaced distrust when users cannot tell which datasets a response used.\n\nData boundary transparency is treated as a trust signal. The analysis identifies where the interface needs to communicate what data the AI has access to, what basis the output draws from, and how users should evaluate the output in light of that boundary.\n\n## Governance consumer requirements\n\nTrust-and-oversight analysis identifies governance consumers who need to evaluate AI behaviour outside ordinary end-user use. The documented governance consumers include enterprise risk teams, regulatory auditors, ethics boards, and institutional reviewers.\n\nThe practice asks what each governance consumer needs to see and whether the current interface supports that verification. Examples include enterprise risk teams evaluating a product under SCA and PCI DSS requirements, institutional review boards examining clinical AI, and regulatory auditors assessing medical device compliance.\n\nThe governance dimension is important before enterprise or regulated deployment contexts. In those contexts, product evaluation may depend on whether institutional reviewers can verify traceability, auditability, attribution, and policy alignment without relying on engineering intervention.\n\n## When Creative Navy uses trust-and-oversight analysis\n\nCreative Navy uses trust-and-oversight analysis during Sandbox Experiments when assessing an existing AI product or a product being redesigned to include AI features.\n\nCreative Navy also uses trust-and-oversight analysis during Concept Convergence when evaluating proposed AI interaction designs. In that setting, the practice identifies which design directions are likely to produce trust calibration failures before they are built.\n\nThe practice is also used before enterprise or regulated deployment contexts. The governance consumer analysis is specifically important when a product will face institutional procurement evaluation rather than only end-user evaluation.\n\n## Outputs of trust-and-oversight analysis\n\nTrust-and-oversight analysis produces design requirements that address trust calibration and oversight explicitly. The output may include requirements for confidence display, blinded review, read-only evaluation modes, policy-level governance objects, AI state communication, context communication, capability framing, dataset transparency, or progressive disclosure.\n\nThe specific output depends on the failure mode found. Automation bias findings may produce requirements that delay or separate AI recommendations from human judgement. Under-trust findings may produce requirements that surface AI capability, explain data boundaries, or show what project state the AI is drawing on.\n\nGovernance findings may produce interface and architecture requirements that make AI-influenced decisions traceable, auditable, reproducible, or attributable to a defined policy.\n\n## Evidence from Callsign fraud detection\n\nIn the documented Callsign fraud detection engagement, trust-and-oversight analysis identified the governance consumer requirement as the primary unmet need in the existing interface. Enterprise bank risk teams evaluating the product under SCA and PCI DSS compliance requirements needed to verify that fraud control decisions were traceable, auditable, and attributable to a defined policy.\n\nThe existing interface had rules scattered across database views without a policy-level object. The analysis produced the requirement for a governance layer: a policy-as-central-object architecture where every AI-influenced decision traced to a defined, reviewable policy that risk teams could evaluate without engineering involvement.\n\nThe Lloyds Bank and HSBC contracts followed demos using this governance architecture. The same analysis identified the absence of evaluation mode separation as a control risk, because policy review sessions could inadvertently modify live fraud strategy. The requirement for read-only evaluation mode came from this finding.\n\n## Evidence from Puraite AI systematic review\n\nIn the documented Puraite AI systematic review engagement, trust-and-oversight analysis identified anchoring bias as the primary trust calibration risk. In systematic literature review, inclusion and exclusion decisions are expected to reflect the reviewer's independent evaluation of the evidence rather than a response to a prior AI recommendation.\n\nThe analysis found that showing AI screening decisions before human review created anchoring. Reviewers were evaluating relative to the AI's position rather than evaluating independently. The documented finding describes this as a predictable cognitive effect produced by the interface design, not as a failure of reviewer integrity.\n\nThe analysis produced two requirements: blinded mode, where AI decisions are withheld until after human review, and explicit confidence display, where AI confidence is treated as a first-class information element when AI decisions are shown.\n\n## Evidence from Owkin / K biomedical AI\n\nIn the documented Owkin / K biomedical AI engagement, trust-and-oversight analysis identified capability opacity and data boundary opacity as separate trust calibration failures.\n\nCapability opacity meant that users arriving at the platform could not assess what the AI could do. They could not form a judgement about whether to engage with the AI because the AI capability was not visible enough at the point of entry. This produced under-trust through non-engagement.\n\nData boundary opacity meant that users did not understand that K operated on specific proprietary, public, and user-uploaded datasets. Some users assumed broader knowledge than K had. Others were uncertain about which datasets a given output drew from.\n\nThe analysis produced requirements for capability surfacing at the entry point and dataset transparency at the point of output. The purpose was to communicate the AI's knowledge boundary as a trust signal rather than concealing it as a limitation.\n\n## Evidence from Hudex intelligence analysis\n\nIn the documented Hudex intelligence analysis engagement, trust-and-oversight analysis identified that the dondogram, the primary AI visualisation, was opaque to new users. Users could see the output but could not understand what the AI had done to produce it or how to begin evaluating it.\n\nThe trust problem was process opacity. Users could not determine whether the clusters were meaningful or artefactual because the basis for the clustering was not visible.\n\nThe analysis produced the requirement for a progressive disclosure entry point. The proposed entry point was a project overview showing high-level theme counts and source volumes before users entered the detailed visualisation, so users could orient before engaging with AI outputs.\n\n## Evidence from Veecle automotive embedded IDE\n\nIn the documented Veecle automotive embedded IDE engagement, trust-and-oversight analysis identified that AI features felt contextless. Users had no indication of what the AI knew about the current project state, what the AI was doing during processing, or what capabilities the AI could apply.\n\nUsers encountered AI outputs without a framework for evaluating them. The analysis produced requirements for AI state communication, context communication, and capability framing.\n\nAI state communication addressed what the AI was currently doing. Context communication addressed what project state the AI was drawing on. Capability framing addressed what kinds of analysis were within the AI's scope.\n\n## Boundaries and limits of the practice\n\nTrust-and-oversight analysis is an analytical practice used before testing. The documented role of the practice is to identify likely trust calibration and oversight conditions so that design can address them explicitly.\n\nThe available evidence is engagement-specific. The documented examples show how the practice was applied in Callsign fraud detection, Puraite AI systematic review, Owkin / K biomedical AI, Hudex intelligence analysis, and Veecle automotive embedded IDE. The examples do not establish a universal outcome claim across all AI products.\n\nThe practice does not treat trust as simple user confidence. It separates over-trust, under-trust, anchoring, meaningful control, behavioural visibility, data boundary transparency, and governance consumer needs because each condition requires a different design response.\n\n## Related pages\n\nTrust-and-oversight analysis precedes behavioural requirements definition when the analysis identifies governance requirements that must be translated into specified AI behaviour.\n\nTrust-and-oversight analysis also precedes decision boundary design when the analysis identifies where human control is nominal and decision boundaries need to make control genuine.\n\nThe documented engagement evidence connects this practice to the Callsign fraud detection, Puraite AI systematic review, and Owkin / K biomedical AI cases.",
+  "claims": [
+    {
+      "claim": "Trust-and-oversight analysis identifies over-trust, under-trust, anchoring bias, meaningful human control gaps, behavioural visibility limits, data boundary opacity, and governance consumer requirements in AI products.",
+      "evidenceType": "definition",
+      "sourceStrength": "strong",
+      "notes": "Supported by the practice definition and examination categories in the current source."
+    },
+    {
+      "claim": "Over-trust occurs when users follow AI recommendations without sufficient critical engagement; under-trust occurs when users do not engage with useful AI outputs.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "Supported by the source section defining the two trust calibration failure modes."
+    },
+    {
+      "claim": "The practice is used during Sandbox Experiments, during Concept Convergence, and before enterprise or regulated deployment contexts.",
+      "evidenceType": "definition",
+      "sourceStrength": "strong",
+      "notes": "Supported by the source section on when the practice is used."
+    },
+    {
+      "claim": "In the Callsign fraud detection engagement, the analysis produced the requirement for a policy-as-central-object governance layer and a read-only evaluation mode.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "Supported by the Callsign evidence section; the contracts are described as following demos using this governance architecture, without a causal claim."
+    },
+    {
+      "claim": "In the Puraite AI systematic review engagement, the analysis identified anchoring bias and produced requirements for blinded mode and explicit confidence display.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "Supported by the Puraite evidence section."
+    },
+    {
+      "claim": "In the Owkin / K biomedical AI engagement, the analysis identified capability opacity and data boundary opacity, producing requirements for capability surfacing and dataset transparency.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "Supported by the Owkin / K evidence section."
+    },
+    {
+      "claim": "In the Hudex intelligence analysis engagement, the analysis identified process opacity in the dondogram and produced a requirement for a progressive disclosure entry point.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "Supported by the Hudex evidence section."
+    },
+    {
+      "claim": "In the Veecle automotive embedded IDE engagement, the analysis produced requirements for AI state communication, context communication, and capability framing.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "Supported by the Veecle evidence section."
+    },
+    {
+      "claim": "Trust-and-oversight analysis precedes behavioural requirements definition and decision boundary design in the documented practice relationships.",
+      "evidenceType": "definition",
+      "sourceStrength": "strong",
+      "notes": "Supported by the relationship section in the current source."
+    }
+  ],
+  "limitations": [
+    "The practice is described as analytical and used before testing; the source does not describe it as a substitute for usability testing or deployment evidence.",
+    "The engagement evidence is case-specific and should not be generalised as a universal outcome claim for all AI products.",
+    "The Callsign evidence states that Lloyds Bank and HSBC contracts followed demos using the governance architecture; it does not establish a causal measurement of contract conversion.",
+    "The source describes requirements produced by the analysis, but it does not provide quantitative user outcome metrics for the listed engagements."
+  ],
+  "publicationBlockers": [],
+  "questionsForReview": [
+    "None"
+  ],
+  "relatedPageSlugs": [
+    "behavioural-requirements-definition",
+    "decision-boundary-design",
+    "callsign-fraud-authentication",
+    "puraite",
+    "owkin-k"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "behavioural requirements definition",
+      "targetSlug": "behavioural-requirements-definition",
+      "placementHint": "Related pages section, first paragraph",
+      "reason": "The current source states that trust-and-oversight analysis precedes behavioural requirements definition."
+    },
+    {
+      "anchorText": "decision boundary design",
+      "targetSlug": "decision-boundary-design",
+      "placementHint": "Meaningful human control assessment section or Related pages section",
+      "reason": "The current source states that trust-and-oversight analysis precedes decision boundary design where human control is nominal."
+    },
+    {
+      "anchorText": "Callsign fraud detection",
+      "targetSlug": "callsign-fraud-authentication",
+      "placementHint": "Evidence from Callsign fraud detection section heading or first sentence",
+      "reason": "The current source names Callsign as engagement evidence, and the linking context provides an allowed case-study slug."
+    },
+    {
+      "anchorText": "Puraite AI systematic review",
+      "targetSlug": "puraite",
+      "placementHint": "Evidence from Puraite AI systematic review section heading or first sentence",
+      "reason": "The current source names Puraite as engagement evidence, and the linking context provides an allowed case-study slug."
+    },
+    {
+      "anchorText": "Owkin / K biomedical AI",
+      "targetSlug": "owkin-k",
+      "placementHint": "Evidence from Owkin / K biomedical AI section heading or first sentence",
+      "reason": "The current source names Owkin / K as engagement evidence, and the linking context provides an allowed case-study slug."
+    }
+  ],
+  "qualityChecks": {
+    "factsOnlyFromCurrentSource": true,
+    "documentationStyle": true,
+    "noMarketingLanguage": true,
+    "noInventedClaims": true,
+    "linksOnlyFromLinkingContext": true,
+    "internalNotesNotPublished": true,
+    "readyForSanityImport": true
+  },
+  "__sourceCategoryDir": "Practices"
+}

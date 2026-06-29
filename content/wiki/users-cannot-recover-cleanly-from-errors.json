@@ -1,0 +1,161 @@
+{
+  "slug": "users-cannot-recover-cleanly-from-errors",
+  "title": "Users Cannot Recover Cleanly From Errors",
+  "pageType": "situation",
+  "category": "situations",
+  "section": "Risk And Consequence",
+  "summary": "This situation describes complex operational systems where error prevention is not enough because the interface does not support clean recovery after an error is detected. The page defines recovery path, clean recovery, corrective load, actionable error communication, and escalation as a signal of recovery design failure, with case evidence from Gexcon, Triopsis, Kardion, Beissbarth, and Squaremind.",
+  "keyFacts": [
+    "A recovery path is the sequence of interface actions that returns a user to a known good state after an error.",
+    "Clean recovery means returning to a known good state without ambiguity, additional risk, or incomplete resolution.",
+    "Recovery failure occurs when the user knows something went wrong but cannot determine what went wrong, what options are available, or whether a recovery action will succeed.",
+    "Under time pressure and operational load, unclear recovery paths can lead to compounding errors, abandoned tasks, workflow pauses, or continued operation in a degraded state.",
+    "A characteristic signal of clean recovery failure is escalation frequency correlating with error frequency rather than decreasing as the system matures.",
+    "In the Gexcon CFD simulation case, corrective load before redesign was 4–6 hours per detected error and fell to approximately 20 minutes after the redesign, measured by Gexcon across real deployment locations.",
+    "In the Squaremind case, pre-redesign testing reported 2 completions out of 14 patients; post-redesign ecological testing recorded 27 completions out of 29 users.",
+    "In the Squaremind post-redesign tests, all 12 users who got stuck recovered and completed the scan, with recovery times ranging from 2 to 4 minutes.",
+    "In the Kardion MCS Controller case, IEC 62366-1 required explicit design of what happens after an alarm is acknowledged, muted, or resolved; the scope was formative evaluation only.",
+    "In the Beissbarth case, measurement communication changed from binary pass/fail states to confirmed, borderline, and out-of-range states with recovery guidance."
+  ],
+  "bodySections": [
+    {
+      "heading": "Definition of clean recovery failure in complex operational systems",
+      "bodyMarkdown": "Creative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nUsers cannot recover cleanly from errors when the interface makes the error visible but does not make recovery clear. The user knows that something went wrong, but the interface does not specify what went wrong, where it happened, what recovery options are available, or whether the recovery action will return the system to a valid operational state.\n\nIn complex operational systems, strong error prevention does not remove the need for recovery design. Errors still occur. The practical difference between a recoverable error and a consequential error is often the quality of the recovery path the interface provides.\n\nA recovery path is the sequence of interface actions that returns a user to a known good state after an error. Clean recovery means returning to that state without ambiguity, additional risk, or incomplete resolution. Recovery failure is the absence of a clear path back to a valid operational state after an error is detected."
+    },
+    {
+      "heading": "Domain vocabulary for error recovery and corrective load",
+      "bodyMarkdown": "Recovery path means the sequence of interface actions that returns a user to a known good state after an error. The recovery path is part of the interface, not only a support procedure outside it.\n\nClean recovery means returning to a known good state without ambiguity, additional risk, or incomplete resolution. A clean recovery path tells the user what happened, what to do, and how to confirm that the issue is resolved.\n\nRecovery failure means the absence of a clear path back to a valid operational state after an error is detected. The user may see that an error exists but still be unable to diagnose it or recover with confidence.\n\nA compounding error is a secondary error that occurs when recovery is uncertain and the user takes an action that worsens the original problem. Compounding errors are more likely when the interface gives an ambiguous signal and leaves the user to construct the recovery path from general system knowledge.\n\nCorrective load is the time, attention, and operational resources required to execute a recovery. Recovery design directly affects corrective load because clearer recovery communication reduces the need for reconstruction, escalation, and repeated attempts.\n\nActionable error communication specifies what went wrong, where it happened, and what to do. It is the minimum communication required to support clean recovery.\n\nEscalation is a recovery failure signal when users reach out to support or colleagues after errors rather than recovering independently. In a maturing system, escalation after common errors should decrease; if escalation frequency continues to correlate with error frequency, recovery design is failing."
+    },
+    {
+      "heading": "Operational consequences of unclear recovery paths",
+      "bodyMarkdown": "Unclear recovery paths increase risk under time pressure and operational load. When the interface does not communicate the specific error and the available recovery options, the user must diagnose from an ambiguous signal, construct a recovery path from general knowledge of the system, and act without confidence that the action will succeed.\n\nUsers who cannot find a clear recovery path may attempt actions that compound the original error. They may abandon the task in a partial state. They may escalate to another person, pausing the operational workflow until diagnosis and resolution happen elsewhere. They may also accept a degraded state and continue without knowing whether the original error has been resolved.\n\nThe risk is not limited to user frustration. In operational systems, recovery uncertainty can consume time, attention, and resources at the moment when the user most needs a stable path back to a valid state."
+    },
+    {
+      "heading": "Escalation frequency as a signal of recovery design failure",
+      "bodyMarkdown": "Escalation frequency is a practical signal that users cannot recover cleanly from errors. The characteristic pattern is that escalation frequency correlates with error frequency rather than decreasing as the system matures.\n\nWhen users consistently ask support teams or colleagues for help after errors, the interface is not carrying enough of the recovery work. This does not mean every error should be recoverable without human help. It means that recurring errors should have recovery paths that let users resolve them independently when the operational situation permits it.\n\nIn this situation, escalation is not only a support cost. Escalation indicates that the interface has transferred diagnosis, sequencing, and confidence-building to people outside the workflow."
+    },
+    {
+      "heading": "Gexcon CFD simulation evidence for deferred recovery and corrective load",
+      "bodyMarkdown": "In the Gexcon CFD simulation case, recovery failure appeared as deferred error discovery. Errors in scenario configuration produced outputs that appeared valid. Users did not know an error had occurred until they or someone else reviewed the outputs.\n\nBefore the redesign, the recovery path was effectively absent from the interface. Error communication was post-hoc and generic. It did not specify what went wrong or where in the configuration the problem occurred. Users had to reconstruct the error from outputs, identify affected outputs, diagnose the original misconfiguration, and re-run the simulation.\n\nThe corrective load before redesign was 4–6 hours per detected error. After the redesign, corrective load fell to approximately 20 minutes. This result was measured by Gexcon across real deployment locations.\n\nThe documented mechanism was actionable error communication. Error messages were redesigned to specify what went wrong, where in the configuration it happened, and what corrective action was needed. The recovery path became part of the interface rather than a post-hoc reconstruction task."
+    },
+    {
+      "heading": "Triopsis workforce management evidence for abnormal states as supported recovery paths",
+      "bodyMarkdown": "In the Triopsis workforce management case, normal operational exceptions were treated as error states before the redesign. Weather incidents, job delays, partial completions, and crew shortages were conditions the interface had not anticipated and did not support with structured recovery paths.\n\nUsers encountering these states had to construct recovery paths from scratch. They manually reassigned jobs, found alternative crews, and handled cascading schedule effects without interface support.\n\nThe redesign treated these abnormal states as primary workflow conditions rather than out-of-band errors. The interface surfaced affected jobs, showed resolution options, and made exception handling part of the normal operational workflow.\n\nThis case shows that recovery design is not limited to explicit error messages. In operational systems, recovery paths may be needed for predictable exceptions that are normal in the domain but abnormal in the interface model."
+    },
+    {
+      "heading": "Kardion MCS Controller evidence for persistent alarm recovery prompts",
+      "bodyMarkdown": "In the Kardion MCS Controller case, alarm recovery paths were designed in a regulated clinical context under IEC 62366-1. The alarm architecture required explicit design of what happens after an alarm is acknowledged, muted, or resolved.\n\nA muted alarm that disappears from the interface removes the recovery prompt. The operator has acknowledged the alarm, but the interface no longer keeps the active condition visible enough to support response and resolution.\n\nThe design requirement was that muted alarms remain visible at reduced prominence. This maintained the recovery path as a persistent interface feature: acknowledge, respond, and confirm resolved.\n\nCreative Navy's role is formative evaluation only; summative validation is the manufacturer's responsibility via the regulatory submission."
+    },
+    {
+      "heading": "Beissbarth automotive calibration evidence for measurement recovery paths",
+      "bodyMarkdown": "In the Beissbarth automotive calibration case, recovery failure appeared inside sequential measurement procedures. When a measurement was borderline or failed, the technician needed to understand what happened, whether to repeat the measurement or address another issue, and where in the sequence to resume.\n\nBefore the redesign, the interface communicated binary pass/fail states without specifying recovery. Technicians had to diagnose recovery from a generic error state.\n\nAfter the redesign, measurement results used three levels: confirmed, borderline, and out of range. Error states specified what the issue was and where in the sequence recovery should resume.\n\nThis case shows the importance of recovery location. In a sequential procedure, clean recovery requires knowing not only the cause of the problem, but also the correct point for resumption."
+    },
+    {
+      "heading": "Squaremind evidence for recovery failure as total session loss",
+      "bodyMarkdown": "In the Squaremind dermatology scanning device case, recovery failure produced total session loss. The device performed a full-body skin scan requiring 3–5 minutes of patient cooperation in a sequence of specific positions. When a patient became confused and the interface provided no recovery path, the scan ended.\n\nBefore the redesign, Squaremind's own test with 14 patients produced 2 completions. Of the 12 patients who did not complete, 8 got stuck within the first minute and 4 got stuck around the 3-minute mark. No recovery path existed in the interface. When a patient deviated from the expected sequence, the system did not tell the patient what happened, what to do, or how to return to the correct state.\n\nThe design response treated recovery as a first-class design requirement rather than an edge case. The Inform–Prevent–Correct framework was applied recursively across every step of the scan flow. Each possible confusion event was identified, its recovery path was designed explicitly, and the system was built to re-engage the guidance cycle after a recovery event.\n\nPost-redesign ecological testing in London with 12 users and Paris with 17 users, co-conducted with an independent dermatologist hired by Creative Navy, produced 27 independent completions out of 29 users. Of the 12 users who got stuck during the flow, all 12 recovered and completed the scan. Recovery times ranged from 2 to 4 minutes, with older users tending toward the longer end.\n\nThe evidence basis differs between the two periods. The pre-redesign data is client-reported background from Squaremind's own test before Creative Navy's involvement. The post-redesign data was recorded by Creative Navy in an ecological protocol across two sites, co-conducted with an independent dermatologist."
+    },
+    {
+      "heading": "Design implications for clean error recovery",
+      "bodyMarkdown": "Clean recovery requires error communication that is specific enough to support action. The Gexcon case shows that generic, post-hoc error communication can leave users reconstructing the original problem from outputs. The redesign reduced corrective load by making the recovery path part of the interface.\n\nClean recovery also requires the interface to anticipate abnormal but expected operational states. The Triopsis case shows that weather incidents, delays, partial completions, and crew shortages can become recovery failures when the interface treats them as unstructured exceptions rather than workflow conditions.\n\nClean recovery must preserve prompts until the recovery is complete. The Kardion MCS Controller case shows that muting an alarm should not remove visibility of an active condition when the operator still needs to respond and confirm resolution.\n\nClean recovery in sequential procedures must specify where to resume. The Beissbarth case shows that a failed or borderline measurement is not actionable unless the technician knows what happened, what to address, and where the sequence should continue.\n\nClean recovery can determine whether a session produces any outcome. The Squaremind case shows that, in a guided sequence without external assistance, an unrecovered confusion event can end the session entirely."
+    },
+    {
+      "heading": "Evidence boundaries for this situation",
+      "bodyMarkdown": "The case evidence for users not recovering cleanly from errors is strongest where before-and-after data is available. The Gexcon case includes a measured reduction in corrective load from 4–6 hours per detected error to approximately 20 minutes, measured by Gexcon across real deployment locations. The Squaremind case includes pre-redesign client-reported completion data and post-redesign Creative Navy-recorded ecological testing data across two sites.\n\nThe Triopsis and Beissbarth examples describe design mechanisms and operational patterns but do not include quantified outcome metrics in this page. They support the recovery-path pattern, not a general numerical claim.\n\nThe Kardion MCS Controller example is limited to formative evaluation scope. It supports the need to preserve alarm recovery paths in the interface, but summative validation is the manufacturer's responsibility.\n\nThese examples should not be read as proof that a single recovery design pattern applies across all systems. The consistent pattern is that clean recovery depends on making the error, the available action, and the route back to a known good state explicit in the interface."
+    }
+  ],
+  "evidenceSummary": {
+    "strongClaims": [
+      "Users cannot recover cleanly from errors when the interface shows an error state but does not specify what went wrong, which recovery options are available, or how to return to a known good state.",
+      "Unclear recovery paths can cause users to compound the original error, abandon a task in a partial state, escalate to others, or continue in a degraded state without knowing whether the issue is resolved.",
+      "A characteristic signal of clean recovery failure is escalation frequency correlating with error frequency rather than decreasing as the system matures.",
+      "In the Gexcon CFD simulation case, corrective load was 4–6 hours per detected error before redesign and approximately 20 minutes after redesign.",
+      "In the Triopsis workforce management case, weather incidents, job delays, partial completions, and crew shortages were redesigned as primary workflow conditions with supported recovery paths.",
+      "In the Kardion MCS Controller case, muted alarms needed to remain visible at reduced prominence so the acknowledge, respond, and confirm-resolved recovery path remained present in the interface.",
+      "In the Beissbarth automotive calibration case, recovery support changed from binary pass/fail communication to three-level measurement result communication: confirmed, borderline, and out of range.",
+      "In the Squaremind post-redesign tests, all 12 users who got stuck recovered and completed the scan, with recovery times from 2 to 4 minutes."
+    ],
+    "weakerClaims": [
+      "In the Squaremind case, pre-redesign testing reported 2 completions out of 14 patients, while post-redesign ecological testing produced 27 independent completions out of 29 users."
+    ],
+    "limitations": [
+      "The Gexcon outcome is attributed to measurement by Gexcon across real deployment locations; the page does not contain additional protocol detail.",
+      "The Squaremind pre-redesign completion data is client-reported background from Squaremind's own test before Creative Navy's involvement.",
+      "The Squaremind post-redesign data is based on ecological testing in London and Paris with 29 total users and should not be generalised beyond the documented conditions without further evidence.",
+      "The Kardion MCS Controller evidence is formative evaluation only; summative validation is the manufacturer's responsibility.",
+      "The Triopsis and Beissbarth examples describe recovery-path mechanisms but do not include quantified outcome metrics in the current source.",
+      "The page does not establish that every error in an operational system can or should be recoverable without escalation."
+    ]
+  },
+  "relatedPageSlugs": [
+    "abnormal-conditions-break-the-interface",
+    "warnings-are-visible-but-not-actionable",
+    "user-error-has-serious-consequences",
+    "the-interface-increases-cognitive-load-at-the-worst-moment",
+    "system-state-is-hard-to-understand",
+    "delayed-understanding-creates-risk",
+    "triopsis-workforce-management-saas",
+    "kardion",
+    "beissbarth",
+    "squaremind"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "Triopsis workforce management",
+      "targetSlug": "triopsis-workforce-management-saas",
+      "reason": "The Triopsis case is one of the named examples supporting recovery paths for abnormal operational states."
+    },
+    {
+      "anchorText": "Kardion MCS Controller",
+      "targetSlug": "kardion",
+      "reason": "The Kardion case is one of the named examples supporting persistent alarm recovery prompts."
+    },
+    {
+      "anchorText": "Beissbarth automotive calibration",
+      "targetSlug": "beissbarth",
+      "reason": "The Beissbarth case is one of the named examples supporting recovery paths in sequential measurement procedures."
+    },
+    {
+      "anchorText": "Squaremind dermatology scanning device",
+      "targetSlug": "squaremind",
+      "reason": "The Squaremind case provides the strongest before-and-after recovery outcome described on the page."
+    },
+    {
+      "anchorText": "abnormal conditions break the interface",
+      "targetSlug": "abnormal-conditions-break-the-interface",
+      "reason": "The current page describes abnormal operational states that lacked supported recovery paths."
+    },
+    {
+      "anchorText": "warnings are visible but not actionable",
+      "targetSlug": "warnings-are-visible-but-not-actionable",
+      "reason": "The current page defines actionable error communication as a minimum requirement for clean recovery."
+    },
+    {
+      "anchorText": "user error has serious consequences",
+      "targetSlug": "user-error-has-serious-consequences",
+      "reason": "The current page describes compounding errors, task abandonment, degraded states, and total session loss as consequences of failed recovery."
+    },
+    {
+      "anchorText": "system state is hard to understand",
+      "targetSlug": "system-state-is-hard-to-understand",
+      "reason": "The current page describes users being unable to determine what went wrong or whether a recovery action has succeeded."
+    }
+  ],
+  "tags": [
+    "error recovery",
+    "clean recovery",
+    "recovery path",
+    "corrective load",
+    "compounding error",
+    "actionable error communication",
+    "operational risk",
+    "escalation",
+    "IEC 62366-1",
+    "Inform–Prevent–Correct"
+  ],
+  "_meta": {
+    "sourcePath": "sources/articles/Situations/situations--risk--users-cannot-recover-cleanly-from-errors.md",
+    "parentSlug": "risk-and-consequence",
+    "childPageSlugs": [],
+    "generatedBy": "deterministic"
+  }
+}
