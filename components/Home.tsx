@@ -1,7 +1,38 @@
 // Docs homepage: short intro + category cards built from the sidebar tree.
 
-import React from 'react';
+import React, { useState } from 'react';
 import { sidebar, pages, linkGraph } from '../src/content';
+
+const PREVIEW = 6; // pages shown before the "Show all" toggle
+
+function CategoryCard({ cat }: { cat: (typeof sidebar)[number] }): React.ReactElement {
+  const [expanded, setExpanded] = useState(false);
+  const allPages = cat.sections.flatMap((s) => s.pages);
+  const count = allPages.length;
+  const visible = expanded ? allPages : allPages.slice(0, PREVIEW);
+  const hidden = count - visible.length;
+
+  return (
+    <div className="home-card">
+      <div className="home-card-head">
+        <h2>{cat.label}</h2>
+        <span className="home-card-count">{count}</span>
+      </div>
+      <ul>
+        {visible.map((p) => (
+          <li key={p.slug}>
+            <a href={`#/${p.slug}`}>{p.title}</a>
+          </li>
+        ))}
+      </ul>
+      {(hidden > 0 || expanded) && (
+        <button className="home-card-toggle" onClick={() => setExpanded((v) => !v)}>
+          {expanded ? 'Show less' : `Show all ${count} →`}
+        </button>
+      )}
+    </div>
+  );
+}
 
 export function Home(): React.ReactElement {
   return (
@@ -21,25 +52,9 @@ export function Home(): React.ReactElement {
       </section>
 
       <div className="home-grid">
-        {sidebar.map((cat) => {
-          const count = cat.sections.reduce((n, s) => n + s.pages.length, 0);
-          const sample = cat.sections.flatMap((s) => s.pages).slice(0, 4);
-          return (
-            <div className="home-card" key={cat.key}>
-              <div className="home-card-head">
-                <h2>{cat.label}</h2>
-                <span className="home-card-count">{count}</span>
-              </div>
-              <ul>
-                {sample.map((p) => (
-                  <li key={p.slug}>
-                    <a href={`#/${p.slug}`}>{p.title}</a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          );
-        })}
+        {sidebar.map((cat) => (
+          <CategoryCard cat={cat} key={cat.key} />
+        ))}
       </div>
     </div>
   );
