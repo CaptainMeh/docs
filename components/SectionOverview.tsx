@@ -2,7 +2,7 @@
 // of its pages. Reached via #/section/<category>.
 
 import React, { useMemo } from 'react';
-import { overviews, sidebar, type SectionOverview as Overview } from '../src/content';
+import { overviews, sidebar, pageBySlug, type SectionOverview as Overview } from '../src/content';
 import { Markdown, extractHeadings, slugifyHeading } from '../src/markdown';
 import { TableOfContents } from './TableOfContents';
 
@@ -52,13 +52,18 @@ export function SectionOverview({ category }: { category: string }): React.React
           {cat.sections.map((s) => (
             <div className="section-index-group" key={s.key}>
               {s.label && <div className="section-index-label">{s.label}</div>}
-              <ul>
-                {s.pages.map((p) => (
-                  <li key={p.slug}>
-                    <a href={`#/${p.slug}`}>{p.title}</a>
-                  </li>
-                ))}
-              </ul>
+              <div className="preview-grid">
+                {s.pages.map((p) => {
+                  const page = pageBySlug.get(p.slug);
+                  const excerpt = page?.summary || '';
+                  return (
+                    <a className="preview-card" href={`#/${p.slug}`} key={p.slug}>
+                      <div className="preview-card-title">{p.title}</div>
+                      {excerpt && <div className="preview-card-summary">{excerpt}</div>}
+                    </a>
+                  );
+                })}
+              </div>
             </div>
           ))}
         </section>
