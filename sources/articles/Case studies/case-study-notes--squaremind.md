@@ -6,7 +6,7 @@
 
 - **Primary case-study category:** /evidence/case-studies/medical
 - **Primary context:** /contexts/medical-and-clinical-systems
-- **Also-relevant contexts:** none
+- **Also-relevant contexts:** /contexts/embedded-devices-and-constrained-interfaces
 - **Connects to:** /glossary/our-concepts/inform-prevent-correct, /capabilities/error-reduction-and-recovery-design, /capabilities/design-for-abnormal-and-degraded-scenarios
 
 ## Page notes

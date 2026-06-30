@@ -15,7 +15,9 @@ function CategoryCard({ cat }: { cat: (typeof sidebar)[number] }): React.ReactEl
   return (
     <div className="home-card">
       <div className="home-card-head">
-        <h2>{cat.label}</h2>
+        <h2>
+          <a href={`#/section/${cat.key}`}>{cat.label}</a>
+        </h2>
         <span className="home-card-count">{count}</span>
       </div>
       <ul>

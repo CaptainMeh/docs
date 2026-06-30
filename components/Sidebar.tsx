@@ -33,15 +33,23 @@ export function Sidebar({ activeSlug, query }: { activeSlug: string; query: stri
         const opened = isOpen(cat.key);
         return (
           <div className="sidebar-category" key={cat.key}>
-            <button
-              className="sidebar-category-toggle"
-              aria-expanded={opened}
-              onClick={() => setOpen((o) => ({ ...o, [cat.key]: !opened }))}
-            >
-              <span className={`chevron ${opened ? 'open' : ''}`}>›</span>
-              <span className="sidebar-category-label">{cat.label}</span>
+            <div className="sidebar-category-toggle">
+              <button
+                className="chevron-btn"
+                aria-expanded={opened}
+                aria-label={`Toggle ${cat.label}`}
+                onClick={() => setOpen((o) => ({ ...o, [cat.key]: !opened }))}
+              >
+                <span className={`chevron ${opened ? 'open' : ''}`}>›</span>
+              </button>
+              <a
+                className={`sidebar-category-label ${activeSlug === `section/${cat.key}` ? 'active' : ''}`}
+                href={`#/section/${cat.key}`}
+              >
+                {cat.label}
+              </a>
               <span className="sidebar-count">{count}</span>
-            </button>
+            </div>
             {opened && (
               <div className="sidebar-sections">
                 {sections.map((s) => (

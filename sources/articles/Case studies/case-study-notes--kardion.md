@@ -6,7 +6,7 @@
 
 - **Primary case-study category:** /evidence/case-studies/medical
 - **Primary context:** /contexts/medical-and-clinical-systems
-- **Also-relevant contexts:** none
+- **Also-relevant contexts:** /contexts/embedded-devices-and-constrained-interfaces, /contexts/high-consequence-environments
 - **Connects to:** /glossary/our-concepts/constraint-respecting, /glossary/our-concepts/domain-learning, /capabilities/usability-evaluation-for-high-consequence-products
 
 ## /evidence/case-studies/medical/kardion

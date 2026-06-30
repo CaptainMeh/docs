@@ -22,6 +22,21 @@ export const graphBySlug = new Map<string, LinkGraphPage>(linkGraph.pages.map((p
 
 export const sidebar: SidebarCategory[] = buildSidebar(pages);
 
+// Section overview pages (authored, not generated). Keyed by category.
+export interface SectionOverview {
+  category: string;
+  title: string;
+  summary: string;
+  bodySections: { heading: string; bodyMarkdown: string }[];
+}
+import overviewData from '../content/overviews.json';
+export const overviews = new Map<string, SectionOverview>(
+  (overviewData as SectionOverview[]).map((o) => [o.category, o]),
+);
+export function categoryLabel(key: string): string {
+  return sidebar.find((c) => c.key === key)?.label || key;
+}
+
 // Flat reading order (sidebar order) for previous/next navigation.
 export const readingOrder: string[] = sidebar.flatMap((c) => c.sections.flatMap((s) => s.pages.map((p) => p.slug)));
 

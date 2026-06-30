@@ -26,6 +26,7 @@ const PAGE_TYPE_LABELS: Record<string, string> = {
   'method-pillar': 'Method',
   philosophy: 'Philosophy',
   'buying-guide': 'Buying guide',
+  'credibility-note': 'Credibility note',
 };
 
 export function PageRenderer({ page }: { page: WikiPage }): React.ReactElement {
