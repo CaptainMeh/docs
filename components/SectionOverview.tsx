@@ -48,24 +48,35 @@ export function SectionOverview({ category }: { category: string }): React.React
         )}
 
         <section className="section-index">
-          <div className="block-title">Pages in this section</div>
-          {cat.sections.map((s) => (
-            <div className="section-index-group" key={s.key}>
-              {s.label && <div className="section-index-label">{s.label}</div>}
-              <div className="preview-grid">
-                {s.pages.map((p) => {
-                  const page = pageBySlug.get(p.slug);
-                  const excerpt = page?.summary || '';
-                  return (
-                    <a className="preview-card" href={`#/${p.slug}`} key={p.slug}>
-                      <div className="preview-card-title">{p.title}</div>
-                      {excerpt && <div className="preview-card-summary">{excerpt}</div>}
-                    </a>
-                  );
-                })}
+          {cat.sections.map((s) => {
+            // Only label a sub-group when it adds information — i.e. there is more than
+            // one group and the label does not just repeat the category heading.
+            const heading = overview?.title || cat.label;
+            const showLabel =
+              !!s.label &&
+              cat.sections.length > 1 &&
+              s.label.toLowerCase() !== heading.toLowerCase() &&
+              s.label.toLowerCase() !== cat.label.toLowerCase();
+            return (
+              <div className="section-index-group" key={s.key}>
+                {showLabel && <div className="section-index-label">{s.label}</div>}
+                <div className="preview-list">
+                  {s.pages.map((p) => {
+                    const page = pageBySlug.get(p.slug);
+                    // Prefer the full summary; fall back to the excerpt only if absent.
+                    const summary = page?.summary || '';
+                    return (
+                      <a className="preview-card" href={`#/${p.slug}`} key={p.slug}>
+                        <div className="preview-card-title">{p.title}</div>
+                        {summary && <p className="preview-card-summary">{summary}</p>}
+                        <span className="preview-card-cta">Open article →</span>
+                      </a>
+                    );
+                  })}
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </section>
       </article>
 
