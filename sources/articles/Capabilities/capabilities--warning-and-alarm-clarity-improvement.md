@@ -1,22 +1,18 @@
 # `/capabilities/warning-and-alarm-clarity-improvement`
 
+Alarm management as a discipline — its lifecycle, its two standards regimes and its characteristic failure modes — is described on the alarm-management page; this page is what Creative Navy does about alarm clarity in a specific product.
+
 ---
 
 ## Domain vocabulary
 
-- Alarm hierarchy / priority tiering — the organised structure of alerts by urgency and consequence; the foundation of effective alarm design
-- Alarm management — the formal discipline of designing, implementing, and maintaining alarm systems; ISA-18.2 (industrial alarm management standard) and IEC 62682 are the primary frameworks for process industries; IEC 62366-1 governs alarm design in medical devices
-- Alarm rationalisation — the process-industry practice (ISA-18.2) of reviewing and reducing alarms so that each is meaningful, prioritised, and actionable; the response to alarm flooding (Gericke)
-- Root-cause alarm hierarchy — an alarm structure that surfaces the originating fault and collapses the secondary alarms it triggers beneath it, so operators address the cause rather than chasing effects (Gericke)
-- Alert fatigue / alarm fatigue — the desensitisation that occurs when users encounter too many alarms or too many low-priority alarms; the most dangerous outcome of poor alarm design, because it trains users to ignore alarms including important ones
-- Alarm flooding / alarm cascade — a single root cause generating many secondary alarms; without a hierarchy, operators handle them symptom by symptom, wasting time and missing the cause (Gericke)
+- Alert fatigue / alarm fatigue — the desensitisation that occurs when users encounter too many alarms or too many low-priority alarms; see the alarm-management page for the discipline that addresses it
 - Actionable warning — a warning that communicates both the problem and what to do about it; a warning that communicates a problem without a next action is not actionable in time-pressured environments
 - Redundant cues / redundant communication channels — multiple independent signals for the same alarm, so that the failure of any single channel under operating conditions does not remove the signal; essential in environments with variable lighting, noise, or vibration
 - Mute behaviour / alarm silencing — the design of what happens when a user silences an alarm; a muted alarm must remain visible and not be dismissible to a state where it can be forgotten
 - Recovery indication — the signal that a previously alarmed condition has resolved; without it, users cannot confirm whether their action was effective
 - False positive / nuisance alarm — an alarm triggered under conditions that don't require action; the primary driver of alert fatigue; reducing false positives is as important as ensuring genuine alarms surface. The repeat-alarm rate (the share of alarms that recur) is a process-industry measure of nuisance-alarm burden (Gericke)
-- Use-related hazard (IEC 62366-1) — the framework for identifying alarm-relevant risks in regulated medical devices; alarms that address identified use-related hazards are regulatory requirements, not design preferences
-- Visual differentiation — alarm states distinguished from each other and from normal states through multiple visual attributes, not just colour; required by IEC 62366-1 and sound practice in all high-consequence contexts
+- Visual differentiation — alarm states distinguished from each other and from normal states through multiple visual attributes, not just colour; required by IEC 60601-1-8 for alarm systems in medical electrical equipment and sound practice in all high-consequence contexts
 - Silent failure warning — a warning for a process error that would otherwise complete silently, producing an output that appears valid and is not; a specific alarm design challenge in expert software
 - Warning architecture — the structural rules and principles governing how warnings, overlays, and interruptive elements relate to the screen layout; distinct from the visual design of individual warning components; must be established before components are designed
 
@@ -24,11 +20,11 @@
 
 ## Evidence to draw on
 
-### Kardion MCS Controller (IEC 62366-1 regulated alarm architecture — most formal)
-- The alarm architecture was not a design preference — every requirement was derived from identified use-related hazards and governed by IEC 62366-1
+### Kardion MCS Controller (regulated alarm architecture under IEC 60601-1-8 and IEC 62366-1 — most formal)
+- The alarm architecture was not a design preference — every requirement was derived from use-related hazards identified through the IEC 62366-1 usability-engineering process, with the alarm-system requirements themselves set by IEC 60601-1-8 (the collateral standard for alarm systems in medical electrical equipment)
 - Requirements that shaped the design, each traceable to specific identified hazards:
   - **Priority tiering**: alarms ranked by clinical urgency; the visual language at each priority level must be unambiguously distinguishable
-  - **Visual differentiation beyond colour**: IEC 62366-1 requires that colour alone is not the differentiating attribute; each priority level has a distinct combination of colour, icon, border treatment, and spatial behaviour
+  - **Visual differentiation beyond colour**: IEC 60601-1-8 requires that colour alone is not the differentiating attribute; each priority level has a distinct combination of colour, icon, border treatment, and spatial behaviour
   - **Mute behaviour**: a muted alarm must remain visually present at a reduced prominence level; the interface must not provide a pathway to a state where an active alarm is invisible
   - **Alarm state visibility**: the absence of alarm must be as confirmable as its presence; operators must be able to confirm that no active alarms exist, not just observe the absence of an alarm indicator
 - The alarm architecture requirements paradoxically constrained — and therefore clarified — the option space for the standard view. Certain spatial positions and visual treatments were reserved for alarm-layer use, eliminating them from the nominal state hierarchy. This simplified the remaining design decisions.
@@ -36,7 +32,7 @@
 - **Scope: formative only. Summative validation and regulatory submission are the manufacturer's responsibility.**
 
 ### deSoutter Medical / Zethon (redundant cues — most specific alarm channel design)
-- The primary alarm design finding from benchmarking: **6 of 8 competitor devices used colour as the primary — and often sole — indicator of device state and warning conditions.** Under variable theatre lighting (surgical headlights repositioned, overhead illumination adjusted during procedures), colour coding becomes unreliable.
+- The primary alarm design finding from benchmarking: **most of the 6 benchmarked comparable devices used colour as the primary — and often sole — indicator of device state and warning conditions.** Under variable theatre lighting (surgical headlights repositioned, overhead illumination adjusted during procedures), colour coding becomes unreliable.
 - Resolution: every critical state and warning communicated through three independent channels simultaneously:
   - **Spatial position** — where on the screen the indicator appears; readable when colour and icon form are unclear
   - **Icon form** — the shape of the indicator independent of colour
