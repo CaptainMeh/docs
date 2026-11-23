@@ -393,6 +393,11 @@
 │           and replaces it with a different analytical challenge:
 │           making implicit structure explicit before it can be designed.
 │
+│   ├── /defence-and-space-systems
+│   ├── /marine-and-maritime-systems
+│   ├── /industrial-automation-and-machinery
+│   ├── /building-automation-and-smart-home
+│   ├── /supervising-autonomous-and-remotely-operated-systems
 │   └── /consumer-and-multi-market-products
 │       └── Products sold to consumers across many national markets at once,
 │           where the same interface must work for a wide range of user types
@@ -462,6 +467,8 @@
 │   │   ├── /medical
 │   │   ├── /embedded
 │   │   ├── /automotive
+│   │   ├── /defence-and-space
+│   │   ├── /industrial
 │   │   ├── /marine
 │   │   │   └── Marine and maritime systems — helm displays, vessel HMIs,
 │   │   │       propulsion and energy-management interfaces. Creative Navy
