@@ -1,0 +1,168 @@
+{
+  "_type": "documentationPage",
+  "sourceFile": "Articles/Capabilities/capabilities--instructions-and-procedural-content-as-a-design-object.md",
+  "sourcePath": "sources/articles/Capabilities/capabilities--instructions-and-procedural-content-as-a-design-object.md",
+  "sanityDocumentIdCandidate": "documentationPage.instructions-and-procedural-content-as-a-design-object",
+  "title": "Instructions and Procedural Content as a Design Object",
+  "slug": {
+    "_type": "slug",
+    "current": "instructions-and-procedural-content-as-a-design-object"
+  },
+  "pageType": "capability",
+  "category": "capabilities",
+  "parentSlug": "capabilities",
+  "childPageSlugs": [],
+  "excerpt": "Instructions and procedural content become a design object when the work instruction is treated as the artefact that carries know-how between roles. In the Assemblio case, the instruction had to serve training, spot-checking and advance review rather than a single generic reading mode.",
+  "metaTitle": "Instructions as a Design Object",
+  "metaDescription": "How Creative Navy treats work instructions as designed artefacts for training, lookup, variants, feedback and retrievable procedural content.",
+  "summary": "This capability describes how Creative Navy designs instructions and procedural content as operational artefacts rather than as static documents. The page is grounded in the Assemblio engagement and keeps that evidence within its limits: Creative Navy ran no user research, tested nothing and did not observe a shop floor in that engagement.",
+  "definition": "Instructions and procedural content as a design object is the capability of designing the artefact that carries procedural know-how: the step-by-step training guide, the experienced worker's lookup surface, the advance review document, and the versioned record that must remain traceable as products change.",
+  "keyFacts": [
+    "Creative Navy treats a work instruction as more than a document: in the Assemblio engagement it had to support training, spot-checking and advance review.",
+    "Assemblio is the sole case evidence for this page; no other engagement in the current evidence set designed an instruction artefact.",
+    "Creative Navy ran no user research, controlled no research, tested nothing and did not observe a shop floor in the Assemblio engagement.",
+    "Assemblio's authoring method derives an assembly sequence by taking a finished 3D model apart and playing the disassembly backwards; this method belongs to Assemblio and has published research provenance.",
+    "The Assemblio Composer uses STEP files, folders, projects, products and versions, with product states of Draft, In Review and Approved.",
+    "Assemblio reported that cable routing is usually not modelled in CAD and may be documented by a photograph from the experienced worker who routes the first unit.",
+    "Each step in Assemblio carries two separate time values: MTM time and animation duration.",
+    "Creative Navy designed a flattened parts list for the Assemblio Smart Viewer, refined into tabs for current-step parts and the full hierarchy.",
+    "Assemblio's version-and-variant relationships form a graph that can contain loops, and part-level matches require planner approval because Assemblio described the approval record as a liability requirement.",
+    "The product is in production, and Creative Navy compared the shipped interface against the delivered designs: the Composer, the Smart Viewer, the platform around them and sync profiles ship as the design that was delivered."
+  ],
+  "tags": [
+    "work instructions",
+    "procedural content",
+    "information for use",
+    "assembly instructions",
+    "Assemblio",
+    "Assemblio Composer",
+    "Assemblio Smart Viewer",
+    "traceability",
+    "versioning",
+    "industrial software",
+    "Critical Systems Design"
+  ],
+  "bodyMarkdown": "## Summary\n\nCreative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nInstructions and procedural content become a design problem when the artefact must carry know-how from one population to another. In assembly work, somebody knows how to build the product and somebody else has to build it. The work instruction is the artefact that crosses that gap.\n\nCreative Navy's Critical Systems Design method treats that artefact as a designed product rather than as a document produced after the real work is done. In the Assemblio engagement, the first design distinction was that the instruction was not one thing. It had to serve a trainee following steps closely, an experienced worker checking what is different about a variant, and an experienced worker reading the plan in advance before assembling without constant reference.\n\nThe evidence for this capability is deliberately narrow. Assemblio is the only case evidence used here. Creative Navy ran no user research of its own, controlled no research, tested nothing and did not observe a shop floor in that engagement. Conditions of use, worker profiles and customer requests are attributed to Assemblio's account and to the customer feedback Assemblio provided.\n\n## The work instruction has three readers rather than one generic user\n\nA work instruction can serve three different reading modes even when it appears as one artefact. Assemblio described three use cases for the Assemblio Smart Viewer: training, spot-checking and advance review.\n\nIn the training use case, a new worker follows the plan step by step and consults the instruction closely. In the spot-check use case, an experienced worker already knows much of the sequence and looks up what is different about this product, part, variant or special case. In the advance review use case, an experienced worker reads the whole plan before starting and then assembles without consulting the instruction continuously.\n\nCreative Navy's design work treated those three modes as structurally different. A step-by-step reader needs clear progression, repeatable playback and controls that stay predictable. A spot-check reader needs fast movement through the plan and a surface that shows the current-step information without forcing the worker through the engineering model. An advance reader needs to understand the complete sequence before work begins.\n\nThis distinction separates the instruction artefact from adjacent training-burden problems. Training-burden pages describe the cost of getting people ready to work. This capability is about the object that does some of the teaching, lookup and operational handoff.\n\n## Procedural content comes from CAD and from what CAD does not contain\n\nAssemblio's planning workflow begins with source data, but the source data does not contain all procedural knowledge. The Assemblio Composer uses STEP files, where part names come from the design engineer rather than from the language a shop-floor worker would necessarily recognise.\n\nAssemblio's authoring method is inverted. Rather than building the assembly sequence forwards, the planner takes the finished 3D model apart and the software plays that disassembly backwards as the assembly sequence. Assemblio described the reason as avoiding a forward-planning failure where a part cannot be fitted half way through the sequence, forcing the plan to be redone. This method belongs to Assemblio, not to Creative Navy, and has published research provenance.\n\nThe content hierarchy in Assemblio is folders, projects, products and versions. A project is a product family. A folder groups projects, typically by customer. Products evolve continuously, so one product may carry several versions and related products may carry variants of the same plan.\n\nNot all assembly-relevant information exists in the CAD file. Assemblio reported that cable routing is usually not modelled. Assemblio described an established practice in which one experienced worker routes the cables on the first unit, photographs the result and uploads the photograph into the assembly plan for everyone else. Tools can be documented in the same way, with a photograph of the tool to be used for a step.\n\nThat makes the instruction a contributed procedural artefact. Engineering data supplies the model and sequence, but worker knowledge can supply missing procedural detail. The design object is therefore not only the exported document; it is the system of relationships between model data, planner decisions, worker feedback, photographs, step records and later retrieval.\n\n## A procedural step carries sequence, time and workstation structure\n\nA step in an assembly instruction is not only an item in a list. In Assemblio, each step carries procedural content, visual movement, parts, time values and potential workstation grouping.\n\nAssemblio described two separate time values per step. MTM time records the manual assembly time and sums across the plan so a production engineer can schedule a line. Animation duration controls how long the on-screen movement takes. They are separate because a real assembly step may take hours while the animation must remain watchable in seconds. Assemblio also described cases where users copy the MTM value into the animation duration to see what the step would look like at real speed.\n\nStep groups exist so that a plan can be divided by workstation. Each group can be exported separately for the station that performs it. Assemblio described three outputs for an instruction plan: a PDF, a video and the Smart Viewer itself. The Smart Viewer is not exported in the same sense as the PDF or video; it is accessed as the read surface.\n\nThe step is therefore both a procedural unit and a production-planning unit. Creative Navy's Critical Systems Design method treats that dual role as part of the interface structure: the worker needs a readable step, while the planner and production engineer need traceability, timing and grouping to remain attached to that step.\n\n## Shop-floor reading conditions make attention the binding constraint\n\nAssemblio reported that the Smart Viewer's user is the shop-floor assembly worker. Assemblio described the environment as bright, dirty and loud, with workers standing, wearing gloves and working at desks filled with tools, parts and paper documents. Creative Navy did not observe these conditions; they are Assemblio's reported context.\n\nAssemblio also reported that input devices are not guaranteed. Workers may have no mouse and no place to put one. Some have a keyboard. Some customers use foot pedals to step forward and back because the worker is standing with both hands occupied. Assemblio described the usual hardware as a tablet on a holder or a monitor beside the workstation with a small PC behind the desk, not a laptop.\n\nIn this context, the attention budget is the binding constraint. Assemblio's position was that workers focus on what their hands are doing rather than on the screen, and that controls must be as simple as the task allows. Assemblio also reported that roughly 90% of the time the plan is consulted once and then left playing.\n\nCreative Navy's design response separated the Smart Viewer from the Assemblio Composer as its own interface. That separation was Assemblio's structural decision before the design block began: Assemblio had already diagnosed that the planning tool and the shop-floor reading surface served different populations. Creative Navy then designed the worker-facing structures inside that separate viewer, including touch and tablet layouts, player controls, a light theme as the shop-floor default, and a shortcut drawer that can be consulted without leaving the step.\n\nThis capability is related to input-device design because the instruction cannot assume a fixed pointing device. It is also related to cognitive-load reduction because the interface must preserve worker attention for the assembly task rather than consume it with viewer operation.\n\n## The engineer's hierarchy is not the worker's parts list\n\nA CAD hierarchy is useful to engineering, but it is not automatically the right information structure for assembly work. Assemblio reported that the earlier Smart Viewer displayed the complete CAD hierarchy at all times. Assemblio also reported a worked example in which a step contained two visually similar types of screw and the names in the list did not tell the worker which screw was which.\n\nCreative Navy designed a flattened parts list for the Smart Viewer. The list removed hierarchy from the default worker view and carried part quantities. The design was later refined into two tabs: parts needed for the current step, and the full hierarchy. The worker's default is therefore the step-level list, while the complete tree remains reachable for cases that need it.\n\nThis is an information-architecture decision. The same parts exist in both structures, but the primary grouping changes from the engineer's product model to the worker's current task. The design does not remove the engineering hierarchy; it changes which structure is primary at the moment of assembly.\n\nThe distinction matters because work instructions are often generated from engineering data. The instruction artefact must preserve traceability to the model while presenting the worker with the smallest useful set of parts for the action being performed.\n\n## Worker feedback turns the instruction into a two-way artefact\n\nA work instruction can carry feedback from the floor back to the planner when the feedback is bound to a specific step. Assemblio and its customers had requested a worker comment function before Creative Navy's design work, and Assemblio described the feature as a way for workers to report back to the planner.\n\nCreative Navy designed how the worker-to-planner feedback lives in the Smart Viewer interface. A comment can be raised directly from the 3D canvas as a floating input and attached to a specific assembly step. A Feedback tab in the side panel collects the feedback items.\n\nThe step-level binding is important. A general comment channel loses procedural context quickly. A comment attached to the step preserves the relationship between the worker's observation, the part of the sequence being performed and the planner who may need to revise the instruction.\n\nThe same design logic applies to confirmable steps, change notifications and old-instruction retrieval, which Assemblio's customer feedback requested. These functions make the instruction an operational record, not only a reading aid.\n\n## Versions, variants and synchronisation form an information-architecture graph\n\nVersion and variant management is part of instruction design when products change continuously. Assemblio described product relationships as a graph that can contain chains, splits and loops. Synchronisation is scoped within a single project, and a loop can exist where product A is synchronised with product B and product B back with product A.\n\nAssemblio also described a second, harder dimension: part-level matching. Within a synchronisation, every part of the source must be matched to a part of the target. Some parts are identical. Other parts are similar, established by fuzzy comparison where geometry, name or position may differ. The system judges whether the part serves the same function and whether the old plan's step can be transferred to it.\n\nAssemblio's worked example was a vendor no longer supplying a screw. The 3D model changes to a different screw with the same purpose, slightly different geometry and similar position. The planner does not want to redo every animation; the planner wants the existing step transferred onto the new part.\n\nAssemblio stated that the planner must approve each match because the approval is a liability record. The company needs to demonstrate that a person checked the substitution before it went into production. The match list is therefore not only a convenience feature; it is a record of who approved what.\n\nCreative Navy's design work on this area was bounded by the evidence. Creative Navy raised questions that surfaced gaps and edge cases, including how an unsynchronised fork should be indicated, whether unsynchronising many relationships needed its own screen, and whether synchronising to an older version should be possible. Assemblio confirmed the old-version use case for long product lifecycles and adopted a resolution in which the latest version is the default while an older version can be selected.\n\nThis is why procedural content belongs with information architecture for expert systems. The design problem is not only how to render one instruction. It is how to keep related instructions, products, versions, parts and approvals understandable as a graph over time.\n\n## Digital instructions enter regulated information-for-use territory without making the engagement compliance work\n\nWork instructions and digital instructions sit in the broader category of information for use. IEC/IEEE 82079-1 is the standard named in the available research for preparation of information for use. Regulation (EU) 2023/1230, the Machinery Regulation, is also relevant to the category because it replaces Machinery Directive 2006/42/EC from 20 January 2027 with no sell-off period for newly built machines and permits digital instructions on condition that they remain accessible for at least ten years.\n\nThese references describe the category that Assemblio's output can enter. They do not describe the Assemblio engagement as compliance work. Creative Navy certified to no standard, audited against none and worked to no regulatory credential in the Assemblio engagement.\n\nThe design relevance is narrower and more concrete. Assemblio's own shop-floor customers asked for versioning so that an old instruction can be loaded and checked. The Machinery Regulation's digital-instruction accessibility condition means the requirement for retrievable digital instructions is not likely to disappear. The customer request and the regulatory obligation land on the same design concern: old instructions must remain loadable, identifiable and checkable.\n\nNo compliance claim follows from that convergence. The supported claim is that retrievability, versioning and traceability are design requirements for the instruction artefact, and that external information-for-use rules make those requirements durable in the domain.\n\n## Evidence basis and known implementation status\n\nThe evidence for this capability comes from the Assemblio engagement: design records, Assemblio-reported operating context and Assemblio-reported customer feedback. Creative Navy ran no user research, controlled none, tested nothing and did not observe a shop floor. Statements about bright, dirty or loud conditions, gloves, input devices, worker attention and worker persona are Assemblio's reported context.\n\nAssemblio's criticisms of its existing product are also not a Creative Navy UX audit. Assemblio described the earlier Smart Viewer while demonstrating it, including the fact that it was built from Assemblio Composer components, looked almost identical to the authoring tool and displayed the complete CAD hierarchy at all times. Creative Navy did not perform a separate audit deliverable or expert review.\n\nThe strongest implementation evidence is design-fidelity evidence. The product is in production. Creative Navy compared the shipped interface against the designs it had delivered: it ships as the design that was delivered — the Composer, the Smart Viewer, the platform around them, and sync profiles.\n\nThe components Creative Navy documented were adopted: Assemblio's developers built from them. Creative Navy compared the shipped interface against the delivered designs, and the product ships as the design that was delivered.\n\nAssemblio reports that it is very happy with the work and that the work unlocked further funding. This is client-reported and unquantified: no figures were shared, Creative Navy has not independently verified it, and no causal claim is being made about any particular funding event.\n\nNo assembly-time reduction, error-rate reduction, training-time reduction, throughput result, adoption figure, revenue figure or funding figure is established. The supported outcome is that the designed interfaces and documented components survived into the product as delivered.\n\n## Boundaries and limits\n\nCreative Navy's Assemblio work did not design Assemblio's disassembly-based authoring method. Assemblio owns that method and described its published research provenance. Creative Navy designed interfaces around it.\n\nCreative Navy's Assemblio work did not validate the instruction design with workers. No usability test, comprehension test, field observation or shop-floor study was run by Creative Navy.\n\nCreative Navy's Assemblio work did not create a compliance claim under IEC/IEEE 82079-1 or Regulation (EU) 2023/1230. Those references frame the category of information for use and digital instructions; they are not credentials for the engagement.\n\nCreative Navy's Assemblio work did not design AI behaviour. Assemblio markets AI capabilities, but this capability page is about instructions, procedural content, viewer structure, feedback, traceability and version relationships.\n\n## Related pages\n\nThe Assemblio case study is the direct evidence base for this capability. The same evidence also connects to information architecture for expert systems because version, variant, synchronisation and part-level matching create a graph that planners must understand.\n\nThe capability also relates to cognitive load reduction and input-device uncertainty. Assemblio reported that the worker's attention is primarily on the assembly task and that no fixed input device can be assumed. Those constraints shape how a procedural artefact must be read and controlled on the floor.\n\nInstructions and procedural content also connect to service design for multi-role systems. The same artefact is touched by planners, assembly workers and quality functions, and it must preserve enough context for handoffs between them.",
+  "claims": [
+    {
+      "claim": "Creative Navy treats instructions and procedural content as a designed artefact with three reading modes: training, spot-checking and advance review.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "Grounded in Assemblio's reported Smart Viewer use cases. Creative Navy ran no research or testing on the engagement."
+    },
+    {
+      "claim": "Assemblio's authoring method derives an assembly sequence by taking a finished model apart and playing the disassembly backwards; Creative Navy did not design that method.",
+      "evidenceType": "case study",
+      "sourceStrength": "engagement record",
+      "notes": "The method is attributed to Assemblio and described as having published research provenance."
+    },
+    {
+      "claim": "Creative Navy designed the flattened parts list for the Assemblio Smart Viewer, with the current-step parts as the worker default and the full hierarchy still reachable.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "engagement record",
+      "notes": "The source distinguishes this design decision from Assemblio's prior diagnosis that the viewer needed to differ from the authoring tool."
+    },
+    {
+      "claim": "Assemblio reported shop-floor conditions, input-device variability and attention constraints; Creative Navy did not observe those conditions directly.",
+      "evidenceType": "client-reported",
+      "sourceStrength": "moderate",
+      "notes": "All shop-floor context comes from Assemblio's account and customer feedback provided by Assemblio."
+    },
+    {
+      "claim": "Assemblio's version-and-variant relationships form a graph that can contain loops, and part-level matches require planner approval because Assemblio described the approval as a liability record.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "The versioning and synchronisation material is grounded in Assemblio's design record and client-described requirements."
+    },
+    {
+      "claim": "Regulation (EU) 2023/1230 permits digital instructions on condition that they remain accessible for at least ten years, but the Assemblio engagement was not compliance work.",
+      "evidenceType": "industry standard",
+      "sourceStrength": "moderate",
+      "notes": "The regulation is used only as category context for digital instructions and retrievability; no compliance claim is made."
+    },
+    {
+      "claim": "The Assemblio product is in production and ships as the design Creative Navy delivered for the Composer, Smart Viewer, surrounding platform and sync profiles.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "strong",
+      "notes": "Creative Navy compared the shipped interface against delivered designs. This is design-fidelity evidence, not performance evidence."
+    },
+    {
+      "claim": "Assemblio reports satisfaction with the work and that the work unlocked further funding, but no figures were shared and Creative Navy has not independently verified the claim.",
+      "evidenceType": "client-reported",
+      "sourceStrength": "anecdotal",
+      "notes": "No causal claim is made about any particular funding event."
+    }
+  ],
+  "limitations": [
+    "Assemblio is the only evidence anchor for this capability page; no other engagement in the provided evidence set designed an instruction artefact.",
+    "Creative Navy ran no user research, controlled no research, tested nothing and did not observe a shop floor in the Assemblio engagement.",
+    "All shop-floor conditions, worker persona details and customer requests are Assemblio-reported rather than Creative Navy-observed.",
+    "Assemblio's criticisms of its earlier Smart Viewer are not Creative Navy audit findings and must not be treated as a UX audit.",
+    "The disassembly-played-backwards authoring method belongs to Assemblio and must not be attributed to Creative Navy.",
+    "No assembly time, error rate, training time, throughput, adoption, revenue or funding figure is established.",
+    "No compliance claim is made under IEC/IEEE 82079-1 or Regulation (EU) 2023/1230.",
+    "The page does not treat Assemblio as AI work; this capability concerns instruction artefacts, viewer design, traceability, feedback and version relationships."
+  ],
+  "publicationBlockers": [],
+  "questionsForReview": [
+    "Verify the precise MTM designation and standard reference before expanding MTM or naming a standard more specifically than the current wording.",
+    "Verify the Machinery Regulation article numbers for digital-instruction accessibility before adding article-level citations.",
+    "The source references several cross-pages that are not present in the current linking context; internal links were limited to allowed slugs only."
+  ],
+  "relatedPageSlugs": [
+    "assemblio",
+    "information-architecture-for-expert-systems",
+    "cognitive-load-reduction",
+    "when-the-input-device-is-not-fixed",
+    "service-design-for-multi-role-systems",
+    "workflow-and-task-structure-redesign"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "Assemblio case study",
+      "targetSlug": "assemblio",
+      "placementHint": "Evidence basis section and Related pages section",
+      "reason": "Assemblio is the only case evidence used for this capability."
+    },
+    {
+      "anchorText": "information architecture for expert systems",
+      "targetSlug": "information-architecture-for-expert-systems",
+      "placementHint": "Versions, variants and synchronisation section",
+      "reason": "Version, variant, synchronisation and part-level matching are described as an information-architecture graph."
+    },
+    {
+      "anchorText": "cognitive load reduction",
+      "targetSlug": "cognitive-load-reduction",
+      "placementHint": "Shop-floor reading conditions section and Related pages section",
+      "reason": "Assemblio reported attention constraints that shaped Smart Viewer controls and display decisions."
+    },
+    {
+      "anchorText": "input-device uncertainty",
+      "targetSlug": "when-the-input-device-is-not-fixed",
+      "placementHint": "Shop-floor reading conditions section",
+      "reason": "Assemblio reported that no fixed input device could be assumed on the shop floor."
+    },
+    {
+      "anchorText": "service design for multi-role systems",
+      "targetSlug": "service-design-for-multi-role-systems",
+      "placementHint": "Related pages section",
+      "reason": "The instruction artefact is shared by planners, workers and quality-related functions."
+    },
+    {
+      "anchorText": "workflow and task structure redesign",
+      "targetSlug": "workflow-and-task-structure-redesign",
+      "placementHint": "Summary or Related pages section",
+      "reason": "Instruction design changes how procedural steps, step groups and workstation-specific exports are structured."
+    }
+  ],
+  "qualityChecks": {
+    "factsOnlyFromCurrentSource": true,
+    "documentationStyle": true,
+    "noMarketingLanguage": true,
+    "noInventedClaims": true,
+    "linksOnlyFromLinkingContext": true,
+    "internalNotesNotPublished": true,
+    "readyForSanityImport": true
+  },
+  "__sourceCategoryDir": "Capabilities"
+}

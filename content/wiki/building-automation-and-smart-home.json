@@ -1,0 +1,134 @@
+{
+  "slug": "building-automation-and-smart-home",
+  "title": "Building Automation and Smart Home",
+  "pageType": "context",
+  "category": "contexts",
+  "section": "Contexts",
+  "summary": "This context page explains how Creative Navy documents UX design for building automation and smart-home systems where commissioning, access levels, downstream room units, installer channels and occupant handover shape the interface. It uses AIT and Elsner as the two engagement anchors and separates design reasoning from unmeasured outcomes.",
+  "keyFacts": [
+    "Creative Navy frames this context around the separation between the person who configures the system and the person who lives with the configured result.",
+    "AIT evidence describes a heat-pump controller with heating, cooling, domestic hot water, pool, photovoltaics and ventilation modes, with only one heat-generating mode running at a time.",
+    "AIT's controller has four access levels: end user, installer, service and factory; installer and service are PIN-gated and time out automatically.",
+    "AIT commissioning is split into an installer assistant and a separate end-customer assistant because a building site usually has no network and the owner must complete Wi-Fi setup later.",
+    "AIT's start-up self-test screen lists detected boards, inverters and fans for service technicians and cannot be skipped.",
+    "AIT's previous-generation published documentation described roughly 135 commissioning parameters and 98 numbered fault codes.",
+    "Elsner evidence describes a 4-inch round 480×480 KNX room controller configured through ETS and then used daily by occupants who never see ETS.",
+    "Elsner's dealer result is client-reported: 30 of 130 dealers responded, and all respondents rated the redesign an improvement; this is not occupant evidence.",
+    "External category research cited in this page did not measure either client's product and is used only as category framing.",
+    "No efficiency, compliance, certification, installed-performance or measured outcome claim is made for either engagement."
+  ],
+  "bodySections": [
+    {
+      "heading": "Building Automation UX Separates Configuration From Daily Use",
+      "bodyMarkdown": "Creative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nBuilding automation and smart-home UX is the design of interfaces used to configure, commission, service and operate building-control systems, including the handover from a trained installer or systems engineer to an occupant who did not configure the system.\n\nBuilding automation and smart-home products often have two different user populations. A professional configures the system during installation or commissioning. An owner or occupant then lives with the configured result for many years, usually without having chosen the controller or seeing the tools that define its behaviour.\n\nCreative Navy's building-automation evidence is organised around that handover. AIT's heat-pump controller is commissioned by a heating installer at a building site. Elsner's KNX room controller is configured by systems engineers through ETS, the standard KNX configuration tool, and then used daily by people who never see ETS. The products differ, but the design problem has the same shape: access levels become part of the interface structure, daily controls are narrowed for untrained use, and involved configuration work is moved away from the wall unit."
+    },
+    {
+      "heading": "Commissioning and Handover Define the Building-Automation UX Problem",
+      "bodyMarkdown": "Commissioning and handover are central to building automation because the configuration session and the daily-use session are not the same session. Creative Navy's Critical Systems Design method treats that separation as an interface-architecture problem rather than only as a permissions table or an onboarding problem.\n\nAIT provides the clearest commissioning example. Commissioning for the AIT heat-pump controller is split into an installer assistant and a separate end-customer assistant. The reason is physical: at a building site there is usually no network, so the installer cannot enter a Wi-Fi password, and the owner must complete that part later. The building condition produces the flow structure.\n\nElsner shows the same separation in a different ecosystem. The KNX room controller is configured by systems engineers through ETS and then used on the wall by occupants who do not use ETS. The interface therefore has to respect the boundary between configuration authority and daily operation.\n\nThe paired evidence is stronger than either engagement alone. One product is configured by a systems engineer inside a protocol ecosystem; the other is commissioned by a heating installer at a site with no network. Both hand over to someone who did not choose the product and cannot reconfigure it. The design consequences are access levels that structure the interface, a daily interface narrow enough for untrained use, and deeper configuration work placed elsewhere."
+    },
+    {
+      "heading": "On-Site Commissioning Needs a Flow That Can Finish Under Site Conditions",
+      "bodyMarkdown": "AIT's commissioning split illustrates why building automation cannot be treated as a standard device-setup flow. The installer assistant covers the installer session. The end-customer assistant covers the later owner session. The split exists because the installer usually cannot complete network setup at the building site.\n\nAIT's controller also includes a start-up self-test screen that lists the internal boards, inverters and fans the controller has detected. The screen exists for service technicians to spot a missing component. It cannot be skipped: if components are not found within the window, the controller enters a special operating mode. The screen can only be hidden, and a route back to it had to be designed.\n\nThe commissioning flow therefore supports more than initial preference entry. It has to expose hardware detection, service diagnosis, network-dependent steps, and access-level constraints in a sequence that can finish under site conditions. Creative Navy's Critical Systems Design method treats this as constraint respecting: the interface structure follows the operational constraint rather than asking the installer to work around it."
+    },
+    {
+      "heading": "Wall Units Should Expose Only the Changes That Belong at the Wall",
+      "bodyMarkdown": "Building automation products divide control across the plant controller, the room unit, the phone and the web. The wall unit is not the correct place for every setting.\n\nAIT's controller supports heating, cooling, domestic hot water, pool, photovoltaics and ventilation. Only one heat-generating mode runs at a time; photovoltaics and ventilation can run alongside one heat-generating mode. Between one and seven modes may be installed, and most installations are heating and hot water only.\n\nAIT's interface also carries 21 interface languages, no Fahrenheit setting, and no zoning. The controller holds one temperature per circuit, while room distribution is handled downstream by a separate room unit. That allocation matters because it prevents the plant controller from pretending to manage room-level distribution that belongs to another device.\n\nElsner's wall controller sits on the other side of the same allocation question. It is a 4-inch round 480×480 panel controlling heating, cooling, lighting, blinds and scenes. It is configured through ETS and then operated on the wall. The daily wall interface is therefore downstream of system engineering work that the occupant never sees."
+    },
+    {
+      "heading": "Access Levels Are an Interface Structure, Not Only a Security Structure",
+      "bodyMarkdown": "Access levels in building automation shape what a person can understand and safely change during a specific session. In Creative Navy's building-automation evidence, access levels define interface structure as much as they define permissions.\n\nAIT's controller uses four access levels in AIT's own structure: end user, installer, service and factory. Installer and service modes are entered by PIN and time out automatically. That structure separates daily operation from installation and service tasks while still keeping service material available to authorised users.\n\nElsner's ETS configuration route produces a parallel structure. Systems engineers configure the KNX room controller through ETS, while occupants operate the installed wall unit. The occupant interface does not need to expose the same conceptual model as the configuration tool.\n\nThe design issue is not only who is allowed to change a parameter. It is which work belongs in the session the person is actually in: commissioning, service, factory configuration or daily use."
+    },
+    {
+      "heading": "Large Settings Spaces Make Information Architecture the First Control Problem",
+      "bodyMarkdown": "Settings at building-control scale become an information-architecture problem before they become a visual-design problem. AIT's previous-generation published documentation described roughly 135 commissioning parameters, each with a factory setting, adjustable range, step size and required access level. It also described 98 numbered fault codes. This scale is background from public documentation of the controller it replaced, not a Creative Navy audit finding.\n\nThose parameters are not all visible to every person. Parameters are hidden depending on both access level and the heat-pump variant the software detects. That makes filtering, grouping and disclosure part of the control logic. It also makes access level a primary navigation principle.\n\nAIT's input model adds another constraint. The controller concept used a rotary push-button with roughly 90 steps per revolution, a status LED ring, two hardware buttons, no Home button by decision, and touch optional in both directions. In this building-automation context, the relevant point is that input hardware constrains how a large parameter space can be traversed during commissioning and service."
+    },
+    {
+      "heading": "Installed Conditions Are Part of the Interface Context",
+      "bodyMarkdown": "Building automation interfaces are installed into physical conditions that the interface cannot fully control. Elsner's KNX room controller was designed around physical installation conditions, including a recommended mounting height of 140 cm and installations at 110 cm that the interface cannot control.\n\nMounting height affects who can see and reach the interface, but the interface cannot enforce the height at which it is installed. The design has to account for likely variation without claiming to fix installation quality.\n\nThe same boundary applies to heat-pump commissioning. AIT's flow can separate installer and owner work when there is usually no network at the building site. It cannot guarantee that the building will have the expected network, that the installer will make correct commissioning choices, or that installed performance will follow from the interface."
+    },
+    {
+      "heading": "Installers and Dealers Are Often the First Users and First Evaluators",
+      "bodyMarkdown": "Building automation products often reach occupants through installers, dealers and partner networks. Those channels matter because the first person to operate the product may be the professional fitting or commissioning it, not the eventual occupant.\n\nAIT reports that feedback from its dealers and partners was much better than expected. This is client-reported and unquantified: no figures were shared, and Creative Navy has not independently verified it.\n\nElsner's dealer result is also client-reported and must be read with its denominator. Thirty of 130 dealers responded, and all 30 respondents rated the redesign an improvement. That is a dealer-channel result, not a user-satisfaction figure from occupants.\n\nDealer and installer evidence is relevant in this context because those groups commission, fit, sell or support the products. It does not substitute for occupant evidence. In the available Elsner evidence, there is no occupant evidence. In the available AIT evidence, there was no user research."
+    },
+    {
+      "heading": "Efficiency Rules Frame the Category but Do Not Create Product Claims",
+      "bodyMarkdown": "Building automation interfaces sit near efficiency standards and energy-labelling rules, but this page makes no efficiency or compliance claim for any product Creative Navy designed.\n\nEN ISO 52120-1:2022 classifies building automation and control systems into efficiency classes A to D and replaced EN 15232. EU temperature control classes I–VIII under the Ecodesign and energy labelling package assign a control class based on the control's own capability, and the class carries a package-level efficiency bonus between 1% and 5%. These instruments explain why heating curves, temperature control and building automation capability appear in the category vocabulary. They are not Creative Navy credentials.\n\nGerman §14a EnWG is another category driver. Since the start of 2024, German heat pumps drawing more than 4.2 kW must be dimmable by the grid operator, with a guaranteed 4.2 kW floor, in return for a reduced grid fee. This is the regulatory driver behind the smart-grid step in AIT's commissioning flow. It is not a claim that Creative Navy certified, audited or delivered grid-flexibility performance.\n\nField research in the category shows why the parameters exposed by controllers matter. A study of 1,023 heat pumps monitored over two years across ten European countries found 17% of air-source units below European efficiency standards and 10% oversized; in its on-site inspection subset, 41% had the heating curve set too high. Across 3,995 air-to-water heat pumps, 84.42% of heating curves could be improved, for an average 4.02% reduction in annual energy consumption, in Applied Energy vol. 389, art. 125725, 2025. These studies measured other people's equipment, not AIT or Elsner products.\n\nA government-commissioned usability study of five smarter heating controls with 72 participants set a task-completion benchmark of 70%; none of the five reached 50%. The same study is relevant to allocation because the controls that met its efficiency benchmark moved involved tasks away from the wall unit onto a web or phone interface. That finding supports the allocation principle at category level; it does not validate either Creative Navy engagement."
+    },
+    {
+      "heading": "AIT Evidence Supports Design Reasoning, Not User Validation",
+      "bodyMarkdown": "AIT may be named as a European manufacturer of residential and commercial heat pumps. The product name, AIT's consumer brands, OEM partner brands, internal programme name and the name of the controller it replaced are not named.\n\nThe controller reached the market months after the engagement ended. Creative Navy compared the shipped interface against the designs it had delivered: the product ships as the design that was delivered. It ships in a touch-only hardware configuration.\n\nThat fidelity statement has a strict ceiling. The move to touch-only was AIT's hardware decision, not a Creative Navy outcome. Nothing is claimed about the shipped product's performance, reception or sales. The statement that the product ships as the delivered design is evidence that the design survived development; it is not evidence that the design is good.\n\nAIT's Implementation Partnership evidence is a review-and-support partnership, not embedded day-to-day oversight. It lasted five months and consisted of three scheduled progress reviews, where the state of development was shared and compared against the delivered designs, and eight support tickets answered.\n\nThere was no user research in the AIT engagement. No installer interviews, contextual inquiry, field observation, usability testing or research-built personas were conducted. AIT evidence on this page supports design reasoning about commissioning, access levels, service screens and allocation. It does not support user validation."
+    },
+    {
+      "heading": "Elsner Evidence Supports the Configurer–Occupant Handover",
+      "bodyMarkdown": "Elsner may be named for the KNX room-controller evidence. The relevant facts are that the product is a 4-inch round 480×480 wall-mounted panel, installed at a recommended height of 140 cm, controlling heating, cooling, lighting, blinds and scenes.\n\nElsner's controller is configured by systems engineers through ETS, the standard KNX configuration tool, and then used daily by people who never see ETS. That separation makes Elsner relevant to this building-automation context.\n\nThe evidence also includes physical installation conditions that the interface cannot control, including installations at 110 cm. It includes multi-market sale through dealer networks. The dealer result is client-reported: 30 of 130 dealers responded, and all 30 respondents rated the redesign an improvement. This is not occupant evidence and should not be written as a user-satisfaction figure."
+    },
+    {
+      "heading": "Engagement Match for Building Automation and Smart-Home Interfaces",
+      "bodyMarkdown": "This context is a match when the product is commissioned or configured by one population and then operated for years by another population. The strongest available evidence is the pairing of AIT and Elsner: one heat-pump controller commissioned on site by an installer, and one KNX room controller configured through ETS by systems engineers.\n\nThe relevant Creative Navy work is the interface structure around commissioning, service access, daily controls, parameter scale and handover. The relevant method concern is not visual styling; it is how Creative Navy's Critical Systems Design method allocates work between professional configuration sessions, service sessions and daily occupant use.\n\nThis context is not a match for general embedded hardware, industrial process control, automotive controllers, medical wall devices, defence systems or consumer products that do not involve building-services commissioning and handover."
+    }
+  ],
+  "evidenceSummary": {
+    "strongClaims": [
+      "Building automation and smart-home interfaces often separate the professional who configures a system from the person who uses the installed result.",
+      "AIT commissioning is split into an installer assistant and an end-customer assistant because building sites usually have no network and the owner must complete Wi-Fi setup later.",
+      "AIT's controller uses four access levels: end user, installer, service and factory, with installer and service PIN-gated and timing out automatically.",
+      "AIT's start-up self-test screen lists detected internal boards, inverters and fans for service technicians and cannot be skipped.",
+      "The AIT controller ships as the delivered design in a touch-only hardware configuration.",
+      "There was no user research in the AIT engagement.",
+      "Elsner's KNX room controller is configured by systems engineers through ETS and then used daily by occupants who never see ETS.",
+      "External heat-pump and heating-control studies frame the category but did not measure either AIT or Elsner products."
+    ],
+    "weakerClaims": [
+      "Elsner's dealer result is client-reported from 30 of 130 dealers, all respondents rating the redesign an improvement, and is not occupant evidence."
+    ],
+    "limitations": [
+      "No efficiency, energy-saving, efficiency-class, temperature-control-class or grid-flexibility outcome is claimed for any Creative Navy-designed product on this page.",
+      "No compliance, certification or conformity claim is made against EN ISO 52120-1:2022, the Ecodesign and energy labelling package, §14a EnWG, KNX certification or any national building regulation.",
+      "AIT evidence supports design reasoning only; there was no user research, field observation, usability testing or research-built persona work in the AIT engagement.",
+      "Elsner evidence includes a client-reported dealer-channel result, not occupant evidence.",
+      "No measured outcome from either AIT or Elsner is reported.",
+      "Installed performance, mounting height, commissioning quality and site conditions are outside the interface's control.",
+      "External studies cited on heat-pump efficiency and heating-control usability measured other products and are used only as category framing."
+    ]
+  },
+  "relatedPageSlugs": [
+    "embedded-devices-and-constrained-interfaces",
+    "consumer-and-multi-market-products",
+    "ait-heat-pump-controller"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "embedded-devices and constrained-interfaces context",
+      "targetSlug": "embedded-devices-and-constrained-interfaces",
+      "reason": "The current material says this page is the domain context and the embedded-devices page is the shared constraint class."
+    },
+    {
+      "anchorText": "consumer and multi-market-products context",
+      "targetSlug": "consumer-and-multi-market-products",
+      "reason": "The current material states that Elsner's primary context remains consumer and multi-market products while this page owns the configurer-occupant handover."
+    },
+    {
+      "anchorText": "AIT heat-pump controller case evidence",
+      "targetSlug": "ait-heat-pump-controller",
+      "reason": "AIT is one of the two anchor engagements and has a permitted case-study slug in the linking context."
+    }
+  ],
+  "tags": [
+    "building automation",
+    "smart home",
+    "commissioning UX",
+    "heat pump controller",
+    "KNX",
+    "access levels",
+    "installer handover",
+    "room controller",
+    "Critical Systems Design",
+    "constraint respecting"
+  ],
+  "_meta": {
+    "sourcePath": "sources/articles/Contexts/contexts--building-automation-and-smart-home.md",
+    "parentSlug": "contexts",
+    "childPageSlugs": [],
+    "generatedBy": "openai"
+  }
+}

@@ -1,0 +1,173 @@
+{
+  "_type": "documentationPage",
+  "sourceFile": "Articles/Contexts/contexts--supervising-autonomous-and-remotely-operated-systems.md",
+  "sourcePath": "sources/articles/Contexts/contexts--supervising-autonomous-and-remotely-operated-systems.md",
+  "sanityDocumentIdCandidate": "documentationPage.supervising-autonomous-and-remotely-operated-systems",
+  "title": "Supervising Autonomous and Remotely Operated Systems",
+  "slug": {
+    "_type": "slug",
+    "current": "supervising-autonomous-and-remotely-operated-systems"
+  },
+  "pageType": "context",
+  "category": "contexts",
+  "parentSlug": "contexts",
+  "childPageSlugs": [],
+  "excerpt": "Creative Navy designs supervision surfaces for machines that execute instructions away from the operator, including uncrewed aircraft, uncrewed ground and marine vehicles, and autonomous transport fleets inside buildings. This context concerns oversight of execution, not oversight of AI inference.",
+  "metaTitle": "Supervising Autonomous Systems",
+  "metaDescription": "Interface design for supervising autonomous and remotely operated systems, with boundaries on AI, safety, autonomy and operational evidence.",
+  "summary": "This context describes interface design for supervising machines that act away from the operator through remote operation, supervised autonomy or autonomous execution. The page separates execution oversight from AI oversight and records the evidence boundaries from Schone Airspace Group, a handheld command-and-control engagement, and Oceaneering.",
+  "definition": "Supervising autonomous and remotely operated systems means designing the interface through which an operator establishes what a remote machine is doing, whether an instruction reached the intended recipient, whether reported state is current, and where interface representation stops short of safety-system enforcement.",
+  "keyFacts": [
+    "This context is organised around a shared supervision challenge rather than a sector; the three engagement anchors sit in different sectors.",
+    "The page distinguishes oversight of execution from oversight of AI inference.",
+    "Schone Airspace Group evidence includes a seven-state command transaction model and scripted acceptance checks run by Creative Navy and by five of the nine participating operators.",
+    "In the Schone Airspace Group scenario, acknowledgement arrived three seconds after a request while the aircraft still reported its previous flight mode, and fresh telemetry reported the new mode three seconds later.",
+    "The handheld command-and-control engagement covered interface structure, task behaviour, information priority and clarity of operator control; autonomy, control algorithms, datalinks, effectors, targeting logic, certification and weapons-review activity were out of scope.",
+    "The handheld engagement has no Creative Navy field evidence and no measured operational, mission, workload, error-rate, time-saving, throughput or commercial figure.",
+    "Oceaneering evidence concerns an autonomous hospital transport fleet dispatch panel at a deployment scale of 71 logistic lobbies, 17 cart types, 1,400 carts, 70 vehicles and approximately 4,000 transport orders a day.",
+    "The Oceaneering dispatch panel is in production and Oceaneering confirms it shipped as delivered, but that fidelity statement and feedback are client-reported and not independently verified.",
+    "No safety claim, autonomy design claim, regulatory credential, AI claim or measured operational outcome is made for the work described on this page."
+  ],
+  "tags": [
+    "autonomous systems",
+    "remote operation",
+    "supervised autonomy",
+    "command transaction",
+    "telemetry freshness",
+    "control link condition",
+    "span of control",
+    "lost link",
+    "handover",
+    "high-consequence interfaces"
+  ],
+  "bodyMarkdown": "## Creative Navy designs supervision surfaces for remote execution\n\nCreative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nA machine that carries out an instruction on its own, away from the person who issued it, changes what an interface is for. The operator is no longer performing the task directly. The operator is supervising an execution through a link that may be slow, intermittent or broken, and through telemetry that may already be out of date.\n\nCreative Navy designs the surfaces through which people supervise machines they are not touching. The examples on this page include uncrewed aircraft, uncrewed systems operated through tactical command-and-control software, and driverless hospital transport fleets inside buildings. The design problem is not simply operating the machine. It is establishing, continuously and defensibly, what the machine is doing, whether the instruction arrived, whether the report is current, and whether the moving machine is the one the operator addressed.\n\nThis page is a challenge-shaped context page. The defence and space systems context is the sector page for two of the three engagement anchors; this page describes the shared supervision challenge across sectors. The high-consequence environments context covers consequence as the organising condition, and the multi-stakeholder operational environments context covers role boundaries and handover.\n\n## Execution oversight is different from AI oversight\n\nThis context concerns oversight of execution. A machine was told to do something, is doing it somewhere else, and reports back through a channel that can fail.\n\nAI oversight is oversight of an inference. It concerns whether a model output, score, recommendation or classification should be trusted or overridden. Execution oversight asks different questions. The interface must show whether a command was sent, whether the intended machine acknowledged it, what state the machine confirmed, whether the information is current or stale, and what control remains available.\n\nThe page therefore does not route this work to AI-enabled products or to AI-and-automation oversight material. The evidence used here concerns command transactions, control link condition, telemetry freshness, span of control, lost link behaviour, handover and safety boundaries. It does not establish that Creative Navy designed AI model behaviour, AI trust calibration or AI override semantics.\n\n## What changes when the operator is not at the machine\n\nRemote operation, supervised autonomy and autonomous execution create a gap between an instruction and its evidence. That gap is a design problem, not only a latency problem.\n\nIn the Schone Airspace Group mission-control engagement for uncrewed aircraft, the design record describes a command branch in which an acknowledgement arrived three seconds after a request while the aircraft was still reporting its previous flight mode. Fresh telemetry reported the requested mode three seconds after that. For six seconds, an interface built around a simple success message would have been showing an outcome it did not yet have evidence for.\n\nCreative Navy's Critical Systems Design method treated that gap as a representational constraint. The interface could show that a request had been sent, that a response was awaited, that the aircraft had acknowledged the command, and that the requested state had been observed. Each of those states required different source evidence. The interface was not entitled to display the final operational outcome merely because the operator had clicked, or because the system had acknowledged receipt.\n\nIn the Oceaneering dispatch-panel engagement, the equivalent gap appears after the operator has physically left the depot. A wrong cart type is detected by the vehicle after it lifts the cart. The vehicle then sets the cart down and leaves deliberately rather than stranding itself. The only physical indication is a vehicle with flashing lights, and the lights always flash when the vehicles move. Recovery had required a physical trip to the vehicle because it could not be done from the panel. The supervision problem was not the cart selection alone; it was that the person who had to recover the problem was no longer the person who caused it.\n\n## Establishing control and knowing the interface has authority\n\nCreative Navy's Critical Systems Design method treats control as something the interface must evidence, not something it can imply from navigation or selection.\n\nIn the Schone Airspace Group design record, entering the live workspace is a navigation action. It is not a takeoff request, an arming request or a mission-start request. A separate control and response is required for consequential machine actions. A pending command transaction keeps the aircraft it was dispatched against; inspecting another aircraft does not rewrite the pending request's recipient, action or request identifier.\n\nThis distinction matters because remote supervision products often conflate selection, attention and authority. A selected machine may be the one the operator is inspecting. A command target is the machine a transaction is addressed to. Authority is the system condition under which a command can be issued or acted on. If these are collapsed into a single visual state, the operator can appear to have control when the interface has only changed focus.\n\nIn the handheld command-and-control engagement for a European manufacturer of uncrewed systems, including one-way effectors, and the tactical command-and-control software that operates them, the scope boundary is strict. The engagement covered interface structure, task behaviour, information priority and the clarity of operator control. It did not extend to autonomy, control algorithms, autonomous safety behaviour, the datalink, the effector, targeting logic, certification or weapons-review activity. Creative Navy designed the surface through which a human supervises the system; Creative Navy did not design the system.\n\n## What the interface may assert and what it may only report\n\nA supervision interface must distinguish a local input, a transmitted command, a vehicle acknowledgement, a confirmed vehicle state and an unknown result.\n\nSchone Airspace Group evidence records a seven-state command transaction model: ready to request, request sent, awaiting response, command acknowledged, state observed, request rejected and response unknown. Each state had its own required source evidence and its own prohibited inference. Silence was treated as an unknown result, not as a failure. An elapsed response window produced an explicit unknown state, retained the target, action and request identifier, and triggered no automatic retry. The accepted cost was that unknown is less reassuring than a binary outcome.\n\nControl link condition and telemetry freshness were also separate fields. A degraded link and a stale telemetry sample are different facts. A value that has stopped updating keeps its last value alongside its age rather than being relabelled as current or hidden. Where link condition and sample freshness cannot establish eligibility for a command, availability shows as unknown rather than ready.\n\nThe handheld engagement states the same obligation in a different domain. The interface had to answer six questions unambiguously: whether input was registered; whether the command was being transmitted; whether the vehicle acknowledged it; what state the vehicle confirmed; whether the information was current or stale; and whether abort remained available. The design position was that repeated human input is not feedback. Unreliable delivery belongs in the command architecture rather than in the operator repeatedly pressing a control.\n\n## Supervising more than one machine changes layout, ordering and alerting\n\nSpan of control changes what a supervision interface must make persistent, what it can group, and what it must refuse to infer.\n\nIn the handheld engagement, engineering constraints established for the design included three to four vehicles as the practical limit of operator cognitive load at the system's current autonomy level, and four to five simultaneous video feeds as realistic where nine is not. These are constraints the design worked within, not claims about the product's operational capability. The design record also describes grouping assigned by the operator rather than inferred from proximity, and a feed grid ordered by mission logic rather than by vehicle index.\n\nIn the Schone Airspace Group work, six task contexts were placed inside one persistent operating shell. Command target identity, last reported flight mode, battery, control link state, telemetry freshness and consequential actions held fixed positions. Workspace changes altered the centre content, not the location or meaning of the command region. The accepted cost was that the shell reserved screen space that could not be given to the map or video.\n\nIn the Oceaneering hospital transport context, scale is different again. Oceaneering evidence describes one deployment with 71 logistic lobbies, 17 cart types, 1,400 carts, 70 vehicles and approximately 4,000 transport orders a day. Area sizes range from four to twelve stations, a tunnel of twenty, and one fully automated bay of fifty with no panel at all. The dispatch role was client-stated as high turnover, with little training, no technical background and 100 to 200 dispatches per eight-hour shift. Those facts shape what a dispatch panel can assume about attention, recovery and repeat use.\n\n## Handover matters because the operator who recovers may not be the operator who acted\n\nRemote supervision often crosses a shift boundary or a physical boundary. The operator who inherits the problem needs the state left behind by another person to be legible.\n\nOceaneering evidence describes a wrong-cart-type recovery designed for that condition. On the dispatch panel, the station holding the refused cart can be selected to read what the vehicle detected against what was selected, confirm the detected type in one action, and re-enter destination and identity. A stacked notification list accumulates arrived-but-uncollected carts, abandoned carts and refused dispatches, naming the station, required action and elapsed time.\n\nThe floor is also part of the supervision surface in the Oceaneering context. Vehicles run on dark flooring, people are directed to light flooring, and ceiling-mounted signs and speakers instruct people to clear intersections. Station positions are numbered on the floor, and send and receive roles are painted on the floor in the same colours the screen uses. The interface boundary is therefore not only a screen boundary; it includes the physical cues through which people understand where the autonomous transport system operates.\n\nDeliberate misuse was treated as a design condition. Oceaneering evidence records supervisor access being granted too widely, a night-shift case in which staff switched every detent to send until the system stopped, and a call-carts quantity control that was restricted and gated after a slider was rejected on misuse grounds. These are not measured outcome claims. They are design conditions recorded for the dispatch-panel work.\n\n## The interface boundary is not the safety-system boundary\n\nCreative Navy's design work on these systems does not make a safety claim. The interface represents state, availability and action conditions; the machine's safety systems enforce their own boundaries.\n\nISO 3691-4:2023 is relevant to this page because it governs driverless industrial trucks and their systems, while the Oceaneering dispatch panel is an operator terminal on a transport-order system. The point is the boundary: the safety regime reaches the vehicle and stops at the screen. Creative Navy claims no certification, audit or regulatory credential against ISO 3691-4:2023 or any other named standard or regulatory instrument in this context.\n\nIn the handheld engagement, the hold duration and physical-control design were explicitly flagged as requiring human-factors and system-safety testing that was not performed. In all three engagements, control algorithms, autonomous behaviour, datalinks, effectors and vehicle safety systems were outside Creative Navy's scope. The page therefore describes supervision surfaces, not autonomy design or safety determination.\n\n## Evidence basis across the three engagement anchors\n\nSchone Airspace Group is the primary evidence anchor for command transaction design. The scripted acceptance checks were run twice: first by Creative Navy, then by five of the nine operators who took part in the research. Each check fixed a starting state, an operator action and an expected visible response, and a pass meant the interface stated the correct operational fact under that condition. The checks evaluated the design representation. They were not a measure of flight performance, operator proficiency, task completion time or error rate, and they were not conducted on a connected system.\n\nThe first Schone Airspace Group design candidates failed 18 of the 36 checks. Each failure was given an identifier, a severity, the check it failed, the sprint in which it was revised and the decision record that resolved it. The revised design passed every check decidable at interface level. Severity recorded the consequence of the interface ambiguity within the scripted task, not that a corresponding aircraft incident occurred. Research entered late and functioned as validation and correction, with no contextual observation of live flight operations and no timed task study. Nine participants is qualitative evidence; no prevalence claim is made from it. The scenario material was a synthetic fixture.\n\nThe handheld engagement is evidence for operator-control clarity under strict scope boundaries. The engagement has no Creative Navy field evidence of any kind. The operator behaviours in the expert review were the client's observations of the client's own users, relayed to Creative Navy. Nothing was measured in operation. The handheld interface was built, and that statement does not establish deployment, service status, design fidelity, operational performance or safety effect.\n\nThe Oceaneering dispatch-panel engagement is evidence for supervising an autonomous hospital transport fleet from a dispatch surface. The dispatch panel interface Creative Navy designed is in production, and Oceaneering confirms it shipped as the design that was delivered. Oceaneering reports that the feedback it has received has been good. The fidelity statement and the feedback are both client-reported: Creative Navy did not independently compare the shipped build against the delivered files, no figures were shared, and neither has been independently verified. Creative Navy presented the designs to one hospital's logistics manager and two supply-chain supervisors, and separately to a second hospital's AGV planning manager. These were design reviews, not usability tests: no task was attempted and nothing was measured. No dispatch operator took part in either session.\n\nOne Oceaneering reference site's logistics manager rejected the length of the designed dispatch flow for his own operation. The design shipped as delivered at a different deployment target. The objection is recorded as a limit on fit for that reference site's tempo and hardware, not as a measured result and not as something proved wrong.\n\n## What this context does not establish\n\nThis context does not establish that Creative Navy made any system safe, prevented an event, reduced operator error or produced an operational safety outcome.\n\nThis context does not establish that Creative Navy designed autonomy, control algorithms, autonomous safety behaviour, datalinks, effectors, vehicle safety systems or targeting logic.\n\nThis context does not establish a regulatory or certification credential against ISO 3691-4:2023, STANAG 4586, STANAG 4671, SORA, the Machinery Regulation or any IMO instrument.\n\nThis context does not establish throughput, workload, error-rate, time-saving, mission, training or commercial outcomes for any of the three engagements.\n\nThis context does not establish Creative Navy field evidence for the handheld engagement, and it does not establish dispatch-operator validation for the Oceaneering engagement.\n\nThis context does not establish AI work. The evidence on this page concerns supervision of remote execution and state reporting, not design of inference, learning, scoring or recommendation behaviour.\n\n## Common fit questions\n\n### Does this context cover AI oversight?\n\nNo. This context covers oversight of execution: whether a remote machine received an instruction, what it reported, whether the report is current, and what the operator can responsibly do next. AI oversight belongs to a different problem class.\n\n### Does this context cover autonomy design?\n\nNo. The page covers supervision surfaces. The engagements described here did not design autonomy, control algorithms, autonomous safety behaviour, datalinks, effectors or vehicle safety systems.\n\n### Does this context cover systems outside defence?\n\nYes. Two engagement anchors are defence-related, and Oceaneering is a hospital logistics transport example. The shared material is the supervision challenge rather than the sector.\n\n### Does the evidence include measured operational outcomes?\n\nNo. The page includes design records, scripted acceptance checks for interface representation, client-stated operating context, client-reported production and feedback for Oceaneering, and explicit limits. It does not contain throughput, workload, error-rate, task-time, mission or commercial outcome measurements.\n\n### Does this context imply certification or safety compliance?\n\nNo. Standards and regulatory instruments are used only to describe the boundary between machine safety regimes and interface representation. Creative Navy claims no certification, audit or regulatory credential for the work described here.\n\n## Engagement evidence used on this page\n\n### Schone Airspace Group mission control for uncrewed aircraft\n\nSchone Airspace Group is used for command transactions, telemetry freshness, control link condition, fixed command identity, and the distinction between acknowledgement and observed state. The evidence includes design records and scripted acceptance checks of the interface representation, with the limits stated above.\n\n### Handheld command-and-control for uncrewed systems\n\nA European manufacturer of uncrewed systems, including one-way effectors, and the tactical command-and-control software that operates them is used for clarity of operator control, command-state questions, manual grouping and span-of-control constraints. The evidence is a design record with no Creative Navy field evidence and no measured operational result.\n\n### Oceaneering dispatch panel for an autonomous hospital transport fleet\n\nOceaneering is used for fleet supervision at hospital logistics scale, handover, physical recovery, floor-and-screen interface boundaries, and deliberate misuse as a design condition. The production and fidelity statements are client-reported and not independently verified.",
+  "claims": [
+    {
+      "claim": "This context concerns oversight of execution rather than oversight of AI inference.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "case evidence",
+      "notes": "The current source explicitly distinguishes AI oversight as oversight of an inference and this page as oversight of execution."
+    },
+    {
+      "claim": "Schone Airspace Group evidence includes a seven-state command transaction model with separate evidence requirements for each state.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "strong",
+      "notes": "D85 records the seven states and the required source evidence and prohibited inference for each."
+    },
+    {
+      "claim": "Schone Airspace Group scripted acceptance checks evaluated design representation and were not flight performance, operator proficiency, task-time or error-rate measures.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "strong",
+      "notes": "The mandatory calibration states that the checks were run by Creative Navy and then by five of nine operators, and defines what a pass means and does not mean."
+    },
+    {
+      "claim": "The handheld engagement was limited to interface structure, task behaviour, information priority and clarity of operator control, excluding autonomy, control algorithms, autonomous safety behaviour, datalinks, effectors, targeting logic, certification and weapons-review activity.",
+      "evidenceType": "case study",
+      "sourceStrength": "engagement record",
+      "notes": "H106 governs the scope boundary and is required to appear early where the engagement is used."
+    },
+    {
+      "claim": "The handheld engagement provides no Creative Navy field evidence and no measured operational figure.",
+      "evidenceType": "case study",
+      "sourceStrength": "engagement record",
+      "notes": "H111 records no Creative Navy field research, and H116 records no operational, mission, workload, error-rate, time-saving, throughput or commercial figure."
+    },
+    {
+      "claim": "Oceaneering evidence describes one deployment scale as 71 logistic lobbies, 17 cart types, 1,400 carts, 70 vehicles and approximately 4,000 transport orders a day.",
+      "evidenceType": "client-reported",
+      "sourceStrength": "case evidence",
+      "notes": "O18 provides the deployment scale from Oceaneering's own staff orientation film."
+    },
+    {
+      "claim": "The Oceaneering dispatch panel is in production and Oceaneering confirms it shipped as delivered, but the fidelity statement and feedback are client-reported and not independently verified.",
+      "evidenceType": "client-reported",
+      "sourceStrength": "moderate",
+      "notes": "Mandatory calibration for O8, O8a and O9 states that Creative Navy did not independently compare the shipped build against delivered files and no figures were shared."
+    },
+    {
+      "claim": "No safety claim, autonomy design claim, regulatory or certification credential, measured operational outcome or AI claim is established by this page.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "The current source lists these limits under What Creative Navy does not claim."
+    }
+  ],
+  "limitations": [
+    "No safety outcome is claimed for any engagement on this page.",
+    "Creative Navy did not design autonomy, control algorithms, autonomous safety behaviour, datalinks, effectors or vehicle safety systems in the three engagements described.",
+    "No regulatory or certification credential is claimed against ISO 3691-4:2023, STANAG 4586, STANAG 4671, SORA, the Machinery Regulation or any IMO instrument.",
+    "No throughput, workload, error-rate, time-saving, mission, training or commercial outcome measurement exists for the three engagements.",
+    "The Schone Airspace Group acceptance checks evaluated interface representation, not flight performance, operator proficiency, task completion time or error rate, and were not conducted on a connected system.",
+    "Schone Airspace Group research entered late, functioned as validation and correction, and included no contextual observation of live flight operations or timed task study.",
+    "The handheld engagement has no Creative Navy field evidence of any kind, and the operator behaviours in the expert review were client observations relayed to Creative Navy.",
+    "The Oceaneering design reviews were not usability tests, no task was attempted, nothing was measured and no dispatch operator took part.",
+    "Oceaneering production, design-fidelity and feedback statements are client-reported and not independently verified.",
+    "The page does not establish AI work or AI oversight; it concerns supervision of remote execution and state reporting."
+  ],
+  "publicationBlockers": [
+    {
+      "type": "source_conflict_ai_scope",
+      "message": "Human review required: the current source states that none of the three anchors is an AI product and requires no AI claim, but a later carried handling rule for the handheld engagement states that object detection, confidence scoring and target suggestion exist in that product while Creative Navy did not design that behaviour. The public page uses neutral AI-boundary wording, but the conflict should be resolved before publication.",
+      "severity": "blocker"
+    }
+  ],
+  "questionsForReview": [
+    "Resolve the source conflict between the page-level rule that none of the three anchors is an AI product and the later handheld handling rule that object detection, confidence scoring and target suggestion exist in that product, while Creative Navy did not design that behaviour.",
+    "Confirm that /contexts/defence-and-space-systems, the Schone Airspace Group case study and the handheld command-and-control case study are live before publishing this context page.",
+    "External references marked VERIFY in the current source, including the Machinery Regulation, IMO instrument and current STANAG 4586 edition, were omitted from bodyMarkdown. Confirm whether they should be added after primary-source verification."
+  ],
+  "relatedPageSlugs": [
+    "defence-and-space-systems",
+    "high-consequence-environments",
+    "multi-stakeholder-operational-environments",
+    "schone-mission-control",
+    "tactical-handheld-command-and-control",
+    "oceaneering-dispatch-panel"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "defence and space systems context",
+      "targetSlug": "defence-and-space-systems",
+      "placementHint": "In the opening section where the page distinguishes the shared challenge from the sector page.",
+      "reason": "The source explicitly says this page is the challenge and /contexts/defence-and-space-systems is the domain for two anchors."
+    },
+    {
+      "anchorText": "high-consequence environments context",
+      "targetSlug": "high-consequence-environments",
+      "placementHint": "In the opening section where related context pages are named.",
+      "reason": "The source identifies high-consequence environments as the context where consequence, not autonomy, is the organising condition."
+    },
+    {
+      "anchorText": "multi-stakeholder operational environments context",
+      "targetSlug": "multi-stakeholder-operational-environments",
+      "placementHint": "In the opening section or handover section.",
+      "reason": "The source identifies this related context for shift handover and role-boundary material."
+    },
+    {
+      "anchorText": "Schone Airspace Group mission control for uncrewed aircraft",
+      "targetSlug": "schone-mission-control",
+      "placementHint": "In the evidence basis or engagement evidence block.",
+      "reason": "The page uses Schone Airspace Group as the primary evidence anchor."
+    },
+    {
+      "anchorText": "handheld command-and-control for uncrewed systems",
+      "targetSlug": "tactical-handheld-command-and-control",
+      "placementHint": "In the scope-boundary section or engagement evidence block.",
+      "reason": "The page uses the handheld command-and-control engagement as a second evidence anchor."
+    },
+    {
+      "anchorText": "Oceaneering dispatch panel for an autonomous hospital transport fleet",
+      "targetSlug": "oceaneering-dispatch-panel",
+      "placementHint": "In the handover, fleet-supervision or engagement evidence block.",
+      "reason": "The page uses Oceaneering as the non-defence engagement anchor."
+    }
+  ],
+  "qualityChecks": {
+    "factsOnlyFromCurrentSource": true,
+    "documentationStyle": true,
+    "noMarketingLanguage": true,
+    "noInventedClaims": true,
+    "linksOnlyFromLinkingContext": true,
+    "internalNotesNotPublished": true,
+    "readyForSanityImport": false
+  }
+}

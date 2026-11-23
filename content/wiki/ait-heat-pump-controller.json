@@ -1,0 +1,169 @@
+{
+  "slug": "ait-heat-pump-controller",
+  "title": "AIT Heat Pump Controller",
+  "pageType": "case-study",
+  "category": "evidence",
+  "section": "Embedded",
+  "summary": "AIT, a European manufacturer of residential and commercial heat pumps, was replacing the controller used to commission and operate its units. Creative Navy designed a five-inch embedded interface that had to work identically through a rotary push-button and an optional touchscreen, delivered 29 screens and supported implementation through five months of engineering review and support.",
+  "keyFacts": [
+    "AIT may be named; the consumer brands, OEM customers, internal programme name, predecessor product name and individuals may not be named.",
+    "The engagement comprised eight one-week sprints: discovery and requirements inside the block, followed by five UX sprints and three UI sprints.",
+    "Creative Navy delivered 29 screens, a clickable prototype of the scenario-editing flow, a design system and three complete brand themes.",
+    "Every interaction had to work identically through a rotary push-button and through an optional touchscreen, and the concept had to survive the removal of either input.",
+    "The controller reached market months after the engagement as the delivered design, in a touch-only hardware configuration.",
+    "Creative Navy supported AIT's engineering team for five months through three scheduled progress meetings and eight answered support tickets.",
+    "There was no user research, no installer interviews, no contextual inquiry, no field observation, no usability testing and no research-built personas.",
+    "The evidence base included competitive benchmarking, a collaborative requirements table, published human-factors literature and four recorded working sessions with AIT's engineers.",
+    "AIT reports that dealer and partner feedback was much better than expected, but no figures were shared and Creative Navy has not independently verified the report."
+  ],
+  "bodySections": [
+    {
+      "heading": "AIT Heat Pump Controller as a Shipped Embedded-Device Interface",
+      "bodyMarkdown": "Creative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nAIT is a European manufacturer of residential and commercial heat pumps. Every heat pump it sells carries a controller: the panel on the unit through which an installer commissions the system and an owner operates it.\n\nAIT was replacing that controller with a new one built around a roughly five-inch colour display. Creative Navy designed the interface across eight one-week sprints, with discovery and requirements inside the block, followed by five UX sprints and three UI sprints. The Creative Navy-recorded engagement record lists 29 delivered screens, a clickable prototype of the scenario-editing flow, a design system and three complete brand themes.\n\nThe controller reached the market months after the engagement ended. Creative Navy compared the shipped interface against the designs it had delivered: the product ships as the design that was delivered. It ships in a touch-only hardware configuration."
+    },
+    {
+      "heading": "The Controller Had to Support Commissioning, Owner Operation and Several Access Levels",
+      "bodyMarkdown": "The AIT heat pump controller had to support two different operating situations: installer commissioning and owner operation. AIT's own structure used four access levels: end user, installer, service and factory. Installer and service access are entered by PIN and time out automatically.\n\nCommissioning is split into an installer assistant and a separate end-customer assistant. AIT's reason was physical: at a building site there is usually no network, so the installer cannot enter a Wi-Fi password, and the owner must complete that part later.\n\nThe controller can expose heating, cooling, domestic hot water, pool, photovoltaics and ventilation, although ventilation was not yet supported at the time. Only one heat-generating mode runs at a time, while photovoltaics and ventilation can run alongside one. Between one and seven modes may be installed; most installations are heating and hot water only.\n\nThe controller also needed to absorb a large settings space. Publicly published documentation for the controller it replaced described roughly 135 commissioning parameters, each with a factory setting, adjustable range, step size and required access level, and 98 numbered fault codes. Parameters are hidden depending on both access level and the heat pump variant the software detects.\n\nA start-up self-test screen lists the internal boards, inverters and fans the controller has detected. AIT described it by analogy to a PC BIOS screen. It cannot be skipped: if components are not found within the window, the controller enters a special operating mode. Creative Navy therefore had to design both the screen and a route back to it after it was hidden."
+    },
+    {
+      "heading": "One Interaction Grammar Had to Work for a Knob and an Optional Touchscreen",
+      "bodyMarkdown": "Creative Navy's design work was shaped by a hardware requirement: every interaction had to work identically through a rotary push-button and through an optional touchscreen, and the concept had to survive the removal of either one. The rotary push-button was mounted centrally below the display, with roughly 90 steps per revolution. Turning moved focus, pressing confirmed, and pressing for three seconds returned to the home screen.\n\nTouch was optional throughout the engagement. If the touchscreen were removed from the specification, the whole interface had to remain operable on the knob. In the other direction, AIT anticipated touch-only units within a few years and already exported the interface to a web server and to a simulator, where no hardware buttons exist.\n\nThis dual-input condition made constraint respecting central to the design. Creative Navy's Critical Systems Design method treated the input model as a structural constraint rather than as a styling problem. Several design decisions gave up a pattern that would be natural for one input in order to preserve one grammar for both.\n\nValue editing was resolved as one pattern for every value type. With the knob, the whole field is selected and then rotated to change the value; with touch, the same control is operated directly. Plus and minus buttons were dropped in favour of a single scroll selector after AIT pointed out that 0.1° increments would mean pressing plus twenty times to move two degrees.\n\nThe status bar was made informational only. It is not touchable and not reachable by the knob, because making it interactive would force knob users to traverse it to reach content and its targets were too small to touch reliably at physical size. The alert banner was the single exception because it had a large enough selectable area.\n\nThe commissioning progress bar was also made status-only. A swipeable progress bar would be natural on touch, but it would force knob users to traverse the whole bar before reaching each screen's content. This is a recorded example of tension-driven reasoning: an interaction was not selected because it was locally attractive, but because it remained coherent under both input devices."
+    },
+    {
+      "heading": "The Evidence Base Did Not Include User Research or Usability Testing",
+      "bodyMarkdown": "The AIT heat pump controller engagement did not include user research. There were no installer interviews, no contextual inquiry, no observation in the field, no usability testing and no personas built from research. The two personas used in the work — installer/service and end user — were supplied by AIT in the requirements table.\n\nCreative Navy's evidence base for this engagement was competitive benchmarking, collaborative requirements work with AIT, published human-factors literature and four recorded working sessions with AIT's own engineers. This establishes the reasoning basis for the design, but it does not establish validated usability with installers or owners before release.\n\nCreative Navy benchmarked 10 thermostat and heat pump control interfaces against 15 features, including scheduling by day and by interval, comfort modes, temperature offset, range setting, sensor calibration, date and time on the home screen, voice control, connectivity, mobile app, geofencing and physical buttons. Creative Navy also reviewed qualitative remarkable features of individual products.\n\nAIT supplied its own competitor visualisation before the engagement began. That material covered AIT's own current controller plus six competitor systems, across nine interface themes: hot water, refrigerant circuit, system, heating circuit, priorities, energy data, screed heating programme, time programme and heating/cooling curve. It contained 76 screenshots and links to competitors' public simulators.\n\nCreative Navy also documented a touch-target and legibility review grounded in published literature: Fitts's law, a kiosk key-size and spacing study, fingertip dimension data and recommended character height by reading distance. That review converted the literature into working minimums for this interface: a 12.5 mm, approximately 92 px, minimum touch dimension; 5 mm, approximately 38 px, spacing between adjacent targets; 20 mm, approximately 148 px, as the largest size that still improves accuracy; and an 80 px minimum touch area on a 4/8 px baseline grid. The review also stated its own limit: secondary interactive elements cannot always meet the ideal minimum."
+    },
+    {
+      "heading": "Creative Navy Designed Against a Specification It Could Not Operate",
+      "bodyMarkdown": "Creative Navy could not operate the controller AIT was replacing. AIT's simulator of the existing controller could not be shared for licensing reasons. Creative Navy also had no installer-level access, so everything behind the access PIN was unobservable at the start of the engagement.\n\nAIT's controller structure specification ran to roughly 900 nodes across eleven levels of hierarchy, in German. It also changed during the design block: in one revision, a single operating-mode setting became four settings, one per heating and mixing circuit. This is the progressive specification condition in the AIT case: the design work had to continue while the specification itself was still changing.\n\nCreative Navy's Critical Systems Design method handled the blanks phenomenon through a collaborative requirements table. The table paired each Creative Navy question with AIT's written answer, screen by screen, with separate columns for content and user actions, Creative Navy's notes and AIT's comments. It ran to roughly sixty pages.\n\nIn the AIT case, the requirements table converted an unrunnable specification into answerable questions. It also helped reveal an access-role issue. AIT later supplied keyboard shortcuts that opened installer and service access in the simulator, which is how the service role, distinct from installer and with rights to make more critical settings, came to light during the engagement rather than in the initial brief."
+    },
+    {
+      "heading": "Creative Navy Explored Alternatives Before Fixing the Home, Settings and System Structures",
+      "bodyMarkdown": "Creative Navy's recorded design work includes five generations of wireframes. Superseded sets were retained in the file and explicitly banner-marked as discarded, pointing to the current iteration. The sequence ran from layout sketches, through three sprint sets, to a final set.\n\nThe home screen illustrates lateral exploration within a constrained embedded interface. AIT's own sketch proposed a circular home layout. Creative Navy built it as a wireframe to show why it failed on a five-inch screen: circles wasted space and would force content off the home screen entirely. Rectangular widgets were adopted.\n\nCreative Navy also explored equal-size widgets that resize to the number of installed modes, rather than a fixed layout with a centred selection. One to four modes fit with no horizontal scrolling, which covers the overwhelming majority of installations recorded by AIT's operating-context evidence. A centre-focus tumbler pattern was explored for larger installations, at AIT's suggestion from a competitor product.\n\nWidget content was cut to three pieces of information each after AIT reviewed a wireframe at physical size and raised a legibility concern for older installers wearing glasses. The same legibility concern was supported by the documented touch-target and character-height review.\n\nThe alert treatment, status indicators and system area were also specified structurally. Alerts overlay the widgets rather than pushing the layout down. Widget focus is shown with a black outline; an active mode uses a flashing icon; and a queued mode has its own icon. The system overview was built as widgets consistent with the home screen, and the heat pump illustration was replaced with an abstract symbol so that one icon could cover every unit type."
+    },
+    {
+      "heading": "Value Entry, Save Behaviour and Commissioning Order Were Core Interaction Decisions",
+      "bodyMarkdown": "Creative Navy's Critical Systems Design method applied organic system building to the AIT controller by resolving repeated interaction types once and applying them across the product. Value editing became one pattern for every value type. Save and cancel were handled per page, not per value, and appeared only once a change had been made. This allowed a user to change several values on a screen and commit once, replacing a mixed model in which some screens saved automatically and others required confirmation.\n\nNumeric and alphanumeric entry, including serial number, hydraulic code and IP address, used per-digit scroll selection rather than a full keyboard. The reason was operational rather than decorative: per-digit selection works identically on knob and touch, and values that include hexadecimal digits can make a keyboard offering 0–9 and A–F confusing for non-expert users. AIT's opening position was a keyboard, and the position changed during the call. Both components were specified for the UI phase so that the decision remained reversible.\n\nText entry, including circuit names, mode names and Wi-Fi passwords, used a full keyboard in a full-screen modal that hides the top bar. The stated reason was to maximise key size.\n\nCommissioning order also changed. Mode and feature selection moved before the commissioning assistant, rather than sitting inside it as in AIT's structure document. This meant the assistant knew in advance what it had to cover, could show a progress bar from the first step and did not have to ask whether to install heating one mode at a time.\n\nLeaving commissioning part-way produced an explicit save progress, discard or return choice rather than silent loss. Hydraulic-diagram code entry also included a skip path into manual commissioning for installers who did not have the code."
+    },
+    {
+      "heading": "The Settings Structure Preserved Installer Familiarity While Adding Orientation",
+      "bodyMarkdown": "AIT explicitly asked Creative Navy not to change the settings structure too much because thousands of installers had been trained on the existing concept. AIT stated that changing the structure would generate calls because installers would not find settings where they expected them.\n\nCreative Navy therefore kept the settings structure close to the one installers already knew. The recorded design response was not to reorganise the structure wholesale, but to add orientation aids that did not break familiarity: a breadcrumb trail and a unique numeric identifier on every menu item. The numeric identifier allowed support staff to direct an installer to a setting by number over the telephone.\n\nCreative Navy's Critical Systems Design method treats this as constraint respecting applied to an installed base of people rather than software alone. The improvement was made in the dimension the constraint did not occupy: orientation improved while the recognisable structure remained.\n\nA role-selection step was added before PIN entry, rather than burying access switching inside the settings tree as it had been in the previous generation. AIT framed access restriction as a legal as well as practical requirement: not everyone may change every setting, and settings an installer makes must survive after the installer leaves the house. This is AIT's framing of the requirement, not a verified regulatory finding by Creative Navy."
+    },
+    {
+      "heading": "The Design System Supported Three Brand Themes and Brand-Neutral Production",
+      "bodyMarkdown": "Creative Navy delivered the AIT heat pump controller interface in three complete themes: two of AIT's consumer brands and a neutral OEM theme. Brand difference was confined to colour. Structure, layout and components were identical across all three.\n\nThe brand-neutral requirement was operational. AIT stated that units are produced brand-neutral and may not know their brand at first power-up. A controller that may not know which brand it belongs to cannot depend on a branded welcome state at first power-up.\n\nThe design system included a typography scale on a single typeface, with headings at 48/44 bold down to extra-small text at 14/20. It included a 24 px icon set of roughly forty icons and a 48 px set, with each icon labelled in both languages used during review.\n\nThe component library covered home widgets and their states, alerts in default and collapsed form, keyboard keys, progress-indicator tabs, a breadcrumb trail, a scenario timeline, week-day and value selectors, a circle loader and a serial-number input. Creative Navy also delivered interaction animations for widget focus and pressed states.\n\nThe interface also had to support 21 interface languages. The available evidence does not record a language-by-language validation process, so the language count should be read as an operating requirement rather than as evidence of verified localisation quality."
+    },
+    {
+      "heading": "Deferred Help Content Was Designed as a Defined Later State",
+      "bodyMarkdown": "The hardware info button had no complete help system behind it during the engagement. AIT stated that it did not plan to implement the information feature because it did not have information texts for all menu points, and there were hundreds of menu points.\n\nCreative Navy's design response was to avoid three unsupported states: a button that did nothing, partial help content, and a hidden long-press affordance. The info button was deferred to a later release, with the hardware button showing the system overview in the meantime.\n\nCreative Navy argued against long-press as the touch affordance on two grounds. Nothing on the screen would signal that long-press was available, and long-press on the knob already carried two functions: acknowledging a fault and returning home.\n\nThe proposed later pattern was an info icon beside items that have help text. This made the deferred feature a specified future state rather than an unresolved gap in the interface."
+    },
+    {
+      "heading": "Implementation Support Explains Shipped Design Fidelity Without Overstating Oversight",
+      "bodyMarkdown": "Creative Navy supported AIT's engineering team for five months during development. The Creative Navy-recorded Implementation Partnership consisted of three scheduled progress meetings, where the state of development was shared and compared against the delivered designs, and eight answered support tickets.\n\nThis was a review-and-support partnership, not embedded day-to-day engineering oversight. Its significance is that the scheduled reviews compared the build against the delivered designs, creating a documented mechanism for maintaining design fidelity during implementation.\n\nThe controller reached market months after the engagement ended. Creative Navy compared the shipped interface against the designs it had delivered: the product ships as the design that was delivered. It ships in a touch-only hardware configuration.\n\nThis shipped status should be read precisely. It is evidence that the design survived development and reached the market as delivered. It is not evidence that Creative Navy caused AIT's hardware decision, and it is not evidence of efficiency, commissioning time, support-call reduction, sales performance or usability improvement."
+    },
+    {
+      "heading": "Client-Reported Feedback Is Positive but Unquantified",
+      "bodyMarkdown": "AIT reports that feedback from its dealers and partners was much better than expected. This is client-reported and unquantified: no figures were shared, and Creative Navy has not independently verified it.\n\nThe AIT case therefore does not support a satisfaction score, a sales figure, a market-share claim or a quantified comparison. It supports only the calibrated statement that AIT reported better-than-expected dealer and partner feedback."
+    },
+    {
+      "heading": "Evidence Boundaries and Claims Not Established by the AIT Case",
+      "bodyMarkdown": "The AIT heat pump controller case establishes a detailed design process, a shipped design-fidelity result and a documented set of design decisions under hardware, access-level, brand and commissioning constraints. It does not establish measured product performance.\n\nThe case provides no efficiency, energy, commissioning-time, error-rate, support-call, training or throughput figure. It provides no sales, revenue, unit, growth or market-share number. It provides no usability or comprehension result because nothing was tested with installers or owners.\n\nCreative Navy did not certify to, audit against or work to any regulatory standard in this engagement. AIT's product is subject to several regimes, but the case evidence does not support any regulatory credential or compliance claim for Creative Navy's work.\n\nThe case also provides no evidence for gloved use, sunlight readability or night operation. It should not be used to claim safety performance; the controller governs comfort and efficiency, not a safety function."
+    }
+  ],
+  "evidenceSummary": {
+    "strongClaims": [
+      "Creative Navy designed the AIT heat pump controller interface across eight one-week sprints and delivered 29 screens, a clickable prototype, a design system and three complete brand themes.",
+      "Every interaction had to work identically through a rotary push-button and through an optional touchscreen, and the concept had to survive the removal of either input device.",
+      "The controller reached market months after the engagement as the design Creative Navy delivered, in a touch-only hardware configuration. This is evidence of design fidelity through development, not a measured performance outcome.",
+      "Creative Navy supported AIT's engineering team for five months through three scheduled progress meetings and eight answered support tickets.",
+      "The engagement did not include user research, field observation or usability testing with installers or owners.",
+      "Creative Navy could not operate the controller being replaced because AIT's simulator could not be shared and installer-level access was unavailable at the start.",
+      "The design system supported three brand themes with brand difference confined to colour while structure, layout and components remained identical.",
+      "The settings structure was kept close to the one installers already knew, with a breadcrumb trail and numeric identifiers added for orientation and support."
+    ],
+    "weakerClaims": [
+      "AIT reports that dealer and partner feedback was much better than expected, but no figures were shared and Creative Navy has not independently verified the report."
+    ],
+    "limitations": [
+      "There was no user research, no installer interviews, no contextual inquiry, no field observation, no usability testing and no research-built personas.",
+      "Creative Navy could not operate the controller it was replacing; AIT's simulator could not be shared for licensing reasons and installer-level access was not initially available.",
+      "The dealer-and-partner feedback statement is client-reported, unquantified and not independently verified by Creative Navy.",
+      "The shipped-design-fidelity finding does not establish usability, efficiency, commissioning-time reduction, error-rate reduction, support-call reduction, commercial performance or sales performance.",
+      "Creative Navy did not certify to, audit against or work to any regulatory standard in this engagement.",
+      "The case evidence provides no support for claims about gloved use, sunlight readability or night operation.",
+      "The three UI sprints have delivered-file evidence for the design system, typography, icon set and brand themes, but no recorded discussion of the reasoning behind those decisions.",
+      "One working session, the final UX review before the UI phase, is not transcribed; decisions from that session are not used as evidence."
+    ]
+  },
+  "relatedPageSlugs": [
+    "streetec-kntrl",
+    "industrial-process-control-platform",
+    "elsner-smart-home-controller",
+    "gericke-industrial-hmi",
+    "what-is-client-reported",
+    "what-we-do-not-claim",
+    "what-we-have-measured",
+    "embedded-devices-and-constrained-interfaces",
+    "consumer-and-multi-market-products",
+    "expert-tools-and-internal-systems"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "Streetec kntrl 2",
+      "targetSlug": "streetec-kntrl",
+      "reason": "The source explicitly connects the AIT installed-base constraint to the Streetec engagement."
+    },
+    {
+      "anchorText": "Industrial Process Control Platform",
+      "targetSlug": "industrial-process-control-platform",
+      "reason": "The source states that the same collaborative requirements-table device was used in the industrial engagement."
+    },
+    {
+      "anchorText": "What Is Client Reported",
+      "targetSlug": "what-is-client-reported",
+      "reason": "The AIT dealer-and-partner feedback statement is explicitly client-reported and unquantified."
+    },
+    {
+      "anchorText": "What We Do Not Claim",
+      "targetSlug": "what-we-do-not-claim",
+      "reason": "The AIT case has explicit non-claims around performance, usability testing, commercial figures and regulatory credentials."
+    },
+    {
+      "anchorText": "What We Have Measured",
+      "targetSlug": "what-we-have-measured",
+      "reason": "The source notes that the shipped design-fidelity comparison may belong there if that page includes verified design-fidelity comparison rather than performance measurement."
+    },
+    {
+      "anchorText": "Embedded Devices And Constrained Interfaces",
+      "targetSlug": "embedded-devices-and-constrained-interfaces",
+      "reason": "Source-classified context for this case study."
+    },
+    {
+      "anchorText": "Consumer And Multi Market Products",
+      "targetSlug": "consumer-and-multi-market-products",
+      "reason": "Source-classified context for this case study."
+    },
+    {
+      "anchorText": "Expert Tools And Internal Systems",
+      "targetSlug": "expert-tools-and-internal-systems",
+      "reason": "Source-classified context for this case study."
+    }
+  ],
+  "tags": [
+    "case study",
+    "embedded interface",
+    "heat pump controller",
+    "rotary knob interaction",
+    "touchscreen interface",
+    "commissioning workflow",
+    "design system",
+    "implementation support",
+    "evidence calibration"
+  ],
+  "_meta": {
+    "sourcePath": "sources/articles/Case studies/case-study--ait-heat-pump-controller.md",
+    "parentSlug": "embedded",
+    "childPageSlugs": [],
+    "generatedBy": "openai"
+  }
+}

@@ -1,0 +1,168 @@
+{
+  "slug": "defence-and-space-systems",
+  "title": "Defence and Space Systems",
+  "pageType": "context",
+  "category": "contexts",
+  "section": "Contexts",
+  "summary": "This context page describes how Creative Navy documents interface design for defence and space systems: space ground-segment information products, uncrewed aircraft control stations, and handheld command-and-control software for uncrewed systems including one-way effectors. It states the coverage, evidence basis, exclusions and limits of those engagements.",
+  "keyFacts": [
+    "Creative Navy's defence and space coverage rests on three engagements: KISPE Space, Schone Airspace Group, and an anonymised handheld command-and-control engagement for a European manufacturer of uncrewed systems, including one-way effectors.",
+    "KISPE Space provides evidence for a read-only ground-segment information product, with no user research, no representative-hardware validation and no design-fidelity comparison against the built product.",
+    "Schone Airspace Group provides evidence for a control station for uncrewed aircraft that observe, with nine participants at the end of UX development and scripted acceptance checks re-run by five of those operators.",
+    "The handheld command-and-control engagement provides evidence for physical input mapping, gloved-touch constraints, a millimetre-based sizing specification and a deliberate commitment gate for a strike command.",
+    "None of the three engagements included safety certification, weapons-review work, standards conformance, measured operational outcomes or field evidence for the handheld product.",
+    "The page uses standards and external research as domain framing only; Creative Navy did not certify to, audit against or work to any standard named on the page.",
+    "NATO APP-6 and the MIL-STD-2525 family frame standard identity and the distinction between pending, unknown and hostile identity states.",
+    "UNIDIR's human-machine-interface framing is used only to explain why interface usability matters as one modality of control, not to claim meaningful human control was delivered or improved."
+  ],
+  "bodySections": [
+    {
+      "heading": "Defence and Space Systems as Interfaces for Interpretation, Supervision and Command",
+      "bodyMarkdown": "Creative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nIn defence and space systems, the interface is often not the product. It is the surface through which a person interprets information gathered somewhere else, supervises a machine that is not physically present, or commits an act that cannot be recalled. Creative Navy's defence and space work is therefore documented as interface design for interpretation, supervision and command rather than as defence engineering or space-systems engineering.\n\nCreative Navy's Critical Systems Design method appears in this domain as a discipline of evidence boundaries. A screen must not assert that a provider is reachable when reachability is unknown. A command interface must distinguish a request, an acknowledgement and an observed state. A handheld control must not make an irreversible command look like an ordinary touchscreen action. The shared design problem is not visual polish; it is deciding what the interface is entitled to state.\n\nUNIDIR's *Human–Machine Interfaces in Autonomous Weapon Systems: Considerations for Human Control* (2022) frames human-machine interaction during use as one of three modalities of control, alongside control over the weapon's parameters and control over the environment of use. This page uses that framing as domain context only. It does not claim that Creative Navy delivered, established or improved meaningful human control."
+    },
+    {
+      "heading": "Coverage Across Three Defence and Space Engagements",
+      "bodyMarkdown": "Creative Navy's defence and space coverage is deliberately limited to three engagements with different problems and different evidence bases.\n\nKISPE Space, a UK space systems engineering company, anchors the space ground-segment information-product evidence. The KISPE Space product concerns access, interpretation and sharing of space-enabled information. The product boundary excludes autonomous operational decisions, inferred adversary classification or targeting, guaranteed service-quality prediction, and any substitute for existing command systems.\n\nSchone Airspace Group anchors the uncrewed-aircraft control-station evidence. The Schone Airspace Group work concerns a control station for uncrewed aircraft that observe. Its strongest evidence is a design record with Creative Navy-run acceptance checks re-run by five of nine operators who took part in research at the end of UX development.\n\nA European manufacturer of uncrewed systems, including one-way effectors, and the tactical command-and-control software that operates them anchors the handheld weapons-control evidence. The engagement covered interface structure, task behaviour, information priority and the clarity of operator control. It did not authorise and did not produce changes to autonomy, control algorithms, autonomous safety behaviour, the datalink, the effector, targeting logic, or any certification or weapons-review activity.\n\nThe coverage is a feature of the page, not a caveat. One engagement is a read-only information product with no user research and no fidelity verification. One is a consequential-command product with nine operators and a seven-month screen-by-screen build comparison. One is a handheld weapons-control product with a complete hardware input model, a gloved-first sizing specification and no field evidence."
+    },
+    {
+      "heading": "Information Provenance in Defence and Space Interfaces",
+      "bodyMarkdown": "Defence and space interfaces often display information whose source, age, permission state and delivery state vary independently. Creative Navy's Critical Systems Design method treats those facts as design material rather than as background metadata.\n\nKISPE Space provides the clearest example. The demonstration model included Earth observation imagery, GNSS receiver information, communications terminal information, provider services, orbital data, space weather and terrestrial weather. The design record treated status as seven independent dimensions: source transport, asset access, asset delivery, freshness, origin, operational condition and local change state. It rejected a single green-to-red health score because the same colour would have carried conflicting meanings across domains.\n\nThe KISPE Space design record also prohibited four shortcuts: grey does not necessarily mean offline, red does not necessarily mean inaccurate, an old observation is not automatically false, and a nominal coverage footprint is not proof that a particular terminal is connected. The strongest compact rule is that unknown is not adverse. An unreachable provider is not proof that a satellite service has failed.\n\nThe KISPE Space scenario material was a designed test fixture, not observations. It never represents a real location, operation, satellite or advisory. The product was built. Creative Navy did not support the build and has not compared the built interface against the delivered designs. There was no user research, nothing was validated on representative hardware, and no measurement of any kind was recorded.\n\nSchone Airspace Group applies the same discipline to live control information. Link condition and telemetry freshness are independent fields. A degraded control link and a stale sample are different operational facts, so a value that has stopped updating keeps its last value alongside its age rather than being relabelled as current or hidden.\n\nThe external vocabulary for this section is metadata and provenance vocabulary: ISO 19115, ISO 19157, OGC STAC, W3C PROV and RFC 3339. Those standards frame the category. They are not conformance claims for any Creative Navy engagement."
+    },
+    {
+      "heading": "Command Transactions for Remotely Operated Systems",
+      "bodyMarkdown": "Command interfaces in defence and space systems must make authority, target identity, acknowledgement and outcome state visible as separate facts. Creative Navy's Critical Systems Design method treats a command as a transaction whose evidence changes over time, not as a button press that can be assumed to have succeeded.\n\nSchone Airspace Group provides the central example. The design record defined a seven-state command transaction model: ready to request, request sent, awaiting response, command acknowledged, state observed, request rejected and response unknown. Each state had its own required evidence and prohibited inference. Acknowledgement did not stand for the intended mode being observed, state observed could not be inferred from acknowledgement alone, and rejection could not be inferred from silence.\n\nSchone Airspace Group also separated the inspected aircraft, the command target and command authority. The inspected aircraft and command target were independent variables with distinct visual treatments. Changing the command target required a named, explicit operator action that changed the recipient and sent no aircraft command. Interface target selection did not confer flight-controller authority, because eligibility and command-channel permission were resolved outside the interface.\n\nThe scripted acceptance checks were run twice: first by Creative Navy, then by five of the nine operators who took part in the research. Each check fixes a starting state, an operator action and an expected visible response, and a pass means the interface stated the correct operational fact under that condition. The checks evaluate the design representation. They are not a measure of flight performance, operator proficiency, task completion time or error rate, and they were not conducted on a connected system.\n\nThe Schone Airspace Group research involved nine participants: seven remote pilots, one mission planner and one payload operator. They were end-customer operators rather than Schone Airspace Group staff. The method was interviews and design walkthroughs, and the sessions entered at the end of UX development. Research therefore functioned as validation and correction, not as discovery. There was no contextual observation of live flight operations and no timed task study."
+    },
+    {
+      "heading": "Irreversible Command Commitment in Handheld Control Software",
+      "bodyMarkdown": "The handheld command-and-control engagement adds a stricter commitment problem. The recorded request for the handheld engagement required both the strike control and the abort control to remain permanently visible on the touchscreen because command delivery might be unreliable and operators had been using repeated input as a manual retry.\n\nCreative Navy's designers and the client's designers jointly wrote the case against making strike a permanently active touchscreen control. The recommendation placed strike commitment behind a press-and-hold of both flip-guarded physical buttons, kept strike request status visible, and treated retry as a bounded property of command architecture rather than repeated human input.\n\nThat recommendation did not make a safety claim. The hold duration and physical-control design required human-factors and system-safety testing, and the retry policy had to be defined by system safety rather than by design. The engagement measured no accidental activation, error rate, mission outcome or workload result."
+    },
+    {
+      "heading": "Gloved, Ruggedised and Non-Touch Operation",
+      "bodyMarkdown": "Defence and space interfaces may be operated through ruggedised hardware, physical controls, bezel keys, joysticks, flip-guarded buttons or a touchscreen whose display has not yet been selected. Creative Navy's Critical Systems Design method treats the input device as part of the operating model rather than as a late implementation detail.\n\nThe handheld command-and-control engagement recorded a complete physical mapping across twelve bezel keys, four push buttons, joysticks and flip-guarded buttons. It also recorded a complete non-touch navigation model. The map view used a centre marker fixed in the middle of the display, joystick movement to pan beneath it, and joystick selection to step between vehicles, waypoints and points of interest. This was not a fallback mode; it was a parallel interface through which the product could be fully operated without touching the screen.\n\nThe handheld sizing specification used four consequence tiers and was authored in millimetres, with pixel values derived per device because the display had not been chosen when the work began. T1 controls covered critical and unprotected actions, with large physical dimensions and isolation. T2 covered primary in-mission actions. T3 covered mis-tap-tolerant actions. T4 covered planning and static density. The unit choice made the specification portable across the selected handheld and tablet hardware.\n\nThe handheld specification measured itself against MIL-STD-1472 and stated where it deliberately departed from it. Protection patterns such as slide-to-confirm, hold-to-commit and select-then-arm were permitted at T2 and below, never at T1, where size was the protection and was not substituted.\n\nIn a prototype session run by the client with six participants — former military personnel and current drone operators, some working bare-handed and some gloved — gloved touch was found to be unreliable on the target panel. This was client-run, not Creative Navy field research. No Creative Navy usability test took place, nothing was tested on the physical device under any operational condition, and no operational, mission, workload, error-rate or commercial figure exists.\n\nThe handheld interface was built, and the swarm capability was built. No design-fidelity comparison exists. Built does not mean shipped as designed, deployed, validated or operationally proven."
+    },
+    {
+      "heading": "Symbology and Domain Vocabulary as Design Constraints",
+      "bodyMarkdown": "Defence and space interface work inherits a domain vocabulary before any new design decision is made. Creative Navy's Critical Systems Design method uses that vocabulary to avoid inventing meanings where the domain already has precise distinctions.\n\nNATO APP-6 and the MIL-STD-2525 family encode standard identity as a formal field. Pending and unknown are carried by a yellow frame and are visually distinct from the red used for hostile. The relevant design argument is not that Creative Navy invented the distinction between unknown and adverse. The argument is that KISPE Space applied a discipline already encoded in symbology to data provenance, source reachability and information age.\n\nThe handheld command-and-control engagement also used MIL-STD-2525 as rendering vocabulary. In that engagement, the vocabulary sat beside a hardware-specific input model and a sizing specification. It was not used as evidence of standards conformance.\n\nThe GPS Standard Positioning Service Performance Standard provides another useful boundary. Signal-in-space performance and user performance are different claims. A global horizontal accuracy figure for signal-in-space does not include receiver contribution, and the same document separates signal-in-space accuracy from SPS user performance. That distinction matters for interface copy because a screen must not let a domain-level performance statement read as proof of the user's actual device state.\n\nCreative Navy did not certify to, audit against or work to any standard named on this page. In this domain, the separation is especially important because compliance and control carry legal content."
+    },
+    {
+      "heading": "Regimes That Reach the Interface Without Becoming Credentials",
+      "bodyMarkdown": "Defence and space interfaces sit near regimes that can reach the screen: airworthiness, operational safety objectives, human engineering, human-machine interaction and control-system interoperability. Creative Navy's Critical Systems Design method can design interface behaviours under those constraints without turning those regimes into Creative Navy credentials.\n\nSchone Airspace Group sits closest to airworthiness language because the product is a control station for uncrewed aircraft that observe. The relevant design concern is that the operator sees command target identity, last reported flight mode, battery, control link state, telemetry freshness and consequential actions in fixed positions inside a persistent live command shell. That is an interface design claim. It is not a flight-safety, airworthiness, certification or regulatory credential.\n\nJARUS SORA, adopted by EASA as acceptable means of compliance to Regulation EU 2019/947, frames operational safety objectives that include human factors evaluation and a finding that the human-machine interface is appropriate for the operation. Hobbs and Lyall's *Human Factors Guidelines for RPAS Remote Pilot Stations* also frame remote pilot station design, with the stated limit that the guidelines exclude control of multiple aircraft by one pilot. These are external category frames, not evidence that Creative Navy certified or validated any product against them.\n\nMIL-STD-1472 and DEF STAN 00-250 are human-engineering anchors for the handheld discussion. MIL-STD-1472 is relevant because the handheld sizing specification measured itself against it and documented departures. DEF STAN 00-250 is relevant as a domain anchor. Neither is a Creative Navy conformance credential.\n\nGloved capacitive touch is a material constraint rather than a style preference. A glove can interrupt capacitive coupling between finger and sensor, so the panel may register nothing rather than register imprecisely. Projected-capacitive panels can be tuned for glove operation, and vendor guidance cited for this domain advises testing with the specific gloves that will be issued because results vary widely between glove types. The handheld engagement did not include Creative Navy-run gloved actuation testing."
+    },
+    {
+      "heading": "Exclusions That Prevent Evidence Contamination",
+      "bodyMarkdown": "Creative Navy's documented defence and space evidence does not include every military-adjacent or rugged operational engagement. The exclusion matters because adjacent evidence can otherwise make the domain look better evidenced than it is.\n\nCox Marine is not treated as defence evidence on this page. The published Cox Marine notes record an engine cluster display used on fast patrol craft and delivered with day, dusk and night mode specifications including a military night vision palette. That is a military-adjacent artefact in a marine engagement. The client makes marine engines, the study files as marine, and the available evidence does not record a defence operator, defence programme or military requirement.\n\nMaritime VTS, Raymarine and the MDU are also marine, not defence and space, in this context. Operational, ruggedised or mission-related language does not move an engagement into this page. Oceaneering is hospital logistics and belongs elsewhere. Adjacent-sector clients do not count unless the engagement itself produced defence or space evidence.\n\nA separate industrial engagement contains sample project groups named Aerospace & Defense and Mining in design files. Those are placeholder demonstration data invented to populate a prototype. They are not clients, not sectors served and not evidence. They are not cited on this page."
+    },
+    {
+      "heading": "What Creative Navy Does Not Claim in Defence and Space Systems",
+      "bodyMarkdown": "Creative Navy does not claim safety, certification or weapons-review work from the three defence and space engagements. None of the engagements included those activities.\n\nCreative Navy does not claim meaningful human control as an outcome. UNIDIR's human-machine-interface framing explains why interface usability matters in this class of system, but it does not license a claim that Creative Navy delivered, established or improved meaningful human control.\n\nCreative Navy does not claim conformance against NATO APP-6, the MIL-STD-2525 family, MIL-STD-1472, DEF STAN 00-250, JARUS SORA, Regulation EU 2019/947, ISO 19115, ISO 19157, OGC STAC, W3C PROV, RFC 3339 or any other standard named here.\n\nCreative Navy does not claim measured operational outcomes on this page. There is no operational, mission, workload, error-rate, time-saving, throughput or commercial figure for any of the three defence and space engagements.\n\nCreative Navy does not claim space-systems engineering. KISPE Space provides evidence for a ground-segment information product. Nothing on this page claims spacecraft, payload or space-operations engineering."
+    }
+  ],
+  "evidenceSummary": {
+    "strongClaims": [
+      "Creative Navy's defence and space coverage rests on three documented engagements with different evidence profiles: KISPE Space, Schone Airspace Group and an anonymised handheld command-and-control engagement.",
+      "KISPE Space is evidence for a ground-segment information product and not for operational command, adversary inference, targeting, spacecraft engineering or measured outcomes.",
+      "Schone Airspace Group evidence includes a seven-state command transaction model, late-stage research with nine participants and scripted acceptance checks re-run by five operators.",
+      "The handheld command-and-control engagement covered interface structure, task behaviour, information priority and clarity of operator control, while excluding autonomy, algorithms, safety behaviour, datalink, effector, targeting logic, certification and weapons-review activity.",
+      "The handheld engagement included a complete physical input mapping and a complete non-touch navigation model, making non-touch operation a parallel interface rather than a fallback.",
+      "External standards and research are used on this page as domain framing, not as Creative Navy conformance or certification evidence.",
+      "Cox Marine is excluded as defence evidence despite military-adjacent artefacts because the documented engagement is marine and records no defence operator, programme or military requirement."
+    ],
+    "weakerClaims": [
+      "A client-run prototype session with six participants found gloved touch unreliable on the target panel in the handheld engagement. This is client-reported evidence, not Creative Navy-run field research or a measured operational result."
+    ],
+    "limitations": [
+      "No safety, airworthiness, certification, weapons-review or regulatory credential is claimed for any engagement on this page.",
+      "No measured operational, mission, workload, error-rate, time-saving, throughput or commercial outcome is recorded for the three defence and space engagements.",
+      "KISPE Space had no user research, no representative-hardware validation and no Creative Navy comparison between the built interface and delivered designs.",
+      "Schone Airspace Group research entered late as validation and correction; it was not contextual observation of live flight operations and did not include a timed task study.",
+      "The handheld command-and-control engagement had no Creative Navy field research, no Creative Navy usability test and no testing on the physical device under operational conditions.",
+      "The handheld interface and swarm capability were built, but no design-fidelity comparison exists and no deployment or operational-use claim is made.",
+      "External standards named on the page frame domain vocabulary and regimes only; they are not conformance claims.",
+      "UNIDIR's human-machine-interface framing is used only to explain why interface usability matters as one modality of control; no meaningful-human-control outcome is claimed.",
+      "KISPE Space is not evidence for spacecraft, payload or space-operations engineering.",
+      "Cox Marine, Maritime VTS, Raymarine, the MDU, Oceaneering and the industrial engagement are excluded from the defence and space evidence base for this page."
+    ]
+  },
+  "relatedPageSlugs": [
+    "high-consequence-environments",
+    "multi-stakeholder-operational-environments",
+    "expert-tools-and-internal-systems",
+    "supervising-autonomous-and-remotely-operated-systems",
+    "regulated-products",
+    "embedded-devices-and-constrained-interfaces",
+    "kispe-space",
+    "schone-mission-control",
+    "tactical-handheld-command-and-control",
+    "cox-marine"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "high-consequence environments",
+      "targetSlug": "high-consequence-environments",
+      "reason": "Adjacent context for consequence as a design condition across sectors."
+    },
+    {
+      "anchorText": "multi-stakeholder operational environments",
+      "targetSlug": "multi-stakeholder-operational-environments",
+      "reason": "Relevant to KISPE Space because the engagement involved multiple populations and progressive detail."
+    },
+    {
+      "anchorText": "expert tools and internal systems",
+      "targetSlug": "expert-tools-and-internal-systems",
+      "reason": "Relevant to the KISPE Space evidence for progressive-detail information products."
+    },
+    {
+      "anchorText": "supervising autonomous and remotely operated systems",
+      "targetSlug": "supervising-autonomous-and-remotely-operated-systems",
+      "reason": "Overlaps with remote machines, uncrewed systems and human supervision while retaining a broader cross-domain scope."
+    },
+    {
+      "anchorText": "KISPE Space",
+      "targetSlug": "kispe-space",
+      "reason": "Anchor engagement for the space ground-segment information-product evidence."
+    },
+    {
+      "anchorText": "Schone Airspace Group",
+      "targetSlug": "schone-mission-control",
+      "reason": "Anchor engagement for the uncrewed-aircraft control-station evidence."
+    },
+    {
+      "anchorText": "tactical command-and-control software for uncrewed systems",
+      "targetSlug": "tactical-handheld-command-and-control",
+      "reason": "Anchor engagement for the anonymised handheld command-and-control evidence."
+    },
+    {
+      "anchorText": "Cox Marine",
+      "targetSlug": "cox-marine",
+      "reason": "Named near-miss that is excluded from the defence and space evidence base."
+    },
+    {
+      "anchorText": "regulated products",
+      "targetSlug": "regulated-products",
+      "reason": "Related to the page's separation between domain regimes, standards and Creative Navy credentials."
+    },
+    {
+      "anchorText": "embedded devices and constrained interfaces",
+      "targetSlug": "embedded-devices-and-constrained-interfaces",
+      "reason": "Relevant to ruggedised hardware, bezel keys, joysticks, constrained displays and gloved operation."
+    }
+  ],
+  "tags": [
+    "defence UX",
+    "space ground segment",
+    "ground control station",
+    "uncrewed systems",
+    "command and control",
+    "human-machine interaction",
+    "source provenance",
+    "gloved operation",
+    "ruggedised hardware",
+    "evidence limits"
+  ],
+  "_meta": {
+    "sourcePath": "sources/articles/Contexts/contexts--defence-and-space-systems.md",
+    "parentSlug": "contexts",
+    "childPageSlugs": [],
+    "generatedBy": "openai"
+  }
+}

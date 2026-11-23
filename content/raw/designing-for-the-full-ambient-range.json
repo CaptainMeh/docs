@@ -1,0 +1,187 @@
+{
+  "_type": "documentationPage",
+  "sourceFile": "Articles/Capabilities/capabilities--designing-for-the-full-ambient-range.md",
+  "sourcePath": "sources/articles/Capabilities/capabilities--designing-for-the-full-ambient-range.md",
+  "sanityDocumentIdCandidate": "documentationPage.designing-for-the-full-ambient-range",
+  "title": "Designing for the Full Ambient Range",
+  "slug": {
+    "_type": "slug",
+    "current": "designing-for-the-full-ambient-range"
+  },
+  "pageType": "capability",
+  "category": "capabilities",
+  "parentSlug": "capabilities",
+  "childPageSlugs": [],
+  "excerpt": "Creative Navy designs interfaces for the full ambient range in which they will be read, including daylight, dusk, night, side-light, glare and darkened cabins or wheelhouses. The capability concerns interface behaviour, palette modes, layout resilience and physical-size checking, not display engineering.",
+  "metaTitle": "Designing for the Full Ambient Range",
+  "metaDescription": "How Creative Navy designs interfaces for daylight, dusk, night, glare and dark rooms, with evidence limits and no display-engineering claim.",
+  "summary": "Designing for the full ambient range means treating lighting as an operating condition that changes how the same information is read. Creative Navy's work in the MDU, Streetec kntrl 2, an industrial process-control engagement, Torqeedo and Elsner shows design responses to dark rooms, mode changes, glare, viewing position and physical-size legibility, with explicit limits around display engineering and validation.",
+  "definition": "Designing for the full ambient range is the capability of designing one interface so that the same information remains usable across the lighting conditions in which it is read, from direct daylight and glare to dusk, night and darkened rooms, without treating either extreme as the only design target.",
+  "keyFacts": [
+    "The MDU interface was delivered with day, dusk and night display modes, and those modes shipped.",
+    "The MDU palettes were Creative Navy's own designed three-mode palette, not inherited from the panel's colour tables or validated against a regulated colour specification.",
+    "Streetec kntrl 2 supports brightness control, darkening triggered by a vehicle signal, a separate brightness value for the darkened state and an option to switch the display off at night.",
+    "Streetec font sizes were raised by 25% to 20px body text after legibility was checked at physical scale, including measuring the rendered screen against a ruler during a review.",
+    "The industrial engagement observed mixed daylight through a floor-to-ceiling glazed façade, side-light, glare and reflections severe enough to obscure parts of the environment.",
+    "Torqeedo is the documented instance where ambient conditions were tested where they occur, including vibration, night conditions and glare in sea trials.",
+    "Creative Navy did not write luminance specifications, select transflective displays, specify optical bonding or evaluate anti-reflective treatment in the engagements described on this page.",
+    "No user testing showed MDU users reading the day, dusk or night modes at night; the modes were designed and shipped, but not observed in night operation."
+  ],
+  "tags": [
+    "ambient light",
+    "night operation",
+    "glare",
+    "display modes",
+    "dark adaptation",
+    "sunlight readability",
+    "marine interfaces",
+    "embedded interfaces",
+    "legibility",
+    "interface constraints"
+  ],
+  "bodyMarkdown": "## Summary\n\nCreative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nDesigning for the full ambient range means designing one interface for the lighting conditions in which it will actually be read. The design problem is not daylight alone, and it is not night alone. The harder problem is the range between direct daylight, dusk, dark rooms, glare, reflections and display-off states.\n\nCreative Navy's Critical Systems Design method treats ambient light as an operating constraint. In this capability, Critical Systems Design asks what the same information has to do when a screen becomes a light source in a dark room, when reflections remove part of the display, when the reader's position cannot be predicted, and when a panel's hardware properties are fixed before interface design begins.\n\nA car cabin and a ship's bridge are the same problem at different scales, and in both the correct answer involves being able to turn the information down rather than only up. That is why the MDU and Streetec kntrl 2 belong on the same capability page.\n\n## Four principles for designing across daylight, dusk, night and glare\n\nCreative Navy's Critical Systems Design method treats ambient lighting as a system condition rather than as a visual preference. Four principles recur across the documented cases.\n\n1. In a dark room, a display is a light source before it is a surface. The MDU illustrates the wheelhouse version of this problem: a bright screen in a darkened wheelhouse can cost the watchkeeper the dark adaptation needed to see out of the window, which is the primary instrument. Streetec kntrl 2 illustrates the cabin version: the display can be darkened by a vehicle signal, hold a separate brightness value for the darkened state and be switched off entirely at night.\n\n2. The same information has to survive every mode, not just look right in each mode. The MDU was delivered with day, dusk and night display modes on a panel built for that operating regime. The dark interface direction was selected with all three modes in view, so status, text, surfaces and hierarchy had to remain understandable across mode changes.\n\n3. Glare is a layout problem before it is a hardware problem. In the industrial engagement for a European industrial automation vendor whose process control software coordinates machining cells, mixed daylight through a floor-to-ceiling glazed façade produced strong side-light, glare and reflections. Screens were read at distance, and the previous interface included 10px uppercase button text. When reflections obscure part of the screen, interface dependence on the obscured area becomes the design issue.\n\n4. Type has to be checked at physical size, not only in the file. In Streetec kntrl 2, font sizes were increased by 25% to 20px body text after legibility was checked at physical scale. The rendered screen was measured against a ruler during a review when the on-screen size looked wrong, with a commitment to check the result on the real panel before sign-off.\n\n## Designing for the range rather than one extreme\n\nCreative Navy designs for the ambient range because most interfaces are designed in one lighting condition and read in several. A glazed wheelhouse can move from direct sun on the glass to full darkness within a single watch. A car cabin can move through the same range within a single journey. A daylit factory hall can produce side-light and reflections that obscure parts of the environment.\n\nThe MDU is the anchor case for this capability. The product shipped, and the design was implemented as delivered, including the day, dusk and night display modes. That statement is evidence of design fidelity: the delivered modes survived development and shipped. It is not evidence that the modes improved performance, changed user behaviour or were successful in operation.\n\nThe MDU palettes were Creative Navy's own designed three-mode palette. The claim is limited to design and implementation: the modes were reasoned from operating condition and shipped as delivered. The page makes no claim that the palettes were validated against any regulated colour specification.\n\nStreetec kntrl 2 makes the same argument outside the marine context. In 99% of cases, the Streetec user is sitting in the car with the ignition on, by day or by night. The documented design response includes brightness control, darkening triggered by a digital signal from the vehicle, a separate brightness value for the darkened state and the option to switch the display off entirely at night.\n\n## What a dark room costs\n\nA dark room changes the status of a screen. Creative Navy's Critical Systems Design method treats the screen as part of the room because the screen emits light into the user's operating environment.\n\nIn the MDU case, the wheelhouse window is operationally more important than the display. A screen that is too bright in a darkened wheelhouse can interfere with the watchkeeper's ability to see outside. The relevant design question is therefore how far the interface can go down, what it stops emitting, and how status remains legible when the interface is no longer using daylight assumptions.\n\nIn the Streetec case, the documented reasoning is similar at cabin scale. The display can be switched off at night because an always-lit screen in a dark cabin can itself be the problem. The display-off state is therefore a designed state, not merely the absence of interaction.\n\nThe evidence remains bounded. The MDU modes were designed and shipped, but nobody was observed reading them at night. The MDU engagement had no user research, no observation on a bridge, no contextual inquiry and no usability testing; the user-side evidence base was one external advisor, a serving master and chief engineer advising the manufacturer, together with the manufacturer's engineers, a written specification, competitive benchmarking and published human-factors literature.\n\n## Designing three display modes rather than one dimmer\n\nCreative Navy designed the MDU interface around day, dusk and night display modes rather than treating brightness as the only variable. The documented dark interface direction included a semantic token set covering background, text, stroke and surface elevation, with status colours in red, amber and green against a blue brand colour.\n\nThe point of a three-mode interface is not that each mode is visually distinct. The point is that the same operational information remains interpretable when the palette changes. Status that survives a mode change is the same requirement described elsewhere as state and status visibility design.\n\nA display mode also belongs with degraded-mode and edge-case analysis. A mode that changes how every colour reads can affect alarms, labels, surfaces, disabled states, active states and status hierarchy. Creative Navy's Critical Systems Design method treats that as a design condition that must be reasoned through, not as a final cosmetic adjustment.\n\n## Daylight, glare and the part of the screen that disappears\n\nGlare reduces the dependable area of an interface. Creative Navy's design work treats glare as a layout and information-dependency problem before treating it as a hardware problem.\n\nIn the industrial engagement for a European industrial automation vendor whose process control software coordinates machining cells, the operating environment included mixed daylight through a floor-to-ceiling glazed façade and industrial ceiling light. The observed condition produced strong side-light, glare and reflections. Every operator screen was bolted to its own machine, and operators walked to the relevant machine to learn its state; overhead stack lights existed because no screen was readable across the hall.\n\nThe previous interface contained button text measured at 10px, line-height 100%, uppercase with wide tracking. That example does not establish a measured lighting outcome. It is evidence of a design condition: when screens are read at distance and glare can obscure parts of the environment, small uppercase text is a poor dependency to create.\n\nThe MDU adds a second layout constraint. Where the unit sits relative to its reader cannot be predicted because the unit is mounted wherever a wheelhouse has room. Viewing angle, reach and glare therefore interact: the same screen may be read from positions nobody specified.\n\n## Hardware constraints are not display engineering claims\n\nCreative Navy's Critical Systems Design method can treat hardware as a constraint without claiming display engineering work. That distinction is central to this capability.\n\nThe MDU ran on a manufacturer-selected 15-inch certified marine panel PC at 1024 × 768, with an active area of 305.13 × 229.1 mm, 400 cd/m² brightness, 700:1 contrast, projected-capacitive touch, an anti-reflective glass option, a backlight dimmable from near 0% to 100%, and five capacitive bezel keys. These are properties of the panel the manufacturer selected. Creative Navy did not select the hardware, certify it, audit against it or evaluate it.\n\nThe hardware figures are therefore background constraints, not Creative Navy specifications. Creative Navy did not write a luminance specification. Creative Navy did not specify a transflective display. Creative Navy did not specify or evaluate optical bonding. Creative Navy did not specify or evaluate anti-reflective treatment.\n\nISO 9241-303, ISO 9241-125 and EN 12464-1 can frame questions of display legibility, visual presentation and lighting conditions at an installation. On this page they are framing references only. They are not evidence that any engagement certified to, audited against or validated a display against those standards.\n\n## Physical-size checking belongs to ambient-range design\n\nCreative Navy treats physical-size checking as part of designing for the full ambient range because a screen is read at a physical size, from a physical position, under actual lighting conditions. File dimensions alone do not answer that question.\n\nIn Streetec kntrl 2, font sizes were raised by 25% to 20px body text after legibility was checked at physical size. The design record includes measuring the rendered screen against a ruler during a review call when the on-screen size looked wrong, and committing to check the result on the real panel before sign-off.\n\nThat evidence supports a design-process claim, not a measured legibility result. It shows that Creative Navy checked scale and adjusted typography. It does not establish a luminance figure, a viewing-angle result, a contrast result or a quantified readability result for Streetec kntrl 2.\n\nElsner provides a smaller adjacent example. Physical installation conditions were treated as design inputs for a KNX room controller: the recommended 140 cm mounting height, the risk that installers sometimes place it at 110 cm, daylight as the primary use condition and standing use in varying lighting including low-luminance environments. Testing confirmed navigation legibility and touch-target accuracy under those conditions.\n\n## Field-tested ambient evidence sits separately from designed modes\n\nTorqeedo is the documented instance in this evidence set where ambient conditions were tested where they occur. The design problem was maintaining legibility under vibration, sharp vessel movement, glare from cold water, rain and night conditions on a 10-inch embedded display with limited pixel density.\n\nIn the Torqeedo case, contrast, minimum touch-target dimensions and typography for sunlight readability were defined as parameters rather than design preferences. Concepts that slowed night operation were discarded in testing with real data rhythms. Alarm visibility was settled in sea trials under vibration, night and glare rather than in a specification.\n\nThe limit remains attached to the evidence. Torqeedo did not produce a luminance specification. No display was evaluated. The testing addressed whether the interface could be read and ranked under those conditions, not what operators did differently because of the design.\n\nThis distinction matters because the MDU and Streetec examples show designed and shipped responses to ambient range, while Torqeedo supplies the stronger field-condition evidence. They should not be collapsed into one evidence class.\n\n## What this capability does not cover\n\nDesigning for the full ambient range is not display engineering. Creative Navy did not write luminance specifications, specify transflective displays, specify optical bonding or evaluate anti-reflective treatments in the engagements described on this page. Panel brightness, contrast ratio, viewing angle, anti-reflective glass options and backlight range are hardware properties unless Creative Navy specified or evaluated them; in the cited cases, Creative Navy did not.\n\nDesigning for the full ambient range is also not night-vision imaging system engineering. Two narrow facts exist in the documentation. Cox Marine's published case notes record day, dusk and night mode specifications including a military night vision palette, and name military night vision among the domain learning for an engine cluster display used on fast patrol craft among other craft. A separate handheld command-and-control engagement recorded night-vision compatibility as present on one device and undetermined on another.\n\nNeither fact establishes night-vision engineering by Creative Navy. No emission characteristics were specified. No palette was validated against a goggle. Nothing was tested. In the handheld command-and-control engagement, nothing was tested on the physical device under any operational condition, including sunlight testing or night-vision testing.\n\nThis page therefore describes night operation and ambient readability as interface-design concerns. It does not claim display-engineering capability, panel-selection credential, regulated palette validation or night-vision compatibility work.\n\n## Related pages\n\nDesigning for the full ambient range is closely related to state and status visibility design, because status must remain legible when display modes change. It is also related to design for abnormal and degraded scenarios, because a display mode changes the conditions under which every colour and state is interpreted.\n\nThe MDU and Streetec kntrl 2 provide the main evidence for dark rooms, designed modes, dimming and display-off states. The industrial process-control platform provides the glare and side-light case. The handheld command-and-control engagement and Cox Marine provide narrow boundary facts about night-vision-related material, without establishing night-vision engineering.\n\nThe input-device relationship belongs primarily on the page about when the input device is not fixed. Touch, reach, bezel keys and physical controls matter here only where they interact with lighting, viewing position and physical-size legibility.",
+  "claims": [
+    {
+      "claim": "Creative Navy designs for the full ambient range rather than for a single average lighting condition.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "Supported by the MDU, Streetec, industrial engagement, Torqeedo and Elsner evidence described in the current material."
+    },
+    {
+      "claim": "The MDU was delivered with day, dusk and night display modes, and those modes shipped as delivered.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "strong",
+      "notes": "The required calibration states: The product shipped, and the design was implemented as delivered, including the day, dusk and night display modes."
+    },
+    {
+      "claim": "The MDU palettes were Creative Navy's own designed three-mode palette and not a regulated colour-table claim.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "engagement record",
+      "notes": "The engagement lead confirmed the palettes were Creative Navy's own; the page avoids any regulated colour-table or validation claim."
+    },
+    {
+      "claim": "Streetec kntrl 2 supports darkening triggered by a vehicle signal, a separate darkened-state brightness value and an option to switch the display off at night.",
+      "evidenceType": "case study",
+      "sourceStrength": "engagement record",
+      "notes": "Supported by S32 and S38 in the current material."
+    },
+    {
+      "claim": "Streetec typography was increased by 25% to 20px body text after checking legibility at physical size.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "engagement record",
+      "notes": "Supported by S48 and S49; this is not presented as a measured legibility outcome."
+    },
+    {
+      "claim": "The industrial engagement provides the glare case: mixed daylight through a floor-to-ceiling glazed façade produced side-light, glare and reflections.",
+      "evidenceType": "Creative Navy-observed",
+      "sourceStrength": "engagement record",
+      "notes": "Supported by E12, with E10 and E22 used for reading distance and the 10px uppercase text counter-example."
+    },
+    {
+      "claim": "Torqeedo is the evidence set's field-condition ambient example, with alarm visibility settled in sea trials under vibration, night and glare.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "The page preserves the limit that Torqeedo did not produce a luminance specification or display evaluation."
+    },
+    {
+      "claim": "Creative Navy does not claim display engineering, panel selection, luminance specification, optical bonding, anti-reflective evaluation or night-vision imaging compatibility work on this page.",
+      "evidenceType": "definition",
+      "sourceStrength": "strong",
+      "notes": "Directly supported by the explicit exclusions and what Creative Navy does not claim in the current material."
+    }
+  ],
+  "limitations": [
+    "The MDU modes were designed and shipped, but nobody was observed reading them at night.",
+    "The MDU engagement had no user research; the user-side evidence base was one external advisor plus manufacturer engineers, specification material, competitive benchmarking and literature.",
+    "Streetec physical-size checking supports a design-process claim, not a quantified legibility result.",
+    "No luminance, contrast, viewing-angle or readability result is claimed for Streetec kntrl 2.",
+    "The industrial engagement's client-reported usability result is not used as lighting evidence.",
+    "Torqeedo tested whether the interface could be read and ranked under ambient conditions; it did not produce a luminance specification or display evaluation.",
+    "Creative Navy did not specify or evaluate transflective display technology, optical bonding or anti-reflective treatment in the engagements described.",
+    "Night-vision-related facts from Cox Marine and the handheld command-and-control engagement are narrow boundary facts and do not establish NVIS engineering capability."
+  ],
+  "publicationBlockers": [],
+  "questionsForReview": [
+    "Confirm whether ISO 9241-303, ISO 9241-125 and EN 12464-1 should remain named on the final page as framing references only.",
+    "Confirm the current status of MIL-STD-3009 before naming it anywhere; it is omitted from the public page here.",
+    "If Streetec panel luminance or viewing-angle figures are wanted, extract and review the encrypted display datasheet; no figure is stated here.",
+    "Verify whether any IMO or IEC bridge-display dimming requirement applies to an advisory instrument before adding a regulatory statement; no such requirement is stated here."
+  ],
+  "relatedPageSlugs": [
+    "mdu-ship-motion-monitoring",
+    "streetec-kntrl",
+    "industrial-process-control-platform",
+    "cox-marine",
+    "tactical-handheld-command-and-control",
+    "state-and-status-visibility-design",
+    "design-for-abnormal-and-degraded-scenarios",
+    "when-the-input-device-is-not-fixed",
+    "alarm-management"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "MDU ship motion monitoring",
+      "targetSlug": "mdu-ship-motion-monitoring",
+      "placementHint": "Related pages section and MDU evidence references",
+      "reason": "The MDU is the anchor case for day, dusk and night display modes and the wheelhouse dark-room problem."
+    },
+    {
+      "anchorText": "Streetec kntrl 2",
+      "targetSlug": "streetec-kntrl",
+      "placementHint": "Streetec evidence references and related pages section",
+      "reason": "Streetec supplies the car-cabin evidence for dimming, darkened-state brightness and display-off design."
+    },
+    {
+      "anchorText": "industrial process-control platform",
+      "targetSlug": "industrial-process-control-platform",
+      "placementHint": "Daylight, glare and the part of the screen that disappears section",
+      "reason": "The industrial engagement supplies the observed glare, side-light and reflection case."
+    },
+    {
+      "anchorText": "state and status visibility design",
+      "targetSlug": "state-and-status-visibility-design",
+      "placementHint": "Designing three display modes rather than one dimmer section",
+      "reason": "Status that survives display-mode changes is directly related to the state-and-status capability."
+    },
+    {
+      "anchorText": "design for abnormal and degraded scenarios",
+      "targetSlug": "design-for-abnormal-and-degraded-scenarios",
+      "placementHint": "Designing three display modes rather than one dimmer section and related pages section",
+      "reason": "A display mode changes how every colour and state is interpreted, which overlaps with degraded-mode reasoning."
+    },
+    {
+      "anchorText": "when the input device is not fixed",
+      "targetSlug": "when-the-input-device-is-not-fixed",
+      "placementHint": "Related pages section",
+      "reason": "Touch, reach, bezel keys and physical controls belong mainly on the input-model page, with only light-related items covered here."
+    },
+    {
+      "anchorText": "Cox Marine",
+      "targetSlug": "cox-marine",
+      "placementHint": "What this capability does not cover section",
+      "reason": "Cox Marine provides a narrow night-vision palette fact without establishing NVIS engineering by Creative Navy."
+    },
+    {
+      "anchorText": "handheld command-and-control engagement",
+      "targetSlug": "tactical-handheld-command-and-control",
+      "placementHint": "What this capability does not cover section",
+      "reason": "The handheld engagement provides a narrow hardware compatibility fact and a clear absence of operational sunlight or night-vision testing."
+    },
+    {
+      "anchorText": "alarm management",
+      "targetSlug": "alarm-management",
+      "placementHint": "Related pages section",
+      "reason": "Alarm visibility and status hierarchy intersect with ambient display modes, especially in the MDU and Torqeedo evidence."
+    }
+  ],
+  "qualityChecks": {
+    "factsOnlyFromCurrentSource": true,
+    "documentationStyle": true,
+    "noMarketingLanguage": true,
+    "noInventedClaims": true,
+    "linksOnlyFromLinkingContext": true,
+    "internalNotesNotPublished": true,
+    "readyForSanityImport": true
+  },
+  "__sourceCategoryDir": "Capabilities"
+}

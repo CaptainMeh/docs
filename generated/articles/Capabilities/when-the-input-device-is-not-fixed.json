@@ -1,0 +1,207 @@
+{
+  "_type": "documentationPage",
+  "sourceFile": "Articles/Capabilities/capabilities--when-the-input-device-is-not-fixed.md",
+  "sourcePath": "sources/articles/Capabilities/capabilities--when-the-input-device-is-not-fixed.md",
+  "sanityDocumentIdCandidate": "documentationPage.when-the-input-device-is-not-fixed",
+  "title": "When the Input Device Is Not Fixed",
+  "slug": {
+    "_type": "slug",
+    "current": "when-the-input-device-is-not-fixed"
+  },
+  "pageType": "capability",
+  "category": "capabilities",
+  "parentSlug": "capabilities",
+  "childPageSlugs": [],
+  "excerpt": "Input-model independence means designing an interface so it remains operable when the hardware path changes, disappears, or competes with another path. The documented cases include rotary encoders, touchscreens, bezel keys, foot pedals, credentials, trays, gloved operation, and object-based inputs.",
+  "metaTitle": "When the Input Device Is Not Fixed",
+  "metaDescription": "How Creative Navy designs interfaces for variable input models: touch, rotary controls, hardware keys, gloved use, foot pedals and object-based inputs.",
+  "summary": "This capability describes how Creative Navy treats the input model as a design variable rather than a fixed assumption. The page covers interfaces that must work across touch and hardware controls, fixed physical controls that span several screens, panel-specific touch sizing, reach models, and non-finger inputs.",
+  "definition": "Input-model independence is the discipline of designing an interface so the operating model remains coherent when the input device is not fixed, changes during hardware development, or must coexist with other input paths.",
+  "keyFacts": [
+    "Designing for two input models is not designing twice; it is choosing controls that work under both, often as the second-best control for each input rather than the best control for one.",
+    "AIT is the strongest rotary-control anchor: touch was optional, the rotary encoder was the guaranteed input, and the shipped product later used a touch-only hardware configuration while matching the delivered design.",
+    "Raymarine supplies the inverse problem: one physical control beside several screens, with measured comparison between contextual and fixed control roles on a bench prototype.",
+    "The handheld command-and-control engagement built a complete non-touch navigation model as a parallel interface, not as a fallback or expert shortcut.",
+    "Touch-target minimums are treated as properties of a panel and operating context, not as numbers that transfer unchanged between products.",
+    "The MDU establishes touch as the only input path on a 15-inch certified marine panel, with no mouse or keyboard on the vessel.",
+    "Assemblio establishes an environment with no guaranteed input device, including customer use of foot pedals where workers stand with both hands occupied.",
+    "visioncheckout establishes object-based input: a keycard can identify, set price level and authorise payment, while a tray starts the transaction."
+  ],
+  "tags": [
+    "input-model independence",
+    "embedded interfaces",
+    "touchscreen design",
+    "rotary encoder",
+    "hardware controls",
+    "gloved operation",
+    "touch targets",
+    "reach model",
+    "bezel keys",
+    "object-based input",
+    "Critical Systems Design"
+  ],
+  "bodyMarkdown": "## Summary\n\nCreative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nInput-model independence treats the input device as a design variable rather than a fixed premise. A touchscreen may be added, removed for cost, or fail to register a gloved finger. A rotary encoder may be expected to serve more than one screen. A panel size may still be undecided when the interface structure has to be drawn. A user may operate the product through a foot pedal, a credential, a tray, or a physical key rather than a finger.\n\nCreative Navy's Critical Systems Design method handles this by defining the operating contract before treating any one input path as final. The recurring design move is to choose a control that works under every required input model, even when that control is second-best for each input considered alone.\n\n## What an input model is and why it is rarely fixed\n\nAn input model is the set of assumptions that determine how a user acts on an interface: touch targets, rotary focus movement, physical keys, softkeys, joysticks, foot pedals, credentials, trays, or other operating paths. Input-model independence means that those assumptions are designed explicitly rather than inherited from a device mockup.\n\nThe AIT heat pump controller shows the problem in both directions. The controller design had to work if the touchscreen were removed for cost, and it also had to work if touch became the only input. The physical concept included a rotary push-button with roughly 90 steps per revolution, press to confirm, a three-second press to return home, a status LED ring, a physical Back button, a second physical button of undecided function, and no Home button by decision. Touch remained optional throughout.\n\nThe interface consequences were concrete. Plus and minus controls were removed because the knob could not address them economically and 0.1 degree increments made repeated pressing impractical. One value-editing pattern replaced separate components for different option counts. Non-interactive chrome stayed non-interactive because anything interactive had to be reachable by the knob. Per-digit scroll entry was specified for serial numbers, hydraulic codes and IP addresses because it behaved identically under knob and touch.\n\nThe controller reached the market months after the engagement ended. Creative Navy compared the shipped interface against the designs it had delivered: the product ships as the design that was delivered. It ships in a touch-only hardware configuration.\n\nThat AIT fact supports a narrow claim. It shows that the delivered interface survived a hardware change and development fidelity check. It does not show that the shipped product performed better, sold better, or was easier to operate. There was no user research in the AIT engagement.\n\n## The guaranteed input, the optional input and the input that may be deleted\n\nCreative Navy's Critical Systems Design method distinguishes the guaranteed input from the optional input. The guaranteed input is the path the interface must support under all hardware decisions. The optional input may improve speed or convenience, but the interface cannot depend on it unless the hardware decision is settled.\n\nIn AIT, the rotary encoder was the guaranteed input during design. Touch could be removed from the hardware specification, and touch could also become the only input in a web server, simulator, or future touch-only unit. This forced value editing, navigation, back behaviour, status chrome and text entry to be considered as one operating grammar rather than as separate touch and knob variants.\n\nThe MDU is the opposite pole. The MDU is a ship motion monitoring system whose bridge interface ran on a 15-inch certified marine panel PC at 1024 × 768, with projected-capacitive touch and no mouse or keyboard on the vessel. Every input the interface needed had to be constructed on the glass. A four-digit numeric PIN was chosen instead of a password because the purpose was preventing accidental change rather than security, and a numeric keypad gives larger targets than a full keyboard on that touch panel. Numeric entry used number pads rather than sliders or scrub inputs because precise values are hard to enter by touch.\n\nAssemblio establishes a third case: no input device was guaranteed. Assemblio Smart Viewer could be used without a mouse and often with nowhere to put one. Some customers used foot pedals to step forward and back because the worker was standing with both hands occupied. Creative Navy did not observe a shop floor in the Assemblio engagement, and Creative Navy conducted no user research of its own. The operating-context statements came from Assemblio's description and customer feedback supplied by Assemblio.\n\n## Which functions earn a physical control\n\nPhysical controls should be allocated by consequence tier, not by convenience. The handheld command-and-control engagement for a European manufacturer of uncrewed systems, including one-way effectors, and the tactical command-and-control software that operates them makes that allocation rule explicit.\n\nThe engagement covered interface structure, task behaviour, information priority and the clarity of operator control. It did not authorise and did not produce changes to autonomy, control algorithms, autonomous safety behaviour, the datalink, the effector, targeting logic, or any certification or weapons-review activity.\n\nThe handheld specification used four consequence tiers in millimetres, with pixels derived for a 7-inch ruggedised handheld controller and a 10-inch ruggedised tablet. T1 controls were critical and unprotected, limited to three or four per view, sized at at least 22 mm, and isolated by 5 mm. T2 covered primary in-mission actions at 15 mm. T3 covered mis-tap-tolerant actions at roughly 12 mm. T4 covered planning and static density at 8–10 mm.\n\nThe allocation rule was that critical, unprotected controls carry a hardware alternative wherever the device provides one. The most consequential action was removed from the touchscreen entirely and committed through a press-and-hold of two flip-guarded physical buttons for one second. Protection patterns such as slide-to-confirm, hold-to-commit at 300–600 milliseconds, and select-then-arm were permitted at T2 and below; they were never permitted at T1, where size was the protection and was not substituted.\n\nThe same engagement recorded a complete physical mapping across twelve bezel keys, four push buttons, two 2-axis joysticks, a five-direction joystick, two 1-axis joysticks and two flip-guarded buttons. It also specified a complete non-touch navigation model through which the product could be fully operated without touching the screen. That hardware path was not an accelerator for experts and not a fallback for failure. It was a parallel interface.\n\nIn a prototype session run by the client with six participants — former military personnel and current drone operators, some working bare-handed and some gloved — gloved touch was found to be unreliable on the target panel.\n\nThat finding matters because the hardware path had already been designed as an equal path. The finding is not Creative Navy's research, not a usability test with fixed criteria, not a validation of the design, and not evidence of system safety. It is a client-run prototype finding that the target panel did not reliably register gloved touch.\n\n## One physical control across several screens creates the inverse problem\n\nRaymarine supplies the inverse case: the input model was fixed, but one physical control sat beside several screens that each had a legitimate use for it. The conflict concerned a channel encoder that could be treated contextually, so that rotation changed channel on the radio view, target on the AIS view and selection in menus.\n\nThe failure mode was structural. A contextual encoder can produce an action that appears to have worked because something visible moves. A mode error therefore does not necessarily produce an error message. The design question became which control model could guarantee predictable communication behaviour across screens, interruptions and levels of user experience.\n\nFour control models were compared against the same operational scenarios: contextual rotary, fixed role, explicit mode, and a dedicated new control. The fixed role prevailed because the channel encoder always kept its channel-selection domain, while contextual interaction moved to directional keys and softkeys. The retained invariant was that a screen may change what the keypad and labelled softkeys do, but it must not silently reassign the domain of the dedicated channel encoder, microphone channel controls, push-to-talk, priority channel access or protected emergency actions.\n\nCreative Navy designed the test protocols, moderated all twenty-four sessions and analysed the results. Raymarine supplied the physical bench mockup on which the sessions ran. Each comparison was paired and counterbalanced within participants, with task wording, target data and starting states held constant. The findings describe operator behaviour on a prototype against a fixed scenario fixture. They are not a measure of radio performance, of real-world calling accuracy, or of outcomes at sea.\n\nThe measured comparison carried both gain and cost. Wrong-domain activations were six of eight under the contextual model and zero of eight under the fixed model, on retuning and again on recovery after an interruption. Unassisted completion was six of eight under the contextual model and eight of eight under the fixed model. Median target browsing time was 6.25 seconds contextual and 8.55 seconds fixed, a 2.30 second penalty under the selected model. Creative Navy retained the fixed model and moved optimisation into target ordering, selection visibility and shortcut placement rather than reintroducing a second channel mode.\n\nRaymarine does not provide touch-target evidence. It should not be used for touch minimums, gloved operation, lighting, vibration, wet-surface behaviour, sea trials, radio performance or outcomes at sea.\n\n## Touch minimums are properties of panels rather than portable numbers\n\nTouch-target minimums should be derived for the panel, density, viewing conditions and input conditions in front of the design team. The documented engagements show several conversions of published human-factors material into working specifications, and they do not produce one universal number.\n\nIn AIT, a documented touch-target and legibility review converted Fitts's law, kiosk key-size and spacing research, fingertip dimension data and recommended character height by reading distance into working minimums for that controller: a 12.5 mm, approximately 92 px, minimum touch dimension; 5 mm, approximately 38 px, spacing between adjacent targets; 20 mm, approximately 148 px, as the largest size that still improves accuracy; and an 80 px minimum touch area on a 4/8 px baseline grid. The review stated its own limit: secondary interactive elements could not always meet the ideal minimum.\n\nIn the MDU, a separate review converted Fitts's law and MIT Touch Lab fingertip dimensions as reported in Yablonski's Laws of UX into working minimums for a 15-inch panel at approximately 3.35 pixels per millimetre: a 13 mm, 44 px, minimum touch dimension; 6 mm, 20 px, minimum spacing; 20 mm, 68 px, as the largest size that still improves accuracy; and a resulting 48 px minimum touch area. The review stated that the safe minimum also depends on touchscreen quality because lower-quality panels resolve contact less precisely and need more applied pressure.\n\nIn the handheld command-and-control engagement, the specification was authored in millimetres with pixels derived per device because the display had not been chosen when the work began. That unit choice made the specification survive the hardware decision and made it portable to the second device. The specification measured itself against MIL-STD-1472H and stated where it deliberately departed from it. It was authored, not validated.\n\nIn visioncheckout, target sizes were resolved in millimetres as well as pixels on self-service kiosk hardware whose physical panel size was not fixed in the design documents. The documented values were a 56 × 56 px minimum, about 10 mm physical, and a 104 px standard, about 18.6 mm, on a 4 px grid, with a narrow exception allowing one dimension to be smaller where the other compensates. The point of the conversion was that pixel figures alone are not meaningful when the panel's physical size is undecided.\n\nNo touch minimum on this page is validated as a general standard. Each is a specification derived from published literature for a particular panel or hardware decision.\n\n## Reach-model independence is separate from input-model independence\n\nInput-model independence asks whether the interface can be operated through the available input devices. Reach-model independence asks whether the reader's physical position relative to the display makes the interface usable without forced reach, occlusion or awkward body movement.\n\nThe MDU shows the distinction. Its input path was known: touch only. Its reader position was not known. The unit could be mounted wherever a wheelhouse had room, so a navigation sidebar that works for someone standing on one side of the screen could force someone standing on the other side to reach across the display and cover it. Bottom navigation was chosen over sidebars and over a hamburger menu because the scarce resource was horizontal space, and because the unit's position relative to its reader could not be predicted.\n\nStreetec kntrl 2 adds a smaller-panel reach example. The 4.3-inch capacitive touchscreen explicitly displaced competitors' single-colour hardware-button units. Thumb reach and right-handed operation shaped control placement; pressure values sat above adjustment arrows to avoid finger occlusion; discrete sliders were used for tank pressure and brightness because precision mattered and fingers are imprecise; the primary control occupied the full screen width as a touch target; and type was sized and verified at true physical scale.\n\nStreetec also shows feature allocation across devices. Profile names were editable only in the mobile app because a 4.3-inch screen could not host a full alphabetic keyboard. The HMI showed a two-character abbreviation, and name entry lived on the phone.\n\n## Inputs are not always fingers\n\nCreative Navy's Critical Systems Design method treats input as an operational act, not only as a finger touching glass. Several documented engagements involve input performed through an object or an external device.\n\nAssemblio Smart Viewer had no guaranteed mouse and sometimes no place to put one. Customer use of foot pedals mattered because workers stood with both hands occupied and used the pedal to step forward and back. The attention budget was the binding constraint: workers focused on what their hands were doing, not on the screen.\n\nvisioncheckout, a German vendor of computer-vision self-checkout systems for staff restaurants and catering, adds object-based input. Presenting a keycard could identify the user, set the price level and authorise payment. Presenting a tray started the transaction. The start screen therefore carried no interactive controls, because users had no free hand at that point.\n\nThe same object-based argument connects to self-service-terminal accessibility, but the evidence here is narrower. The visioncheckout engagement did not include usability testing on the new designs, nothing had shipped, and no accessibility conformance or certification claim is supported.\n\n## Design-system reuse stops at the interaction layer when touch changes the product\n\nAdapting a design system for touch is not the same as enlarging existing components. In a European industrial automation engagement whose process control software coordinates machining cells, the target product was a 7-inch 1024 × 600 touch device with hardware buttons. Creative Navy recorded that most desktop components could not transfer because touch targets, spacing, typography, layout density and navigation all differed.\n\nThe appropriate reuse was visual and systemic, not component-level interaction reuse. Colour, type choices and stylistic principles could remain shared so that products in a family stayed recognisably related and individually distinguishable. The interaction layer needed new foundations. Creative Navy argued in writing that compressing the foundational touch work into a single sprint would produce structurally incomplete foundations and hidden downstream cost; the client chose the largest scoped option.\n\nThe same engagement provides a counter-example: 10 px uppercase button text with wide tracking was identified from the design file inspector. That type treatment is useful here because it shows why physical scale, touch target documentation and component-level target boundaries matter on small touch devices.\n\n## What this capability produces\n\nCreative Navy's Critical Systems Design method produces input decisions that can be carried into specification, development and review. The outputs vary by engagement, but the recurring artefacts include interaction grammars that work across inputs, physical-control allocation rules, per-panel touch-size derivations, hardware mappings, non-touch navigation models, and constraints on what screen-level context may change.\n\nFor products with more than one input path, the output is usually a single operating grammar rather than separate touch and hardware designs. AIT used one value-editing grammar across rotary and touch operation. The handheld command-and-control engagement specified a full hardware path and a full touch path. Raymarine fixed the domain of a physical control across screens rather than letting each screen reassign it.\n\nFor products with only one input path, the output can still be input-model work. The MDU had only touch, but it still required per-panel target sizing, numeric entry decisions and reach-model reasoning. visioncheckout used tray and keycard presentation as operational input rather than treating the start screen as a conventional touch surface.\n\n## Evidence basis\n\nThe strongest Creative Navy-verified fidelity evidence is AIT. The controller reached market after the engagement, Creative Navy compared the shipped interface against the delivered designs, and the product ships as the design that was delivered in a touch-only hardware configuration. That is evidence of development fidelity after a hardware decision changed the input configuration; it is not evidence of performance, sales or usability.\n\nThe strongest Creative Navy-measured comparison on this page is Raymarine. Creative Navy designed the protocols, moderated all twenty-four bench sessions and analysed the results. The fixed-role control model eliminated wrong-domain activations in the tested tasks but cost a 2.30 second median target-browsing penalty. The test was paired and counterbalanced within participants, but it was a prototype bench comparison against fixed scenarios, not a sea trial or a measure of radio performance.\n\nThe strongest event-based evidence is the handheld prototype session run by the client. Six participants, including former military personnel and current drone operators, worked bare-handed and gloved, and gloved touch was found to be unreliable on the target panel. The evidence is client-run and qualitative. Its importance is that the parallel hardware path already existed when the touch path failed under that condition.\n\nThe touch-size evidence is specification evidence rather than validation evidence. AIT, the MDU, the handheld command-and-control engagement and visioncheckout each converted published human-factors material into product-specific working values. None of those conversions should be cited as a validated universal minimum.\n\n## Boundaries and limits\n\nCreative Navy makes no conformance claim on this page for MIL-STD-1472H, ISO 9355, ISO 9241, ISO 9241-411 or any ergonomics standard. The handheld specification explicitly measured itself against MIL-STD-1472H and stated where it departed from it.\n\nNo validated touch minimum is claimed. Every touch conversion described here is a specification derived from published literature for a particular panel or hardware decision. None was validated as a general rule.\n\nNo user validation is claimed from AIT, the MDU or Assemblio. AIT had no user research. The MDU had no user research, with user-side evidence limited to one external advisor alongside the manufacturer's engineers and published literature. Assemblio involved no Creative Navy-run user research and no Creative Navy observation of a shop floor.\n\nNo measured outcome is claimed except Raymarine's prototype bench comparison. The Raymarine result concerns operator behaviour on a prototype against fixed scenarios with eight participants per comparison. It does not measure radio performance, real-world calling accuracy or outcomes at sea.\n\nNo claim is made that any product became easier, faster or safer to operate under either input model. The supported claims concern design decisions, specifications, prototype behaviour under stated conditions, and documented fidelity where Creative Navy compared shipped designs against delivered work.\n\n## Related pages\n\nGlove-operable interfaces is the adjacent capability for the gloved-touch problem. This page states the handheld finding because it explains why input-model independence matters; the glove-specific hardware and touch behaviour belongs there.\n\nCommand integrity design is the related capability for why the most consequential action in the handheld command-and-control engagement left the touchscreen. This page covers where controls live across input models; command integrity covers what commits the action.\n\nDesigning for the full ambient range is related but separate. Brightness, night modes, glare and ambient display conditions are not absorbed into input-model independence.\n\nAccessibility for self-service terminals is related where credentials, trays and payment surfaces act as inputs. The input-model argument here is narrower than an accessibility conformance argument.",
+  "claims": [
+    {
+      "claim": "Input-model independence treats the input device as a design variable rather than a fixed premise.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "case evidence",
+      "notes": "Supported by the opening position and the consolidated principles across AIT, Raymarine, handheld, MDU, Assemblio and visioncheckout."
+    },
+    {
+      "claim": "The AIT controller shipped in a touch-only hardware configuration as the design Creative Navy delivered.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "strong",
+      "notes": "A13 is described as Creative Navy-verified; it supports fidelity after a hardware input change, not performance or quality."
+    },
+    {
+      "claim": "Raymarine's fixed-role control model removed wrong-domain activations in the tested prototype scenarios but introduced a 2.30 second median target-browsing penalty.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "strong",
+      "notes": "The test was paired and counterbalanced on a bench prototype; findings are not radio performance, field performance or outcomes at sea."
+    },
+    {
+      "claim": "The handheld command-and-control engagement specified a complete non-touch navigation model as a parallel interface, not as a fallback mode.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "Supported by H87 and H89 in the documented engagement evidence."
+    },
+    {
+      "claim": "The handheld engagement allocated physical controls by consequence tier, with T1 controls never allowed to substitute protection patterns for size.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "Supported by H54-H59 and H65; the specification was authored and not validated."
+    },
+    {
+      "claim": "Touch-target minimums differed across AIT, the MDU, the handheld engagement and visioncheckout because each conversion was tied to panel, density, viewing or hardware conditions.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "Supported by A7, M11, H54-H61, H108 and V96; no universal validated minimum is claimed."
+    },
+    {
+      "claim": "The MDU shows touch-only input with unknown reader position, making reach-model independence separate from input-model independence.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "Supported by M16, M17, M19 and M50; MDU had no user research."
+    },
+    {
+      "claim": "visioncheckout establishes object-based input, where tray presentation starts the transaction and keycard presentation can identify, set price level and authorise payment.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "Supported by V54, V55 and V84; no usability testing on the new designs and nothing shipped."
+    }
+  ],
+  "limitations": [
+    "No conformance is claimed to MIL-STD-1472H, ISO 9355, ISO 9241, ISO 9241-411 or any ergonomics standard.",
+    "No touch-target minimum described on this page is validated as a general minimum; each is a specification derived for a particular panel or hardware condition.",
+    "AIT, the MDU and Assemblio provide design reasoning but no user validation by Creative Navy.",
+    "The handheld gloved-touch finding came from a client-run prototype session with six participants and is not Creative Navy's research or a usability test with fixed criteria.",
+    "Raymarine provides the only measured comparison on this page, and it concerns prototype bench behaviour under fixed scenarios rather than field performance or outcomes at sea.",
+    "The handheld command-and-control engagement did not cover autonomy, control algorithms, autonomous safety behaviour, the datalink, the effector, targeting logic, certification or weapons-review activity.",
+    "visioncheckout had no usability testing on the new designs and nothing had shipped.",
+    "No claim is made that any product was easier, faster, safer, more commercially successful or better received because of the input-model decisions."
+  ],
+  "publicationBlockers": [],
+  "questionsForReview": [
+    "None"
+  ],
+  "relatedPageSlugs": [
+    "glove-operable-interfaces",
+    "command-integrity-design",
+    "designing-for-the-full-ambient-range",
+    "accessibility-for-self-service-terminals",
+    "design-for-abnormal-and-degraded-scenarios",
+    "state-and-status-visibility-design",
+    "error-reduction-and-recovery-design",
+    "ait-heat-pump-controller",
+    "raymarine-vhf",
+    "mdu-ship-motion-monitoring",
+    "streetec-kntrl",
+    "assemblio",
+    "visioncheckout",
+    "tactical-handheld-command-and-control"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "AIT heat pump controller",
+      "targetSlug": "ait-heat-pump-controller",
+      "placementHint": "Use on the first mention of the AIT heat pump controller in the input-model section.",
+      "reason": "AIT is the strongest evidence for a design surviving removal of one input path."
+    },
+    {
+      "anchorText": "MDU",
+      "targetSlug": "mdu-ship-motion-monitoring",
+      "placementHint": "Use on the first mention of the MDU in the touch-only input section.",
+      "reason": "The MDU is the page's example of touch as the only input path and reach-model uncertainty."
+    },
+    {
+      "anchorText": "Assemblio Smart Viewer",
+      "targetSlug": "assemblio",
+      "placementHint": "Use in the section on no guaranteed input device.",
+      "reason": "Assemblio provides the evidence for foot pedals, no guaranteed mouse and client-described shop-floor conditions."
+    },
+    {
+      "anchorText": "Raymarine",
+      "targetSlug": "raymarine-vhf",
+      "placementHint": "Use on the first mention of Raymarine in the section about one physical control across several screens.",
+      "reason": "Raymarine provides the inverse control-domain problem and the measured bench comparison."
+    },
+    {
+      "anchorText": "Streetec kntrl 2",
+      "targetSlug": "streetec-kntrl",
+      "placementHint": "Use in the reach-model section where the 4.3-inch touchscreen is discussed.",
+      "reason": "Streetec supports thumb reach, finger occlusion, physical-scale type checks and mobile allocation of profile-name editing."
+    },
+    {
+      "anchorText": "visioncheckout",
+      "targetSlug": "visioncheckout",
+      "placementHint": "Use in the section on object-based inputs.",
+      "reason": "visioncheckout supports tray and keycard presentation as input actions."
+    },
+    {
+      "anchorText": "handheld command-and-control engagement",
+      "targetSlug": "tactical-handheld-command-and-control",
+      "placementHint": "Use on first mention of the European manufacturer of uncrewed systems in the physical-control allocation section.",
+      "reason": "The handheld engagement supports consequence-tier control allocation and a complete non-touch navigation model."
+    },
+    {
+      "anchorText": "glove-operable interfaces",
+      "targetSlug": "glove-operable-interfaces",
+      "placementHint": "Use in the related pages section and near the handheld gloved-touch finding if a link is inserted in prose.",
+      "reason": "The source states that gloved touch belongs primarily on the glove-operable page."
+    },
+    {
+      "anchorText": "command integrity design",
+      "targetSlug": "command-integrity-design",
+      "placementHint": "Use in the related pages section when distinguishing control placement from command commitment.",
+      "reason": "The source states that command integrity owns why the most consequential action left the touchscreen."
+    },
+    {
+      "anchorText": "designing for the full ambient range",
+      "targetSlug": "designing-for-the-full-ambient-range",
+      "placementHint": "Use in the related pages section where ambient display conditions are separated from input-model independence.",
+      "reason": "The source states that ambient-range material must remain separate from this page."
+    },
+    {
+      "anchorText": "accessibility for self-service terminals",
+      "targetSlug": "accessibility-for-self-service-terminals",
+      "placementHint": "Use in the related pages section where credential-as-input is discussed.",
+      "reason": "The source identifies the self-service accessibility page as the related place for credential-as-input in regulated self-service contexts."
+    },
+    {
+      "anchorText": "design for abnormal and degraded scenarios",
+      "targetSlug": "design-for-abnormal-and-degraded-scenarios",
+      "placementHint": "Use if the body is extended to discuss an input path that may be deleted as a degraded mode specified in advance.",
+      "reason": "The source identifies deleted or absent input paths as related to degraded-mode analysis."
+    }
+  ],
+  "qualityChecks": {
+    "factsOnlyFromCurrentSource": true,
+    "documentationStyle": true,
+    "noMarketingLanguage": true,
+    "noInventedClaims": true,
+    "linksOnlyFromLinkingContext": true,
+    "internalNotesNotPublished": true,
+    "readyForSanityImport": true
+  }
+}

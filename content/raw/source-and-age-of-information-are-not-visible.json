@@ -1,0 +1,199 @@
+{
+  "_type": "documentationPage",
+  "sourceFile": "Articles/Failures/failures--interpretation--source-and-age-of-information-are-not-visible.md",
+  "sourcePath": "sources/articles/Failures/failures--interpretation--source-and-age-of-information-are-not-visible.md",
+  "sanityDocumentIdCandidate": "documentationPage.source-and-age-of-information-are-not-visible",
+  "title": "Source and Age of Information Are Not Visible",
+  "slug": {
+    "_type": "slug",
+    "current": "source-and-age-of-information-are-not-visible"
+  },
+  "pageType": "failure",
+  "category": "failures",
+  "parentSlug": "interpretation-failures",
+  "childPageSlugs": [],
+  "excerpt": "Source-provenance uncertainty occurs when an interface shows a value without showing where it came from, when it was obtained, how it arrived, or whether it still holds. The failure is not uncertainty itself, but the loss of provenance, freshness and delivery context that the system may already know.",
+  "metaTitle": "Source and Age of Information Are Not Visible",
+  "metaDescription": "Failure where interfaces show values without origin, age, delivery state, source reachability or validity, leaving users to infer what still holds.",
+  "summary": "This failure describes interfaces that display information values while hiding origin, lineage, time, delivery state, source reachability, freshness, expiry or unresolved conflict. It is distinct from AI model confidence: the uncertainty comes from the information supply chain rather than from inference.",
+  "definition": "Source-provenance uncertainty is an interpretation failure in which a system displays a value but does not show the value's origin, lineage, observation time, receipt time, validity period, delivery state, source reachability, conflict status or freshness rule.",
+  "keyFacts": [
+    "The failure concerns inherited uncertainty in information sources, not AI-specific uncertainty produced by a model.",
+    "KISPE's design record treated status as seven independent dimensions rather than one green-to-red health score: source transport, asset access, asset delivery, freshness, completeness, conflict and provenance confidence.",
+    "The maritime VTS engagement rejected a numeric association-confidence badge because engineering could not supply a calibrated, operationally defensible figure.",
+    "KISPE separated acquisition, issue, receipt, validity and query times so that delivery time did not stand in for observation time.",
+    "Schone Airspace Group separated control link condition from telemetry freshness, retaining the last value with its age when updates stopped arriving.",
+    "Raymarine treated stale vessel records as last-known positions and disabled call actions where a usable registered identity was unavailable.",
+    "The MDU case shows that a value's time window is part of its meaning: the alarm bound to the rolling twenty-minute minimum and maximum rather than an instantaneous number.",
+    "No engagement evidence on this page measured whether operators understand provenance indicators or act differently because of them.",
+    "The KISPE product was built, but Creative Navy did not support the build and has not compared the built interface against the delivered designs.",
+    "External standards named in the evidence, including ISO 19115, ISO 19157, W3C PROV, OGC STAC and RFC 3339, frame the category; no conformance claim is made."
+  ],
+  "tags": [
+    "interpretation failure",
+    "source provenance",
+    "information lineage",
+    "freshness",
+    "staleness",
+    "event time",
+    "delivery time",
+    "data quality",
+    "state visibility",
+    "Critical Systems Design"
+  ],
+  "bodyMarkdown": "## Summary\n\nCreative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nSource and age visibility fails when an interface shows a value but hides the facts needed to judge that value. The missing facts may include origin, lineage, observation time, receipt time, validity interval, delivery state, access permission, source reachability, freshness policy, expiry, cached status and unresolved disagreement between providers.\n\nThe failure is not that information is uncertain. The failure is that the system may know where information came from and when it arrived, but the interface collapses that knowledge into a value, a colour, a generic badge or no visible state at all. The operator then has to reconstruct provenance from memory or treat the value as more current, complete or authoritative than it is.\n\n## What distinguishes source-provenance uncertainty from adjacent failures\n\nSource-provenance uncertainty is different from AI-specific uncertainty. The page Uncertainty Is Not Communicated Usefully concerns the reliability of model outputs and the interface's failure to communicate confidence in an answer. This page concerns uncertainty inherited from information sources: where a value came from, when it was measured, through what path it arrived and whether it still holds. A system with no model can have this failure.\n\nSource-provenance uncertainty is also a specific instance of the broader failure described by Users See Information But Cannot Judge What Matters. That broader page concerns relevance and judgement. This page concerns systems with multiple information sources where a displayed value needs surrounding evidence before it can be interpreted.\n\nData Is Available But Hard To Interpret concerns the legibility of the value itself. Source-provenance uncertainty concerns the information around the value. Users Cannot See What State The System Is In concerns the system's own state; a provider feed being unreachable is a system state, while the meaning of already displayed readings after that failure is a provenance and freshness problem.\n\n## Failure pattern: the interface displays a value without its origin\n\nSource-provenance uncertainty appears when an interface treats a value as self-explanatory. The value may be a position, a vessel identity, a telemetry reading, an image record, a coverage notice, a map tile status, a transmit power value or an alarm condition. Without provenance, the same value can imply different operational facts.\n\nA displayed value can be current, stale, historical, cached, expired, not assessed, contradicted or outside the user's permission to inspect fully. It can be observed, device-measured, provider-issued, forecast, predicted or copied from a previous calculation. It can be present as metadata while the asset itself is unavailable. It can also be absent for different reasons: not applicable, not reported, not yet received or no longer valid.\n\nThe design error is the compression of these distinctions into one indicator. A single health score, badge or colour may be compact, but it can make identical visual states carry different meanings across domains. In high-consequence systems, compactness can become false reassurance.\n\n## The dimensions that are often collapsed into one indicator\n\nKISPE's design record is the structural centre of this failure pattern. KISPE Space, a UK space systems engineering company, may be named, and the available evidence is a design record rather than user research or validation. In that design record, status was treated as seven independent dimensions rather than one scale: source transport, asset access, asset delivery, freshness, completeness, conflict and provenance confidence.\n\nThe KISPE record also prohibited four shortcuts. A grey value did not automatically mean offline. A red value did not automatically mean inaccurate. An old observation did not automatically become false. A nominal coverage footprint did not prove that a particular terminal was connected.\n\nCreative Navy's Critical Systems Design method uses this kind of separation as part of constraint respecting. The interface should state the evidence it has, the state it can support and the boundary of what it is entitled to infer. When a provider feed fails, the interface can usually state that provider information is unavailable or unknown and show the last successful update. It cannot safely infer satellite service failure, adversary activity, local terminal disconnection or poor service health from an integration failure alone.\n\n## Time is several facts, not a single timestamp\n\nSource-provenance uncertainty often begins with time being reduced to one label. KISPE's design record separated acquired or measured time, issued time, received time, valid interval and queried time. Each field prevented a different error: reading a historical observation as current, reading a forecast issue time as its validity, reading delivery time as observation time, treating an expired forecast as current, or treating cached results as a fresh search.\n\nKISPE also specified historical filtering by event time rather than delivery time. An item delivered inside a selected interval but acquired outside it did not qualify. Canonical UTC storage with explicit zone or offset labels was used for consequential time displays, but the design record also noted that a technical time standard does not remove the need for understandable information-source labels.\n\nThe MDU case supports the same principle in a different marine context. The MDU is a ship motion monitoring system whose bridge interface Creative Navy designed. The live numerical value was removed because a digit updating every second on a rolling vessel was treated as an attention cost rather than useful information. The replacement showed current position against the rolling twenty-minute minimum and maximum. The alarm then meant a precise thing: at some point in the last twenty minutes the vessel was outside the limits set for it. Nothing in the MDU engagement was tested with users.\n\n## Freshness is a rule outcome, not a confidence score\n\nFreshness describes whether a record still satisfies a defined policy. It does not describe whether the historical observation was true. KISPE's design record treated freshness as the outcome of a rule: age was computed from the record's own measurement time against its own configured policy. A stale record could remain a correct historical observation.\n\nSchone Airspace Group shows the same distinction in telemetry. Schone Airspace Group separated control link condition and telemetry freshness as independent fields. A degraded link and a stale sample were different facts, and a value that had stopped updating kept its last value alongside its age rather than being hidden or relabelled as current. The engagement's acceptance checks evaluated design representation, not flight performance; the fixture was synthetic; nine participants made the evidence qualitative.\n\nRaymarine shows the same discipline in a radio and AIS context. A visible vessel was not always a callable vessel. Where a target had no usable registered identity, its position remained inspectable but the call action was unavailable with a stated reason. Where a record was stale, the last-known position carried an explicit qualifier. The Raymarine measured results came from a bench prototype with eight participants and do not bear on provenance comprehension; nothing was tested at a helm.\n\n## When sources disagree, automatic reconciliation can manufacture certainty\n\nSource-provenance uncertainty becomes acute when two sources disagree. KISPE's design record specified that contradictory sources were retained with their own source, time and scope, and the conflict was marked pending domain reconciliation. Choosing the newest or highest-scoring claim automatically would look decisive while making a claim the records did not support.\n\nThe maritime VTS engagement provides the clearest example of refusing a false number. A European vendor of maritime traffic monitoring, inland navigation and communications software for port authorities, coastal administrations and waterway operators may not be named. Vessel Traffic Services, River Information Services, Voice Communication System and Integrated Communication System may be named as sector terms.\n\nIn the maritime VTS work, a numeric association-confidence badge was explored because it would compress uncertainty into a familiar control. The client's engineering team could not supply a calibrated, operationally defensible confidence figure, so the interface was not permitted to display one. The design instead named the association state. Vessel, track and observation were kept as separate objects: a vessel identity record, a tracked object with an association status, and timestamped observations each carrying their own source.\n\nThe measured maritime VTS study is not used here as provenance evidence. Its figures measured other tasks under controlled conditions on a design prototype, not provenance comprehension. The relevant evidence for this page is the recorded design decision to decline a confidence score that engineering could not defend.\n\n## Absence has different meanings\n\nMissing information can mean several different things. KISPE's design record separated not applicable from not reported. Radar imagery had no meaningful cloud-cover percentage, so the field was not applicable. Optical imagery with the field absent was a different statement: not reported. Neither case became zero percent, and neither became a lowered confidence score.\n\nKISPE also separated catalogue metadata, permission, preview and full asset retrieval. A catalogue item could exist while a preview failed to load. A restricted record could keep whatever metadata permission allowed without being labelled missing or presented as a network fault. This separation maps to the structural distinction in OGC STAC between an item and its assets, while no conformance to OGC STAC is claimed.\n\nSchone Airspace Group made a related distinction for offline map coverage. A completed transfer did not prove geographic coverage where part of the operating region lacked verified tiles. The missing region was drawn and labelled incomplete independently of transfer progress.\n\n## What the interface may infer from a failed source is limited\n\nAn interface can usually report transport, access and retrieval failures. It cannot usually translate them into operational conclusions. KISPE's design record stated that a source outage was not a service degradation and that system errors did not invent operational conclusions. A failed imagery feed could support a statement that previously retrieved records were being shown; it could not support a statement that no imagery existed.\n\nKISPE's receiver-reported accuracy rule shows the same boundary. A receiver-reported accuracy figure was local evidence about one device at one moment. It was displayed with its measurement time and freshness verdict, and it was not merged into a navigation-service health badge. The GPS Standard Positioning Service Performance Standard supports this distinction by separating signal-in-space accuracy from user performance, with signal-in-space global horizontal accuracy specified at ≤8 m at 95% while SPS user performance in the same document is ≤100 m.\n\nExternal provenance and data-quality standards also frame this page's subject. ISO 19115 and ISO 19157 name lineage and data-quality elements. W3C PROV treats provenance as a first-class object. RFC 3339 supports unambiguous timestamp representation. These standards frame the category; they are not evidence that any engagement conformed to them, was audited against them or was certified under them.\n\n## Evidence basis and calibration\n\nKISPE is the anchor evidence for this page because its design record contains the most complete status model. The product was built. Creative Navy did not support the build and has not compared the built interface against the delivered designs.\n\nKISPE contains no user research and no usability testing. There were no interviews with field commanders, operations personnel or specialist support staff, no contextual inquiry, no field observation, no usability testing and no personas built from research. The design was reasoned from KISPE's concept material and partner brief, benchmarking of three competing systems, published domain and standards material, and structured expert analysis against a deliberately adversarial scenario. The imagery records, device readings, coverage notices and advisories in that scenario were a synthetic test fixture, not observations. The field presentation was a design proposal whose touch dimensions, legibility and glove behaviour were never evaluated on representative hardware.\n\nSchone Airspace Group contributes evidence about information that has stopped arriving. The relevant findings concern stale telemetry displayed as current, partial offline map coverage appearing complete, calculated outputs bound to the survey revision that produced them, and explicit unknown states after elapsed response windows. The acceptance checks evaluated the design representation, not flight performance.\n\nRaymarine contributes evidence about incomplete marine information. A target could be visible but not callable, requested transmit power was distinguished from effective transmit power, selected channel was distinguished from monitored channel, and stale position records were qualified as last-known. The engagement recorded forty-three exception records across eight independent state axes, including AIS data quality. No field research, sea trials or on-vessel work took place.\n\nThe MDU contributes one specific argument: a value's time window is part of its meaning. The alarm bound to the rolling twenty-minute maximum and minimum, not to an instantaneous number. Nothing in the MDU engagement was tested with users.\n\nThe Torqeedo published study contributes a secondary pattern rather than a measured result for this page. It recorded different update cadences across the system, including propulsion sensors updating rapidly and batteries on slower cycles, and described delayed or contradictory sensor readings being communicated without creating alarm. This matters because it shows the same provenance and freshness discipline appearing outside the later design records.\n\n## Boundaries and limits\n\nNo evidence on this page measured provenance comprehension. No operator was shown a provenance indicator and timed. No engagement tested whether these distinctions were understood, whether decisions changed, or whether errors were reduced.\n\nThis page makes no AI claim. The main systems discussed here do not rely on a model to produce the uncertainty described. The uncertainty belongs to the information supply chain: feeds, receivers, providers, observations, timestamps, permissions, cached records and conflicts.\n\nThis page makes no conformance claim for ISO 19115, ISO 19157, W3C PROV, OGC STAC, RFC 3339, the GPS Standard Positioning Service Performance Standard or any military symbology standard. Named standards frame the problem space only where the documented evidence supports that framing.\n\nThis page makes no claim about any real location, operation, satellite, vessel or advisory in the synthetic KISPE and Schone Airspace Group scenario material. Those scenario records were designed fixtures.\n\n## Related pages\n\nUncertainty Is Not Communicated Usefully is the sibling failure for AI-specific confidence communication. Source and Age of Information Are Not Visible covers inherited uncertainty in information sources rather than model confidence.\n\nUsers See Information But Cannot Judge What Matters is the broader relevance failure. Source and Age of Information Are Not Visible is a specific instance where the missing judgement context is provenance, time, freshness and source state.\n\nData Is Available But Hard To Interpret covers the legibility of the value itself. Users Cannot See What State The System Is In covers visibility of the system's own state. Both are adjacent to this failure, but neither replaces provenance and age visibility.",
+  "claims": [
+    {
+      "claim": "Source-provenance uncertainty occurs when an interface shows a value without showing origin, lineage, time, delivery state, validity or source reachability.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "Defined directly by the page brief and domain vocabulary."
+    },
+    {
+      "claim": "KISPE's design record treated status as independent dimensions rather than a single health score.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "engagement record",
+      "notes": "K55 records source transport, asset access, asset delivery, freshness, completeness, conflict and provenance confidence as independent dimensions; KISPE evidence is design record only."
+    },
+    {
+      "claim": "KISPE separated multiple time fields so that delivery time, issue time and observation time were not confused.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "engagement record",
+      "notes": "K49–K54 describe acquisition, issue, receipt, validity and query time handling, including event-time filtering and UTC storage with explicit zone labels."
+    },
+    {
+      "claim": "The maritime VTS engagement rejected a numeric association-confidence badge because engineering could not supply a calibrated, operationally defensible figure.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "W53 is described as the strongest single unit on the page; measured study figures are not used because they did not measure provenance comprehension."
+    },
+    {
+      "claim": "Schone Airspace Group separated link condition from telemetry freshness and retained stopped values with their age.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "D88 and D47 support the distinction; acceptance checks evaluated design representation rather than flight performance."
+    },
+    {
+      "claim": "Raymarine treated stale vessel records as last-known positions and disabled call actions where no usable registered identity existed.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "R124 supports the claim; Raymarine's measured prototype results are not cited for provenance comprehension."
+    },
+    {
+      "claim": "The MDU case shows that a value's time window can be part of its meaning.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "M38–M41 describe the rolling twenty-minute minimum and maximum and the alarm meaning; M27 records that nothing was tested with users."
+    },
+    {
+      "claim": "No engagement evidence on this page measured whether provenance distinctions are understood or improve decisions.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "strong",
+      "notes": "The brief explicitly states no measurement, no operator timing and no testing of whether distinctions were understood."
+    },
+    {
+      "claim": "External standards frame provenance, lineage, data quality, item-asset separation and timestamp representation, but no conformance claim is made.",
+      "evidenceType": "industry standard",
+      "sourceStrength": "moderate",
+      "notes": "ISO 19115, ISO 19157, W3C PROV, OGC STAC and RFC 3339 are named as external research framing the category."
+    }
+  ],
+  "limitations": [
+    "No provenance-comprehension study was conducted in any engagement used on this page.",
+    "No operator was shown a provenance indicator and timed, and no engagement tested whether any distinction was understood.",
+    "KISPE is design-record evidence only: no user research, no usability testing and no validation on representative hardware.",
+    "The KISPE product was built, but Creative Navy did not support the build and has not compared the built interface against the delivered designs.",
+    "KISPE and Schone Airspace Group scenario material was synthetic and must not be treated as observation of a real location, operation, satellite, aircraft, vessel or advisory.",
+    "Schone Airspace Group acceptance checks evaluated design representation, not flight performance or deployed operational use.",
+    "Raymarine's measured prototype results came from a bench prototype and do not bear on provenance comprehension; nothing was tested at a helm.",
+    "The MDU engagement was not tested with users.",
+    "No conformance is claimed to ISO 19115, ISO 19157, W3C PROV, OGC STAC, RFC 3339, the GPS Standard Positioning Service Performance Standard or military symbology standards.",
+    "This page makes no AI claim; the failure described is inherited from information sources rather than generated by model inference."
+  ],
+  "publicationBlockers": [],
+  "questionsForReview": [
+    "The exact IMO or IALA instrument for the AIS and collision-regulations statement should be verified before that external framing is expanded or cited by instrument name.",
+    "Current editions of NATO APP-6 and the MIL-STD-2525 family should be verified before military symbology is used as an external support paragraph.",
+    "The uncertainty-visualisation research described as unlocated in the planning material is not cited in the body; primary sources would be needed before adding it.",
+    "The Torqeedo paragraph is based only on the summary included in the page brief; review the Torqeedo case study before expanding it beyond the limited update-cadence point."
+  ],
+  "relatedPageSlugs": [
+    "uncertainty-is-not-communicated-usefully",
+    "users-see-information-but-cannot-judge-what-matters",
+    "data-is-available-but-hard-to-interpret",
+    "users-cannot-see-what-state-the-system-is-in",
+    "warnings-are-visible-but-their-meaning-is-unclear",
+    "important-status-information-is-buried",
+    "kispe-space",
+    "maritime-vts",
+    "schone-mission-control",
+    "raymarine-vhf",
+    "mdu-ship-motion-monitoring"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "Uncertainty Is Not Communicated Usefully",
+      "targetSlug": "uncertainty-is-not-communicated-usefully",
+      "placementHint": "Use in the section distinguishing source-provenance uncertainty from adjacent failures.",
+      "reason": "The source explicitly identifies this as the sibling page and requires the distinction to be stated."
+    },
+    {
+      "anchorText": "Users See Information But Cannot Judge What Matters",
+      "targetSlug": "users-see-information-but-cannot-judge-what-matters",
+      "placementHint": "Use in the adjacent failures section and related pages section.",
+      "reason": "The source describes this page as the general relevance failure of which the current page is a specific instance."
+    },
+    {
+      "anchorText": "Data Is Available But Hard To Interpret",
+      "targetSlug": "data-is-available-but-hard-to-interpret",
+      "placementHint": "Use in the adjacent failures section.",
+      "reason": "The source distinguishes legibility of the value itself from provenance around the value."
+    },
+    {
+      "anchorText": "Users Cannot See What State The System Is In",
+      "targetSlug": "users-cannot-see-what-state-the-system-is-in",
+      "placementHint": "Use in the adjacent failures section.",
+      "reason": "The source distinguishes system-state visibility from what source failures do to already displayed readings."
+    },
+    {
+      "anchorText": "KISPE Space",
+      "targetSlug": "kispe-space",
+      "placementHint": "Use in the evidence basis section where KISPE is described as the anchor evidence.",
+      "reason": "KISPE is the anchor case for the page's status-dimension and temporal-field evidence."
+    },
+    {
+      "anchorText": "Maritime VTS and Portfolio Design System",
+      "targetSlug": "maritime-vts",
+      "placementHint": "Use in the section on refusing a numeric association-confidence score.",
+      "reason": "The maritime VTS engagement provides the clearest example of declining to manufacture an unsupported confidence number."
+    },
+    {
+      "anchorText": "Schone Airspace Group Mission Control",
+      "targetSlug": "schone-mission-control",
+      "placementHint": "Use in the freshness section and evidence basis section.",
+      "reason": "Schone Airspace Group provides evidence about stale telemetry, independent link state and explicit unknown states."
+    },
+    {
+      "anchorText": "Raymarine Marine VHF and AIS Radio",
+      "targetSlug": "raymarine-vhf",
+      "placementHint": "Use in the freshness section and evidence basis section.",
+      "reason": "Raymarine provides evidence about stale vessel records, AIS data quality and unavailable call actions when identity is not usable."
+    },
+    {
+      "anchorText": "MDU Ship Motion Monitoring",
+      "targetSlug": "mdu-ship-motion-monitoring",
+      "placementHint": "Use in the section on time windows as part of value meaning.",
+      "reason": "The MDU case supports the claim that an interface makes a currency claim when it shows or suppresses an instantaneous value."
+    }
+  ],
+  "qualityChecks": {
+    "factsOnlyFromCurrentSource": true,
+    "documentationStyle": true,
+    "noMarketingLanguage": true,
+    "noInventedClaims": true,
+    "linksOnlyFromLinkingContext": true,
+    "internalNotesNotPublished": true,
+    "readyForSanityImport": true
+  },
+  "__sourceCategoryDir": "Failures"
+}

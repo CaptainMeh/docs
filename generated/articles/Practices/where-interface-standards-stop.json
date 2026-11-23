@@ -1,0 +1,233 @@
+{
+  "_type": "documentationPage",
+  "sourceFile": "Articles/Practices/practices--where-interface-standards-stop.md",
+  "sourcePath": "sources/articles/Practices/practices--where-interface-standards-stop.md",
+  "sanityDocumentIdCandidate": "documentationPage.where-interface-standards-stop",
+  "title": "Where Interface Standards Stop",
+  "slug": {
+    "_type": "slug",
+    "current": "where-interface-standards-stop"
+  },
+  "pageType": "practice",
+  "category": "practices",
+  "parentSlug": "practices",
+  "childPageSlugs": [],
+  "excerpt": "Interface standards often settle only part of an interface decision. This page describes how Creative Navy separates what an instrument requires from the design decisions it leaves open.",
+  "metaTitle": "Where Interface Standards Stop",
+  "metaDescription": "How Creative Navy distinguishes interface requirements, scope boundaries, open design decisions, and non-claims around named standards.",
+  "summary": "This practice page explains how Creative Navy reads standards, regulations and domain instruments down to interface consequences without treating them as design instructions or conformance credentials. It uses examples from marine, defence-adjacent, medical-device, industrial, accessibility, technical-information and geospatial engagements.",
+  "definition": "Where interface standards stop is the practice of identifying what a governing instrument requires, what it leaves undecided, where its scope boundary sits, and which organisation must own the remaining design decision.",
+  "keyFacts": [
+    "Creative Navy did not certify to, audit against, or work to any standard named on this page.",
+    "Naming a standard is not a credential, and no product described on this page is claimed to be compliant with any named instrument.",
+    "The practice focuses on what standards leave open, not on creating a standards directory.",
+    "In marine work, the MDU and Raymarine radio converged on a bridge alert acknowledgement grammar without falling under the bridge alert-management regime.",
+    "In medical-device work, IEC 62366-1 is treated as a process standard that governs how usability decisions are made and recorded, not as an interface layout specification.",
+    "In industrial and machinery work, ISO 3691-4:2023 and ANSI/ITSDF B56.5-2024 are described as governing vehicles, not the Oceaneering dispatch panel interface.",
+    "In accessibility work, the activation requirement is described as a property requirement that forced a hardware activation decision on a self-service terminal design.",
+    "In geospatial and provenance work, standards provide structures for lineage, quality, assets, provenance and time representation but do not decide operational semantics such as degradation, confidence or missing-field meaning."
+  ],
+  "tags": [
+    "interface standards",
+    "regulatory boundaries",
+    "conformance boundaries",
+    "scope boundary",
+    "regulated products",
+    "alarm management",
+    "accessibility",
+    "medical-device usability",
+    "industrial control",
+    "provenance metadata"
+  ],
+  "bodyMarkdown": "## Summary: standards settle requirements, not all interface decisions\n\nCreative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nIn regulated and safety-related products, the decisive interface question is often not only what an instrument requires. The decisive question is what the instrument deliberately does not decide, and who inside the product organisation must own the remaining decision.\n\nCreative Navy's Critical Systems Design method treats standards, regulations and domain instruments as constraints with scope boundaries. Critical Systems Design reads them down to their design consequences, separates settled requirements from open decisions, and records the open decisions with their reasoning. The record is not written as though the standard required the design choice when the design choice was made by the product team.\n\nThis page has an absolute boundary: Creative Navy did not certify to, audit against, or work to any standard named on this page. No product described here is claimed to be compliant with any named instrument. Naming a standard is not a credential.\n\n## Five principles for reading interface standards to their design consequences\n\nCreative Navy applies the same structure across domains: identify what the instrument requires of the interface, identify which decisions remain open, and record where those decisions were taken in the engagement evidence.\n\n1. **Read the instrument, not the commentary.** In the self-service terminal work for visioncheckout, a directive, a harmonised standard, a national transposition and a market-surveillance authority each played a different role. The German national transposition was broader than the directive it transposed.\n\n2. **A convention can be useful even when the standard does not reach the product.** The MDU and the Raymarine radio both fell outside the bridge alert-management regime and independently converged on its acknowledgement grammar. That is convergence, not conformance.\n\n3. **When a standard sets a floor, record departures from it.** In the handheld command-and-control engagement for a European manufacturer of uncrewed systems, including one-way effectors, the sizing specification measured itself against MIL-STD-1472H and stated where two of its four tiers sat below the standard's minimum.\n\n4. **A standard's scope boundary is itself a design constraint.** In the Oceaneering dispatch panel work, ISO 3691-4:2023 and ANSI/ITSDF B56.5-2024 governed the driverless industrial trucks. The dispatch panel was an operator terminal that those vehicle-safety standards did not reach.\n\n5. **When an instrument requires a property rather than a mechanism, the mechanism remains a product decision.** In the accessibility work for visioncheckout, the requirement that an accessibility feature must not require activation by a method that does not support the need it serves forced a hardware activation decision that the statute did not prescribe.\n\n## Domain vocabulary used in this practice\n\nA **harmonised standard** can create a **presumption of conformity** when it is cited in the Official Journal of the European Union. Publication by a standards body is not the same thing.\n\nA **transposition** is national law implementing a directive. A transposition may be broader than the directive it implements.\n\n**Type approval** and **conformity assessment** are regimes that decide whether equipment performing a defined function may be placed on the market. A design page that mentions such regimes must not imply that Creative Navy performed them.\n\nA **scope boundary** is the class of equipment or activity an instrument reaches. Interface work often happens at the boundary between equipment the instrument governs and software sitting beside it.\n\nA **performance requirement** states a property the product must have. A **prescriptive requirement** states a mechanism the product must contain.\n\n**Convergence, not conformance** means adopting a convention codified elsewhere, deliberately and without claiming the credential attached to the instrument that codifies it.\n\n## Marine and maritime standards: alert grammar can converge without conformance\n\nIMO Bridge Alert Management, adopted in resolution MSC.302(87) and implemented through IEC 62923-1 and IEC 62923-2, defines four alert priorities: emergency alarm, alarm, warning and caution. It also defines alert categories by whether decision-support information is needed at the task station. The regime has been mandatory for new navigation and communication installations on SOLAS ships since 30 August 2021.\n\nIEC 62288 governs how navigational displays present information and supports IMO resolution MSC.191(79) as amended by MSC.466(101). Marine Equipment Directive 2014/90/EU and the wheelmark regime set a type-approval boundary for marine equipment.\n\nThe MDU and the Raymarine radio are useful because neither falls under the bridge alert-management regime in the way a navigation or communication installation on a SOLAS ship does. Both still arrived at a similar acknowledgement grammar. In the MDU work, a serving master and chief engineer advising the manufacturer supplied the bridge convention: an alarm flashes, acknowledgement records that it has been seen, the indication holds, and the alarm clears only when the underlying condition is no longer present. In the Raymarine work, four priority levels were assigned by consequence, with arbitration and separate states for silenced, acknowledged and resolved.\n\nThe correct claim is convergence, not conformance. Creative Navy did not certify either interface against IMO Bridge Alert Management, IEC 62923-1, IEC 62923-2 or IEC 62288.\n\nThe MDU also shows how a hardware certification boundary can be misread. The marine panel PC selected by the manufacturer carried IEC 60945 4th edition, DNV 2.4, IACS E10 certification and ECDIS colour calibration compliance. Those were properties of the panel the manufacturer selected, not certifications held by Creative Navy or by the interface design. The manufacturer's account of why the MDU only alarms and does not control the ship is likewise attributed to the manufacturer rather than treated as a verified regulatory finding.\n\n## Uncrewed and defence-adjacent systems: protocol authority can disappear at the glass\n\nNATO STANAG 4586 grades control through levels of interoperability, with a control station requesting authorisation to operate at a given level. JARUS SORA, adopted by EASA as acceptable means of compliance to Regulation (EU) 2019/947, includes an operational safety objective requiring a human factors evaluation and a human-machine interface found appropriate for the operation. MIL-STD-1472H provides a human-engineering reference point for control dimensions. MIL-STD-2525 and NATO APP-6 carry standard identity as a formal field, with pending and unknown distinct from hostile.\n\nThe Schone Airspace Group Mission Control work shows a standards-to-interface gap. STANAG 4586's graded control survives in the protocol layer, but the distinction can evaporate at the screen if authority, inspection and target selection collapse into one highlighted row. Schone Airspace Group's interface separated the inspected aircraft, the command target and flight-controller authority into different visual and behavioural states. That design made visible a distinction the lower layer already maintained.\n\nThe KISPE Space work shows the same discipline in provenance rather than control. Symbology can encode that unknown is not hostile, but it does not decide whether an item is two minutes old, two hours old, locally saved, unavailable from a provider, or not applicable. KISPE Space's design work separated transport reachability, asset access, asset delivery, freshness, origin, operational condition and local change state instead of collapsing them into one health score.\n\nThe handheld command-and-control engagement shows how a specification can deliberately sit below a standard. MIL-STD-1472H sets a 16 mm minimum touch target with 5 mm added for gloved use. The handheld sizing specification used four consequence tiers. Two tiers sat below that floor, and the specification said so. Protection patterns such as slide-to-confirm, hold-to-commit and select-then-arm were permitted at T2 and below, never at T1, where size itself was the protection.\n\nCreative Navy did not perform airworthiness, certification, weapons-review or regulatory work in these engagements. The relevant claims are interface distinctions, authored specifications and recorded decision boundaries, not operational safety outcomes.\n\n## Medical devices: IEC 62366-1 governs the decision process, not the interface shape\n\nIEC 62366-1 governs usability engineering for medical devices. It requires manufacturers to identify use-related hazards, specify use scenarios and maintain the usability engineering file. It is a process standard: it tells a manufacturer how to decide and what to record. It does not specify what the interface should look like.\n\nKardion is the worked medical-device example for this page. The flow-adjustment overlay took nine iterations to resolve a question IEC 62366-1 poses but does not answer: how much friction a consequential clinical change should carry. The design question was whether the interface should prevent accidental change without slowing a deliberate clinical change too much.\n\nCreative Navy's role is formative evaluation only; summative validation is the manufacturer's responsibility via the regulatory submission. This page makes no summative claim and no medical-device compliance claim.\n\n## Machinery and industrial control: safety standards may stop at the machine\n\nISO 9355 parts 1–4 set ergonomic requirements for displays and control actuators on machinery, including location and arrangement. ISO 11064 covers ergonomic design of control centres, including displays, controls and environmental conditions. ISA-18.2 and IEC 62682 define the alarm lifecycle, rationalisation, the alarm philosophy document and management of change, with EEMUA 191 as another commonly cited reference. ISO 3691-4:2023 and ANSI/ITSDF B56.5-2024 govern driverless industrial trucks.\n\nAlarm standards define a lifecycle. They do not decide what a particular alarm should be bound to in a product interface. In the MDU work, the alarm was bound to a rolling twenty-minute maximum and minimum rather than to the instantaneous value. That changed the meaning of the alarm: the alarm stated that the vessel had been outside its threshold at some point within the last twenty minutes.\n\nThe Oceaneering dispatch panel shows the vehicle-standard boundary. The vehicle detects a wrong cart type after lifting it, then sets the cart down and leaves. The operator terminal had to make the refusal recoverable: the station holding the refused cart could be tapped, the detected type compared against the selected type, the detected type confirmed, and the destination and identity re-entered.\n\nISO 3691-4:2023 and ANSI/ITSDF B56.5-2024 reached the vehicles, not the dispatch panel interface. Creative Navy neither certified nor audited to either vehicle-safety standard.\n\n## Accessibility: a property requirement can force a mechanism decision\n\nDirective (EU) 2019/882 sets the obligation for the accessibility example described here. EN 301 549 is the harmonised standard. National transpositions bind, and market surveillance enforces.\n\nFor a self-service terminal, the sector-specific requirements include speech output, personal headsets, more than one sensory channel where response time is limited, extendable time, adequate contrast and tactilely discernible controls, hearing-technology compatibility, and no requirement that an accessibility feature be activated by a method that does not support the need it serves.\n\nThe last requirement is a property, not a mechanism. On hardware with no headphone jack and no tactile keypad, it forced a decision the statute did not name. In the visioncheckout work, the design first specified a persistent on-screen control, then removed it and moved activation to hardware while keeping an on-screen status indicator so that the mode's state remained visible.\n\nThe accessibility example is not a compliance credential. Creative Navy did not certify to, audit against or claim conformance with Directive (EU) 2019/882 or EN 301 549.\n\n## Technical information and instructions: the regulated object may be the artefact\n\nIEC/IEEE 82079-1 governs the preparation of information for use. Regulation (EU) 2023/1230 permits digital instructions and requires that they remain accessible for at least ten years.\n\nThe Assemblio work shows the open question behind that requirement. Neither IEC/IEEE 82079-1 nor Regulation (EU) 2023/1230 decides what an instruction is in an interface. Assemblio's material treated an instruction as three different products wearing one name: a training artefact for a new worker, a spot-check artefact for an experienced worker, and an advance-review artefact for someone preparing to assemble without continuous reference.\n\nThe ten-year accessibility obligation and a shop-floor request for version retrieval landed on the same design decision. The regulation explains why access to old instructions matters over time. It is not the reason the design was chosen.\n\nCreative Navy conducted no user research of its own in the Assemblio engagement, did not observe a shop floor and tested nothing. The Assemblio evidence is used here for design reasoning, not as user-validation evidence.\n\n## Geospatial and provenance metadata: structure does not settle semantics\n\nISO 19115 and ISO 19157 carry lineage and data-quality elements. OGC STAC separates an item from its assets. W3C PROV treats provenance as a first-class object. RFC 3339 fixes unambiguous UTC representation.\n\nThese structures do not decide operational semantics. They do not say whether an unreachable provider means a service is degraded. They do not say whether an age label may be read as a confidence score. They do not say whether not applicable and not reported may share the same dash.\n\nKISPE Space decided those meanings at interface level. The design separated provider reachability, asset access, asset delivery, freshness, origin, operational condition and local change state. A source outage was not treated as service degradation. An age label was not treated as confidence. A missing field did not become zero, perfect, low confidence or a generic dash.\n\nThe GPS Standard Positioning Service Performance Standard's own position is that its accuracy figures describe signal-in-space performance and exclude receiver contributions. That is why a receiver-reported accuracy figure in the KISPE Space work was treated as local evidence about one device at one moment, not as a statement about navigation-service quality.\n\n## What standards do not decide\n\nInterface standards, regulations and domain instruments can specify thresholds, process duties, terminology, presentation rules, documentation duties, scope boundaries and properties a product must have. They often do not decide the mechanism by which a particular interface should satisfy the property, the friction a consequential action should carry, the semantic meaning of a degraded state, the visual hierarchy of competing facts, or the organisational owner of a decision that sits outside the instrument.\n\nCreative Navy's Critical Systems Design method treats that undecided space as design work rather than as a gap to hide. The practice is a form of constraint respecting: state what the instrument settles, state what it leaves open, and keep the remaining decision attached to its reasoning.\n\nThis distinction matters because a false standards claim can be more dangerous than no standards claim. A design specification that silently departs from a named minimum is weaker than one that states the departure and the reason. An interface that implies a standard's scope has moved is making a claim the standard did not make. A page that names many standards is not evidence of conformance to any of them.\n\n## Evidence basis and limits of this page\n\nThis page uses documented engagement evidence as examples of a pattern. It does not introduce new research and it does not convert those examples into validation claims.\n\nThe visioncheckout accessibility example carries no conformance credential, no claim that the product is accessible or compliant, no usability result and no user-tested result for the new design.\n\nThe MDU example was not tested with users. The user-side evidence base was one external advisor, a serving master and chief engineer, plus the manufacturer's engineers, the written specification, benchmarking and published human-factors literature. Manufacturer-stated regulatory positions are attributed as such.\n\nThe Raymarine example was Creative Navy-measured on a bench prototype where measured comparisons were made. Those findings do not measure radio performance, real-world calling accuracy or outcomes at sea.\n\nThe handheld command-and-control specification was authored and measured against standards and human-factors literature. It was not field-validated, and no operational outcome is claimed.\n\nThe Schone Airspace Group example evaluated design representation under scripted acceptance checks. It was not a flight test and not evidence of operational performance.\n\nThe KISPE Space example involved no user research, no representative hardware validation and no measurement. Its scenario material was a designed fixture rather than observed field evidence.\n\nThe Oceaneering example used design reviews, not usability tests. No dispatch operator took part, and no measured outcome is claimed.\n\nThe Assemblio example involved no Creative Navy-run user research, no shop-floor observation and no testing by Creative Navy.\n\n## Required non-claims\n\nCreative Navy did not certify to, audit against, or work to any standard named on this page. There was no conformance assessment, no audit, no legal advice and no regulatory submission by Creative Navy.\n\nNaming a standard is not a credential. A page that names many standards is not a claim to have worked to any of them.\n\nNo product described on this page is claimed to be compliant with any instrument named.\n\nConvergence is not conformance. Where an engagement arrived at a convention codified in a standard that did not reach the product, this page describes convergence and stops there.\n\nFor medical-device work, the boundary is formative evaluation. Summative validation and regulatory submission are the manufacturer's responsibility.\n\nWhere an instrument is cited from secondary sources or its current status has not been confirmed, it should not be used as a public claim until verification is complete.",
+  "claims": [
+    {
+      "claim": "Creative Navy did not certify to, audit against, or work to any standard named on this page.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "strong",
+      "notes": "The source states this rule as absolute and requires it to appear high on the page and at the end."
+    },
+    {
+      "claim": "The MDU and Raymarine radio converged on bridge alert-management acknowledgement grammar without falling under the bridge alert-management regime.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "The source explicitly describes both engagements as outside the alert regime and requires the wording to be convergence, not conformance."
+    },
+    {
+      "claim": "IEC 62366-1 is a process standard for medical-device usability engineering and does not prescribe interface appearance.",
+      "evidenceType": "industry standard",
+      "sourceStrength": "strong",
+      "notes": "The source states that IEC 62366-1 governs identifying use-related hazards, specifying use scenarios and maintaining the usability engineering file."
+    },
+    {
+      "claim": "The Kardion flow-adjustment overlay example concerns formative evaluation only; summative validation and regulatory submission remain the manufacturer's responsibility.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "The source authorises Kardion as the worked medical example and requires the formative boundary in every relevant sentence."
+    },
+    {
+      "claim": "ISO 3691-4:2023 and ANSI/ITSDF B56.5-2024 govern driverless industrial trucks, not the Oceaneering dispatch panel operator terminal.",
+      "evidenceType": "industry standard",
+      "sourceStrength": "strong",
+      "notes": "The source uses Oceaneering as the example of a vehicle-safety boundary that stops at the operator terminal."
+    },
+    {
+      "claim": "The accessibility activation requirement is a property requirement rather than a prescribed mechanism.",
+      "evidenceType": "verifiable regulatory outcome",
+      "sourceStrength": "strong",
+      "notes": "The source describes Directive (EU) 2019/882, EN 301 549 and the self-service terminal requirement that an accessibility feature must not require activation by a method that does not support the need it serves."
+    },
+    {
+      "claim": "IEC/IEEE 82079-1 and Regulation (EU) 2023/1230 do not decide what an instruction is in the Assemblio interface context.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "The source uses Assemblio to show three use cases under the single label of instruction."
+    },
+    {
+      "claim": "Geospatial and provenance standards provide structures, but KISPE Space had to define operational semantics such as outage meaning, age-label meaning and not-applicable versus not-reported distinctions.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "The source lists ISO 19115, ISO 19157, OGC STAC, W3C PROV, RFC 3339 and KISPE decisions K39, K55, K56, K60 and K66."
+    },
+    {
+      "claim": "The handheld sizing specification measured itself against MIL-STD-1472H and stated where two of its four tiers departed from it.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "The source records the MIL-STD-1472H minimum and the specification's four tiers, including two tiers below the minimum."
+    }
+  ],
+  "limitations": [
+    "This page does not claim conformance, certification, audit, legal advice or regulatory submission for any named standard or product.",
+    "No product described on the page is claimed to be compliant with any instrument named.",
+    "Several standards and editions are explicitly flagged for verification before publication; unverified instruments should be cut rather than hedged if they cannot be confirmed.",
+    "The page uses evidence already carried by other engagements; it does not introduce new research.",
+    "Evidence strength varies by engagement: some examples are design reasoning, some are client-reported, some are bench-prototype measurements, and several contain no user testing or field observation.",
+    "Medical-device content is limited to formative evaluation; summative validation and regulatory submission are the manufacturer's responsibility.",
+    "Oceaneering reviews were design reviews, not usability tests, and no dispatch operator took part.",
+    "KISPE Space evidence contains no user research, no representative hardware validation and no measurement."
+  ],
+  "publicationBlockers": [
+    {
+      "type": "standard_status_verification_required",
+      "message": "Human review required: the page brief requires confirmation of every instrument's current edition and status before publication.",
+      "severity": "blocker"
+    },
+    {
+      "type": "unverified_standards_flagged",
+      "message": "Human review required: STANAG 4671/AEP-4671, STANAG 4559, DEF STAN 00-250, JSP 912, ISO 8468, FAA AC 25.1302-1 and MIL-STD-3009 are flagged as requiring verification or removal before publication.",
+      "severity": "blocker"
+    },
+    {
+      "type": "en_301_549_ojeu_status_required",
+      "message": "Human review required: the EN 301 549 Official Journal citation status is identified as the fact most likely to change and must be checked on the day of publication.",
+      "severity": "blocker"
+    },
+    {
+      "type": "machinery_regulation_article_verification_required",
+      "message": "Human review required: article numbers and the application-date wording for Regulation (EU) 2023/1230 must be verified before any sentence depends on them.",
+      "severity": "blocker"
+    }
+  ],
+  "questionsForReview": [
+    "Confirm every named instrument's current edition and status before publication, as required by the page brief.",
+    "Confirm whether EN 301 549 V3.2.1 remains the cited Official Journal reference or whether V4.1.1 has since been cited.",
+    "Confirm or remove STANAG 4671/AEP-4671, STANAG 4559, DEF STAN 00-250, JSP 912, ISO 8468, FAA AC 25.1302-1 and MIL-STD-3009 if any are to appear in the final public page.",
+    "Confirm the Machinery Regulation article numbers and the application-date wording before publication.",
+    "Review whether the /practices placement remains approved, because the source notes that placement was recommended and may be overruled by the lead.",
+    "Confirm whether the body should include or omit the exact date stated for the Bridge Alert Management mandate, given the page's standards-verification requirement."
+  ],
+  "relatedPageSlugs": [
+    "alarm-and-warning-evaluation",
+    "decision-boundary-design",
+    "behavioural-requirements-definition",
+    "state-and-transition-review",
+    "edge-case-and-degraded-mode-analysis",
+    "design-system-boundary-definition",
+    "visioncheckout",
+    "mdu-ship-motion-monitoring",
+    "raymarine-vhf",
+    "tactical-handheld-command-and-control",
+    "schone-mission-control",
+    "kispe-space",
+    "kardion",
+    "oceaneering-dispatch-panel",
+    "assemblio"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "visioncheckout accessibility example",
+      "targetSlug": "visioncheckout",
+      "placementHint": "Accessibility section, on the first mention of visioncheckout",
+      "reason": "The source uses visioncheckout as the self-service terminal accessibility example."
+    },
+    {
+      "anchorText": "MDU ship motion monitoring example",
+      "targetSlug": "mdu-ship-motion-monitoring",
+      "placementHint": "Marine and maritime section, on the first mention of the MDU",
+      "reason": "The source uses the MDU for alert acknowledgement, alarm binding and the panel-certification boundary."
+    },
+    {
+      "anchorText": "Raymarine radio example",
+      "targetSlug": "raymarine-vhf",
+      "placementHint": "Marine and maritime section, on the first mention of Raymarine",
+      "reason": "The source uses Raymarine for alert priorities, arbitration and state separation."
+    },
+    {
+      "anchorText": "Tactical handheld command-and-control example",
+      "targetSlug": "tactical-handheld-command-and-control",
+      "placementHint": "Uncrewed and defence-adjacent systems section, on the handheld sizing specification mention",
+      "reason": "The source uses the handheld engagement for MIL-STD-1472H comparison and declared departures."
+    },
+    {
+      "anchorText": "Schone Airspace Group Mission Control",
+      "targetSlug": "schone-mission-control",
+      "placementHint": "Uncrewed and defence-adjacent systems section, on the Schone Airspace Group example",
+      "reason": "The source uses Schone for the gap between protocol-level interoperability and interface-level authority representation."
+    },
+    {
+      "anchorText": "KISPE Space provenance example",
+      "targetSlug": "kispe-space",
+      "placementHint": "Uncrewed and defence-adjacent systems or geospatial provenance section, on KISPE Space",
+      "reason": "The source uses KISPE Space for provenance semantics, source status and positioning-service distinctions."
+    },
+    {
+      "anchorText": "Kardion formative medical-device example",
+      "targetSlug": "kardion",
+      "placementHint": "Medical devices section, on the Kardion example",
+      "reason": "The source authorises Kardion as the worked medical-device example for formative evaluation boundaries."
+    },
+    {
+      "anchorText": "Oceaneering dispatch panel example",
+      "targetSlug": "oceaneering-dispatch-panel",
+      "placementHint": "Machinery and industrial control section, on the Oceaneering example",
+      "reason": "The source uses Oceaneering to show the vehicle-safety boundary stopping at the operator terminal."
+    },
+    {
+      "anchorText": "Assemblio instructions example",
+      "targetSlug": "assemblio",
+      "placementHint": "Technical information and instructions section, on Assemblio",
+      "reason": "The source uses Assemblio to show instructions as multiple artefacts under one regulated label."
+    },
+    {
+      "anchorText": "alarm and warning evaluation",
+      "targetSlug": "alarm-and-warning-evaluation",
+      "placementHint": "Related pages metadata for readers following the alarm-management thread",
+      "reason": "The source frames the page around alarm regimes and the convergence observation."
+    },
+    {
+      "anchorText": "decision boundary design",
+      "targetSlug": "decision-boundary-design",
+      "placementHint": "Related pages metadata for the general practice of assigning responsibility for open decisions",
+      "reason": "The source centres on deciding what standards leave open and who owns the rest."
+    }
+  ],
+  "qualityChecks": {
+    "factsOnlyFromCurrentSource": true,
+    "documentationStyle": true,
+    "noMarketingLanguage": true,
+    "noInventedClaims": true,
+    "linksOnlyFromLinkingContext": true,
+    "internalNotesNotPublished": true,
+    "readyForSanityImport": false
+  }
+}

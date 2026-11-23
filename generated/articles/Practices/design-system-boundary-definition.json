@@ -1,0 +1,175 @@
+{
+  "_type": "documentationPage",
+  "sourceFile": "Articles/Practices/practices--design-system-boundary-definition.md",
+  "sourcePath": "sources/articles/Practices/practices--design-system-boundary-definition.md",
+  "sanityDocumentIdCandidate": "documentationPage.design-system-boundary-definition",
+  "title": "Design System Boundary Definition",
+  "slug": {
+    "_type": "slug",
+    "current": "design-system-boundary-definition"
+  },
+  "pageType": "practice",
+  "category": "practices",
+  "parentSlug": "practices",
+  "childPageSlugs": [],
+  "excerpt": "Design system boundary definition decides what a shared system is allowed to make identical. It tests proposed reuse against task, meaning, authority, input, failure and recovery before direct adoption, extension or refusal.",
+  "metaTitle": "Design System Boundary Definition",
+  "metaDescription": "A practice for deciding which components may be shared directly, extended or refused when a design system spans operational products.",
+  "summary": "Design system boundary definition is the practice of deciding where a shared design system stops. It treats refusal as a positive design finding when reuse would misstate task meaning, authority, input conditions, failure interpretation or recovery consequences.",
+  "definition": "Design system boundary definition is a practice for testing whether a component contract may be reused in a new product, must be extended, or must be explicitly refused because identical behaviour would misrepresent operational meaning or consequence.",
+  "keyFacts": [
+    "The practice answers how to decide what a design system is allowed to make identical, not how to build a component library.",
+    "The six-gate reuse test checks task, meaning, authority, input, failure and recovery before direct reuse.",
+    "All six gates must pass for direct reuse; one failure produces a documented extension; a failure that would misstate authority or consequence produces a refusal.",
+    "The VTS design-system engagement used a four-layer architecture of primitive values, semantic tokens, component behaviour and application composition.",
+    "The VTS component system contained 54 components and 198 named states.",
+    "Seventy component applications were assessed across four products: 45 direct, 15 documented extensions and 10 explicit refusals.",
+    "Electronic reporting had 75.0% direct reuse, while Voice Communications had 40.0% direct reuse.",
+    "The 70 applications were usage proposals, not components and not shipping software.",
+    "The design system reached production, with the client writing the code and Creative Navy providing regular implementation support across fifteen months.",
+    "No implementation-effort estimate, development-cost claim, measured reuse outcome or measurement-framework result is recorded."
+  ],
+  "tags": [
+    "design systems",
+    "component contracts",
+    "reuse governance",
+    "semantic tokens",
+    "operational software",
+    "expert tools",
+    "constraint respecting",
+    "design governance"
+  ],
+  "bodyMarkdown": "## The question design system boundary definition answers\n\nCreative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nDesign system boundary definition answers one question: what is a design system allowed to make identical. The practice is not a method for building a component library. It is a method for deciding where a shared system stops when products serve different operational purposes.\n\nA design system makes interface elements consistent. In operational portfolios, the hazard is that the same control, with the same appearance, can tell an operator the same thing in two situations where the truth is different. Creative Navy's Critical Systems Design method treats that boundary as a design question, not as a missing asset question. The practice is an instance of constraint respecting because the shared system must preserve the limits carried by task, meaning, authority and consequence.\n\n## A shared system is tested where consistency and divergence both have a case\n\nDesign system boundary definition is used when a portfolio has a real commercial case for consistency and a real operational case against uniform behaviour. In the Maritime VTS and Portfolio Design System case, the client was a European vendor of maritime traffic monitoring, inland navigation and communications software for port authorities, coastal administrations and waterway operators. The portfolio covered nine products across Vessel Traffic Services, River Information Services, Voice Communication System and Integrated Communication System families.\n\nThe interfaces had been built by separate software engineering teams over many years. The client's request for proposal asked for a common treatment of navigation, menus, tables, data entry, search, panels, dialogues, equipment status, messages and alarms, while preserving functionality and keeping the products appropriate for professional operators.\n\nThe operational reason for caution appeared in the radio system. In a general application, a selected state can communicate preference or focus. In the Voice Communication System, an active transmission route also carries equipment state, receive activity, hardware push-to-talk control and potentially time-critical consequence. Creative Navy treated that as evidence that a generic toggle behaviour could not simply be reused.\n\n## The six-gate reuse test defines direct adoption, extension and refusal\n\nCreative Navy's Critical Systems Design method used a six-gate reuse test to decide whether a proposed use of a shared component could be adopted directly. The six gates are:\n\n- Task: whether the operator seeks the same outcome as in the source contract.\n- Meaning: whether objects, statuses, timestamps and provenance retain equivalent meaning.\n- Authority: whether the actor is permitted to trigger the same server-verified transition.\n- Input: whether keyboard, mouse, headset and physical control dependencies are equivalent.\n- Failure: whether degraded, absent, contradictory or delayed data will be interpreted safely.\n- Recovery: whether the user can reverse, correct or reattempt with the same consequences.\n\nAll six gates must pass for direct reuse. One failed gate produces a documented extension. A failed gate that would misstate authority or consequence produces an explicit refusal.\n\n## Disposition applies to one use, not to a component family\n\nDesign system boundary definition assigns a disposition to a proposed use in a specific product. It does not classify an entire component family as reusable or non-reusable. The same library component can be adopted directly in one product and refused in another.\n\nThe three dispositions are direct adoption, documented extension and explicit refusal. Direct adoption means the documented component contract can be used without changing its operational meaning. Documented extension means the shared component can remain the basis of the design, but the new use must record the difference. Explicit refusal means the shared component would misstate what the user can do, what the system knows or what consequence follows.\n\n## The four-layer architecture made the boundary test possible\n\nThe VTS design system used a four-layer architecture. The layers separated primitive values, semantic intent, component behaviour and application composition.\n\nPrimitive values covered raw colours, spacing and type scale. Semantic tokens named meaning rather than appearance. Component contracts defined anatomy and valid states. Bounded product compositions assembled documented components for specific operational products.\n\nThat separation was the structural precondition for the reuse test. Applications could consume semantic tokens and documented components, but they could not redefine the meaning of a priority colour, overwrite a status label or import radio transmission semantics through a generic action control.\n\n## Reusable contracts carried eligibility, state and non-use cases\n\nA reusable component contract in the VTS design system carried a minimum specification. Each contract recorded purpose and eligibility, including explicit non-use cases; an information model with source of truth, identifiers, timestamps, unknown values and permissions; behaviour with triggers, transitions, keyboard focus, interruption and recovery; visual portrayal including accessible text, responsive density and night mode; and quality evidence with accepted scenarios, reviewer and remaining exceptions.\n\nThe component system was required to keep eight distinctions apart: vessel and track; track and observation; associated and verified; event time and receipt time; traffic alert and equipment fault; acknowledge and resolve; live and replay; radio resource and transmission. These distinctions made the reuse boundary test concrete. A component could not be reused directly if the proposed use collapsed one of those distinctions.\n\n## Published VTS results showed asymmetry across products\n\nThe VTS design-system engagement assessed 70 component applications across four products in the two sprints following detailed design. The Creative Navy-recorded ledger contained 45 direct adoptions, 15 documented extensions and 10 explicit refusals, giving 64.3% direct adoption overall.\n\nThe product ledger was uneven. Inland vessel tracking assessed 18 applications, with 13 direct adoptions, 3 extensions and 2 refusals, giving 72.2% direct adoption. Electronic reporting assessed 20 applications, with 15 direct adoptions, 4 extensions and 1 refusal, giving 75.0% direct adoption. Lock planning assessed 17 applications, with 11 direct adoptions, 4 extensions and 2 refusals, giving 64.7% direct adoption. Voice Communications assessed 15 applications, with 6 direct adoptions, 4 extensions and 5 refusals, giving 40.0% direct adoption.\n\nThe asymmetry is material. A reuse test that passes every proposed use does not demonstrate boundary control. In this engagement, electronic reporting and Voice Communications produced different results because the operational meaning of the proposed component applications differed.\n\n## Product probes recorded what should transfer and what should not\n\nCreative Navy's Critical Systems Design method treated each product probe as evidence about the boundary of the shared system. Inland tracking showed that the map-anchored interaction shape transferred, while the truth conditions attached to an inland vessel record could not be imported unexamined. Presenting an administrative waterway notice as a traffic alert would invert the type system, and treating an AIS association as an authoritative registration fact would inflate identity certainty.\n\nElectronic reporting showed that a rejected report and an unfinished draft are different states, so the shared status system had to represent that difference rather than apply the alert lifecycle. Lock planning showed that queue actions retained scheduling semantics, while no interface element was permitted to read as a physical gate command. Voice Communications produced five refusals that prevented inherited behaviour from implying physical transmit authority.\n\n## Refusal is a governance artefact, not a missing asset\n\nDesign system boundary definition treats an exception as a design finding. In the VTS engagement, a refusal was recorded as a positive result rather than as a gap in the library.\n\nThat posture has a governance consequence. A deviation must cite the shared contract, explain the difference in task or authority, and name the approving owner. The point of the record is not to encourage divergence. The point is to make divergence auditable when identical behaviour would be false.\n\n## Documentation was tested by independent assembly\n\nThe VTS design system treated documentation as an artefact under test. A client engineer who was not a member of the design team built a working validation-and-correction view for the electronic reporting product in the client's frontend development sandbox. The engineer used 12 documented patterns and 2 domain adaptations, with no additional screen specification from Creative Navy.\n\nTwo joint design-and-engineering reviews followed. They checked state interpretation, focus behaviour and documented exceptions, and produced eight adoption observations. Those eight observations did not enter the 36-issue register and did not change it.\n\nThe exercise established that an engineer outside the design team could select documented components and assemble a coherent flow unaided. It also established that technology-neutral contracts supplied state, focus, content and recovery rules independently of the underlying component implementation. It did not establish completion of a product migration, an independently certified accessibility result or a production engineering efficiency benchmark.\n\n## Production status and implementation support are limited claims\n\nThe design system reached production. The client implemented the design system in production. Creative Navy provided regular implementation support across fifteen months, with the client writing the code.\n\nThis production status is not a shipped-as-designed claim. No design-fidelity comparison is recorded for the implemented interface. Production also does not establish operational, commercial, training, support or engineering-efficiency outcomes.\n\n## Evidence limits define what the VTS results do not show\n\nThe 70 assessed applications are usage proposals. They are not components, not shipping software and not additions to the 198 named states. No estimate was made of implementation effort, development cost or velocity.\n\nThe engagement does not support a nine-product redesign claim. Four products were designed or probed. Five of the nine products were never designed, and four of those five received only a bounded transfer probe. Integrated Communication System and inland chart management received constraint and applicability reviews only and were not counted in the 70 applications.\n\nThe independent assembly exercise was non-production throughout. It demonstrated capability, not completion of a product migration, not an independently certified accessibility result and not a production engineering benchmark.\n\nA measurement framework was specified and handed over for operator efficiency, operator safety and errors, implementation efficiency, system adoption, training and support, and commercial effectiveness. No result from that framework was reported back. The VTS evidence therefore contains no measured reuse outcome, no implementation-effort estimate and no validation that products built through the six gates perform better.\n\n## Related pages in the knowledge base\n\nDesign system boundary definition is closest to design governance through delivery. The neighbouring practice is about holding a design through a build. Design system boundary definition is about deciding what may be shared before the build starts.\n\nThe main case evidence is the Maritime VTS and Portfolio Design System engagement. The same evidence also connects to expert tools and internal systems, multi-stakeholder operational environments, marine and maritime systems, information architecture for expert systems, and state and status visibility design. The authority gate is also related to command integrity, where the same question appears at the level of a single action.",
+  "claims": [
+    {
+      "claim": "Design system boundary definition decides what a design system is allowed to make identical rather than how to build a component library.",
+      "evidenceType": "definition",
+      "sourceStrength": "strong",
+      "notes": "Supported by the working title and the section stating what the page owns."
+    },
+    {
+      "claim": "The six-gate reuse test checks task, meaning, authority, input, failure and recovery, and all six gates must pass for direct reuse.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "engagement record",
+      "notes": "Recorded in the VTS evidence as W72."
+    },
+    {
+      "claim": "A failure in the reuse test produces a documented extension, while a failure that would misstate authority or consequence produces a refusal.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "engagement record",
+      "notes": "Recorded in the VTS evidence as W72 and W73."
+    },
+    {
+      "claim": "The VTS design system used a four-layer architecture of primitive values, semantic tokens, component behaviour and application composition.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "engagement record",
+      "notes": "Recorded in the VTS evidence as W66."
+    },
+    {
+      "claim": "The VTS design system contained 54 components and 198 named states.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "engagement record",
+      "notes": "Recorded in the VTS evidence summary and W66 to W68 framing."
+    },
+    {
+      "claim": "Across 70 assessed component applications, the VTS ledger recorded 45 direct adoptions, 15 documented extensions and 10 explicit refusals.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "engagement record",
+      "notes": "Recorded in the VTS evidence as W70 and W71."
+    },
+    {
+      "claim": "Electronic reporting had 75.0% direct adoption while Voice Communications had 40.0% direct adoption.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "engagement record",
+      "notes": "Recorded in the VTS evidence as W71."
+    },
+    {
+      "claim": "A client engineer outside the design team assembled a coherent validation-and-correction flow from documented components alone in a non-production sandbox exercise.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "engagement record",
+      "notes": "Recorded in the VTS evidence as W77 to W80, with boundaries preserved."
+    },
+    {
+      "claim": "The design system reached production, with the client writing the code and Creative Navy providing regular implementation support across fifteen months.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "engagement record",
+      "notes": "Uses the mandatory calibration wording from the current brief."
+    },
+    {
+      "claim": "No measured reuse outcome, implementation-effort estimate, accessibility certification, nine-product redesign claim or measurement-framework result is supported.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "engagement record",
+      "notes": "Limitations drawn from W76, W80, W91 and W101."
+    }
+  ],
+  "limitations": [
+    "The 70 assessed applications were usage proposals, not components and not shipping software.",
+    "The assessed applications were not added to the 198 named states.",
+    "No implementation-effort estimate, development-cost claim or development-velocity claim is recorded.",
+    "The evidence does not support a nine-product redesign claim: four products were designed or probed, and five were never designed.",
+    "The independent assembly exercise was a capability demonstration, not completion of a product migration, not an independently certified accessibility result and not a production engineering exercise.",
+    "A measurement framework was specified and handed over, but no results were reported back.",
+    "No claim is made that the six-gate test has been validated or that products built through it perform better.",
+    "No commercial, tender, training, support, safety, certification or operational-performance outcome is claimed."
+  ],
+  "publicationBlockers": [],
+  "questionsForReview": [
+    "The current material gives mandatory calibration stating that Creative Navy provided regular implementation support across fifteen months, while an included handling-rule section says no duration should be stated for VTS implementation support. This page follows the lead-confirmed mandatory calibration but the discrepancy should remain visible for review."
+  ],
+  "relatedPageSlugs": [
+    "maritime-vts",
+    "design-governance-through-delivery",
+    "state-and-transition-review",
+    "decision-boundary-design",
+    "edge-case-and-degraded-mode-analysis",
+    "behavioural-requirements-definition",
+    "where-interface-standards-stop"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "Maritime VTS and Portfolio Design System",
+      "targetSlug": "maritime-vts",
+      "placementHint": "Use on the first mention of the main case evidence in the sections about VTS results or related pages.",
+      "reason": "The VTS engagement is the only case evidence used for the design-system boundary-definition practice."
+    },
+    {
+      "anchorText": "design governance through delivery",
+      "targetSlug": "design-governance-through-delivery",
+      "placementHint": "Use in the related pages section where the closest neighbouring practice is named.",
+      "reason": "The source identifies this as the closest neighbour and distinguishes holding a design through build from deciding what may be shared before build."
+    },
+    {
+      "anchorText": "state and transition review",
+      "targetSlug": "state-and-transition-review",
+      "placementHint": "Use near the discussion of component contracts, valid states, triggers and transitions.",
+      "reason": "The practice depends on preserving state meaning, transition authority and recovery consequences across reuse proposals."
+    },
+    {
+      "anchorText": "decision boundary design",
+      "targetSlug": "decision-boundary-design",
+      "placementHint": "Use near the authority gate and refusal criteria.",
+      "reason": "The authority gate is about whether an actor is permitted to trigger the same transition in the new product."
+    },
+    {
+      "anchorText": "edge case and degraded mode analysis",
+      "targetSlug": "edge-case-and-degraded-mode-analysis",
+      "placementHint": "Use near the failure gate and degraded-data wording.",
+      "reason": "The failure gate tests whether degraded, absent, contradictory or delayed data will be interpreted safely."
+    },
+    {
+      "anchorText": "behavioural requirements definition",
+      "targetSlug": "behavioural-requirements-definition",
+      "placementHint": "Use near the minimum specification for reusable component contracts.",
+      "reason": "The reusable contract records behaviour, triggers, transitions, interruptions and recovery conditions."
+    }
+  ],
+  "qualityChecks": {
+    "factsOnlyFromCurrentSource": true,
+    "documentationStyle": true,
+    "noMarketingLanguage": true,
+    "noInventedClaims": true,
+    "linksOnlyFromLinkingContext": true,
+    "internalNotesNotPublished": true,
+    "readyForSanityImport": true
+  }
+}

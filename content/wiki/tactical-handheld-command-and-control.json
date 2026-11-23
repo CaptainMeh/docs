@@ -1,0 +1,205 @@
+{
+  "slug": "tactical-handheld-command-and-control",
+  "title": "Tactical Handheld Command and Control for Uncrewed Systems",
+  "pageType": "case-study",
+  "category": "evidence",
+  "section": "Defence and space systems",
+  "summary": "This case study documents Creative Navy design work for tactical handheld and command-centre command-and-control interfaces for uncrewed systems. The strongest evidence concerns a co-authored argument against a permanently active touchscreen strike control, a gloved-touch sizing specification, a complete physical-control model, and explicit limits on what the interface could assert about system state.",
+  "keyFacts": [
+    "The engagement concerned tactical command-and-control software for uncrewed air, ground and sea vehicles, including functionality for committing and aborting a strike.",
+    "Creative Navy first completed a separately scoped expert review, then fourteen one-week design sprints in two blocks of seven, followed by a separate four-sprint engagement on marine uncrewed vehicles and data enrichment.",
+    "The six-person Creative Navy team included a UX designer, UI designer, project manager, product designer, researcher and interaction designer, with stable composition across both seven-sprint blocks.",
+    "The handheld block covered information architecture, navigation, mission planning, strike flow, camera operation, an interactive prototype, swarm exploration, UI concept and specification.",
+    "The programme explored 40 design options across 11 named design challenges and benchmarked 32 systems, with 21 analysed in depth.",
+    "Creative Navy and the client's design team co-authored deliverables, including the strike-control argument, the operational doctrine and the touch-sizing specification.",
+    "The strike-control recommendation moved the strike action to a simultaneous press-and-hold of two flip-guarded physical buttons, while keeping strike request status visible.",
+    "The touch-sizing specification used four consequence tiers in millimetres with pixel values derived per device, and stated where it departed from MIL-STD-1472H.",
+    "A client-run prototype session with six users found gloved touch unreliable on the target panel.",
+    "The handheld interface was built. The swarm capability was built."
+  ],
+  "bodySections": [
+    {
+      "heading": "Tactical Command-and-Control Interface Scope for Uncrewed Systems",
+      "bodyMarkdown": "Creative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nA European manufacturer of uncrewed systems, including one-way effectors, and the tactical command-and-control software that operates them set out to rebuild the interfaces through which its vehicles are planned, supervised and operated. The existing interface ran on a 14-inch ruggedised laptop running Linux at 1920 × 1080. The client's brief described that interface as engineering-focused, with raw data availability prioritised over usability or touch-friendliness.\n\nThe intended redesign separated the experience into two specialised interfaces sharing a common design language. One interface served the dismounted operator using a ruggedised handheld controller at the tactical edge. The other served command-centre use on large screens, tabletops and wall-mounted displays.\n\nCreative Navy first completed a separately scoped expert review of the running product. Creative Navy then worked through fourteen one-week design sprints in two blocks of seven: the handheld block and the command-centre block. A separate four-sprint engagement followed, extending the work to marine uncrewed vehicles and data enrichment.\n\nCreative Navy's design work covered interface structure, task behaviour, information priority and the clarity of operator control. The work did not cover autonomy, control algorithms, autonomous safety behaviour, the datalink, the effector, targeting logic, certification activity or weapons-review activity."
+    },
+    {
+      "heading": "The Command-and-Control System Supported Planning, Supervision, Camera Operation and Strike Control",
+      "bodyMarkdown": "The command-and-control system was a ground control station for uncrewed air, ground and sea vehicles. Because the client's first products included one-way effectors, the system carried dedicated functionality for committing and aborting a strike.\n\nThe interface functions included situational awareness on a battlefield map, friendly and hostile units, zones and points of interest, per-vehicle status, power, armament state, location, multi-vehicle command and strike execution through a video feed and the map. The interface also had to show whether abort remained available after a commanded strike.\n\nThe client brief named three user populations. Tactical operators worked dismounted in the field under stress on a ruggedised handheld. Mounted operators worked from inside a vehicle on an integrated station with touch, keyboard and mouse. Commanders oversaw operations from a command post on a laptop or large screens.\n\nThe persona work identified a cross-cutting condition that the brief had not made explicit: the most critical coordination across all three populations happened outside the system, over radio or verbally. That meant the interface had to remain glanceable and interruptible in every state, rather than assuming heads-down focused use.\n\nThe target device classes were a 7-inch ruggedised handheld controller with integrated physical controls, and large touch screens and tabletops. The brief required hardware controls and software to be integrated deeply enough that high-frequency actions could move away from touch where critical operation made touch dependence weak."
+    },
+    {
+      "heading": "The Expert Review Found Modularity Without Enough Guidance and Flexibility Without Enough Structure",
+      "bodyMarkdown": "Creative Navy's separately scoped expert review examined the running command-and-control product before the fourteen one-week design sprints. The review was eighteen pages long and included two long-form argument sections, a four-part heuristic evaluation, a flow and information-architecture assessment, a visual-design assessment, an accessibility assessment and a challenges-and-opportunities section.\n\nThe review applied a two-axis scoring scheme to every heuristic: current state on a three-point scale and effort to fix on a three-point scale. That structure meant findings were already sorted by severity and expected effort before later sprint planning began.\n\nThe review identified three top usability concerns: interface clutter, lack of workflow guidance, and the use of the primary colour alongside the plan colour scheme. The lowest-scoring findings included progress communication in multi-step flows, the visual prominence of primary against secondary actions, visual hierarchy, the end-to-end primary flow and search.\n\nThe modularity argument was calibrated. The product was built around discrete functional units such as plans, intents, missions, tasks and map geometry. The review treated modularity as sound for complex professional software because it made the product adaptable across operators, roles and doctrinal frameworks. The review's design position was that guidance should be layered onto modularity so expert users could operate freely while the interface supported orientation, sequencing and state recall.\n\nThe flexibility argument made a separate point. The running product had no limit on simultaneously active dialogs and no mechanism for the interface to adapt to mission context. An operator entering a focused camera-operation task could do so with a full planning workspace still active behind it. The proposed remedy was structure: mission-context modes that surfaced relevant dialogs by default, manual override and saved layouts that could be recalled and shared.\n\nThe cognitive argument underneath both findings was that working memory contracts under acute stress, attention narrows and irrelevant information requires active suppression. In that framing, an operator looking at unnecessary dialogs spends capacity on filtering rather than on the task. The review stated that the interface should always answer three questions without being asked: where the operator is, what the operator has done, and what comes next."
+    },
+    {
+      "heading": "Both Design Teams Wrote the Case Against a Permanently Active Touchscreen Strike Control",
+      "bodyMarkdown": "The central control issue concerned the strike command. The client asked that both the strike control and the abort control remain permanently visible on the touchscreen.\n\nThe reason was a material constraint. A command issued through the interface might fail to reach the vehicle, and the interface should not create a false impression that it had. The established operator behaviour was therefore to press the control repeatedly until subjectively satisfied. In that model, the persistent touchscreen control served both as the initial command input and as the manual retry mechanism.\n\nCreative Navy's designers and the client's designers jointly wrote the argument against that request. The document cited NASA-STD-3001 Volume 2 requirement V2 10027 on protection against inadvertent activation of controls, and FAA Advisory Circular 25.1302-1 on presenting the effects of operator actions so errors can be detected and corrected. These references were used as human-factors guidance, not as certification claims.\n\nThe written argument had four parts. First, a single touchscreen input was treated as an inadequate commitment gate for an irreversible action because touchscreens are vulnerable to accidental touches, rain and moisture, gloves, vibration and device movement, palm contact, wrong-control selection under stress and digitizer faults. Second, symmetrical placement of strike and abort controls at opposite screen edges could imply a physical-key mapping that did not exist. Third, a visible and enabled control could communicate that action was always available when availability depended on connectivity, operating mode and vehicle state. Fourth, repeated input is not feedback, because another press can create uncertainty about whether the operator is retrying one request, creating a duplicate or acting on information that has already aged.\n\nThe counter-recommendation separated status from commitment. Strike request status would remain visible at all times. The strike action would move to a simultaneous press-and-hold of both flip-guarded physical buttons for a defined duration. Abort would keep a fixed, predictable position, but become active only once the system confirmed that an action was in progress and remained abortable."
+    },
+    {
+      "heading": "The Strike-Control Request Pointed to Command Acknowledgement and State Reporting",
+      "bodyMarkdown": "Creative Navy's design diagnosis was that the touchscreen request was reporting a command-architecture problem through an interface request. An operator pressing a control repeatedly was compensating for unreliable command delivery, unreliable acknowledgement or unreliable state reporting. The interface request asked to make that compensation easier to perform.\n\nThe design response specified six questions the interface had to answer unambiguously: whether the input was registered, whether the command was being transmitted, whether the vehicle acknowledged it, what state the vehicle confirmed, whether the information was current or stale, and whether abort was still available.\n\nThe proposed command behaviour treated one deliberate operator action as one logical command. The recommendation named a unique command identifier, controlled and time-bounded retries, duplicate protection, expiration rules, explicit vehicle acknowledgement and a clear distinction between local input and confirmed vehicle state. Those were interface-facing requirements about what the system had to be able to report; they were not evidence that Creative Navy changed the datalink or command architecture.\n\nThis distinction shaped the doctrine for the whole interface. A requested state must not visually replace a confirmed state before the vehicle reports the result. Command state was specified with seven explicit values: requested, sending, awaiting acknowledgement, accepted, rejected, timed out and resulting state confirmed. The same instruction followed the list: use only states the technical system can actually determine."
+    },
+    {
+      "heading": "The Touch-Sizing Specification Used Consequence Tiers Rather Than a Blanket Touch-Target Rule",
+      "bodyMarkdown": "Creative Navy and the client's design team co-authored a gloved-first touch-sizing specification for the handheld and tablet surfaces. The specification was authored in millimetres with pixel values derived per device because the display had not been chosen when the work began. An earlier revision derived from an 8-inch panel at 11.16 px/mm. The settled specification derived from a 7-inch panel at 323 ppi and 12.72 px/mm.\n\nThe specification opened with three reference points. The first was the golden standard, MIL-STD-1472 plus gloved-touch research, at 15 to 25 mm for gloved operation and sized by visual angle at viewing distance. The second was practice in the field, where the specification recorded that no fielded ground control station abides by that full standard and that dense consumer-style systems remain operable only because most of their surface tolerates a mis-tap and the few critical actions are separately gated. The third was the proposed middle ground: consequence tiers rather than a blanket floor.\n\nThe four tiers were specified in millimetres with pixel values derived per device. T1 covered critical and unprotected controls such as recovery actions, holds and mode changes, limited to three or four per view, at ≥22 mm, 280 px on the handheld and 194 px on the tablet, with 5 mm isolation. T2 covered primary in-mission actions such as feed switching, map tools and vehicle selection, at 15 mm, 191 px and 132 px. T3 covered mis-tap-tolerant actions such as selection, panning and opening a panel, at roughly 12 mm, 153 px and 106 px. T4 covered planning and static density such as plan and intent editing and settings, at 8 to 10 mm, 102 to 127 px and 71 to 88 px.\n\nThe spacing rule was ≥3 mm between targets, equal to 38 px and 26 px, with 5 mm isolation around safety controls, equal to 64 px and 44 px. The specification also set an absolute floor beneath the tiers: 6.35 mm, 81 px and 56 px, citing WCAG 2.2 Success Criterion 2.5.8.\n\nThe specification measured itself against MIL-STD-1472H and stated where it deliberately departed from that standard. Two of the four tiers sat below the standard's minimum, and T2 sat below the bare-hand minimum. The specification applied the full standard where a missed tap was unrecoverable, while allowing graduated density where an error cost a retry or where the work was stationary.\n\nProtection patterns were permitted only at T2 and below, never at T1. The permitted patterns included slide-to-confirm, hold-to-commit at 300 to 600 milliseconds and select-then-arm. At T1, size itself was the protection and the specification did not allow size to be substituted away.\n\nThe capacity rule had practical force. If an in-mission view could not fit its controls at their tier sizes, controls were cut or moved to hardware. The tiers were not downgraded to fit."
+    },
+    {
+      "heading": "The Client-Run Prototype Session Found Gloved Touch Unreliable on the Target Panel",
+      "bodyMarkdown": "A client-run prototype session with six users tested the interactive prototype. The participants were ex-army personnel and current drone pilots. Some worked bare-handed and some worked gloved.\n\nThe session found that gloved touch was unreliable on the target panel. The display did not consistently register gloved input, and the gloves available were assessed as not well suited to the touchscreen. Icons and terminology were reported as needing refinement. The remainder was reported favourably, but that favourable remainder is not treated as validation.\n\nThe finding sits directly beside the sizing specification. The specification assumed heavy gloves and had named the reference glove as an open dependency. The client-run session showed that millimetres were necessary but incomplete, because target size cannot solve a hardware-and-glove pairing that fails to register input at all."
+    },
+    {
+      "heading": "The Handheld Design Included a Complete Non-Touch Operating Model",
+      "bodyMarkdown": "The 7-inch ruggedised handheld controller was specified at 1920 × 1200, 323 ppi, 12.72 px/mm, 151 × 94 mm and 2,500 nits. The device carried twelve bezel buttons, four front push buttons, two 2-axis Hall-effect joysticks, a five-direction joystick, two 1-axis joysticks on the top edge and two push buttons with flip guards. It also had two operator-presence buttons on the rear, weighed 1,243 g with the tablet fitted, and carried MIL-STD-810H, IP65 and −20 °C to +50 °C hardware specifications. A chest mount was available. Braced-thumb handheld use made roughly half the screen thumb-reachable.\n\nThe comparison tablet was 10.1 inches, 1920 × 1200, roughly 224 ppi, 8.83 px/mm, 218 × 136 mm and 1,000 nits. The specification treated freehand set-down use as one tier stricter in mission because roughly 5% of the screen was thumb-reachable.\n\nCreative Navy's design work mapped the handheld's physical controls. Altitude and orientation were placed on the left 2-axis joystick. Forward, backward, left and right movement were placed on the right 2-axis joystick. Camera tilt and zoom were placed on the top-edge 1-axis joysticks. Element navigation and selection were placed on the five-direction joystick. Vehicle switching, mode, split-screen, camera cycling, sensor cycling, screenshot, recording and return to map were assigned to function keys. Signal recovery, navigation-mode switching, and show or hide of the head-up display and interface were assigned to push buttons. Strike used a press-and-hold of both flip-guarded buttons for one second. Abort used a dedicated function key. Three assignments remained open when the mapping was recorded and were resolved later.\n\nCreative Navy's design work also specified a complete non-touch navigation model. A centre marker remained fixed in the middle of the map view. The right joystick panned the map beneath it. The five-direction joystick stepped the marker between map entities such as vehicles, waypoints and points of interest. Pressing selected the highlighted entity and opened its details. A dedicated key opened and closed the menu, which was navigated with the same joystick. In the camera view, pressing right activated the flight-settings row, up and down edited the selected value, and another press confirmed it.\n\nThis non-touch model mattered because the client-run session found gloved touch unreliable. The physical controls were not only accelerators for expert users. They were the path through which primary navigation and critical control could continue when the touchscreen was a weak input surface."
+    },
+    {
+      "heading": "Constraint Respecting Limited What the Interface Displayed and Enabled",
+      "bodyMarkdown": "Creative Navy's design work in this case is an example of constraint respecting. The interface repeatedly gave up a cleaner or denser display in order to avoid asserting a system fact that could not be evidenced.\n\nThe radial action menu was one example. The obvious design would show only the actions applicable to the selected object. The client's engineers established that the system could not reliably determine whether a vehicle was airborne or on the ground. A context-sensitive action menu would therefore have guessed. The design showed every option, always, accepting a less tailored menu rather than presenting an unsupported state distinction.\n\nThe camera-operation view used the same discipline. Head-up-display content was reduced against available data provenance. Temperature was removed because what it measured was not established. The wind indicator was questioned because the source of its speed and direction data was unclear. The satellite-navigation signal was promoted into the status bar instead.\n\nThe operational doctrine made the principle explicit. Vehicle status, mission segment, guidance mode, armament state, command state, system health and alert priority were separated as related but distinct facts. Armament state had five explicit values: safe, armed, change pending, unavailable and unknown. Command state had seven explicit values, followed by the instruction to use only states the technical system can actually determine.\n\nThe doctrine also prioritised relationships over isolated measurements. A power percentage does not establish whether recovery is viable; the operator needs the relationship between endurance remaining, time to recovery and expected reserve. Coordinates matter less than the relationship between the current leg, the next waypoint, distance, estimated arrival and route deviation."
+    },
+    {
+      "heading": "The Interface Treated Electromagnetic Interference as an Expected Operating Condition",
+      "bodyMarkdown": "Creative Navy authored a requirement stating that the system should treat electromagnetic interference as an expected operating condition rather than an exceptional failure. That requirement was framed as a system requirement because contested electromagnetic conditions were core to the intended environment.\n\nThe control set reflected that assumption. Signal recovery replaced return-to-home on the first push button at the client's suggestion. The signal-recovery manoeuvre involved the vehicle climbing and loitering to reacquire the link, rather than simply commanding it to come back.\n\nThe command-state model also reflected the same operating condition. Rejected and timed out were normal command-state values rather than exceptional states outside the model. The interface design therefore had to distinguish requested, sending, awaiting acknowledgement, accepted, rejected, timed out and resulting state confirmed.\n\nThe status and alert system used graduated information rather than binary display states. The status bar carried vehicle identity, signal strength, power and charge state, speed and mission status. Mission status was written as a plain statement of what was happening, such as en route to a waypoint or orbiting a target. Speed warnings used a warning threshold and a higher alert threshold, expressed in metres per second, and sat with environmental warnings rather than in the telemetry readout."
+    },
+    {
+      "heading": "Multi-Vehicle Operation Was Gated First by Whether the Problem Was Solvable by Design",
+      "bodyMarkdown": "The delivery plan stated before work began that the client was not certain the multi-vehicle problem was solvable by design at all. Creative Navy's first test of the swarm designs was therefore solvability, before any comparison of design merits.\n\nThe swarm work used map clustering with redundant encoding to answer the review finding that colour differentiation degrades as vehicle counts rise. Grouping was manual rather than proximity-based, so the operator assigned vehicles to a group rather than relying on the system to infer grouping from distance.\n\nThe design explored a vehicle dashboard and a target dashboard as a third view alongside the map and camera feed. The evidence records an explicit caution that adding a dashboard was a significant change for a product that had only ever had a map and a feed. The feed grid scaled between arrangements rather than using a fixed layout, with ordering driven by mission logic rather than vehicle index.\n\nThe multi-vehicle design worked within engineering ceilings established by the client's engineers. Three to four vehicles were treated as the practical limit of operator cognitive load at the system's current autonomy level. Four to five simultaneous video feeds were treated as realistic where nine was not. These figures are design constraints, not product capability claims.\n\nThe command-centre block carried the same spine at a different scale. It used the same four assessment criteria, the same recursive ambiguity triage and the same swarm problem, but applied them to large single screens, multi-screen setups, tabletops and wall-mounted displays readable at a distance.\n\nThe handheld interface was built. The swarm capability was built."
+    },
+    {
+      "heading": "Creative Navy's Critical Systems Design Method Tracked Ambiguity as a Design Object",
+      "bodyMarkdown": "Creative Navy's Critical Systems Design method designs software whose interfaces, workflows, and operating logic carry real operational consequences, working through five phases — Sandbox Experiments, Concept Convergence, Iterative System Building, Organizational Integration, and Implementation Partnership — to take each system from initial exploration to independent operation by the client's own team.\n\nCreative Navy's Critical Systems Design method was applied through four claimable phases in this engagement: Sandbox Experiments, Concept Convergence, Iterative System Building and Organizational Integration. Implementation Partnership is not claimable from the available evidence, because there is no build oversight, no fidelity comparison, no integration gate and no hand-over package of the kind recorded in some other engagements.\n\nSandbox Experiments covered the expert review and opening sprints of each block. Creative Navy-recorded engagement evidence includes option space mapping across 40 design options and 11 design challenges: 26 options across 6 handheld challenges and 14 options across 5 command-centre challenges. The competitive vector included 32 benchmarked systems, with 21 analysed in depth across information architecture, map and spatial interaction, strike and engagement workflow, video feed, hardware and physical control integration, multi-vehicle command, cognitive load and stress-state design, night mode and environmental adaptation, and large-screen adaptation.\n\nConcept Convergence appeared in the scope decision produced by the expert review and in the selection of areas for a system whose scale exceeded the size of the project. The swarm feasibility gate is part of the same phase logic: the work first tested whether the problem was solvable by design before comparing options.\n\nIterative System Building covered both seven-sprint blocks. The seven handheld sprints covered information architecture, main navigation and map, strike and observation vehicle flows, map view, plan and intent, camera-operation view, an interactive prototype, swarm exploration, UI concept and UI specification. The command-centre block covered swarm exploration, information architecture and navigation for large screens, tabletops and wall-mounted displays, profile configuration, large-screen prototyping, refinement, UI concept and UI specification.\n\nOrganizational Integration was evidenced by co-authored deliverables and the operating cadence. Creative Navy's designers and the client's designers produced deliverables together. A co-authored requirements table was built screen by screen, with content, actions and priority, plus facing columns for Creative Navy's comments and open questions and the client's answers. The project cadence included three meetings a week with the client's design team, weekly developer progress meetings, end-of-sprint reviews, two-week checkpoints for method evaluation and ambiguity triage, and broader developer involvement at key mid-fidelity milestones.\n\nProgressive specification was visible in how ambiguity was handled. Creative Navy authored the requirement set first and submitted it for review and enrichment, not to settle every requirement, but to locate the ambiguity. Each unknown was then handled in one of three ways: the client sought clarification, the designs catered for a range of speculative possibilities, or the area was deprioritised. The triage recurred through the project, and the fitness of Creative Navy's Critical Systems Design method was reviewed every two weeks alongside it."
+    }
+  ],
+  "evidenceSummary": {
+    "strongClaims": [
+      "Creative Navy worked on an expert review, fourteen one-week design sprints in two blocks of seven, and a separate four-sprint follow-on engagement for tactical command-and-control interfaces.",
+      "The engagement scope covered interface structure, task behaviour, information priority and clarity of operator control, and excluded autonomy, control algorithms, autonomous safety behaviour, datalink, effector, targeting logic, certification and weapons-review activity.",
+      "Creative Navy's designers and the client's designers jointly wrote the argument against a permanently active touchscreen strike control and recommended physical two-button commitment with persistent status display.",
+      "The strike-control diagnosis treated repeated operator activation as a symptom of unreliable command delivery, acknowledgement or state reporting rather than as a button-design preference.",
+      "The touch-sizing specification used four consequence tiers in millimetres with pixel values derived per device, and stated where it departed from MIL-STD-1472H.",
+      "The handheld design included a complete non-touch navigation model and physical-control mapping, including strike on a one-second press-and-hold of both flip-guarded buttons.",
+      "The interface repeatedly avoided displaying or enabling distinctions the technical system could not determine.",
+      "The programme explored 40 design options across 11 challenges and benchmarked 32 systems, with 21 analysed in depth.",
+      "The handheld interface was built and the swarm capability was built."
+    ],
+    "weakerClaims": [
+      "A client-run prototype session with six users found gloved touch unreliable on the target panel. This is qualitative client-reported evidence, not a Creative Navy usability test, and it did not record pass criteria, task times or error counts."
+    ],
+    "limitations": [
+      "No client, product, vehicle, hardware trade name, individual, end customer, programme, contract, funding figure or theatre of operations is named.",
+      "Creative Navy's scope did not include autonomy, control algorithms, autonomous safety behaviour, the datalink, the effector, targeting logic, certification or weapons-review activity.",
+      "The strike-control recommendation was not validated as a safety measure; the hold duration and physical-control design required human-factors and system-safety testing that this engagement did not perform.",
+      "The client did not accept the full strike-control recommendation; it held its position on keeping both strike and abort controls simultaneously visible.",
+      "Creative Navy conducted no field research, contextual observation, operator interviews, timed task studies or field visits.",
+      "The only user session was client-run with six participants and is treated as qualitative client-reported evidence.",
+      "Creative Navy did not conduct gloved actuation testing, sunlight testing, vibration testing, cold testing, night-vision testing or operational testing on the physical device.",
+      "The NASA-TLX assessment has no recorded participants, conditions or result.",
+      "No operational, mission, workload, error-rate, time-saving, throughput or commercial figure exists.",
+      "The handheld interface and swarm capability were built, but no design-fidelity comparison exists."
+    ]
+  },
+  "relatedPageSlugs": [
+    "kispe-space",
+    "schone-mission-control",
+    "raymarine-vhf",
+    "industrial-process-control-platform",
+    "elsner-smart-home-controller",
+    "what-is-client-reported",
+    "what-is-inferred",
+    "what-we-do-not-claim",
+    "what-is-observed-but-not-quantified",
+    "defence-and-space-systems",
+    "embedded-devices-and-constrained-interfaces",
+    "high-consequence-environments",
+    "multi-stakeholder-operational-environments",
+    "expert-tools-and-internal-systems",
+    "users-keep-repeating-an-action-because-the-system-cannot-confirm-it-worked"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "KISPE Space",
+      "targetSlug": "kispe-space",
+      "reason": "Related defence evidence with a distinct case-study frame."
+    },
+    {
+      "anchorText": "Schone Airspace Group Mission Control",
+      "targetSlug": "schone-mission-control",
+      "reason": "Related defence study with a distinct evidence frame."
+    },
+    {
+      "anchorText": "Raymarine Marine VHF and AIS Radio",
+      "targetSlug": "raymarine-vhf",
+      "reason": "Comparable evidence involving physical-control reasoning."
+    },
+    {
+      "anchorText": "Industrial Process Control Platform",
+      "targetSlug": "industrial-process-control-platform",
+      "reason": "Comparable constrained-interface case involving buttons beside a touchscreen."
+    },
+    {
+      "anchorText": "Elsner Smart Home Controller",
+      "targetSlug": "elsner-smart-home-controller",
+      "reason": "Related constrained-interface evidence."
+    },
+    {
+      "anchorText": "client-reported evidence",
+      "targetSlug": "what-is-client-reported",
+      "reason": "The case relies on client-reported operator behaviours and a client-run six-user prototype session."
+    },
+    {
+      "anchorText": "inferred evidence",
+      "targetSlug": "what-is-inferred",
+      "reason": "The personas were explicitly labelled speculative and were not built from primary research."
+    },
+    {
+      "anchorText": "claims Creative Navy does not make",
+      "targetSlug": "what-we-do-not-claim",
+      "reason": "The case has explicit exclusions around safety, certification, deployment and operational outcomes."
+    },
+    {
+      "anchorText": "observed but not quantified evidence",
+      "targetSlug": "what-is-observed-but-not-quantified",
+      "reason": "The case includes qualitative findings and engagement records without operational measurement."
+    },
+    {
+      "anchorText": "Defence And Space Systems",
+      "targetSlug": "defence-and-space-systems",
+      "reason": "Source-classified context for this case study."
+    },
+    {
+      "anchorText": "Embedded Devices And Constrained Interfaces",
+      "targetSlug": "embedded-devices-and-constrained-interfaces",
+      "reason": "Source-classified context for this case study."
+    },
+    {
+      "anchorText": "High Consequence Environments",
+      "targetSlug": "high-consequence-environments",
+      "reason": "Source-classified context for this case study."
+    },
+    {
+      "anchorText": "Multi Stakeholder Operational Environments",
+      "targetSlug": "multi-stakeholder-operational-environments",
+      "reason": "Source-classified context for this case study."
+    },
+    {
+      "anchorText": "Expert Tools And Internal Systems",
+      "targetSlug": "expert-tools-and-internal-systems",
+      "reason": "Source-classified context for this case study."
+    }
+  ],
+  "tags": [
+    "case study",
+    "defence and space systems",
+    "uncrewed systems",
+    "command and control",
+    "ruggedised handheld interface",
+    "gloved touch",
+    "physical controls",
+    "state visibility",
+    "error reduction",
+    "constraint respecting"
+  ],
+  "_meta": {
+    "sourcePath": "sources/articles/Case studies/case-study--tactical-handheld-command-and-control.md",
+    "parentSlug": "defence-and-space",
+    "childPageSlugs": [],
+    "generatedBy": "openai"
+  }
+}

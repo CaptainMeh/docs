@@ -1,0 +1,208 @@
+{
+  "_type": "documentationPage",
+  "sourceFile": "Articles/Case studies/case-study--industrial-process-control-platform.md",
+  "sourcePath": "sources/articles/Case studies/case-study--industrial-process-control-platform.md",
+  "sanityDocumentIdCandidate": "documentationPage.industrial-process-control-platform",
+  "title": "Industrial Process Control Platform",
+  "slug": {
+    "_type": "slug",
+    "current": "industrial-process-control-platform"
+  },
+  "pageType": "case-study",
+  "category": "evidence",
+  "parentSlug": "industrial",
+  "childPageSlugs": [],
+  "excerpt": "An anonymised case study on Creative Navy's work for a European industrial automation vendor whose process control software coordinates machining cells. The engagement covered an expert review, a six-sprint design block, an ongoing retainer, and a separate touchscreen control workstream.",
+  "metaTitle": "Industrial Process Control Platform",
+  "metaDescription": "An anonymised case study on UX audit and design for process control software that coordinates automated machining cells.",
+  "summary": "Creative Navy worked on an in-development process control platform for automated machining cells. The documented engagement includes a separately scoped UX audit, six one-week design sprints, an ongoing twelve-month retainer at two weeks per month, and a second touchscreen control product workstream.",
+  "definition": "",
+  "keyFacts": [
+    "The client is anonymised as a European industrial automation vendor whose process control software coordinates machining cells.",
+    "The engagement has three stages: an initial UX audit, a six-sprint design block, and an ongoing twelve-month retainer at two weeks per month.",
+    "Creative Navy-recorded engagement facts include a five-person team, four competitors benchmarked, five personas from direct research sessions, and in-situ operator observation at the client's demonstration facility.",
+    "Creative Navy delivered 48 screens during the six-sprint design block and 46 further screens during the retainer to date, for 94 total screens recorded in the engagement evidence.",
+    "The platform is in development and the case evidence does not establish production, throughput, efficiency, error-rate, commercial, or market outcomes.",
+    "Components documented and marked ready for development have been implemented, but this is not evidence of product outcome because the platform is still in development.",
+    "The client ran its own usability test with 12 participants; all 12 rated the new designs as significantly above expectations, but the result is client-reported stated preference on designs rather than measured task performance on a deployed system.",
+    "The second touchscreen control product was scoped at one, two, or three sprints, and the client selected the three-sprint option."
+  ],
+  "tags": [
+    "industrial automation",
+    "process control software",
+    "machining cells",
+    "UX audit",
+    "expert review",
+    "Critical Systems Design",
+    "state visibility",
+    "operator workflow",
+    "touchscreen control",
+    "client-reported evidence"
+  ],
+  "bodyMarkdown": "- **Primary case-study category:** /evidence/case-studies/industrial\n- **Primary context:** /contexts/multi-stakeholder-operational-environments\n- **Also-relevant contexts:** /contexts/expert-tools-and-internal-systems, /contexts/industrial-automation-and-machinery, /contexts/embedded-devices-and-constrained-interfaces\n- **Connects to:** /situations/complexity/multi-role-workflows-are-fragmented, /situations/complexity/expert-workflows-are-hard-to-operate, /situations/complexity/system-state-is-hard-to-understand, /situations/growth-and-product-strategy/training-burden-is-too-high, /situations/growth-and-product-strategy/product-cannot-scale-without-specialist-onboarding, /failures/state-visibility-failures/mode-changes-are-unclear, /failures/state-visibility-failures/important-status-information-is-buried, /capabilities/state-and-status-visibility-design, /capabilities/information-architecture-for-expert-systems, /capabilities/ux-audit-for-complex-products, /capabilities/workflow-and-task-structure-redesign\n\n## Classification\n\nPrimary case-study category: /evidence/case-studies/industrial\n\nPrimary context: /contexts/multi-stakeholder-operational-environments\n\nAlso-relevant contexts: /contexts/expert-tools-and-internal-systems, /contexts/industrial-automation-and-machinery, /contexts/embedded-devices-and-constrained-interfaces\n\nConnects to: /situations/complexity/multi-role-workflows-are-fragmented, /situations/complexity/expert-workflows-are-hard-to-operate, /situations/complexity/system-state-is-hard-to-understand, /situations/growth-and-product-strategy/training-burden-is-too-high, /situations/growth-and-product-strategy/product-cannot-scale-without-specialist-onboarding, /failures/state-visibility-failures/mode-changes-are-unclear, /failures/state-visibility-failures/important-status-information-is-buried, /capabilities/state-and-status-visibility-design, /capabilities/information-architecture-for-expert-systems, /capabilities/ux-audit-for-complex-products, /capabilities/workflow-and-task-structure-redesign\n\n## Anonymised industrial process control platform for machining cells\n\nCreative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nCreative Navy worked with a European industrial automation vendor whose process control software coordinates machining cells. The platform is a process control system for automated machining cells, where software tracks which physical workpiece is on which pallet, which pallet is in which location, and how machines can continue running without unnecessary manual intervention.\n\nThe engagement is recorded as three stages. Creative Navy first conducted a separately scoped UX audit of the existing platform. Creative Navy then completed six one-week design sprints covering parts and projects and the node screen. Creative Navy is now working on a twelve-month retainer at two weeks per month, with a parallel touchscreen control product also scoped and won as a separate workstream.\n\nThe platform is in development. The case evidence does not support claims about deployment, production use, throughput, efficiency, error-rate reduction, commercial performance, or market outcome.\n\n## Operating reality of the automated machining cell\n\nThe process control platform coordinates a cell of CNC machines, storage magazines, workbenches, a loading station, wheeled trolleys, and a loading robot on a rail. The client refers to a cell as a node. One operator is typically responsible for one cell per shift.\n\nWork moves through the cell on pallets. A raw block of metal is clamped to a pallet, the pallet carries an RFID chip, and the robot moves pallets between magazines and machine chucks. Upstream, a CAM engineer turns a CAD model into an NC program and a workflow. Downstream, an operator sets up the physical blank, has it measured on a coordinate measuring machine, and releases it into the cell.\n\nThe operating problem is that the system's digital model drifts from physical reality. A pallet can be moved by hand, a door can be opened, or a workpiece can be mounted differently than recorded. The interface therefore has to support reconciliation between the digital record and the physical truth through visual confirmation, RFID scanning, or robot-read storage scans.\n\nManual intervention has an operational cost because entering the cell stops production. The safety fence shuts everything down when a person walks in. The interface therefore has to help the operator anticipate and batch interventions rather than treat each intervention as an isolated screen event.\n\nCreative Navy-observed operating conditions included standing-height interfaces bolted to individual machines, mixed daylight and industrial lighting with glare, medium ambient noise, oil and metal swarf, and aisles roughly one person wide. These observations are not quantified outcome evidence, but they define the performance in reality conditions that shaped the design work.\n\n## Expert review findings on colour, legibility, consistency, and state visibility\n\nCreative Navy conducted a heuristic expert review of the existing platform in a demonstration environment. The review covered parts and projects management, part creation, the cell overview, the manual preset workplace, the setup workplace, storage inspection, the robot page, and the monitoring view.\n\nThe central audit finding was that one accent colour carried six meanings. The corporate red signalled brand identity, primary action, selected table row, active filter, current navigation location, and error. This meant that an urgent machine fault used the same colour family as ordinary selection.\n\nTwo reviewed examples made the state-visibility problem concrete. A storage unit tile showed a green header band for transporting and a solid red icon for selected, with no legend on screen and only a subtle border-weight change as an additional cue. In the alarms table, an error row and a selected row were both solid red in the same table at the same time.\n\nCreative Navy-recorded audit evidence also identified legibility and consistency failures. Button text was recorded from the design file inspector as 10px Noto Sans, line-height 100%, uppercase with wide tracking, on screens read while standing and at distance in a daylit hall. The audit found six different ways of showing selection, five coexisting date formats, mixed units within a single column, navigation that changed between screens, four names for one machine, and primary actions relocating mid-task.\n\nThe audit evidence has two important limits. The audit deliverable contained prose critique against unmarked screenshots rather than annotated examples. The audited environment used demonstration data, so the audit did not prove real-world data density.\n\n## Configurable roles made information architecture a constraint-respecting problem\n\nThe hardest structural problem was that Creative Navy could not assume a fixed information architecture. The client's customers configure user groups themselves, choose which interface components each group needs, and that selection generates the group's navigation.\n\nThe configuration space covered five company archetypes, from a single-operator shop to a large corporation with eleven distinct operator groups across six components. Roles also change over time: a setup-dedicated operator may leave, and a preset operator may need to absorb both tasks without accepting two separate computers.\n\nCreative Navy's Critical Systems Design method treated this as a constraint respecting and organic system building problem. The design work had to produce a chassis that stayed coherent under customer-assembled configurations, while making each component legible alone and in combination.\n\nThis information-architecture constraint is more specific than a general industrial interface problem. The dominant design challenge was a mutable, multi-role operating environment in which the product had to adapt to different organisational structures without losing state visibility or task clarity.\n\n## Research, domain learning, and requirements artefacts during the six-sprint design block\n\nCreative Navy-recorded research during the six-sprint design block produced five personas from direct research sessions, covering six individuals across three role types. Creative Navy also observed operators in situ at the client's demonstration facility, benchmarked four competitors, and used hands-on access to a demonstration environment for domain learning.\n\nThe six-sprint block covered two areas: parts and projects, which formed the upstream engineering surface, and the node screen, which formed the operator surface. Creative Navy compressed research, requirements, exploration, structural design, and visual design into this block.\n\nA shared requirements table was co-authored with the client screen by screen. The table captured purpose, content, actions, priority, Creative Navy's open questions, and the client's answers. The artefact made assumptions explicit and visible, matching the blanks phenomenon described in Creative Navy's terminology.\n\nCreative Navy's design work used greyscale structural exploration before visual design, with a UI brief agreed during the block. The six-sprint block delivered 48 screens, recorded as an engagement fact rather than an outcome claim.\n\n## Design response to status ambiguity, action hierarchy, panels, and empty states\n\nCreative Navy's Critical Systems Design method connected headline audit findings to identifiable design responses. The strongest evidence in this case is not a deployed outcome; it is traceability from demonstrated interface problem to demonstrated design response.\n\nRed was reserved for brand, error states, and destructive actions only. Primary actions became dark or neutral. Status communication moved to a seven-state taxonomy covering ready, warning, processing, done, error, transport, and end-of-life. Each state used a distinct hue, a text label, and an icon, so colour was not the only carrier of meaning.\n\nCreative Navy specified action hierarchy rules for entity panels. The transport action is primary when the robot can move the item, the linking action is primary when it cannot, and unlink is always secondary. This replaced inconsistent button placement and unclear action priority with a documented rule.\n\nCreative Navy also standardised the modal pattern, using secondary action on the left and primary action on the right. A single side panel pattern included specified default and minimum widths and documented default, hover, focused, and pressed states. Empty states were written for list views and storage positions rather than leaving blank cards unexplained.\n\nA documented status timeline component distinguished future, current, and completed steps. The component marked automatic versus manual transitions and surfaced preconditions on hover. Filters, sorting, and column controls were placed consistently in a fixed position.\n\n## RFID linking feedback answered a physical visibility problem\n\nCreative Navy's design response for RFID linking is the clearest trace from research observation to interface specification. A node operator reported that the RFID linking step gave no audio response, was visually too small, and did not provide feedback when the screen was not visible from the loading station.\n\nThe design response specified distinct audio feedback patterns for scanning. The scan dialog distinguished a first scan from a second scan and separated valid from invalid pallet signals. It also distinguished scanning an empty chuck, an occupied chuck, an empty loading station, and an occupied loading station.\n\nThis design decision addressed a physical operating condition rather than a purely visual interface issue. In the client's facility, each operator screen is bolted to its own machine, and an operator cannot rely on reading a screen across the hall. The cell overview therefore functions as a digital equivalent of a stack light: it gives a readable state overview in a setting where the operator may not be standing at the relevant machine.\n\nThe evidence basis is Creative Navy-recorded research and design specification. It does not establish a measured reduction in error, time, or manual intervention.\n\n## Assistance layer preserved operator authorship while separating notifications from instructions\n\nCreative Navy's retainer work later included an operator instructions layer. The design was shaped by a research finding that operators express strong ownership of their cell, referring to it as their node, and can resist being instructed by software.\n\nCreative Navy's design separated notification from instruction. A notification describes what has already happened and is acknowledged. An instruction describes what the operator should do next and is completed. This distinction preserved a clearer role for the operator while still allowing the system to support task execution.\n\nInstructions were grouped by day, carried inline links to the entities involved, and could be filtered by type, machine, timeline, and location. A batching panel grouped related manual interventions in one storage unit into a single instruction, so the operator could make one trip rather than respond to many separate items.\n\nThe batching design is tied to the documented operating reality that entering the cell stops production. The case evidence supports the design rationale; it does not establish a measured production or time-saving outcome.\n\n## Retainer work, component documentation, and implemented development-ready components\n\nCreative Navy's ongoing retainer covers rolling screen-by-screen work at two weeks per month over twelve months. Retainer work includes storage views, machine detail, robot detail, workflow creation and editing, planning, manual preset, setup workplace, and an operator instructions layer.\n\nCreative Navy-recorded delivery during the retainer includes 46 further screens to date, bringing the recorded total to 94 screens across the six-sprint design block and retainer. Deliverables now include written component documentation paired with prototypes and marked ready for development.\n\nComponents marked ready for development have been implemented. This is a supported engagement fact and adoption fact, but it is not a product outcome claim. The platform remains in development.\n\nThe component documentation reflects progressive specification in the retainer. Design decisions were not only represented in prototypes; they were documented in a form that development teams could use, while remaining within the evidence limit that implementation of components is not the same as deployed product performance.\n\n## Touchscreen control workstream required a different interaction layer\n\nCreative Navy also scoped a separate touchscreen control product for a small touchscreen device with hardware buttons alongside desktop use. Creative Navy offered one-, two-, and three-sprint options, and the client selected the three-sprint option.\n\nCreative Navy argued that a single sprint would create structurally incomplete foundations and hidden downstream cost. The risk described in the scoping work was that teams would either work around unresolved decisions or carry unresolved decisions forward as design debt.\n\nThe technical judgement was that most desktop platform components could not be reused directly at touchscreen scale. Touch targets, spacing, typography, layout density, and navigation differ between desktop and touchscreen use. The design goal was therefore a coherent extension of the design system, not direct reuse of the desktop interaction layer.\n\nThis workstream is evidence of scoping and design judgement. It is not evidence of production outcome, market uptake, or measured usability improvement.\n\n## Regulatory and alarm-management context did not make Creative Navy the certifying body\n\nThe client's functional specification named the NIS2 Directive and the Cyber Resilience Act as drivers for the platform's user-identification requirements. This is engagement context for the platform's requirements, not evidence that Creative Navy certified, validated, or provided regulatory compliance credentials.\n\nThe platform's alarm work should be read against ISA-18.2 and IEC 62682 as relevant alarm-management context. The alarm view contained severity, source classification, and fault codes, which is where a rationalisation discipline would begin.\n\nCreative Navy's role was design work on control software interfaces and workflows. The case evidence does not support claims about machinery safety certification, regulatory conformity, cybersecurity compliance, or alarm-management expertise beyond the work actually designed.\n\n## Client-reported usability testing and evidence limits\n\nIn usability testing conducted by the client with 12 participants, all 12 rated the new designs as significantly above expectations. This result is client-reported: the test was designed and run by the client's own team, it captures participants' rated impressions rather than measured task performance, and it was conducted on designs rather than on a deployed system.\n\nThe engagement record is stronger for delivery facts than for outcome claims. Creative Navy-recorded facts include the three-stage engagement structure, six one-week design sprints, a twelve-month retainer at two weeks per month, a five-person team, 48 screens delivered during the design block, 46 screens delivered during the retainer to date, four competitors benchmarked, five personas from direct research sessions, and in-situ operator observation.\n\nThe available case evidence does not support any claim about production efficiency, throughput, error reduction, time saving, commercial performance, market performance, safety-critical compliance, or deployed product performance. The platform is still in development.\n\n## Related pages\n\nRelated evidence pages include other industrial and control-interface case studies, evidence-standard pages that distinguish client-reported evidence from measured outcomes, and outcome pages that define what Creative Navy does and does not claim from case evidence.\n",
+  "claims": [
+    {
+      "claim": "The engagement had three stages: a separately scoped UX audit, a six-sprint design block, and an ongoing twelve-month retainer at two weeks per month.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "engagement record",
+      "notes": "Recorded as an engagement fact, not an outcome."
+    },
+    {
+      "claim": "Creative Navy delivered 48 screens during the six-sprint block and 46 during the retainer to date, for 94 total screens.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "engagement record",
+      "notes": "Delivery counts are engagement facts and must not be framed as performance outcomes."
+    },
+    {
+      "claim": "The audit found that one red accent colour carried six meanings, including error and selection.",
+      "evidenceType": "Creative Navy-observed",
+      "sourceStrength": "case evidence",
+      "notes": "Supported by audit findings and examples from storage tiles and alarms table."
+    },
+    {
+      "claim": "The design response reserved red for brand, error states, and destructive actions, and introduced a seven-state taxonomy with colour, label, and icon redundancy.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "case evidence",
+      "notes": "Traceable design response to audit findings; no deployed outcome claimed."
+    },
+    {
+      "claim": "Five personas were built from direct research sessions, with in-situ operator observation and benchmarking of four competitors.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "engagement record",
+      "notes": "Recorded research activities during the six-sprint design block."
+    },
+    {
+      "claim": "The RFID scan dialog specified distinct audio feedback patterns in response to a researched visibility and feedback problem at the loading station.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "case evidence",
+      "notes": "Traceable research-to-design chain; no measured task-performance outcome claimed."
+    },
+    {
+      "claim": "Components documented and marked ready for development have been implemented.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "engagement record",
+      "notes": "Supported adoption fact, but the platform remains in development and this is not evidence of product outcome."
+    },
+    {
+      "claim": "The client ran its own usability test with 12 participants, and all 12 rated the new designs as significantly above expectations.",
+      "evidenceType": "client-reported",
+      "sourceStrength": "moderate",
+      "notes": "Client-reported stated preference on designs; not Creative Navy-run, not task-performance measurement, and not conducted on a deployed system."
+    },
+    {
+      "claim": "The second touchscreen control product was scoped at one, two, or three sprints, and the client selected the three-sprint option.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "engagement record",
+      "notes": "Scoping and commercial progression fact; not an outcome claim."
+    }
+  ],
+  "limitations": [
+    "The client, delivery partner, individuals, product names, platform version, proprietary pallet standards, robot model, RFID reader product name, facility town, machine brands, and sample customer names must not be published.",
+    "No screenshots, wireframes, or design images may be published; the case study is text-only.",
+    "The platform is in development and the case evidence does not support deployment, production-use, market, throughput, efficiency, error-rate, or time-saving outcomes.",
+    "The client-reported usability test measured participants' rated impressions of designs, not task performance in a deployed system.",
+    "The audit used demonstration data, so real-world data density was not established by the review.",
+    "The audit deliverable contained prose critique against unmarked screenshots; annotations were not included in the audit deliverable.",
+    "Creative Navy designed control software interfaces and workflows; the case evidence does not support machinery safety, regulatory-compliance, or certification claims.",
+    "The alarm view had not yet been carried into the newest interface language according to the engagement caveat, so alarm-management expertise should not be overstated.",
+    "The mapping of the engagement to specific Critical Systems Design phases is described as proposed and requiring confirmation."
+  ],
+  "publicationBlockers": [
+    {
+      "type": "method_phase_mapping_unconfirmed",
+      "message": "Human review required: the notes describe the mapping to Critical Systems Design phases as proposed and requiring confirmation before it is treated as final public evidence.",
+      "severity": "blocker"
+    }
+  ],
+  "questionsForReview": [
+    "Confirm the proposed mapping of the six-sprint block and retainer to Sandbox Experiments, Concept Convergence, Iterative System Building, and Organizational Integration before publishing phase-specific claims.",
+    "Confirm authorship boundaries for the annotated requirement sheets, because the notes identify this as unresolved and relevant to distinguishing client specification from Creative Navy contribution.",
+    "Confirm whether option-space evidence exists in the design files; the notes state that no equivalent exploration count is currently recorded.",
+    "Confirm the chosen anonymised client descriptor. This draft uses the recommended descriptor: a European industrial automation vendor whose process control software coordinates machining cells.",
+    "Confirm that /evidence/case-studies/industrial and /contexts/industrial-automation-and-machinery have been added and the classification gate has passed before Sanity import."
+  ],
+  "relatedPageSlugs": [
+    "gericke-industrial-hmi",
+    "what-is-client-reported",
+    "what-is-observed-but-not-quantified",
+    "what-we-do-not-claim",
+    "what-we-have-measured",
+    "better-state-visibility",
+    "lower-training-burden",
+    "scaling-without-training-dependency",
+    "capability-democratisation",
+    "longitudinal-durability"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "Gericke Industrial HMI",
+      "targetSlug": "gericke-industrial-hmi",
+      "placementHint": "Related pages section",
+      "reason": "Relevant same-category industrial interface case study available in the linking context."
+    },
+    {
+      "anchorText": "client-reported evidence",
+      "targetSlug": "what-is-client-reported",
+      "placementHint": "Evidence limits section after the usability-testing paragraph",
+      "reason": "The case includes a client-reported usability test with 12 participants and explicit calibration limits."
+    },
+    {
+      "anchorText": "observed but not quantified evidence",
+      "targetSlug": "what-is-observed-but-not-quantified",
+      "placementHint": "Operating reality section after the paragraph on physical operating conditions",
+      "reason": "The case includes observed physical conditions that are not quantified outcome evidence."
+    },
+    {
+      "anchorText": "what Creative Navy does not claim",
+      "targetSlug": "what-we-do-not-claim",
+      "placementHint": "Evidence limits section after the non-claims paragraph",
+      "reason": "The case explicitly excludes production, efficiency, error-rate, throughput, safety, and commercial outcome claims."
+    },
+    {
+      "anchorText": "what Creative Navy has measured",
+      "targetSlug": "what-we-have-measured",
+      "placementHint": "Evidence limits section where engagement facts are distinguished from outcomes",
+      "reason": "Helps distinguish recorded engagement facts and measured outcomes."
+    },
+    {
+      "anchorText": "better state visibility",
+      "targetSlug": "better-state-visibility",
+      "placementHint": "Design response section after the seven-state taxonomy paragraph",
+      "reason": "The audit and redesign are strongly centred on status meaning, selection state, alarm colour, and non-colour redundancy."
+    },
+    {
+      "anchorText": "lower training burden",
+      "targetSlug": "lower-training-burden",
+      "placementHint": "Assistance layer or evidence limits section where less-trained operators are discussed if included in a later edit",
+      "reason": "The source connects the case to training burden, although no outcome is claimed."
+    },
+    {
+      "anchorText": "scaling without training dependency",
+      "targetSlug": "scaling-without-training-dependency",
+      "placementHint": "Related pages section",
+      "reason": "The source connects the case to the need for systems that can be operated by people without deep specialist expertise."
+    },
+    {
+      "anchorText": "capability democratisation",
+      "targetSlug": "capability-democratisation",
+      "placementHint": "Related pages section",
+      "reason": "The source connects the case to capability democratisation in expert systems and industrial automation."
+    },
+    {
+      "anchorText": "longitudinal durability",
+      "targetSlug": "longitudinal-durability",
+      "placementHint": "Related pages section after the retainer description",
+      "reason": "The source notes that a twelve-month retainer following a six-week design block may later support longitudinal evidence."
+    }
+  ],
+  "qualityChecks": {
+    "factsOnlyFromCurrentSource": true,
+    "documentationStyle": true,
+    "noMarketingLanguage": true,
+    "noInventedClaims": true,
+    "linksOnlyFromLinkingContext": true,
+    "internalNotesNotPublished": true,
+    "readyForSanityImport": false
+  },
+  "__sourceCategoryDir": "Case studies"
+}

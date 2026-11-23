@@ -1,0 +1,196 @@
+{
+  "slug": "mdu-ship-motion-monitoring",
+  "title": "MDU Ship Motion Monitoring",
+  "pageType": "case-study",
+  "category": "evidence",
+  "section": "Marine and maritime systems",
+  "summary": "Creative Navy designed the MDU ship motion monitoring interface across five sprints, delivering 18 screens across 45 versions, a clickable prototype, a design system, and day, dusk and night display modes. The work centred on a 15-inch 1024×768 touch-only marine panel, an advisory alarm boundary, and motion data that had to be made legible without overstating physical relationships.",
+  "keyFacts": [
+    "The MDU is a ship motion monitoring system with a sensor unit that measures vessel movement and a graphical interface for bridge presentation.",
+    "Creative Navy's engagement was fixed-scope: five sprints, with two UX sprints followed by three UI sprints.",
+    "The Creative Navy-recorded engagement delivered 18 screens across 45 versions, a clickable prototype, a design system, and a formal handover.",
+    "Creative Navy briefed each of the third-party development agencies the manufacturer was considering, so they could pitch from a common understanding of the delivered design.",
+    "The product shipped, and the design was implemented as delivered, including day, dusk and night display modes.",
+    "The interface was designed for a 15-inch certified marine panel PC at 1024×768, operated by touch alone, with no mouse or keyboard on the ship.",
+    "The system is manufacturer-stated as advisory: it may alarm and does not control the ship in any capacity.",
+    "There was no user research, no usability testing, no bridge observation, no crew interviews, and Creative Navy never used the system at sea.",
+    "The user-side evidence base was one external advisor, a serving master and chief engineer advising the manufacturer, together with the manufacturer's engineers, written specification, benchmarking, and published human-factors literature.",
+    "Creative Navy did not certify to, audit against, or work to IEC 60945, DNV 2.4, IACS E10, or ECDIS colour calibration; those were properties of the panel selected by the manufacturer."
+  ],
+  "bodySections": [
+    {
+      "heading": "Creative Navy designed a touch-only marine interface for ship motion monitoring",
+      "bodyMarkdown": "Creative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nThe MDU is a ship motion monitoring system. A sensor unit built around the manufacturer's own inertial sensors records roll and pitch continuously and feeds a bridge display, so that a crew can see how hard the vessel is working, how close it has come to the limits set for it, and whether to change course or speed.\n\nCreative Navy designed the interface across a fixed-scope engagement of five sprints: two UX sprints followed by three UI sprints. The Creative Navy-recorded engagement delivered 18 screens across 45 versions, a clickable prototype, a design system, a formal handover, and the interface in day, dusk and night display modes."
+    },
+    {
+      "heading": "The MDU operating context made presentation the central product behaviour",
+      "bodyMarkdown": "The MDU interface was designed for a 15-inch certified marine panel PC at 1024×768. The panel has an active display area of 305.13 × 229.1 mm, projected-capacitive touch, an IP65-sealed front, a backlight dimmable from near 0% to 100%, and five capacitive keys on the bezel including day, dusk and night mode switching.\n\nThe manufacturer selected the panel. The panel carries IEC 60945 4th edition, DNV 2.4 and IACS E10 certification and ECDIS colour calibration compliance, but those are properties of the hardware. Creative Navy did not certify to, audit against, or work to any of those certifications or compliance claims.\n\nThe interface was touch-only. The manufacturer's own specification stated: \"The display is a 15'' inch touch display. There will be no mouse or keyboard on the ship.\" The same interface runs on two units per vessel: one on the bridge for the navigator and/or captain, and one in the engine control room.\n\nThe MDU receives data from one to three inertial sensors combining gyroscope, accelerometer and magnetometer, with onboard processing. The interface receives that data over Modbus TCP at 1 Hz. Historical data is retained on the MDU unit, not on the machine running the interface."
+    },
+    {
+      "heading": "The manufacturer-stated system boundary was alarm and advice, not ship control",
+      "bodyMarkdown": "The manufacturer stated that the MDU alarms and does nothing else: \"Only alarm, if we where to launch a process our system would need to be approved by several institutes.\" The manufacturer also stated: \"We are not allowed to control the ship in any capacity. All actions based on the GUI data are made by the captain.\"\n\nThis boundary shaped Creative Navy's Critical Systems Design method in the engagement. When a system is forbidden to control the ship, presentation is not a cosmetic layer over automation. Presentation is the mechanism by which the product informs judgement.\n\nThe manufacturer's calibration also limits the safety language that can be used. The alarms were described by the manufacturer as comfort, cargo and crew-safety alarms rather than immediate-danger alarms. Expected responses were changing course, changing speed, using stabiliser fins, or consulting shore-based advice. Nothing is actuated by the interface.\n\nRemote viewing, remote settings change, hogging, sagging, twisting, parametric roll detection and warning, heave, sway and surge were specified as features to build with in mind, not to implement. Creative Navy designed structural space for future movement types and an alarm model that anticipates later priority handling, but the case evidence does not establish that those deferred features were built in this engagement."
+    },
+    {
+      "heading": "Roll and pitch required different visual treatments",
+      "bodyMarkdown": "Creative Navy's Critical Systems Design method treated roll and pitch as a tension-driven reasoning problem: the interface had to preserve legibility, physical plausibility and operational meaning on a 15-inch display.\n\nRoll was drawn 1:1 up to approximately ±40–45° and then maxed out beyond that, \"like a speedometer.\" The advisor, a serving master and chief engineer advising the manufacturer, explained the practical limit: \"If you roll more than 45 degrees, then you will not be looking at the screen, you'll be screaming in terror.\"\n\nPitch could not be drawn 1:1. A ship a few hundred metres long is physically bounded near ±10° of pitch, because waves are not large enough relative to the hull to produce more. At 1:1 on a 15-inch panel, that movement is hard to perceive. Two amplification ratios were built and compared: 4:1, where 10° is drawn as 40°, and 2:1, where 10° is drawn as 20°.\n\nAmplifying pitch created a physical-meaning problem. With a waterline drawn across the visualisation, amplified pitch made the vessel appear to submerge. The water was removed from the visualisation to avoid drawing a false relationship.\n\nThe pitch scale also changed unit. Where ship length is known, the pitch axis is expressed in metres of bow movement rather than degrees. The case evidence records the reasoning: on a 200 m vessel, 3° is roughly 10 m of bow movement, and 10° is roughly 35 m. Degrees remain the fallback unit when ship length has not been set."
+    },
+    {
+      "heading": "Domain learning changed the pitch and roll dashboard layout",
+      "bodyMarkdown": "Creative Navy's Critical Systems Design method used domain learning from the advisor and the manufacturer's engineers to resolve the relationship between the roll and pitch dials. List to starboard is positive. With the roll dial on the right of the screen, the negative half of its scale fell at the top, which created an inconsistency against the pitch dial beside it.\n\nThe advisor identified the mismatch as a persistent irritation: \"it would be super annoying that have the positive value on the bottom side on one picture and then the negative values on the bottom side on the other.\" The roll card and its scale were moved to the left of the screen so that both dials read consistently.\n\nThis was a narrow design decision, but it showed why the external advisor mattered in the engagement. The correction came from a practitioner reading the instrument against bridge conventions rather than from visual preference alone."
+    },
+    {
+      "heading": "Option space mapping covered navigation, dashboards, alarms, editing and visual direction",
+      "bodyMarkdown": "Creative Navy's Critical Systems Design method used option space mapping before convergence. The documented alternatives were genuine alternatives rather than revisions of one proposal.\n\nFour navigation patterns were explored: a bottom navigation bar, an icon-only sidebar, an icon-and-label sidebar, and a hamburger menu. Three status-bar treatments were explored: a status bar above a hamburger menu, a short status bar paired with bottom navigation, and a status bar with navigation placed inside it.\n\nFour dashboard layouts were explored: a card per movement type, cards with a show-more toggle, one maximised view with the remaining movements as information to its sides, and a main card with small modules. The pitch-and-roll dashboard went through six documented iterations varying scale ratio, numeric-cell placement, and the position of the vessel illustration relative to its scale.\n\nFour alarm presentations were explored: full message in the status bar, truncated messages for multiple alarms, a single message plus a count, and a pop-up over the content. Two value-editing patterns were explored: a bottom modal and a full-screen modal. Eight UI design explorations tested dark, light and blue-saturated directions, with and without a water-level treatment inside the dial, and with variants on logo and indicator colour.\n\nCompetitive benchmarking also supported the work. The benchmark board covered systems from eleven vendors across vessel motion monitoring, conning and alarm management, helm and trim control, and fleet condition monitoring. Video studies were made of a helideck monitoring system's helideck, log and security views. Separate reference studies covered aircraft attitude indicators, analogue instrument gauges, and event-log and timeline patterns from outside marine."
+    },
+    {
+      "heading": "Removing the live value changed how alarms were represented",
+      "bodyMarkdown": "Creative Navy's Critical Systems Design method treated the live numeric value as a performance in reality problem. The obvious element on a real-time motion display is the current value, but the advisor objected that it was \"just a number of flipping up and down constantly\" and \"doesn't really add any value.\"\n\nThe vessel illustration therefore rotates on the 20-minute rolling average: trim and list, not the instantaneous angle. The manufacturer's reasoning was that animating the live angle \"will just be too busy.\" Creative Navy recorded the cost of that choice: under an alarm, the vessel image will not necessarily look like a dangerous situation, because it is showing the average.\n\nA three-arrow mechanism carries the live reading the illustration no longer shows. A light arrow shows the current position. Two dark arrows mark the minimum and maximum of the rolling 20-minute window. A shaded band between them shows the interval of movement, so the reader can see how close the vessel has come to the alarm threshold without reading a number.\n\nThe live \"Now\" value was removed from both cards. The four numeric cells on each pitch and roll card became minimum, maximum, period and maximum velocity, in a single row.\n\nThat decision changed what an alarm means. Because the live value is not on screen, the alarm does not bind to the instantaneous value. Alarm state binds to the rolling maximum and minimum instead. An alarm means the vessel was outside its threshold at some point within the last twenty minutes."
+    },
+    {
+      "heading": "The alarm interaction changed from Clear to Acknowledge",
+      "bodyMarkdown": "Creative Navy's Critical Systems Design method used alarm review to replace the specification's Clear control with an Acknowledge model. The specification required alarms to persist until manually cleared. Creative Navy argued in review that Clear had no function, because nothing done on the screen changes the state of the ship.\n\nThe advisor supplied the bridge convention: the alarm flashes red, Acknowledge means \"I have seen it,\" the indication then holds solid red, and it clears itself when the condition is no longer present. The advisor's formulation was: \"When you click acknowledge, it's turned solid red and it stays like that until it's cleared.\"\n\nA pop-up carrying the alarm text and Acknowledge control was chosen over making the flashing value itself the target. Creative Navy raised the discoverability issue against its own more visually compact alternative: \"how would a user who never seen the GUI know where to tap?\" The pop-up also carries explanatory text that a flashing number cannot.\n\nSelf-clearing does not remove the record. An alarm that clears itself before anyone acknowledges it is retained in the log behind a count badge, where acknowledge-all is available. The alarm model also respects the captain's decision once made. The manufacturer's position was that \"if the captain decide to just push the ship on, then Creative Navy's system should not kind of challenge that decision and just go back into normal sailing.\"\n\nThe multi-alarm format was modelled on phone notification behaviour at the manufacturer's request: full text for a single alarm, truncated text when several are active, and full descriptions in the log. Alarm ordering is chronological, with a forward provision that parametric roll detection becomes the highest-priority alarm once implemented. Parametric roll detection was not built in this engagement."
+    },
+    {
+      "heading": "Unknown mounting position ruled out side navigation",
+      "bodyMarkdown": "Creative Navy's Critical Systems Design method used constraint respecting for a physical unknown: where the unit sits relative to its reader cannot be predicted. The manufacturer stated: \"That's very hard to predict… They will be wherever there's space physically on the bridge. So nobody knows.\"\n\nThat uncertainty affected navigation. A sidebar placed for someone standing on the left of the display can force someone standing on the right to reach across the display and cover it. Bottom navigation was chosen over both sidebars and a hamburger menu.\n\nThe layout constraint was also inverted. In this interface, horizontal space was scarcer than vertical space because the vessel illustration is long and the dials need width. A hamburger menu was rejected because it cost an extra click when vertical space was not under pressure.\n\nFuture movement types were given a screen of their own behind a fourth navigation item rather than being compressed onto the dashboard. The alternative, a small card for every movement type on one screen, was built and rejected because it drove the numbers below a legible size at the panel size."
+    },
+    {
+      "heading": "Touch targets and legibility were calculated for the specific panel",
+      "bodyMarkdown": "Creative Navy's Critical Systems Design method translated published human-factors literature into working minimums for the MDU's panel. The documented review used Fitts's law and MIT Touch Lab fingertip dimensions of 16–20 mm as reported in Yablonski, Laws of UX.\n\nFor the 15-inch 1024×768 panel, the review calculated approximately 3.35 pixels per millimetre. It converted that into a 13 mm, 44 px minimum touch dimension; 6 mm, 20 px minimum spacing between adjacent targets; and 20 mm, 68 px as the largest size that still improves accuracy.\n\nThe interface used an 8 px baseline grid chosen as a common divisor of 1024 and 768. The resulting minimum touch area was 48 px, with a 48 px-tall element specified to exceed 48 px in width.\n\nThe review stated its own dependency. The safe minimum also depends on the quality of the touchscreen, because lower-quality panels resolve the contact point less precisely and need more applied pressure.\n\nThis touch-target reasoning also shaped settings and value entry. View mode is the default. Editing is gated by a four-digit numeric PIN rather than a password, because the purpose is accident prevention rather than security and a numeric keypad gives larger targets than a full keyboard on a touch panel. Scrub and slider inputs were rejected for numeric entry because precise finger movement on a touch screen was considered hard; a number pad was used instead."
+    },
+    {
+      "heading": "The interface work changed the manufacturer specification",
+      "bodyMarkdown": "Creative Navy's Critical Systems Design method produced progressive specification during the MDU engagement. Requirements were developed as a collaborative artefact: a screen-by-screen table pairing module, screen, content, user actions and priority with Creative Navy's open questions and the manufacturer's answers and comments.\n\nThe design reviews separated two classes of offset with different permission models. A mounting offset, set once because the sensor is installed slightly out of true, sits behind the PIN. Draught readings entered by the crew before departure do not, because they change every voyage. The manufacturer explained the reasoning as continuous correction: \"it's better to assume that the draft readings always are as close as we get to the truth and then offset the sensor accordingly,\" because real vessels involve \"bending and twisting and torsion.\"\n\nThe specification revision issued after the reviews added the four draught inputs and the offset derivation that this distinction required. It also added pitch period, ship breadth, event logging and data logging, and promoted 48-hour data logging from a cost-driven nice-to-have into the main specification.\n\nYaw was removed through triangulation. The specification named roll, pitch and yaw as primary metrics; the Modbus register map carried no yaw register; and the manufacturer's answers were uncertain whether yaw could ever be shown reliably. Creative Navy raised the discrepancy in the requirements table, and the review settled it by removing the yaw card.\n\nThis is also evidence of the blanks phenomenon. Several documented open questions remained unanswered in the available material, including watchdog alarm wording, default alarm thresholds, ship-length decimal precision and range, keyboard component selection, and units for deferred movement types."
+    },
+    {
+      "heading": "The design system covered modes, status, components and vessel illustrations",
+      "bodyMarkdown": "Creative Navy delivered a design system for the MDU interface. The documented design system used a dark theme on a single typeface, a semantic token set covering background, text, stroke and surface elevation, and status colours in red, amber and green against a blue brand colour.\n\nThe component library covered the alarm bar and alarm pop-up, log rows, tabs and tab buttons, menu items, radio buttons, checkmarks, tooltips, a numeric keypad, a full keyboard, and text fields in a complete state matrix.\n\nIconography was provided at 24 px, 16 px and 12 px. Six vessel types were illustrated from two angles each for use as the rotating vessel image: bulk carrier, RORO, tanker, container ship, cruise ship and military vessel.\n\nThe interface was delivered with day, dusk and night display modes, and those modes shipped. The case evidence does not establish that the palettes correspond to ECDIS colour tables. The accurate public claim is day, dusk and night display modes, not ECDIS-compliant colour modes."
+    },
+    {
+      "heading": "Handover included briefing development agencies before one was selected",
+      "bodyMarkdown": "Creative Navy carried out a formal handover of the MDU design and provided implementation support. The duration and substance of implementation support are not recorded in the available case evidence, so it should not be used to explain why the implementation matched the delivered design.\n\nThe distinctive handover fact is that Creative Navy briefed each of the third-party development agencies the manufacturer was considering. The purpose was to let each agency pitch its services to the manufacturer on a common understanding of the delivered design.\n\nThis is evidence of Organizational Integration in Creative Navy's Critical Systems Design method. The transfer was not only a file handover to a chosen implementer. The designer's explanation of the system became part of how the manufacturer evaluated possible implementers."
+    }
+  ],
+  "evidenceSummary": {
+    "strongClaims": [
+      "Creative Navy-recorded engagement material states that Creative Navy designed the MDU ship motion monitoring interface across five sprints and delivered 18 screens across 45 versions, a clickable prototype, a design system, and day, dusk and night display modes.",
+      "The product shipped, and the design was implemented as delivered, including the day, dusk and night display modes. This is an implementation-fidelity claim, not proof of design performance.",
+      "The MDU interface was designed for a 15-inch 1024×768 touch-only marine panel with no mouse or keyboard on the ship.",
+      "The engagement had no user research, no usability testing, no bridge observation, no crew interviews, and Creative Navy never used the system at sea.",
+      "The design review changed the manufacturer's specification by adding draught inputs, offset derivation, pitch period, ship breadth, event logging and data logging, and by removing yaw. This is evidence of specification change, not a measured product result."
+    ],
+    "weakerClaims": [
+      "The manufacturer stated that the MDU is advisory: it may alarm and does not control the ship in any capacity. This is the manufacturer's account of the functional and approval boundary, not a verified regulatory finding.",
+      "Roll and pitch required different visual treatments because roll could be drawn 1:1 while pitch required amplification and, where ship length was known, metres of bow movement rather than degrees. This is recorded design rationale, not an outcome.",
+      "The live numeric value was removed from the pitch and roll cards, and alarm state was bound to the rolling 20-minute maximum and minimum rather than the instantaneous value. The reasoning came through review with the manufacturer's engineers and one external advisor.",
+      "The alarm model changed from manual Clear to Acknowledge, with self-clearing when the condition passes and retained records in the log. This reflects review decisions and bridge convention supplied by the advisor.",
+      "Bottom navigation was chosen because the unit's mounting position relative to the reader could not be predicted and horizontal space was the limiting dimension. This claim is specific to this product and panel constraint."
+    ],
+    "limitations": [
+      "No user research, bridge observation, crew interviews, contextual inquiry, usability testing or researched personas were conducted.",
+      "Creative Navy never used the MDU system at sea.",
+      "The user-side evidence base included one external advisor, a serving master and chief engineer advising the manufacturer; that practitioner input was valuable but n=1.",
+      "One of the three recorded calls has no transcript and none exists, so no decisions from that call can be inferred.",
+      "Several open questions in the requirements table were documented without answers in the available material.",
+      "The shape, duration and substance of implementation support are not recorded, so implementation fidelity cannot be explained by a documented support mechanism.",
+      "No fuel, emissions, voyage, cargo-loss, container-loss, alarm-response, error-rate, time-saving, safety, usability, sales, revenue or market-share outcome is established.",
+      "Day, dusk and night display modes were designed and shipped, but correspondence to ECDIS colour tables is not established.",
+      "Panel certifications and ECDIS colour calibration compliance are properties of the manufacturer-selected hardware, not Creative Navy certification, audit or compliance work.",
+      "Deferred features such as parametric roll detection, hogging, sagging, twisting, heave, sway, surge and remote access were not built in this engagement."
+    ]
+  },
+  "relatedPageSlugs": [
+    "streetec-kntrl",
+    "ait-heat-pump-controller",
+    "industrial-process-control-platform",
+    "triangulation-not-confirmation",
+    "longitudinal-durability",
+    "what-we-do-not-claim",
+    "what-we-have-measured",
+    "what-we-verified-without-measuring",
+    "embedded-devices-and-constrained-interfaces",
+    "high-consequence-environments",
+    "expert-tools-and-internal-systems",
+    "marine-and-maritime-systems"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "Streetec kntrl 2",
+      "targetSlug": "streetec-kntrl",
+      "reason": "The MDU brief identifies Streetec as a companion engagement and warns that its option-space counts and testing results must not migrate into this case."
+    },
+    {
+      "anchorText": "AIT Heat Pump Controller",
+      "targetSlug": "ait-heat-pump-controller",
+      "reason": "The MDU brief identifies AIT as a companion engagement and contrasts AIT's documented implementation-support mechanism with the thinner MDU implementation-support evidence."
+    },
+    {
+      "anchorText": "Industrial Process Control Platform",
+      "targetSlug": "industrial-process-control-platform",
+      "reason": "The MDU brief identifies the industrial process control engagement as a companion case and warns that its field observations belong to that engagement alone."
+    },
+    {
+      "anchorText": "triangulation",
+      "targetSlug": "triangulation-not-confirmation",
+      "reason": "The MDU case uses triangulation to describe resolving disagreement between the specification, Modbus register map and manufacturer answers."
+    },
+    {
+      "anchorText": "longitudinal durability",
+      "targetSlug": "longitudinal-durability",
+      "reason": "The MDU notes identify deferred features as a candidate for longitudinal evidence, while warning not to make a durability claim from current evidence."
+    },
+    {
+      "anchorText": "what Creative Navy does not claim",
+      "targetSlug": "what-we-do-not-claim",
+      "reason": "The case relies on explicit non-claims about fuel, safety, usability, commercial and regulatory outcomes."
+    },
+    {
+      "anchorText": "what Creative Navy has measured",
+      "targetSlug": "what-we-have-measured",
+      "reason": "The MDU notes state that the engagement populates no outcomes page because nothing was measured."
+    },
+    {
+      "anchorText": "what Creative Navy verified without measuring",
+      "targetSlug": "what-we-verified-without-measuring",
+      "reason": "The MDU result is a verified implementation-fidelity claim rather than a field-measured performance outcome."
+    },
+    {
+      "anchorText": "Embedded Devices And Constrained Interfaces",
+      "targetSlug": "embedded-devices-and-constrained-interfaces",
+      "reason": "Source-classified context for this case study."
+    },
+    {
+      "anchorText": "High Consequence Environments",
+      "targetSlug": "high-consequence-environments",
+      "reason": "Source-classified context for this case study."
+    },
+    {
+      "anchorText": "Expert Tools And Internal Systems",
+      "targetSlug": "expert-tools-and-internal-systems",
+      "reason": "Source-classified context for this case study."
+    },
+    {
+      "anchorText": "Marine And Maritime Systems",
+      "targetSlug": "marine-and-maritime-systems",
+      "reason": "Source-classified context for this case study."
+    }
+  ],
+  "tags": [
+    "case study",
+    "marine interface",
+    "ship motion monitoring",
+    "embedded GUI",
+    "touch interface",
+    "alarm design",
+    "state visibility",
+    "high-consequence environments",
+    "expert tools",
+    "Critical Systems Design"
+  ],
+  "_meta": {
+    "sourcePath": "sources/articles/Case studies/case-study--mdu-ship-motion-monitoring.md",
+    "parentSlug": "marine",
+    "childPageSlugs": [],
+    "generatedBy": "openai"
+  }
+}

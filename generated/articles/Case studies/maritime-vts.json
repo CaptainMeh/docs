@@ -1,0 +1,212 @@
+{
+  "_type": "documentationPage",
+  "sourceFile": "Articles/Case studies/case-study--maritime-vts.md",
+  "sourcePath": "sources/articles/Case studies/case-study--maritime-vts.md",
+  "sanityDocumentIdCandidate": "documentationPage.maritime-vts",
+  "title": "Maritime VTS and Portfolio Design System",
+  "slug": {
+    "_type": "slug",
+    "current": "maritime-vts"
+  },
+  "pageType": "case-study",
+  "category": "evidence",
+  "parentSlug": "marine",
+  "childPageSlugs": [],
+  "excerpt": "Creative Navy designed a VTS reference product and a portfolio design system for a European maritime software vendor. The case evidence includes operational control-room observation, a reuse-refusal ledger and a controlled prototype comparison against the legacy interface.",
+  "metaTitle": "Maritime VTS Design System Case Study",
+  "metaDescription": "Case study on a maritime VTS reference design and portfolio design system, with field research, transfer refusals and bounded prototype evidence.",
+  "summary": "A European vendor of maritime traffic monitoring, inland navigation and communications software for port authorities, coastal administrations and waterway operators asked for a common visual and interaction approach across nine products. Creative Navy audited the portfolio, designed one Vessel Traffic Services reference product, extracted a design system, tested transfer into four other products and recorded where reuse had to be refused.",
+  "definition": "",
+  "keyFacts": [
+    "The engagement covered seventeen one-week sprints: three discovery sprints, a formal management gate and fourteen delivery sprints.",
+    "The portfolio audit inspected all nine products, 74 interface views or meaningful states, 23 representative workflows and 58 distinct findings.",
+    "The design work focused on Vessel Traffic Services as the reference product; the other products were audited, transfer-probed or reviewed for applicability rather than redesigned.",
+    "Creative Navy observed work in operational VTS control rooms at a customer site, using sanitised research material rather than live traffic responsibility.",
+    "The delivered design system contained 54 components and 198 named states, plus eight composition patterns, two themes and two density profiles.",
+    "The transfer programme assessed 70 proposed component applications across four products: 45 adopted directly, 15 extended and 10 refused.",
+    "A client engineer built a working validation-and-correction view from the documented patterns without additional screen specification from Creative Navy.",
+    "A counterbalanced paired study with eight operators and supervisors compared the revised prototype with the legacy training interface across four matched tasks.",
+    "The design system reached production, the client implemented it and Creative Navy supplied standard implementation support while the client wrote the code.",
+    "No design-fidelity comparison, commercial outcome, engineering-efficiency outcome, training outcome, safety certification or operational-performance outcome is recorded."
+  ],
+  "tags": [
+    "maritime VTS",
+    "portfolio design system",
+    "expert tools",
+    "design system boundary definition",
+    "reuse refusal",
+    "state visibility",
+    "operational control rooms",
+    "usability evaluation",
+    "Critical Systems Design",
+    "constraint respecting"
+  ],
+  "bodyMarkdown": "- **Primary case-study category:** /evidence/case-studies/marine\n- **Primary context:** /contexts/expert-tools-and-internal-systems\n- **Also-relevant contexts:** /contexts/multi-stakeholder-operational-environments, /contexts/high-consequence-environments, /contexts/enterprise-software\n- **Connects to:** /situations/complexity/system-state-is-hard-to-understand, /situations/complexity/expert-workflows-are-hard-to-operate, /situations/complexity/multi-role-workflows-are-fragmented, /situations/complexity/abnormal-conditions-break-the-interface, /situations/risk-and-consequence/delayed-understanding-creates-risk, /situations/risk-and-consequence/handoffs-create-failures, /situations/risk-and-consequence/warnings-are-visible-but-not-actionable, /situations/risk-and-consequence/users-cannot-recover-cleanly-from-errors, /situations/growth-and-product-strategy/product-fragmenting-under-growth, /situations/growth-and-product-strategy/too-many-features-not-enough-coherence, /situations/growth-and-product-strategy/the-product-is-losing-ground-to-clearer-competitors, /situations/delivery-and-execution/design-does-not-survive-development, /situations/delivery-and-execution/design-debt-is-turning-into-operational-debt, /failures/state-visibility-failures/users-cannot-see-what-state-the-system-is-in, /failures/state-visibility-failures/mode-changes-are-unclear, /failures/state-visibility-failures/important-status-information-is-buried, /failures/interpretation-failures/data-is-available-but-hard-to-interpret, /failures/interpretation-failures/users-see-information-but-cannot-judge-what-matters, /failures/workflow-failures/handoffs-lose-context, /failures/cognitive-failures/users-cannot-reorient-quickly-after-interruption, /capabilities/ux-audit-for-complex-products, /capabilities/state-and-status-visibility-design, /capabilities/information-architecture-for-expert-systems, /capabilities/design-for-abnormal-and-degraded-scenarios, /capabilities/usability-evaluation-for-high-consequence-products, /capabilities/warning-and-alarm-clarity-improvement, /capabilities/research-in-complex-operational-contexts, /capabilities/design-direction-for-legacy-to-modern-transitions, /practices/usability-testing-under-realistic-constraint, /practices/state-and-transition-review, /practices/edge-case-and-degraded-mode-analysis, /practices/task-criticality-mapping, /practices/evidence-led-prioritisation, /practices/design-governance-through-delivery, /practices/workflow-analysis\n\n## Classification\n\nPrimary case-study category: /evidence/case-studies/marine\n\nPrimary context: /contexts/expert-tools-and-internal-systems\n\nAlso-relevant contexts: /contexts/multi-stakeholder-operational-environments, /contexts/high-consequence-environments, /contexts/enterprise-software\n\nConnects to: /situations/complexity/system-state-is-hard-to-understand, /situations/complexity/expert-workflows-are-hard-to-operate, /situations/complexity/multi-role-workflows-are-fragmented, /situations/complexity/abnormal-conditions-break-the-interface, /situations/risk-and-consequence/delayed-understanding-creates-risk, /situations/risk-and-consequence/handoffs-create-failures, /situations/risk-and-consequence/warnings-are-visible-but-not-actionable, /situations/risk-and-consequence/users-cannot-recover-cleanly-from-errors, /situations/growth-and-product-strategy/product-fragmenting-under-growth, /situations/growth-and-product-strategy/too-many-features-not-enough-coherence, /situations/growth-and-product-strategy/the-product-is-losing-ground-to-clearer-competitors, /situations/delivery-and-execution/design-does-not-survive-development, /situations/delivery-and-execution/design-debt-is-turning-into-operational-debt, /failures/state-visibility-failures/users-cannot-see-what-state-the-system-is-in, /failures/state-visibility-failures/mode-changes-are-unclear, /failures/state-visibility-failures/important-status-information-is-buried, /failures/interpretation-failures/data-is-available-but-hard-to-interpret, /failures/interpretation-failures/users-see-information-but-cannot-judge-what-matters, /failures/workflow-failures/handoffs-lose-context, /failures/cognitive-failures/users-cannot-reorient-quickly-after-interruption, /capabilities/ux-audit-for-complex-products, /capabilities/state-and-status-visibility-design, /capabilities/information-architecture-for-expert-systems, /capabilities/design-for-abnormal-and-degraded-scenarios, /capabilities/usability-evaluation-for-high-consequence-products, /capabilities/warning-and-alarm-clarity-improvement, /capabilities/research-in-complex-operational-contexts, /capabilities/design-direction-for-legacy-to-modern-transitions, /practices/usability-testing-under-realistic-constraint, /practices/state-and-transition-review, /practices/edge-case-and-degraded-mode-analysis, /practices/task-criticality-mapping, /practices/evidence-led-prioritisation, /practices/design-governance-through-delivery, /practices/workflow-analysis\n\n## A maritime software portfolio needed common behaviour without erasing operational boundaries\n\nCreative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nA European vendor of maritime traffic monitoring, inland navigation and communications software for port authorities, coastal administrations and waterway operators had nine products across four families. The portfolio included Vessel Traffic Services, River Information Services, Voice Communication System and Integrated Communication System products. The interfaces had been designed by separate engineering teams over many years, and similar functions worked differently across products.\n\nThe request for proposal asked for a shared treatment of navigation, menus, tables, data entry, search, panels, dialogues, equipment status, messages and alarms. The request also required existing functionality to be preserved, removals to be approved by technical and customer authority, phased introduction into future versions and light and dark operation for day and night shift use.\n\nCreative Navy-recorded engagement evidence shows that the work ran across seventeen one-week sprints in two blocks: three discovery sprints, a formal management gate and fourteen delivery sprints. The important scope boundary is that one reference product was designed to full depth. The other products were audited, transfer-probed or reviewed for applicability rather than redesigned.\n\n## Creative Navy's Critical Systems Design method treated the engagement as five method phases, not as sprint blocks\n\nCreative Navy's Critical Systems Design method designs software whose interfaces, workflows, and operating logic carry real operational consequences, working through five phases — Sandbox Experiments, Concept Convergence, Iterative System Building, Organizational Integration, and Implementation Partnership — to take each system from initial exploration to independent operation by the client's own team.\n\nIn this engagement, Sandbox Experiments corresponded to the three discovery sprints and the nine-product audit. Concept Convergence covered the gate, the reference-product selection and the first architecture decisions. Iterative System Building covered the detailed Vessel Traffic Services design work, the seven journeys, the 28 requirements, the 28 templates, the 91 interface states and the two usability rounds.\n\nOrganizational Integration covered the design system, the transfer programme, the exception register, the governance rules and the engineering adoption exercise. Implementation Partnership also happened: the European vendor of maritime traffic monitoring, inland navigation and communications software for port authorities, coastal administrations and waterway operators wrote the code, and Creative Navy supplied standard implementation support. The recorded evidence does not state the duration, cadence, form or volume of that support.\n\n## Operational VTS research used working control rooms and sanitised scenarios\n\nA European vendor of maritime traffic monitoring, inland navigation and communications software for port authorities, coastal administrations and waterway operators provided access to professional VTS operators and shift supervisors from its end customers. Creative Navy-observed field research took place in operational VTS control rooms at a customer site, rather than only in a demonstration environment.\n\nThe research boundary is material. The study used anonymised geographic areas, vessel labels, AIS and radar records, replay events and equipment states. No participant issued navigation instructions, controlled radio equipment or carried live traffic responsibility during the sessions. The evidence supports performance in reality only in that bounded sense: Creative Navy studied operational work settings and realistic constraints, while the research tasks used sanitised material rather than live traffic operation.\n\nCreative Navy-recorded discovery work inspected all nine products, 74 captured interface views or meaningful states, 23 representative workflows and 58 distinct findings. The research also included ten sessions: six stakeholder interviews across product strategy, VTS, communications, RIS, frontend architecture and commercial priorities, and four operator sessions covering VTS and radio communications.\n\n## The audit found that visual consistency could misstate authority and consequence\n\nA European vendor of maritime traffic monitoring, inland navigation and communications software for port authorities, coastal administrations and waterway operators asked for consistency across the portfolio. Creative Navy's Critical Systems Design method treated consistency as a boundary problem: a component could transfer only when task intent, state transition, user authority and consequences of misuse aligned.\n\nThe clearest boundary concerned selection and transmission. In a general application, a selected state can communicate focus or preference. In the radio system, an active transmission route also carries equipment state, receive activity, hardware push-to-talk control and potentially time-critical consequence. The same visual treatment would have combined two different claims about what the operator could infer from the control.\n\nCreative Navy-recorded discovery classified 31 candidate interaction patterns. Eighteen were potentially common, eight were conditional and five were permanently separate before any component existed. Permanently separate pattern families included radio transmit and physical push-to-talk, lock gate actuation, navigation alert authority, standards-bound chart portrayal and shipboard terminal controls.\n\nThe audit findings were grouped into recurring failure modes: context interruption, evidence ambiguity, state ambiguity and work discontinuity. Six issues were flagged for safety-domain review during discovery. Those flags denoted a need for scrutiny by the client's product and operational safety authority; they did not establish an accident, near miss, regulatory breach or technical hazard.\n\n## The gate selected VTS as the reference product and rejected a nine-product restyle\n\nA European vendor of maritime traffic monitoring, inland navigation and communications software for port authorities, coastal administrations and waterway operators had not decided whether the answer should be a common application shell or several distinct products sharing interface components. Creative Navy's Critical Systems Design method used the discovery findings to recommend a narrower and more testable structure: build one product properly, extract a technology-neutral design system from it and test transfer into four others.\n\nThe formal gate evaluated five candidate reference products using weighted criteria: commercial significance, system transfer value, access to representative users, high-consequence UX learning and implementation feasibility. Vessel Traffic Services scored 90 out of 100. Inland vessel tracking scored 77, voice communications 71, electronic reporting 67 and lock planning 63.\n\nVTS was selected because it combined geographic surveillance, uncertain sensor observations, differentiated alerts, event history, incident state, equipment health and shift handover in one environment. Voice communications scored highly on consequence and lost on portability because hardware-coupled control semantics limited general reuse.\n\nApproval was conditional. The conditions covered access to representative operators, sanitised scenario data, client authority over safety-relevant state semantics, exclusion of radio transmission and physical push-to-talk from the reference scope, bounded transfer exercises in four products, client ownership of frontend technology and release assurance, and commercial release handled separately. The gate did not approve production rollout, a new backend architecture or a blanket regulatory-compliance claim.\n\n## The VTS evidence model separated vessel, track and observation\n\nA European vendor of maritime traffic monitoring, inland navigation and communications software for port authorities, coastal administrations and waterway operators needed the redesigned VTS traffic picture to show what the system knew, what source supplied it and how current it was. Creative Navy's Critical Systems Design method therefore separated a vessel identity record, a tracked object with an association status and timestamped observations carrying their own source.\n\nThe design represented association as resolved, unresolved, changed or unknown. This boundary mattered because an AIS identification, a radar association and a vessel record carry different evidential weight. The interface named the association unresolved when the system could not support a stronger claim.\n\nA numeric association-confidence badge was explored and rejected. The client's engineering could not supply a calibrated, operationally defensible confidence figure, so the interface was not permitted to display one. The rule generalised into the specification: the interface does not synthesise an association confidence score, a source time or an authorisation decision, and missing values appear as unknown or not available.\n\nThis is an example of the blanks phenomenon in the engagement. Creative Navy's design work made the absent fact visible instead of filling it with a visually convenient control.\n\n## Alert, replay and handover decisions preserved distinct operational meanings\n\nA European vendor of maritime traffic monitoring, inland navigation and communications software for port authorities, coastal administrations and waterway operators had existing functions distributed across panels and views. Creative Navy-recorded audit evidence found that the legacy interface did not consistently preserve evidence about a vessel, its source, the operator's action and the ongoing task across those views.\n\nCreative Navy's Critical Systems Design method used tension-driven reasoning to draw boundaries between actions that looked similar but changed different states. Acknowledge records receipt by an authorised actor. Assign makes a named person or role accountable. Resolve requires a governed resolution state with an attributable actor. Dismiss, where supported, hides a view item without changing the underlying state.\n\nThe alert model separated navigation alerts from equipment health. A single chronological queue was rejected because it mixed operational priority with technical fault status. The selected model presented navigation alerts by operational priority and lifecycle, while equipment health had a typed view carrying impact explanation.\n\nReplay became a persistent workspace mode. The workspace showed recording time, coverage and gaps, and linked inspectors inherited the same time context. Return to Live was a deliberate action. Handover became an accountable review of open alerts, source concerns and incident tasks, with the receiving operator required to review and accept rather than receiving automatic ownership reassignment.\n\n## The expert-tool design rejected simplification when it harmed the work\n\nA European vendor of maritime traffic monitoring, inland navigation and communications software for port authorities, coastal administrations and waterway operators sold products in demonstrations as well as into operational settings. Creative Navy-recorded design evidence shows that two visually simpler directions were built and rejected because they favoured demonstration value over operator work.\n\nA dashboard landing view exposed many functions at once, but moved the active traffic picture into a secondary container and forced operators to reacquire sector, object and layer context after inspection. A map-as-bounded-card variant was rejected with it. The selected direction kept the traffic picture as the main workspace.\n\nA gesture-first, large-tile universal interface also lost. It increased pointer travel, concealed shortcuts for the workstation in use and implied that specialised radio equipment could share controls without a separate contract. The selected expert desktop kept keyboard focus order, predictable shortcuts, pointer targets and paired-display selection as commitments.\n\nThis decision is why the case belongs primarily with expert tools and internal systems. Creative Navy's Critical Systems Design method did not democratise the interface for a broader user group in this engagement. It protected expert interpretation, high information density and workstation-specific operation where those features carried task value.\n\n## The design system defined direct reuse, extension and refusal\n\nA European vendor of maritime traffic monitoring, inland navigation and communications software for port authorities, coastal administrations and waterway operators received a design system versioned as 1.0, with 54 components and 198 named states. The system also included eight composition patterns, two themes and two density profiles. A named state was counted once regardless of theme, density, application or repeated instance.\n\nCreative Navy's Critical Systems Design method treated the design system as behaviour contracts rather than only a visual library. Each reusable contract specified purpose and eligibility, explicit non-use cases, source of truth, identifiers, timestamps, unknown values, permissions, triggers, transitions, keyboard focus, interruption, recovery, visual portrayal and remaining exceptions.\n\nThe architecture had four layers: primitive values, semantic tokens, component behaviour and bounded product composition. Applications consumed semantic tokens and documented components; they did not redefine the meaning of a priority colour, overwrite a status label or import radio transmission semantics through a generic action control.\n\nThe transfer programme assessed 70 proposed component applications across four products. The dispositions were 45 direct adoptions, 15 documented extensions and 10 refusals. Direct reuse required all six gates to pass: task, meaning, authority, input, failure and recovery. One failure produced an extension. A failure that would misstate authority or consequence produced a refusal.\n\nThe refusal pattern is central evidence for constraint respecting. Electronic reporting had 20 applications assessed, with 15 direct adoptions and one refusal, a 75.0% direct-reuse rate. Voice communications had 15 applications assessed, with 6 direct adoptions and 5 refusals, a 40.0% direct-reuse rate. The difference shows that the test was doing work rather than merely approving reuse.\n\nA refusal was recorded as a positive result. For example, no interface element in lock planning was permitted to read as a physical gate command, and five voice-communications refusals prevented inherited behaviour from implying physical transmit authority. The disposition applied per proposed use, not per component family.\n\n## The design-system documentation was tested by a client engineer\n\nA European vendor of maritime traffic monitoring, inland navigation and communications software for port authorities, coastal administrations and waterway operators tested whether the design-system documentation could be used without further screen specification from Creative Navy. A client engineer who had not been part of the design team built a working validation-and-correction view for the electronic reporting product in the client's own frontend development sandbox.\n\nThe exercise used 12 documented patterns and 2 domain adaptations. Two joint design-and-engineering reviews followed, checking state interpretation, focus behaviour and documented exceptions. The reviews produced eight adoption observations, and those observations did not change the 36-issue VTS register.\n\nThe boundary is important. The exercise established that an engineer outside the design team could select documented components and assemble a coherent flow unaided. It did not establish completion of a product migration, an independently certified accessibility result or a production engineering-efficiency benchmark. The exercise was non-production throughout.\n\n## The controlled comparison showed faster first answers and higher scripted-task correctness on the prototype\n\nA European vendor of maritime traffic monitoring, inland navigation and communications software for port authorities, coastal administrations and waterway operators took part in two usability rounds. The first involved six operators, five tasks each and 30 task attempts. Creative Navy-recorded results from that round identified 13 observed issue events. Twelve were corrected before the second round, and one remained with engineering because the design could display an unknown equipment state but could not guarantee the service distinction behind it.\n\nThe second round was a counterbalanced paired comparison against the legacy training interface. Eight end-customer operators and supervisors completed four matched tasks in both conditions, with four taking the legacy condition first and four taking the prototype condition first. Equivalent task data was reset between conditions, and the study recorded 64 condition-level observations.\n\nIn vessel identification, median time to first answer was 61.5 seconds in the legacy condition and 35.5 seconds in the prototype condition, 42.3% lower. Correct first answers moved from 6 of 8 to 8 of 8. In alert prioritisation, median time to first answer was 80.5 seconds and 53.0 seconds, 34.2% lower, with correct first answers moving from 6 of 8 to 8 of 8.\n\nReplay recognition was untimed. Correct initial mode identification moved from 5 of 8 in the legacy condition to 8 of 8 in the prototype condition. In handover retrieval, median time to first answer was 107.0 seconds and 72.5 seconds, 32.2% lower, with correct first answers moving from 6 of 8 to 8 of 8. Across the four tasks, correct first answers rose from 23 of 32 to 32 of 32.\n\nThese results are Creative Navy-recorded under controlled conditions. Eight participants completed four of the seven operator journeys using sanitised training scenarios on a design prototype, not a production installation. Six of the eight had taken part in earlier research or testing. The time measure was time to a first submitted answer regardless of whether that answer was correct. The study reported no significance test, no confidence interval and no power calculation, and it stated that the three timed percentages must not be combined into one figure.\n\n## Production status is recorded without a fidelity or outcome claim\n\nA European vendor of maritime traffic monitoring, inland navigation and communications software for port authorities, coastal administrations and waterway operators implemented the design system, and the design system reached production. Implementation Partnership happened in a recorded division of labour: the client wrote the code, and Creative Navy supplied standard implementation support.\n\nNo design-fidelity comparison is recorded. Creative Navy did not compare the implemented interface against the delivered designs, so the case does not establish that the product shipped as designed.\n\nA return engagement occurred roughly a year later on a separate product spun out of the programme. The available case evidence does not state the return product's domain, scope, shape or outcome.\n\nThe case also records no commercial outcome, engineering-efficiency outcome or training outcome. Tender performance, integrated-solution sales, duplicated interface engineering, training and support effort were business objectives, but no results are recorded. The measurement framework for post-adoption evaluation was specified and handed over, and no result from it is available.\n\n## Evidence limits define what the case does not establish\n\nA European vendor of maritime traffic monitoring, inland navigation and communications software for port authorities, coastal administrations and waterway operators had nine products audited, but nine products were not redesigned. One product was designed to full depth. Four products received bounded transfer probes. Two products received constraint and applicability reviews only. The remaining products were covered by audit evidence rather than detailed redesign.\n\nCreative Navy-recorded evidence does not include competitive benchmarking. The engagement did not evaluate competing products, although competitor presentation was a commercial driver in the request for proposal.\n\nNo live operation is recorded. No radio was keyed, no transmitter was actuated, no lock gate or controller was commanded, no live harbour traffic was controlled, no external reporting authority accepted a submission and no live vessel identifiers, customer incidents, radio recordings or operational data were used.\n\nNo certification, conformity or compliance credential is recorded. The engagement did not certify maritime equipment, establish a system hazard log, quantify operational incidents, verify sensor correlation, validate radar or AIS accuracy, approve alarm thresholds or replace product-specific regulatory interpretation.\n\nThree of the seven operator journeys were not independently validated by the comparative round. Traffic monitoring, incident coordination and equipment health remained in the delivered templates and states, but were outside that comparative study.\n\n## Related pages\n\nRelated evidence pages include What We Have Measured, What Is Observed But Not Quantified, What We Do Not Claim, What Is Inferred and Longitudinal Durability. Related marine case studies include Cox Marine, Torqeedo Maritime HMI, MDU Ship Motion Monitoring and Raymarine Marine VHF and AIS Radio. Related high-consequence design-system and expert-tool evidence includes KISPE Space and Schone Airspace Group Mission Control.\n",
+  "claims": [
+    {
+      "claim": "The engagement covered seventeen one-week sprints in two blocks: three discovery sprints, a formal management gate and fourteen delivery sprints.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "engagement record",
+      "notes": "Supported by W7. The sprints are engagement cadence, not method phases."
+    },
+    {
+      "claim": "The portfolio audit inspected all nine products and recorded 74 interface views or meaningful states, 23 representative workflows and 58 distinct findings.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "engagement record",
+      "notes": "Supported by W11. The audit did not mean all nine products were redesigned."
+    },
+    {
+      "claim": "The gate selected VTS as the reference product with a weighted score of 90 out of 100, ahead of four alternatives.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "engagement record",
+      "notes": "Supported by W24 and W25. VTS was selected because it combined several operational and transfer-value characteristics."
+    },
+    {
+      "claim": "The design system contained 54 components and 198 named states, plus eight composition patterns, two themes and two density profiles.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "engagement record",
+      "notes": "Supported by W65. Named states are not multiplied by theme, density, application or repeated instance."
+    },
+    {
+      "claim": "The transfer programme assessed 70 proposed component applications: 45 direct adoptions, 15 documented extensions and 10 refusals.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "engagement record",
+      "notes": "Supported by W70 through W76. The applications were usage proposals, not components and not shipping software."
+    },
+    {
+      "claim": "The six-gate reuse test required task, meaning, authority, input, failure and recovery to pass before direct reuse.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "engagement record",
+      "notes": "Supported by W72. A failure could produce an extension or refusal depending on whether reuse would misstate authority or consequence."
+    },
+    {
+      "claim": "A client engineer built a working non-production validation-and-correction view from documented patterns and domain adaptations without further screen specification from Creative Navy.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "engagement record",
+      "notes": "Supported by W77 through W80. The exercise demonstrated capability transfer, not product migration completion or engineering-efficiency improvement."
+    },
+    {
+      "claim": "In a counterbalanced paired study with eight end-customer operators and supervisors, median time to first answer was lower on three timed prototype tasks and correct first answers rose from 23 of 32 to 32 of 32.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "case evidence",
+      "notes": "Supported by W84 through W90. The result used sanitised training scenarios on a prototype, not a production installation, and the study reported no significance tests, confidence intervals or power calculation."
+    },
+    {
+      "claim": "The design system reached production, and the client implemented it while Creative Navy supplied standard implementation support.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "engagement record",
+      "notes": "Supported by W95 and W96. No support duration, form, frequency or volume is recorded."
+    },
+    {
+      "claim": "The available case evidence records no design-fidelity comparison, no commercial outcome, no engineering-efficiency outcome, no training outcome, no certification and no operational-performance outcome.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "case evidence",
+      "notes": "Supported by W98 through W104 and W91. Production status is not evidence of fidelity or operational benefit."
+    }
+  ],
+  "limitations": [
+    "The client may not be named; the public descriptor is a European vendor of maritime traffic monitoring, inland navigation and communications software for port authorities, coastal administrations and waterway operators.",
+    "The operational VTS control rooms may not be located publicly; the permitted wording is operational VTS control rooms at a customer site or equivalent.",
+    "One product was designed to full depth. Four products received bounded transfer probes, two received constraint and applicability reviews only, and the portfolio audit does not establish a nine-product redesign.",
+    "The comparative study used eight participants, sanitised scenarios and a prototype; it did not measure production operation, sustained watch performance, live traffic responsibility or formal hazard testing.",
+    "The comparative study reported no significance test, confidence interval, power calculation or combined timing figure, and the three timed percentages must not be averaged.",
+    "No live operation occurred: no radio, transmitter, lock gate, controller, live harbour traffic, external reporting authority or live operational data was used.",
+    "The design system reached production, but no design-fidelity comparison is recorded.",
+    "No commercial result, engineering-efficiency result, training result, safety result, certification, conformity or compliance credential is recorded.",
+    "The return engagement roughly a year later is recorded only as a return engagement on a separate product; its subject, scope and outcome are not recorded.",
+    "Implementation Partnership happened, but the duration, cadence, form and weight of Creative Navy's support are not recorded."
+  ],
+  "publicationBlockers": [],
+  "questionsForReview": [
+    "Confirm whether any additional records specify the duration, cadence, form or volume of Creative Navy's Implementation Partnership support.",
+    "Confirm whether the return engagement's product, domain, scope or outcome can be described publicly.",
+    "Confirm whether any design-fidelity comparison exists between the implemented interface and the delivered designs.",
+    "Confirm whether the operational control-room location may remain withheld or can be named publicly.",
+    "Confirm where the new design-system page should be placed, because the source recommends but does not settle the structural decision.",
+    "Confirm whether the absent acceptance record or other absent documents contain any fact that changes production status, fidelity, implementation support or accepted scope."
+  ],
+  "relatedPageSlugs": [
+    "what-we-have-measured",
+    "what-is-observed-but-not-quantified",
+    "what-we-do-not-claim",
+    "what-is-inferred",
+    "longitudinal-durability",
+    "cox-marine",
+    "torqeedo-maritime-hmi",
+    "mdu-ship-motion-monitoring",
+    "raymarine-vhf",
+    "kispe-space",
+    "schone-mission-control"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "What We Have Measured",
+      "targetSlug": "what-we-have-measured",
+      "placementHint": "Related pages section and comparative-study section",
+      "reason": "The source identifies the counterbalanced paired comparison as a strong example for this evidence-standard page."
+    },
+    {
+      "anchorText": "What Is Observed But Not Quantified",
+      "targetSlug": "what-is-observed-but-not-quantified",
+      "placementHint": "Related pages section and operational-control-room research section",
+      "reason": "The field observation and legacy failure modes are observed evidence without production outcome measurement."
+    },
+    {
+      "anchorText": "What We Do Not Claim",
+      "targetSlug": "what-we-do-not-claim",
+      "placementHint": "Evidence limits section",
+      "reason": "The case has explicit non-claims covering competitive benchmarking, live operation, certification and unmeasured outcomes."
+    },
+    {
+      "anchorText": "What Is Inferred",
+      "targetSlug": "what-is-inferred",
+      "placementHint": "Audit and design-system sections",
+      "reason": "The 31-pattern classification is analytical synthesis rather than measured reuse prediction."
+    },
+    {
+      "anchorText": "Longitudinal Durability",
+      "targetSlug": "longitudinal-durability",
+      "placementHint": "Production status section",
+      "reason": "The source records production implementation and a return engagement, while limiting what may be inferred from them."
+    },
+    {
+      "anchorText": "Raymarine Marine VHF and AIS Radio",
+      "targetSlug": "raymarine-vhf",
+      "placementHint": "Related pages section",
+      "reason": "The source identifies Raymarine as a related marine engagement and comparison point."
+    },
+    {
+      "anchorText": "MDU Ship Motion Monitoring",
+      "targetSlug": "mdu-ship-motion-monitoring",
+      "placementHint": "Related pages section",
+      "reason": "The source identifies MDU as another marine engagement in the same evidence category."
+    },
+    {
+      "anchorText": "KISPE Space",
+      "targetSlug": "kispe-space",
+      "placementHint": "Related pages section",
+      "reason": "The source compares this engagement with KISPE on design-system inventory and evidence boundaries."
+    },
+    {
+      "anchorText": "Schone Airspace Group Mission Control",
+      "targetSlug": "schone-mission-control",
+      "placementHint": "Related pages section",
+      "reason": "The source compares this engagement with Schone on high-consequence design-system evidence and writing cadence."
+    },
+    {
+      "anchorText": "Cox Marine",
+      "targetSlug": "cox-marine",
+      "placementHint": "Related pages section",
+      "reason": "The source states that this case files with existing marine case studies including Cox Marine."
+    }
+  ],
+  "qualityChecks": {
+    "factsOnlyFromCurrentSource": true,
+    "documentationStyle": true,
+    "noMarketingLanguage": true,
+    "noInventedClaims": true,
+    "linksOnlyFromLinkingContext": true,
+    "internalNotesNotPublished": true,
+    "readyForSanityImport": true
+  }
+}

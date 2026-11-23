@@ -138,6 +138,20 @@ const KNOWN_CASE_NAMES = [
   'Squaremind',
   'Owkin',
   'K',
+  'KISPE',
+  'Schone',
+  'Raymarine',
+  'MDU',
+  'Streetec',
+  'AIT',
+  'Assemblio',
+  'Topera',
+  'Egma',
+  'Oceaneering',
+  'visioncheckout',
+  'handheld',
+  'VTS',
+  'Industrial Process Control',
 ];
 
 // ===========================================================================

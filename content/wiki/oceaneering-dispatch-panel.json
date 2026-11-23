@@ -1,0 +1,199 @@
+{
+  "slug": "oceaneering-dispatch-panel",
+  "title": "Oceaneering Dispatch Panel",
+  "pageType": "case-study",
+  "category": "evidence",
+  "section": "Medical",
+  "summary": "Creative Navy redesigned a wall-mounted hospital logistics dispatch panel used to send carts into Oceaneering automated guided vehicle transport systems. The engagement covered UX and UI only, produced 54 screens and 321 screens counted with variations, and is in production with client-confirmed shipped fidelity. The case is documented with explicit boundaries: the panel is hospital logistics infrastructure, not a clinical or patient-facing system, and no usability test, operator interview, field observation, or measured operational outcome was recorded.",
+  "keyFacts": [
+    "Oceaneering may be named; hospital sites, product names, individual names, and system names are de-identified.",
+    "The dispatch panel is a wall-mounted touchscreen used by logistics operators to send hospital carts into an automated guided vehicle transport system.",
+    "Creative Navy's scope was UX and UI only; Oceaneering owned the back end and front-end development was outside the engagement.",
+    "The engagement ran as one discovery sprint, four one-week UX sprints, and three and a half UI sprints.",
+    "Creative Navy delivered 54 screens, counted as 321 screens with variations, with a six-person team.",
+    "The panel interface is in production, and Oceaneering confirms it shipped as the design Creative Navy delivered; Creative Navy did not independently verify build fidelity.",
+    "Oceaneering reports good feedback, but no figures were provided and the feedback was not independently verified.",
+    "The engagement included two operations-side design reviews at hospitals, but no usability testing and no dispatch operator participation.",
+    "One reference site's logistics manager rejected the length of the dispatch flow for that site's operation; that objection was recorded and does not establish a measured outcome.",
+    "The work is filed under medical case studies as hospital logistics infrastructure, not as a medical-device or clinical-system case."
+  ],
+  "bodySections": [
+    {
+      "heading": "Oceaneering Dispatch Panel as Hospital Logistics Infrastructure",
+      "bodyMarkdown": "Creative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nOceaneering builds automated transport systems for hospitals: fleets of automated guided vehicles that move carts of linen, food, waste, pharmacy items and supplies through a building. Creative Navy redesigned the dispatch panel, the wall-mounted touchscreen in a logistics depot through which a materials-handling operator puts a cart into that transport system.\n\nThis case is filed in the medical case-study category because the deployment context is a hospital. The system is hospital logistics infrastructure: it has no clinical workflow, no patient-facing function, no medical-device regulation, and no IEC 62366-1 process. Vehicle safety standards such as ISO 3691-4:2023 and ANSI/ITSDF B56.5-2024 govern the vehicles, not this operator terminal; Creative Navy neither certified nor audited to either.\n\nCreative Navy's scope was UX and UI only. Oceaneering built the back end, and front-end development was outside Creative Navy's scope. The engagement ran as one discovery sprint, four one-week UX sprints, and three and a half UI sprints. A six-person team delivered 54 screens, counted as 321 screens with variations."
+    },
+    {
+      "heading": "The Dispatch Panel Sends Hospital Carts Into an Automated Guided Vehicle System",
+      "bodyMarkdown": "The Oceaneering dispatch panel controls a local depot area where carts enter the automated guided vehicle transport system. The operator wheels a cart into a floor-marked position called a detent, an overhead sensor detects it, the matching station starts flashing on the dispatch panel, and the operator tells the system what the cart holds and where it goes. A vehicle then collects the cart.\n\nOne dispatch panel serves one area, also called a depot. Area size varies from four to fifty stations. Four to twelve stations is typical, twelve is often quoted as the per-area maximum, a tunnel can hold twenty, and one fully automated bay holds fifty and has no panel at all.\n\nThe transport system around the panel can be large. One deployment was described in Oceaneering's staff orientation film as having 71 logistics lobbies that send and receive carts, 17 cart types, 1,400 carts, 70 vehicles, and approximately 4,000 transport orders a day. A planning manager from the same site separately gave an operational figure of 3,300 transports a day. These figures describe the system the panel belongs to; they are not throughput figures affected by Creative Navy's work.\n\nThe vehicle reads the cart's RFID tag after lifting the cart. If the selected cart type is wrong, the error is detected downstream of the operator, who has usually walked away. The vehicle sets the cart down and leaves deliberately because waiting would strand it in the depot, possibly for hours, and drain its battery."
+    },
+    {
+      "heading": "The Operating Reality Combined a Small Touchscreen, a Dirty Depot, Gloves, and Floor-Based State",
+      "bodyMarkdown": "The dispatch panel hardware was a 10.4-inch touchscreen at 1024×768, 4:3, 350 nit, and 800:1 contrast. At some sites an RFID reader sat beside the screen. Creative Navy characterised the hardware during review as not a precise touchscreen, and the documented use of gloves made larger touch targets a response to an operating condition rather than a precaution.\n\nThe depot environment also constrained the interface. A staff software engineer described hospital areas as looking organised but not being organised, with vehicle routes passing through dirty areas where other things are left standing around. The interface therefore had to work as part of a physical environment, not as a clean-room screen design.\n\nThe floor was part of the interface. Vehicles run on dark flooring and people are directed to light flooring. Ceiling-mounted illuminated signs and speakers issue spoken instructions to clear the passage at intersections. Station positions are numbered on the floor, and the send and receive roles are painted on the floor in the same colours the screen uses.\n\nThe spatial rule was fixed. The earlier generation's own design specification and a subject-matter expert in review both stated that if the operator stands at the panel and tips its top down until horizontal, the station numbering on screen must match the numbering on the floor. Creative Navy's design preserved this spatial correspondence and added a movable you-are-here marker with directional arrows showing where vehicles enter."
+    },
+    {
+      "heading": "Operator Turnover Made Training Burden a Design Constraint",
+      "bodyMarkdown": "The dispatch panel is used by a high-turnover operator population with little training and no technical background. Oceaneering described operators as handling 100–200 dispatches per eight-hour shift. The client's training goal was a screen that speaks for itself so that training is as short as possible: anyone should be able to use it in about two minutes.\n\nThe same workforce condition also limited the research. Oceaneering's stated reason for not being able to reach operators was that operators arrive, receive some training, and leave after a few months. That means the churn that made the interface problem hard also made direct operator research hard.\n\nExternal workforce framing supports the business importance of that constraint. Hospital environmental-services turnover in the United States is described as roughly 27.6% nationally, with state-level figures of 36% and 42.5% reported, and close to 30% of churn occurring inside the first thirty days. This external context corroborates the need for short training, but it is not evidence that Creative Navy measured training time in this engagement."
+    },
+    {
+      "heading": "The Earlier Dispatch Interface Was Reasoned but Had Accumulated Conflicting Meanings",
+      "bodyMarkdown": "The predecessor dispatch interface was not treated as careless work. Its own 92-page interface design specification contained a station-numbering convention tied to floor labels, an 11×5 area-representation grid, a 70×70-pixel thumb-target size at 1024 pixels, and per-area destination menus that pre-selected likely options and filtered invalid ones. The semi-automatic dispatch idea also already existed.\n\nThe design problem was that a reasoned system had accumulated conflicting meanings. In the predecessor's destination menu, colour carried three meanings at once: red marked a supervisor-only option, yellow marked a standard option, and an alerting colour marked a destination that was illogical and might be refused. Authority, normality and warning used the same visual channel.\n\nBlinking also carried two opposite demands. Blinking signalled both that a cart had been placed and dispatch should start, and that a cart had arrived and should be removed. The sales consultant's reported diagnosis was that an operator reads a blinking control as the system having something for them, presses it, and does whatever it offers, while the fleet backs up behind carts that nobody has removed.\n\nWrong-cart errors were also hard to understand and hard to recover from. Choosing the wrong cart type led to a vehicle trying to lift the cart, detecting the mismatch, setting it down and leaving without stating why. Recovery required staff to walk to the vehicle and reset it so it would leave; it could not be done from the panel."
+    },
+    {
+      "heading": "Requirements Were Built Through Domain Learning and the Blanks Phenomenon",
+      "bodyMarkdown": "Creative Navy's Critical Systems Design method began with domain learning because Oceaneering did not start the engagement with a concrete business requirement set. The client project lead described the available basis as study of deployed panels, an in-house tool built for one hospital, and conversations with sales, service and subject-matter experts.\n\nCreative Navy built collaboration infrastructure for the engagement: a documentation workspace with the project timeline, the design requirements table, stakeholder interview findings and open questions; a design-review tool with per-screen commenting; and a how-to guide for first-time reviewers. The requirements table used microtask analysis across screen, module, content and actions, use case, priority and persona.\n\nThis engagement also shows the blanks phenomenon. Creative Navy compiled the terminology and requirements needed to reason about the panel, including an acronym list with blanks left in it where the engagement had not yet established meaning. That was important because the panel sat between operators, supervisors, systems engineers, applications engineers, sales staff, hospital customers and external consultants, with no agreed requirement set at the start.\n\nCreative Navy's Sandbox Experiments phase covered the discovery sprint, six stakeholder interviews, domain learning from the predecessor specification, published AGV literature and the staff orientation film, and the early navigation and station-card explorations. Option space mapping was countable in this engagement: six navigation and layout variants, two station-card systems at three sizes each, four further card iterations, and three later role-and-status encodings were recorded."
+    },
+    {
+      "heading": "Station Lines Became the Structural Unit for Role Editing",
+      "bodyMarkdown": "Creative Navy's design work had to absorb a structural discovery that was not in the initial requirements: stations are not independent. Stations sit in lines determined by the direction the vehicle drives, and every station on a line must carry the same role. Changing the front station of a line to receive while the station behind it sends causes logistical failure; the whole row changes or none of it does.\n\nSite configuration also varied substantially. At one site, supervisors may not change station roles and the facility is treated as a finely tuned machine in which nothing is changed. At another, roles must change through the day because wash-area stations send clean dishes around noon and receive dirty ones an hour later, with too little floor space for separate stations.\n\nOceaneering's technology manager wanted configuration to be handled per customer site, with nothing hard-coded. The reported goal was that an application engineer could arrive at a site, add an area, set up the card configuration, save it, and make it available for others to use.\n\nCreative Navy's Concept Convergence phase absorbed that structural rule into the supervisor experience. Role editing operates on the area map rather than a table, because the physical layout should not have to be re-sorted mentally. Selection operates on groups of stations because the station line, not the individual station, is the operational unit. Role changes with transports in progress are accepted and deferred, with a plain-language notice that the change will apply once those transports complete."
+    },
+    {
+      "heading": "The Station State Model Separated Flashing, Colour, Icons, and Letters",
+      "bodyMarkdown": "Creative Navy's Critical Systems Design method resolved the station state model into a scheme with a stated rule: one colour for sending, one colour for receiving, each flashing when an action is required and steady when it is not, with red reserved exclusively for errors. Red was not used for normal operation because using red normally teaches operators to ignore it.\n\nThis was not an invention of the flashing and steady convention. The convention partly existed already at one site for sends. Creative Navy generalised it across sends and receives, gave it a stated rule, and added non-colour channels.\n\nThe state model specified seven station statuses. Each status carried colour plus a directional icon plus the role letter, with a legend reachable from the panel. Non-colour redundancy was raised by the client on colour vision deficiency grounds. The alternative of requiring an operator to tap a card to read its status was rejected by a client reviewer as unworkable at operational frequency.\n\nLetters remained on the station cards after icon-dense card designs were explored and discarded. The operations side preferred letters because there was less to over-complicate and the state could be read from across the room. A software architect's counter-argument that single letters are language-specific was recorded and did not prevail; directional icons were added as the secondary channel.\n\nWhole-card colour replaced corner indicators. One operator opinion reached the engagement second-hand, relayed by a colleague: the person who runs vehicles at one site disliked a corner-colour indicator and preferred the whole card to carry the colour, because a corner marker cannot be read from across a depot. Two operations leads at two different hospitals later independently asked for the same whole-card colour treatment and independently endorsed the flashing-versus-steady model. That is convergence of expert judgement from the operations side, not a measured result and not validation of the design as a whole."
+    },
+    {
+      "heading": "Dispatch Flows Used Shared Chrome for Simple and Complex Destinations",
+      "bodyMarkdown": "Creative Navy's Critical Systems Design method resolved the dispatch interaction into two flows sharing the same chrome. A semi-automatic flow lets the operator select a station and a cart type while other settings are preset. A multi-step flow supports complex dispatches through building, floor and room. Both flows use the same summary row, supervisor-override control and closing identity step.\n\nThe premise of the semi-automatic flow was corrected in review and carried into the design record. Most areas dispatch several cart types to several destinations; the only area with a single fixed destination is waste. Creative Navy also recorded the limit of the semi-automatic flow: when everything is preset, an operator who knows that nothing normally needs changing may stop reading and send to the wrong place.\n\nIdentity verification stayed at the end of the dispatch flow. A reviewer proposed moving identity verification to the start so the system could personalise options. The proposal was resolved against because destinations were a default set shared by all operators rather than per-user, so personalisation would not add value. Supervisors badge in separately to unlock overrides.\n\nThe progress bar was dropped for a structural reason. Destination depth varies by destination: a patient area has building, floor and room, while a linen department has one step. The flow's length is therefore not knowable when it starts. Creative Navy designed a variant with no progress bar and a running selection summary instead.\n\nPagination was introduced only above a threshold. Scrolling was rejected as too slow and unreliable on the hardware. Creative Navy minimised pagination by calculating the maximum number of selectable cards that fit at 1024×768 while remaining reliably tappable. The result was a 24-per-screen threshold, with the most common options placed on the first page."
+    },
+    {
+      "heading": "Wrong-Cart Recovery Moved the Fix Back to the Dispatch Panel",
+      "bodyMarkdown": "Creative Navy's design response to wrong-cart errors was to make the refused cart recoverable from the panel. The earlier workflow detected the wrong cart type only after the vehicle lifted the cart, at which point the operator had usually left. The vehicle then set the cart down and left, and staff had to walk to the vehicle and reset it physically.\n\nIn the redesigned flow, the station holding the refused cart can be tapped to read what the vehicle detected against what was selected. The detected type can be confirmed in one action, and the destination and identity are re-entered. The next person into the depot can therefore resolve the error without walking to the vehicle and resetting it.\n\nThis recovery design responded to documented operating behaviour rather than intentional misuse. The logistics manager reported that supply flatbeds were dispatched wrongly every day because people were in a hurry, and included himself in that pattern. The manager's reported response to the recovery flow was that if Creative Navy could make it happen, it would make their working life better. That response is reported substance, not a measured outcome."
+    },
+    {
+      "heading": "Restrictions Were Designed to Reduce Predictable Misuse",
+      "bodyMarkdown": "Creative Navy's design work treated restriction as an interaction design requirement where the record showed predictable misuse. Supervisor access had been granted too widely. At one site, night-shift staff switched every detent to send so no carts could arrive, and the system stopped. At another, pharmacy deliveries were blocked when staff dispatched waste before a shift time because they knew how to send waste. Operators also took the shortest route rather than the correct one by sending carts to the nearest block.\n\nPriority misuse was reported independently by three people. An emergency option existed and was used routinely for non-emergencies; the reported pattern was that if operators had access to priority, everything went out at priority one.\n\nCreative Navy restricted call-carts deliberately. A quantity slider was designed and rejected on misuse grounds. The resolved pattern was supervisor-gated, surfaced already-called counts before the quantity screen, and put an expiry on outstanding calls. A supervisor is therefore told that carts are already on the way before being asked how many more to request.\n\nPriority is supervisor-only by default and configurable per site. This preserves configurability while preventing the default operator interface from making routine priority misuse easy."
+    },
+    {
+      "heading": "Operations-Side Design Reviews Were Not Usability Tests",
+      "bodyMarkdown": "Creative Navy presented the designs to one hospital's logistics manager and two supply-chain supervisors, and separately to a second hospital's AGV planning manager. These were design reviews, not usability tests: no task was attempted and nothing was measured. No dispatch operator took part in either session.\n\nThe two operations-side sessions endorsed parts of the state model. Independently, at two different hospitals, both operations leads asked for whole-card colour rather than a corner or small icon because the panel is read from across a depot. Both also endorsed the same state convention: flashing means an action is required, while steady means it is complete or in progress. One supply-chain supervisor also reported that the S and R letters were helpful and that blinking to signal action needed was the right treatment.\n\nThe same validation activity also rejected part of the dispatch flow for one reference site. The logistics manager rejected the length of the designed dispatch flow for that site's operation, saying in reported substance that anything beyond two taps was too much for the team. The flow shape he required was cart type, automatic dispatch, badge scan, and walking away; he described that operating tempo as about ten seconds.\n\nThat rejection must be read alongside the production statement. A reference site's logistics manager rejected the flow length for his operation; the product shipped as designed at the deployment target. Both statements are true and are not in conflict because that site was consulted as a reference, not as the deployment. The objection was recorded, concerned that site's tempo and hardware, and was not proved wrong by the later shipped fidelity statement."
+    },
+    {
+      "heading": "Handover Covered the Design System and Board-Level Rationale",
+      "bodyMarkdown": "Creative Navy's Iterative System Building phase built out the area overview layouts, card standards, dispatch, call-carts, supervisor, help and system-off areas, loading states, and clickable prototypes. Nine area-overview layouts across four card sizes were recorded. Four loading-state treatments were designed with written trade-offs: a full-screen overlay, a small centred overlay, an in-context indicator on the tapped element, and a toast.\n\nThe card standards were specified numerically. The minimum card was 110 px, normal spacing was 24 px, minimum spacing was 3 px where two dispatch-ready cards adjoined, and the growth state for a cart ready to dispatch was 20 px. Four card sizes were specified so that one layout system could serve areas from four stations to fifty. Components were also made responsive to text expansion, so translated labels wrap to two lines rather than truncating.\n\nHelp was designed in two forms: contextual help from a question mark on any screen, and a global help area of thirteen topics ordered by relevance rather than alphabetically, plus an FAQ. A system-off screen states when the system is expected back, because operators want to know when they can use it again.\n\nCreative Navy's Organizational Integration phase covered handover to Oceaneering's own in-house interface designer, who would build the components, and a ninety-minute presentation to Oceaneering's board. The board presentation had five attendees and walked through the design and the decisions behind it. Implementation Partnership is not claimed for this case because front-end development was out of scope and no implementation support is recorded."
+    },
+    {
+      "heading": "Production Status and Feedback Are Client-Reported and Unquantified",
+      "bodyMarkdown": "The dispatch panel interface Creative Navy designed is in production, and Oceaneering confirms it shipped as the design that was delivered. Oceaneering reports that the feedback it has received has been good. The fidelity statement and the feedback are both client-reported: Creative Navy did not independently compare the shipped build against the delivered files, no figures were shared, and neither has been independently verified.\n\nThe production statement is evidence that the design survived development. It is not evidence that the interface performs better than its predecessor. The client-reported feedback is not an adoption figure, satisfaction score, time saving, error-rate change, training-time result, dispatch-volume result or commercial claim.\n\nThe screen count and team count are also engagement facts, not outcomes. Creative Navy delivered 54 screens, counted as 321 screens with variations, using a six-person team. Those figures describe what was produced, not what the design achieved in operation."
+    }
+  ],
+  "evidenceSummary": {
+    "strongClaims": [
+      "Creative Navy redesigned Oceaneering's hospital logistics dispatch panel as a UX and UI engagement, with back-end and front-end development outside scope. This is supported by Creative Navy's engagement record.",
+      "The engagement produced 54 screens, counted as 321 screens with variations, with a six-person team. These are engagement production facts, not outcome measures.",
+      "The operations-side sessions were design reviews, not usability tests, and no dispatch operator took part. No task was attempted, nothing was measured, and no protocol was run.",
+      "The redesigned state model reserved red for errors and used colour, directional icons and role letters rather than colour alone. The flashing/steady convention partly existed already; Creative Navy generalised it, stated the rule, and added non-colour channels.",
+      "The wrong-cart-type recovery flow moved recovery to the panel so the next person in the depot could resolve the mismatch without walking to the vehicle. This is a documented design response to client-stated operating behaviour, not a measured reduction in wrong-cart errors.",
+      "The case is hospital logistics infrastructure, not a clinical workflow, patient-facing function, medical device, or medical-device usability process."
+    ],
+    "weakerClaims": [
+      "The dispatch panel interface is in production and Oceaneering confirms it shipped as the design Creative Navy delivered. Creative Navy did not independently compare the shipped build against delivered files; fidelity is client-confirmed.",
+      "Oceaneering reports good feedback, but no figures were provided and the feedback was not independently verified. This is not an adoption, satisfaction, time-saving, error-rate, training-time or commercial claim.",
+      "The operations-side design reviews independently converged on whole-card colour and the flashing-versus-steady state model. This is convergence of expert judgement, not a measured result or validation of the whole design.",
+      "One reference site's logistics manager rejected the designed dispatch flow length for that site's operation, while the product shipped as designed at the deployment target. The objection was recorded and was not softened, answered, or treated as proved wrong."
+    ],
+    "limitations": [
+      "No usability testing was conducted: no task was attempted, no completion or time was recorded, and no protocol was run.",
+      "No dispatch operator was interviewed or observed, and Creative Navy did not visit a depot.",
+      "No field research or contextual inquiry was conducted; the operating context was documented and client-stated rather than observed by Creative Navy.",
+      "No front-end implementation or back-end work was in Creative Navy's scope.",
+      "No measured efficiency, throughput, error-rate, time-saving, training-time or dispatch-volume outcome is available.",
+      "The production fidelity statement is client-reported; Creative Navy did not independently compare the shipped build with delivered files.",
+      "Oceaneering's good-feedback statement is client-reported, unquantified and not independently verified.",
+      "The client's competitive account that competitors' interfaces were simpler was not independently benchmarked.",
+      "The case does not establish a medical-device, vehicle-safety, infection-control, or alarm-management compliance credential."
+    ]
+  },
+  "relatedPageSlugs": [
+    "what-is-client-reported",
+    "what-is-observed-but-not-quantified",
+    "what-we-do-not-claim",
+    "what-we-have-measured",
+    "what-we-verified-without-measuring",
+    "better-state-visibility",
+    "lower-training-burden",
+    "reduced-error-risk",
+    "stronger-recovery-support",
+    "multi-stakeholder-operational-environments",
+    "embedded-devices-and-constrained-interfaces",
+    "medical-and-clinical-systems"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "client-reported evidence",
+      "targetSlug": "what-is-client-reported",
+      "reason": "The case depends on client-reported production fidelity and unquantified feedback."
+    },
+    {
+      "anchorText": "observed but not quantified evidence",
+      "targetSlug": "what-is-observed-but-not-quantified",
+      "reason": "The operations-side convergence is expert judgement and review evidence, not a measured result."
+    },
+    {
+      "anchorText": "what Creative Navy does not claim",
+      "targetSlug": "what-we-do-not-claim",
+      "reason": "The case explicitly excludes measured performance, medical-device, safety-certification and usability-validation claims."
+    },
+    {
+      "anchorText": "measured evidence standards",
+      "targetSlug": "what-we-have-measured",
+      "reason": "The case has engagement facts and client-reported feedback, but no measured operational outcome."
+    },
+    {
+      "anchorText": "verified without measuring",
+      "targetSlug": "what-we-verified-without-measuring",
+      "reason": "The design reviews support limited verification of direction and expert judgement without task measurement."
+    },
+    {
+      "anchorText": "better state visibility",
+      "targetSlug": "better-state-visibility",
+      "reason": "The case records extensive design work on station states, flashing, colour, icons and role letters."
+    },
+    {
+      "anchorText": "lower training burden",
+      "targetSlug": "lower-training-burden",
+      "reason": "The case is explicitly shaped by high-turnover operators and a short-training goal, without measured training outcomes."
+    },
+    {
+      "anchorText": "reduced error risk",
+      "targetSlug": "reduced-error-risk",
+      "reason": "The design addresses wrong-cart recovery and predictable misuse, while avoiding measured error-rate claims."
+    },
+    {
+      "anchorText": "stronger recovery support",
+      "targetSlug": "stronger-recovery-support",
+      "reason": "The case includes a specific recovery flow for refused carts and handoff visibility."
+    },
+    {
+      "anchorText": "Multi Stakeholder Operational Environments",
+      "targetSlug": "multi-stakeholder-operational-environments",
+      "reason": "Source-classified context for this case study."
+    },
+    {
+      "anchorText": "Embedded Devices And Constrained Interfaces",
+      "targetSlug": "embedded-devices-and-constrained-interfaces",
+      "reason": "Source-classified context for this case study."
+    },
+    {
+      "anchorText": "Medical And Clinical Systems",
+      "targetSlug": "medical-and-clinical-systems",
+      "reason": "Source-classified context for this case study."
+    }
+  ],
+  "tags": [
+    "case study",
+    "hospital logistics",
+    "automated guided vehicles",
+    "dispatch panel",
+    "embedded interface",
+    "state visibility",
+    "error recovery",
+    "training burden",
+    "client-reported evidence",
+    "evidence limits"
+  ],
+  "_meta": {
+    "sourcePath": "sources/articles/Case studies/case-study--oceaneering-dispatch-panel.md",
+    "parentSlug": "medical",
+    "childPageSlugs": [],
+    "generatedBy": "openai"
+  }
+}

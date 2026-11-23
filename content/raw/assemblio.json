@@ -1,0 +1,207 @@
+{
+  "_type": "documentationPage",
+  "sourceFile": "Articles/Case studies/case-study--assemblio.md",
+  "sourcePath": "sources/articles/Case studies/case-study--assemblio.md",
+  "sanityDocumentIdCandidate": "documentationPage.assemblio",
+  "title": "Assemblio",
+  "slug": {
+    "_type": "slug",
+    "current": "assemblio"
+  },
+  "pageType": "case-study",
+  "category": "evidence",
+  "parentSlug": "industrial",
+  "childPageSlugs": [],
+  "excerpt": "Assemblio is a Stuttgart software company whose Composer and Smart Viewer products support CAD-derived assembly planning and shop-floor work instructions. Creative Navy redesigned both products and the surrounding platform across nine one-week sprints, delivering 87 screens in 233 variants, with the product now in production as the delivered design.",
+  "metaTitle": "Assemblio Case Study",
+  "metaDescription": "Case study on Assemblio: CAD-derived assembly planning, Smart Viewer redesign, 87 screens, 233 variants, and calibrated evidence limits.",
+  "summary": "Creative Navy redesigned Assemblio's Composer, Smart Viewer, surrounding platform and sync-profile surfaces across nine one-week sprints. The documented case is strongest as evidence of interface separation for two different user populations, component-based handover, and design fidelity after implementation; it does not establish measured performance outcomes.",
+  "definition": "",
+  "keyFacts": [
+    "Assemblio GmbH is a Stuttgart software company and a spin-off of Fraunhofer IPA.",
+    "Assemblio Composer is the planning tool used by engineers; Assemblio Smart Viewer is the shop-floor application used by assembly workers.",
+    "The engagement ran across nine one-week sprints: five UX sprints followed by four UI sprints.",
+    "Creative Navy delivered 87 screens in 233 variants, plus a design system, component documentation, prototypes and developer handover.",
+    "The scope covered the Composer, Smart Viewer, surrounding platform, and sync profiles for transferring assembly plans between product versions.",
+    "The design system contained 93 documented components, with every component documented with its states.",
+    "The interface was delivered in light and dark themes through design tokens, with light intended as the shop-floor default and dark for the Composer.",
+    "Creative Navy conducted no user research of its own, no usability testing, no UX audit, and no shop-floor observation.",
+    "Assemblio's developers built from the delivered components, and Creative Navy compared the shipped interface against the delivered designs.",
+    "The product is in production as the design that was delivered, but no performance, adoption, productivity, revenue or funding figure is established."
+  ],
+  "tags": [
+    "case study",
+    "industrial software",
+    "assembly planning",
+    "CAD-derived work instructions",
+    "multi-role workflows",
+    "expert tools",
+    "design system",
+    "implementation handover",
+    "evidence calibration"
+  ],
+  "bodyMarkdown": "- **Primary case-study category:** /evidence/case-studies/industrial\n- **Primary context:** /contexts/industrial-automation-and-machinery\n- **Also-relevant contexts:** /contexts/multi-stakeholder-operational-environments, /contexts/expert-tools-and-internal-systems, /contexts/enterprise-software\n- **Connects to:** /situations/complexity/multi-role-workflows-are-fragmented, /situations/complexity/expert-workflows-are-hard-to-operate, /situations/complexity/the-product-works-in-demos-but-not-in-real-use, /situations/growth-and-product-strategy/too-many-features-not-enough-coherence, /situations/growth-and-product-strategy/product-fragmenting-under-growth, /situations/growth-and-product-strategy/training-burden-is-too-high, /situations/risk-and-consequence/handoffs-create-failures, /situations/delivery-and-execution/design-does-not-survive-development, /failures/workflow-failures/workflows-break-across-roles, /failures/workflow-failures/handoffs-lose-context, /failures/cognitive-failures/too-much-attention-is-required-for-routine-use, /failures/cognitive-failures/users-cannot-reorient-quickly-after-interruption, /failures/state-visibility-failures/important-status-information-is-buried, /failures/state-visibility-failures/users-cannot-see-what-state-the-system-is-in, /capabilities/service-design-for-multi-role-systems, /capabilities/workflow-and-task-structure-redesign, /capabilities/information-architecture-for-expert-systems, /capabilities/cognitive-load-reduction, /practices/workflow-analysis\n\n## Classification\n\nPrimary case-study category: /evidence/case-studies/industrial\n\nPrimary context: /contexts/industrial-automation-and-machinery\n\nAlso-relevant contexts: /contexts/multi-stakeholder-operational-environments, /contexts/expert-tools-and-internal-systems, /contexts/enterprise-software\n\nConnects to: /situations/complexity/multi-role-workflows-are-fragmented, /situations/complexity/expert-workflows-are-hard-to-operate, /situations/complexity/the-product-works-in-demos-but-not-in-real-use, /situations/growth-and-product-strategy/too-many-features-not-enough-coherence, /situations/growth-and-product-strategy/product-fragmenting-under-growth, /situations/growth-and-product-strategy/training-burden-is-too-high, /situations/risk-and-consequence/handoffs-create-failures, /situations/delivery-and-execution/design-does-not-survive-development, /failures/workflow-failures/workflows-break-across-roles, /failures/workflow-failures/handoffs-lose-context, /failures/cognitive-failures/too-much-attention-is-required-for-routine-use, /failures/cognitive-failures/users-cannot-reorient-quickly-after-interruption, /failures/state-visibility-failures/important-status-information-is-buried, /failures/state-visibility-failures/users-cannot-see-what-state-the-system-is-in, /capabilities/service-design-for-multi-role-systems, /capabilities/workflow-and-task-structure-redesign, /capabilities/information-architecture-for-expert-systems, /capabilities/cognitive-load-reduction, /practices/workflow-analysis\n\n## Assemblio Composer and Smart Viewer as CAD-derived assembly-planning software\n\nCreative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nAssemblio GmbH is a Stuttgart software company and a spin-off of the Fraunhofer Institute for Manufacturing Engineering and Automation. Assemblio makes software that turns a 3D CAD model into an assembly plan.\n\nThe Assemblio Composer is the planning tool used by engineers. The Assemblio Smart Viewer is the shop-floor application used by assembly workers. Assemblio may be named in full, and both product names are public.\n\nAssemblio's authoring method is inverted. Instead of building an assembly sequence forwards, the planner takes the finished 3D model apart; Assemblio's software plays that disassembly backwards as the assembly sequence, which the planner then reorders and refines. This method is Assemblio's, with published research provenance. Creative Navy designed the interface around it; Creative Navy did not devise Creative Navy's Critical Systems Design method.\n\nCreative Navy redesigned the Composer, the Smart Viewer, the surrounding platform, and sync profiles across nine one-week sprints: five UX sprints followed by four UI sprints. Creative Navy delivered 87 screens in 233 variants, plus a design system, component documentation, prototypes and developer handover.\n\n## Assembly plans combine CAD geometry, documentation and traceability\n\nAssemblio described the assembly-planning problem as two connected tasks: finding a valid assembly sequence and producing the documentation a factory needs. The outputs include a PDF laid out to a company template, a video, and the Smart Viewer itself.\n\nThe source data is a STEP file. According to Assemblio, the part names in the CAD hierarchy are the names given during the design phase, not necessarily names a shop-floor worker would recognise. The Composer therefore supports bulk renaming by CSV export and re-import.\n\nAssemblio also described information that is not present in CAD. Cable routing is usually not modelled. The practice Assemblio described is that an experienced worker routes the cables on the first unit, photographs the result, and uploads the photograph into the assembly plan. Tools are documented in the same way, by adding a photograph of the tool to the step.\n\nEach assembly step carries two separate time values. The MTM time represents manual assembly time and sums across the plan for production scheduling. The animation duration controls how long the on-screen motion takes. These values are separate because a real assembly step may take hours while an animation must remain watchable in seconds.\n\nAssemblio also described traceability as a customer requirement. Companies need to record who did what and when, so that a later quality problem can be traced to the point in the process where it originated. Assemblio framed this as process traceability rather than blame assignment.\n\n## The Smart Viewer inherited an interface built for a different population\n\nAssemblio had already diagnosed the structural problem before Creative Navy's design block began. The Smart Viewer had been built from the Composer's components and looked almost identical to the Composer, even though the two products served different populations.\n\nThe Composer user is an engineer, planner or head of assembly working at a desk with a desktop monitor, mouse and keyboard. The Smart Viewer user is a shop-floor assembly worker. Assemblio described the shop-floor environment as bright, dirty and loud, with workers standing, wearing gloves, and working at desks filled with tools, parts and paper documents.\n\nAssemblio also described uncertain input conditions for the Smart Viewer. A mouse is not guaranteed and may have nowhere to sit. A keyboard may be present. Some customers use foot pedals to move forward and back through a plan. Workers usually have a tablet on a holder, or a monitor beside the workstation with a small PC behind the desk.\n\nThis is a performance in reality problem. A dark interface, mouse-scale controls, and a complete engineer-facing CAD hierarchy may work in a desk-based authoring product but fail to match the operating conditions of a bright shop-floor workstation. The worker does not need the complete hierarchy by default; the worker needs the parts used in the current step.\n\nCreative Navy's design work treated the shared component library as both an asset and a constraint. This was organic system building with constraint respecting: the engagement did not reject shared components wholesale, but decided where inheritance from the Composer remained useful and where it had become an error in the Smart Viewer.\n\n## Creative Navy resolved the separated Smart Viewer rather than claiming the separation decision\n\nThe decision to separate the Smart Viewer from the Composer was Assemblio's decision. Assemblio arrived having already concluded that the two user groups needed different products. The case evidence is explicit on this point, and the design authorship is important.\n\nCreative Navy's contribution was resolution. The Smart Viewer parts list was flattened so that the worker's default view is step-scoped, with each part carrying a quantity. The complete hierarchy remained reachable through a second tab for cases that needed it.\n\nCreative Navy designed touch and tablet layouts for the Smart Viewer. The search field expands to full width when the on-screen keyboard appears, temporarily covering filter and sort controls to maximise input space. A tap on a search result goes straight to the product detail page rather than through an intermediate screen.\n\nThe Smart Viewer also gained player controls for play, step forward and back, scrub, reset, and looping a single step. Keyboard shortcuts were presented as a bottom overlay drawer rather than a modal, so they could be consulted without leaving the current step.\n\nThe light theme became the shop-floor default, while the dark theme was retained for the Composer. The interface was delivered in light and dark themes through design tokens, making the themes configurations of one system rather than two parallel designs.\n\n## The Smart Viewer was designed for spot-checking as well as training\n\nAssemblio described three Smart Viewer use cases. A new worker follows the plan step by step for training. An experienced worker reviews the plan before starting and may not consult it again. The harder case is the experienced worker who knows most of the process and needs to look up what is different about this product or variant.\n\nThe spot-check use case changes the interface requirement. The Smart Viewer cannot assume a linear tutorial pattern. It needs fast access to a specific step, immediate visibility of the parts for that step, and minimal attention demand once the worker has found the needed information.\n\nAssemblio estimated that roughly 90% of the time the plan is consulted once and then left playing. Creative Navy did not measure this figure; it is Assemblio's account of use. The design response was to reduce the attention the Smart Viewer requires during routine use.\n\nThis also addresses the blanks phenomenon in the Smart Viewer. When two visually similar screws appear in a step and the list names do not show which is which, the worker must fill a gap between abstract part names and the object in front of them. Step-scoped parts, quantities, hideable annotations, and clearer navigation reduce the amount of interpretation the worker has to perform during assembly.\n\n## Worker-to-planner feedback created a return path for assembly knowledge\n\nAssemblio identified a one-way handoff between planning and assembly. The planner wrote the plan; the worker followed it; the worker had no route to tell the planner that a step did not work in practice.\n\nThe feedback loop and its step-level binding were Assemblio's specification. Assemblio described the need during the demonstration session before the design block, and Assemblio's own customers had also asked for a comment function for workers.\n\nCreative Navy designed how the feedback function lived in the interface. A worker can raise a comment attached to a specific assembly step directly from the 3D canvas as a floating input. A Feedback tab in the side panel collects the comments on the planner side.\n\nThe step-level binding matters because it preserves context across roles. A comment that a whole plan has a problem is imprecise. A comment attached to a specific step tells the planner where the physical process and the authored instruction diverged.\n\n## Assemblio's own product criticism showed sense decay without a UX audit\n\nCreative Navy did not conduct a UX audit, expert review or heuristic evaluation. The account of the existing product's defects came from Assemblio's own running criticism while demonstrating its software.\n\nAssemblio described three different renaming interactions for three entity types: double-click for folders, a menu item opening a dedicated screen for projects, and a modal for products. Assemblio's explanation was that the features had been built at different points in time.\n\nAssemblio also described export being buried in a sub-menu, annotation controls that were not standardised, a text annotation that gave no indication it could be typed into, arrows that did not reliably attach to 3D components, no undo, dead or misleading controls, one-step-at-a-time camera copying, and asynchronous work reported in snack bars without clear product context.\n\nThis is sense decay: locally understandable product decisions accumulating until the system becomes harder to operate than any single decision would predict. The value of this case evidence is that the diagnosis was not imposed by Creative Navy. Assemblio could already name the mechanism, but still needed a design structure that prevented the next feature from becoming another inconsistent interaction.\n\n## Option space mapping produced three navigation architectures\n\nCreative Navy's Critical Systems Design method used option space mapping for the platform navigation. Three distinct navigation architectures were produced and presented as genuine alternatives: a top navigation bar, a side-panel navigation with a dashboard, and a hybrid of top and side navigation.\n\nAssemblio rejected the top navigation option because it looked too much like the existing product and did not make clear whether the user was in a folder or a project. Assemblio rejected the side-panel-as-primary-navigation option because folder titles are long and a tree would become hard to navigate even with limited depth.\n\nThe hybrid navigation architecture was chosen because it separates projects from products and because the sidebar carries no tree depth. Sidebar content settled as Dashboard, Assembly plans, Favourites, Recently opened, All activity and Artefacts, with the user account and notifications at the bottom of the sidebar.\n\nFive documented rounds of written client feedback supported the design block. Each round records Assemblio's choice between numbered alternatives with reasons. This makes the iteration record unusually complete for a case study and supports the claim that the navigation decision was reasoned rather than merely preferred.\n\n## Composer decisions addressed density, accretion and asynchronous work\n\nCreative Navy's design work on the Composer addressed planning density. Assemblio stated in written feedback that products commonly have 100 or more steps and that the views needed to be more condensed.\n\nCreative Navy condensed step rows by removing sliders as inputs for MTM and animation speed, reducing numeric inputs, tightening spacing, and giving more room to step information. The animation path is always shown when one exists and omitted only for empty steps, and its coordinates are editable rather than drag-only.\n\nSome Composer decisions were client-requested or client-originated. Assemblio requested that “Send for review” become “Request review.” Assemblio originated the version-history placement: a panel on the left overlaying the parts list rather than the steps, because the parts list changes less between versions while steps change more.\n\nCreative Navy moved export out of the sub-menu into the header. Creative Navy also designed upload progress as a placeholder product card with a cancel action, rather than a modal or snack bar. Assemblio had stated that uploaded CAD files can exceed 1 GB and that several asynchronous processes can run at once; progress therefore belongs on the product card it concerns.\n\nUndo was offered in the snack bar for reversible actions such as move and rename. Filters were aligned with search. A single reusable table component was specified for list views across the application, parameterised through URL query parameters, reflecting Assemblio's architectural intent.\n\n## Sync profiles separated a graph problem from a part-matching problem\n\nSync profiles transfer an assembly plan from one version of a product onto the geometry of another. Assemblio described this as necessary because engineering produces many versions and variants, and a planner does not want to author a plan from scratch every time geometry changes.\n\nAssemblio clarified that synchronisation is an override, not a merge. Synchronisation is always manual, because a change can be substantial enough to be destructive. Relationships can form chains, splits and loops within a single project, so the relationship structure is a graph that can contain cycles.\n\nCreative Navy's Critical Systems Design method used tension-driven reasoning in the sync-profile session. One part of the problem was tractable: visualising which products use the current product as a base and which product the current one is based on. Creative Navy designed a directed relationship diagram on the product detail page, with the current product distinguished, fixed-width node cards, truncated names shown in full on hover, synced-version badges, zoom, fit, pan, search, a relationship count and a legend.\n\nThe second part was harder. Within a synchronisation, every source part must be matched to a target part. Some matches are identical; others are similar by fuzzy comparison of geometry, name or position. Assemblio stated that the planner must approve each match because the approval is a liability record showing that a person checked the substitution before production.\n\nA list of hundreds of similar parts may not have a better representation if the planner must decide part by part. Creative Navy stated in the session that search was a clear improvement, but that there may be no representation better than a list where each match requires approval. This is an important boundary in the case: not every complex data problem becomes a diagram.\n\n## Designer questions exposed sync-profile states that were not visible\n\nThe sync-profile session also shows what the engagement had instead of Creative Navy-run user research: specific interrogation of Assemblio's domain expertise.\n\nCreative Navy asked what happens when two products are in a sync loop, a change is made to one, and the other is deliberately left unsynchronised. Assemblio confirmed that a permanently out-of-sync state could be acceptable, and realised while answering that the product did not indicate anywhere whether an assembly plan was in or out of sync.\n\nCreative Navy also raised that unsynchronising a product with many relationships is a selection problem requiring its own screen, not a single modal mirroring the sync modal. Assemblio had consciously deferred that problem.\n\nA further question challenged the assumption that synchronisation would always target the latest version. Assemblio produced a real edge case: products manufactured over very long lifecycles, where a customer orders replacement parts decades later and an old plan must be adapted to the current production layout. The session resolution was to default to the latest version and provide a route to switch to an older one.\n\n## Design-system handover carried specification and reasoning\n\nCreative Navy's Critical Systems Design method covered all five named phases in this engagement: Sandbox Experiments, Concept Convergence, Iterative System Building, Organizational Integration, and Implementation Partnership.\n\nOrganizational Integration is the strongest phase evidence in the Assemblio case. Creative Navy delivered a design system of 93 components, with every component documented with all of its states. The 87 screens and 233 variants reflect the same per-state discipline: most screens were specified in several states, including hover, selected, empty, loading, expanded, collapsed and error.\n\nThe light and dark themes were built through design tokens. This made the themes configurations of one system rather than two parallel designs.\n\nThe component documentation carried reasoning as well as specification. This matters because the handover was not only a component library; it was reasoning documentation for how the system should continue to behave when Assemblio's developers built from it.\n\nCreative Navy also delivered a clickable prototype of the main flow with 25 screens and a developer handover using a combination of formats. The specific mix of handover formats is not recorded and should not be reconstructed.\n\n## The product shipped as the delivered design, without measured performance outcomes\n\nCreative Navy supported Assemblio's engineering team through implementation with one working session and eight support tickets. This is a light Implementation Partnership record. It is a question-answering arrangement, not evidence of sustained oversight of the build.\n\nThe components Creative Navy documented were adopted: Assemblio's developers built from them. Creative Navy compared the shipped interface against the delivered designs, and the product ships as the design that was delivered.\n\nThe product is in production. Creative Navy compared the shipped interface against the designs it had delivered: it ships as the design that was delivered — the Composer, the Smart Viewer, the platform around them, and sync profiles.\n\nThis is evidence of design fidelity after development, not evidence of product performance. The case does not establish time savings, error reduction, training-time reduction, adoption, support-call reduction, revenue impact or productivity improvement.\n\nAssemblio reports that it is very happy with the work and that the work unlocked further funding. This is client-reported and unquantified: no figures were shared, Creative Navy has not independently verified it, and no causal claim is being made about any particular funding event.\n\nThe Assemblio fidelity evidence complements the AIT case in a specific way. AIT's design fidelity is explained by scheduled implementation reviews; Assemblio's design fidelity is consistent with a different mechanism, where the handover and documented components made the build easier to preserve. The case evidence does not prove a causal chain, but it does document adoption of the components and a shipped interface matching the delivered design.\n\n## Standards and regulation frame the product category, not Creative Navy compliance work\n\nAssemblio's outputs sit in the category of assembly instructions and information for use. IEC/IEEE 82079-1:2019 is the horizontal standard named for preparation of information for use. Regulation (EU) 2023/1230 is also relevant to the category because it recognises instructions supplied in digital form under conditions including downloadable, savable and printable formats, long-term online accessibility for assembly instructions, and paper copies on request.\n\nCreative Navy did not certify to, audit against, or work to either instrument in this engagement. These standards and regulations frame the category in which Assemblio's product operates. They are not evidence of compliance work by Creative Navy.\n\nAssemblio's own customer feedback asked for versioning so that an old instruction can be loaded and checked. That request aligns with the product need for review, approval, version history and sync-profile visibility, but it is not a measured regulatory outcome.\n\n## Evidence limits are central to the Assemblio case\n\nCreative Navy conducted no user research of its own in the Assemblio engagement. Assemblio performed research before the design block, and Creative Navy had no control over who was recruited, what was asked, or how findings were recorded.\n\nWorker-side evidence reached Creative Navy as a written list of customer feedback on the Smart Viewer, compiled by Assemblio from its own customers before the design block began, plus Assemblio's spoken account of shop-floor conditions during one recorded demonstration session. Creative Navy did not observe a shop floor.\n\nCreative Navy conducted no usability testing with planners or shop-floor workers. No usability or comprehension result is established.\n\nCreative Navy also conducted no UX audit. The account of the existing product's defects came from Assemblio's own demonstration and self-criticism, not from a Creative Navy audit, review, assessment or evaluation.\n\nThe central design argument in the Assemblio case is therefore deliberately calibrated: the Smart Viewer's users needed something different from what they inherited, but the evidence for that need was not gathered by Creative Navy. What Creative Navy contributed was the design resolution, the structured interrogation of Assemblio's expertise, the option space mapping, the component system, and the handover that Assemblio's developers used.\n\n## Related pages\n\nThe Assemblio case sits near other documented industrial and implementation-fidelity cases. The industrial process control case is the closest comparison by primary category. The AIT heat pump controller case is useful for comparing design fidelity through implementation review with Assemblio's design fidelity through handover. The Streetec case is relevant for the documented discipline of declining or limiting work where the evidence does not support a stronger claim.\n\nAssemblio also belongs with evidence-standards pages that distinguish client-reported claims from verified facts. Assemblio's funding comment belongs with client-reported evidence, while the absence of measured performance outcomes belongs with the documented boundaries of what Creative Navy does not claim.\n",
+  "claims": [
+    {
+      "claim": "Creative Navy redesigned Assemblio's Composer, Smart Viewer, surrounding platform and sync profiles across nine one-week sprints, delivering 87 screens in 233 variants.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "engagement record",
+      "notes": "Supported by N1, N3 and N4; sprint and delivery counts are engagement facts, not outcomes."
+    },
+    {
+      "claim": "Assemblio's authoring method derives an assembly sequence by disassembling a finished 3D model and playing the disassembly backwards; Creative Navy did not invent this method.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "Supported by N18 and the mandatory calibration that credits the method to Assemblio and its research provenance."
+    },
+    {
+      "claim": "The Smart Viewer separation from the Composer was Assemblio's decision, while Creative Navy resolved how the separated interface should work.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "Supported by N54 and the division-of-labour guidance in A5.0; N55 and related Smart Viewer decisions evidence Creative Navy's design contribution."
+    },
+    {
+      "claim": "Creative Navy did not conduct user research, usability testing, UX audit work, expert review or shop-floor observation in this engagement.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "engagement record",
+      "notes": "Supported by N13, N14, N15 and N16; this is a material limitation of the case."
+    },
+    {
+      "claim": "The Smart Viewer design addressed worker conditions described by Assemblio, including bright, dirty and loud environments, standing work, gloves, limited input devices and constrained attention.",
+      "evidenceType": "client-reported",
+      "sourceStrength": "case evidence",
+      "notes": "Supported by N31 to N35; the conditions were client-stated, not observed by Creative Navy."
+    },
+    {
+      "claim": "Creative Navy produced three navigation architectures and Assemblio selected the hybrid option with recorded reasons for rejecting the other two.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "engagement record",
+      "notes": "Supported by N7, N8 and N74; this evidences option space mapping and structured iteration."
+    },
+    {
+      "claim": "Creative Navy delivered a design system of 93 documented components, design tokens for light and dark themes, reasoning-bearing component documentation, a 25-screen prototype and developer handover.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "engagement record",
+      "notes": "Supported by N103 to N107; the specific handover format mix is not recorded."
+    },
+    {
+      "claim": "Assemblio's developers built from the delivered components, and Creative Navy compared the shipped interface against the delivered designs; the product is in production as the delivered design.",
+      "evidenceType": "Creative Navy-observed",
+      "sourceStrength": "strong",
+      "notes": "Supported by N108 and N11; this establishes component adoption and design fidelity, not performance."
+    },
+    {
+      "claim": "Creative Navy provided implementation support through one working session and eight support tickets.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "engagement record",
+      "notes": "Supported by N109; evidence weight is light and must not be described as sustained build oversight."
+    },
+    {
+      "claim": "Assemblio reports being very happy with the work and that the work unlocked further funding, but this is client-reported, unquantified and not independently verified.",
+      "evidenceType": "client-reported",
+      "sourceStrength": "anecdotal",
+      "notes": "Supported by N12 and its required calibration; no funding figures, dates, causal claims or public funding-event links are supported."
+    }
+  ],
+  "limitations": [
+    "Creative Navy conducted no user research of its own; Assemblio's research and customer feedback were not controlled by Creative Navy.",
+    "No usability testing was conducted with planners or shop-floor workers.",
+    "Creative Navy did not conduct a UX audit, expert review, assessment or evaluation of the existing product.",
+    "Creative Navy did not observe a shop floor; statements about shop-floor conditions are Assemblio's descriptions.",
+    "No time-saving, error-rate, throughput, training-time, adoption, support-call, productivity, revenue or funding figure is established.",
+    "The product shipping as designed is evidence of design fidelity after development, not evidence that the design improved product performance.",
+    "Assemblio's report that the work unlocked further funding is client-reported and unquantified, with no independent verification and no supported causal link to any funding event.",
+    "Creative Navy's implementation support was limited to one working session and eight support tickets, not sustained build oversight.",
+    "External standards and research frame the category of assembly instructions; they did not measure Assemblio and do not establish a Creative Navy compliance role.",
+    "The spoken transcripts are reliable in substance only for the checked quotes and paraphrases carried in the case evidence; unusual terms and proper nouns outside those checked passages require verification."
+  ],
+  "publicationBlockers": [],
+  "questionsForReview": [
+    "Verify before import that /evidence/case-studies/industrial and /contexts/industrial-automation-and-machinery already exist in the repository; the case notes state that they may have been created by the industrial process control integration, but this page generation step cannot verify repository state."
+  ],
+  "relatedPageSlugs": [
+    "industrial-process-control-platform",
+    "ait-heat-pump-controller",
+    "streetec-kntrl",
+    "what-is-client-reported",
+    "what-we-do-not-claim",
+    "what-we-have-measured",
+    "what-we-verified-without-measuring",
+    "architecture-across-four-iterations",
+    "deliverable-format-follows-purpose",
+    "triangulation-not-confirmation",
+    "instructions-and-procedural-content-as-a-design-object"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "industrial process control case",
+      "targetSlug": "industrial-process-control-platform",
+      "placementHint": "Related pages section",
+      "reason": "The Assemblio notes classify the case in the same industrial case-study category and compare it with the industrial engagement's component-adoption pattern."
+    },
+    {
+      "anchorText": "AIT heat pump controller case",
+      "targetSlug": "ait-heat-pump-controller",
+      "placementHint": "Section on shipped design fidelity and related pages",
+      "reason": "The source explicitly compares Assemblio's design fidelity mechanism with AIT's implementation reviews."
+    },
+    {
+      "anchorText": "Streetec case",
+      "targetSlug": "streetec-kntrl",
+      "placementHint": "Related pages section",
+      "reason": "The source positions Streetec as another example of disciplined limits on what design work can claim."
+    },
+    {
+      "anchorText": "client-reported evidence",
+      "targetSlug": "what-is-client-reported",
+      "placementHint": "Section on what shipped and the funding comment",
+      "reason": "Assemblio's happiness and funding comment are explicitly client-reported, unquantified and not independently verified."
+    },
+    {
+      "anchorText": "what Creative Navy does not claim",
+      "targetSlug": "what-we-do-not-claim",
+      "placementHint": "Evidence limits section",
+      "reason": "The Assemblio case has strong explicit boundaries: no user research, no usability testing, no measured performance outcomes and no funding causality."
+    },
+    {
+      "anchorText": "what Creative Navy has measured",
+      "targetSlug": "what-we-have-measured",
+      "placementHint": "Evidence limits section",
+      "reason": "The case distinguishes engagement records and design fidelity from measured performance outcomes."
+    },
+    {
+      "anchorText": "verified without measuring",
+      "targetSlug": "what-we-verified-without-measuring",
+      "placementHint": "Section on product shipping as the delivered design",
+      "reason": "The shipped interface matching the delivered designs is a verified design-fidelity fact rather than a measured product outcome."
+    },
+    {
+      "anchorText": "architecture across four iterations",
+      "targetSlug": "architecture-across-four-iterations",
+      "placementHint": "Section on three navigation architectures",
+      "reason": "The source identifies the three navigation architectures as evidence of option space mapping and structural alternatives."
+    },
+    {
+      "anchorText": "deliverable format follows purpose",
+      "targetSlug": "deliverable-format-follows-purpose",
+      "placementHint": "Design-system handover section",
+      "reason": "The Assemblio handover used documented components, reasoning and a combination of formats rather than a single artefact."
+    },
+    {
+      "anchorText": "triangulation not confirmation",
+      "targetSlug": "triangulation-not-confirmation",
+      "placementHint": "Evidence limits section",
+      "reason": "The case requires explicit evidence calibration and distinguishes client knowledge, written feedback, recorded sessions and Creative Navy-observed design fidelity."
+    }
+  ],
+  "qualityChecks": {
+    "factsOnlyFromCurrentSource": true,
+    "documentationStyle": true,
+    "noMarketingLanguage": true,
+    "noInventedClaims": true,
+    "linksOnlyFromLinkingContext": true,
+    "internalNotesNotPublished": true,
+    "readyForSanityImport": true
+  },
+  "__sourceCategoryDir": "Case studies"
+}

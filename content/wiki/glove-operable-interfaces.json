@@ -1,0 +1,165 @@
+{
+  "slug": "glove-operable-interfaces",
+  "title": "Glove-Operable Interfaces",
+  "pageType": "capability",
+  "category": "capabilities",
+  "section": "Capabilities",
+  "summary": "This page defines Creative Navy's position on glove-operable interfaces: sizing is necessary, but the hardware, panel tuning and reference glove determine whether touch actuates at all. The evidence includes a client-run handheld prototype session with six participants, Oceaneering dispatch-panel sizing shaped by documented glove use, Torqeedo field testing in sea conditions, and weaker contextual references where gloves or dirty hands were present but not tested.",
+  "keyFacts": [
+    "A glove can interrupt capacitive coupling between the finger and the sensor, causing a projected-capacitive panel to register nothing rather than to register imprecisely.",
+    "Projected-capacitive panels can be tuned for glove operation, and panel results vary by glove type, so testing with the issued glove is required.",
+    "In the handheld command-and-control engagement, Creative Navy specified four consequence tiers from at least 22 mm down to 8–10 mm, with 3 mm spacing, 5 mm isolation around safety controls and a 6.35 mm absolute floor.",
+    "The handheld specification treated the reference glove as an open dependency, with thin tactical gloves at roughly 8–10 mm contact and heavy gloves at 10–14 mm; the tiers assumed the heavier case.",
+    "In a prototype session run by the client with six participants, gloved touch was found to be unreliable on the target panel.",
+    "Creative Navy performed no gloved actuation testing of its own in the handheld engagement.",
+    "Oceaneering's dispatch panel had documented glove use and specified touch-target work, but the sizing was not derived from glove research and was not tested with gloves.",
+    "Assemblio establishes only that shop-floor workers wear gloves; no glove-related touch target was specified and nothing was tested with gloves.",
+    "Torqeedo is the documented case where gloved interaction was among the conditions tested in actual sea conditions, but no actuation success rate, error count or bare-handed comparison is recorded."
+  ],
+  "bodySections": [
+    {
+      "heading": "Glove-Operable Interface Design Depends on Hardware, Panel Tuning and the Reference Glove",
+      "bodyMarkdown": "Creative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nGlove-operable interface design is the specification and evaluation of touch interaction for users whose hands are covered by gloves, with target size, spacing, isolation, panel response and the reference glove treated as connected dependencies rather than as a geometry problem alone.\n\nGlove-operable interface design starts with a mechanical constraint: a glove can prevent touch from being detected at all. A millimetre specification can reduce mis-taps, but it cannot make a projected-capacitive panel register a glove that the sensor does not detect.\n\nCreative Navy's Critical Systems Design method treats glove use as an operating condition that must be tied to hardware, panel tuning, the reference glove and evidence from the intended use context. The central rule is that hardware pairing matters more than geometry. Target size is necessary and not sufficient."
+    },
+    {
+      "heading": "Four Principles for Glove-Operable Touch Interfaces",
+      "bodyMarkdown": "Creative Navy's documented position on glove-operable interfaces has four parts.\n\nFirst, a glove can interrupt the capacitive coupling between finger and sensor. When this happens, the panel registers nothing rather than registering an imprecise touch. Projected-capacitive panels can be tuned for glove operation, and vendors advise testing with the specific gloves that will be issued because results vary widely between glove types.\n\nSecond, target sizing still matters. In the handheld command-and-control engagement, Creative Navy specified consequence tiers for touch targets, with the largest and most isolated controls reserved for actions where a missed tap would be unrecoverable. Geometry still governs pointing tolerance after the panel has detected contact.\n\nThird, gloves must be tested on the target panel. In a client-run prototype session with six participants, gloved touch was unreliable on the target panel. That finding does not invalidate the sizing specification. It bounds it: target sizing cannot answer the actuation question.\n\nFourth, when gloves are an operating condition rather than a tested variable, the evidence must say so. Oceaneering's dispatch panel had documented glove use alongside touch-target sizing, but the sizing was not derived from glove research and was not tested with gloves."
+    },
+    {
+      "heading": "Why Gloves Can Break Touch Mechanically",
+      "bodyMarkdown": "Glove operation is not only a precision problem. Projected-capacitive touch depends on capacitive coupling between the finger and the sensor. A glove changes the contact patch and may interrupt the signal enough that the panel does not recognise a touch.\n\nThis distinction separates pointing accuracy from actuation success. A larger target can make a successful touch easier to land, but it cannot solve a panel-and-glove pairing that produces no touch event. Glove-mode tuning can improve projected-capacitive behaviour, but the relevant variable remains the actual glove on the actual panel.\n\nDirty, wet and oily hands are adjacent constraints, not the same constraint. They may affect friction, surface condition, visibility or hygiene assumptions, but they are not evidence that a gloved finger will actuate a projected-capacitive panel."
+    },
+    {
+      "heading": "The Handheld Command-and-Control Specification Treated the Reference Glove as a Dependency",
+      "bodyMarkdown": "In work for a European manufacturer of uncrewed systems, including one-way effectors, and the tactical command-and-control software that operates them, Creative Navy's role covered interface structure, task behaviour, information priority and the clarity of operator control. The work did not extend to autonomy, control algorithms, autonomous safety behaviour, the datalink, the effector, targeting logic, or any certification or weapons-review activity.\n\nCreative Navy led and co-authored a sizing specification for a 7-inch ruggedised handheld controller and a 10-inch ruggedised tablet. The specification used four consequence tiers, with pixel values derived per device: T1 critical and unprotected actions at at least 22 mm, T2 primary in-mission actions at 15 mm, T3 mis-tap-tolerant actions at about 12 mm, and T4 planning and static-density actions at 8–10 mm.\n\nThe same specification set at least 3 mm between targets, 5 mm isolation around safety controls, and an absolute floor of 6.35 mm applying to every screen. It cited WCAG 2.2 Success Criterion 2.5.8 for that floor. It also marked the consumer 44-point standard as failing gloved use on both devices.\n\nThe reference glove was recorded as an open dependency before anyone tried one. Thin tactical gloves were treated as giving roughly an 8–10 mm contact patch, and heavy gloves as 10–14 mm. The tiers assumed the heavier case. That was conservative for sizing, but it still did not answer whether the panel would register the glove."
+    },
+    {
+      "heading": "The Client-Run Handheld Prototype Session Found Unreliable Gloved Touch",
+      "bodyMarkdown": "In a prototype session run by the client with six participants — former military personnel and current drone operators, some working bare-handed and some gloved — gloved touch was found to be unreliable on the target panel.\n\nThat session was not a usability test. No criteria were fixed in advance, no pass rules were set, no task times were recorded, and no error counts were recorded. It was not Creative Navy's research, it was not a validation of the design, and it tested a non-functional prototype rather than a system.\n\nCreative Navy performed no gloved actuation testing of its own in that engagement. The useful conclusion is therefore narrow: the sizing specification was authored, but the panel-and-glove pairing failed in the client-run prototype session. Geometry was necessary and not sufficient."
+    },
+    {
+      "heading": "Oceaneering Shows Gloves as an Operating Condition, Not Tested Glove Research",
+      "bodyMarkdown": "Oceaneering's dispatch panel is the strongest documented case where gloved use sits beside specified touch-target work on the same interface. Gloves were used, and the panel itself was a 10.4-inch touchscreen at 1024×768, 4:3, 350 nit and 800:1 contrast. Creative Navy characterised the hardware in review as not a precise touchscreen.\n\nCreative Navy specified station cards with a 110 px minimum, 24 px normal spacing, a 3 px floor where two dispatch-ready cards adjoined, and 20 px of growth when a cart was ready to dispatch. Pagination thresholds were calculated from how many selectable cards fit at 1024×768 while remaining reliably tappable, with pagination appearing above a 24-per-screen threshold.\n\nThe claim is limited. Gloved use was a documented operating condition that shaped the sizing. The sizing was not derived from glove research and was not tested with gloves. The two Oceaneering sessions were design reviews, not usability tests: no task was attempted, nothing was measured, and no dispatch operator took part."
+    },
+    {
+      "heading": "Torqeedo Records Gloved Interaction Among Actual Sea-Condition Testing",
+      "bodyMarkdown": "Torqeedo is the documented case where gloved interaction was among the conditions tested in actual sea conditions rather than simulated conditions. The design problem included touch targets that stayed accurate under physical stress, and gloved interaction was recorded among conditions tested alongside vibration, glare, cold water and night.\n\nThe Torqeedo evidence changes the shape of the glove argument. In the handheld command-and-control engagement, gloved touch was unreliable on the target panel. In the Torqeedo case, gloved interaction was included among actual sea-condition testing and the result recorded in the available documentation was not negative.\n\nThe limit is also important. No gloved actuation success rate, error count or comparison against bare-handed use is recorded. The evidence supports a condition tested and a set of parameters derived, not a measured gloved success rate."
+    },
+    {
+      "heading": "Assemblio and the Sterile-Field Study Are Narrower Glove References",
+      "bodyMarkdown": "Assemblio provides only a corroborating operating condition. Assemblio described the Smart Viewer user as a shop-floor assembly worker in a bright, dirty and loud environment, standing at a desk filled with tools, parts and paper documents, and wearing gloves. Creative Navy did not observe a shop floor, ran no usability testing, specified no glove-related touch target and tested nothing with gloves.\n\nThe difference between Assemblio and Oceaneering is that Oceaneering has touch-target sizing attached to the same interface where gloved use was documented. Assemblio does not.\n\nCreative Navy's surgical-instrument study for deSoutter Medical / Zethon is the sterile-field instance of gloved operation in the documented evidence. Creative Navy's role is formative evaluation only; summative validation and regulatory submission are the manufacturer's responsibility. No compliance claim follows from that evidence."
+    },
+    {
+      "heading": "Dirty, Wet, Oily or Contaminated Hands Are Separate From Gloved Hands",
+      "bodyMarkdown": "Industrial and hospital environments can make hands and surfaces dirty without establishing glove operation. In one industrial engagement, operators worked amid oil, coolant and metal swarf, but bare hands were observed and no glove use was evidenced.\n\nOceaneering has a related hospital logistics constraint: depot areas were described as quite dirty, with things left standing around. That supports the general point that interfaces may be used in unclean operational conditions. It does not substitute for glove evidence.\n\nDirty, wet, oily or contaminated hands should therefore be handled separately from glove operation. They may affect hardware choice, screen cleaning, touch reliability and target tolerance, but they do not prove gloved actuation."
+    },
+    {
+      "heading": "Boundaries of Creative Navy's Glove-Operable Interface Evidence",
+      "bodyMarkdown": "Creative Navy does not claim a validated glove specification. The handheld sizing work was authored, not validated. The client-run handheld session found unreliable gloved touch on the target panel, and Creative Navy performed no gloved actuation testing of its own in that engagement.\n\nCreative Navy does not claim that any named interface generally works with gloves. The strongest position supported by the documented evidence is narrower: some engagements had glove use as an operating condition, one client-run handheld prototype session produced a negative gloved-touch finding, and Torqeedo recorded gloved interaction among actual sea-condition testing without reporting a gloved success rate.\n\nCreative Navy does not claim conformance to MIL-STD-1472H or ISO 9241-411. The handheld specification measured itself against MIL-STD-1472 and stated where it deliberately departed from it. Two of the four tiers sit below the military minimum by design, and protection patterns never substitute for size at the top tier.\n\nCreative Navy does not treat a reference glove as a detail. The reference glove is a specification dependency, because thin tactical gloves and heavy gloves create different contact patches and because the panel response cannot be inferred from millimetres alone."
+    },
+    {
+      "heading": "What this produces",
+      "bodyMarkdown": "Within Creative Navy's Critical Systems Design method, this capability produces concrete interface design deliverables — interaction design, information architecture, wireframes, screen designs, interactive prototypes, and design-system components — and not advisory documents alone. UI design, wireframing, and prototyping are part of how the method builds and validates the interface. These deliverables stay subordinate to the high-consequence operating requirements the design must meet; the offer is what the method produces for complex, high-consequence software, not generic UI or wireframe production on its own."
+    }
+  ],
+  "evidenceSummary": {
+    "strongClaims": [
+      "The handheld command-and-control sizing specification used four consequence tiers from at least 22 mm down to 8–10 mm, with per-device pixel derivations, 3 mm spacing, 5 mm safety-control isolation and a 6.35 mm absolute floor.",
+      "The handheld specification recorded the reference glove as an open dependency and assumed the heavier glove case, with thin tactical gloves at roughly 8–10 mm contact and heavy gloves at 10–14 mm.",
+      "Creative Navy does not claim MIL-STD-1472H or ISO 9241-411 conformance for the handheld sizing specification."
+    ],
+    "weakerClaims": [
+      "Glove-operable interface design cannot be reduced to touch-target size because gloves can prevent projected-capacitive touch from registering at all.",
+      "In a client-run prototype session with six participants, gloved touch was unreliable on the target panel.",
+      "Oceaneering had documented glove use alongside touch-target sizing, but the sizing was not derived from glove research and was not tested with gloves.",
+      "Assemblio establishes only that shop-floor workers wear gloves; no glove-related touch target was specified and nothing was tested with gloves.",
+      "Torqeedo is the documented field case where gloved interaction was among conditions tested in actual sea conditions, but no gloved actuation success rate, error count or bare-handed comparison is recorded."
+    ],
+    "limitations": [
+      "No validated glove specification is claimed; the handheld sizing work was authored, not validated.",
+      "Creative Navy performed no gloved actuation testing of its own in the handheld command-and-control engagement.",
+      "The handheld gloved-touch finding came from a client-run prototype session with six participants, not from Creative Navy research and not from usability testing.",
+      "The handheld prototype session tested a non-functional prototype, not a system.",
+      "Oceaneering's glove evidence is an operating condition with sizing attached, not glove research and not glove testing.",
+      "Assemblio establishes glove use only as a client-stated operating condition; Creative Navy did not observe a shop floor and tested nothing with gloves.",
+      "Torqeedo records gloved interaction among actual sea-condition testing, but no gloved success rate, error count or bare-handed comparison is recorded.",
+      "Dirty, wet, oily or contaminated hands are treated as a separate constraint from gloved hands.",
+      "No conformance to MIL-STD-1472H or ISO 9241-411 is claimed.",
+      "No claim is made that any interface generally works with gloves."
+    ]
+  },
+  "relatedPageSlugs": [
+    "when-the-input-device-is-not-fixed",
+    "usability-evaluation-for-high-consequence-products",
+    "tactical-handheld-command-and-control",
+    "oceaneering-dispatch-panel",
+    "assemblio",
+    "command-integrity-design",
+    "designing-for-the-full-ambient-range",
+    "state-and-status-visibility-design",
+    "instructions-and-procedural-content-as-a-design-object"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "input devices that are not fixed",
+      "targetSlug": "when-the-input-device-is-not-fixed",
+      "reason": "The source states that the input-model page owns allocation between input modes while this page owns glove operation."
+    },
+    {
+      "anchorText": "usability evaluation for high-consequence products",
+      "targetSlug": "usability-evaluation-for-high-consequence-products",
+      "reason": "The source explicitly says the client-run handheld session was not usability evaluation and should not be cited as one."
+    },
+    {
+      "anchorText": "handheld command-and-control case",
+      "targetSlug": "tactical-handheld-command-and-control",
+      "reason": "The handheld engagement is the main case evidence for the sizing specification and negative gloved-touch finding."
+    },
+    {
+      "anchorText": "Oceaneering's dispatch panel",
+      "targetSlug": "oceaneering-dispatch-panel",
+      "reason": "Oceaneering is the worked case for gloves as a documented operating condition attached to touch-target sizing."
+    },
+    {
+      "anchorText": "Assemblio",
+      "targetSlug": "assemblio",
+      "reason": "Assemblio is named as a limited corroborating condition where workers wear gloves but no glove-related design or testing followed."
+    },
+    {
+      "anchorText": "command integrity design",
+      "targetSlug": "command-integrity-design",
+      "reason": "The handheld glove evidence appears beside broader command-and-control interface decisions about actuation and physical controls."
+    },
+    {
+      "anchorText": "full ambient range",
+      "targetSlug": "designing-for-the-full-ambient-range",
+      "reason": "Torqeedo's gloved interaction appears among actual sea-condition constraints including vibration, glare, cold water and night."
+    },
+    {
+      "anchorText": "state and status visibility design",
+      "targetSlug": "state-and-status-visibility-design",
+      "reason": "The handheld scope included information priority and clarity of operator control, which relates to state and status visibility."
+    }
+  ],
+  "tags": [
+    "glove-operable touch",
+    "touch target sizing",
+    "capacitive coupling",
+    "projected-capacitive panels",
+    "glove-mode tuning",
+    "reference glove",
+    "actuation success",
+    "high-consequence interfaces",
+    "ruggedised hardware",
+    "Critical Systems Design"
+  ],
+  "_meta": {
+    "sourcePath": "sources/articles/Capabilities/capabilities--glove-operable-interfaces.md",
+    "parentSlug": "capabilities",
+    "childPageSlugs": [],
+    "generatedBy": "openai",
+    "patches": [
+      "capability-deliverables"
+    ]
+  }
+}
