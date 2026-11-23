@@ -279,7 +279,7 @@ Write this as what was designed, not as what happened. The honest claim is that 
 
 - **Primary case-study category:** /evidence/case-studies/marine
 - **Primary context:** /contexts/embedded-devices-and-constrained-interfaces
-- **Also-relevant contexts:** /contexts/high-consequence-environments, /contexts/expert-tools-and-internal-systems
+- **Also-relevant contexts:** /contexts/high-consequence-environments, /contexts/expert-tools-and-internal-systems, /contexts/marine-and-maritime-systems
 - **Connects to:** /situations/complexity/system-state-is-hard-to-understand, /situations/risk-and-consequence/warnings-are-visible-but-not-actionable, /situations/risk-and-consequence/delayed-understanding-creates-risk, /situations/risk-and-consequence/the-system-supports-procedure-but-not-judgment, /failures/state-visibility-failures/users-cannot-see-what-state-the-system-is-in, /failures/interpretation-failures/data-is-available-but-hard-to-interpret, /failures/interpretation-failures/users-see-information-but-cannot-judge-what-matters, /failures/interpretation-failures/warnings-are-visible-but-their-meaning-is-unclear, /capabilities/state-and-status-visibility-design, /capabilities/warning-and-alarm-clarity-improvement, /capabilities/design-for-abnormal-and-degraded-scenarios, /capabilities/information-architecture-for-expert-systems, /practices/alarm-and-warning-evaluation, /practices/state-and-transition-review, /practices/design-governance-through-delivery
 ```
 
