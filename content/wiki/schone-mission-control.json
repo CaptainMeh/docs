@@ -1,0 +1,168 @@
+{
+  "slug": "schone-mission-control",
+  "title": "Schone Airspace Group Mission Control",
+  "pageType": "case-study",
+  "category": "evidence",
+  "section": "Defence and space",
+  "summary": "Schone Airspace Group commissioned Creative Navy to work on a desktop ground control station for uncrewed aircraft operations. The documented engagement used Creative Navy's Critical Systems Design method across sixteen one-week sprints and a twelve-month retainer, with evidence from operator walkthroughs, scripted acceptance checks, production screen delivery, integration gates and a seven-month comparison against the built software.",
+  "keyFacts": [
+    "Schone Airspace Group is described as a manufacturer of uncrewed aircraft whose ground control software plans, supervises and reviews flights across mapping, inspection and surveillance work.",
+    "The product was a desktop ground control station covering mission planning, readiness verification, live flight supervision, camera and payload operation, several connected aircraft and recorded flight review.",
+    "Creative Navy worked across sixteen one-week sprints: four exploration sprints, seven UX development sprints and five UI delivery sprints.",
+    "The six-person team had stable composition across the three project phases.",
+    "The exploration phase produced 15 design challenges, 45 concept alternatives in 85 low-fidelity frames, six cross-system design principles and an agreed scope.",
+    "UX development produced six operator journeys across 54 screen states, 12 interaction contracts, 12 state models covering 58 states and 25 UX decision records.",
+    "The first design candidates failed 18 of 36 scripted checks; the revised design passed every check decidable at interface level.",
+    "Nine end-customer operators took part in interviews and design walkthroughs, and five of the nine operators re-ran the 36 scripted checks after Creative Navy.",
+    "UI delivery produced 54 production screens and a design system of 28 component families and 119 named variants.",
+    "The product was built and is in test; all 54 delivered screens were compared against the built software across seven months and all four native integration gates were closed."
+  ],
+  "bodySections": [
+    {
+      "heading": "Schone Airspace Group Ground Control Station Engagement",
+      "bodyMarkdown": "Creative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nCreative Navy's Critical Systems Design method designs software whose interfaces, workflows, and operating logic carry real operational consequences, working through five phases — Sandbox Experiments, Concept Convergence, Iterative System Building, Organizational Integration, and Implementation Partnership — to take each system from initial exploration to independent operation by the client's own team.\n\nSchone Airspace Group commissioned work on a desktop ground control station for uncrewed aircraft. The console brought together geographic mission planning, aircraft readiness verification, live flight supervision, camera and payload operation, supervision of several connected aircraft and review of recorded flights. It also connected to a separate cloud streaming platform.\n\nSchone Airspace Group's partner brief named four user populations: remote pilots, mission planners, surveillance operators, and survey and inspection specialists. The brief asked four questions about persistent visibility, aircraft state and command consequences, multi-aircraft and payload management, and the boundary between the ground control station and the separate cloud streaming platform.\n\nCreative Navy applied Critical Systems Design across sixteen one-week sprints in three project phases: four exploration sprints, seven UX development sprints and five UI delivery sprints. The work was followed by a twelve-month retainer with biweekly involvement."
+    },
+    {
+      "heading": "Separating Inspection, Command Intent and Flight-Controller Authority",
+      "bodyMarkdown": "Schone Airspace Group's console had to issue consequential commands to aircraft already in the air. The operator could inspect one aircraft, intend to command another aircraft and hold authority through conditions resolved outside the interface. Treating those three facts as one selected state would have made the interface easier to draw and easier to misread.\n\nCreative Navy's design separated the aircraft under inspection, the command target and flight-controller authority. Inspecting an aircraft changed the detail focus. A separate named target action changed the aircraft that would receive a command. Authority remained an independent condition reported by the console rather than granted by a selection mark.\n\nThis distinction became visible in the fleet treatment. The command target and the inspected aircraft could both be marked at the same time with different visual treatments. The design also required every consequential command to name the intended aircraft in the immediate action context, including the confirmation heading.\n\nCreative Navy's tension-driven reasoning in the case accepted deliberate friction: one additional explicit action was required to operate a different aircraft. The recorded reason was that the additional action protected the distinction between looking at an aircraft and preparing to command it."
+    },
+    {
+      "heading": "Exploration Set the Scope Before Detailed UX and UI Work",
+      "bodyMarkdown": "Creative Navy's Critical Systems Design method began with a consultative exploration phase for Schone Airspace Group. The detailed UX and UI scope was confirmed at the conclusion of exploration rather than before it. Schone Airspace Group was asked to decide what to commission after seeing the analysis.\n\nThe exploration work identified 15 design challenges across core architecture, priority planning, high-consequence operation and supporting operations. Creative Navy recorded 45 concept alternatives across those challenges in 85 low-fidelity frames. The counting convention treated one frame as one distinct screen structure or meaningful operating state; label and spacing revisions were not counted separately, and shared instruments, maps and panels were reused rather than counted as independent designs.\n\nThe exploration work used option space mapping at the level of system architecture. Sprint one covered the system and operator model. Sprint two covered mission preparation. Sprint three covered live mission operation. Sprint four covered multiple aircraft, continuity and consolidation of the interaction architecture.\n\nCreative Navy had hands-on access to the live product and drove the running system during the engagement. That domain learning supported the exploration work."
+    },
+    {
+      "heading": "A Synthetic Scenario Made State and Command Behaviour Checkable",
+      "bodyMarkdown": "Creative Navy used one synthetic scenario with a fixed clock across the operator journeys, interaction contracts, state models, decision records and screen specifications. The scenario used the same site, three aircraft, mission and incident in every artefact, so the design records could be checked against the same operating facts.\n\nThe scenario was deliberately adversarial. At the scenario moment, one aircraft's control link was degrading, telemetry values were ageing, a warning belonged to an aircraft that was not under command, offline map coverage was incomplete while a transfer operation had reported completion, and a planning estimate on screen belonged to a superseded revision.\n\nThe event sequence was the design test. At baseline, the first aircraft was airborne and under command. After 20 seconds, the second aircraft reported a degraded control link and the warning named the second aircraft as owner. After 27 seconds, the second aircraft's telemetry became last-known values labelled seven seconds old. After 35 seconds, the operator inspected the second aircraft while the command target stayed on the first aircraft. After 42 seconds, the operator took a named target action and the command target changed without generating an aircraft command. After 50 seconds, return-to-launch could not be established as eligible because the telemetry sample was thirty seconds old and the link was degraded. After 75 seconds, the fleet view preserved target and warning history.\n\nThe scenario functioned as performance in reality for the design specification. It forced the interface to show what it knew, what it did not know and what it was not entitled to infer."
+    },
+    {
+      "heading": "Command Transactions Were Designed as Objects With a Lifetime",
+      "bodyMarkdown": "Creative Navy's Critical Systems Design method treated a consequential command as a transaction rather than a single click. A transaction kept the aircraft it was dispatched against, the action and the request identifier. If the operator inspected or targeted another aircraft while a request was pending, the pending request kept its original recipient and history.\n\nThe command transaction model contained seven states: ready to request, request sent, awaiting response, command acknowledged, state observed, request rejected and response unknown. Each state had required source evidence and a prohibited inference. Acknowledgement reported that a request was received. Observed state required fresh telemetry showing the requested state. Silence produced an unknown result rather than an automatic retry or an inferred rejection.\n\nThe responsive command branch showed why that separation mattered. On a healthy link, acknowledgement arrived three seconds after the request while the aircraft was still reporting its previous flight mode. Fresh telemetry reported the requested mode a further three seconds later. For those six seconds, a success treatment would have asserted more than the interface knew.\n\nCreative Navy's constraint respecting was visible in the uncertain branch. A degraded control link and a stale telemetry sample remained separate fields. The last reported values stayed visible with their age, while command eligibility became unknown when the source evidence could not establish availability."
+    },
+    {
+      "heading": "Planning, Readiness, Warning and Recording Decisions Preserved Operational Distinctions",
+      "bodyMarkdown": "Creative Navy's design work for Schone Airspace Group separated several facts that conventional interface patterns often collapse. Calculated planning outputs were bound to the survey revision that produced them, so a previous estimate could not appear as current. Offline map coverage was treated as a geographic coverage condition rather than as a completed download state.\n\nReadiness separated measured aircraft conditions from operator confirmations. Battery and voltage were sensed values. Airframe, payload mount and launch area checks began unconfirmed and became confirmed only after a named operator action.\n\nWarnings preserved ownership and lifecycle. Every alert named its owning aircraft or service in the first visible line and kept that owner in the fleet card, inspector, live notice and history. Acknowledging a notice changed the attention state. A source clearance event was required for a cleared condition.\n\nRecorded evidence was separated from live operation. Planned geometry, observed live position and recorded trajectory used distinct treatments. The review context contained no live aircraft command actions, used historical session times rather than live freshness cues and did not change the live command target on entry or exit.\n\nThe separate cloud streaming platform also kept its own state. Its connectivity state was modelled separately from aircraft control link health, so a stream outage was reported as a video service condition rather than as a change in aircraft link health."
+    },
+    {
+      "heading": "Operator Research Validated and Corrected a Developed Design",
+      "bodyMarkdown": "Creative Navy's research with Schone Airspace Group involved nine end-customer operators: seven remote pilots, one mission planner and one payload operator. Operator research within Creative Navy's Critical Systems Design method consisted of interviews and design walkthroughs conducted at the end of UX development.\n\nThe timing matters. The operator sessions validated and corrected a developed design. They did not drive the initial exploration phase of the project. Exploration and most UX development relied on task analysis, published human factors material, hands-on use of the live product and structured expert analysis.\n\nOperator input fed 16 research findings traced to 20 interface requirements. Five operator role contexts were modelled as responsibilities within an operation rather than as a fixed staffing structure: remote pilot, payload operator, mission planner, fleet supervising operator and operations reviewer.\n\nThe research identified recurring operator decision questions and six information objects the operator must be able to distinguish: the mission record, the focused aircraft, the command target, the command transaction, the source telemetry and the recording session."
+    },
+    {
+      "heading": "Scripted Checks Identified and Resolved Interface Ambiguity",
+      "bodyMarkdown": "Creative Navy evaluated the design against 36 scripted checks. Each check fixed a starting state, an operator action, an expected visible response and a pass rule. A pass meant that the interface stated the correct operational fact under that condition.\n\nThe first design candidates passed 14 checks, failed 18 and left 4 pending. The 18 findings included 9 critical, 8 major and 1 moderate. Each finding carried an identifier, severity, the check it failed, the sprint in which it was revised and the decision record that resolved it.\n\nThe nine critical findings concerned interface ambiguity within scripted tasks: wrong aircraft interpretation, stale telemetry displayed as current, acknowledgement shown as a completed flight state, incomplete offline map coverage appearing complete, measured telemetry mistaken for a manual check, command recipient disappearing when the operator switched to the camera workspace, no response treated as a rejected command, a cross-vehicle warning with no visible owner, inspecting another aircraft silently retargeting commands, and an uncertain link leaving return-to-launch looking available.\n\nFive of the nine operators who took part in the research re-ran the scripted acceptance checks after Creative Navy. The integrated retest recorded 32 pass, 0 fail and 4 pending. Every check decidable at interface level passed.\n\nThe closeout used two denominators on purpose. The 32 of 32 figure described the accepted interface specification. The 32 of 36 figure described the full mixed design-and-integration check set, including the four checks that depended on engineering evidence rather than design revision."
+    },
+    {
+      "heading": "UI Delivery Produced Production Screens, Component Rules and Acceptance Records",
+      "bodyMarkdown": "Creative Navy's UI delivery work for Schone Airspace Group produced 54 production screens matching the 54 UX states one-for-one. The design system contained 28 component families and 119 named variants. Each component carried content, state and source rules, and visually similar conditions were not collapsed where they communicated different operational meanings.\n\nThe handover package was machine-readable as well as written. It included a design token file, a component register, a screen register and an acceptance ledger, versioned together so component variants, screen content and state decisions could be checked against one release index.\n\nCreative Navy's progressive specification continued into handover. The handover protocol distinguished changes requiring UX approval from changes requiring engineering review. It also specified an implementation sequence: build the shared command shell first, establish immutable aircraft and request identities, then connect per-aircraft timestamps and alert ownership.\n\nThe UI specification included a 1440 × 900 px reference console composition, documented behaviour at narrower widths down to 1024 px, and no released pilot command layout below 1024 px. The specification included a sans-serif interface face, a monospaced face for timers, telemetry, timestamps and transaction identifiers, an eight-step type scale, a nine-step spacing scale, 44 × 44 px minimum pointer targets on command, modal and alert actions, and a 3 px high-contrast visible keyboard focus ring.\n\nTen foreground-and-surface colour pairs were calculated against intended backgrounds. All exceeded 4.5:1, with the lowest measured at 6.49:1 and the highest at 16.91:1. The specification stated that information over imagery sat on an opaque panel or a scrim. Every semantic colour also carried a mandatory non-colour encoding."
+    },
+    {
+      "heading": "Built Software Was Compared Screen by Screen Against the Delivered Design",
+      "bodyMarkdown": "Schone Airspace Group's product was built and is in test. All 54 delivered screens were compared against the built software by Creative Navy's design team across seven months. Deviations were identified and recorded by name.\n\nCreative Navy also specified four native integration gates. Each gate named the contract, verification sequence, evidence that would constitute a pass and the failure disposition for the interface if the source could not demonstrate the condition. The gates covered terrain reference agreement, command request and observed result semantics, warning severity and lifecycle mapping, and recorded session and media identity.\n\nAll four integration gates were subsequently closed by Schone Airspace Group's engineering functions. The supported claim is that Creative Navy specified which interface behaviours were not yet entitled to assert a condition, and that those conditions were later demonstrated."
+    }
+  ],
+  "evidenceSummary": {
+    "strongClaims": [
+      "Creative Navy worked across sixteen one-week sprints in three project phases and then a twelve-month retainer with biweekly involvement.",
+      "The exploration phase produced 15 design challenges, 45 concept alternatives in 85 low-fidelity frames, six cross-system design principles and an agreed scope, with the option count and frame count bounded by the recorded counting convention.",
+      "UX development produced six operator journeys across 54 screen states, 12 interaction contracts, 12 state models covering 58 states and 25 UX decision records.",
+      "The first design candidates failed 18 of 36 scripted checks, including 9 critical findings, and the revised design passed every check decidable at interface level.",
+      "Five of the nine operators who took part in the research re-ran the 36 scripted acceptance checks after Creative Navy.",
+      "UI delivery produced 54 production screens, a design system of 28 component families and 119 named variants, and a machine-readable handover package.",
+      "All 54 delivered screens were compared against the built software by Creative Navy's design team across seven months, and deviations were identified and recorded by name.",
+      "Creative Navy specified four native integration gates and all four were subsequently closed by Schone Airspace Group's engineering functions."
+    ],
+    "weakerClaims": [
+      "Schone Airspace Group commissioned work on a desktop ground control station for uncrewed aircraft covering planning, readiness, live supervision, camera and payload operation, several connected aircraft and review of recorded flights; this is supported by the engagement description and client, product and user evidence rather than independent operational validation.",
+      "The design separated the inspected aircraft, the command target and flight-controller authority; this is supported by Creative Navy-recorded design decisions rather than third-party evaluation.",
+      "The documented evidence does not include competitive benchmarking, live flight observation, field-hardware validation, a separate audit deliverable or operational performance metrics; this is an explicitly stated evidence boundary rather than an outcome claim."
+    ],
+    "limitations": [
+      "The product was built and is in test; the evidence does not support deployment or operational-use claims.",
+      "The scripted acceptance checks evaluated the design representation and were not flight tests, usability tests measuring task performance, task-time measures, operator-proficiency measures or error-rate studies.",
+      "The research involved nine end-customer operators through interviews and design walkthroughs at the end of UX development; it did not include contextual observation of live flight operations.",
+      "There was no competitive benchmarking and no separate expert review or audit deliverable of the running system.",
+      "Nothing was validated on ruggedised or field hardware, and there is no evidence about sunlight readability, gloved operation, vibration, outdoor use or field devices.",
+      "No operational, mission, workload, error-rate, time-saving or commercial figure exists, and nothing was measured in flight.",
+      "The seven-month screen-by-screen comparison is a fidelity comparison against the built software, not proof that the design is effective in operation.",
+      "The engagement did not authorise or produce changes to aircraft control algorithms, autonomous safety behaviour, communication protocols, the separate cloud streaming platform or flight safety certification activity.",
+      "The severity labels for scripted-check findings apply to interface ambiguity within scripted tasks and do not indicate corresponding aircraft incidents.",
+      "The synthetic scenario was a designed fixture, not an observed incident and not field data.",
+      "The contrast calculations did not substitute for verification against every map image or video frame."
+    ]
+  },
+  "relatedPageSlugs": [
+    "kispe-space",
+    "ait-heat-pump-controller",
+    "what-we-have-measured",
+    "what-we-do-not-claim",
+    "longitudinal-durability",
+    "defence-and-space-systems",
+    "high-consequence-environments",
+    "multi-stakeholder-operational-environments",
+    "expert-tools-and-internal-systems"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "KISPE Space",
+      "targetSlug": "kispe-space",
+      "reason": "Schone Airspace Group and KISPE form the defence pair and share the defence-and-space context."
+    },
+    {
+      "anchorText": "AIT Heat Pump Controller",
+      "targetSlug": "ait-heat-pump-controller",
+      "reason": "AIT is a comparison point for Implementation Partnership and fidelity evidence."
+    },
+    {
+      "anchorText": "what Creative Navy has measured",
+      "targetSlug": "what-we-have-measured",
+      "reason": "The contrast calculations, UI checks and scripted design-evaluation results belong on this evidence-standards page."
+    },
+    {
+      "anchorText": "what Creative Navy does not claim",
+      "targetSlug": "what-we-do-not-claim",
+      "reason": "The no-observation, no-field-hardware and no-flight-measurement limits belong on this evidence-standards page."
+    },
+    {
+      "anchorText": "longitudinal durability",
+      "targetSlug": "longitudinal-durability",
+      "reason": "The twelve-month retainer with biweekly involvement is relevant to longitudinal evidence."
+    },
+    {
+      "anchorText": "Defence And Space Systems",
+      "targetSlug": "defence-and-space-systems",
+      "reason": "Source-classified context for this case study."
+    },
+    {
+      "anchorText": "High Consequence Environments",
+      "targetSlug": "high-consequence-environments",
+      "reason": "Source-classified context for this case study."
+    },
+    {
+      "anchorText": "Multi Stakeholder Operational Environments",
+      "targetSlug": "multi-stakeholder-operational-environments",
+      "reason": "Source-classified context for this case study."
+    },
+    {
+      "anchorText": "Expert Tools And Internal Systems",
+      "targetSlug": "expert-tools-and-internal-systems",
+      "reason": "Source-classified context for this case study."
+    }
+  ],
+  "tags": [
+    "case study",
+    "defence and space",
+    "uncrewed aircraft",
+    "ground control station",
+    "high-consequence interface",
+    "command transaction design",
+    "state visibility",
+    "operator evaluation",
+    "design fidelity",
+    "Critical Systems Design"
+  ],
+  "_meta": {
+    "sourcePath": "sources/articles/Case studies/case-study--schone-mission-control.md",
+    "parentSlug": "defence-and-space",
+    "childPageSlugs": [],
+    "generatedBy": "openai"
+  }
+}

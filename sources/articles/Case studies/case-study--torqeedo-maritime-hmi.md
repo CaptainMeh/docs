@@ -6,7 +6,7 @@
 
 - **Primary case-study category:** /evidence/case-studies/marine
 - **Primary context:** /contexts/embedded-devices-and-constrained-interfaces
-- **Also-relevant contexts:** /contexts/high-consequence-environments
+- **Also-relevant contexts:** /contexts/high-consequence-environments, /contexts/marine-and-maritime-systems
 - **Connects to:** /capabilities/state-and-status-visibility-design, /capabilities/design-for-abnormal-and-degraded-scenarios, /evidence/outcomes/positioning-through-interface-quality, /situations/complexity/system-state-is-hard-to-understand
 
 ## Identity and classification

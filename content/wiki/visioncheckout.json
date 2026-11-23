@@ -1,0 +1,190 @@
+{
+  "slug": "visioncheckout",
+  "title": "visioncheckout",
+  "pageType": "case-study",
+  "category": "evidence",
+  "section": "Retail Operations",
+  "summary": "visioncheckout makes computer-vision self-checkout kiosks for staff restaurants, university refectories and visitor catering. Creative Navy delivered a seven-sprint redesign programme with field research, regulatory analysis, competitive benchmarking, prototypes, a requirements table, a flow diagram, and a design system, while explicitly recording that no redesign outcome has shipped or been measured.",
+  "keyFacts": [
+    "visioncheckout may be named in full and is described as a German vendor of computer-vision self-checkout systems for staff restaurants and catering.",
+    "The engagement ran across seven one-week sprints: four UX sprints followed by three UI sprints.",
+    "Creative Navy delivered 34 screens across 138 versions, two clickable prototypes, a design system with tokens, a complete user-flow diagram, and a requirements table.",
+    "Field research was conducted by one researcher over five days at six locations across three organisations, with 563 interactions observed.",
+    "Transaction durations were timed with a clock during observation: approximately 13 seconds at a chemical manufacturer's staff restaurant, approximately 11 seconds at an automotive supplier's canteen, and approximately 25 seconds at a public-facing venue serving visitors rather than regular users.",
+    "The field research included interviews with 34 users and 13 catering staff.",
+    "The redesign has not shipped, was not tested with users, and has no measured outcome.",
+    "No audit report was produced; the before-state evidence came from visioncheckout's verbal account, Creative Navy's own undelivered interface review, and field research.",
+    "Implementation Partnership is running now, supporting visioncheckout's engineering team during development.",
+    "visioncheckout accepted every recommendation that did not require hardware change, while hardware-dependent recommendations were added to the requirements list for the next hardware iteration."
+  ],
+  "bodySections": [
+    {
+      "heading": "visioncheckout as a computer-vision self-checkout redesign in development",
+      "bodyMarkdown": "Creative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nvisioncheckout is a German vendor of computer-vision self-checkout systems for staff restaurants and catering. A guest places a tray under an overhead camera, the system recognises the items in about half a second, the basket appears on a 1920×1080 landscape kiosk screen, and the guest pays, usually by presenting an employee keycard. The product has no scanning step and no barcode step in the normal flow.\n\nvisioncheckout's stated differentiator is that the whole transaction can complete touchlessly in about three seconds. That differentiator created the central design tension: accessibility law treats auto-advancing checkout behaviour as a timed interaction, and timed interactions must be extendable.\n\nCreative Navy redesigned the checkout flow across seven one-week sprints: four UX sprints followed by three UI sprints. Implementation Partnership is running now while visioncheckout's engineering team develops the product."
+    },
+    {
+      "heading": "Live canteen checkout conditions that shaped the redesign",
+      "bodyMarkdown": "visioncheckout operates in canteen and catering environments where the kiosk must handle fast repeat users, first-time visitors, multiple payment combinations, and physical conditions that are not fully controlled by the product team.\n\nRecognition completes in about 0.5 seconds, but synchronising the basket with the POS system takes one to three seconds. The guest experiences the sum. Average baskets are two to three items, four items are common once salads and drinks are included, and baskets above five items were not observed outside multi-tray use.\n\nThe hardware context also shaped the work. The kiosk has a camera, scale, keycard reader, QR reader, receipt printer, speaker, and status LED. It does not have a headphone jack or tactile keypad. The QR scanner sits on the right in about 90% of installations and on the left in the rest, while the scale may be on either side depending on the site. No single layout assumption was safe.\n\nvisioncheckout deployments also vary by market and operator. Some sites have up to ten price levels. Three payment methods — keycard or employee badge, external card terminal, and QR code — exist in six supported combinations. Each method can serve either payment or price-level setting. Closed-world sites use a known population and dual-language display, while open-world sites serve the public and use a language selector offering English, German, French, Italian, and Spanish."
+    },
+    {
+      "heading": "Field research across live checkout environments",
+      "bodyMarkdown": "Creative Navy conducted field research with one researcher over five days at six locations across three organisations: a chemical manufacturer's staff restaurant, an automotive supplier's canteen, and a public-facing venue serving visitors rather than regular users.\n\nCreative Navy also interviewed users and catering staff. At the public-facing venue, roughly two thirds of observed transactions were multi-tray, with two to four trays common. When an error occurred, the observed resolution time was one to four minutes, during which three to twelve people could not check out.\n\nThe field observations included environmental conditions that affected both guest and camera. Overhead lighting commonly cast a dark area on the screen and on the tray surface, and one site was simply dark. This mattered because the same lighting condition degraded what the guest reads and what the camera reads.\n\nThe field research also recorded that people approach the counter from both sides, making unit placement difficult. At two of the three organisations, a member of staff oversees the process and helps people. Catering staff liked the system and reported that it works well when supplied with enough images, but learning which images the system needs takes time, and feeding it enough material takes patience staff often do not have."
+    },
+    {
+      "heading": "The keycard problem connected delay, price level, and payment",
+      "bodyMarkdown": "Creative Navy's field research found that the same object carried multiple roles in the product: identity token, price-level token, payment instrument, and, in some scenarios, the main source of transaction delay.\n\nThe field research observed that an employee intending to pay by credit card could forget to present the employee card for the discount, and pay more than they should. That finding intersected with visioncheckout's current behaviour: placing the keycard pays immediately where there is available balance, and most users pay by keycard.\n\nCreative Navy put that behaviour into the flow diagram as an explicit challenge. The counter-argument was recorded with it: separating identification from payment would mean scanning twice, which could introduce bugs and guest frustration, and the majority of guests would feel the extra step. This is a case of triangulation: a field-observed harm, a client-stated payment behaviour, and a Creative Navy-recorded design challenge were all connected without overstating the answer.\n\nThe interface could not remove the operational dependence on the card. The design work could make the ambiguity visible enough that it did not silently cost a guest money."
+    },
+    {
+      "heading": "Human-AI correction design for failed recognition",
+      "bodyMarkdown": "Creative Navy's Critical Systems Design method treated the correction interaction as a core human-AI interaction problem, not as an edge case. The competitive benchmark covered thirteen comparators in three tiers: three direct computer-vision food-service competitors, five adjacent computer-vision checkout systems, and five established kiosk conventions. Every claim in the benchmark was confidence-labelled as verified, high, medium, low, or analysis.\n\nThe benchmark's strategic conclusion was that recognition accuracy is not a durable differentiator. Every vendor in the category claims 99% or better, the claims are difficult for a buyer to falsify, and computer-vision recognition is being absorbed into incumbent checkout products. Direct competitors named in the analysis included VisioLab, Deligo Vision, and Mashgin; adjacent or incumbent references included Nomitri, GK Software, Toshiba, Tiliter, NCR Voyix, Diebold Nixdorf, Zippin, and Amazon's checkout products.\n\nCreative Navy's design response focused on correction because it requires owning the camera view, the interface, and the catalogue at once. Numbered markers on the tray image were matched to a numbered list. Connecting lines between items and list entries were explored and rejected as messy and hard to implement cleanly. Text labels overlaid on the scan were rejected because they were too small to read in bright light.\n\nThumbnails were required in the catalogue because item names are frequently not meaningful enough to identify a dish. Search was deliberately de-emphasised so that scrolling thumbnails remained the primary path, while search remained available for staff. Entry to the Corrector was deliberately understated: a tertiary edit control near the basket header, with rescan remaining the primary action, so correction was available without being proposed as the normal next step.\n\nThe governing principle for Selections, Extras, and the Corrector was to present the interaction as “confirm this”, not as “fix this”. That principle supported a calmer guest flow while still preserving recovery when the model was wrong."
+    },
+    {
+      "heading": "One configurable flow for closed-world and open-world deployments",
+      "bodyMarkdown": "Creative Navy's Critical Systems Design method used constraint respecting and organic system building to keep deployment variation inside one flow rather than splitting the product into separate flows. visioncheckout had closed-world deployments, open-world deployments, up to ten price levels, multiple payment combinations, tax modes, dual-language display, single-language display with a selector, configurable thumbnails, per-item prices, tax line, help button, and restricted mode.\n\nCreative Navy argued against building closed-world and open-world as separate products. The accepted design direction was one flow with configurable guidance: prompt verbosity, whether prompts persist or fade, whether the right-hand panel carries guidance or stays empty, and whether payment requires explicit confirmation.\n\nThe requirements table records that outcome. The reasoning was operational rather than stylistic: two discretionary flows plus a mandatory accessibility mode would create three products in design, QA, configuration, and support. A product that already carries many permutations could not afford to double its architecture for a guidance difference."
+    },
+    {
+      "heading": "Main flow decisions for latency, payment seams, and error recovery",
+      "bodyMarkdown": "Creative Navy's design work used option space mapping across the checkout flow. The exploration covered preliminary basket display, payment handoff, multi-tray behaviour, error states, and operator-facing recovery.\n\nThe preliminary basket was a central decision. Recognition is near-instant, but POS synchronisation is not. The redesigned flow shows the basket immediately with items visible, while every action and payment is disabled until synchronisation returns. Item rows animate in individually rather than appearing as a finished list, so the perceived event is recognition rather than page load. Prices, total, and tax line stay hidden until synchronisation returns.\n\nThe payment-in-progress state was designed around an external constraint. Card payment executes on an external POS terminal that returns no feedback to the kiosk. The kiosk therefore cannot truthfully show terminal state. The payment-in-progress screen says to follow the instructions on the terminal.\n\nThe multi-tray flow was also redesigned. “Scan another tray” and “Pay now” were presented as a split control, both secondary, with no primary action. Making “scan another tray” primary was rejected because it would imply that scanning another tray is the next step when payment is. Multi-tray was presented as a scrolling layout with the most recent tray at the top, rather than the existing aggregated view.\n\nError handling separated guest-facing and operator-facing needs. Error screens kept one shared error icon across error types and focused on text. The out-of-service screen carried two messages at two levels: a primary message for the guest and a secondary note for staff. Operator-facing error detail was separated from the guest-facing error view, with recovery and retry states designed rather than assumed."
+    },
+    {
+      "heading": "Accessibility design exposed a software limit and created hardware requirements",
+      "bodyMarkdown": "Creative Navy's Critical Systems Design method treated the accessibility entry point as a design and hardware problem. The first software answer was specified in detail: a persistent on-screen accessibility control at bottom-left, anchored to the bezel at zero offset from both screen edges, present on every screen of the guest flow, never inside a scroll region, never suppressed during basket synchronisation, and never requiring a long-press or multi-finger gesture. The reasoning was that a screen corner is the only screen location a person can find without sight, because two physical edges intersect there.\n\nThat software answer was then judged insufficient. Activation moved to hardware because a touchscreen button cannot be the primary entry point for a mode whose users cannot see the screen. The screen retained a status indicator for the accessibility-module state in the top-left navigation, positioned consistently with the staff-mode tag, so the mode's state remained visible while activation did not depend on sight.\n\nThe current hardware has no headphone jack and no tactile keypad. Creative Navy identified a keycard route as the cheapest path to blind operability without procurement in a closed population, because the guest already presents a touchless credential and the operator can set a per-cardholder accessibility flag. The limits were stated plainly: it is opt-in in advance, does nothing for a first-time guest, requires an enrolment path that does not exist, and still cannot speak a card balance without private listening.\n\nCreative Navy also proposed a presence-triggered audio cue using existing peripherals. The camera already performs tray and hand detection, and the existing speaker could announce that audio assistance is available and where to touch when a guest approaches an idle screen. The cue would fire once per approach, be silenceable per site, and reset volume after use.\n\nvisioncheckout accepted every recommendation that did not require hardware change. The hardware-dependent recommendations — the 3.5 mm headphone jack and tactile navigation keypad — were added to the requirements list for the next hardware iteration."
+    },
+    {
+      "heading": "Timed interaction requirements and the three-second proposition",
+      "bodyMarkdown": "Accessibility law was visioncheckout's budget justification for the project. The engagement therefore had to address the tension between the product's touchless, auto-advancing, three-second proposition and the accessibility requirement that timed interactions be extendable.\n\nThe EAA's Annex I and the German implementing regulation, § 7 BFSGV, state requirements for self-service terminals: speech output; use of personal headsets; alert through more than one sensory channel where response time is limited; the ability to extend that time; adequate contrast and tactilely discernible controls; compatibility with hearing aids, telecoils, and cochlear implants; and that a terminal may not require an accessibility feature to be activated in order for the people who depend on it to turn it on.\n\nCreative Navy recorded the product decision directly: under speech mode, all auto-advance suspends and every countdown becomes pausable or extendable. That decision deliberately collides with the touchless three-second proposition. The design work did not remove the tension. It made the tension explicit enough to be governed as a product decision.\n\nThe regulatory analysis covered Germany, Austria, Switzerland, the UK, and Ireland and resolved to one design approach. Creative Navy's work was a design-facing reading of published instruments, used to shape requirements and interface decisions."
+    },
+    {
+      "heading": "Standards and jurisdiction analysis without claiming conformance",
+      "bodyMarkdown": "The harmonised standard discussed in the engagement was EN 301 549. The version carrying presumption of conformity was V3.2.1, equivalent to WCAG 2.1 AA. V4.1.1 was adopted in August 2026 and published in September 2026, pointing at WCAG 2.2 AA, but it had not been cited in the Official Journal of the European Union. Until citation, V3.2.1 remained the legal reference.\n\nvisioncheckout's requirement was written to WCAG 2.2 AA, deliberately above the floor then in force while the successor standard was still in passage. This is progressive specification applied to a moving regulatory object rather than to a product specification.\n\nThe scope question was not treated as a settled verdict. The EAA admits self-service terminals on two limbs: payment terminals, and other listed terminals only where dedicated to services covered by the directive. Buying a meal is not among the covered services, so the tray-recognition kiosk was ruled out on the second limb. The live question was the payment limb, especially because BFSG § 1(2)(2)(a) covers “Zahlungsterminals und zu diesen gehörige Hardware und Software” — payment terminals and the hardware and software belonging to them.\n\nCreative Navy's analysis located the live exposure in the payment dialogue rather than in a blanket self-service-terminal claim. The analysis also kept manufacturer obligations separate from site-operator installed-base exposure. Self-service terminals lawfully in use before 28 June 2025 may remain in service for up to twenty years, but that protection belongs to the site operator's installed base. The manufacturer obligation applies to every unit placed on the market, redesign or no redesign."
+    },
+    {
+      "heading": "Legibility, target size, and dual-language display as default design requirements",
+      "bodyMarkdown": "Creative Navy-observed field research recorded guests regularly bowing towards the screen because they could not read the small type. visioncheckout also stated that legibility was the top complaint from current users. At some installations, the screen sat far enough away that there was about 70 cm between the display and the user's head, further than the viewing distances the type-size specification had assumed.\n\nCreative Navy resolved target sizes in millimetres as well as pixels. The specification set a 56 × 56 px minimum, about 10 mm physical, and a 104 px standard, about 18.6 mm, on a 4 px grid, with a narrow exception allowing one dimension to be smaller where the other compensates. The important decision was converting to physical size rather than specifying in pixels alone, because the physical panel size was not fixed and the guest's experience is governed by millimetres and viewing distance.\n\nType and target sizes were raised by default across the interface rather than held at a baseline and supplemented by a magnification mode. Magnification Mode, Reach Mode, and a reduce-motion toggle were deprioritised because building every screen twice would add significant complexity and mounting height varies by site. The compensation was to make fonts and buttons larger by default.\n\nDual-language display also affected design decisions. Item names typically exist in only one language, while interface text must show two. Multi-row category tabs were rejected because they grow too tall under dual-language stacking and obscure content when the bottom bar appears. QR scanning window placement followed layout logic rather than a fixed position, partly because dual-language text length rules out centring where both keycard and QR options are shown."
+    },
+    {
+      "heading": "External research used cautiously for blind and low-vision checkout",
+      "bodyMarkdown": "A peer-reviewed study cited in the case evidence, Heisey, Shinohara and Tigwell (2026), “Experiences and Perceptions of Blind and Low-Vision (BLV) People with Retail Self-Checkout Systems,” ACM Transactions on Accessible Computing, 19(3), Article 13, reported on a survey of 86 blind and low-vision respondents informing contextual inquiries with 10 participants using self-checkout in grocery stores. Eight blind participants could not complete the process alone, and the only participants with a positive outlook were the two low-vision participants who transacted independently.\n\nThe case evidence uses that third-party study only for the headline finding. The full text was not read. The study corroborates the engagement's own stated limitation: with no jack and no keypad on current hardware, the current position delivers most of the low-vision benefit and none of the blind benefit.\n\nThe work recorded a software path, identified why software alone was insufficient, and converted the blind-access requirement into hardware requirements for hardware that does not yet exist."
+    },
+    {
+      "heading": "Creative Navy's Critical Systems Design phases in the visioncheckout engagement",
+      "bodyMarkdown": "Creative Navy's Critical Systems Design method designs software whose interfaces, workflows, and operating logic carry real operational consequences, working through five phases — Sandbox Experiments, Concept Convergence, Iterative System Building, Organizational Integration, and Implementation Partnership — to take each system from initial exploration to independent operation by the client's own team.\n\nIn the visioncheckout engagement, all five phases are claimable. The field research, competitive benchmark, regulatory analysis, and text-to-speech study were Sandbox Experiments. The requirements table, flow diagram, and early wireframe generations were Concept Convergence. The later wireframe generations and three UI sprints were Iterative System Building. The design system with tokens was Organizational Integration. The support now running alongside visioncheckout's engineering team is Implementation Partnership.\n\nThe engagement's proprietary-method evidence is strongest where artefacts show the design reasoning. The requirements table was authored in full by Creative Navy from visioncheckout's initial brief. It covers roughly twenty modules, each with content, user actions, user types affected, priority, and Creative Navy's own questions and recommendations. The complete user-flow diagram distinguishes screens, configurable screens, accessibility modes, error states, and end-of-flow, and carries Creative Navy's open questions as explicit callouts inside the artefact."
+    }
+  ],
+  "evidenceSummary": {
+    "strongClaims": [
+      "Creative Navy delivered a seven one-week sprint redesign programme for visioncheckout, including 34 screens across 138 versions, two clickable prototypes, a design system with tokens, a complete user-flow diagram, and a requirements table. This is an engagement fact, not an outcome claim.",
+      "Creative Navy conducted field research with one researcher over five days at six locations across three organisations, observing 563 interactions and interviewing 34 users and 13 catering staff.",
+      "Transaction durations were timed with a clock during observation: approximately 13 seconds at one corporate staff restaurant, approximately 11 seconds at one canteen, and approximately 25 seconds at a public-facing venue. These timings describe the existing system, not the redesign.",
+      "The product's touchless, auto-advancing proposition created a design tension because accessibility requirements treat limited response time as requiring multisensory alerting and extension. The page does not claim legal compliance or legal advice.",
+      "Creative Navy designed an on-screen accessibility entry point, then moved activation to hardware because a touchscreen button could not be the primary entry point for users with no usable vision.",
+      "visioncheckout accepted every recommendation that did not require hardware change, while hardware-dependent recommendations were added to the requirements list for the next hardware iteration. This is not a claim that the product is accessible or compliant.",
+      "Creative Navy's regulatory analysis covered Germany, Austria, Switzerland, the UK, and Ireland and resolved to one design approach. The scope question is presented as analysis, not a verdict.",
+      "No audit report was produced, the new designs were not tested with users, and nothing has shipped or been measured about the redesign.",
+      "Implementation Partnership is currently running, supporting visioncheckout's engineering team during development.",
+      "A cited third-party study reported that eight blind participants could not complete a self-checkout process alone, while the only participants with a positive outlook were two low-vision participants who transacted independently. The full text was not read, so only the citation and headline finding are used."
+    ],
+    "weakerClaims": [
+      "The before-state problem framing was not based on a formal audit report. It drew partly on visioncheckout's verbal account and Creative Navy's own undelivered interface review, alongside field research."
+    ],
+    "limitations": [
+      "The product is in development; nothing has shipped and nothing has been measured about the redesign.",
+      "The field research measured the system being replaced, not the replacement design.",
+      "The new designs were not tested with users.",
+      "No audit report was produced; the before-state evidence came from visioncheckout's verbal account, Creative Navy's undelivered interface review, and field research.",
+      "No throughput, speed, error-rate, satisfaction, accuracy, commercial, compliance, conformance, or certification outcome is claimed for the redesign.",
+      "Creative Navy did not provide legal advice and did not certify, audit, or achieve conformance with EN 301 549, the EAA, the BFSG, BFSGV, WCAG, or related instruments.",
+      "The case evidence does not support a claim that the product is accessible or that blind guests can use the current hardware independently.",
+      "The third-party blind and low-vision self-checkout citation is used only for the citation and headline finding; the full text was not read."
+    ]
+  },
+  "relatedPageSlugs": [
+    "retail-operations",
+    "what-we-have-measured",
+    "what-is-observed-but-not-quantified",
+    "what-we-do-not-claim",
+    "socar-petrol-forecourt",
+    "what-we-verified-without-measuring",
+    "triangulation-not-confirmation",
+    "better-state-visibility",
+    "stronger-recovery-support",
+    "ai-enabled-products",
+    "regulated-products",
+    "consumer-and-multi-market-products"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "retail operations evidence",
+      "targetSlug": "retail-operations",
+      "reason": "The case is filed under retail operations and documents checkout, peak-load, and queue conditions."
+    },
+    {
+      "anchorText": "Socar petrol forecourt case",
+      "targetSlug": "socar-petrol-forecourt",
+      "reason": "The source explicitly pairs this engagement with the Swiss petrol forecourt engagement as a second retail peak-load dataset."
+    },
+    {
+      "anchorText": "evidence that Creative Navy has measured",
+      "targetSlug": "what-we-have-measured",
+      "reason": "The source maps the field observation count, interview count, and transaction timings to the measured evidence standard page."
+    },
+    {
+      "anchorText": "evidence that was observed but not counted",
+      "targetSlug": "what-is-observed-but-not-quantified",
+      "reason": "The source maps observed environmental and operational findings to the observed-but-not-quantified evidence standard page."
+    },
+    {
+      "anchorText": "evidence Creative Navy does not claim",
+      "targetSlug": "what-we-do-not-claim",
+      "reason": "The source maps the unshipped redesign, untested designs, and outcome limits to the page covering claims Creative Navy does not make."
+    },
+    {
+      "anchorText": "triangulation",
+      "targetSlug": "triangulation-not-confirmation",
+      "reason": "The keycard finding connects field-observed harm, client-stated payment behaviour, and a Creative Navy-recorded design challenge."
+    },
+    {
+      "anchorText": "state visibility",
+      "targetSlug": "better-state-visibility",
+      "reason": "The payment-in-progress and basket-synchronisation decisions concern visible system state."
+    },
+    {
+      "anchorText": "recovery support",
+      "targetSlug": "stronger-recovery-support",
+      "reason": "The correction path and error states relate to recovery support."
+    },
+    {
+      "anchorText": "Ai Enabled Products",
+      "targetSlug": "ai-enabled-products",
+      "reason": "Source-classified context for this case study."
+    },
+    {
+      "anchorText": "Regulated Products",
+      "targetSlug": "regulated-products",
+      "reason": "Source-classified context for this case study."
+    },
+    {
+      "anchorText": "Consumer And Multi Market Products",
+      "targetSlug": "consumer-and-multi-market-products",
+      "reason": "Source-classified context for this case study."
+    }
+  ],
+  "tags": [
+    "case study",
+    "retail operations",
+    "AI-enabled products",
+    "computer vision checkout",
+    "self-checkout",
+    "accessibility",
+    "field research",
+    "regulated products",
+    "human-AI interaction",
+    "error recovery"
+  ],
+  "_meta": {
+    "sourcePath": "sources/articles/Case studies/case-study--visioncheckout.md",
+    "parentSlug": "retail-operations",
+    "childPageSlugs": [],
+    "generatedBy": "openai"
+  }
+}

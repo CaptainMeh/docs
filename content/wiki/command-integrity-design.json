@@ -1,0 +1,166 @@
+{
+  "slug": "command-integrity-design",
+  "title": "Command Integrity Design",
+  "pageType": "capability",
+  "category": "capabilities",
+  "section": "Capabilities",
+  "summary": "Command integrity design is a Creative Navy capability for systems where pressing a control can commit an irreversible or externally consequential action. The capability separates what the operator intended, who or what the action addresses, what authority exists outside the interface, and what the system can truthfully report about the result.",
+  "keyFacts": [
+    "Creative Navy treats intent, authority and effect as separate facts rather than as one selected interface state.",
+    "A command transaction is defined as a request with an identifier, a recipient, a response window and a terminal state.",
+    "The Schone Airspace Group design record used a seven-state command transaction model with required source evidence and prohibited inference for each state.",
+    "In the Raymarine bench comparisons, a fixed-role control model reduced wrong-domain activations from six of eight to zero of eight, with a 2.30 second median target-browsing penalty accepted.",
+    "In the Raymarine bench comparisons, confirmation before a digital call reduced wrong-recipient submissions from two of eight to zero of eight, with a 5.85 second median completion-time cost and two and a half extra interactions accepted.",
+    "The handheld command-and-control recommendation was led and co-authored by Creative Navy and the client's designers; it was not validated and did not establish a safety outcome.",
+    "The MDU is used only for the case where the interface has no authority to act and can only state an alarm condition accurately.",
+    "Kardion contributes the regulated medical-device example of balancing commitment friction against deliberate clinical action, with Creative Navy's role limited to formative evaluation."
+  ],
+  "bodySections": [
+    {
+      "heading": "Command integrity design separates intent, authority and evidenced effect",
+      "bodyMarkdown": "Creative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nCommand integrity design is the design of the full chain from operator intent to authorised command to evidenced system feedback, especially where an action cannot simply be taken back. In a system where an action leaves the screen and changes something in the world, the interface has to answer three questions by design rather than by assumption: what the operator meant, what the operator is authorised to do, and what the system actually knows about what happened.\n\nCreative Navy treats intent, authority and effect as separate facts rather than as one selected interface state. A button press is local input. A selected row or highlighted object is not automatically the authorised target. A message after the action is not automatically evidence that the external state changed.\n\nCommand integrity design covers interfaces where a command is not merely a local UI event but a request that may change a device, aircraft, radio state, clinical support level, vessel advisory state or other external condition. It is not a general capability about confirmation dialogs. Confirmation is one possible link in a wider chain that includes target identity, physical controls, retry behaviour, permission boundaries, stale information, acknowledgement semantics, alert lifecycle and refusal to show an outcome before the system has evidence."
+    },
+    {
+      "heading": "A command transaction is not the same as a button press",
+      "bodyMarkdown": "A command transaction is a request with an identifier, a recipient, a response window and a terminal state. Command integrity design uses that transaction model so that the operator is not asked to compensate for unreliable delivery by pressing the same control repeatedly.\n\nIn the tactical handheld command-and-control work for a European manufacturer of uncrewed systems, including one-way effectors, the design problem was that operators had been pressing a control repeatedly until they felt satisfied that a command had been sent. Creative Navy diagnosed that arrangement as a command-architecture problem rather than a feedback problem. Repeated human input can create uncertainty because the operator cannot tell whether the same request is being retried, a duplicate is being created, or stale information is being acted on.\n\nThe written recommendation, led and co-authored by Creative Navy and the client's designers, kept strike request status visible while moving the consequential act away from a permanently active touchscreen control. The recommendation specified a two-handed flip-guarded physical-button hold and treated retry as a bounded property of the command architecture rather than repeated human input.\n\nThe same record placed limits on the recommendation. Blind or unlimited retransmission would itself create risk, so the retry policy belonged to system safety rather than interface design. The hold duration and physical-control design required human-factors and system-safety testing that was not performed. The engagement did not validate prevention of accidental activation and did not establish that the system was safe."
+    },
+    {
+      "heading": "Commitment gates are proportional to consequence",
+      "bodyMarkdown": "A commitment gate is the interaction that converts intention into an irreversible or consequential act. Command integrity design treats the gate as a function of consequence, input conditions and recovery time, not as a fixed pattern such as a confirmation dialog.\n\nIn the handheld command-and-control engagement, a single touchscreen input was treated as inadequate for an irreversible strike command. The documented reasons included accidental touches, rain and moisture, gloves, vibration, device movement, palm contact, wrong-control selection under stress and digitizer faults. The counter-recommendation used two flip-guarded physical buttons held for a defined duration, while leaving strike request status visible.\n\nThe handheld sizing specification also set a proportionality rule. Slide-to-confirm, hold-to-commit at 300 to 600 milliseconds, and select-then-arm were permitted at T2 and below and never at T1, where size is the protection and is never substituted. If an in-mission view could not fit controls at their tier sizes, controls were cut or moved to hardware rather than downgraded to fit.\n\nKardion provides a regulated medical-device example of the same commitment-gate problem. The flow adjustment overlay, through which a nurse or clinician changes the level of support, took nine iterations. A prior human-factors study had surfaced the tension between a rotary knob and an OK button, including the risk of accidentally reducing flow to zero. The confirmation interaction was specified as a balance: enough friction to prevent accidental changes, but not enough to slow deliberate clinical action. Creative Navy's role in this regulated medical work was formative evaluation; summative validation and regulatory submission remained the manufacturer's responsibility."
+    },
+    {
+      "heading": "Authority is not the same as the selected object",
+      "bodyMarkdown": "Authority has at least two parts in command integrity design: which object the command addresses, and whether the operator or channel is permitted to send the command. The visible selection in an interface is not allowed to stand in for both.\n\nIn the Schone Airspace Group Mission Control design record, every consequential command names its intended aircraft in the immediate action context, including the confirmation heading. The command transaction also keeps the aircraft it was dispatched against. If the operator inspects or targets a different aircraft while a request is pending, the pending request keeps its original recipient, action and request identifier.\n\nSchone Airspace Group also separated inspected aircraft and command target as independent variables. The design used distinct visual treatments so that the aircraft under inspection and the aircraft under command could both appear at once. Changing the command target required a named, explicit operator action, sent no aircraft command and was recorded as deliberate friction.\n\nAuthority was not granted by selecting an icon. In the Schone Airspace Group record, eligibility and command-channel permission were independent checks resolved outside the interface. The accepted cost was an extra status label, in exchange for not using one selected icon to represent several unrelated system permissions.\n\nRaymarine applied the same separation to radio controls. Push-to-talk transmits on the currently selected permitted channel and never on a highlighted vessel. Highlighting a vessel is not selecting a frequency, and a digital call requires its own explicit flow. The selected channel, monitored channel and working channel proposed inside a digital call remain different values. Requested transmit power and effective transmit power are also different values, and the interface shows the effective one."
+    },
+    {
+      "heading": "Feedback reports evidence rather than reassurance",
+      "bodyMarkdown": "Command integrity design restricts feedback to what the system can evidence. The interface may show local input, transmission, acknowledgement, observed state, rejection or unknown outcome, but it may not compress them into an early success message.\n\nIn the Schone Airspace Group record, a command branch showed a request acknowledged three seconds after it was sent while the aircraft still reported its previous flight mode. A further three seconds passed before fresh telemetry reported the requested mode. A success message at the time of acknowledgement would therefore have asserted an outcome for six seconds without evidence.\n\nSchone Airspace Group addressed this with a seven-state command transaction model: ready to request, request sent, awaiting response, command acknowledged, state observed, request rejected and response unknown. Each state carried its required source evidence and its prohibited inference. Acknowledgement did not permit the interface to infer state observed. Silence did not permit the interface to infer rejection. A response window that elapsed without conclusive evidence produced an explicit unknown state retaining the target, action and request identifier, and triggered no automatic retry.\n\nKardion reached the same distinction in a medical device. The device receives a new target flow and adjusts gradually, so the flow does not change instantly. The interface had to communicate that the new value was set without implying that the new flow had already taken effect.\n\nRaymarine reached the same rule through calling states. The radio model used six calling states with fixed language, including request sent and awaiting acknowledgement, with voice contact explicitly stated as not established. No acknowledgement received and request not sent were different outcomes with different recovery paths."
+    },
+    {
+      "heading": "Acknowledging, silencing and clearing are different acts",
+      "bodyMarkdown": "Alert handling is part of command integrity design when the interface can either perform a protocol act or record an attention state. The distinction matters because a visible control may look like action even when it only changes what is displayed locally.\n\nRaymarine modelled three emergency types separately. A locally initiated man-overboard incident records a reference position, source and time and transmits nothing. An outgoing distress alert is a protected radio action with sending, sent, awaiting acknowledgement, acknowledged and failed states. A received distress alert is information from another station, identified by sender, time and supplied position. Viewing or silencing a received alert transmits no acknowledgement, and silencing a local alarm never ends an incident.\n\nThe MDU ship motion advisory instrument provides the pure authority-boundary case. The manufacturer stated that the instrument alarms and does nothing else, and that it is not permitted to control the vessel in any capacity. The manufacturer's stated position was that all actions based on the GUI data are the captain's. Command integrity design uses the MDU only for the case where the interface has no available act except to state the condition accurately.\n\nIn the MDU design record, acknowledge replaced clear after the specification and Creative Navy's first position were corrected by a practitioner. Acknowledge means the alarm has been seen. The indication then remains until the condition is no longer present. The MDU evidence is design record and manufacturer-stated context; it was not tested with users, and the entire user-side evidence base was one external advisor.\n\nThe broader alert lifecycle belongs with alarm management. Command integrity design uses the acknowledge, silence and clear distinction only to show that a local attention state and an external protocol act cannot share one label."
+    },
+    {
+      "heading": "Deliberate friction has a recorded cost",
+      "bodyMarkdown": "Creative Navy's Critical Systems Design method treats command integrity decisions as trade-offs, not as free improvements. A commitment gate, fixed-role control or explicit target change is credible only when the cost is stated alongside the risk it removes.\n\nThe strongest measured examples are from the Raymarine fixed-mount marine VHF radio work. Creative Navy designed the test protocols, moderated all twenty-four sessions and analysed the results. Raymarine supplied the physical bench mockup. Each comparison was paired and counterbalanced within participants, with task wording, target data and starting states held constant.\n\nFor fixed-role control, wrong-domain activations moved from six of eight under the contextual model to zero of eight under the fixed model, and unassisted completion moved from six of eight to eight of eight. The accepted price was a 2.30 second median penalty on target browsing. These findings describe operator behaviour on a prototype against a fixed scenario fixture, not radio performance or outcomes at sea.\n\nFor confirmation before a digital call, wrong-recipient submissions moved from two of eight under immediate calling to zero of eight under confirmation. All three initial selection errors under the confirmation condition were caught at the confirmation screen before any request was sent. The accepted price was a 5.85 second median completion-time cost and two and a half extra interactions. Confirmation did not prevent target selection mistakes; it made recipient identity legible at a second decision point before submission.\n\nSchone Airspace Group recorded costs without claiming a measured outcome. Repeated target labels consumed space. Two highlighted identities could be visible simultaneously. Changing target required one additional explicit action. More command states required precise copy and event matching. The accepted cost of unknown was that it is less reassuring than a binary outcome, but it is accurate and supports a deliberate subsequent check.\n\nThe handheld engagement recorded costs and limits rather than outcomes. The strike recommendation introduced hardware dependency, hold-duration testing and system-safety questions about retry policy. The document was co-authored by Creative Navy's designers and the client's designers, and the client did not accept all of it. That residual disagreement is part of the evidence record."
+    },
+    {
+      "heading": "Where command integrity design stops",
+      "bodyMarkdown": "Command integrity design does not make a system safe. It can make intent, target identity, authority, transaction state and evidenced feedback explicit, but it does not establish system safety, regulatory conformity, airworthiness, radio conformity, medical-device validation, weapons review or operational performance.\n\nNo prevention claim is made for command integrity design. No accidental activation was measured before or after any engagement. The Raymarine figures describe operator behaviour on a bench prototype under a fixed scenario, not events at sea. The Schone Airspace Group checks show whether the interface stated the correct operational fact under scripted conditions, not whether aircraft operations improved. The handheld recommendation was not validated and did not measure prevention.\n\nCommand integrity design also does not make an AI claim. Decision-boundary design addresses AI-assisted products and allocates decisions between autonomous action, human confirmation and independent human judgment. Command integrity design is the non-AI sibling: the systems discussed here are treated as command interfaces, and the allocation question is between interface control, physical control, authority checks and evidenced feedback.\n\nThe closest neighbouring capability is error-reduction and recovery design. Error-reduction and recovery design is about preventing errors, tolerating them and recovering from them. Command integrity design is about what an action means before any error occurs: who or what it addresses, what commits it, who has authority, and what the system may say about the result.\n\nState and status visibility design is another adjacent capability. Command integrity design uses state visibility where a command transaction must distinguish local input, sent request, acknowledgement, observed state, rejection and unknown outcome. The command integrity question is narrower: which state the interface is entitled to assert at the moment a consequential act is being committed or reported."
+    },
+    {
+      "heading": "What this produces",
+      "bodyMarkdown": "Within Creative Navy's Critical Systems Design method, this capability produces concrete interface design deliverables — interaction design, information architecture, wireframes, screen designs, interactive prototypes, and design-system components — and not advisory documents alone. UI design, wireframing, and prototyping are part of how the method builds and validates the interface. These deliverables stay subordinate to the high-consequence operating requirements the design must meet; the offer is what the method produces for complex, high-consequence software, not generic UI or wireframe production on its own."
+    }
+  ],
+  "evidenceSummary": {
+    "strongClaims": [
+      "Command integrity design separates operator intent, authority and evidenced effect rather than treating a button press, selected object and feedback message as one fact.",
+      "In the Schone Airspace Group work, a seven-state command transaction model recorded required source evidence and prohibited inference for each state.",
+      "In the Raymarine bench comparisons, the fixed-role control model reduced wrong-domain activations from six of eight to zero of eight, with a 2.30 second median browsing penalty accepted.",
+      "In the Raymarine bench comparisons, confirmation before a digital call reduced wrong-recipient submissions from two of eight to zero of eight, with a 5.85 second median completion-time cost and two and a half extra interactions accepted.",
+      "Kardion contributed the medical-device example of balancing confirmation friction against deliberate clinical action and distinguishing a set target from an achieved flow state."
+    ],
+    "weakerClaims": [
+      "The handheld strike recommendation treated repeated human input as a command-architecture problem rather than feedback and recommended bounded retry in the command architecture; the recommendation was led and co-authored by Creative Navy and the client's designers and was not validated.",
+      "The MDU is used on this page only for the authority boundary where the interface alarms and does not control the vessel; the evidence is manufacturer-stated context rather than a verified regulatory finding."
+    ],
+    "limitations": [
+      "The page makes no safety determination and claims no prevention of accidental activation, wrong-recipient action, radio incident, aircraft incident, clinical incident or vessel outcome.",
+      "The handheld command-and-control recommendation was not validated, did not measure prevention, and was co-authored with the client's designers rather than being a unilateral Creative Navy act.",
+      "The Schone Airspace Group acceptance checks evaluated a design representation and were not conducted on a connected system; they do not measure flight performance, operator proficiency, task time or error rate.",
+      "The Raymarine measured comparisons used eight participants per comparison on a bench prototype and do not measure radio performance, real-world calling accuracy or outcomes at sea.",
+      "The Raymarine engagement tested nothing at a helm; wet hands, gloves, glare, night sailing, vibration, ambient noise and divided attention were named operating conditions but were not tested.",
+      "The MDU material was not tested with users, and the entire user-side evidence base was one external advisor plus manufacturer-stated context.",
+      "Kardion is presented as formative regulated medical-device design work; summative validation and regulatory submission remained the manufacturer's responsibility.",
+      "No conformance credential is claimed against NASA-STD-3001, FAA guidance, MIL-STD-1472H, IEC 62366-1, marine equipment requirements or any other instrument.",
+      "The page does not use AI case studies as evidence and does not claim AI decision-boundary work."
+    ]
+  },
+  "relatedPageSlugs": [
+    "error-reduction-and-recovery-design",
+    "state-and-status-visibility-design",
+    "design-for-abnormal-and-degraded-scenarios",
+    "alarm-management",
+    "warning-and-alarm-clarity-improvement",
+    "schone-mission-control",
+    "raymarine-vhf",
+    "mdu-ship-motion-monitoring",
+    "kardion",
+    "tactical-handheld-command-and-control",
+    "users-keep-repeating-an-action-because-the-system-cannot-confirm-it-worked"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "error-reduction and recovery design",
+      "targetSlug": "error-reduction-and-recovery-design",
+      "reason": "The page distinguishes command integrity design from the neighbouring capability focused on preventing, tolerating and recovering from errors."
+    },
+    {
+      "anchorText": "state and status visibility design",
+      "targetSlug": "state-and-status-visibility-design",
+      "reason": "The page distinguishes command integrity from the broader state-reporting capability around acknowledgement, observed state and unknown outcome."
+    },
+    {
+      "anchorText": "design for abnormal and degraded scenarios",
+      "targetSlug": "design-for-abnormal-and-degraded-scenarios",
+      "reason": "The page discusses unreliable command delivery, response windows and unknown outcomes, which sit beside degraded-scenario design."
+    },
+    {
+      "anchorText": "alarm management",
+      "targetSlug": "alarm-management",
+      "reason": "The page uses acknowledge, silence and clear distinctions that overlap with alarm-management work."
+    },
+    {
+      "anchorText": "warning and alarm clarity improvement",
+      "targetSlug": "warning-and-alarm-clarity-improvement",
+      "reason": "The page discusses alert-state clarity in Raymarine and MDU material."
+    },
+    {
+      "anchorText": "Schone Airspace Group Mission Control",
+      "targetSlug": "schone-mission-control",
+      "reason": "The page relies on Schone Airspace Group as a named anchor case for command transactions, target identity and evidenced state."
+    },
+    {
+      "anchorText": "Raymarine fixed-mount marine VHF radio",
+      "targetSlug": "raymarine-vhf",
+      "reason": "The page relies on Raymarine as a named anchor case for measured bench comparisons and radio command-state modelling."
+    },
+    {
+      "anchorText": "MDU ship motion advisory instrument",
+      "targetSlug": "mdu-ship-motion-monitoring",
+      "reason": "The page uses the MDU as supporting evidence for an explicit authority boundary where the interface can alarm but not control the vessel."
+    },
+    {
+      "anchorText": "Kardion",
+      "targetSlug": "kardion",
+      "reason": "The page uses Kardion as the regulated medical-device example for commitment friction and lagged state change."
+    },
+    {
+      "anchorText": "tactical handheld command-and-control work",
+      "targetSlug": "tactical-handheld-command-and-control",
+      "reason": "The page uses the handheld engagement as evidence for command architecture, physical commitment and top-tier protection."
+    }
+  ],
+  "tags": [
+    "command integrity",
+    "commitment gates",
+    "command transactions",
+    "operator intent",
+    "authority boundaries",
+    "state evidence",
+    "acknowledgement",
+    "unknown outcome",
+    "deliberate friction",
+    "Critical Systems Design"
+  ],
+  "_meta": {
+    "sourcePath": "sources/articles/Capabilities/capabilities--command-integrity-design.md",
+    "parentSlug": "capabilities",
+    "childPageSlugs": [],
+    "generatedBy": "openai",
+    "patches": [
+      "capability-deliverables"
+    ]
+  }
+}

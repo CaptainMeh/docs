@@ -6,7 +6,7 @@
 
 - **Primary case-study category:** /evidence/case-studies/embedded
 - **Primary context:** /contexts/embedded-devices-and-constrained-interfaces
-- **Also-relevant contexts:** /contexts/consumer-and-multi-market-products
+- **Also-relevant contexts:** /contexts/consumer-and-multi-market-products, /contexts/building-automation-and-smart-home
 - **Connects to:** /capabilities/state-and-status-visibility-design, /capabilities/error-reduction-and-recovery-design
 
 ## Identity and classification
@@ -152,7 +152,7 @@ This dual-priority alert system — distinguishing primary operational alerts fr
 
 ## Iterative System Building — the full redesign
 
-Creative Navy redesigned the entire interface end-to-end, producing high-fidelity wireframes across all screens, a full UI in both light and dark modes (dual mode requested by the client; dark mode particularly valued for private-home and bedroom use), and a complete design system including styleguide and component library.
+Creative Navy redesigned the entire interface end-to-end, producing high-fidelity wireframes across all screens, a full UI in both light and dark modes with automatic switching from day mode to dark mode at sunset (dual mode requested by the client; dark mode particularly valued for private-home and bedroom use), and a complete design system including styleguide and component library.
 
 The UI applied Elsner's brand colours, optimised for both light and dark themes, with accessibility and functional legibility prioritised over decorative treatment. Ambient lighting conditions — from well-lit offices to dimly lit bedrooms — were incorporated as design parameters, and the interface was designed to blend into its environment rather than compete with it visually.
 

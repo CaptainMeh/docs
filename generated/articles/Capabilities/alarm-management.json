@@ -1,0 +1,222 @@
+{
+  "_type": "documentationPage",
+  "sourceFile": "Articles/Capabilities/capabilities--alarm-management.md",
+  "sourcePath": "sources/articles/Capabilities/capabilities--alarm-management.md",
+  "sanityDocumentIdCandidate": "documentationPage.alarm-management",
+  "title": "Alarm Management",
+  "slug": {
+    "_type": "slug",
+    "current": "alarm-management"
+  },
+  "pageType": "capability",
+  "category": "capabilities",
+  "parentSlug": "capabilities",
+  "childPageSlugs": [],
+  "excerpt": "Alarm management is the discipline of defining, prioritising, presenting and governing alarms across a system lifecycle. This page describes the discipline, the standards vocabulary and the interface decisions the standards do not settle.",
+  "metaTitle": "Alarm Management",
+  "metaDescription": "Definition of alarm management, standards vocabulary, alarm lifecycle, priority, acknowledgement, annunciation and evidence limits.",
+  "summary": "Alarm management defines how alarms are selected, rationalised, prioritised, annunciated, acknowledged, silenced, suppressed, shelved and cleared. In Creative Navy's documentation, this page owns the discipline itself; warning-and-alarm clarity improvement describes design responses, and alarm-and-warning evaluation describes the analytical activity.",
+  "definition": "Alarm management is an engineering discipline for governing alarm systems across their lifecycle, including alarm philosophy, rationalisation, priority assignment, annunciation, operator response, performance metrics and management of change.",
+  "keyFacts": [
+    "Alarm management is treated here as a discipline, not as a description of alert fatigue or as a buyer-facing problem statement.",
+    "ISA-18.2, IEC 62682 and EEMUA 191 are used as process-industry references for alarm philosophy, rationalisation, performance metrics and management of change.",
+    "IMO Bridge Alert Management, MSC.302(87), IEC 62923-1 and IEC 62923-2 are used as the maritime bridge alert management regime; the source states four priorities and mandatory application for new navigation and communication installations on SOLAS ships since 30 August 2021.",
+    "Creative Navy does not claim conformance to ISA-18.2, IEC 62682, EEMUA 191, IMO Bridge Alert Management, IEC 62923-1, IEC 62923-2, IEC 62288 or IEC 62366-1.",
+    "The MDU and Raymarine examples are described as convergence on established maritime alert conventions by equipment outside the stated bridge alert management scope, not as conformance.",
+    "No alarm rate, nuisance rate, response time or flood count was measured in the engagements described on this page.",
+    "The Gericke case is the only alarm material in the corpus described here as tested with operators; 17 operators at three deployment sites were involved.",
+    "The MDU engagement was not tested with users; its user-side evidence base was one external advisor, a serving master and chief engineer advising the manufacturer.",
+    "Oceaneering evidence came from design reviews, not usability tests; no dispatch operator took part.",
+    "Raymarine's sessions were bench prototype sessions, not helm, sea-trial or on-vessel testing."
+  ],
+  "tags": [
+    "alarm management",
+    "alarm rationalisation",
+    "alarm philosophy document",
+    "alarm priority",
+    "annunciation",
+    "acknowledge and silence",
+    "alarm flooding",
+    "nuisance alarms",
+    "bridge alert management",
+    "ISA-18.2",
+    "IEC 62682",
+    "IEC 62923-1",
+    "IEC 62923-2",
+    "IEC 62366-1",
+    "Critical Systems Design"
+  ],
+  "bodyMarkdown": "## Summary\n\nCreative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nAlarm management is the discipline of deciding which conditions become alarms, what each alarm is bound to, how priority is assigned, how alarms are presented, and what operator actions mean. It includes the alarm philosophy document, rationalisation, alarm hierarchy, priority tiering, root-cause hierarchy, management of change, performance metrics, annunciation, acknowledge, silence, suppress, shelve and clear behaviour.\n\nThis page describes the discipline itself. Warning and Alarm Clarity Improvement describes what Creative Navy does about alarm clarity in product design. Alarm and Warning Evaluation describes the analytical activity: priority-hierarchy audit, actionability assessment, channel analysis, nuisance-rate estimation, mute-behaviour review, operating-condition testing and regulatory-alignment check.\n\nTwo adjacent problem pages should remain separate from this page. The interpretation failure page covers warnings that are visible but do not communicate meaning. The buyer-facing risk situation page covers warnings that are visible but not actionable. Alarm management is the scheme inside which those failures occur.\n\n## Five alarm-management principles from Creative Navy case evidence\n\nAn alarm is bound to something, and the binding is a design decision. In the MDU ship motion monitoring system, removing the live number from the display meant the alarm could not sensibly bind to an instantaneous value that might leave the alarm band seconds after entering it. The designed alarm state bound to a rolling twenty-minute maximum and minimum, so an alarm meant that the vessel had been outside its threshold at some point in that window.\n\nAcknowledging is not resolving, and silencing is not acknowledging. Raymarine's received distress alert could be viewed and silenced without transmitting any acknowledgement. In the MDU, acknowledge replaced clear after a practitioner supplied the bridge convention: acknowledgement means the operator has seen the alarm, while clearing happens when the condition is no longer present. In the maritime VTS work, acknowledge, assign, resolve and dismiss were separated into four operator actions with four meanings.\n\nPriority is assigned by consequence, not by arrival time. Raymarine's four event priority levels were assigned by consequence, with a five-step arbitration sequence between event arrival and presentation. The legacy maritime VTS system placed operational alerts and equipment faults in one list ordered by receipt time, which made arrival order too easy to mistake for operational priority.\n\nOne state should carry one obligation, and one thing should flash at a time. In Oceaneering's dispatch panel work, one blinking state had carried two opposite operator obligations: start the dispatch and collect the cart. The redesigned state model used flashing for action required, steady for complete, red exclusively for abnormal conditions, and non-colour channels through icon and letter. The same work recorded the flood rule: in a twelve-station area, twelve flashing stations convey no priority.\n\nA system that keeps asserting a condition the operator has accepted is producing noise, not oversight. In the MDU, the manufacturer's position was that the system should not continue to challenge a decision the captain had taken. The alarm model therefore used self-clearing behaviour rather than requiring the interface to demand resolution of a condition the interface could not act on.\n\n## What alarm management is as a discipline\n\nAlarm management governs alarms across a lifecycle rather than treating them as individual messages. In process-industry vocabulary, the discipline includes an alarm philosophy document, rationalisation of candidate alarms, priority assignment, performance metrics and management of change. ISA-18.2, IEC 62682 and EEMUA 191 are the process-industry references named in Creative Navy's documentation for this vocabulary.\n\nRationalisation is the act of deciding whether a candidate condition should be an alarm, what the operator can do about it, what priority it should carry and whether secondary alarms should collapse under a root-cause hierarchy. A nuisance alarm is not only an annoyance; repeated alarms and standing alarms change how operators interpret the whole alarm stream. Alarm flooding and cascade are therefore system properties, not only presentation defects.\n\nCreative Navy's Critical Systems Design method treats alarm management as part of operating logic as well as interface presentation. In an alarm scheme, the interface cannot repair a weak lifecycle definition by adding colour, sound or a modal. The scheme must first specify the condition, the binding, the priority, the operator obligation, the acknowledgement grammar and the recovery indication.\n\n## Two standards regimes use shared ideas and separate priority vocabularies\n\nProcess-industry alarm management and maritime bridge alert management share core concepts but do not use identical priority vocabulary. The process-industry references named for this page are ISA-18.2, IEC 62682 and EEMUA 191. The maritime bridge alert management regime named for this page is IMO Bridge Alert Management, adopted in resolution MSC.302(87) and implemented through IEC 62923-1 and IEC 62923-2.\n\nThe maritime bridge alert management regime defines four alert priorities and alert categories based on whether decision-support information is needed at the task station. The source documentation states that it has been mandatory for new navigation and communication installations on SOLAS ships since 30 August 2021.\n\nThe priority vocabularies must be kept separate. One vocabulary uses emergency alarm, alarm, warning and caution. The other uses process-industry priority tiers. Treating them as interchangeable would obscure the regime in which a specific alarm grammar was written.\n\nCreative Navy does not claim conformance to ISA-18.2, IEC 62682, EEMUA 191, IMO Bridge Alert Management, IEC 62923-1, IEC 62923-2, IEC 62288 or IEC 62366-1. Where an engagement arrived at a convention these instruments codify, Creative Navy describes convergence on the convention and stops there.\n\n## What an alarm is bound to\n\nThe question of what an alarm is bound to is often more important than the visual form of the alarm. An alarm can be bound to a live value, a rolling value, a state transition, a device fault, an event from another system, a missing source, a blocked action or a governed lifecycle state.\n\nThe MDU shows why binding matters. The ship motion monitoring system was specified as advisory: the manufacturer's stated position was that it alarms and does nothing else, and that all actions based on the graphical user interface data are made by the captain. The expected response was to change course, change speed, deploy stabiliser fins or consult shore-based advice. Because the live value was not on screen, the alarm state bound to a rolling maximum and minimum instead of the instantaneous value.\n\nStreetec kntrl 2 shows a different binding problem. Pressure thresholds were derived from the suspension's certification rather than chosen freely, with user-settable values inside those limits. Adjustment in motion was restricted by regulation and protected by three independent interlocks: accelerometer-detected movement, a calibrated speed signal with a user-set threshold and a digital input such as the handbrake. In that case, warning behaviour was tied to certified operating bands and blocked actions, not to a general notification preference.\n\n## Priority, arbitration and several alarms arriving at once\n\nAlarm priority should express consequence and required response, not arrival order. Raymarine's event model used four priority levels assigned by consequence: emergency, high concern, operational and background. A five-step arbitration sequence classified the event, coalesced exact duplicates, arbitrated against the active incident and current focus owner, presented the event on the appropriate surface, and restored the prior task only after a validity check.\n\nCoalescing exact duplicates matters because repeated packets should refresh an existing record rather than stack dialogs. Without this rule, repeat events create the appearance of several independent incidents and increase alarm noise. The same principle appears in nuisance-alarm handling and repeat-alarm rate analysis, even when the system is not a process plant.\n\nThe maritime VTS work shows the cost of mixing unlike alert populations. The legacy system placed traffic conditions, equipment faults and advisory notices on one notification surface ordered by receipt time. The redesign separated navigation alerts from equipment health into typed surfaces and cross-linked them through a common event history. Operational priority and lifecycle state were therefore not hidden behind a single chronological queue.\n\n## Acknowledge, silence, suppress, shelve and clear are different acts\n\nAlarm lifecycle grammar must distinguish local reading, acoustic control, temporary removal, operator acceptance and resolution. Acknowledge registers that an authorised actor has received or seen the alarm. Silence controls sound or interruption. Suppress and shelve change whether an alarm is presented. Clear records that the alarm condition is no longer present or that the alarm item has left the active set.\n\nThe MDU demonstrates the acknowledge-versus-clear distinction. Creative Navy's first position and the written specification were both corrected during review: a clear control had no function if nothing on the screen changed the state of the ship. A practitioner supplied the bridge convention instead. The alarm flashes red until acknowledged, then holds solid red, and clears itself when the condition is no longer present.\n\nRaymarine demonstrates that silencing a notification and responding to the outside world can be different protocol acts. A received distress alert may be viewed and silenced without acknowledging anything on air. That distinction generalises to any system where a local notification control risks being confused with a response sent to another party.\n\nThe maritime VTS work made the grammar explicit through four actions. Acknowledge registers receipt by an authorised actor. Assign makes a named person or role accountable. Resolve requires a governed resolution state with an attributable actor. Dismiss, where supported, hides a view item and changes nothing underneath.\n\n## Annunciation requires colour, flashing and non-colour channels to work together\n\nAnnunciation is the presentation of alarm state through visual, acoustic or other channels. Colour can communicate priority or status, but colour alone is a weak carrier for alarm meaning. A robust alarm scheme uses redundant cues and avoids training operators to ignore alert colours.\n\nIn a European industrial automation vendor whose process control software coordinates machining cells, an alarm review found severity carried by icon alone, error and selection rendered identically, and an alarm taxonomy that was present but poorly surfaced. Alarm detail included workpiece, pallet, timestamp, severity, numeric code, source and failed operation. The review treated those as audit findings observed in that system, not as a general claim about industrial software.\n\nOceaneering's dispatch panel work shows signal saturation in physical and interface form. A vehicle whose lights always flash while moving cannot signal a fault by flashing. A station panel where every station flashes conveys no priority. The redesigned model reserved red for abnormal conditions, used one colour per direction, used flashing for action required and steady for complete, and carried the same information through icon and letter for users who cannot rely on hue. Non-colour redundancy was raised by the client.\n\nStreetec's two-level escalation used inline notification on a first blocked attempt and a modal on a second attempt. Colour stayed neutral during normal operation so that alert colour retained meaning when a genuine alert state appeared.\n\n## Alarms about the system and alarms about the world need different surfaces\n\nAlarm schemes often mix two populations: alarms about the world being supervised and alarms about the system that produces the picture. The interface should not force those populations into one surface when their operational meaning differs.\n\nThe maritime VTS example separates this problem clearly. Operational navigation alerts and equipment faults had shared one notification surface. A filtered single list was rejected because the current filter could hide a class of important event and a count alone could not explain technical degradation during a traffic task. The selected model gave navigation alerts their own operational-priority and lifecycle surface, while equipment health used a typed view carrying an impact explanation.\n\nRaymarine's model also separated external events, local incidents and radio actions. A locally initiated man-overboard incident transmitted nothing. An outgoing distress alert was a protected radio action with its own sending, sent, awaiting acknowledgement, acknowledged and failed states. A received distress alert was information from another station, identified by sender, time and supplied position.\n\n## Operator-caused faults require a different alarm design question\n\nAn alarm can be addressed to the same person whose action caused the fault. That case cannot be handled only by severity, colour or escalation; the system must decide whether it is instructing, correcting, warning or recording.\n\nIn the industrial process-control engagement, operator-caused faults appeared in the alarm stream. A door opened manually could interrupt a transport. The important design question was not only how to display the fault, but how to address an alarm to a person who may have caused it and may be able to correct it.\n\nThe same industrial engagement distinguished notification from instruction. Informational items were acknowledged. Actionable items were completed. That distinction matters because acknowledge and complete are responses to different event classes, and merging them turns local awareness into implied resolution.\n\n## Gericke, Kardion and Torqeedo extend the evidence base beyond the six primary engagements\n\nGericke is the alarm evidence in this page with operator testing. The documented Gericke case involved 17 operators at three deployment sites. The finding relevant to alarm management was that users focused on the most visible alarm, not the most relevant alarm. That finding drove reorganisation toward clearer prioritisation and root-cause indication. The contribution is the comprehension finding, not an alarm rate or response-time measure.\n\nKardion is the medical instance. Its alarm architecture was governed by IEC 62366-1 and derived from identified use-related hazards rather than design preference. The documented decisions included priority tiering with visually distinguishable levels, prohibition on colour as the sole differentiator, mute behaviour and alarm-state visibility. The device included a physical alarm LED and a mute button beside a 12.1-inch touchscreen. Alarm placement in the top-left corner was preferred and validated in an independent formative usability study commissioned by the client before Creative Navy's engagement. No conformance credential is claimed; formative evaluation only, with summative validation and regulatory submission remaining the manufacturer's responsibility.\n\nTorqeedo is the field-conditions instance. Alarm contrast, visibility and hierarchy rules were defined through sea-trial testing rather than specification, with visibility tested under vibration, night conditions and glare. The evidence supports that alarms could be seen and ranked under those conditions. It does not establish that operators acted differently, and it does not provide an alarm rate, response time or error count.\n\n## What the standards do not reach\n\nStandards can codify established conventions without reaching every product that should still use the convention. That gap is central to Creative Navy's alarm-management evidence.\n\nThe MDU is not SOLAS navigation equipment and falls under none of the stated bridge alert management requirements. It is an advisory instrument. The documented design converged on bridge convention by consulting a serving master and chief engineer advising the manufacturer, because the standard codifying that convention for equipment beside it on the same bridge does not reach a system that only advises.\n\nRaymarine adds a second maritime example of convergence rather than conformance. The engagement modelled event priority, arbitration and emergency types for a radio context, but Creative Navy did not claim a type-approval, certification, conformity or regulatory credential. The documented research was conducted on a bench prototype and tested nothing at a helm.\n\nOceaneering adds a non-maritime example of the same pattern. Nobody in the design reviews named ISA-18.2, IEC 62682 or EEMUA 191. The flashing-versus-steady distinction was reasoned from the operators' problem and endorsed independently by operations managers at two hospitals. It is described as convergence on an established convention, not conformance to an alarm-management standard.\n\n## Evidence boundaries for Creative Navy alarm-management claims\n\nCreative Navy's alarm-management evidence is strongest when it is treated case by case. The Gericke material involved testing with 17 operators at three deployment sites. The Torqeedo material involved sea-trial testing of alarm contrast, visibility and hierarchy rules. The maritime VTS comparative study is Creative Navy-measured under controlled conditions, but its alert-prioritisation figure may not be combined with other percentages and does not measure live traffic performance.\n\nSeveral cases on this page are design reasoning rather than user validation. The MDU was not tested with users; the user-side evidence base was one external advisor. Oceaneering's sessions were design reviews, not usability tests: Creative Navy presented the designs to one hospital's logistics manager and two supply-chain supervisors, and separately to a second hospital's AGV planning manager. No task was attempted, nothing was measured, and no dispatch operator took part. Raymarine's twenty-four sessions were bench prototype sessions with eight participants, and the engagement tested nothing at a helm.\n\nNo alarm scheme described on this page is claimed to have prevented an event. No alarm rate, nuisance rate, response time or flood count was measured in any of the six primary engagements. No conformance, certification or regulatory credential is claimed for Creative Navy's work against the named alarm-management or alert-management standards.\n\n## Related pages\n\nWarning and Alarm Clarity Improvement is the adjacent capability page for what Creative Navy designs in response to alarm-clarity problems. Alarm and Warning Evaluation is the adjacent practice page for analysing an alarm scheme. Command Integrity Design shares the principle that acknowledging a notification is not the same as responding to an external system, but this page owns that distinction as part of the alert lifecycle.\n\nDesign for Abnormal and Degraded Scenarios is related because alarm schemes often carry degraded states, equipment faults, missing sources and recovery indications. State and Status Visibility Design is related because annunciation, standing alarms, recovery indication and lifecycle state are all status-visibility problems when the alarm grammar is already defined.",
+  "claims": [
+    {
+      "claim": "Alarm management is an engineering discipline with its own standards, lifecycle and failure modes, and includes alarm philosophy, rationalisation, lifecycle governance, priority assignment and management of change.",
+      "evidenceType": "definition",
+      "sourceStrength": "strong",
+      "notes": "Supported by the page brief and domain vocabulary instructions."
+    },
+    {
+      "claim": "ISA-18.2, IEC 62682 and EEMUA 191 are process-industry references for alarm philosophy, rationalisation, performance metrics and management of change; IEC 62682 is described as the international standard developed from ISA-18.2.",
+      "evidenceType": "industry standard",
+      "sourceStrength": "strong",
+      "notes": "Supported by the external research section in CURRENT_SOURCE_MD."
+    },
+    {
+      "claim": "IMO Bridge Alert Management, MSC.302(87), IEC 62923-1 and IEC 62923-2 define a maritime bridge alert management regime with four priorities and categories, mandatory for new navigation and communication installations on SOLAS ships since 30 August 2021.",
+      "evidenceType": "industry standard",
+      "sourceStrength": "strong",
+      "notes": "Supported by the MDU evidence section and external research section."
+    },
+    {
+      "claim": "The MDU alarm design bound alarm state to a rolling twenty-minute maximum and minimum rather than an instantaneous value.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "Supported by M41 and related MDU handling instructions; no user validation is claimed."
+    },
+    {
+      "claim": "Raymarine's event model used four priority levels assigned by consequence and a five-step arbitration sequence before presentation.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "Supported by R125 and R126; field and helm testing limits are preserved."
+    },
+    {
+      "claim": "Oceaneering's dispatch panel work separated flashing and steady states, reserved red for abnormal conditions and added non-colour channels, but the sessions were design reviews rather than usability tests.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "Supported by O62, O63, O64, O75 and mandatory calibration."
+    },
+    {
+      "claim": "The maritime VTS redesign separated operational navigation alerts from equipment health and used a four-action lifecycle for acknowledge, assign, resolve and dismiss.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "Supported by W54 and W55."
+    },
+    {
+      "claim": "Creative Navy does not claim conformance, certification or regulatory credentials against the named alarm-management and alert-management standards.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "strong",
+      "notes": "Supported by the 'What Creative Navy does not claim' section."
+    },
+    {
+      "claim": "No alarm rate, nuisance rate, response time or flood count was measured in the six primary engagements described for this page.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "strong",
+      "notes": "Supported by the 'What Creative Navy does not claim' section."
+    },
+    {
+      "claim": "Gericke is the only alarm material described here as tested with operators, involving 17 operators at three deployment sites.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "Supported by the Gericke section; no rate or alarm-performance measure is imported."
+    }
+  ],
+  "limitations": [
+    "No conformance is claimed to ISA-18.2, IEC 62682, EEMUA 191, IMO Bridge Alert Management, IEC 62923-1, IEC 62923-2, IEC 62288 or IEC 62366-1.",
+    "No alarm-performance measurement is claimed: no alarm rate, nuisance rate, response time or flood count was measured in the six primary engagements.",
+    "No safety claim is made for any alarm scheme described on the page.",
+    "The MDU was not tested with users; its user-side evidence base was one external advisor, a serving master and chief engineer advising the manufacturer.",
+    "Oceaneering evidence came from design reviews with operations managers and supervisors, not usability tests; no dispatch operator took part.",
+    "Raymarine's research was conducted on a bench prototype and tested nothing at a helm, at sea or under the named operating conditions.",
+    "The maritime VTS measured study used sanitised training scenarios on a design prototype, not a production installation, and its percentages must not be combined into one figure.",
+    "Kardion material is formative only; no conformance credential, summative validation result or regulatory submission result is claimed here.",
+    "Torqeedo evidence concerns visibility and hierarchy under sea-trial conditions, not operator action, response time, alarm rate or error count."
+  ],
+  "publicationBlockers": [],
+  "questionsForReview": [
+    "Confirm that the required narrowing edit to Warning and Alarm Clarity Improvement has been completed in the same change set.",
+    "Confirm that the required cross-reference sentence has been added to Alarm and Warning Evaluation in the same change set.",
+    "Verify the intended one-sentence shore-side VTS alert-handling guidance before adding it publicly; CURRENT_SOURCE_MD marks IALA guidance as requiring verification.",
+    "Attach a primary alert-fatigue source if this page later expands the alert-fatigue mechanism; CURRENT_SOURCE_MD says the corpus currently asserts the mechanism without a citation.",
+    "The source asks for a cross-reference to a new marine and maritime systems context page, but that slug is not available in LINKING_CONTEXT.allowedSlugs; add the internal link when the slug is available."
+  ],
+  "relatedPageSlugs": [
+    "warning-and-alarm-clarity-improvement",
+    "design-for-abnormal-and-degraded-scenarios",
+    "state-and-status-visibility-design",
+    "command-integrity-design",
+    "raymarine-vhf",
+    "mdu-ship-motion-monitoring",
+    "streetec-kntrl",
+    "oceaneering-dispatch-panel",
+    "maritime-vts",
+    "industrial-process-control-platform",
+    "kardion",
+    "where-interface-standards-stop"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "Warning and Alarm Clarity Improvement",
+      "targetSlug": "warning-and-alarm-clarity-improvement",
+      "placementHint": "Summary and Related pages sections",
+      "reason": "The source requires this adjacent capability to be named and narrowed against the alarm-management discipline page."
+    },
+    {
+      "anchorText": "Command Integrity Design",
+      "targetSlug": "command-integrity-design",
+      "placementHint": "Related pages section and acknowledge/silence discussion",
+      "reason": "The acknowledge-is-not-responding principle is shared, while this page owns it as part of the alert lifecycle."
+    },
+    {
+      "anchorText": "Design for Abnormal and Degraded Scenarios",
+      "targetSlug": "design-for-abnormal-and-degraded-scenarios",
+      "placementHint": "Related pages section",
+      "reason": "Alarm schemes handle degraded states, equipment faults, missing sources and recovery indications."
+    },
+    {
+      "anchorText": "State and Status Visibility Design",
+      "targetSlug": "state-and-status-visibility-design",
+      "placementHint": "Related pages section and annunciation discussion",
+      "reason": "Annunciation, standing alarms and alarm lifecycle state are status-visibility problems."
+    },
+    {
+      "anchorText": "Raymarine marine VHF and AIS radio",
+      "targetSlug": "raymarine-vhf",
+      "placementHint": "Five principles, priority, acknowledge/silence and standards sections",
+      "reason": "Raymarine supplies the consequence-based priority, arbitration and received distress alert examples."
+    },
+    {
+      "anchorText": "MDU ship motion monitoring",
+      "targetSlug": "mdu-ship-motion-monitoring",
+      "placementHint": "Five principles, binding and standards sections",
+      "reason": "The MDU supplies the alarm-binding, acknowledge-versus-clear and maritime-convergence examples."
+    },
+    {
+      "anchorText": "Streetec kntrl 2",
+      "targetSlug": "streetec-kntrl",
+      "placementHint": "Binding and annunciation sections",
+      "reason": "Streetec supplies threshold, interlock and two-level escalation examples."
+    },
+    {
+      "anchorText": "Oceaneering dispatch panel",
+      "targetSlug": "oceaneering-dispatch-panel",
+      "placementHint": "Five principles and annunciation sections",
+      "reason": "Oceaneering supplies the flashing/steady convention, saturation and non-colour redundancy examples."
+    },
+    {
+      "anchorText": "Maritime VTS and portfolio design system",
+      "targetSlug": "maritime-vts",
+      "placementHint": "Priority, lifecycle and evidence-boundary sections",
+      "reason": "The maritime VTS case supplies the typed alert-surface and four-action lifecycle examples."
+    },
+    {
+      "anchorText": "Industrial process control platform",
+      "targetSlug": "industrial-process-control-platform",
+      "placementHint": "Annunciation and operator-caused fault sections",
+      "reason": "The anonymised industrial case supplies observed alarm-table findings and notification-versus-instruction design decisions."
+    },
+    {
+      "anchorText": "Kardion",
+      "targetSlug": "kardion",
+      "placementHint": "Gericke, Kardion and Torqeedo evidence section",
+      "reason": "Kardion is the medical alarm-design example governed by IEC 62366-1 and formative evidence limits."
+    }
+  ],
+  "qualityChecks": {
+    "factsOnlyFromCurrentSource": true,
+    "documentationStyle": true,
+    "noMarketingLanguage": true,
+    "noInventedClaims": true,
+    "linksOnlyFromLinkingContext": true,
+    "internalNotesNotPublished": true,
+    "readyForSanityImport": true
+  }
+}

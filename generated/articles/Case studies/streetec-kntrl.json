@@ -1,0 +1,191 @@
+{
+  "_type": "documentationPage",
+  "sourceFile": "Articles/Case studies/case-study--streetec-kntrl.md",
+  "sourcePath": "sources/articles/Case studies/case-study--streetec-kntrl.md",
+  "sanityDocumentIdCandidate": "documentationPage.streetec-kntrl",
+  "title": "Streetec kntrl 2",
+  "slug": {
+    "_type": "slug",
+    "current": "streetec-kntrl"
+  },
+  "pageType": "case-study",
+  "category": "evidence",
+  "parentSlug": "automotive",
+  "childPageSlugs": [],
+  "excerpt": "Creative Navy designed the HMI interface for kntrl 2, the second generation of Streetec's kntrl control system for aftermarket automotive air suspension. The shipped product was tested with 32 participants using the real product installed in cars.",
+  "metaTitle": "Streetec kntrl 2 Case Study",
+  "metaDescription": "Case study of Creative Navy's HMI design for Streetec kntrl 2, including constraints, testing with 32 participants, and evidence limits.",
+  "summary": "Streetec kntrl 2 is a shipped aftermarket automotive air-suspension control system with an ECU, a 4.3-inch capacitive touchscreen HMI and a Bluetooth mobile app. Creative Navy delivered 23 HMI screens across three UX sprints followed by three UI sprints, then designed, ran and analysed post-design testing with 32 participants using the real product installed in cars.",
+  "definition": "",
+  "keyFacts": [
+    "Streetec GmbH is a German manufacturer based in Höchst.",
+    "kntrl 2 is the second generation of Streetec's kntrl control system for aftermarket automotive air suspension.",
+    "The system consists of an ECU, a 4.3-inch 480×800 portrait touchscreen HMI and a mobile app connected over Bluetooth.",
+    "Creative Navy designed the HMI interface across six one-week sprints: three UX sprints followed by three UI sprints.",
+    "Creative Navy delivered 23 screens.",
+    "Creative Navy-recorded design exploration included nine iterations of the main screen, three iterations of the height-versus-pressure display problem, two settings architectures, two ECU backlighting approaches and two Bluetooth pairing models.",
+    "Post-design testing involved 32 participants in two sessions using the actual product installed in a car.",
+    "Creative Navy designed the test protocol, ran the sessions and analysed the data; Streetec prepared the vehicle, handled site logistics and recruited participants.",
+    "All 32 participants completed all three tasks unassisted and performed in line with expectations.",
+    "The product shipped and is in the market."
+  ],
+  "tags": [
+    "automotive HMI",
+    "embedded touchscreen",
+    "aftermarket air suspension",
+    "regulated products",
+    "usability testing",
+    "constraint respecting",
+    "option space mapping",
+    "Creative Navy-recorded evidence",
+    "client-reported evidence"
+  ],
+  "bodyMarkdown": "- **Primary case-study category:** /evidence/case-studies/automotive\n- **Primary context:** /contexts/embedded-devices-and-constrained-interfaces\n- **Also-relevant contexts:** /contexts/regulated-products, /contexts/consumer-and-multi-market-products\n- **Connects to:** /situations/delivery-and-execution/stakeholders-cannot-align-on-direction, /situations/complexity/software-too-complex-for-users, /situations/risk/warnings-are-visible-but-not-actionable, /failures/interpretation/data-is-available-but-hard-to-interpret, /failures/state-visibility/mode-changes-are-unclear, /capabilities/usability-evaluation-for-high-consequence-products, /capabilities/information-architecture-for-expert-systems, /capabilities/state-and-status-visibility-design, /capabilities/warning-and-alarm-clarity-improvement, /practices/usability-testing-under-realistic-constraint, /practices/evidence-led-prioritisation\n\n## Classification\n\nPrimary case-study category: /evidence/case-studies/automotive\n\nPrimary context: /contexts/embedded-devices-and-constrained-interfaces\n\nAlso-relevant contexts: /contexts/regulated-products, /contexts/consumer-and-multi-market-products\n\nConnects to: /situations/delivery-and-execution/stakeholders-cannot-align-on-direction, /situations/complexity/software-too-complex-for-users, /situations/risk/warnings-are-visible-but-not-actionable, /failures/interpretation/data-is-available-but-hard-to-interpret, /failures/state-visibility/mode-changes-are-unclear, /capabilities/usability-evaluation-for-high-consequence-products, /capabilities/information-architecture-for-expert-systems, /capabilities/state-and-status-visibility-design, /capabilities/warning-and-alarm-clarity-improvement, /practices/usability-testing-under-realistic-constraint, /practices/evidence-led-prioritisation\n\n## Streetec kntrl 2 as a shipped automotive air-suspension HMI\n\nCreative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nStreetec GmbH is a German manufacturer based in Höchst. kntrl 2 is the second generation of Streetec's kntrl control system for aftermarket automotive air suspension. The product shipped and is in the market.\n\nAftermarket automotive air suspension replaces conventional steel springs with air bellows at each corner of the car. The driver can raise or lower the vehicle for ride comfort, ground clearance over obstacles, or to drop the car to the floor at a show.\n\nkntrl 2 has three parts. The ECU drives eight valves, with one valve to inflate and one valve to deflate each of four bellows. The ECU monitors bellows and tank pressure plus optional height sensors, and runs the compressor. The HMI is a capacitive 4.3-inch touchscreen at 480×800 in portrait, mounted in the centre of the dashboard. The mobile app connects over Bluetooth.\n\nCreative Navy designed the HMI interface for kntrl 2 across three UX sprints followed by three UI sprints. The Creative Navy team delivered 23 screens, then supported Streetec's engineers through implementation in two sessions: a kickoff session at the start of development and one further session four weeks into development.\n\n## Streetec's internal expertise created an alignment problem\n\nStreetec's team knew air suspension systems closely, and that expertise made it difficult to judge what a first-time or non-expert user would understand. Streetec's team described the internal decision problem directly: \"We are seven people and we had nine different opinions on what to do. And in the end we said, it's not enough to decide that — we will listen to you, what your expertise says… we are paying you for deciding that.\"\n\nStreetec also identified its own expert bias. As one Streetec engineer put it: \"Last time when we had our meeting with all our employees, we realised that all of us, we all know the existing systems, we very well know how an air suspension works. So our idea was to talk to people who has no clue about that.\"\n\nThe engagement therefore included a focus stewardship problem as well as an HMI design problem. Creative Navy's Critical Systems Design method treated the competing preferences as design constraints to reason through, rather than as opinions to average into consensus. The documented work included collaborative requirements work, option space mapping and explicit reasoning about which controls should be exposed directly on a small touchscreen.\n\nStreetec's team also described why internal discussion had not been enough: \"We are all very result focused here. So if you have a meeting of one hour, everybody tries to get the final product within this hour.\" In this case, the design decisions were reasoned and then explained, rather than negotiated to a lowest-common-denominator interface.\n\n## Air suspension control created pressure, height and calibration complexity\n\nThe kntrl 2 HMI had to present a control problem where pressure and height are related but not equivalent. Streetec explained that pressure does not map reliably to height because load changes the relationship: \"if I load more stuff in the trunk, of course I will need more pressure on the rear axle to get to the same height.\" Left and right may also need different pressures to sit level.\n\nCalibration was a material part of the operating model. The system uses a 16-step automatic cycle that deflates and raises each corner, axle and side in turn. The purpose is to learn the ECU's own mounting orientation, because the accelerometer does not know how the ECU was installed and, in Streetec's words, \"most of the users won't mount the ECU with a bubble level.\" Before calibration, the user must level the car with a manual bubble level so the system can take that as its offset. Calibration can be skipped, but then only manual mode is available.\n\nSpeed-signal calibration added a separate operational constraint. It requires a co-driver, a straight road and a constant 50 km/h for about five seconds, followed by confirmation or retry.\n\nExpected use also shaped the hierarchy of the interface. Streetec described 99% of use as automatic mode: zeroing the height, returning to the driving preset, switching between presets and occasionally using the level function. The next most common action is changing the driving height manually and saving it as a preset.\n\n## Regulatory and physical constraints shaped the interaction model\n\nThe kntrl 2 interface had to respect regulatory constraints on units, pressure ranges and adjustment while driving. CE rules require SI units, so bar is the European default. PSI remains a switchable option for the American market. German law requires pressure in bar to be displayed; the HMI could not omit it.\n\nVehicle suspension certification specifies a permitted pressure range per axle. Streetec's worked example was roughly 3.4–4.0 bar for the front axle and 4.5–5.2 bar for the rear axle for one common hatchback. Operation outside the certified range must warn the driver. Some regulations permit operation outside the range below 50 km/h.\n\nAdjustment of pressures while driving is restricted by regulation, while adjustment is permitted when stationary. The system uses three independent interlocks to prevent adjustment in motion: accelerometer-detected movement, a calibrated speed signal with a user-set threshold, and a digital input such as the handbrake, configurable as active-high or active-low. Separately, a minimum pressure per axle can never be overridden by manual adjustment, a preset or the full-deflate function.\n\nOne action had a direct physical-damage consequence. Before full deflation, the wheels must be straight. Streetec described the reason plainly: \"otherwise my fenders will lay on my wheels and they break quite easily\".\n\nThe physical display constraints were also material. The HMI is a 4.3-inch capacitive portrait touchscreen mounted in the centre of the dashboard. In 99% of cases, the user is sitting in the car with the ignition on, by day or by night. Otherwise, the user may be at a car show using the phone app. The car is stationary most of the time the display is used; users can disable the motion safety lock in settings and operate while moving, but Streetec described this as rare.\n\n## Creative Navy-recorded exploration covered the main screen, settings, backlighting and pairing\n\nCreative Navy-recorded design exploration for kntrl 2 included nine iterations of the main screen. Those nine iterations varied one axis: how much pressure control should be exposed directly. Three iterations showed all controls, five hid some controls and one exposed none.\n\nThe design work also explored three iterations of the height-versus-pressure display problem, two settings architectures, two approaches to ECU backlighting control and two Bluetooth pairing models. This option space mapping made the trade-offs explicit instead of treating the screen layout as a matter of preference.\n\nCreative Navy also ran an early internal design check on wireframes with two Creative Navy colleagues, one with no knowledge of cars and one with some knowledge of cars. This was an internal check with n=2, not user research. It is relevant only as an internal design check before the later testing with participants using the real product.\n\n## Height-versus-pressure was resolved by changing the leading value by task\n\nThe central display tension in the kntrl 2 HMI was that German law required bar to be displayed, while customers who had paid for height sensors wanted to see percentage. Creative Navy's Critical Systems Design method treated that as a constraint respecting problem: the legally required value had to remain present, but the user's task determined which value should lead.\n\nCreative Navy explored three iterations of the height-versus-pressure display problem. The resolved model gave percentage equal prominence with de-emphasised bar on screens where both values were needed. Percentage appeared alone when editing a preset. Bar appeared when the system was regulating or had finished. Manual mode needed both, because the user was working toward a specific height at a specific pressure.\n\nThe HMI also deliberately separated two mental models. Manual adjustments execute immediately. Preset edits must be explicitly saved. That separation reduced ambiguity between live control and stored configuration.\n\nAlerts used a two-level escalation model. The first attempt at a blocked action produced an inline notification. A second attempt produced a modal. Colour stayed neutral until a genuine alert state, because raising and lowering pressure are both normal operations and neither was treated as a warning by colour alone.\n\n## Small-screen decisions addressed occlusion, legibility and cross-device allocation\n\nCreative Navy's design work for kntrl 2 treated the 4.3-inch screen as a physical constraint, not just a canvas size. Pressure values were placed above their adjustment arrows so the user's finger would not cover the number being changed. Streetec had already identified thumb reach as a design issue: \"The majority of people is right handed, so you probably operate with your thumb. And so the control should be on the right side so that your thumb doesn't [cover] the units or the values.\"\n\nTank pressure and brightness used discrete rather than continuous sliders in fixed increments. Precision mattered for pressure, and Streetec noted that \"some people might have large fingers.\"\n\nFont sizes were increased by 25% between review rounds, reaching 20px body text, after legibility was checked at physical size. Creative Navy also verified designs at true physical size, including measuring the rendered screen against a ruler during a review call when the on-screen size looked wrong, and committing to check the result on the real panel before sign-off.\n\nProfile names were editable only in the mobile app. A 4.3-inch screen could not host a full alphabetic keyboard, so the HMI showed a two-character abbreviation and name entry lived on the phone. This was a hardware constraint resolved by allocating the feature across devices.\n\nThe display also supported brightness control, darkening triggered by a digital signal from the vehicle, a separate brightness value for the darkened state and user-configurable haptic feedback intensity. Streetec explained the night-use requirement by comparing the display with a large navigation screen: \"If you're riding at night, it's nice if you can switch it off. Like you're doing the navigation screens on the big ones in your car, you can also switch it off, because otherwise you have something like a television in your car.\"\n\n## Settings stayed as a single scrolling list because category labels created vocabulary risk\n\nCreative Navy kept settings as a single scrolling list rather than nested categories. The reason was that category labels would assume technical vocabulary that a non-expert user might not have.\n\nStreetec had experienced the same issue in a competitor's product. Streetec described that navigation problem as follows: \"Sometimes very difficult to know that there is a function, but you are not sure in which menu you find it. And then you have to switch, go to one menu, switch to the new screen. Oh no, it's not there. You have to go back.\"\n\nThe level function was folded into initial calibration as the final step. Both activities require the car to be on a flat surface, and the user is already in that context during calibration. Streetec described the level function's purpose with a campervan example: the user can park on uneven ground, press one button and level the vehicle so that \"a glass of water on your table within your bus will be levelled\" and so that \"you don't want to roll out of your bed in the night.\"\n\nVocabulary also had to respect an existing product generation and market expectations. kntrl 2 succeeds an existing product, and the touchscreen was the generational break from a previous single-colour display with hardware buttons. Existing customers, dealers and installers already had expectations about the system, so vocabulary was inherited rather than invented where the market already had terms.\n\n## Creative Navy declined some requested features with explicit reasons\n\nCreative Navy's design work for kntrl 2 included documented refusals as well as delivered interface decisions. The clearest example was the request for customisable shortcut buttons on the main screen. Creative Navy argued against the request because the screen was small, the primary control already occupied the full width as a touch target and a focused mode screen was not a dashboard.\n\nCreative Navy's position during the shortcut debate was: \"You can't make a system perfect for one percent of people if you want 99 percent of them also to use it.\" The client accepted the decision while noting that Streetec's own team was split.\n\nCreative Navy also argued against a colour wheel for ECU backlighting in the first release, favouring nine presets that were easier to use and simpler to build, with the wheel deferred until users asked for it. Creative Navy also argued against labels rotated 90 degrees to save space, and against headings pinned during scroll because reordering content on scroll disorients more than it helps.\n\nThese decisions are evidence of restraint as a design service in this case. They do not establish a measured outcome by themselves; they record the reasoning used to keep a small, regulated HMI focused on the main operating tasks.\n\n## Post-design testing used the real product installed in cars\n\nCreative Navy designed the test protocol, ran both sessions and analysed the results. Streetec prepared the vehicle and site logistics and recruited participants. Testing used the production product installed in a car rather than a prototype in a lab.\n\nThe post-design testing involved two sessions with 32 participants in total. One session in Munich included 13 participants, all tuning enthusiasts and car owners. One session at a trade fair in Spain included 19 participants from a mixed channel and user sample: approximately 25% owners and enthusiasts, 40% dealers, 30% installers and 5% other.\n\nThe trade fair sample should not be treated as representative of owners. It included dealers and installers as well as owners and enthusiasts. That matters because dealers and installers are among the people who commission and fit these systems.\n\nEach participant attempted three tasks with no instruction given. Completion was measured and time taken was recorded. All 32 participants completed all three tasks unassisted and performed in line with expectations. The available evidence does not support a completion percentage beyond that wording, a specific task time, a mean time, an error rate or a comparison to a baseline.\n\nEach participant then took part in a 15-minute debrief capturing opinions and subjective impressions. The testing established that the information architecture held up and that the interactive elements held up: participants worked out how to change settings through the interface unaided. The aesthetics were well received as a subjective rating.\n\n## Shipping evidence is confirmed, but commercial evidence is client-reported and unquantified\n\nThe product shipped and is in the market. After testing, Creative Navy supported Streetec's engineers through implementation in two sessions: a kickoff session with Streetec's engineers and one further session four weeks into development.\n\nTesting produced small changes to the transitions between screens. It also produced a backlog of possible future features, which Streetec chose to stage over a longer horizon rather than build immediately.\n\nStreetec reports that the product is performing well in sales and in the feedback they receive. This is client-reported and unquantified: no figures were shared, and Creative Navy has not independently verified it.\n\nThe case evidence does not establish sales growth, revenue, unit volume, market share or a safety outcome. The regulatory constraints shaped the design, but no safety result was measured. The testing measured comprehension and operation of a finished design in a parked car with participants who had not seen it before; it did not validate the product in use over time.\n\n## Evidence boundaries for the Streetec kntrl 2 case\n\nThe strongest evidence in the Streetec kntrl 2 case is the post-design testing that Creative Navy designed, ran and analysed with 32 participants using the actual product installed in a car. That evidence supports claims about task completion, comprehension of the interface, information architecture, interaction clarity and subjective response to aesthetics under the tested conditions.\n\nThe engagement record also supports Creative Navy-recorded facts about the design process: six one-week sprints, a five-person team, 23 delivered screens, unstructured benchmarking of three competing products, the collaborative requirements artefact and the documented option-space exploration.\n\nThe engagement does not include field research, personas, dealer interviews or contextual inquiry. Research in this case consisted of the collaborative requirements work, an unstructured look at three competitors, an internal wireframe check with two Creative Navy colleagues and the post-design testing with participants using the real product.\n\nThe internal two-person check was not user research. It was an early internal design check on wireframes with two Creative Navy colleagues.\n\nThe implementation support was limited to two sessions. The documented evidence does not support describing this as sustained Implementation Partnership.\n\n## Related pages\n\nThis case is relevant to Creative Navy's evidence standards because it contains both Creative Navy-recorded testing evidence and client-reported commercial feedback. It is especially relevant to pages that distinguish what Creative Navy has measured, what is client-reported and what Creative Navy does not claim.\n",
+  "claims": [
+    {
+      "claim": "Creative Navy designed the HMI interface for kntrl 2 across three UX sprints followed by three UI sprints and delivered 23 screens.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "engagement record",
+      "notes": "Supported by S1 and S3."
+    },
+    {
+      "claim": "kntrl 2 is the second generation of Streetec's kntrl control system and shipped to market.",
+      "evidenceType": "case study",
+      "sourceStrength": "engagement record",
+      "notes": "Supported by naming and status instructions, S9 and A2."
+    },
+    {
+      "claim": "The kntrl 2 system consists of an ECU, a 4.3-inch 480×800 portrait touchscreen HMI and a Bluetooth-connected mobile app.",
+      "evidenceType": "case study",
+      "sourceStrength": "engagement record",
+      "notes": "Supported by A2."
+    },
+    {
+      "claim": "Regulatory constraints required bar display, SI units in Europe, warning outside certified pressure ranges and restrictions on pressure adjustment while driving.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "Supported by S23 to S27."
+    },
+    {
+      "claim": "Creative Navy-recorded exploration included nine main-screen iterations, three height-versus-pressure iterations, two settings architectures, two ECU backlighting approaches and two Bluetooth pairing models.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "engagement record",
+      "notes": "Supported by S6."
+    },
+    {
+      "claim": "Post-design testing involved 32 participants in two sessions using the actual product installed in a car.",
+      "evidenceType": "field-measured",
+      "sourceStrength": "strong",
+      "notes": "Supported by S10 to S13, with Creative Navy designing the protocol, running both sessions and analysing the data."
+    },
+    {
+      "claim": "All 32 participants completed all three tasks unassisted and performed in line with expectations.",
+      "evidenceType": "field-measured",
+      "sourceStrength": "strong",
+      "notes": "Supported by S12. No completion percentage, task time, error rate or baseline comparison is supported."
+    },
+    {
+      "claim": "Testing established that the information architecture and interactive elements held up, and that aesthetics were well received as a subjective rating.",
+      "evidenceType": "field-measured",
+      "sourceStrength": "strong",
+      "notes": "Supported by S14 and bounded by the 15-minute debrief context in S13."
+    },
+    {
+      "claim": "Testing produced small changes to transitions between screens and a backlog of possible future features.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "case evidence",
+      "notes": "Supported by S15."
+    },
+    {
+      "claim": "Streetec reports that the product is performing well in sales and in the feedback they receive, but no figures were shared and Creative Navy has not independently verified the claim.",
+      "evidenceType": "client-reported",
+      "sourceStrength": "anecdotal",
+      "notes": "Supported by S16 and mandatory evidence calibration wording in A4."
+    }
+  ],
+  "limitations": [
+    "No sales, revenue, unit, growth or market-share figure was provided.",
+    "The commercial performance statement is client-reported and unquantified, and Creative Navy has not independently verified it.",
+    "The testing evidence does not support a completion percentage beyond the stated task-completion wording, a specific task time, a mean time, an error rate or a baseline comparison.",
+    "No safety outcome was measured; regulatory constraints shaped the design but do not establish a measured safety result.",
+    "The testing measured comprehension and operation of a finished design in a parked car with participants who had not seen it before; it did not validate product use over time.",
+    "The trade fair sample was a mixed channel and user sample, not a representative owner sample.",
+    "The internal two-person wireframe check was an internal design check with Creative Navy colleagues, not user research.",
+    "The documented implementation support consisted of two sessions only.",
+    "The engagement did not include field research, personas, dealer interviews or contextual inquiry.",
+    "No screenshots, wireframes or design images are included."
+  ],
+  "publicationBlockers": [],
+  "questionsForReview": [
+    "None"
+  ],
+  "relatedPageSlugs": [
+    "what-we-have-measured",
+    "what-is-client-reported",
+    "what-we-do-not-claim",
+    "what-we-verified-without-measuring",
+    "beissbarth",
+    "stromer-ebike",
+    "elsner-smart-home-controller",
+    "gericke-industrial-hmi"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "what Creative Navy has measured",
+      "targetSlug": "what-we-have-measured",
+      "placementHint": "Related pages section",
+      "reason": "The case includes Creative Navy-designed, Creative Navy-run testing with 32 participants using the real product installed in a car."
+    },
+    {
+      "anchorText": "what is client-reported",
+      "targetSlug": "what-is-client-reported",
+      "placementHint": "Related pages section or shipping evidence section",
+      "reason": "The commercial performance statement is explicitly client-reported, unquantified and not independently verified."
+    },
+    {
+      "anchorText": "what Creative Navy does not claim",
+      "targetSlug": "what-we-do-not-claim",
+      "placementHint": "Evidence boundaries section",
+      "reason": "The case requires clear limits on sales figures, safety outcomes, longitudinal validation and unsupported performance metrics."
+    },
+    {
+      "anchorText": "what Creative Navy verified without measuring",
+      "targetSlug": "what-we-verified-without-measuring",
+      "placementHint": "Evidence boundaries section",
+      "reason": "The case distinguishes task completion evidence from broader verification and unmeasured outcomes."
+    },
+    {
+      "anchorText": "Beissbarth Automotive",
+      "targetSlug": "beissbarth",
+      "placementHint": "Related pages section",
+      "reason": "This is another automotive case study in the same evidence category."
+    },
+    {
+      "anchorText": "Stromer Ebike",
+      "targetSlug": "stromer-ebike",
+      "placementHint": "Related pages section",
+      "reason": "This is another case study involving a mobility product interface in the same evidence collection."
+    },
+    {
+      "anchorText": "Elsner Smart Home Controller",
+      "targetSlug": "elsner-smart-home-controller",
+      "placementHint": "Related pages section",
+      "reason": "This is another case study involving a constrained device interface."
+    },
+    {
+      "anchorText": "Gericke Industrial HMI",
+      "targetSlug": "gericke-industrial-hmi",
+      "placementHint": "Related pages section",
+      "reason": "This is another HMI case study involving operational controls."
+    }
+  ],
+  "qualityChecks": {
+    "factsOnlyFromCurrentSource": true,
+    "documentationStyle": true,
+    "noMarketingLanguage": true,
+    "noInventedClaims": true,
+    "linksOnlyFromLinkingContext": true,
+    "internalNotesNotPublished": true,
+    "readyForSanityImport": true
+  }
+}

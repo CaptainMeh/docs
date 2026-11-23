@@ -6,7 +6,7 @@
 
 - **Primary case-study category:** /evidence/case-studies/marine
 - **Primary context:** /contexts/embedded-devices-and-constrained-interfaces
-- **Also-relevant contexts:** /contexts/high-consequence-environments
+- **Also-relevant contexts:** /contexts/high-consequence-environments, /contexts/marine-and-maritime-systems
 - **Connects to:** /failures/state-visibility-failures/users-cannot-see-what-state-the-system-is-in, /failures/cognitive-failures/the-interface-gets-harder-when-pressure-rises, /evidence/outcomes/positioning-through-interface-quality, /evidence/outcomes/reduced-maintenance-and-downtime
 
 ## For use in AI-facing pages — /evidence/case-studies/marine/cox-marine

@@ -1,0 +1,183 @@
+{
+  "_type": "documentationPage",
+  "sourceFile": "Articles/Contexts/contexts--marine-and-maritime-systems.md",
+  "sourcePath": "sources/articles/Contexts/contexts--marine-and-maritime-systems.md",
+  "sanityDocumentIdCandidate": "documentationPage.marine-and-maritime-systems",
+  "title": "Marine and Maritime Systems",
+  "slug": {
+    "_type": "slug",
+    "current": "marine-and-maritime-systems"
+  },
+  "pageType": "context",
+  "category": "contexts",
+  "parentSlug": "contexts",
+  "childPageSlugs": [],
+  "excerpt": "Marine and maritime systems are interfaces for vessels, bridge equipment, helm controls, advisory instruments and shore-side traffic services. This context is shaped by ambient range, type-approval boundaries, radio procedure, incomplete vessel data, bridge alert conventions and cross-device coherence.",
+  "metaTitle": "Marine and Maritime Systems",
+  "metaDescription": "Marine and maritime UX context for bridge, radio, advisory, AIS, alarm, cross-device and shore-side systems.",
+  "summary": "This page defines Creative Navy's marine and maritime systems context. It covers vessel-side environments, digital calling, advisory versus actuating equipment, AIS and radar association, bridge alert grammar, bridge-wide presentation coherence and VTS control-room work, with explicit limits on compliance, safety and outcome claims.",
+  "definition": "Marine and maritime systems are vessel-side and shore-side software interfaces used in wheelhouses, helms, engine control rooms, marine radios, motion advisory instruments and vessel traffic services, where domain convention, regulatory regimes and incomplete operational information constrain what an interface may show or allow.",
+  "keyFacts": [
+    "Creative Navy designs marine interfaces for the bridge, the helm and the shore station watching maritime traffic.",
+    "The MDU evidence supports the operating-environment and advisory-equipment sections; the MDU shipped and the design was implemented as delivered, including day, dusk and night display modes.",
+    "Raymarine evidence supports the communications regime, digital calling states and radio-event arbitration; the radio was built and released, but no design-fidelity comparison is recorded.",
+    "The maritime VTS evidence supports the shore-side section and part of the AIS section; the design system reached production and Creative Navy provided regular implementation support across fifteen months while the client wrote the code.",
+    "Raymarine bench testing did not test wet hands, gloves, glare, night sailing, vibration, ambient noise or divided attention.",
+    "The MDU was not tested with users, and its user-side evidence base was one external advisor.",
+    "The VTS measured comparison used sanitised training scenarios on a design prototype, not a production installation or live traffic position.",
+    "Neither the MDU nor the radio is claimed to conform to the bridge alert management regime; both converged on the four-priority grammar without a conformance claim.",
+    "Creative Navy claims no type approval, conformity assessment, certification, regulatory compliance work, safety outcome or outcome at sea for the engagements on this page."
+  ],
+  "tags": [
+    "marine UX",
+    "maritime systems",
+    "bridge interfaces",
+    "wheelhouse interfaces",
+    "digital selective calling",
+    "AIS",
+    "VTS",
+    "RIS",
+    "bridge alert management",
+    "type approval",
+    "shore-side control rooms",
+    "Critical Systems Design"
+  ],
+  "bodyMarkdown": "## Marine and maritime systems as a Creative Navy context\n\nCreative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nMarine and maritime systems are a distinct design context because the screen is part of an operating regime, not only a software product. A bridge may move from direct sun to full darkness within one watch. Equipment from different manufacturers is expected to behave as one instrument. The primary instrument for the people on the bridge remains the window. Shore stations add another operating layer: they build a traffic image from incomplete and time-bound information while the shipmaster's navigational responsibility remains on the vessel.\n\nCreative Navy's marine and maritime evidence combines Raymarine, the MDU and a maritime VTS engagement. Raymarine and the MDU form the two main vessel-side anchors: a fixed-mount marine VHF radio with digital calling, and a vessel motion advisory instrument. The maritime VTS engagement contributes shore-side evidence and AIS-radar association evidence without becoming a third vessel-side author.\n\n## Operating environment: wheelhouse, helm and engine control room\n\nMarine interfaces must be designed for a physical room whose reader position cannot always be predicted. In the MDU engagement, the interface ran on a 15-inch certified marine panel PC at 1024×768. Two units per vessel ran an identical interface: one on the bridge and one in the engine control room. The manufacturer stated that the unit could be mounted wherever there was space, so the reader's position relative to the display could not be predicted.\n\nCreative Navy designed the MDU interface with day, dusk and night display modes, and those modes shipped. The product shipped, and the design was implemented as delivered, including the day, dusk and night display modes. This is evidence that the design survived development. It is not evidence of shipped performance, reception, fleet penetration or commercial result, and the shape of implementation support is not recorded.\n\nThe MDU also shows how domain convention constrains marine screen design. Roll, pitch, list and trim are not interchangeable terms. Roll and pitch are instantaneous angles; list is average roll; trim is average pitch; and list to starboard is positive. The MDU design used the sign convention, scale behaviour and relationship between roll, pitch, list and trim as interface constraints, including scales matched to physical instruments already on the bridge.\n\nThe MDU evidence has a narrow research basis. Nothing was tested with users. The entire user-side evidence base was one external advisor, a serving master and chief engineer advising the manufacturer, together with the manufacturer's engineers, the written specification, competitive benchmarking and published human-factors literature.\n\nThe Cox Marine evidence belongs to the helm and vessel-subsystem layer of the marine context. It is treated here as a published marine study relevant to helm conditions and vessel subsystem interfaces, not as evidence for radio bench testing, AIS association or VTS control-room work.\n\nTorqeedo contributes cadence material to the operating-environment discussion. The relevant point is that propulsion sensors can update rapidly while batteries update on slower cycles, and delayed or contradictory readings must be communicated without creating alarm. That cadence issue belongs with marine operating conditions and is developed further on the provenance page.\n\nRaymarine is deliberately excluded from the operating-environment evidence on this page. Raymarine's own brief named wet hands and gloves, glare and night sailing, vibration, ambient noise and divided attention, and the engagement tested none of them. There were no field research sessions, no sea trials and no on-vessel work of any kind; all twenty-four sessions were bench prototype sessions.\n\n## Communications regime: digital selective calling and radio-state interpretation\n\nMarine radio interface work is constrained by the communications regime the equipment participates in. The Raymarine engagement concerns a fixed-mount marine VHF radio with digital selective calling. The page's communications spine is ITU-R M.493, ITU-R M.541, digital selective calling, registered vessel identity, the distress and calling voice channel, the separate digital calling channel, and the human-machine-interface clause inside the governing recommendation.\n\nCreative Navy's Critical Systems Design method treated the radio interface as a state interpreter. The design work modelled six calling states with fixed language: ready to send; sending; request sent and awaiting acknowledgement, with voice contact explicitly stated as not established; acknowledged, with the working channel named and voice operation indicated as available; no acknowledgement received, with contact explicitly not established; and request not sent, meaning the local transmitter did not succeed. A missing acknowledgement and a failure to transmit have different recovery paths, and a routine timeout does not escalate into a distress call.\n\nRaymarine evidence also distinguishes a visible vessel from a callable vessel. Where a target had no usable registered vessel identity, its position remained inspectable and the call action was unavailable with a stated reason. Where a record was stale, the last-known position was shown with an explicit qualifier, live risk calculations were suppressed, and no new call could be originated from it.\n\nCreative Navy designed the test protocols, moderated all twenty-four sessions and analysed the results. Raymarine supplied the physical bench mockup on which the sessions ran. Each comparison was paired and counterbalanced within participants, with task wording, target data and starting states held constant. The findings describe operator behaviour on a prototype against a fixed scenario fixture. They are not a measure of radio performance, of real-world calling accuracy, or of outcomes at sea.\n\nWhere a result is cited, the cost accepted to obtain it is cited in the same passage. Creative Navy provided regular implementation support on its standard terms across seven months. The radio was built and released. No design-fidelity comparison is recorded, and release is not evidence of commercial performance, radio performance, safety performance or interface quality.\n\n## Advisory equipment and actuating equipment have different boundaries\n\nMarine interface design has to separate equipment that informs a decision from equipment that performs an act. The MDU anchors the advisory side of that boundary. The manufacturer's stated position was that the instrument alarms and does nothing else, and that it is not permitted to control the vessel in any capacity. All actions based on the MDU's data are the captain's. This is the manufacturer's account of the type-approval boundary, not a verified regulatory finding by Creative Navy.\n\nCreative Navy's Critical Systems Design method treated that boundary as a design constraint. The MDU alarm model used an acknowledge convention supplied by a practitioner: acknowledge means the person has seen the alarm, the indication remains visible while the condition remains present, and the alarm clears when the condition is no longer present. The design also followed the principle that the system should not keep challenging a decision already taken.\n\nRaymarine anchors the actuating side of the boundary. A digital selective calling action can leave the vessel as a radio transmission. The Raymarine interface therefore had to show the stage a radio transaction had actually reached and distinguish local interface actions from transmitted radio outcomes. Three emergency types were modelled separately: a locally initiated man-overboard incident, an outgoing distress alert and a received distress alert. Viewing or silencing a received distress alert acknowledges nothing on air, and silencing a local alarm does not end an incident.\n\nCreative Navy makes no type approval, conformity assessment or compliance claim for either boundary. The Marine Equipment Directive 2014/90/EU and the wheelmark regime define important domain context, but Creative Navy did not certify to, audit against or work to any type-approval or conformity regime in these engagements.\n\n## AIS is a deliberately incomplete picture, and association is a designed state\n\nAIS cannot be treated as a complete picture of maritime traffic. UK MCA guidance note MGN 324 (M+F), cited inside the engagement's own specifications, states that not all vessels carry AIS, that there is no provision in the collision regulations for its use, and that identification by AIS does not replace traditional methods. On this page, that point is a regulator's statement, not a design caution invented by Creative Navy.\n\nRaymarine evidence shows how that condition reaches the interface. A visible target may lack a usable registered identity and therefore may not be callable. A stale record can retain inspectable information while suppressing live risk calculations and disabling new calls from that record. The interface must communicate what is known, what is too old to support a live calculation, and what action is unavailable.\n\nThe maritime VTS engagement adds the shore-side half of the AIS issue. In that work, vessel, track and observation were treated as three separate objects. The selected model kept a vessel identity record, a tracked object with an association status, and timestamped observations carrying their own source. Association was expressed as resolved, unresolved, changed or unknown.\n\nA numeric association-confidence badge was explored and refused. The client's engineering could not supply a calibrated, operationally defensible confidence figure, so the interface was not permitted to display one. The design stated the association unresolved instead. The rule entered the specification: the interface does not synthesise an association confidence score, a source time or an authorisation decision, and missing values appear as unknown or not available.\n\n## Bridge alert grammar is relevant without becoming a conformance claim\n\nBridge alert management gives marine interfaces a four-priority grammar, mandatory for new navigation and communication installations on SOLAS ships since 30 August 2021. The relevant instruments named for this page are IMO Bridge Alert Management, MSC.302(87), IEC 62923-1 and IEC 62923-2.\n\nThe MDU and the Raymarine radio both converged on the four-priority grammar while sitting outside the claim of conformance made here. The MDU is an advisory instrument, and the radio evidence is not a bridge alert management conformance record. The page therefore states convergence, not compliance.\n\nRaymarine's event priority model assigned four event priority levels by consequence rather than arrival order. Emergency events took a persistent incident surface; high-concern events were prominent and actionable; operational events were noticeable and proportionate; background events updated quietly and did not take keypad focus. A five-step arbitration sequence classified the event, coalesced duplicates, arbitrated against the active incident and current focus, presented the permitted surface and restored the prior task only after a validity check.\n\nThe MDU alarm convention also converged on bridge practice without a conformance claim. Acknowledge replaced Clear because nothing done on the screen changes the state of the ship. Acknowledgement records that the alarm has been seen; clearance follows the condition no longer being present.\n\n## Cross-device coherence is a regulatory position on the bridge\n\nMarine is a distinct design context because navigational presentation standards seek consistency across the bridge, not only within one device. IMO resolution MSC.191(79), amended by MSC.466(101), and tested through IEC 62288, are relevant because they require every navigational display on a bridge to adopt a consistent human-machine-interface philosophy and to take priority over individual equipment standards where they conflict.\n\nCreative Navy's Critical Systems Design method uses that bridge-wide position as a domain constraint. The design issue is not only whether one screen is understandable in isolation. The bridge contains multiple instruments, manufacturers and conventions, and a screen can conflict with the operating philosophy around it even when its own local interaction is coherent.\n\nThe hardware-constraint axis belongs with embedded devices and constrained interfaces. The consequence and regulatory axes connect this context to high-consequence environments and regulated products. Marine and maritime systems sit across those contexts because the operating room, the equipment regime, the alert grammar and the cross-device presentation philosophy all matter at once.\n\n## Shore-side maritime systems use control-room constraints, not helm constraints\n\nVessel Traffic Services, River Information Services, Voice Communication System and Integrated Communication System are shore-side maritime software families with different operating conditions from the helm. In the maritime VTS engagement, the client was a European vendor of maritime traffic monitoring, inland navigation and communications software for port authorities, coastal administrations and waterway operators.\n\nVessel Traffic Services are framed here as an information, navigational assistance and traffic organisation service. The shipmaster's navigational responsibility is not transferred to the service. That boundary defines what shore systems are for: building a traffic image, assisting interpretation and organising traffic without becoming the vessel's navigator.\n\nThe VTS control-room conditions differed from vessel-side bridge conditions. The reference workstation used two 27-inch displays at 2560 × 1440 pixels each with keyboard and mouse. Restricted-network and disconnected deployments were normal, so critical interface behaviour could not depend on external web services. The portfolio spanned browser applications and dedicated terminals, so a common frontend framework could not be assumed. Screen sizes, input equipment, languages, permissions and local configurations varied by customer.\n\nShift handover was a defined operational moment. Unresolved work was spread across incident, alert, source-health and workspace views. An operator had to assemble an account of the active situation by cross-checking separate lists. Incident status could appear without the corresponding alert state, and a saved workspace did not reliably restore the expected sector.\n\nThis result is Creative Navy-measured under controlled conditions. Eight participants completed four of the seven operator journeys using sanitised training scenarios on a design prototype, not a production installation. Six of the eight had taken part in earlier research or testing. The time measure is time to a first submitted answer regardless of whether that answer was correct, not time to successful completion. The study reports no significance test, no confidence interval and no power calculation, and states that the three percentages must not be combined into one figure.\n\nThe client implemented the design system in production. Creative Navy provided regular implementation support across fifteen months, with the client writing the code. The scale of the work is bounded: five of the nine products were never designed, and four of those five received only a bounded probe. The production fact is not a design-fidelity comparison and is not evidence of a commercial, operational, training or safety outcome.\n\n## Match component: engagement evidence by operating layer\n\nRaymarine matches the communications regime. It provides evidence for digital selective calling, registered vessel identity, event priority, emergency-state modelling and radio-state interpretation. Its evidence is bench-prototype evidence, not helm evidence, sea-trial evidence or radio-performance evidence.\n\nThe MDU matches the wheelhouse and advisory-equipment boundary. It provides evidence for marine display modes, unpredictable reader position, bridge and engine-control-room duplication, motion-instrument conventions, alarm acknowledgement and the manufacturer's stated non-actuating boundary. Its evidence does not include user testing.\n\nThe maritime VTS engagement matches the shore-side layer. It provides evidence for VTS control-room workstations, restricted-network deployments, shift handover, AIS-radar association and a design system implemented in production. Its measured comparison used sanitised training scenarios on a design prototype, not a production installation.\n\nCox Marine and Torqeedo match the helm and vessel-subsystem layer. Cox Marine is relevant to helm and vessel subsystem evidence. Torqeedo is relevant to the cadence of propulsion and battery information, including delayed or contradictory readings that must not create alarm.\n\n## What Creative Navy does not claim in marine and maritime systems\n\nCreative Navy claims no type approval, conformity assessment or compliance work of any kind for the marine and maritime engagements described here. The page does not claim conformance to ITU-R M.493, IEC 62288, the bridge alert regime, the Marine Equipment Directive or any IALA or IMO instrument.\n\nCreative Navy claims no outcome at sea. Raymarine results describe behaviour on a bench prototype. VTS results describe controlled work on a design prototype using sanitised training scenarios. The MDU was not tested with users at all.\n\nCreative Navy claims no safety outcome. The evidence does not show that any design prevented a collision, a distress-alert failure, an incident, an alarm-response failure, a cargo-loss event or any operational harm.\n\nCreative Navy makes no ECDIS colour-table claim for the MDU. The day, dusk and night palettes were Creative Navy's designed three-mode palette. IEC 60945, DNV 2.4, IACS E10 and ECDIS colour calibration are properties of the panel the manufacturer selected, not certifications of Creative Navy's interface work.\n\n## Buyer FAQ for marine and maritime UX work\n\n### Does Creative Navy claim marine compliance or type approval?\n\nNo. Creative Navy claims no type approval, conformity assessment, certification or compliance work for the marine and maritime engagements described on this page. Compliance determines whether equipment may lawfully be sold in this domain, so the separation is explicit.\n\n### Can Raymarine evidence be used for glove, glare, night sailing or vibration claims?\n\nNo. Raymarine's brief named wet hands and gloves, glare and night sailing, vibration, ambient noise and divided attention, and the engagement tested none of them. Raymarine evidence is bench-prototype evidence for radio-state interpretation and digital calling behaviour, not evidence for helm environmental conditions.\n\n### Did the MDU engagement validate the interface with users?\n\nNo. The MDU was not tested with users. Its user-side evidence base was one external advisor, a serving master and chief engineer advising the manufacturer. The MDU can support design reasoning about advisory instruments, motion conventions and alarm acknowledgement, but not a user-validation claim.\n\n### What shore-side evidence exists for maritime systems?\n\nThe maritime VTS engagement provides shore-side evidence. It includes operational VTS control-room conditions, paired displays, keyboard and mouse workstations, restricted-network deployments, day and night shifts, shift handover, AIS-radar association and a controlled prototype study using sanitised training scenarios.\n\n### Why is marine and maritime a separate context rather than only embedded devices or regulated products?\n\nMarine and maritime systems combine hardware constraints, high-consequence operating conditions, regulatory regimes, bridge-wide presentation philosophy and incomplete traffic information. The strongest distinction is cross-device coherence: navigational presentation standards exist so that displays on a bridge adopt one human-machine-interface philosophy, even across individual equipment boundaries.\n\n## Related pages\n\nMarine and maritime systems connect to embedded devices and constrained interfaces through hardware, display and input constraints. They connect to high-consequence environments through operational consequence and divided attention. They connect to regulated products through type approval, conformity assessment and standards regimes, while Creative Navy's role remains design work rather than certification.\n\nThe Raymarine, MDU, maritime VTS and Cox Marine case studies are the main linked evidence pages for this context where those case-study pages are available. The alarm-management, ambient-range, provenance and design-system boundary pages hold narrower arguments that this context references without replacing.",
+  "claims": [
+    {
+      "claim": "Marine and maritime systems are a distinct Creative Navy context because vessel-side and shore-side interfaces are constrained by operating environment, communications regime, advisory and actuating boundaries, incomplete AIS information, alarm conventions and cross-device bridge coherence.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "case evidence",
+      "notes": "Supported by the page brief's planned seven-section structure and domain vocabulary."
+    },
+    {
+      "claim": "The MDU supports the operating-environment and advisory-boundary sections, including a 15-inch certified marine panel at 1024×768, day, dusk and night modes, two identical units per vessel and an unpredictable reader position.",
+      "evidenceType": "case study",
+      "sourceStrength": "engagement record",
+      "notes": "The MDU product shipped and the design was implemented as delivered, but no performance, reception, fleet or commercial result is claimed."
+    },
+    {
+      "claim": "Raymarine supports the communications regime, digital calling states, radio-event priority and emergency-state modelling, but its evidence is bench-prototype evidence and does not cover helm environmental conditions.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "The Raymarine calibration requires stating that the twenty-four sessions were bench prototype sessions and not measures of radio performance, real-world calling accuracy or outcomes at sea."
+    },
+    {
+      "claim": "AIS is treated as deliberately incomplete: not all vessels carry AIS, collision regulations do not provide for its use, and AIS identification does not replace traditional methods.",
+      "evidenceType": "industry standard",
+      "sourceStrength": "moderate",
+      "notes": "The page brief attributes this to UK MCA guidance note MGN 324 (M+F), cited inside the engagement specifications."
+    },
+    {
+      "claim": "The maritime VTS engagement contributes shore-side control-room evidence and AIS-radar association evidence, including vessel, track and observation as separate objects and association states of resolved, unresolved, changed or unknown.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "The VTS client remains unnamed; VTS, RIS, VCS and ICS may be named as sector terms."
+    },
+    {
+      "claim": "The MDU and Raymarine radio converged on a four-priority bridge alert grammar without a conformance claim.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "The page brief requires this to be stated as convergence, never as conformance."
+    },
+    {
+      "claim": "The maritime VTS measured comparison used sanitised training scenarios on a design prototype, not a production installation, and the three reported percentages must not be combined into one figure.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "strong",
+      "notes": "The mandatory calibration states the study limits, participant exposure, timing definition and absence of significance testing, confidence interval or power calculation."
+    },
+    {
+      "claim": "Creative Navy claims no type approval, conformity assessment, compliance work, safety outcome or outcome at sea for the engagements on this page.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "strong",
+      "notes": "This is directly required by the brief's stated non-claims and evidence-calibration rules."
+    }
+  ],
+  "limitations": [
+    "Raymarine evidence does not cover wet hands, gloves, glare, night sailing, vibration, ambient noise, divided attention, sea trials or any on-vessel work.",
+    "The Raymarine radio was built and released, but no design-fidelity comparison is recorded and no commercial, operational, safety or performance result is claimed.",
+    "The MDU was not tested with users; its user-side evidence base was one external advisor together with the manufacturer's engineers and written material.",
+    "The MDU shipped as implemented, but no mechanism for implementation fidelity is recorded and no performance, reception, fleet penetration or commercial result is claimed.",
+    "The maritime VTS measured study used sanitised training scenarios on a design prototype, not a production installation or live traffic position.",
+    "The maritime VTS design system reached production, but no design-fidelity comparison is recorded and no commercial, operational, training, engineering-efficiency or safety outcome is claimed.",
+    "Creative Navy claims no type approval, conformity assessment, certification or compliance work in the marine and maritime engagements described here.",
+    "ISO 8468 and the instrument behind the VTS service definition are not named in the public body because the brief marks them for verification before naming."
+  ],
+  "publicationBlockers": [],
+  "questionsForReview": [
+    "The brief contains newer confirmed implementation-support durations for Raymarine and maritime VTS, while later carried handling rules say those durations were not recorded. The public page follows the newer confirmed instructions, but the conflict should be checked in the source set.",
+    "The brief marks ISO 8468 for verification before naming; it has been omitted from the public body pending verification.",
+    "The brief marks the IALA instrument behind the VTS service definition for verification before naming; it has been omitted from the public body pending verification.",
+    "The Cox Marine and Torqeedo references are limited to facts stated in the current brief. If the final page is expected to include fuller one-paragraph treatments from their published pages, those pages should be re-read before expansion."
+  ],
+  "relatedPageSlugs": [
+    "embedded-devices-and-constrained-interfaces",
+    "high-consequence-environments",
+    "regulated-products",
+    "multi-stakeholder-operational-environments",
+    "raymarine-vhf",
+    "mdu-ship-motion-monitoring",
+    "maritime-vts",
+    "cox-marine"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "embedded devices and constrained interfaces",
+      "targetSlug": "embedded-devices-and-constrained-interfaces",
+      "placementHint": "Related pages section and cross-device coherence section",
+      "reason": "The brief explicitly identifies this as the hardware-constraint axis and the context where marine studies currently file."
+    },
+    {
+      "anchorText": "high-consequence environments",
+      "targetSlug": "high-consequence-environments",
+      "placementHint": "Related pages section",
+      "reason": "The marine context involves operational consequence, divided attention and safety-relevant boundaries without making safety outcome claims."
+    },
+    {
+      "anchorText": "regulated products",
+      "targetSlug": "regulated-products",
+      "placementHint": "Related pages section and advisory boundary section",
+      "reason": "The page discusses type approval, conformity assessment, standards regimes and explicit non-claims about compliance work."
+    },
+    {
+      "anchorText": "multi-stakeholder operational environments",
+      "targetSlug": "multi-stakeholder-operational-environments",
+      "placementHint": "Shore-side maritime systems section or related pages section",
+      "reason": "The maritime VTS material involves port authorities, coastal administrations, waterway operators, shipmasters and shore-side traffic organisation."
+    },
+    {
+      "anchorText": "Raymarine marine VHF and AIS radio",
+      "targetSlug": "raymarine-vhf",
+      "placementHint": "Communications regime section and engagement evidence block",
+      "reason": "Raymarine is a named case-study anchor for digital selective calling, radio-state interpretation and bench-prototype evidence."
+    },
+    {
+      "anchorText": "MDU ship motion monitoring",
+      "targetSlug": "mdu-ship-motion-monitoring",
+      "placementHint": "Operating environment section and advisory boundary section",
+      "reason": "The MDU is the main evidence anchor for vessel-side environment, advisory equipment, day/dusk/night modes and motion conventions."
+    },
+    {
+      "anchorText": "maritime VTS and portfolio design system",
+      "targetSlug": "maritime-vts",
+      "placementHint": "Shore-side maritime systems section and AIS association section",
+      "reason": "The maritime VTS engagement is the main evidence anchor for shore-side control rooms, AIS-radar association and VTS design-system work."
+    },
+    {
+      "anchorText": "Cox Marine",
+      "targetSlug": "cox-marine",
+      "placementHint": "Operating environment section and engagement evidence block",
+      "reason": "The brief identifies Cox Marine as relevant to helm and vessel subsystem evidence for this context."
+    }
+  ],
+  "qualityChecks": {
+    "factsOnlyFromCurrentSource": true,
+    "documentationStyle": true,
+    "noMarketingLanguage": true,
+    "noInventedClaims": true,
+    "linksOnlyFromLinkingContext": true,
+    "internalNotesNotPublished": true,
+    "readyForSanityImport": true
+  },
+  "__sourceCategoryDir": "Contexts"
+}

@@ -1,0 +1,177 @@
+{
+  "_type": "documentationPage",
+  "sourceFile": "Articles/Failures/failures--error-recovery--the-interface-does-not-make-clear-what-an-action-will-affect.md",
+  "sourcePath": "sources/articles/Failures/failures--error-recovery--the-interface-does-not-make-clear-what-an-action-will-affect.md",
+  "sanityDocumentIdCandidate": "documentationPage.the-interface-does-not-make-clear-what-an-action-will-affect",
+  "title": "The Interface Does Not Make Clear What an Action Will Affect",
+  "slug": {
+    "_type": "slug",
+    "current": "the-interface-does-not-make-clear-what-an-action-will-affect"
+  },
+  "pageType": "failure",
+  "category": "failures",
+  "parentSlug": "error-and-recovery-failures",
+  "childPageSlugs": [],
+  "excerpt": "This failure occurs when a user performs the intended action, but the interface applies it to a different object. The mechanism is a collapsed selected state that makes inspection and action target look like one variable.",
+  "metaTitle": "When an Interface Hides an Action Target",
+  "metaDescription": "A failure pattern where a correct action reaches the wrong object because inspection and target selection are not separated.",
+  "summary": "This page defines the failure in which an interface does what the user asked, but to an object other than the one the user meant. It distinguishes that failure from discrimination errors, timing errors, state-visibility failures and post-action error detection.",
+  "definition": "A wrong-object action failure occurs when the user performs the intended action deliberately, but the interface applies it to a different object because the object under inspection and the object an action will affect are collapsed into a single selected state.",
+  "keyFacts": [
+    "The failure is a binding problem: the user may have identified the right object, but the action target is bound to a different object.",
+    "The page is distinct from errors-are-easy-to-make, which covers discrimination problems where the user cannot tell which similar element is the right one before acting.",
+    "Schone Airspace Group separated inspected aircraft and command target as independent variables with different visual treatments, allowing both identities to be visible at once.",
+    "In the Schone Airspace Group material, changing the command target required a named explicit action that sent no aircraft command.",
+    "Raymarine compared immediate calling with a confirmation condition: wrong-recipient submissions were two of eight under immediate calling and zero of eight under confirmation.",
+    "Raymarine also recorded a cost for confirmation: median completion time was 17.95 seconds immediate and 23.80 seconds confirmed, with median physical actions rising from 6.0 to 8.5.",
+    "Oceaneering provides a high-frequency everyday case in which the wrong object was a cart type rather than a specific instance.",
+    "No prevention claim, incident claim, clinical claim, financial claim or field performance claim is supported by the evidence on this page."
+  ],
+  "tags": [
+    "wrong-object action",
+    "action target",
+    "selection state",
+    "error recovery",
+    "confirmation friction",
+    "inspection versus target",
+    "command integrity",
+    "Critical Systems Design"
+  ],
+  "bodyMarkdown": "## Summary\n\nCreative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nThis failure occurs when a user performs the correct action, but the interface applies it to the wrong object. The task may be understood. The click or command may be deliberate. The error is that the action target is not the object the user had in mind.\n\nThe pattern includes category examples such as wrong-patient errors in clinical systems, wrong-account transfers in financial interfaces, wrong-machine commands on a factory floor and wrong-row deletion in administrative tools. Those examples describe the class of failure. They are not claims that Creative Navy designed clinical or financial systems for this page, and no incident is claimed to have occurred or been averted.\n\n## Failure pattern: correct action, wrong object\n\nA wrong-object action failure is a binding problem. The user may be looking at the right object and may choose the intended action, but the interface binds that action to a different object.\n\nThis differs from a discrimination problem. In a discrimination problem, the user cannot tell which of several similar elements is the right one before acting. In a binding problem, the user has identified the object under inspection, but the interface has not kept that object separate from the object an action will affect.\n\nThe design consequence is different. A discrimination problem is addressed by making the relevant element distinguishable from irrelevant elements. A binding problem is addressed by separating inspection from target selection, so the user can see both variables and change the action target deliberately.\n\n## Selection components can collapse inspection and action target\n\nSelection components commonly use one highlighted state to represent several meanings at once. A row, card or map object may look selected because the user is inspecting it, because it is the target of the next action, or because the system is implying that an operation is available for it.\n\nWhen those meanings are collapsed, the interface can make a correct action reach a wrong object. The user may move from one object to another for inspection, but the system may silently retarget the next command. Or a pending transaction may remain bound to the original object while the visible inspection focus has moved elsewhere.\n\nCreative Navy's Critical Systems Design method treats this as a behavioural specification problem, not only as a visual legibility problem. The interface must specify which variable is changing, what action changes it, and whether changing it sends any command outside the interface.\n\n## Schone Airspace Group separated inspection from command target\n\nSchone Airspace Group provides the anchor case for this failure pattern. In the Schone Airspace Group design, the inspected aircraft and the command target were independent variables with distinct visual treatments. The command target used a double solid outline and labelled badge. The inspected aircraft used a dotted outline and separate badge. Both could appear at once on the same card.\n\nThat design rejected a single generic selected state. The accepted cost was that two highlighted identities could be visible simultaneously, adding interface complexity in exchange for safer separation of operator intent.\n\nChanging the command target required a named, explicit operator action. That action changed the recipient and sent no aircraft command. The engagement described this as deliberate friction: one additional explicit action was required to operate a different aircraft.\n\nThe Schone Airspace Group material also separated interface target selection from flight-controller authority. A selected interface target did not confer command authority. Eligibility and command-channel permission were independent checks resolved outside the interface, and the distinction required an additional status label.\n\nA pending transaction also kept the aircraft it was dispatched against. If the operator inspected or targeted a different aircraft while a request was pending, the pending request kept its original recipient, action and request identifier. The new target did not rewrite that transaction history.\n\nThe Schone Airspace Group evidence is design-representation evidence. Scripted acceptance checks were run twice: first by Creative Navy, then by five of the nine operators who took part in the research. Each check fixed a starting state, an operator action and an expected visible response. A pass meant the interface stated the correct operational fact under that condition. The checks were not a measure of flight performance, operator proficiency, task completion time or error rate, and they were not conducted on a connected system.\n\nSeverity in the Schone Airspace Group evidence records the consequence of interface ambiguity within a scripted task. It does not state that a corresponding aircraft incident occurred.\n\n## Raymarine shows what confirmation can and cannot do\n\nRaymarine provides the strongest numeric evidence on this page. The comparison used two concepts with identical hardware mappings, identical AIS information and identical physical controls. The only variable was where the extra interaction was placed after the operator pressed the call action.\n\nWrong-recipient submissions were two of eight under immediate calling and zero of eight with confirmation. Initial wrong target selections still occurred: four of eight under immediate calling and three of eight under confirmation. Under the confirmation condition, all three initial errors were detected and corrected at the confirmation screen before any request was sent.\n\nThe cost was recorded in the same comparison. Median completion time was 17.95 seconds for immediate calling and 23.80 seconds for confirmed calling, a 5.85 second cost. Median physical actions were 6.0 immediate and 8.5 confirmed. That cost was accepted in the design decision.\n\nThe Raymarine evidence does not show that confirmation prevents target selection mistakes. It shows that confirmation made the recipient identity legible at a second decision point, giving operators the opportunity to detect and correct errors before a request was submitted.\n\nThe Raymarine evidence is limited to a bench prototype under a fixed scenario fixture with eight participants in the relevant comparison. The engagement tested nothing at a helm. Raymarine's own brief named wet hands and gloves, glare and night sailing, vibration, ambient noise and divided attention, and none of those conditions was tested.\n\n## Oceaneering shows the same failure when the wrong object is a class\n\nOceaneering provides the everyday, high-frequency version of the same failure. In that engagement, the wrong object was not a specific instance such as one aircraft or one vessel. It was a selected cart type.\n\nThe hospital logistics context involved supply flatbeds being dispatched wrongly every day because people were in a hurry. The consequence was that the vehicle arrived, tried to lift, detected the wrong cart type, set the cart down and left without explaining why. The mismatch was detected after lifting, downstream of an operator who had usually walked away.\n\nCreative Navy's design response in the Oceaneering dispatch panel let the next person at the depot tap the station holding the refused cart, read what the vehicle detected against what had been selected, confirm the detected type in one action, and re-enter destination and identity.\n\nThe Oceaneering evidence is not usability testing. The two sessions were design reviews, not tests; nothing was measured; and no dispatch operator took part. The case supports the mechanism and design response, not a measured performance or error-rate claim.\n\n## Confirmation is a second decision point, not a prevention guarantee\n\nConfirmation belongs on this page when it makes the action target visible at the moment of commitment. A confirmation step can expose the recipient, object, class or destination before the request is submitted.\n\nConfirmation does not by itself make the first selection correct. The Raymarine comparison is the clearest example: initial wrong target selections still occurred under confirmation, but the confirmation screen gave operators a second point at which to detect and correct them.\n\nCreative Navy's Critical Systems Design method therefore treats confirmation as one possible form of friction, not as a universal fix. The design question is whether the extra step makes the target identity legible at the point where the user can still change the decision, and whether the cost of the extra step is acceptable for the task.\n\n## Boundaries with adjacent failure pages\n\nThis page covers action-target ambiguity at the moment of commitment. It should not absorb every case where a user chooses the wrong element or makes an error.\n\nErrors Are Easy To Make covers discrimination cases where interface complexity masks which element or condition is operative. In those cases, the user cannot tell which similar element is the right one before acting. This page covers the narrower case where the element has been identified correctly and the action still reaches another object.\n\nCritical Actions Appear At The Wrong Time covers timing failures. There, an action that is correct in itself is surfaced at the wrong moment.\n\nUsers Cannot See What State The System Is In covers system-state visibility. That page concerns the state of the system, rather than the target object that an action will affect.\n\nErrors Are Hard To Notice covers what happens after an error has occurred. This page concerns the moment of commitment, before or during the action that binds a request to a target.\n\nThe positive design principle is command integrity: the interface should make clear what command is being formed, what object it will affect, and which action changes that binding. This page documents the failure pattern rather than the full principle.\n\n## Evidence basis and limits\n\nThe evidence base combines three engagements with different weights. Schone Airspace Group provides the main design mechanism and acceptance-check evidence for separating inspection and command target. Raymarine provides the strongest numeric comparison, with the result and cost of a confirmation step recorded together. Oceaneering provides the everyday class-level version of the same failure, but only through design-review evidence.\n\nNo field prevention claim is made. The Raymarine figures describe a bench prototype under a fixed scenario with eight participants. Schone Airspace Group provides design-representation checks, not flight performance, task completion time or operational error rates. Oceaneering provides design-review evidence, not measured dispatch behaviour.\n\nNo clinical or financial claim is made. Wrong-patient and wrong-account examples describe the failure category, not Creative Navy engagements on this page. No incident of any kind is claimed to have occurred or been averted.\n\n## Related pages\n\nThis failure is closely related to Errors Are Easy To Make, because the two pages separate discrimination failures from binding failures. It also relates to Critical Actions Appear At The Wrong Time, Users Cannot See What State The System Is In and Errors Are Hard To Notice, because those pages cover neighbouring mechanisms: timing, system state and post-action detectability.\n\nThe Schone Airspace Group, Raymarine and Oceaneering case pages provide the engagement evidence behind this failure pattern. The Schone Airspace Group evidence is strongest for inspection-target separation. The Raymarine evidence is strongest for confirmation as a second decision point. The Oceaneering evidence shows the same mechanism when the selected object is a class rather than a single instance.",
+  "claims": [
+    {
+      "claim": "The failure pattern is a binding problem in which a correct action is applied to the wrong object because inspection and action target are collapsed into one selected state.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "Supported by the page brief and the distinction from errors-are-easy-to-make."
+    },
+    {
+      "claim": "Schone Airspace Group separated inspected aircraft and command target as independent variables with distinct visual treatments and explicit target-changing action.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "case evidence",
+      "notes": "Supported by D90 and D91, with D92 and D86 adding authority and pending-transaction boundaries."
+    },
+    {
+      "claim": "The Schone Airspace Group checks evaluated design representation, not flight performance, operator proficiency, task completion time or error rate.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "case evidence",
+      "notes": "Supported by the required calibration text for the scripted acceptance checks."
+    },
+    {
+      "claim": "Raymarine recorded two of eight wrong-recipient submissions under immediate calling and zero of eight under confirmation, with three initial selection errors caught at the confirmation screen before submission.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "strong",
+      "notes": "Supported by R72 and R73; the result is limited to a bench prototype under a fixed scenario fixture."
+    },
+    {
+      "claim": "Raymarine recorded the cost of confirmation as a 5.85 second median completion-time increase and a rise from 6.0 to 8.5 median physical actions.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "strong",
+      "notes": "Supported by R74; the page cites the cost with the result as required."
+    },
+    {
+      "claim": "Oceaneering shows the same failure when the wrong object is a selected cart type rather than an individual instance.",
+      "evidenceType": "client-reported",
+      "sourceStrength": "case evidence",
+      "notes": "Supported by O24, O34, O36 and O74; the calibration states the sessions were design reviews, not usability tests."
+    },
+    {
+      "claim": "The page does not support prevention, incident, clinical, financial, field-performance or measured outcome claims.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "strong",
+      "notes": "Supported by the explicit list of what Creative Navy does not claim and engagement-specific calibration limits."
+    }
+  ],
+  "limitations": [
+    "The Raymarine figures come from a bench prototype under a fixed scenario fixture with eight participants, and no helm, glare, glove, vibration, wet-surface, acoustic or sea condition was tested.",
+    "The Schone Airspace Group evidence evaluates whether the interface stated the correct operational fact under scripted conditions; it does not measure flight performance, operator proficiency, task completion time or error rate.",
+    "The Schone Airspace Group product was not described as operationally deployed through this page, and no aircraft incident is claimed.",
+    "The Oceaneering evidence comes from design reviews, not usability tests; nothing was measured and no dispatch operator took part.",
+    "Wrong-patient and wrong-account examples are category descriptions only; no Creative Navy clinical or financial engagement is claimed on this page.",
+    "No external clinical informatics or supervisory-control literature is cited because no primary external source is provided in the current page material."
+  ],
+  "publicationBlockers": [],
+  "questionsForReview": [
+    "Add primary external sources if the page will cite wrong-patient or wrong-site literature in clinical informatics rather than using those terms only as category examples.",
+    "Verify whether published work on selection-model ambiguity in supervisory control should be added, as the page material flags this as a verification item.",
+    "Confirm the slug for the separate command-integrity page when that page exists; the current linking context does not provide an allowed target slug.",
+    "Confirm that the reciprocal scoping sentence has been added to Errors Are Easy To Make, because the page material states that the two pages overlap without it."
+  ],
+  "relatedPageSlugs": [
+    "errors-are-easy-to-make",
+    "critical-actions-appear-at-the-wrong-time",
+    "users-cannot-see-what-state-the-system-is-in",
+    "errors-are-hard-to-notice",
+    "errors-are-hard-to-correct",
+    "recovery-paths-are-weak",
+    "schone-mission-control",
+    "raymarine-vhf",
+    "oceaneering-dispatch-panel"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "Errors Are Easy To Make",
+      "targetSlug": "errors-are-easy-to-make",
+      "placementHint": "Boundaries with adjacent failure pages",
+      "reason": "The page explicitly distinguishes discrimination failures from wrong-object binding failures."
+    },
+    {
+      "anchorText": "Critical Actions Appear At The Wrong Time",
+      "targetSlug": "critical-actions-appear-at-the-wrong-time",
+      "placementHint": "Boundaries with adjacent failure pages",
+      "reason": "The page distinguishes action-target ambiguity from timing failures."
+    },
+    {
+      "anchorText": "Users Cannot See What State The System Is In",
+      "targetSlug": "users-cannot-see-what-state-the-system-is-in",
+      "placementHint": "Boundaries with adjacent failure pages",
+      "reason": "The page distinguishes system-state visibility from action-target visibility."
+    },
+    {
+      "anchorText": "Errors Are Hard To Notice",
+      "targetSlug": "errors-are-hard-to-notice",
+      "placementHint": "Boundaries with adjacent failure pages",
+      "reason": "The page distinguishes the moment of commitment from post-action error detection."
+    },
+    {
+      "anchorText": "Schone Airspace Group",
+      "targetSlug": "schone-mission-control",
+      "placementHint": "Schone Airspace Group separated inspection from command target",
+      "reason": "Schone Airspace Group is the anchor engagement for separating inspected object and command target."
+    },
+    {
+      "anchorText": "Raymarine",
+      "targetSlug": "raymarine-vhf",
+      "placementHint": "Raymarine shows what confirmation can and cannot do",
+      "reason": "Raymarine provides the numeric comparison for immediate calling versus confirmation."
+    },
+    {
+      "anchorText": "Oceaneering",
+      "targetSlug": "oceaneering-dispatch-panel",
+      "placementHint": "Oceaneering shows the same failure when the wrong object is a class",
+      "reason": "Oceaneering provides the class-level wrong-object example involving selected cart type."
+    },
+    {
+      "anchorText": "Recovery Paths Are Weak",
+      "targetSlug": "recovery-paths-are-weak",
+      "placementHint": "Related pages",
+      "reason": "The Oceaneering example includes recovery after a wrong selected class is detected downstream."
+    },
+    {
+      "anchorText": "Errors Are Hard To Correct",
+      "targetSlug": "errors-are-hard-to-correct",
+      "placementHint": "Related pages",
+      "reason": "Wrong-object actions often require correction paths once the target mismatch has been discovered."
+    }
+  ],
+  "qualityChecks": {
+    "factsOnlyFromCurrentSource": true,
+    "documentationStyle": true,
+    "noMarketingLanguage": true,
+    "noInventedClaims": true,
+    "linksOnlyFromLinkingContext": true,
+    "internalNotesNotPublished": true,
+    "readyForSanityImport": true
+  },
+  "__sourceCategoryDir": "Failures"
+}

@@ -1,0 +1,163 @@
+{
+  "_type": "documentationPage",
+  "sourceFile": "Articles/Capabilities/capabilities--accessibility-for-self-service-terminals.md",
+  "sourcePath": "sources/articles/Capabilities/capabilities--accessibility-for-self-service-terminals.md",
+  "sanityDocumentIdCandidate": "documentationPage.accessibility-for-self-service-terminals",
+  "title": "Accessibility for Self-Service Terminals",
+  "slug": {
+    "_type": "slug",
+    "current": "accessibility-for-self-service-terminals"
+  },
+  "pageType": "capability",
+  "category": "capabilities",
+  "parentSlug": "capabilities",
+  "childPageSlugs": [],
+  "excerpt": "Creative Navy designs self-service terminal interfaces against accessibility obligations by reading published instruments, resolving requirements to interface and hardware consequences, and stating what a given configuration can and cannot satisfy.",
+  "metaTitle": "Accessibility for Self-Service Terminals",
+  "metaDescription": "EAA, EN 301 549 and BFSG requirements for kiosk interface design, with evidence and limits from visioncheckout.",
+  "summary": "This capability covers design-facing interpretation of accessibility requirements for self-service terminal interfaces. It explains how the European Accessibility Act, EN 301 549, the BFSG and BFSGV § 7 affect kiosk interaction design, while making clear that Creative Navy does not certify products, audit for conformance or provide legal advice.",
+  "definition": "Accessibility for self-service terminals is Creative Navy's capability for translating published accessibility requirements into interface, activation, non-visual access, timing, status and hardware consequences for kiosk-like products.",
+  "keyFacts": [
+    "Self-service terminal accessibility is treated as a market-access obligation for products placed on the European market after 28 June 2025.",
+    "The European Accessibility Act, Directive (EU) 2019/882, sets the obligation; EN 301 549 is the harmonised standard route to presumption of conformity.",
+    "EN 301 549 V3.2.1 is the version currently cited and is equivalent to WCAG 2.1 level AA; V4.1.1 points to WCAG 2.2 AA but has not yet been cited in the Official Journal of the European Union.",
+    "Germany's BFSG is the national transposition in force from 28 June 2025, and BFSGV § 7 states sector-specific requirements for self-service terminals.",
+    "A purpose-built kiosk is closed functionality, so non-visual access cannot rely on the user's own assistive technology.",
+    "Activation of accessibility features cannot depend on a method that excludes the people who need the feature.",
+    "Every timed interaction must be extendable, including auto-advancing flows, countdowns and auto-return screens.",
+    "The visioncheckout engagement is the single case evidence behind this page and is labelled design record and observed, with no measured accessibility result.",
+    "visioncheckout accepted software recommendations and recorded hardware-dependent recommendations, including a 3.5 mm headphone jack and tactile navigation keypad, as future requirements.",
+    "No product described on this page is claimed to be accessible, compliant, certified or tested with users."
+  ],
+  "tags": [
+    "accessibility",
+    "self-service terminals",
+    "European Accessibility Act",
+    "EN 301 549",
+    "BFSG",
+    "BFSGV § 7",
+    "closed functionality",
+    "non-visual access",
+    "private listening",
+    "timed interaction",
+    "kiosk UX",
+    "visioncheckout"
+  ],
+  "bodyMarkdown": "## Summary\n\nCreative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nSelf-service terminals are product interfaces where accessibility can be a condition of market access rather than only a quality goal. Since 28 June 2025, a manufacturer placing a self-service terminal on the European market carries a product obligation enforced by market surveillance authorities with powers to demand documentation, order remediation and restrict non-conforming products.\n\nCreative Navy designs self-service terminal interfaces against that obligation by reading the governing instruments directly, resolving them to design consequences at clause level, and stating which requirements a given hardware configuration can and cannot satisfy. Creative Navy does not certify products, audit for conformance or provide legal advice.\n\n## Regulatory architecture for self-service terminal accessibility\n\nThe regulatory structure for self-service terminal accessibility has four layers, and each layer has a different role.\n\nThe European Accessibility Act, Directive (EU) 2019/882, establishes accessibility requirements for products and services placed on the EU market after 28 June 2025. The directive sets the obligation and defines covered products. It does not state how to build a terminal interface.\n\nEN 301 549 is the harmonised European standard used as the route to presumption of conformity. Conforming to the cited version of a harmonised standard gives a manufacturer the presumption that the directive's requirements are met. Publication of a newer standard by a standards body is a different event from citation in the Official Journal of the European Union. EN 301 549 V3.2.1 is the version currently cited and is equivalent to WCAG 2.1 level AA. EN 301 549 V4.1.1, pointing at WCAG 2.2 AA, was adopted in August 2026 and published in September 2026, but has not yet been cited in the Official Journal of the European Union.\n\nNational transposition turns the directive into law in each member state. Germany's BFSG, the Barrierefreiheitsstärkungsgesetz, is the German transposition in force from 28 June 2025. Transpositions are not always textually identical to the directive, and the differences matter for interface and product scoping.\n\nMarket surveillance is the enforcement layer. In Germany, the joint federal-states authority for accessibility adopted its surveillance strategies on 29 January 2026 and has operated an active control phase since, using systematic checks and complaint-driven checks. This page states the existence of that authority and strategy; it does not state any penalty volume or individual enforcement result.\n\nThe practical design consequence is that designing to EN 301 549 is how a manufacturer works toward the presumption of conformity, while the obligation itself comes from national law and is enforced nationally. A product designed only against the standard, without reading the transposition that binds it, can satisfy one layer and miss another.\n\n## Scope remains open for food-service self-checkout with integrated payment\n\nThe scope question for food-service self-checkout terminals must be treated as open. Creative Navy's design-facing analysis separates the two limbs of the European Accessibility Act rather than collapsing them into a single conclusion.\n\nThe first limb covers payment terminals without qualification. A payment terminal is defined as a device whose main purpose is to allow payments using payment instruments at a physical point of sale.\n\nThe second limb covers a named list: automated teller machines, ticketing machines, check-in machines and interactive self-service terminals providing information. That limb applies only where the terminal is dedicated to the provision of services covered by the directive. The covered services are electronic communications, access to audiovisual media, elements of passenger transport, consumer banking, e-books and e-commerce.\n\nBuying a meal is not one of those covered services. A food-service self-checkout is therefore not in scope as an interactive information terminal under that second limb.\n\nThe payment limb is less settled. BFSG § 1(2)(2)(a) covers payment terminals and the hardware and software belonging to them. The directive's English text says only payment terminals. Where a kiosk carries its own card reader, executes payment on its own hardware, and displays the amount, balance and error states, whether the kiosk interface is hardware and software belonging to a payment terminal is a real scope question. German commentary splits in both directions: some sources read self-checkout systems out of scope because the purchase of goods is not a covered service, while others state that payment at self-checkout tills has had to be accessible since 28 June 2025.\n\nThe design-facing position is not a legal determination. The two limbs must be read separately; a national transposition can be broader than the directive it transposes; and the live exposure for a terminal of this kind sits in the payment dialogue rather than in blanket self-service-terminal coverage.\n\n## Statutory requirements become concrete interface and hardware requirements\n\nBFSGV § 7 and the directive's Annex I state the sector-specific requirements for self-service terminals in compact form. A terminal must provide text-to-speech, allow the use of personal headsets, alert the user through more than one sensory channel where response time is limited, allow that response time to be extended, provide adequate contrast, provide tactilely discernible keys and controls where such controls exist, be compatible with hearing technologies including hearing aids, telecoils and cochlear implants, and avoid requiring an accessibility feature in order for a user who needs that feature to turn it on.\n\nEN 301 549 adds operational detail. Speech output must cover operating instructions, orientation, transaction prompts, input verification, error messages and meaningful non-text content. Speech must be interruptible and repeatable. Volume control must be available non-visually. Auditory output containing private data must be delivered only through a private-listening mechanism. Speech must be in the same language as the displayed content. Errors must be identified non-visually in an equivalent way, and the information needed to complete or verify a transaction must be available non-visually.\n\nClosed functionality is central to this design problem. A purpose-built kiosk cannot be operated with the user's own assistive technology if the user cannot attach, connect or install anything. A self-service terminal therefore has to carry its own non-visual access. Non-visual access means that all displayed text, meaningful non-text content, state changes, confirmations and errors are available without requiring sight.\n\nPrivate listening is also structural rather than optional. In practice the mechanism is usually a 3.5 mm headphone jack. The private-data clause is what turns a headphone jack from a convenience into part of the accessibility architecture.\n\nPhysical installation cannot be separated from product design. Reach and mounting constraints in EN 301 549 clause 8.3 govern the placement of operable parts and displays relative to the floor. Operable parts and reach range therefore make kiosk mounting a product decision, not only an installation detail.\n\n## Activation of accessibility features cannot depend on sight\n\nActivation of accessibility features is the sharpest design constraint in self-service terminal accessibility. A speech mode exists for people who cannot see the screen. If the only way to start that mode is an on-screen button that must be located visually, the feature cannot be reached by the people it is for.\n\nThe statute states that a terminal may not require an accessibility feature to be activated in order for the people who depend on it to turn it on. EN 301 549 states the same principle in general terms. The design consequence is that the primary activation route for a non-visual mode must be a physical event or another non-visual input, not a purely visual one.\n\nDeployed practice across talking ATMs, transit ticketing, payment terminals and quick-service kiosks converges on four patterns. Headphone insertion can auto-activate speech mode; the plug is the input, declaration of intent and private-listening mechanism in one action. A tactile key on a hardware module can start the mode and can be paired with Braille labelling, volume controls and a headphone connection. A credential can carry a stored accessibility preference so that the mode starts when a card is presented. A persistent on-screen control can support low-vision, dyslexic, cognitively loaded and older users, but does not serve a blind user who cannot find it visually.\n\nA terminal that ships only an on-screen accessibility button has covered a larger population and missed the population the regulation is written for. Where an on-screen control is used as a secondary route, placement is a design decision. A corner is the only location on a screen that a person can find without sight, because two physical edges intersect there. Such a control has to sit in the same absolute position on every screen, stay outside scroll regions, remain available behind dialogs and busy states, and avoid long-press or multi-finger gestures.\n\n## Timed interactions collide with fast self-service flows\n\nTimed interaction is any interaction with a time limit on the user's response. Every limited response time must be extendable, and a terminal must signal the time limit through more than one sensory channel. An auto-advancing flow is a timed interaction even when the product team conceived it as speed rather than timing.\n\nPayment retry countdowns, end-screen auto-return, advertising rotation and automatic progression through a checkout sequence all create timed interactions. For a product whose proposition is speed, this can create a direct conflict between the feature being sold and the requirement governing it.\n\nCreative Navy's Critical Systems Design method treats this as tension-driven reasoning rather than as a cosmetic interface adjustment. The design answer is that while speech mode is active, auto-advance suspends and every countdown becomes pausable or extendable. The product answer is that someone has to decide whether the product's headline speed claim survives that requirement. That decision is a product decision, not only an interface detail.\n\n## Evidence basis from the visioncheckout engagement\n\nThe single engagement behind this capability is visioncheckout, a German vendor of computer-vision self-checkout systems for staff restaurants and catering. A guest places a tray under an overhead camera; recognition completes in about half a second; the basket appears on a 1920 × 1080 landscape screen; payment is usually by employee keycard. Creative Navy redesigned the checkout flow across seven one-week sprints, delivering 34 screens across 138 versions, two clickable prototypes, a design system with tokens, and a complete user-flow diagram. Accessibility law was visioncheckout's stated justification for funding the project.\n\nThe visioncheckout evidence is design record and observed, with no measured accessibility result. No usability testing was done on the new designs, and nothing has shipped. The case study is demonstrated problem → demonstrated response, with the problem demonstrated and the response not yet. visioncheckout accepted the software recommendations and recorded the hardware ones as future requirements.\n\nCreative Navy's regulatory work covered Germany, Austria, Switzerland, the UK and Ireland and resolved to a single design approach. The finding recorded in the engagement was that the strictest requirement was common to three of the five markets and textually near-identical in the others, so designing for all five cost the same as designing for Germany alone.\n\nThe entry-point study documented five activation patterns in deployed practice and assessed them against three hardware scenarios: a headphone jack plus tactile keypad, a headphone jack only, and neither. The hardware present in the current visioncheckout configuration was a camera, a scale, a keycard reader, a QR reader, a receipt printer, a speaker and a status LED. A headphone jack and tactile keypad were both absent.\n\nUnder that hardware constraint, Creative Navy first specified a persistent on-screen accessibility control: bottom-left, anchored to the bezel at zero offset, present on every screen, never inside a scroll region, and never a long-press. Creative Navy then removed that as the activation mechanism and moved activation to hardware, because a blind guest cannot find an on-screen button by looking for it. The screen retained a status indicator in the top-left navigation so that the mode's state remains visible while activation does not depend on sight.\n\nTwo recommendations used hardware the product already had. The keycard could act as the accessibility trigger in a closed population such as a works canteen or campus, if the operator set a per-cardholder accessibility flag. That route requires no search, gesture or plug, but it is opt-in in advance, does not help a first-time guest, depends on an enrolment path that did not exist, and still cannot speak a card balance without private listening. The existing camera and speaker could also support a presence-triggered audio cue on approach, announcing that audio assistance is available and where to touch, fired once per approach, silenceable per site, with volume reset after use.\n\nMagnification Mode, Reach Mode and a reduce-motion toggle were deferred with reasons recorded. Building every screen twice would add substantial complexity, and mounting height varies by site so operators can place the unit lower where needed. The compensating decision was to raise type and target sizes by default across the interface. Target sizes were resolved in millimetres as well as pixels: a 56 × 56 px minimum at about 10 mm, and a 104 px standard at about 18.6 mm. That conversion mattered because the panel's physical size was not fixed, and a pixel figure alone specifies nothing on an unfixed panel.\n\nThe current-hardware assessment was deliberately blunt: on current hardware, the position delivers most of the low-vision benefit and none of the blind benefit. Creative Navy recommended the software work anyway because the software is identical across all three hardware scenarios, and only the trigger and audio path change when the hardware arrives.\n\nThe timed-interaction collision was also recorded as a product decision. visioncheckout's proposition is a touchless checkout completing in about three seconds, with the flow advancing by itself. Under speech mode, auto-advance must suspend and every countdown must become pausable or extendable. The engagement did not pretend that this conflict could be fully resolved inside the interface.\n\n## Third-party research supports the on-screen-control boundary\n\nHeisey, Shinohara and Tigwell's 2026 article, Experiences and Perceptions of Blind and Low-Vision (BLV) People with Retail Self-Checkout Systems, in ACM Transactions on Accessible Computing 19(3), Article 13, provides the strongest category evidence cited for this page. The study surveyed 86 blind and low-vision respondents and informed contextual inquiries with 10 participants using self-checkout systems in grocery stores. Eight blind participants could not complete the process alone. The only participants with a positive outlook on future self-checkout use were the two low-vision participants who transacted independently.\n\nThat third-party study did not measure a Creative Navy client's product. Its relevance is categorical: the distinction between an on-screen accessibility control that helps low-vision users and a non-visual activation route required for blind users is observed in field literature, not only asserted as a design principle.\n\nPublished self-checkout research also finds roughly one help call to staff per ten self-checkout transactions. This establishes staff intervention as a routine operational load rather than an edge case. It matters because a terminal that cannot be operated independently transfers the burden to staff who may not be present.\n\nAdjacent standards may matter to the installed environment. EN 12464-1 concerns lighting conditions, while ISO 9241-303 and ISO 9241-125 concern display legibility and visual presentation. These adjacent standards do not replace the self-service terminal accessibility requirements; they describe environmental and display conditions that can affect whether the interface is usable.\n\n## What Creative Navy does not claim\n\nCreative Navy does not certify products, audit for conformance or provide legal advice. The work described on this page is a design-facing reading of published instruments, produced because visioncheckout asked for it.\n\nNo product described on this page is claimed to be accessible or compliant. The visioncheckout product is in development, and the engagement's assessment of its current hardware configuration is that it delivers most of the low-vision benefit and none of the blind benefit.\n\nNo conformance credential is claimed against EN 301 549, the European Accessibility Act, the BFSG, WCAG or any national transposition.\n\nThe scope question is not resolved. Where this page describes how the directive's two limbs differ, it describes an analysis rather than a legal determination.\n\nNo usability or comprehension result is claimed for any accessibility feature described. None was tested with users.\n\nNo measured outcome of any kind is claimed from the visioncheckout redesign.\n\n## Buyer FAQ on self-service terminal accessibility design\n\n### Is a food-service self-checkout automatically in scope under the European Accessibility Act?\n\nNo automatic conclusion is stated here. A food-service self-checkout is not in scope as an interactive information terminal under the limb covering covered services, because buying a meal is not one of those services. The unresolved exposure sits in the payment limb, especially under Germany's broader BFSG wording around payment terminals and the hardware and software belonging to them.\n\n### What does the statute actually require of a self-service terminal?\n\nThe sector-specific requirements include text-to-speech, personal headset use, more than one sensory channel where response time is limited, extendable response time, adequate contrast, tactilely discernible keys and controls where they exist, compatibility with hearing technologies, and activation of accessibility features without depending on the inaccessible feature itself.\n\n### Can a terminal be made accessible without new hardware?\n\nSome improvements can be made in software, including larger default type and targets, persistent visual state, clearer errors and on-screen controls for users who can see enough to find them. The visioncheckout evidence states the hardware limit plainly: without a headphone jack or tactile activation path, the current configuration delivers most of the low-vision benefit and none of the blind benefit.\n\n### What did the five-jurisdiction analysis change?\n\nThe visioncheckout regulatory analysis covered Germany, Austria, Switzerland, the UK and Ireland. Creative Navy-recorded analysis found that the strictest requirement was common to three of the five markets and textually near-identical in the others, so designing for all five cost the same as designing for Germany alone.\n\n### What did Creative Navy not do in the visioncheckout engagement?\n\nCreative Navy did not certify visioncheckout's product, audit for conformance, provide legal advice, test the new designs with users, claim compliance, claim accessibility, or claim any measured outcome. The engagement produced design recommendations and hardware requirements under explicit evidence limits.\n\n## Related pages\n\nThe visioncheckout case is the evidence anchor for this capability and carries the engagement-specific design record. The state and status visibility capability is related because accessibility modes need persistent visible state when they are activated through non-visual routes. Error reduction and recovery design is related because accessible transaction flows must identify errors, causes and recovery actions in text and non-visual form. Design for abnormal and degraded scenarios is adjacent because an accessibility mode changes the input and output conditions under which the terminal must still complete the transaction.\n\nThis capability also sits near Creative Navy's AI-enabled-products, regulated-products and retail-operations contexts. visioncheckout is a consumer-facing AI-enabled product where recognition output becomes a financial transaction in seconds; accessibility law functions as a market-access constraint; and the terminal operates in canteens and staff restaurants rather than in a controlled laboratory setting.",
+  "claims": [
+    {
+      "claim": "Self-service terminals placed on the European market after 28 June 2025 carry product accessibility obligations enforced by market surveillance authorities.",
+      "evidenceType": "industry standard",
+      "sourceStrength": "strong",
+      "notes": "Supported by the regulatory architecture and opening sections describing the EAA, BFSG and market surveillance powers."
+    },
+    {
+      "claim": "EN 301 549 V3.2.1 is the currently cited version and is equivalent to WCAG 2.1 level AA; V4.1.1 points to WCAG 2.2 AA but has not yet been cited in the Official Journal of the European Union.",
+      "evidenceType": "industry standard",
+      "sourceStrength": "strong",
+      "notes": "Supported by the domain vocabulary section."
+    },
+    {
+      "claim": "The scope question for food-service self-checkout with integrated payment remains open rather than legally resolved by Creative Navy.",
+      "evidenceType": "inferred",
+      "sourceStrength": "moderate",
+      "notes": "Supported by the source's scope analysis and explicit instruction not to resolve the question."
+    },
+    {
+      "claim": "A terminal must provide text-to-speech, headset use, multi-sensory timed-response alerts, extendable time, contrast, tactile controls where present, hearing-technology compatibility and accessible activation of accessibility features.",
+      "evidenceType": "industry standard",
+      "sourceStrength": "strong",
+      "notes": "Supported by the section describing Annex I and BFSGV § 7 requirements."
+    },
+    {
+      "claim": "A speech mode cannot depend solely on an on-screen button if it is intended for users who cannot see the screen.",
+      "evidenceType": "industry standard",
+      "sourceStrength": "strong",
+      "notes": "Supported by the activation requirement and EN 301 549 activation principle described in the source."
+    },
+    {
+      "claim": "Auto-advancing checkout flows create timed interactions that must become pausable or extendable while speech mode is active.",
+      "evidenceType": "industry standard",
+      "sourceStrength": "moderate",
+      "notes": "Supported by the timed-interaction section and its application to visioncheckout."
+    },
+    {
+      "claim": "The visioncheckout evidence is design record and observed, with no measured accessibility result, no shipped product and no usability testing of the new designs.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "Supported by V46, V47 and the audit addendum calibration wording."
+    },
+    {
+      "claim": "visioncheckout accepted software recommendations and recorded hardware-dependent recommendations, including headphone jack and tactile keypad, as future requirements.",
+      "evidenceType": "client-reported",
+      "sourceStrength": "case evidence",
+      "notes": "Supported by V106 and the source's client response section."
+    },
+    {
+      "claim": "On current visioncheckout hardware, the assessed position delivers most low-vision benefit and none of the blind benefit.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "case evidence",
+      "notes": "Supported by the engagement's own assessment in the source."
+    },
+    {
+      "claim": "Heisey, Shinohara and Tigwell's 2026 study supports the distinction between low-vision benefit from on-screen controls and the lack of blind-operability without non-visual activation.",
+      "evidenceType": "third-party study",
+      "sourceStrength": "third-party study",
+      "notes": "Supported by the external research section summarising the study of 86 survey respondents and 10 contextual inquiry participants."
+    }
+  ],
+  "limitations": [
+    "Creative Navy does not certify products, audit for conformance or provide legal advice.",
+    "No product described on this page is claimed to be accessible, compliant or conformant with EN 301 549, the EAA, the BFSG, WCAG or any national transposition.",
+    "The food-service self-checkout scope question is not resolved; the page describes a design-facing analysis rather than a legal determination.",
+    "The visioncheckout product is in development, nothing has shipped, and no usability testing was done on the new designs.",
+    "No usability, comprehension, accessibility, throughput, speed, error-rate, satisfaction, accuracy or commercial outcome is claimed from the visioncheckout redesign.",
+    "The third-party self-checkout research establishes category evidence and did not measure any Creative Navy client's product.",
+    "The current visioncheckout hardware configuration lacks both a headphone jack and tactile keypad, leaving no blind-operable activation and private-listening route in that configuration."
+  ],
+  "publicationBlockers": [],
+  "questionsForReview": [
+    "The source requests cross-references to context, practice and evidence-standard pages whose slugs are not present in LINKING_CONTEXT.allowedSlugs, including the AI-enabled products context, regulated products context, retail operations context, edge-case and degraded-mode analysis, what Creative Navy does not claim, the proposed input-model page, and page--where-interface-standards-stop. These were not added as internal links."
+  ],
+  "relatedPageSlugs": [
+    "visioncheckout",
+    "state-and-status-visibility-design",
+    "error-reduction-and-recovery-design",
+    "design-for-abnormal-and-degraded-scenarios"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "visioncheckout case",
+      "targetSlug": "visioncheckout",
+      "placementHint": "Evidence basis section and Related pages section",
+      "reason": "visioncheckout is the single engagement evidence anchor for this capability."
+    },
+    {
+      "anchorText": "state and status visibility",
+      "targetSlug": "state-and-status-visibility-design",
+      "placementHint": "Related pages section near the discussion of accessibility-mode state indicators",
+      "reason": "The source connects this capability to the need for persistent visual state when information is also signalled audibly."
+    },
+    {
+      "anchorText": "error reduction and recovery design",
+      "targetSlug": "error-reduction-and-recovery-design",
+      "placementHint": "Related pages section after the discussion of non-visual error identification",
+      "reason": "The source connects this capability to errors carrying text identification, cause and recovery action."
+    },
+    {
+      "anchorText": "design for abnormal and degraded scenarios",
+      "targetSlug": "design-for-abnormal-and-degraded-scenarios",
+      "placementHint": "Related pages section after the discussion of accessibility mode as a changed input/output condition",
+      "reason": "The source describes a terminal accessibility mode as a degraded-input mode by another name."
+    }
+  ],
+  "qualityChecks": {
+    "factsOnlyFromCurrentSource": true,
+    "documentationStyle": true,
+    "noMarketingLanguage": true,
+    "noInventedClaims": true,
+    "linksOnlyFromLinkingContext": true,
+    "internalNotesNotPublished": true,
+    "readyForSanityImport": true
+  }
+}

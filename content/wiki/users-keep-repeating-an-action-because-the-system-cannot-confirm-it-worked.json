@@ -1,0 +1,142 @@
+{
+  "slug": "users-keep-repeating-an-action-because-the-system-cannot-confirm-it-worked",
+  "title": "Users Keep Repeating an Action Because the System Cannot Confirm It Worked",
+  "pageType": "failure",
+  "category": "failures",
+  "section": "Error And Recovery Failures",
+  "summary": "Users may repeat an action or maintain an external record when the system cannot confirm whether an action succeeded or what state now exists. The design risk is that an interface can make the workaround easier while suppressing the evidence that the underlying system cannot report reliably.",
+  "keyFacts": [
+    "The failure is a compensation pattern: the user behaviour reports that a layer underneath the interface cannot say what happened.",
+    "The diagnostic question is what would have to be true about the system underneath for the user behaviour to be rational.",
+    "The pattern can appear as repeated action, an external record, or a private workaround.",
+    "In the handheld command-and-control engagement, repeated pressing of strike and abort controls was client-reported rather than observed by Creative Navy.",
+    "In the industrial process-control engagement, Creative Navy observed an operator-built shadow system for tracking electrodes because system state drifted from physical reality.",
+    "The handheld command-and-control evidence carries strict scope limits: no safety claim, no validation, no measured prevention, and no claim of sole authorship.",
+    "The interface may still be the only available surface when underlying implementation dependencies are expensive or impossible to modify, or would require re-certification if changed.",
+    "The remedy for unreliable command delivery belongs to command architecture and system safety, not to repeated human input alone."
+  ],
+  "bodySections": [
+    {
+      "heading": "When Repeated User Action Indicates an Unconfirmed System State",
+      "bodyMarkdown": "Creative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nUsers keep repeating an action because the system cannot confirm it worked when repeated input, external records, or private workarounds compensate for an underlying system that cannot reliably report action delivery, acknowledgement, success, or current state. The behaviour may look like user preference or inefficient habit, but the more important reading is diagnostic: the system cannot say whether the action was received, transmitted, acknowledged, applied, or still current.\n\nThe interface request is often legitimate. Users need a way to continue work when confirmation is unreliable. The failure appears when the interface absorbs the compensation pattern and makes it more comfortable, rather than exposing that a deeper layer cannot report reliably."
+    },
+    {
+      "heading": "Failure Pattern: Repeated Action, External Records, and Private Workarounds",
+      "bodyMarkdown": "A user who repeats an action is often trying to manufacture certainty that the system does not provide. Repeated input is not feedback; it adds uncertainty when the user cannot tell whether the action is a retry, a duplicate command, or an action taken against stale information.\n\nThis failure has three common forms:\n\n- Repeating an action until the user feels subjectively satisfied that something happened.\n- Building an external record, such as paper notes or a private tracking sheet, because the system record cannot be trusted.\n- Maintaining a private workaround because the system state drifts from the operational state the user can see or infer.\n\nThe distinction matters because a preference and a compensation behave differently. A preference survives being made easier. A compensation disappears when the underlying defect is fixed. Creative Navy's Critical Systems Design method treats this distinction as a routing decision: if the behaviour compensates for unreliable reporting, the finding belongs to the function that owns that reporting, not only to interface design."
+    },
+    {
+      "heading": "Adjacent Error and Recovery Failures That Look Similar",
+      "bodyMarkdown": "This failure sits inside error and recovery failures, but it is narrower than several adjacent patterns.\n\nErrors Are Hard To Notice concerns an error the system does not surface. Users Keep Repeating an Action Because the System Cannot Confirm It Worked concerns a system that cannot report at all, including cases where no error has occurred and the user still cannot tell whether anything happened.\n\nRecovery Paths Are Weak concerns what the interface offers after a failure. This page concerns behaviour that has grown around an inability to confirm success.\n\nThe Interface Demands Too Much Memory concerns cognitive load imposed by the interface. Here the user may also keep an external record, but the cause is different: the user has invented an external memory because the system's own account is unreliable. The same artefact can therefore require the opposite design response.\n\nUsers Cannot See What State The System Is In is the general state-visibility failure. This page is the specific case where the state cannot be known by the interface with enough reliability, not merely a case where known state is hidden from the user. That distinction decides who owns the fix."
+    },
+    {
+      "heading": "Diagnostic Question for Distinguishing a Workaround from a Preference",
+      "bodyMarkdown": "The diagnostic question is: what would have to be true about the system underneath for this behaviour to be rational. In many cases, the behaviour is rational, which is why it persists.\n\nA repeated tap, a paper coordinate list, or a shadow tracking sheet should not be read first as resistance to a new interface. It should be read as evidence that the user has learned that the system's account of the world is incomplete, delayed, stale, or untrustworthy.\n\nThe practical test is whether the behaviour survives after the underlying defect is fixed. If the behaviour disappears, it was compensation. If it persists after reliable confirmation exists, it may be preference, habit, training residue, or a separate workflow need."
+    },
+    {
+      "heading": "Handheld Command-and-Control Evidence: Repeated Strike and Abort Controls",
+      "bodyMarkdown": "In the tactical handheld command-and-control engagement, Creative Navy worked with a European manufacturer of uncrewed systems, including one-way effectors, and the tactical command-and-control software that operates them. The engagement covered interface structure, task behaviour, information priority, and the clarity of operator control. It did not cover changes to autonomy, control algorithms, autonomous safety behaviour, the datalink, the effector, targeting logic, certification, or weapons-review activity.\n\nThe design task included a request for both the strike control and the abort control to remain permanently visible on the touchscreen. The mechanism behind the request was the important finding: a command issued through the interface might not reach the vehicle, and established operator behaviour was to press the control repeatedly until subjectively satisfied. In that model, the same control was doing two jobs: issuing the command and acting as a manual retry mechanism.\n\nCreative Navy's designers and the client's designers co-authored the case against treating repeated input as the retry mechanism. The diagnosis was that repeated pressing indicated unreliable command delivery, acknowledgement, or state reporting, and that this belonged in the command architecture rather than in human input.\n\nThe documented design requirement was that the interface answer six questions unambiguously: whether the input was registered, whether the command was being transmitted, whether the vehicle acknowledged it, what state the vehicle confirmed, whether the information was current or stale, and whether abort remained available.\n\nThe recommendation stated that one deliberate operator action should become one logical command, with a unique command identifier, controlled and time-bounded retries, duplicate protection, expiration rules, explicit vehicle acknowledgement, and a clear distinction between local input and confirmed vehicle state. The deliverable also stated that blind or unlimited retransmission would be unsafe, that retry policy belonged to system safety, and that hold duration and physical-control design required human-factors and system-safety testing beyond the engagement."
+    },
+    {
+      "heading": "External Records and Shadow Systems Show the Same Compensation Pattern",
+      "bodyMarkdown": "The same failure can appear without repeated pressing. In the handheld command-and-control engagement, the client observed, and reported to Creative Navy, that operators wrote coordinates on paper, lost track of which dialog to open next, and needed active recall for colour and icon meanings.\n\nIn the industrial process-control engagement, Creative Navy observed a different form directly: an operator-built shadow system for tracking electrodes. The private record existed because the system's own account of the world kept drifting from what was physically on the chuck. The shape is the same as the handheld command-and-control case: a human maintained by hand the state that the system could not report reliably.\n\nPublished Polymatica and Enhesa studies described accumulated workarounds in expert tools as habits to be undone. On this failure page, the relevant reading is narrower: some workarounds are not merely habits. They can be reports about a system that does not account for its own state reliably enough for the user to stop compensating."
+    },
+    {
+      "heading": "What the Interface Owes and What It Must Hand Back",
+      "bodyMarkdown": "Creative Navy's Critical Systems Design method treats this failure as both an interface problem and an ownership problem. The interface still owes the user clear local feedback, visible transaction state, currentness information, and explicit distinctions between requested state and confirmed state. Those obligations are designable at the surface.\n\nThe interface must hand back the parts it cannot honestly solve. If the command path cannot confirm delivery, the remedy belongs to command architecture. If retry policy could create duplicate, stale, or unsafe commands, the retry policy belongs to system safety. If the system cannot distinguish current from stale information, the interface must not imply certainty it does not have.\n\nThis is why the command-integrity topic owns the remedy while this failure page owns the diagnosis. The diagnosis is that repeated user action or private statekeeping is evidence of an unreliable reporting layer. The remedy is to make one deliberate action correspond to one logical command, and to give the interface only the claims the system can actually support."
+    },
+    {
+      "heading": "When the Interface Is the Only Available Surface for Change",
+      "bodyMarkdown": "The interface should not be blamed for every underlying system defect, but the interface may still be the only available surface for change. In the handheld command-and-control engagement, several vehicle control and strike-execution workflows were built on implementation dependencies that were expensive or impossible to modify and might require re-certification if changed.\n\nThat constraint changes the design obligation. A constraint respecting design response can still improve what the user sees, what the interface asserts, and what remains available, while stating which parts of the remedy belong elsewhere. The counterweight is important: this failure pattern is not an argument that designers should refuse to improve interfaces over systems they do not control.\n\nThe safe design posture is explicit separation. The interface can make uncertainty visible, keep abort availability unambiguous where the system supports it, and avoid presenting a local input as a confirmed vehicle state. The interface must not present an architectural limitation as if it had been solved by a more comfortable interaction pattern."
+    }
+  ],
+  "evidenceSummary": {
+    "strongClaims": [
+      "The handheld command-and-control deliverable required the interface to answer six questions about input registration, transmission, acknowledgement, confirmed state, currentness, and abort availability.",
+      "The recommendation in the handheld command-and-control engagement routed retry behaviour to command architecture and system safety rather than repeated human input.",
+      "In the industrial process-control engagement, Creative Navy observed an operator-built shadow system for tracking electrodes because system state drifted from physical reality."
+    ],
+    "weakerClaims": [
+      "The failure occurs when repeated action, external records, or private workarounds compensate for a system that cannot reliably report what happened.",
+      "In the handheld command-and-control engagement, repeated pressing of strike and abort controls was evidence of unreliable command delivery, acknowledgement, or state reporting; this operator behaviour was client-reported rather than observed by Creative Navy.",
+      "The interface may be the only available surface when underlying implementation dependencies are expensive or impossible to modify or may require re-certification."
+    ],
+    "limitations": [
+      "No safety claim is made, and no claim is made that any underlying defect was fixed.",
+      "Nothing was measured: no repetition rate, error count, workload figure, or before-and-after outcome is available.",
+      "The handheld command-and-control operator behaviours are client-reported, not Creative Navy field observations.",
+      "The handheld command-and-control deliverable was co-authored with the client's design team; no sole authorship claim is made.",
+      "No conformance claim is made for NASA-STD-3001 Volume 2, requirement V2 10027, FAA AC 25.1302-1, or any other standard.",
+      "The handheld interface was built; no deployment, operational-use, or shipped-as-designed claim is made.",
+      "The industrial process-control example is the only directly observed instance on the page and must not be used to strengthen the handheld command-and-control evidence.",
+      "The page excludes AI output double-checking, which the source treats as calibration behaviour rather than compensation for an unreportable state."
+    ]
+  },
+  "relatedPageSlugs": [
+    "errors-are-hard-to-notice",
+    "recovery-paths-are-weak",
+    "the-interface-demands-too-much-memory",
+    "users-cannot-see-what-state-the-system-is-in",
+    "source-and-age-of-information-are-not-visible",
+    "the-interface-does-not-make-clear-what-an-action-will-affect",
+    "tactical-handheld-command-and-control",
+    "industrial-process-control-platform"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "Errors Are Hard To Notice",
+      "targetSlug": "errors-are-hard-to-notice",
+      "reason": "The source identifies this as a sibling failure and requires the distinction to be stated."
+    },
+    {
+      "anchorText": "Recovery Paths Are Weak",
+      "targetSlug": "recovery-paths-are-weak",
+      "reason": "The source distinguishes this page from recovery support after an actual failure."
+    },
+    {
+      "anchorText": "The Interface Demands Too Much Memory",
+      "targetSlug": "the-interface-demands-too-much-memory",
+      "reason": "The source states that external-record behaviour could otherwise be filed there, but has a different cause on this page."
+    },
+    {
+      "anchorText": "Users Cannot See What State The System Is In",
+      "targetSlug": "users-cannot-see-what-state-the-system-is-in",
+      "reason": "The source identifies state visibility as the general case and this page as the narrower unconfirmable-state case."
+    },
+    {
+      "anchorText": "Source And Age Of Information Are Not Visible",
+      "targetSlug": "source-and-age-of-information-are-not-visible",
+      "reason": "The handheld command-and-control evidence includes the need to distinguish current from stale information."
+    },
+    {
+      "anchorText": "The Interface Does Not Make Clear What an Action Will Affect",
+      "targetSlug": "the-interface-does-not-make-clear-what-an-action-will-affect",
+      "reason": "Repeated input can create uncertainty about whether an action is a retry, duplicate, or action on stale information."
+    },
+    {
+      "anchorText": "tactical handheld command-and-control engagement",
+      "targetSlug": "tactical-handheld-command-and-control",
+      "reason": "The page uses that engagement as its anchor evidence."
+    },
+    {
+      "anchorText": "industrial process-control engagement",
+      "targetSlug": "industrial-process-control-platform",
+      "reason": "The page uses that engagement as the observed example of an external statekeeping workaround."
+    }
+  ],
+  "tags": [
+    "error recovery",
+    "state confirmation",
+    "workarounds",
+    "command integrity",
+    "external records",
+    "system state",
+    "Critical Systems Design",
+    "constraint respecting"
+  ],
+  "_meta": {
+    "sourcePath": "sources/articles/Failures/failures--error-recovery--users-keep-repeating-an-action-because-the-system-cannot-confirm-it-worked.md",
+    "parentSlug": "error-and-recovery-failures",
+    "childPageSlugs": [],
+    "generatedBy": "openai"
+  }
+}

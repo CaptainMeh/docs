@@ -1,0 +1,195 @@
+{
+  "slug": "raymarine-vhf",
+  "title": "Raymarine Marine VHF and AIS Radio",
+  "pageType": "case-study",
+  "category": "evidence",
+  "section": "Marine",
+  "summary": "Creative Navy worked across eight one-week sprints on Raymarine's next-generation fixed-mount VHF radio, covering exploration, UX development and UI delivery. The strongest evidence is Creative Navy-recorded prototype research on a Raymarine-supplied bench mockup: three rounds, twenty-four sessions, eighteen distinct operators, and two measured trade-offs where slower interaction was accepted to reduce specific prototype error classes. The radio was built and released, but the engagement records no field research, no live radio transmission, no certification work, no design-fidelity comparison against the released product, and no measured operational outcome at sea.",
+  "keyFacts": [
+    "Raymarine makes marine electronics, and Raymarine's Ray53, Ray63 and Ray73 fixed-mount VHF radios were the documented product-line precedent for the work.",
+    "Creative Navy worked across eight one-week sprints: two exploration sprints, three UX development sprints and three UI delivery sprints.",
+    "The engagement involved a five-person team: UX designer, UI designer, project manager, product designer and researcher.",
+    "Creative Navy designed the research protocols, moderated all twenty-four prototype sessions and analysed the results; Raymarine supplied the physical bench mockup.",
+    "Eighteen distinct operators took part across twenty-four sessions: six professional operators, six experienced recreational skippers and six occasional users, with six participants returning for a second round.",
+    "The fixed-role channel control model had zero wrong-domain activations in the tested retune and recovery tasks, compared with six of eight under the contextual model, and it carried a 2.30 second median target-browsing penalty.",
+    "The explicit recipient confirmation flow had zero wrong-recipient submissions in the tested condition, compared with two of eight under immediate calling, and it carried a 5.85 second median completion-time cost plus two and a half additional physical actions.",
+    "Two of eight operators misunderstood the external status of a local man-overboard action, and two of eight misunderstood whether position had been included in a distress alert sent without a position fix; revised wording was specified but not re-tested within the engagement.",
+    "The radio was built and released, but no comparison between the released interface and the delivered designs is recorded."
+  ],
+  "bodySections": [
+    {
+      "heading": "Raymarine fixed-mount VHF radio interface work and confirmed release",
+      "bodyMarkdown": "Creative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nRaymarine makes marine electronics. Raymarine's Ray53, Ray63 and Ray73 fixed-mount VHF radios were the documented product-line precedent for this work: Class D Digital Selective Calling sets with an internal satellite positioning receiver, a receive-only AIS receiver on the Ray73, loudhailer output, NMEA 2000 and SeaTalkng networking alongside NMEA 0183, and support for optional second stations.\n\nRaymarine set out to design the next generation of that fixed-mount radio line. The new radio combined conventional voice operation, digital calling, emergency functions and vessel awareness in one instrument with a colour display, two rotary encoders, a four-way keypad, three contextual screen keys, a guarded distress control, a dedicated man-overboard key and a wired microphone.\n\nCreative Navy worked across eight one-week sprints in three project blocks: two exploration sprints, three UX development sprints and three UI delivery sprints. The Creative Navy-recorded engagement facts describe a five-person team, twenty-four prototype sessions with eighteen distinct operators, thirty-two UX decisions, forty-three exception records, twenty-three screen families, eighteen component requirements and an engineering handover. The radio was built and released.\n\nThe release status is a recorded product fact, not evidence of interface performance. The available engagement record contains no comparison between the released interface and the delivered designs, no commercial result, no sales or reception evidence, and no measured operational outcome at sea."
+    },
+    {
+      "heading": "Raymarine's brief made product boundaries part of the interface problem",
+      "bodyMarkdown": "Raymarine's partner brief named six questions for the work: the boundary between the radio and a connected chartplotter, the amount of AIS detail that belonged on a small display, the tasks that required dedicated physical controls, the coexistence of expert speed and first-use clarity, the priority relationship between routine calls, vessel alerts and distress, and the radio's relationship to remote stations and the wider Raymarine system.\n\nRaymarine's brief asked Creative Navy to examine the product proposition before detailed screen design. It treated core voice and digital-calling safety functions as essential, while leaving AIS implementation, display depth and the distribution of features between the radio and connected devices as open design decisions.\n\nThe operating premise was that this instrument performs actions beyond the display. A voice transmission occupies a shared channel. A digital call addresses a specific vessel by registered identity. A distress alert reaches a coast station. AIS awareness is receive-only and incomplete. The interface had to show which action had happened, while the radio's subsystems remained the authority on radio outcomes."
+    },
+    {
+      "heading": "Creative Navy's Critical Systems Design method treated the control model as architecture",
+      "bodyMarkdown": "Creative Navy's Critical Systems Design method designs software whose interfaces, workflows, and operating logic carry real operational consequences, working through five phases — Sandbox Experiments, Concept Convergence, Iterative System Building, Organizational Integration, and Implementation Partnership — to take each system from initial exploration to independent operation by the client's own team.\n\nCreative Navy's Critical Systems Design method was applied through four fully evidenced phases in this engagement, with a fifth phase named at unspecified weight. Sandbox Experiments corresponded to the first exploration sprint: task and event mapping, three product architectures, three AIS structures and three channel-awareness treatments. Concept Convergence corresponded to the second exploration sprint: the four-model physical control study, the cross-screen input contract, the alert priority model and the twelve-entry decision register.\n\nIterative System Building covered the three UX development sprints and the three UI delivery sprints. Creative Navy's work used three research rounds to revise operating flows, calling behaviour, degraded states, emergency states, screen families and component definitions. Organizational Integration was evidenced through the component contract, screen register, decision register, acceptance registers and change-control rule. Implementation Partnership was offered on Creative Navy's standard terms, as on other engagements, but the available engagement material does not record its duration, form or frequency.\n\nThe engagement is a clear instance of tension-driven reasoning and evidence-aware thinking. Creative Navy compared named alternatives, recorded the option not carried forward, and preserved the cost of the selected option when the slower path was chosen. The work also used constraint respecting: the interface was specified to reflect what the radio protocol, positioning state, AIS receiver and network connection could actually evidence.\n\nDomain learning in this engagement was documentary and procedural rather than field based. The work drew on Raymarine's product-line precedent, maritime operating procedure and the established conventions of the fixed-mount radio category, but it did not include sea trials, on-vessel observation or helm-environment research."
+    },
+    {
+      "heading": "One rotary encoder had three possible jobs and one structural failure mode",
+      "bodyMarkdown": "The central design conflict was a physical control conflict. The lower rotary encoder could have changed the voice channel in the radio view, moved between vessels on the AIS view, and moved focus or edited values in settings. That contextual assignment was efficient, but it made the next rotation ambiguous after an interruption or screen change.\n\nThe failure mode was structural. A wrong-domain action could appear to work because a visible object moved. If an operator reached for the channel selector while an AIS plot was open and the selected vessel moved instead, the interface might show movement without showing an error. The radio would remain on the old channel, and the operator would have to recognise the domain error.\n\nCreative Navy changed the design question from shortest route to target selection to predictable communication behaviour across screens, interruptions and experience levels. Four control models were compared: contextual rotary, fixed role, explicit mode and an additional dedicated control. The fixed-role model advanced. The channel encoder remained a channel control, while the directional keypad and labelled softkeys handled contextual interaction.\n\nThe explicit mode model was rejected because a persistent mode created memory burden after interruption, while a reset mode changed the meaning of the next rotary movement unexpectedly. The additional-control model was set aside because it introduced industrial design, bill-of-materials and panel-space consequences and was not required to resolve the ambiguity."
+    },
+    {
+      "heading": "The fixed-role control model removed a prototype error class and cost target-browsing time",
+      "bodyMarkdown": "Creative Navy-recorded prototype research tested contextual rotary control against fixed-role rotary control in the first UX development sprint. Eight participants completed paired and counterbalanced prototype tasks on a Raymarine-supplied bench mockup. The tasks included retuning to the priority channel while an AIS plot was open, selecting a target in dense traffic, and recovering after a scripted incoming routine call.\n\nWrong-domain activations occurred in six of eight sessions under the contextual model and zero of eight under the fixed model on the retune task, and again on the recovery task. Unassisted completion was six of eight under the contextual model and eight of eight under the fixed model on both tasks. Both prompted completions occurred under the contextual model.\n\nThe fixed-role model also carried a recorded price. Median target browsing time was 8.55 seconds under the fixed model and 6.25 seconds under the contextual model, a 2.30 second penalty under the selected model. Creative Navy retained the fixed model and moved optimisation effort into target ordering, selection visibility and shortcut placement rather than reintroducing a second channel mode.\n\nThe result supports a bounded prototype claim. In this fixed scenario fixture, with this bench mockup and eight participants, the fixed-role control model removed wrong-domain activations in the tested tasks and made target browsing slower. It does not establish an at-sea error rate, a safety outcome or a population estimate."
+    },
+    {
+      "heading": "AIS browsing was redesigned around stable vessel identity rather than row position",
+      "bodyMarkdown": "Creative Navy's design response to the slower fixed-role model was to make vessel selection more stable and recoverable. The list and compact plot became peer primary screens. Both exposed the same selected vessel, the same actions and the same persistent channel header.\n\nSelection was held by vessel identity, not by row index or screen coordinate. Switching between list and plot, changing sort order, zooming the plot or receiving ordinary position updates could not transfer selection to another vessel. If a target disappeared, no neighbouring record inherited focus and the operator had to select another target deliberately.\n\nThe AIS list was specified as a stable directory during active browsing rather than a live leaderboard. Incoming position updates could refresh range and bearing without reshuffling rows under the operator's thumb. Reordering happened through explicit sort or at a safe refresh boundary. Overlapping plot targets could be grouped when necessary, but a group did not become a callable vessel and did not suppress a risk signal attached to a record inside it.\n\nData quality was also separated from risk. Current, risk-flagged, uncertain-prediction, stale-or-lost, unknown-identity and receiver-unavailable states each had distinct plot and list treatment without relying on colour alone. A stale position carried its age and live risk calculations were suppressed."
+    },
+    {
+      "heading": "Explicit recipient confirmation added time and reduced wrong-recipient submissions in the prototype",
+      "bodyMarkdown": "Creative Navy-recorded prototype research tested immediate calling against explicit recipient confirmation in the second UX development sprint. Both concepts used identical hardware mappings, identical AIS information and identical physical controls. The variable was where the extra interaction occurred after the operator pressed the call action.\n\nUnder immediate calling, two of eight participants submitted a simulated request to an unintended registered identity. Under explicit confirmation, zero of eight submitted a wrong-recipient request. Initial wrong target selections still occurred: four of eight under immediate calling and three of eight under confirmation. All three initial errors under confirmation were detected and corrected at the confirmation surface before a request was sent.\n\nThe confirmation step also had a measured cost. Median completion time was 23.80 seconds with confirmation and 17.95 seconds with immediate calling, a 5.85 second cost. Median physical actions were 8.5 with confirmation and 6.0 with immediate calling. The selected design deliberately paid that interaction cost.\n\nThe recorded interpretation is narrow. Confirmation did not remove target selection mistakes. It made the recipient identity visible at a second decision point, giving operators a place to detect and correct an error before submitting the request."
+    },
+    {
+      "heading": "Digital calling states were specified as protocol stages rather than visual success messages",
+      "bodyMarkdown": "Creative Navy-recorded prototype research found a comprehension problem in the wording of routine digital calling. With a generic success surface, three of eight participants correctly understood the status. Five participants interpreted the message as meaning the other vessel had responded or that voice communication was already available. With distinct transaction states, eight of eight gave the correct status description.\n\nThe calling flow therefore separated ready to send, sending, request sent and awaiting acknowledgement, acknowledged, no acknowledgement received, and request not sent. The preparation surface showed the intended vessel, its registered identity status, the proposed working channel and the routine priority, and it sent nothing until a second explicit action.\n\nThe recipient was also revalidated at the moment of sending. If the target identity changed or the record was invalidated, the transition stopped and the operator had to reselect. A neighbouring target could not be substituted. Sending was also gated on the station being commissioned, the chosen working channel being lawful under the active regional profile, and no overlapping transaction being active.\n\nThis was part of a broader constraint-respecting rule. The interface interpreted and displayed protocol and subsystem states; it did not become the source of truth for radio outcomes."
+    },
+    {
+      "heading": "Interruptions were handled through priorities, arbitration and validated task return",
+      "bodyMarkdown": "Creative Navy specified four event priority levels by consequence rather than arrival order. Emergency events included outgoing distress, received distress and local man overboard. High concern included qualifying proximity risk or urgency events. Operational events included incoming routine calls, degraded data conditions and blocked actions. Background events updated quietly without taking keypad focus.\n\nBefore an event was displayed, the interface classified it, coalesced exact duplicates, arbitrated against the active incident, radio state and current focus owner, presented it on the appropriate surface with permitted actions and sound, and restored earlier work only after a validity check.\n\nTask restoration used a structured snapshot. The origin screen, focused identity, list position, plot scale, uncommitted draft values, transaction status and live channel were captured. On return, each was validated. A still-valid target could be restored. An expired target produced an explicit unavailable state. No unsent action was replayed, and a restored call draft required a new deliberate send.\n\nIn the third research round, seven of eight participants resumed an interrupted task unassisted. Median resumption time was 12.60 seconds across all eight attempts and 12.00 seconds across the seven unassisted recoveries. Both denominators matter because the figures measure different things."
+    },
+    {
+      "heading": "Emergency states separated local man overboard, outgoing distress and received distress",
+      "bodyMarkdown": "Creative Navy specified local man overboard, outgoing distress and received distress as separate workflows with separate identities, timelines and histories. A locally initiated man-overboard incident recorded a reference position, source and elapsed time. An outgoing distress alert was a protected radio action with sending, sent, awaiting acknowledgement, acknowledged and failed states. A received distress alert was information from another station, identified by sender, time and supplied position.\n\nDistress initiation was protected and independent of the visible screen. The covered control could start the approved procedure from any display state, including AIS, call preparation and another emergency surface. An incomplete activation gesture could not show a sent status.\n\nPosition provenance was carried through the emergency interface. A current fix, an aged fix, a last-known position with its time, and no position were specified as separate conditions with separate statements. A position recovered after an alert was sent did not retrospectively change what the alert contained. Where no position was supplied, the interface stated that condition and offered the voice procedure rather than blocking it.\n\nCancellation of an inadvertent distress alert was specified as a procedure. It was distinct from silencing an alarm and from closing a panel, included a voice cancellation step, and a failed cancellation could not display a cancelled state. Powering the radio off was not presented as a cancellation shortcut."
+    },
+    {
+      "heading": "Two high-severity comprehension failures remained open at handover",
+      "bodyMarkdown": "Creative Navy's own comprehension probes found two unresolved safety-language problems. In the third research round, eight of eight participants activated the man-overboard function correctly, but two of eight believed the local action had transmitted an external distress alert. In a separate scripted condition, two of eight believed a position had been included in a distress alert sent without a position fix.\n\nBoth issues were recorded as high-severity and open for retest. Revised wording was specified for the man-overboard external status and the missing-position status during a distress event. That revised wording was not re-tested within the engagement.\n\nThe evidence therefore supports a narrow boundary. Creative Navy specified a revised interface response for two serious comprehension failures, but the engagement did not measure whether the revision resolved the failures. The public claim stops at the specification and the recorded need for retest."
+    },
+    {
+      "heading": "Raymarine radio and chartplotter boundaries were specified by authority over irreversible acts",
+      "bodyMarkdown": "Creative Navy specified the product boundary between the radio and the connected chartplotter around authority. The radio owned transmission: voice actions, channel tuning, digital calling transactions and protected emergency initiation remained local. The chartplotter owned navigation: chart, route, radar context and large-format traffic analysis. The network shared information such as vessel positions, identity and valid positioning or calling status where supported.\n\nTwenty-eight functions were assigned to the radio, the chartplotter or a shared information boundary. Five ownership decisions were fixed at the close of the third UX development sprint: local autonomy, no duplicate chart, explicit call ownership, provenance, and independent incidents.\n\nSix integration shortcuts were examined and rejected. The most consequential rejected shortcut was allowing a chartplotter target highlight to become the radio's call recipient automatically, because unrelated chart navigation could alter a communications recipient. Other rejected shortcuts included chartplotter control of the radio channel, shared alert dismissal, automatic fallback to the chartplotter's position, centralised radio settings and a full AIS chart on the radio.\n\nThe specified scope excluded AIS transmission, a chart engine, route creation, radar control, autopilot command, remote radio command from the chartplotter, multiple remote handset station interfaces, firmware implementation, industrial design tooling and certification."
+    },
+    {
+      "heading": "UI delivery translated state rules into visual and component requirements",
+      "bodyMarkdown": "Creative Navy's UI delivery work compared three visual languages. A dense technical instrumentation model was rejected because routine metadata competed with urgent content. A chartplotter-inspired model was rejected because it did not separate communication and charting tasks sufficiently. A restrained communication-first instrument model was selected because it prioritised the action and its operational consequence.\n\nDay and night presentation modes were specified as paired themes with identical interaction ordering and identical action labels. Every semantic colour carried a mandatory non-colour encoding. Priority was also communicated through event labels, icons and spatial treatment, and interaction focus used visible outline, weight and position rather than colour alone.\n\nThe component system contained eighteen components in seven groups: radio continuity, navigation, AIS content, calling, safety, system state and day-and-night theme layer. Each component definition included purpose, required information, state variants, valid actions, focus and disabled treatment, priority behaviour and dependencies.\n\nThe handover closed twenty-three screen families across normal, empty, degraded, blocked, interrupted and emergency variants. Acceptance registers were written as observable conditions testable against a prototype, a hardware mockup or a firmware implementation. A two-class change-control rule stated that proposals to remap the channel encoder, remove routine recipient confirmation, merge incident statuses or permit automatic network-initiated radio actions would reopen the corresponding UX decision and require documented impact assessment."
+    }
+  ],
+  "evidenceSummary": {
+    "strongClaims": [
+      "Creative Navy worked with Raymarine across eight one-week sprints in three project blocks: two exploration sprints, three UX development sprints and three UI delivery sprints. This is a Creative Navy-recorded engagement fact, not an outcome claim.",
+      "The engagement involved twenty-four prototype sessions with eighteen distinct operators across three research rounds, with six participants returning for a second round. Creative Navy designed, moderated and analysed the sessions; Raymarine supplied the physical bench mockup.",
+      "The fixed-role control model had zero wrong-domain activations in the tested retune and recovery tasks, compared with six of eight under the contextual model, and carried a 2.30 second median target-browsing penalty. This is a descriptive prototype comparison, not a field result.",
+      "The explicit recipient confirmation flow had zero wrong-recipient submissions in the tested condition, compared with two of eight under immediate calling, and carried a 5.85 second median completion-time cost plus two and a half additional physical actions. Confirmation made recipient identity legible at a second decision point; it did not remove target selection mistakes.",
+      "A generic digital-call success surface produced correct status comprehension in three of eight sessions, while distinct transaction states produced correct status comprehension in eight of eight sessions. This is a prototype comprehension finding, not a live digital calling result.",
+      "Two of eight operators misunderstood the external status of a local man-overboard action, and two of eight misunderstood whether position had been included in a distress alert sent without a position fix. Revised wording was specified and recorded as requiring retest, but was not re-tested within the engagement."
+    ],
+    "weakerClaims": [
+      "The radio was built and released, with no recorded comparison between the released interface and the delivered designs. Release is a product status fact, not evidence that the product shipped as designed or achieved operational outcomes."
+    ],
+    "limitations": [
+      "All twenty-four research sessions were bench prototype sessions; no field research, sea trials or on-vessel work occurred.",
+      "Raymarine's brief named wet hands and gloves, glare and night sailing, vibration, ambient noise and divided attention, but the engagement tested none of those operating conditions.",
+      "No live radio transmission, live digital calling, live AIS reception or live distress signalling occurred; every signalling state was simulated locally.",
+      "No statistical significance testing was applied, and the comparisons are descriptive within-scenario comparisons from a small purposive sample.",
+      "The twenty-four sessions involved eighteen distinct operators because six participants returned for a second round.",
+      "The residual issues clustered among occasional users, but the records do not support causal cohort comparison.",
+      "The revised wording for the man-overboard external status and missing-position distress status was specified but not re-tested within the engagement.",
+      "The radio was built and released, but no design-fidelity comparison against the released interface is recorded.",
+      "No certification, compliance or regulatory work by Creative Navy is recorded; Raymarine retained radio protocol behaviour, regional channel plans, distress procedure, alarm audibility and final conformity.",
+      "Implementation Partnership was offered on Creative Navy's standard terms, but the duration, form and frequency of any subsequent involvement are not recorded.",
+      "The engagement record contains no commercial result, no sales or reception evidence, and no measured operational outcome at sea.",
+      "The engagement included no competitive benchmarking, no hardware or firmware validation, no audit deliverable and no usability testing of the revised safety wording."
+    ]
+  },
+  "relatedPageSlugs": [
+    "mdu-ship-motion-monitoring",
+    "cox-marine",
+    "torqeedo-maritime-hmi",
+    "ait-heat-pump-controller",
+    "maritime-vts",
+    "what-we-have-measured",
+    "what-is-observed-but-not-quantified",
+    "what-we-do-not-claim",
+    "marine-and-maritime-systems",
+    "embedded-devices-and-constrained-interfaces",
+    "high-consequence-environments",
+    "regulated-products"
+  ],
+  "internalLinks": [
+    {
+      "anchorText": "MDU Ship Motion Monitoring",
+      "targetSlug": "mdu-ship-motion-monitoring",
+      "reason": "Companion marine case for the marine evidence cluster."
+    },
+    {
+      "anchorText": "Cox Marine",
+      "targetSlug": "cox-marine",
+      "reason": "Related marine case study in the same context area."
+    },
+    {
+      "anchorText": "Torqeedo Maritime HMI",
+      "targetSlug": "torqeedo-maritime-hmi",
+      "reason": "Another marine engagement relevant to constrained maritime interfaces."
+    },
+    {
+      "anchorText": "AIT Heat Pump Controller",
+      "targetSlug": "ait-heat-pump-controller",
+      "reason": "Contrasting embedded-device case with a different input-device problem."
+    },
+    {
+      "anchorText": "Maritime VTS and Portfolio Design System",
+      "targetSlug": "maritime-vts",
+      "reason": "Closest existing maritime case-study neighbour in the available page set."
+    },
+    {
+      "anchorText": "What We Have Measured",
+      "targetSlug": "what-we-have-measured",
+      "reason": "Evidence-standard page relevant to paired prototype comparisons and accepted costs."
+    },
+    {
+      "anchorText": "What Is Observed But Not Quantified",
+      "targetSlug": "what-is-observed-but-not-quantified",
+      "reason": "Evidence-standard page relevant to coded session observations and cohort patterns."
+    },
+    {
+      "anchorText": "What We Do Not Claim",
+      "targetSlug": "what-we-do-not-claim",
+      "reason": "Evidence-standard page relevant to field-research, live-transmission, compliance, fidelity and outcome limits."
+    },
+    {
+      "anchorText": "Marine And Maritime Systems",
+      "targetSlug": "marine-and-maritime-systems",
+      "reason": "Source-classified context for this case study."
+    },
+    {
+      "anchorText": "Embedded Devices And Constrained Interfaces",
+      "targetSlug": "embedded-devices-and-constrained-interfaces",
+      "reason": "Source-classified context for this case study."
+    },
+    {
+      "anchorText": "High Consequence Environments",
+      "targetSlug": "high-consequence-environments",
+      "reason": "Source-classified context for this case study."
+    },
+    {
+      "anchorText": "Regulated Products",
+      "targetSlug": "regulated-products",
+      "reason": "Source-classified context for this case study."
+    }
+  ],
+  "tags": [
+    "case study",
+    "marine systems",
+    "VHF radio",
+    "AIS",
+    "digital selective calling",
+    "prototype evaluation",
+    "physical controls",
+    "state visibility",
+    "degraded states",
+    "tension-driven reasoning",
+    "progressive specification"
+  ],
+  "_meta": {
+    "sourcePath": "sources/articles/Case studies/case-study--raymarine-vhf.md",
+    "parentSlug": "marine",
+    "childPageSlugs": [],
+    "generatedBy": "openai"
+  }
+}
