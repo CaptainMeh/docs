@@ -62,6 +62,18 @@ Creative Navy's Critical Systems Design method provided the sequencing framework
 
 The framework gave the stakeholder group a shared basis for prioritisation decisions that was external to their individual preferences. The decisions were still made by the stakeholders — Creative Navy's role was to supply the sequencing logic and make the consequences of different orderings visible, not to make the decisions itself. Fewer mid-sprint clarifications were needed; rework from unclear component definitions reduced (client-reported by the product manager). No deadline was missed across 11 months of engagement. The organisation was capable of operating the resulting design system without ongoing external support at handover — directly observed by Creative Navy.
 
+**Streetec — the diagnosis of misalignment, in the client's own words**
+
+Streetec, whose kntrl 2 control system for aftermarket automotive air suspension shipped and is in the market, remains the best evidence for this situation because the client diagnosed its own deadlock on record (verbatim quotation is cleared for Streetec, attributed to role). On internal deadlock: *"We are seven people and we had nine different opinions on what to do. And in the end we said, it's not enough to decide that — we will listen to you, what your expertise says… we are paying you for deciding that."* On their own expert bias: *"Last time when we had our meeting with all our employees, we realised that all of us, we all know the existing systems, we very well know how an air suspension works. So our idea was to talk to people who has no clue about that."* And on why internal discussion failed: *"We are all very result focused here. So if you have a meeting of one hour, everybody tries to get the final product within this hour."*
+
+**Topera — the instrument rather than the diagnosis**
+
+Topera, the cross-organisational project management platform Creative Navy produced a concept design for, adds something different from Streetec's material and must be kept clearly separate from it: not a diagnosis of misalignment but the instrument a team reaches for when alignment is the problem. The entire engagement was three one-week sprints, producing a concept design whose job was to be legible to people deciding whether the platform should exist. **Creative Navy scoped a full design of the platform at twenty-four one-week sprints and put that position to the client before the engagement began. The client commissioned three, as a concept design. The twenty-four-sprint figure is Creative Navy's professional estimate of the full scope, not a measured comparison between two pieces of work** — nothing was compressed; a different and much smaller deliverable was produced, deliberately. **Topera's team was pleased with the concept design and took it to show stakeholders. No stakeholder response, decision, commitment or funding event is known to Creative Navy, and none is claimed.**
+
+**Oceaneering — alignment with no requirement set to align on**
+
+For Oceaneering's hospital dispatch panel, the starting condition was stated by the client project lead: there were no concrete business requirements; what existed was study of the deployed panels, the tool built in-house for one hospital, and conversations with sales, service and subject-matter experts. And Oceaneering's technology manager named his own organisation's bias — his concern was ending up with a group of engineers deciding what the interface should be, when engineers are the ones who work with it daily; he counted himself among them, saying he knew how bad engineers can be at this and that he wanted to be sure they did not lose sight of who the interface is for. **All Oceaneering client speech is reported, never quoted; role descriptors only.**
+
 ---
 
 ## What Creative Navy's Critical Systems Design method addresses here
@@ -73,3 +85,13 @@ Creative Navy's Critical Systems Design method addresses this by moving the argu
 In the Dancerace engagement, the workshops were where this conversion happened explicitly. A stakeholder who saw a wireframe and was asked "if you decide this, the consequence for the user is that" was no longer arguing about whether users should see advanced features. They were arguing about whether this particular sequence of screens would produce this particular user behaviour — a question the design had made answerable. The stakeholder group's alignment was not achieved through better facilitation; it was achieved because the design had changed the nature of the question from a principle to a consequence.
 
 Organizational Integration — the phase where design understanding is structured for transfer — is where the alignment becomes durable. After the Dancerace engagement, Dancerace's team had not just agreed on a product direction; they had built a shared understanding of why the product works the way it does. The workshops produced shared understanding of what the product is, who it is for, and how the mechanism generates value. That understanding was specific enough to make future decisions without Creative Navy present — because the reasoning that produced the initial alignment was transferred along with the decisions.
+
+---
+
+## What this page must not claim
+
+- **Topera does not exist as a system.** It is a concept design; nothing has been built, and no outcome of any kind may be attached to it. T14 is never converted into traction, validation, approval, interest, momentum, a funding round or a commissioning decision; no stakeholder, partner or prospect of Topera is named. Never write "eight times faster" or any compression reading of the three-versus-twenty-four-sprint scoping.
+- **Topera's material stays clearly separate from Streetec's**: Streetec is a diagnosis of misalignment; Topera is a designed response to it. Different engagements, no shared facts.
+- **Oceaneering speech is reported, never quoted**, and only Oceaneering is named — no hospital names, no product names, role descriptors only. No efficiency, training or throughput outcome: nothing was measured.
+- **Streetec quotes are attributed to role, never to a named person.**
+- **No engagement dates anywhere.** Sequence and duration only.

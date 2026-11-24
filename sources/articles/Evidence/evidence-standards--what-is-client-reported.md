@@ -144,6 +144,44 @@ Evidential basis: the 9-clinic purchase outcome is client-reported. Creative Nav
 
 ---
 
+### The category's bounds — client reports at, below, and past the usable threshold
+
+**The industrial engagement — a worked example with every qualifier explained**
+
+For a European industrial automation vendor whose process control software coordinates machining cells, one client-reported satisfaction result exists, and it carries its full qualification wherever it appears: **in usability testing conducted by the client with 12 participants, all 12 rated the new designs as significantly above expectations. This result is client-reported: the test was designed and run by the client's own team, it captures participants' rated impressions rather than measured task performance, and it was conducted on designs rather than on a deployed system.** Each qualifier does work. Client-designed and client-run means Creative Navy did not control recruitment, tasks or recording. Rated impressions mean no task performance was measured. Designs rather than a deployed system mean nothing here describes the product in use. **Never compress this to "12/12", "100% satisfaction", or anything implying measured improvement.** The product is in development; nothing in this engagement is an outcome.
+
+**Streetec, AIT and Assemblio — the category's lower bound**
+
+Three shipped products whose clients say they are doing well, with no figures:
+
+- **Streetec reports that the product is performing well in sales and in the feedback they receive. This is client-reported and unquantified: no figures were shared, and Creative Navy has not independently verified it.**
+- **AIT reports that feedback from its dealers and partners was much better than expected. This is client-reported and unquantified: no figures were shared, and Creative Navy has not independently verified it.**
+- **Assemblio reports that it is very happy with the work and that the work unlocked further funding. This is client-reported and unquantified: no figures were shared, Creative Navy has not independently verified it, and no causal claim is being made about any particular funding event.** The Assemblio report is the weakest of the three and therefore the most useful on this page: it mentions funding without any detail, which is exactly the point at which a client report becomes unusable as evidence. **Assemblio's funding history is publicly reported and publicly dated; connecting this remark to any public funding event would invent a causal chain the evidence does not support, and is prohibited.**
+
+**Topera — the floor: a client report that fails the bar**
+
+**Topera's team was pleased with the concept design and took it to show stakeholders. No stakeholder response, decision, commitment or funding event is known to Creative Navy, and none is claimed.** This sits below all three lower-bound entries: a client was pleased and carried the artefact to stakeholders — no stakeholder named, no response reported, no decision known, and no product in existence to be pleased about the performance of (nothing was built). If the Assemblio report marks the point at which a client report becomes unusable as evidence, this marks the point past it — and a page about calibrating client reports is more instructive for holding an example that fails the bar than for holding only examples that clear it. **Never convert it into traction, validation, approval, interest, momentum, a funding round, a commissioning decision, or evidence that anyone beyond the client received it well.**
+
+**Egma — two distinctions the category should draw**
+
+First, a client report about the *engagement* rather than the product — the most common form of client report an agency actually receives, and one this page should distinguish explicitly: **at the close of the engagement Egma's CEO described Creative Navy's timeline management as better than that of any third party the company had worked with, and said that Creative Navy always had reasoning behind what it proposed. This is client-reported and unquantified: it is an assessment of the engagement, given before the platform was in use, and it is not a measure of the platform's performance.** Never convert it into a satisfaction score or a renewal statistic, and Egma's return with a second project is a separate fact that must not be presented as a consequence of the praise.
+
+Second, a client report publishable in part: **Egma's CEO has described evaluating the field on quality of work and project references before price, against his own team's instinct to go on price, and said afterwards that he judged the approach vindicated. This is client-reported and concerns how the engagement was bought, not what the design achieved.** The reasoning is published and the specifics are withheld: no price position relative to other bidders, no reproduction of the internal disagreement in detail, and it is never placed near a statement about the platform.
+
+**Oceaneering — the page's first client-confirmed fidelity claim**
+
+**The dispatch panel interface Creative Navy designed is in production, and Oceaneering confirms it shipped as the design that was delivered. Oceaneering reports that the feedback it has received has been good. The fidelity statement and the feedback are both client-reported: Creative Navy did not independently compare the shipped build against the delivered files, no figures were shared, and neither has been independently verified.** This is the first client-confirmed fidelity claim in the portfolio, and it must be distinguished from the AIT, MDU and Assemblio fidelity claims, which are Creative Navy verifications — in those three, Creative Navy itself compared the shipped interface against the delivered designs. **Never write the Oceaneering statement at their weight.** And as everywhere: shipped-as-designed is evidence that the design survived development, not that the design is good. The operating context in this engagement is likewise documented and client-stated rather than observed — no dispatch operator was interviewed, no depot was visited. **Every Oceaneering account is reported speech attributed to a role, never a quotation.**
+
+**The handheld command-and-control engagement — the posture applied against interest**
+
+For a European manufacturer of uncrewed systems, including one-way effectors, and the tactical command-and-control software that operates them, two client-reported items belong here, both unflattering, which is why they are worth having. First, the operator behaviours in the expert review are client-reported, and must be labelled as such every time: **the client observed, and reported to Creative Navy, that operators wrote coordinates on paper as an external memory aid, lost track of which dialog to open next, and needed active recall for colour and icon meanings** — the client's observations of the client's own users, relayed, not fieldwork; **Creative Navy has no primary field evidence on this engagement.** Second, the only session with users was the client's, and it returned a negative finding about the design's own premise: **in a prototype session run by the client with six participants — former military personnel and current drone operators, some working bare-handed and some gloved — gloved touch was found to be unreliable on the target panel.** It is not a usability test (no criteria fixed in advance, no pass rules, no task times, no error counts), not Creative Navy's research, not a validation of the design — the favourable remainder was a progress note in a meeting record, not approval — and it tested a non-functional prototype, not a system. The value of this page is in modelling the posture; these two entries are the posture applied against interest. **No quotation marks and no reported speech in any passage carrying this engagement, and the locked descriptor above is its only identifier.**
+
+**The maritime VTS engagement — nothing qualifies, which is unusual**
+
+The engagement for a European vendor of maritime traffic monitoring, inland navigation and communications software for port authorities, coastal administrations and waterway operators has **no client-reported figure of any kind** — worth stating, because it is unusual: its strongest evidence is Creative Navy-measured and appears on the measured page, and its client's own commercial director recorded that no reliable measurement connected visual change to tender wins.
+
+---
+
 ## What separates client-reported from other categories
 
 Client-reported outcomes are distinct from three other categories used on this site:
@@ -155,3 +193,16 @@ Client-reported outcomes are distinct from three other categories used on this s
 **From observed-but-not-quantified:** Observed outcomes are things Creative Navy's own team witnessed during or immediately after an engagement — direction confirmed but not quantified. Client-reported outcomes are things the client communicated, which may or may not have been directly observed by Creative Navy.
 
 **From inferred:** Inferred outcomes are reasoned from the structure of a system or the logic of an intervention — they describe what is made possible rather than what was reported as having happened. Client-reported outcomes are accounts of things that happened, even if the account cannot be independently verified.
+
+---
+
+## What this page must not claim
+
+- **Do not add the MDU, and the distinction is worth preserving**: the manufacturer's fleet figures are the manufacturer's own *sales material* describing its sensor product, not a client report about Creative Navy's work. Filing them here would stretch "client-reported" to mean "found in a client's marketing", which is a different and much weaker thing.
+- **Never compress the industrial engagement's 12-participant result**, and never attach any outcome to a product that is in development.
+- **Never connect the Assemblio funding remark to any publicly reported funding event**, and never borrow Assemblio's own published marketing claims about what its product achieves.
+- **Never present the Oceaneering fidelity statement as a Creative Navy verification or place it among measured outcomes**, and never quote Oceaneering speech.
+- **Never convert the Egma CEO's engagement assessment into a product claim or a satisfaction score**; never state Creative Navy's price position, reproduce the procurement disagreement in detail, or mention anything beyond the published reasoning.
+- **Never convert the Topera stakeholder tour into any form of traction**; nothing was built.
+- **No quotation marks and no reported speech for the handheld C2 engagement or the maritime VTS engagement**; positions are attributed to the role and the artefact they came from.
+- No engagement dates anywhere — sequence and duration only.

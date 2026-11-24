@@ -44,7 +44,7 @@ State visibility failures are among the most consequential in high-consequence a
 
 ### deSoutter Medical / Zethon (operating theatre state recognition — surgeon-reported)
 - The state visibility problem: the operating theatre imposes the most demanding state visibility conditions — variable lighting, gloved hands, brief glances, divided attention. The previous design relied on colour as the primary state indicator, which fails under variable theatre lighting.
-- **6 of 8 benchmarked competitor devices** used colour as the primary — and often sole — state indicator. Under variable theatre lighting, this is a state visibility failure waiting for the operating conditions to activate it.
+- **Most of the 6 benchmarked comparable devices** used colour as the primary — and often sole — state indicator. Under variable theatre lighting, this is a state visibility failure waiting for the operating conditions to activate it.
 - Resolution: redundant non-colour cues (spatial position + icon form + colour) for every critical state — the failure of any single channel under operating conditions does not remove the signal
 - **Surgeons reported: device state could be verified during brief glances without reading. Design review sessions, 8 surgeons. State as surgeon-reported from design review sessions, not post-deployment measurement.**
 - Activation state recognition specifically improved: the transition from ready to active — the highest-risk state change in surgical instrument use — was made recognisable rather than requiring interpretation

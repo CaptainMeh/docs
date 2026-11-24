@@ -42,4 +42,25 @@ Use as illustration:
 
 - Kardion MCS Controller: the layout stability standard (no element shifts position across any view transition) was derived from the clinical state visibility requirement — surgeons build spatial memory during procedures and depend on it for rapid state verification. **Formative evaluation only; summative validation is the manufacturer's responsibility.**
 
-- deSoutter Medical: redundant non-colour cues for critical device states (spatial position + icon form + colour) specifically because variable theatre lighting degrades single-channel colour-based communication. 6 of 8 benchmarked competitor devices relied on colour alone. **Surgeon-reported from design review sessions.**
+- deSoutter Medical: redundant non-colour cues for critical device states (spatial position + icon form + colour) specifically because variable theatre lighting degrades single-channel colour-based communication. Most of the 6 benchmarked comparable devices relied on colour as the primary state indicator. **Surgeon-reported from design review sessions.**
+
+### KISPE Space (device state and information state are different things)
+
+- The client is **KISPE Space**, a UK space systems engineering company; nothing else from the engagement may be named. **No quotation marks and no reported speech on any page carrying KISPE.** The product was built; **Creative Navy did not support the build and has not compared the built interface against the delivered designs.**
+- KISPE's contribution is the distinction between **device state and information state**. The page's existing entries concern what a system or its components are currently doing. KISPE's interface makes visible the state of the *information itself* — where a record came from, how old it is, whether it was delivered, whether the user may see it — as something separate from the state of any device. Status was specified as seven independent dimensions rather than one scale, with the rejected alternative named: a single green-to-red health score would make identical colours carry conflicting meanings across domains (K55). **This is a property of sources, not of a model — KISPE has no AI and must not be drawn into the AI cluster.**
+
+### Schone Airspace Group (transaction state as a third kind)
+
+- **Schone Airspace Group** is the canonical name. **No quotation marks and no reported speech.** The product was built and is in test, not deployed.
+- Schone adds **transaction state as a third kind alongside device state and information state**: a command in flight has its own lifecycle — requested, acknowledged, executed or not — that is neither the state of the aircraft nor the state of the data about it. The interface preserves command transaction semantics as their own visible object, so an operator always knows what has been asked, what has been acknowledged, and what has actually been observed to happen.
+
+### The maritime VTS engagement (vessel, track and observation as three separate objects)
+
+- The client is described ONLY as **a European vendor of maritime traffic monitoring, inland navigation and communications software for port authorities, coastal administrations and waterway operators**. **No quotation marks and no reported speech.**
+- W52 — **vessel, track and observation as three separate objects.** A single resolved vessel record was rejected for obscuring what the system actually knew. The selected model keeps a vessel identity record, a tracked object with an association status, and timestamped observations each carrying their own source — with association expressed as resolved, unresolved, changed or unknown. State visibility here extends to the state of the system's knowledge: the display shows not only what is known but how it is known and how firmly.
+
+## What this page must not claim
+
+- KISPE, Schone and the maritime VTS engagement: no quotation marks and no reported speech; never "shipped as designed" for any of the three; no safety, certification or regulatory credential; no engagement dates — sequence and duration only.
+- None of the three may be drawn into the AI cluster: no model, no inference, no recommendations — their unknowns are properties of sources, links, protocols and sensors.
+- The design decisions above describe what was designed; never imply they produced a measured result.

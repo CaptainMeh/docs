@@ -45,3 +45,18 @@ Use as illustration, not as the definition:
 - Triopsis workforce management: **62% faster job discovery; 58% faster weekly planning.** (Product analytics, real users in the live system.) The improvement reflects reduced translation time — the relevant job and schedule state were available at the decision point without cross-referencing.
 
 - Akrivia Health: governance reviewers able to verify cohort logic independently. The redesigned interface eliminated the reconstruction step that had required researchers to re-explain their own queries to reviewers. (Client-reported.)
+
+### KISPE Space (operational clarity named in the client's own terms)
+
+- The client is **KISPE Space**, a UK space systems engineering company; nothing else from the engagement may be named. **No quotation marks and no reported speech on any page carrying KISPE** — attribute positions to the role and the document. The product was built; **Creative Navy did not support the build and has not compared the built interface against the delivered designs.** **Nothing in this engagement was tested with users.**
+- KISPE's partner brief names operational clarity in its own terms: help users answer concrete questions rather than monitor data feeds. KISPE asked for advice as well as design, and named six questions it wanted the engagement to resolve — among them which roles, situations and decision journeys should shape a first release, and how provenance, uncertainty, time, outages and data gaps should be communicated without overwhelming users (K36). The six consolidated design principles that answered the brief were each stated with a practical implication rather than as a slogan (K38).
+
+### The maritime VTS engagement (eight distinctions the component system must keep apart)
+
+- The client is described ONLY as **a European vendor of maritime traffic monitoring, inland navigation and communications software for port authorities, coastal administrations and waterway operators**. **No quotation marks and no reported speech.**
+- W68 — the component system is required to keep eight distinctions apart: vessel and track; track and observation; associated and verified; event time and receipt time; traffic alert and equipment fault; acknowledge and resolve; live and replay; radio resource and transmission. Operational clarity here is the discipline of never letting the interface slur two operationally different things into one reading.
+
+## What this page must not claim
+
+- KISPE: no quotation marks and no reported speech; no usability or comprehension result (nothing was tested with users); never "shipped as designed"; never drawn into the AI cluster — its uncertainty is a property of sources, not of a model; no engagement dates.
+- Maritime VTS: locked descriptor only; never reproduce the placeholder company name from the source documents; no quotation marks and no reported speech; the comparative-study figures do not belong on this page unless they travel with their full mandatory framing, and the three percentages are never combined.

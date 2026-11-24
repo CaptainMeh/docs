@@ -83,3 +83,35 @@ Creative Navy's Critical Systems Design method addresses the governance-reviewab
 Domain learning is the prerequisite. In the Callsign engagement, the domain learning that opened the engagement established the distinction between the fraud detection model and the policy layer — a conceptual separation that was not present in the existing interface but that made the governance design problem solvable. Without that separation, the design problem was "make the AI system explainable," which has no tractable solution. With it, the problem was "make the policy layer traceable in domain terms," which does.
 
 In the Akrivia engagement, interviewing governance reviewers as a distinct participant group — separate from researchers and analysts — was what made their verification requirements legible as design requirements. The governance reviewer's task is different in kind from the researcher's task; designing for both requires understanding both, which requires researching both. The failure to include governance reviewers as a design audience is the structural reason most platforms optimise for one role at the expense of the other.
+
+---
+
+## Evidence to draw on
+
+### KISPE Space (the design, one level up, producing a reviewable account of its own behaviour)
+
+- The client is **KISPE Space, a UK space systems engineering company**. Nothing else may be named — no end customer, agency, programme, benchmarked system or individual. **No quotation marks and no reported speech on any page carrying KISPE**; attribute positions to the role and the document.
+- The page asks whether a product can produce a reviewable account of its own behaviour. **KISPE answers it one level up: the design can.** This product has no model and no AI; the reviewable account here is of design decisions, not of algorithmic output.
+- **25 UX decision records: 16 recommended, 9 conditional.** Each carries the design direction, the credible alternative *and what was valuable about it*, the reasoning, the accepted trade-off, the evidence for it in the design package, the condition that would confirm or reverse it, the owner role responsible, and the open question it depends on. (K15)
+- **The status vocabulary is deliberately precise.** *Recommended* means the direction is internally coherent with the journeys and behaviour rules and still requires product-owner acceptance and validation. *Conditional* means the approach is preferred but a named external dependency — hardware, data access, security policy, a domain definition — could change it. **Neither means approved, implemented or validated with end users, and the register says so in those words.** (K95)
+- **The nine conditional decisions are concentrated where the external unknowns are**, not scattered: the meaning of an overflight, receiver measurement interfaces, terminal and coverage data, interruption policy, field hardware, offline storage and sync authority, integration semantics, and export rights. The sixteen recommended decisions are the ones the design package could settle on its own evidence. (K96)
+- **The register names a decision priority**, and it is not the obvious one: security and permissions, provider semantics, scope boundaries, the meaning of overflight and the definition of an urgent alert all have higher consequence than the choice of any particular screen layout, and should be settled before visual refinement creates false expectations. (K97)
+- **A change-control rule was specified and applies across artefacts.** If a technical fact or an observed behaviour contradicts a direction, its status and reasoning are updated and every linked journey, behaviour rule and exception screen is revised in the same change. **Modifying the visual prototype while leaving the specification inconsistent is defined as a documentation defect.** A superseded decision gets a new record rather than a silent overwrite. (K98)
+- Status, where needed: the product was built; Creative Navy did not support the build and has not compared the built interface against the delivered designs.
+
+### Schone Airspace Group (decision records with named costs, and a protocol for who approves which change)
+
+- The client is called **Schone Airspace Group**; nothing else may be named — not the product's trade name ("Mission Control" in lower-case descriptive use), not the cloud streaming platform's product name, not any aircraft model or individual. **No quotation marks and no reported speech on any page carrying Schone.**
+- **25 UX decision records.** Each carries the decision context, the resolved direction, **two named rejected alternatives with the reason each was rejected**, the operator actions and system responses that follow, a concrete operational instance, **the design consequence and trade-off stated as a cost**, the engineering interface it depends on, and explicit acceptance conditions. (D14)
+- **A handover protocol distinguishing two classes of change**: changes requiring UX approval (target selection, command lifecycle wording, last-known status semantics, warning acknowledgement, readiness completion, estimate revision, historical provenance, persistence of the live shell) and changes requiring engineering review (protocol event meanings, aircraft permission model, fleet size, payload commands, stream state, terrain datum, cache schema, recording keys). Plus a specified implementation sequence: build the shared command shell first, establish immutable aircraft and request identities, then connect per-aircraft timestamps and alert ownership. (D23)
+- Status, where needed: the product was built and is in test — not deployed, not in operational use.
+
+---
+
+## What this page must not claim
+
+- No quotation marks for KISPE or Schone, and no reported speech either.
+- Neither engagement may be drawn into this page's AI framing: neither product has a model, performs inference or makes recommendations. Their reviewability is a property of design records and specifications, not of algorithmic transparency — state the difference.
+- KISPE: *recommended* and *conditional* never mean approved, implemented or validated; never "shipped as designed" — the product was built, and no design-fidelity comparison exists.
+- Schone: no flight-safety, airworthiness or certification credential; no deployment or outcome claim; the decision records and protocol describe what was designed and specified, not a measured effect.
+- The decision-record counts (25 each) are engagement record, not outcomes, and the two engagements' registers are different artefacts from different clients — never merge or compare them as like for like.

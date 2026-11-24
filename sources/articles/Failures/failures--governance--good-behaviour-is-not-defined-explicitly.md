@@ -90,3 +90,32 @@ Domain learning in the Callsign engagement produced the explicit specification o
 Domain learning in the Puraite engagement operated through a methodological adaptation: a team member's firsthand experience with systematic review software served as the domain learning proxy, in lieu of direct user research that the timeline did not permit. This tradeoff was presented to the client explicitly. The firsthand experience made it possible to specify, with domain grounding, what criteria a systematic reviewer uses to evaluate an AI inclusion decision — which is what made the four-iteration specification process productive rather than directionless. Each iteration was evaluated against a criterion grounded in domain knowledge, not aesthetic preference.
 
 The iterative testing process in both engagements was not iteration on visual design. It was iteration on the explicit behaviour specification itself — discovering through candidate designs and their failure modes what the correct specification was. The design artefacts that resulted are both interface designs and behaviour specifications: they define what the system should do, in what form, at what point, for what users.
+
+---
+
+## Evidence to draw on
+
+### KISPE Space (tacit expectations converted into explicit, checkable design requirements)
+
+- The client is **KISPE Space, a UK space systems engineering company**. Nothing else may be named — no end customer, agency, programme, benchmarked system or individual. **No quotation marks and no reported speech on any page carrying KISPE**; attribute positions to the role and the document ("KISPE's partner brief asked for advice as well as design").
+- **61 behavioural rules in ten families** — geographic and workspace context, time, imagery, satellite services, provenance and uncertainty, notifications, connectivity, briefings, integration and diagnostics, field presentation. Each rule carries four parts: the trigger, the required response, **the guard** (the thing the behaviour must not do), and a specific verification check. (K10)
+- The relevance to this page: expectations that would normally stay tacit — what the system must never imply, which shortcut it must never take — were converted into explicit, checkable design requirements before anything was built. This product has **no model and no AI**: the rules govern how a system represents sources, time and availability, and the material must not be drawn into an AI framing.
+- **The verification vocabulary must be read in the right tense: these are specifications of checks, explicitly recorded as not executed.** The product was built; Creative Navy did not support the build and has not compared the built interface against the delivered designs.
+
+### Schone Airspace Group (interaction contracts, invariants, and the rules restated from the integration side)
+
+- The client is called **Schone Airspace Group**; nothing else may be named — not the product's trade name ("Mission Control" in lower-case descriptive use), not the cloud streaming platform's product name, not any aircraft model or individual. **No quotation marks and no reported speech on any page carrying Schone.** This product likewise has no model and performs no inference; its unknowns are properties of a radio link, a protocol and a clock.
+- **12 principal interaction contracts.** Each specifies the initiating action, the state transition, the visible result, the required source inputs, **the exception behaviour**, and the conditions by which the design can be checked. (D12)
+- **Eight operational invariants** stated as the binding acceptance core of the interaction specification, which UI styling and component substitution must preserve. (D19)
+- **The eight non-negotiable interface rules recorded in the technical register**, which restate the invariants from the integration side: command requested, acknowledged and observed remain separate facts; aircraft focus never changes command target; an interface target selection never grants flight controller authority; telemetry freshness is scoped to its source aircraft and fields; alert acknowledgement never implies condition resolution; recorded data never appears as live data; stream availability never substitutes for control link health; unsupported capabilities are not represented as operational. (D67)
+- Status, where needed: the product was built and is in test — not deployed, not in operational use.
+
+---
+
+## What this page must not claim
+
+- No quotation marks for KISPE or Schone, and no reported speech either.
+- KISPE and Schone must not be drawn into this page's AI framing: neither product has a model, performs inference or makes recommendations. Their behavioural rules govern sources, links, protocols and clocks — state the difference rather than blurring it.
+- KISPE: never let "verification" read as executed testing; never "shipped as designed" — the product was built, and Creative Navy did not compare the build against the designs.
+- Schone: no flight-safety, airworthiness or certification credential; no operational, deployment or outcome claim; the contracts and invariants describe what was designed and specified, not a measured effect.
+- Never blend the two: KISPE's rules were specified and never executed; Schone's acceptance core was later evaluated against scripted checks — different evidential classes that must not lend weight to each other.

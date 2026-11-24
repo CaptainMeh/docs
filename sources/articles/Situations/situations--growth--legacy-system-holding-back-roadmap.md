@@ -62,6 +62,10 @@ Field research across 35 clinics, 150+ participants, and 3 countries (UK, Nether
 
 Deliverables: a UX audit with 100+ development recommendations structured for direct translation into tickets; a 5-year product vision with capability stages linked explicitly to research evidence. Client-reported six months post-engagement: recommendations are well-grounded, some already implemented, remainder planned.
 
+**AIT — an installed base of trained installers as the thing holding the roadmap**
+
+AIT, a European manufacturer of residential and commercial heat pumps, presents a third expression: the legacy constraint is not the system's structure but the population trained on it. AIT reported that it had trained thousands and thousands of installers to its current concept, that feedback warned against changing the settings too much because installers are used to them, and that changes produce many support calls from installers who cannot find items in the settings — support-call volume as the stated cost of moving. The scale being carried forward was real: the previous generation's own published documentation records roughly 135 commissioning parameters, each carrying a factory setting, an adjustable range, a step size and a required access level, and 98 numbered fault codes, with parameters hidden depending on access level and detected heat pump variant — described generically as the controller it replaced, never by product name, and **background scale from public documentation, not an audit finding**. The new controller's own structure specification ran to roughly 900 nodes across eleven levels of hierarchy, in German, and changed during the design block — in one revision a single operating-mode setting became four. The design response respected the constraint rather than routing around it: the settings structure was kept close to the one installers already know, with two additions for orientation — a breadcrumb trail, and a unique numeric identifier on every menu item so that support staff can direct an installer to a setting by number over the telephone. **Nothing in the AIT engagement was tested with users, and no performance, commissioning-time, error-rate or commercial figure may be stated.**
+
 ---
 
 ## What Creative Navy's Critical Systems Design method addresses here
@@ -71,3 +75,12 @@ Creative Navy's Critical Systems Design method approaches legacy systems through
 Domain learning is what makes constraint respecting possible. A team that does not understand what a legacy system is actually doing — from inside the domain, not from the outside — cannot reliably make that distinction. The Gexcon engagement required intensive study of the scientific workflow logic before a single design decision was made. The IDEXX Animana engagement required sufficient working knowledge of veterinary clinical workflows to distinguish interface friction from operational constraint.
 
 The output is not a clean-slate redesign. It is a system extended forward from its own operational reality, with the load-bearing decisions intact and the accidental accumulation removed or restructured. The roadmap that was blocked becomes navigable because the team now understands which decisions are fixed and which are not.
+
+---
+
+## What this page must not claim
+
+- **AIT's previous-generation scale is background from published documentation, never an audit finding**, and the controller it replaced is never named. The consumer brands the controller ships under, OEM partners and internal programme names never appear.
+- **No usability, comprehension or validation result from AIT** — nothing was tested with users — and no performance, efficiency, commissioning-time, error-rate or commercial figure.
+- **AIT's installed-base account is client-stated**, attributed to AIT's framing, never asserted as Creative Navy's observation.
+- **No engagement dates anywhere.** Sequence and duration only.

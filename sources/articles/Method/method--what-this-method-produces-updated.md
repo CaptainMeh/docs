@@ -81,6 +81,25 @@ These are the downstream consequences of operational performance — what become
 
 ---
 
+## Corpus-update additions
+
+### Maritime VTS vendor — goes under operational outcomes (category 3) only, with the full framing, and not under strategic outcomes at all
+
+The client is **a European vendor of maritime traffic monitoring, inland navigation and communications software for port authorities, coastal administrations and waterway operators** — the locked descriptor, used near-identically on every mention. No quotation marks and no reported speech for this engagement; no engagement dates — sequence and duration only; never reproduce the source documents' "Phase 1"/"Phase 2" labels.
+
+- **The permitted formulation, used near-identically wherever the figures appear:** In a counterbalanced paired study with eight professional VTS operators and supervisors, each completing four matched tasks in both the existing interface and the redesigned prototype, median time to first answer fell by 42.3% on vessel identification, 34.2% on alert prioritisation and 32.2% on handover retrieval; correct first answers rose from 23 of 32 to 32 of 32; and correct recognition of historical replay rose from 5 of 8 to 8 of 8.
+- **The framing that travels with it, every time, without exception:** This result is Creative Navy-measured under controlled conditions. Eight participants completed four of the seven operator journeys using sanitised training scenarios on a design prototype, not a production installation. Six of the eight had taken part in earlier research or testing. The time measure is time to a first submitted answer regardless of whether that answer was correct, not time to successful completion. The study reports no significance test, no confidence interval and no power calculation, and states that the three percentages must not be combined.
+- **Five prohibitions: never average the three percentages or write a combined headline number — the study forbids it in its own text; never write "eliminated operator error" or any equivalent — write that all eight participants answered all four prototype scenarios correctly in the prescribed exercise, and stop; never describe the eight as independently recruited — six had prior programme exposure, and the disclosure is part of what makes the number credible; never convert faster into better in one clause — timing and correctness were scored separately and a fast wrong answer was possible; never attach an operational consequence — nothing here measures incident prevention, traffic safety, production reliability, real shift performance, cognitive workload or throughput.**
+- **This engagement must not appear under strategic and organisational outcomes (category 4) at all: no commercial outcome, no engineering-efficiency outcome and no training outcome exists — all three were client objectives and none was measured.** It also contributes nothing to "Measurable results" headline patterns beyond the formulation above: the three percentages never collapse into one figure.
+
+### Handheld C2 engagement — one sentence only, and it is a negative
+
+The client is **a European manufacturer of uncrewed systems, including one-way effectors, and the tactical command-and-control software that operates them** — the locked descriptor. No quotation marks and no reported speech for this engagement.
+
+- **The page carries exactly one sentence for this engagement: four of the five method phases are claimable on it, and Implementation Partnership is not.** This page is where a reader checks what the method delivers, so the absence belongs on it. Being built is not Implementation Partnership — no build oversight, no fidelity comparison, no integration gate and no retainer appears in the engagement's record. Do not add anything further from this engagement here: no status beyond "was built", no outcome of any kind, no explanation of the silence around status.
+
+---
+
 ## Measurable results — pattern and examples
 
 Always include specific numbers where available. The pattern:

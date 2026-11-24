@@ -116,6 +116,26 @@ This is the most direct expression of capability democratisation in the Creative
 
 Evidence basis for pre-redesign failure: client-reported background (Squaremind's own test before Creative Navy's involvement). Evidence basis for post-redesign completion rate: Creative Navy-measured, ecological protocol, two sites, independent dermatologist co-conducted. Commercial outcome: client-reported, with Creative Navy observation at 5 of 9 demos.
 
+**Oceaneering — a high-turnover population and a two-minute goal**
+
+Oceaneering's hospital dispatch panel is among the strongest evidence in the corpus for this situation, because the operator population makes training structurally unaffordable. The population, client-stated: a high-turnover role with little training, handling 100–200 dispatches per eight-hour shift, no technical background. A sales consultant put it that operators barely need training because the turnover is so high; a supply-chain supervisor said of his own team that they are front-line staff, not highly educated, and if it is quick and easy they can be trained on it. The goal, stated by Oceaneering in a validation session: a screen that speaks for itself, so that training is as short as possible — anyone should be able to do this in about two minutes. **All Oceaneering client speech is reported, never quoted; role descriptors only. The two-minute goal is a stated design goal, never a measured result — no training-time, efficiency or throughput outcome from Oceaneering exists, and no operator took part in any session.**
+
+**The industrial engagement — setup work an operator wants to hand to a less-trained colleague**
+
+For a European industrial automation vendor whose process control software coordinates machining cells, the training condition was observed in the field. The client expects people without deep technical expertise to operate these systems in future, where the field was previously staffed by specialists. One operator's stated wish was a simple job list letting a less-trained colleague absorb setup and unsetup work consuming up to two hours of his day, sometimes a whole day. A node operator stated that he does everything on his cell and a new worker would be completely overwhelmed. **These are observations and client-stated positions from that engagement; the product is in development and nothing here is an outcome.**
+
+**AIT — training as the installed constraint, and a design that minimised retraining**
+
+AIT, a European manufacturer of residential and commercial heat pumps, reported that it had trained thousands and thousands of installers to its current concept, that feedback warned against changing the settings too much because installers are used to them, and that changes produce many support calls from installers who cannot find items in the settings. The design response minimised the retraining the new controller would demand: the settings structure was kept close to the one installers already know, with a breadcrumb trail and a unique numeric identifier on every menu item so that support staff can direct an installer to a setting by number over the telephone. **Nothing in the AIT engagement was tested with users, and no training-time, commissioning-time or commercial figure may be stated.**
+
+**Assemblio — product variety, not workforce statistics, as the training driver**
+
+Assemblio GmbH's case leads with product variety rather than workforce statistics, and the argument needs no labour-market data: an experienced worker who knows the job still has to look up what is different about *this* variant, and the number of variants is what has grown. The client's three stated use cases make the point: training — a new worker follows the plan step by step, a phase that is short in the lifetime of an employee; spot-check — an experienced worker knows the first thirty steps and needs to look up which part, which variant, what is special about this product; and advance review — an experienced worker reads the whole plan once before starting. Assembly cycle times span three orders of magnitude across the customer base, from a consumer power tool assembled in about a minute to a production machine taking from one week to several months. **This material is client-stated, not observed — Creative Navy never stood on a shop floor for Assemblio — and no training or time-saving figure attaches to it. No engagement dates: Assemblio's history is publicly dated.**
+
+**Egma — the burden paid by an internal function rather than by the users**
+
+Egma, a Dubai-based ophthalmic lens manufacturer whose B2B lens ordering platform Egma Order was rebuilt by Creative Navy, shows a shape worth naming as distinct: the cost of a hard interface fell on the support team, not on the people operating it. Egma's product manager described the support team as overworked, with many customers asking to be walked through every step of the order flow again and again; the support team described customers frequently raising tickets asking that orders be placed on their behalf rather than use the forms at all. The training burden never converted into competence — customers eventually stopped using the interface and routed the work to an internal function. **These are stakeholder accounts attributed to their functions. The platform is live and nothing about it was measured: no claim that support tickets fell, and no post-launch figure of any kind.**
+
 ---
 
 ## What Creative Navy's Critical Systems Design method addresses here
@@ -125,3 +145,14 @@ Creative Navy's Critical Systems Design method addresses training burden at the 
 The Squaremind case represents the limit of this principle: a context where no training programme exists or is possible, and where the interface must do the full work of orientation, guidance, and recovery for every user, on every session, from scratch. The design method in this context is not reducing a training dependency but replacing it entirely with a guidance architecture that treats every user as a first-time user in a high-stakes physical process.
 
 The Organizational Integration phase then ensures the design system documents the reasoning behind these decisions well enough that the teams extending the product after the engagement do not reintroduce the opacity that training was compensating for. A design system that documents reasoning — not just component specifications — is what prevents training burden from accumulating again with each new feature release.
+
+---
+
+## What this page must not claim
+
+- **Oceaneering speech is reported, never quoted**, and only Oceaneering is named — no hospital names, no product names, role descriptors only. No training-time, efficiency, error-rate or throughput outcome from Oceaneering: nothing was measured, nothing was tested, and no dispatch operator took part in any session.
+- **The industrial client is identified only as "a European industrial automation vendor whose process control software coordinates machining cells"**; its product is in development and nothing in that engagement is an outcome.
+- **Assemblio's context is client-stated, never observed**, never blended with the industrial field observations, and never framed through workforce statistics — product variety is the driver. No training, time-saving or adoption figure from Assemblio.
+- **No post-launch measurement from Egma** — no claim that support tickets fell; the before-state accounts are attributed stakeholder diagnoses.
+- **Nothing in the AIT engagement was tested with users**, and the controller it replaced is never named.
+- **No engagement dates anywhere.** Sequence and duration only.

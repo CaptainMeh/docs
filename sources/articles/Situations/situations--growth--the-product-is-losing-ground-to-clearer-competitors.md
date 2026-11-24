@@ -66,6 +66,10 @@ The competitive vector identified: dependability under real operating conditions
 
 Outcome: COX distributors reported to the company that the cluster display interface is the best in the industry. The system shipped, was deployed on vessels, and achieved informal standard status within its product category. Evidence basis: distributor-reported to client, relayed to Creative Navy; not independently verified. The distributor channel occupies a specific epistemic position — daily comparative exposure to competing display products, commercial incentive to evaluate honestly — that gives this report a particular weight within the constraints of its evidential basis.
 
+**Maritime traffic monitoring — losing tenders to more coherent software, as the client's stated driver**
+
+A European vendor of maritime traffic monitoring, inland navigation and communications software for port authorities, coastal administrations and waterway operators named this situation as one of its three stated commercial problems: competing suppliers were presenting more coherent software during tender evaluation, while in its own demonstrations the interfaces did not communicate that the applications belonged to one family, even where the underlying systems exchanged information. **This is a motivation the client recorded, not a benchmark Creative Navy ran: no competing product was evaluated in that engagement, and no competitive comparison or market-position claim may be made from it. No tender, sales or procurement result exists — the client's own commercial director recorded that no reliable measurement connects visual change to tender wins. No quotation marks and no reported speech appear on any page carrying this engagement; the client is identified only by the locked descriptor.**
+
 ---
 
 ## What Creative Navy's Critical Systems Design method addresses here

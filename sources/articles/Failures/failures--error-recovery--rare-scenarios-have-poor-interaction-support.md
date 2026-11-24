@@ -97,3 +97,37 @@ Creative Navy's Critical Systems Design method addresses rare-scenario support t
 Domain learning is the prerequisite for closing the gap between the development team's model of what is rare and the operational reality of what is common. In the Polymatica engagement, Creative Navy's team ran the system against its own real data during the research phase — the team members' actual datasets, with their actual inconsistencies and structural variations. This was not a deliberate test of the messy-data failure; it was the expected outcome of using real data, and encountering the failure directly under domain learning conditions made it diagnosable as a design requirement rather than as a user error. In the Triopsis engagement, three in-situ observation sessions explicitly targeted the peak-load, concurrent-exception conditions that characterised real operational pressure — not the normal case, but the case where the interaction quality gap was most costly. The research programme was designed around finding what operational reality looked like outside the happy path, not around confirming that the happy path was well-supported.
 
 The design commitment that follows is to refuse the edge case as a design category. In the Elsner engagement, sensor fault conditions were designed for explicitly from the start of the Iterative System Building phase — each named as a distinct operational state with a specific interface response, not routed through generic error handling. In the Triopsis engagement, exception conditions were built as first-class workflow states with dedicated interaction paths before the redesign was considered complete. The test applied at each stage: does this design support the scenario that falls outside the main path with the same quality it supports the main path? If not, the design is not finished.
+
+---
+
+## Evidence to draw on
+
+### Raymarine (the page's subject stated by a manufacturer about its own product category)
+
+- The client is named **Raymarine**; its existing fixed-mount VHF line — **Ray53, Ray63 and Ray73** — may be named. The new radio's name may not be used in any form: write "the new radio" or "the next-generation fixed-mount VHF". **No quotation marks and no reported speech on any page carrying Raymarine**; attribute positions to the role and the artefact — "Raymarine's partner brief named the operating conditions", never something said.
+- **The framing from the client's own brief: a critical action may occur after months without using the relevant function.** That is this page's subject stated by a manufacturer about its own product category — the distress and safety functions of a VHF radio are precisely the functions an operator may not have touched since the radio was installed.
+- In UX development, safety, degradation and integration were addressed as a dedicated sprint: outgoing distress, received distress and locally initiated man overboard specified as three different workflows; four priority levels constructed with cross-state rules; **forty-three exception cases** documented with their feedback, action constraints and recovery; **twenty-eight functions assigned** to the radio, the chartplotter or a shared information boundary; scenario evaluation of interruption resumption, man-overboard meaning, missing position, AIS loss and a disconnected chartplotter; and handover preparation consolidating **thirty-two UX decisions** and defining **twenty-three screen families** and **eighteen component requirements**. (R19)
+- **Degraded conditions are enumerated rather than generalised: forty-three exception records across eight independent state axes** — voice radio state, display context, calling transaction, AIS data quality, positioning, safety incident, interruption and chartplotter link. **The governing statement is that a current screen is not a system state**, and that the interface is a state interpreter rather than the source of truth for radio outcomes. (R133)
+- Evidential tense: the exception catalogue was **partly evaluated** — the interruption, position, receiver and connectivity cases were put to operators on a bench; the other thirty-odd were not. These counts describe the work, not its effect.
+
+### Schone Airspace Group (the unresolved request as a first-class state rather than a gap)
+
+- The client is called **Schone Airspace Group**; nothing else may be named — not the product's trade name (write "Mission Control" in lower-case descriptive use), not the cloud streaming platform's product name ("the client's cloud streaming platform"), not any aircraft model or individual. **No quotation marks and no reported speech on any page carrying Schone**; attribute positions to the role and the artefact.
+- **Silence is an unknown result, not a failure.** A response window that elapses without a conclusive event produces an explicit unknown state that retains the target, the action and the request identifier, and triggers no automatic retry. **The accepted cost was named and is the sharpest self-criticism in the package: unknown is less reassuring than a binary outcome, but it is accurate and it supports a deliberate subsequent check.** (D87)
+- The rare scenario here — a command whose outcome cannot be established — was designed as a named operational state with its own retained context, rather than handled generically or left undefined. The product was built and is in test; nothing may imply operational deployment.
+
+### KISPE Space (an edge-case and degraded-state catalogue as the designed answer)
+
+- The client is **KISPE Space, a UK space systems engineering company**. Nothing else may be named. **No quotation marks and no reported speech on any page carrying KISPE**; attribute positions to the role and the document.
+- **40 documented edge cases and degraded states**, with 12 annotated plates. Each case specifies the input condition, the visible response, the recovery path, **the misinterpretation it prevents**, and a verification that would expose a dangerous misunderstanding. (K13)
+- **The verification vocabulary must be read in the right tense: these are specifications of tests, explicitly recorded as not executed.** The catalogue was specified against a synthetic fixture and never exercised against a running system. The product was built; Creative Navy did not support the build and has not compared the built interface against the delivered designs.
+
+---
+
+## What this page must not claim
+
+- No quotation marks for Raymarine, Schone or KISPE, and no reported speech either; positions attribute to roles and artefacts.
+- Raymarine: no safety, rescue or collision outcome; no type-approval or conformity credential; the radio was built and released — never "shipped as designed"; the exception counts describe the work, not its effect.
+- Schone: no flight-safety, airworthiness or certification credential; no operational or deployment claim — the product is in test; D87 describes a designed state, not a measured result.
+- KISPE: never let "verification" or "acceptance" read as executed testing; no shipped-as-designed or design-fidelity claim; no validation on hardware or with users.
+- The three catalogues are different evidential classes — Raymarine's partly evaluated on a bench, Schone's adjudicated against fixed criteria by working remote pilots, KISPE's specified and never executed — and must never lend weight to one another or be blended in a sentence.

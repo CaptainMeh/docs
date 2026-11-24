@@ -12,83 +12,98 @@
   "category": "failures",
   "parentSlug": "error-and-recovery-failures",
   "childPageSlugs": [],
-  "excerpt": "Errors are hard to correct when a user has detected an error but cannot localise it, restore the correct state, complete the correction action, or confirm that the correction succeeded. The failure concerns inadequate support during correction, not the absence of recovery structures.",
+  "excerpt": "Errors are hard to correct when users can detect that something is wrong but cannot efficiently localise, reverse, confirm, or reconstruct the correct state. The failure concerns inadequate correction support even where some recovery structure nominally exists.",
   "metaTitle": "Errors Are Hard To Correct",
-  "metaDescription": "A failure pattern where error correction is slowed by poor localisation, missing undo, side effects, unclear confirmation, or hidden prior state.",
-  "summary": "Error correction can fail at several points: finding where the error occurred, knowing the intended state, taking the corrective action, and confirming that the system is now correct. This failure applies when recovery structures nominally exist but do not support the user well enough during correction.",
-  "definition": "Errors are hard to correct when a detected error requires disproportionate time, effort, or risk to localise, reverse, repair, or confirm because the interface does not adequately support the correction process.",
+  "metaDescription": "A failure pattern where error correction is slowed by weak localisation, missing undo, side effects, uncertain confirmation, or hidden prior state.",
+  "summary": "This failure describes situations where a detected error becomes difficult to correct because the interface does not support localisation, reversal, confirmation, or reconstruction of the intended state. It is distinct from failures where errors are hard to notice or where recovery paths are absent.",
+  "definition": "Errors are hard to correct when a user has detected an error but the interface does not adequately support finding where it occurred, knowing the correct state, taking corrective action, or confirming that correction succeeded.",
   "keyFacts": [
-    "Error correction includes localisation, correct-state identification, correction action, and confirmation of successful correction.",
-    "The failure is distinct from errors that are hard to notice; detection comes before correction.",
-    "The failure is distinct from weak recovery paths; it concerns inadequate correction support even where recovery structures nominally exist.",
-    "Error localisation failure occurs when the user knows an error happened but cannot determine where it occurred in the workflow, configuration, or dataset.",
-    "No explicit undo path forces the user to reconstruct the correct state manually from the current incorrect state.",
-    "Correction-side-effect errors occur when the action used to correct one error changes other elements unintentionally.",
-    "Uncertain correction confirmation leaves the user unable to know whether the corrective action succeeded.",
-    "In the Gexcon CFD simulation case, corrective load fell from 4–6 hours to approximately 20 minutes after redesign, measured by Gexcon across real deployments.",
-    "In the Kardion MCS Controller case, muted alarms remaining visible prevented incomplete correction sequences from becoming invisible.",
-    "In the Beissbarth automotive calibration case, sequence resumption depended on visibility of completed steps, failed steps, and steps needing repetition."
+    "Error correction can fail at localisation, correct-state identification, correction action, or confirmation.",
+    "This failure concerns correction after detection, not initial error detection.",
+    "It differs from weak recovery paths because some correction structure may exist, but it is inadequate for the user's corrective attempt.",
+    "Common causes include error localisation failure, lack of an explicit undo path, correction side effects, uncertain correction confirmation, and hidden prior state.",
+    "In Gexcon CFD simulation work, corrective load fell from approximately 4–6 hours to approximately 20 minutes after redesign, with localisation support described as the dominant mechanism.",
+    "In shift-based operations, recovery paths must carry their own explanation because the person resolving an error may not be the person who created it.",
+    "In the Oceaneering dispatch panel case, wrong-cart-type recovery was designed so the next person in the depot could resolve the state from the panel without walking to a vehicle and resetting it.",
+    "In the Egma Order example, the refusal named the production problem but not the earlier parameter causing it, so correction was impossible for the optometrist without support intervention.",
+    "In visioncheckout, correction was designed as a product surface through the Corrector rather than treated as a rare error branch."
   ],
   "tags": [
-    "error correction",
     "error recovery",
+    "error correction",
     "undo",
-    "error localisation",
     "correction confirmation",
+    "error localisation",
     "prior state visibility",
     "correction side effects",
-    "recovery design"
+    "handover recovery",
+    "workflow recovery"
   ],
-  "bodyMarkdown": "## Summary\n\nCreative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nErrors are hard to correct when the user has detected that something is wrong but the interface does not adequately support the correction process. Correction can fail at several independent points: localising where the error occurred, understanding what the correct state should be, taking the correction action, and confirming that the correction succeeded.\n\nWhen any component is unclear, correction becomes longer, more effortful, and more error-prone than the original error warranted. The user may have a recovery structure available in principle, but still lacks the information and control needed to use it safely.\n\n## Failure pattern: detected errors become difficult to repair\n\nThe failure pattern is not that the user fails to notice the error. The failure begins after detection, when the user is trying to correct the error and the interface does not support the attempt.\n\nThe correction process depends on four questions. Where did the error occur? What should the state be instead? How can the user change it? How can the user know that the change worked? If the interface fails to answer any of these questions, the correction process becomes diagnostic work rather than a direct repair.\n\nThis failure is also distinct from weak recovery paths. Weak recovery paths concern the structural absence of recovery support. Errors are hard to correct when recovery structures nominally exist but are inadequate for the correction the user is trying to perform.\n\n## How hard-to-correct errors appear in interfaces\n\nError localisation failure appears when the user knows that an error has occurred but cannot determine where in the workflow, configuration, or dataset it happened. Without localisation, the user must search the system or guess which element needs correction.\n\nA missing undo path appears when the system has no direct reversal mechanism for the error category. The user cannot undo the error and must reconstruct the correct state manually from the current incorrect state.\n\nCorrection-side-effect errors appear when the correction action changes other elements that the user did not intend to change. Correcting one field in a complex configuration may change dependent fields. Correcting one policy rule may change interactions with other rules. Correcting one parameter may change outputs that the user had already verified.\n\nUncertain correction confirmation appears when the user takes the corrective action but cannot tell whether it succeeded. The system state has changed, but the interface does not confirm whether the intended correction has been achieved.\n\nHidden prior state appears when correction requires knowing what the state was before the error. If the interface does not show the prior value, previous configuration, or interrupted sequence position, the user must reconstruct that state from memory or from external sources.\n\n## Why correction difficulty matters\n\nHard-to-correct errors amplify correction overhead. Correction overhead is the time and cognitive effort required to correct a detected error beyond the minimum work that the error itself warranted.\n\nThe extra overhead often comes from diagnosis rather than from the correction action. In the Gexcon CFD simulation case, changing a configuration value was fast. The expensive part was finding the right value to change.\n\nCorrection difficulty also increases the risk that a remaining error propagates. If the user cannot confirm that the correction succeeded, the user either re-investigates the state, which adds overhead, or accepts uncertainty, which creates a risk that the remaining error continues through the workflow.\n\n## Causes of hard-to-correct errors\n\n### Error localisation failure\n\nError localisation failure is the absence of enough interface support to identify where the error occurred. The user may know that something is wrong but not know which workflow step, configuration parameter, or dataset element caused the problem.\n\nLocalisation is a prerequisite for targeted correction. Without it, correction becomes a search task across the whole system.\n\n### No explicit undo path\n\nA missing undo path means that the system does not provide a direct sequence of interface actions that reverses the error and restores the prior state. The user must manually reconstruct the correct state from the current incorrect state.\n\nIn complex configurations, manual reconstruction requires the user to understand the dependency chain created by the error. The absence of undo therefore transfers recovery work from the interface to the user.\n\n### Correction-side-effect errors\n\nCorrection-side-effect errors occur when the correction action changes other parts of the system unintentionally. The user may fix one element and create a new error in another element.\n\nThis can extend the correction cycle indefinitely. Each correction may need its own localisation, state identification, action, and confirmation steps.\n\n### Uncertain correction confirmation\n\nUncertain correction confirmation occurs when the system does not signal whether the corrective action succeeded. The user cannot tell whether the system is now in the intended state.\n\nThe absence of confirmation forces the user to choose between re-investigation and accepting unresolved uncertainty.\n\n### Prior state not visible\n\nPrior state visibility is necessary when the correction requires restoring a previous value, configuration, or sequence position. If the interface does not expose the prior state, the user must reconstruct it externally or from memory.\n\nThis makes correction vulnerable to memory limits and interruption effects, especially when the workflow has multiple completed, failed, and upcoming steps.\n\n## Evidence basis from documented case studies\n\n### Gexcon CFD simulation: localisation dominated the correction cost\n\nIn the Gexcon CFD simulation case, a configuration error detected in simulation outputs required four correction steps: identifying which configuration parameter was responsible, understanding what value should have been set, making the change, and re-running the simulation for verification.\n\nBefore the redesign, the error message communicated that something was wrong but did not communicate where or what. The source evidence describes localisation as the dominant component of the 4–6 hour corrective load.\n\nAfter the redesign, corrective load fell to approximately 20 minutes, measured by Gexcon across real deployments. The documented mechanism was localisation support: redesigned error communication specified what was wrong and where in the configuration. The correction action itself was always fast; the expensive work was finding the right value to change.\n\n### Kardion MCS Controller: alarm correction required a complete sequence\n\nIn the Kardion MCS Controller case, alarm acknowledgement required a sequence: perceive the alarm, understand what it means, take the appropriate clinical action, acknowledge the alarm, and confirm that the condition has resolved.\n\nThe case evidence describes correction as incomplete if an alarm is muted but not acknowledged, or acknowledged without confirmation that the condition has resolved. Muted alarms remaining visible was the interface mechanism that prevented incomplete correction sequences from becoming invisible.\n\n### Beissbarth automotive calibration: resumption depended on sequence state visibility\n\nIn the Beissbarth automotive calibration case, an interrupted calibration sequence required the technician to resume from the correct point. Resumption depended on knowing which steps had been completed and verified, which step failed and why, and which steps needed to be repeated.\n\nA sequence state display that showed only the current step left technicians without enough information to assess correction scope. The user could redo steps that had already been completed correctly or skip steps that needed repetition.\n\n### Dancerace / Jacko: irreversible actions shift correction into prevention\n\nIn the Dancerace / Jacko financial portal case, some actions were irreversible. The documented design response was not to make correction easier after the action, because correction was structurally impossible for those actions.\n\nThe response was proportional confirmation friction before the irreversible action. This is the boundary case of errors being hard to correct: when correction cannot be supported after the error, the design response moves to preventing accidental triggering before the error occurs.\n\n## Boundaries and adjacent failure patterns\n\nErrors that are hard to notice concern detection. Errors that are hard to correct concern what happens after detection. The two patterns can occur in sequence: an error that is hard to notice may later become hard to correct because the time gap allows the error to propagate.\n\nWeak recovery paths concern the absence of recovery structures. Errors that are hard to correct concern the inadequacy of the correction process when recovery structures nominally exist.\n\nIrreversible actions are a boundary case. When correction is structurally impossible, the correction problem must be addressed before the error occurs through prevention mechanisms such as confirmation friction.\n\n## Related pages\n\nErrors that are hard to correct are closely related to errors that are hard to notice, because detection failure can increase correction difficulty. They are also related to weak recovery paths, because both concern recovery, but they describe different failure modes.\n\nThe Kardion and Beissbarth case evidence provides concrete examples of correction sequences, confirmation, interruption, and sequence state visibility in operational interfaces.",
+  "bodyMarkdown": "## Summary\n\nCreative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nErrors are hard to correct when a user has detected that something is wrong but cannot efficiently return the system to the intended state. Error correction depends on several components: localising where the error occurred, understanding what the state should be instead, taking the correction action, and confirming that the correction succeeded.\n\nThis failure is not the same as an absent recovery path. It describes situations where correction structures nominally exist, but the interface does not support the user's corrective attempt well enough. The user is trying to correct the error; the interface makes that correction longer, more effortful, or more error-prone than the original error warranted.\n\n## Failure pattern: correction fails after detection\n\nErrors are hard to correct after detection when the interface does not help the user answer four operational questions: where the error happened, what the correct state should be, how to change the incorrect state, and whether the change worked.\n\nThe failure often appears after a warning, refusal, alarm, interrupted sequence, invalid configuration, or mistaken selection. The interface may communicate that something is wrong without communicating the location, cause, scope, or expected correction. In those conditions, the user must search, infer, reconstruct, or repeat work before a targeted correction is possible.\n\nThe correction process can become larger than the original error. A small parameter error can require searching many configuration values. A refused order can become a support ticket. A wrong-cart-type state can require a physical trip if the panel does not carry the required explanation. A correction can also create new errors if the corrective action changes related fields, rules, or outputs.\n\n## Distinction from hard-to-notice errors and weak recovery paths\n\nErrors are hard to correct is sequentially related to errors are hard to notice, but the two failures describe different stages. Errors are hard to notice concerns detection. Errors are hard to correct concerns the correction process after detection. A delayed detection can make correction harder because the error has had time to propagate, but the correction failure is still the lack of support once the user is trying to fix the state.\n\nErrors are hard to correct is also distinct from weak recovery paths. Weak recovery paths concern the structural absence of recovery support. Errors are hard to correct concerns correction difficulty when a recovery structure or correction route exists in some form but does not provide enough localisation, prior state, scope, action clarity, or confirmation.\n\n## What causes errors to be hard to correct\n\nError localisation failure occurs when the user knows an error has happened but cannot determine where in the workflow, configuration, or dataset it occurred. Correction requires knowing what to fix. Without localisation, the user must search the whole system or guess.\n\nMissing undo paths make correction difficult when the system has no direct reversal mechanism for the error category. The user cannot undo the action and must reconstruct the correct state manually from the current incorrect state. In complex configurations, this can require understanding the dependency chain around the error.\n\nCorrection-side-effect errors occur when the corrective action changes other elements the user did not intend to change. Correcting one field can change dependent fields. Correcting one policy rule can alter its interaction with other rules. Correcting one parameter can change outputs that had already been verified. Correction then creates new correction work.\n\nUncertain correction confirmation occurs when the user cannot tell whether the correction succeeded. The system has changed, but the interface does not confirm whether the intended state was reached. The user either investigates again, adding overhead, or accepts uncertainty, increasing the risk that a remaining error will propagate.\n\nHidden prior state makes correction difficult when the correct state depends on knowing what existed before the error. If the interface does not show the previous value, prior configuration, or interrupted sequence state, the user must reconstruct it from memory or external records.\n\n## Recovery across handover requires the correction path to explain itself\n\nErrors are hard to correct in shift-based operations when the person resolving an error is not the person who created it. Recovery designed around a single continuous user assumes continuity of attention that the operation may not provide. The next person into the area inherits a state they did not create and may not be able to interpret.\n\nIn these conditions, the recovery path must carry its own explanation. The interface needs to state what the system detected, what had been requested, and what action is needed. Relying on the memory of the person who acted is insufficient when the error is detected after that person has left.\n\n## How Creative Navy's Critical Systems Design method addresses correction difficulty\n\nCreative Navy's Critical Systems Design method addresses correction difficulty by treating correction as an explicit interaction sequence, not as a secondary error branch. In the documented examples, the design response depends on which part of correction fails: localisation, reversal, side effects, confirmation, prior state visibility, or handover context.\n\nWhen localisation is the dominant cost, correction support needs to show what is wrong and where it is located. In the Gexcon CFD simulation case, the correction action itself was fast; the expensive part was finding the configuration value responsible for the detected error.\n\nWhen correction is reversible, a direct undo path can reduce reconstruction work. In the Assemblio case, Assemblio described a product with no undo. The designed response offered undo in the snack bar for reversible actions such as move and rename, with the engagement record marking the feature as client-requested and unconfirmed at item level.\n\nWhen correction can invalidate later work, the interface needs to warn about the correction cost before the change is committed. In the Egma Order case, cascade invalidation was designed so that editing a completed earlier section warns the user that subsequent sections will be emptied and offers apply-change or discard.\n\nWhen correction is structurally impossible, prevention becomes the correction strategy. In the Dancerace / Jacko example, irreversible financial actions were handled with proportional confirmation friction before the action rather than undo afterwards.\n\n## Evidence basis from documented cases\n\n### Gexcon CFD simulation shows localisation as the dominant correction cost\n\nIn the Gexcon CFD simulation case, a detected configuration error previously required identifying which of many configuration parameters was responsible, understanding the intended value, making the change, and re-running the simulation. Available case evidence records that, without support for localisation, finding the relevant parameter consumed most of a 4–6 hour corrective load.\n\nAfter the redesign, corrective load fell to approximately 20 minutes, measured by Gexcon across real deployments. The documented mechanism was localisation support: the redesigned error communication specified what was wrong and where in the configuration. The case distinguishes the diagnostic burden from the correction action itself, because changing a configuration value was already fast once the correct value was found.\n\n### Kardion MCS Controller shows correction as a completed alarm sequence\n\nIn the Kardion MCS Controller case, alarm acknowledgement required a correction sequence: perceive the alarm, understand its meaning, take the appropriate clinical action, acknowledge the alarm, and confirm that the condition had resolved.\n\nThe correction sequence could remain incomplete if an alarm was muted but not acknowledged, or acknowledged without confirmation that the condition had resolved. Muted alarms remaining visible was the interface mechanism that prevented incomplete correction sequences from becoming invisible. The case shows that acknowledgement alone is not equivalent to correction confirmation.\n\n### Beissbarth automotive calibration shows prior state and correction scope after interruption\n\nIn the Beissbarth automotive calibration case, an interrupted calibration sequence required the technician to resume from the correct point. Resumption depended on knowing which steps had been completed and verified, which step failed and why, and which steps needed to be repeated.\n\nA sequence state display that showed only the current step did not provide enough information to assess correction scope. Without completed and upcoming steps, technicians could redo steps that had already been completed correctly or skip steps that needed repetition.\n\n### Oceaneering dispatch panel shows handover recovery without a physical reset trip\n\nIn the Oceaneering dispatch panel case, the subject was a wall-mounted touchscreen in a logistics depot through which a materials-handling operator puts a cart into an automated hospital transport system. In the system being replaced, recovery from a wrong-cart-type error required staff to walk to the vehicle and reset it so it would leave; it could not be done from the panel.\n\nThe designed wrong-cart-type recovery allowed the station holding the refused cart to be tapped on the panel. The panel presented what the vehicle detected against what was selected, allowed the detected type to be confirmed in one action, and allowed the destination and identity to be re-entered. This design addressed the handover condition by giving the next person in the depot enough information to resolve the state without walking to the vehicle.\n\nThe available evidence for this case has defined limits. The before state came from the predecessor's own specification and from interviews with people adjacent to the users. No dispatch operator was interviewed, no depot was visited, and the design was reviewed with operations managers. No task was attempted and nothing was measured.\n\n### Assemblio shows undo for reversible actions where no undo existed\n\nIn the Assemblio case, Assemblio described the Assemblio Composer and Smart Viewer as having no undo. The design response offered undo in the snack bar for reversible actions such as move and rename.\n\nThe available evidence is limited to Assemblio's account of its own product and the engagement record. The product description is client-stated, not observed. The snack-bar undo feature is recorded as client-requested, with an item-level marker that is unconfirmed.\n\n### Egma Order shows a refusal that named the problem but not the cause\n\nIn the Egma Order case, the support team's worked example described an optometrist trying to order a pair of reading lenses and reaching a refusal after completing about half the steps. The refusal said: \"Lenses with your selected shape cannot be produced. Please choose a different shape.\"\n\nThe correction problem was localisation. The patient did not want a different lens shape, and the optometrist could not determine which of a dozen earlier parameters needed to change to allow the intended shape. The result was a support ticket instead of an order, and the support team placed the order on the optometrist's behalf.\n\nThe designed answer was cascade invalidation warned before it happens. When a user edits a completed earlier section, the interface states before the change is committed that all subsequent sections will be emptied, and offers apply-change or discard. The platform is live, but no support-ticket movement, order-completion rate, or other outcome was measured.\n\n### visioncheckout treats correction as a product surface\n\nIn the visioncheckout case, visioncheckout is a German vendor of computer-vision self-checkout systems for staff restaurants and catering. The product was in development and nothing had shipped.\n\nThe Corrector made correction a designed product surface rather than a hidden branch. Numbered markers on the tray image were matched to a numbered list. Thumbnails were required in the catalogue because item names were often not meaningful enough to identify a dish without an image. Sidebar category navigation was chosen, and search was deliberately de-emphasised so scrolling thumbnails remained the primary path, with search still available for staff.\n\nSeveral correction decisions were explicitly bounded. Scrolling was preferred over pagination because the touchscreen was responsive enough. Auto-cycling variant thumbnails were ruled out on accessibility grounds and as visual noise, leaving the one-POS-item-to-many-visual-variants problem unresolved rather than hidden. Entry to the Corrector was deliberately understated through a tertiary edit control near the basket header, with rescan remaining the primary action.\n\nThe rescan action was flagged as destructive because it discarded all state, including corrections already made, with a two-step confirmation recommended wherever corrections exist. The governing interaction principle for Selections, Extras, and the Corrector was to present the interaction as \"confirm this\", not as \"fix this\". Published recognition-accuracy claims in this product category are vendor-reported, methodologically heterogeneous, and rarely independently replicated; the documented case gives no accuracy number for any named product. Published self-checkout operations research finds roughly one help call to staff per ten self-checkout transactions, supporting the framing of intervention as routine load rather than an edge case.\n\n## Boundaries and limits\n\nThis failure page does not claim that every documented design response produced a measured outcome. The Gexcon corrective-load reduction is measured by Gexcon across real deployments. Several other examples document design decisions, reported problems, or reviewed designs without measured post-launch effects.\n\nThe Oceaneering case records no efficiency, error-rate, or dispatch-volume outcome. The work concerned hospital logistics infrastructure, not medical-device work. The design was reviewed with operations managers, no dispatch operator took part, no task was attempted, and nothing was measured.\n\nThe Assemblio product description is client-stated and not observed. No time-saving, error-rate, adoption, or marketing outcome is established for Assemblio.\n\nThe Egma Order platform is live, but no support-ticket movement, order-completion rate, or other outcome was measured. The documented evidence establishes the correction problem and design response, not a post-launch result.\n\nThe visioncheckout product was in development, nothing had shipped, and no throughput, speed, error-rate, or recognition-accuracy outcome is established for the redesign. No competitor recognition-accuracy number should be treated as measured truth from this case.\n\n## Related pages\n\nThis failure is closely related to errors that are hard to notice because undetected errors can propagate before correction begins. It is also related to weak recovery paths, because inadequate correction support can resemble absent recovery support when the user has no practical way to restore the intended state.\n\nErrors are hard to correct also overlaps with failures where users cannot confirm that an action worked, where the interface does not make clear what an action will affect, and where handoffs lose context. These related failures describe narrower mechanisms that can make correction longer, riskier, or dependent on memory outside the interface.",
   "claims": [
     {
       "claim": "Errors are hard to correct when localisation, correct-state identification, correction action, or correction confirmation is unclear after an error has been detected.",
       "evidenceType": "conceptual definition",
       "sourceStrength": "strong",
-      "notes": "The definition is directly supported by the failure description in the current source."
+      "notes": "Defined directly in the failure description."
     },
     {
-      "claim": "This failure is distinct from errors that are hard to notice because it concerns correction after detection rather than error detection itself.",
+      "claim": "This failure is distinct from errors that are hard to notice and from weak recovery paths.",
       "evidenceType": "conceptual definition",
       "sourceStrength": "strong",
-      "notes": "The source explicitly distinguishes the two failures and describes them as sequential."
+      "notes": "The distinction is explicitly stated in the adjacent-failures section."
     },
     {
-      "claim": "This failure is distinct from weak recovery paths because it concerns inadequate correction support where recovery structures nominally exist.",
+      "claim": "The main causes include error localisation failure, no explicit undo path, correction-side-effect errors, uncertain correction confirmation, and hidden prior state.",
       "evidenceType": "conceptual definition",
       "sourceStrength": "strong",
-      "notes": "The source explicitly contrasts this failure with recovery-paths-are-weak."
+      "notes": "Listed in the section describing what produces the failure."
     },
     {
-      "claim": "In the Gexcon CFD simulation case, lack of error localisation support made localisation the dominant part of a 4–6 hour corrective load, and after redesign the corrective load fell to approximately 20 minutes measured by Gexcon across real deployments.",
+      "claim": "In the Gexcon CFD simulation case, corrective load fell from approximately 4–6 hours to approximately 20 minutes after redesign, with localisation support described as the dominant mechanism.",
       "evidenceType": "client-measured",
       "sourceStrength": "case evidence",
-      "notes": "The source states the before and after corrective load and attributes the measurement to Gexcon across real deployments."
+      "notes": "The current evidence states the reduction was measured by Gexcon across real deployments."
     },
     {
-      "claim": "In the Kardion MCS Controller case, alarm correction required perception, understanding, clinical action, acknowledgement, and confirmation that the condition had resolved.",
+      "claim": "In the Kardion MCS Controller case, muted alarms remaining visible helped prevent incomplete correction sequences from becoming invisible.",
       "evidenceType": "case study",
       "sourceStrength": "case evidence",
-      "notes": "The source describes the alarm acknowledgement and resolution sequence and identifies muted alarms remaining visible as the mechanism preventing invisible incomplete correction."
+      "notes": "The case evidence describes visible muted alarms as the interface mechanism supporting correction completion."
     },
     {
-      "claim": "In the Beissbarth automotive calibration case, technicians needed prior state visibility, error localisation, and correction scope to resume after interruption without redoing completed steps or skipping steps that needed repetition.",
+      "claim": "In the Oceaneering dispatch panel case, wrong-cart-type recovery was designed to show what the vehicle detected against what was selected and allow the next person in the depot to resolve the state from the panel.",
       "evidenceType": "case study",
-      "sourceStrength": "case evidence",
-      "notes": "The source describes the sequence resumption requirements and the risk created by a display showing only the current step."
+      "sourceStrength": "engagement record",
+      "notes": "The evidence is bounded: predecessor specification and interviews with adjacent people, reviewed with operations managers, with nothing measured."
     },
     {
-      "claim": "In the Dancerace / Jacko case, irreversible actions made post-error correction structurally impossible, so the documented design response was proportional confirmation friction before the action.",
+      "claim": "In the Assemblio case, Assemblio described the product as having no undo, and the designed response offered undo in the snack bar for reversible actions such as move and rename.",
+      "evidenceType": "client-reported",
+      "sourceStrength": "engagement record",
+      "notes": "The product description is client-stated, not observed; the feature is marked client-requested and unconfirmed at item level."
+    },
+    {
+      "claim": "In the Egma Order case, the refusal named the production problem but did not localise the earlier parameter that needed correction, leading the optometrist to create a support ticket instead of an order.",
       "evidenceType": "case study",
       "sourceStrength": "case evidence",
-      "notes": "The source describes irreversible actions as the boundary case for this failure and identifies prevention before action as the response."
+      "notes": "The evidence comes from the support team's worked example; no post-launch outcome is measured."
+    },
+    {
+      "claim": "In the visioncheckout case, the Corrector was designed as a product surface using numbered markers, thumbnails, sidebar navigation, de-emphasised search, scrolling, understated entry, and destructive rescan confirmation.",
+      "evidenceType": "case study",
+      "sourceStrength": "engagement record",
+      "notes": "The product was in development; nothing had shipped and no outcome was measured."
     }
   ],
   "limitations": [
-    "The page defines a failure pattern and uses case evidence; it does not establish prevalence across all software systems.",
-    "The Gexcon corrective-load reduction is described as measured by Gexcon across real deployments; the current source does not describe it as independently measured.",
-    "The Kardion, Beissbarth, and Dancerace / Jacko examples support specific mechanisms within the failure pattern, not a general quantitative estimate of correction difficulty.",
-    "Where actions are irreversible, the source frames correction as structurally impossible and shifts the design response to prevention rather than post-error repair."
+    "The page describes a failure pattern and documented design responses; it does not establish that every response produced a measured outcome.",
+    "Only the Gexcon corrective-load reduction is described as measured by Gexcon across real deployments.",
+    "Oceaneering evidence is bounded to predecessor specification, interviews with people adjacent to the users, and operations-manager design reviews; no operator was interviewed, no depot was visited, no task was attempted, and nothing was measured.",
+    "Assemblio product conditions are client-stated and not observed; no time-saving, error-rate, adoption, or marketing outcome is established.",
+    "Egma has no post-launch measurement of support-ticket volume, order-completion rate, or any other outcome.",
+    "visioncheckout had not shipped; no throughput, speed, error-rate, or accuracy outcome is established, and no competitor recognition-accuracy number is treated as measured truth.",
+    "The page does not transfer facts or outcomes between engagements."
   ],
   "publicationBlockers": [],
   "questionsForReview": [
@@ -97,61 +112,82 @@
   "relatedPageSlugs": [
     "errors-are-hard-to-notice",
     "recovery-paths-are-weak",
-    "users-cannot-reorient-quickly-after-interruption",
-    "the-interface-demands-too-much-memory",
-    "warnings-are-visible-but-their-meaning-is-unclear",
-    "users-cannot-see-what-state-the-system-is-in",
+    "users-keep-repeating-an-action-because-the-system-cannot-confirm-it-worked",
+    "the-interface-does-not-make-clear-what-an-action-will-affect",
+    "handoffs-lose-context",
     "kardion",
-    "beissbarth"
+    "beissbarth",
+    "assemblio",
+    "egma",
+    "oceaneering-dispatch-panel",
+    "visioncheckout"
   ],
   "internalLinks": [
     {
-      "anchorText": "errors that are hard to notice",
+      "anchorText": "errors are hard to notice",
       "targetSlug": "errors-are-hard-to-notice",
-      "placementHint": "Use in the Boundaries and adjacent failure patterns section where detection is distinguished from correction.",
-      "reason": "The current source explicitly distinguishes this failure from errors that are hard to notice."
+      "placementHint": "Use in the distinction section where detection is separated from correction.",
+      "reason": "The current page explicitly distinguishes correction after detection from error detection."
     },
     {
       "anchorText": "weak recovery paths",
       "targetSlug": "recovery-paths-are-weak",
-      "placementHint": "Use in the Failure pattern section and Related pages section where structural absence of recovery support is contrasted with inadequate correction support.",
-      "reason": "The current source explicitly distinguishes this failure from recovery paths that are weak."
+      "placementHint": "Use in the distinction section and related pages section.",
+      "reason": "The current page explicitly distinguishes inadequate correction support from absent recovery structures."
     },
     {
-      "anchorText": "users cannot reorient quickly after interruption",
-      "targetSlug": "users-cannot-reorient-quickly-after-interruption",
-      "placementHint": "Use near the Beissbarth automotive calibration discussion if linking sequence resumption after interruption.",
-      "reason": "The Beissbarth example concerns resuming a sequence after interruption."
+      "anchorText": "users cannot confirm that an action worked",
+      "targetSlug": "users-keep-repeating-an-action-because-the-system-cannot-confirm-it-worked",
+      "placementHint": "Use in the related pages section when discussing uncertain correction confirmation.",
+      "reason": "Uncertain correction confirmation is one of the documented causes of this failure."
     },
     {
-      "anchorText": "the interface demands too much memory",
-      "targetSlug": "the-interface-demands-too-much-memory",
-      "placementHint": "Use near the prior state visibility discussion if linking memory-based reconstruction.",
-      "reason": "The source states that hidden prior state forces users to reconstruct correct state from memory or external sources."
+      "anchorText": "the interface does not make clear what an action will affect",
+      "targetSlug": "the-interface-does-not-make-clear-what-an-action-will-affect",
+      "placementHint": "Use in the related pages section when discussing correction side effects and cascade invalidation.",
+      "reason": "Correction-side-effect errors and cascade invalidation concern unclear downstream effects of an action."
     },
     {
-      "anchorText": "warnings are visible but their meaning is unclear",
-      "targetSlug": "warnings-are-visible-but-their-meaning-is-unclear",
-      "placementHint": "Use near the Kardion alarm correction sequence discussion if linking alarm meaning and correction.",
-      "reason": "The Kardion example concerns alarm understanding and completion of alarm correction sequences."
-    },
-    {
-      "anchorText": "users cannot see what state the system is in",
-      "targetSlug": "users-cannot-see-what-state-the-system-is-in",
-      "placementHint": "Use near the correction confirmation and prior state visibility sections.",
-      "reason": "The source identifies hidden prior state and uncertain correction confirmation as causes of the failure."
+      "anchorText": "handoffs lose context",
+      "targetSlug": "handoffs-lose-context",
+      "placementHint": "Use in the handover recovery section or related pages section.",
+      "reason": "The current page describes correction across shifts where the person resolving the error did not create it."
     },
     {
       "anchorText": "Kardion MCS Controller",
       "targetSlug": "kardion",
-      "placementHint": "Use in the Evidence basis section heading or first Kardion paragraph.",
-      "reason": "The body mentions the Kardion case and the slug is allowed in the linking context."
+      "placementHint": "Use in the Kardion evidence subsection.",
+      "reason": "The current page discusses the Kardion alarm correction sequence."
     },
     {
       "anchorText": "Beissbarth automotive calibration",
       "targetSlug": "beissbarth",
-      "placementHint": "Use in the Evidence basis section heading or first Beissbarth paragraph.",
-      "reason": "The body mentions the Beissbarth case and the slug is allowed in the linking context."
+      "placementHint": "Use in the Beissbarth evidence subsection.",
+      "reason": "The current page discusses sequence resumption and correction scope in the Beissbarth case."
+    },
+    {
+      "anchorText": "Assemblio",
+      "targetSlug": "assemblio",
+      "placementHint": "Use in the Assemblio evidence subsection.",
+      "reason": "The current page discusses no undo and snack-bar undo in the Assemblio case."
+    },
+    {
+      "anchorText": "Egma Order",
+      "targetSlug": "egma",
+      "placementHint": "Use in the Egma evidence subsection.",
+      "reason": "The current page discusses correction localisation failure in the Egma Order example."
+    },
+    {
+      "anchorText": "Oceaneering dispatch panel",
+      "targetSlug": "oceaneering-dispatch-panel",
+      "placementHint": "Use in the Oceaneering evidence subsection.",
+      "reason": "The current page discusses wrong-cart-type recovery and handover correction in the Oceaneering dispatch panel case."
+    },
+    {
+      "anchorText": "visioncheckout",
+      "targetSlug": "visioncheckout",
+      "placementHint": "Use in the visioncheckout evidence subsection.",
+      "reason": "The current page discusses the Corrector as a designed correction surface in the visioncheckout case."
     }
   ],
   "qualityChecks": {

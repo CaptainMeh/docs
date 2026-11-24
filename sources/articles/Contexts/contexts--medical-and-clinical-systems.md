@@ -44,7 +44,7 @@ These terms must appear naturally in the text, not as a list. They build the sem
 - Research: 12 human factors studies reviewed; 13 structured sessions with 8 orthopaedic and trauma surgeons
 - Domain learning method: surgeons described procedures as if teaching a junior colleague — surfaces the exact moments where interface hesitation becomes clinically consequential
 - Key design problem: recognition over recall under gloved-hand, divided-attention, brief-glance conditions in the operating theatre
-- 8 competitors benchmarked; most common failure was reliance on colour as primary state indicator — fails under variable theatre lighting
+- 6 comparable surgical devices benchmarked; most of them relied on colour as the primary state indicator — which fails under variable theatre lighting
 - Redundant non-colour cues (spatial position + icon form + colour) resolved clinical reliability, regulatory completeness, and brand positioning simultaneously
 - Surgeon-reported (from design review sessions, not deployment): state verification reduced to brief glance; parameter adjustments no longer interrupted surgical workflow. **Must be attributed as surgeon-reported from design sessions, not post-deployment measurement.**
 - Design system built with regulatory justification per component — reduces cost of future submissions across the portfolio
@@ -68,3 +68,30 @@ These terms must appear naturally in the text, not as a list. They build the sem
 - The design work introduced the Inform–Prevent–Correct framework — a recursive guidance architecture applied across every step of the scan flow, designed to manage patient mental models, prevent confusion events, and recover from them when they occurred. The framework was delivered as an explicit diagram artefact during Concept Convergence, not only used as an internal organising principle.
 - Multi-modal guidance system: screen + audio + floor markings, designed as an integrated system from the outset rather than as independent channels. Floor markings adopted in the deployed device. The integration reflects that a patient-operated clinical device cannot rely on a single guidance channel when attention is divided and stress is elevated.
 - **Commercial outcome:** all 9 clinics in preliminary commercial discussions purchased the device following demonstrations that showed the redesigned interface working with real buyers walking through the patient experience. Client-reported; Creative Navy observed 5 of 9 demos.
+
+---
+
+## Hospital logistics and support infrastructure — a separate, clearly labelled subsection
+
+**This subsection must be kept clearly separated from the clinical evidence above and never interleaved with it. Its opening sentence is mandatory and not negotiable:**
+
+> This engagement concerns cart transport through a hospital building, not clinical workflow. The system has no patient-facing function, is not a medical device, falls under no medical-device regulation, and was not subject to an IEC 62366-1 process.
+
+### Oceaneering hospital dispatch panel
+
+- Oceaneering may be named in full; nothing else may — no hospital name, campus or abbreviation, no product or system name, no individual. Client and customer speech is reported, never quoted. The subject is the dispatch panel: the wall-mounted touchscreen in a logistics depot through which a materials-handling operator puts a cart into an automated hospital transport system.
+- Scale of one deployment, from Oceaneering's own staff orientation film: 71 logistic lobbies that send and receive carts; 17 cart types; 1,400 carts; 70 vehicles; approximately 4,000 transport orders a day. Busiest areas: the kitchen, the dock, waste management and cart holding.
+- Area sizes vary enormously: four to twelve stations is typical, twelve often quoted as the per-area maximum; a tunnel can hold twenty; one fully automated bay holds fifty and has no panel at all.
+- The floor is part of the interface: vehicles run on dark flooring and people are directed to light flooring; ceiling-mounted illuminated signs and speakers issue spoken instructions to clear the passage at intersections; station positions are numbered on the floor, and the send and receive roles are painted on the floor in the same colours the screen uses.
+- The operator population, client-stated: a high-turnover role with little training, handling 100–200 dispatches per eight-hour shift, no technical background. A sales consultant put it that operators barely need training because the turnover is so high; a supply-chain supervisor said of his own team that they are front-line staff, not highly educated, and if it is quick and easy they can be trained on it.
+
+---
+
+## What this page must not claim
+
+- **The boundary sentence above must open the hospital-logistics subsection on the published page**, so that a cart-dispatch terminal filed beside regulated medical devices does not read as a medical-device credential. The boundary wording should agree with `evidence-standards--what-we-do-not-claim.md`.
+- **No medical-device claim from Oceaneering, in any form.** Hospital logistics infrastructure: no clinical workflow, no patient-facing function, no medical-device regulation, no IEC 62366-1 process. This is the single most likely misreading of the engagement.
+- **No infection-control or healthcare-regulatory credential from Oceaneering**, and no efficiency, throughput, error-rate, time-saving or dispatch-volume outcome — nothing was measured. No usability, field-research or observation claim: no operator was interviewed and no depot was visited. No verbatim quotation.
+- **No other engagement from this change set may be cross-referenced to this page** — not the industrial engagement, Streetec, AIT, the MDU, Assemblio, Topera, Egma, KISPE, Schone, Raymarine, the maritime VTS engagement, the handheld C2 engagement or visioncheckout. The marine case studies and any defence content stay off this page.
+- **Keep the four clinical entries, the formative/summative distinction and the FDA statement exactly as they stand.**
+- **No engagement dates anywhere** — sequence and duration only.

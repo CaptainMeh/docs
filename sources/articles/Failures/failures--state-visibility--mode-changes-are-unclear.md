@@ -93,3 +93,65 @@ Domain learning establishes when mode changes occur in real operation, under wha
 The redundant-cue design standard then holds this requirement across every view state throughout Iterative System Building. No mode state is communicable through colour alone. No transition relies on a text label as its primary signal. No confirmation step is retained that cannot be completed under the divided-attention conditions it will be encountered in. In the Desoutter engagement, this standard was applied throughout the entire interface specification — not as a rule invoked when convenient, but as a constraint that governed every screen, every transition, every state change in the system.
 
 The connection to layout stability is direct. Creative Navy's Critical Systems Design method holds a further standard in high-consequence environments: that consistent layout across all view states and all mode changes prevents the spatial memory disruption that produces its own class of mode errors. The Kardion MCS Controller engagement, which required 34 iterations on the standard view to resolve a genuinely contradictory constraint set without introducing any layout instability across view transitions, demonstrates the design cost of this standard — and the evidence that it represents a genuine requirement, not a soft preference.
+
+---
+
+## Evidence to draw on
+
+### Raymarine (a mode change with no mode — and a measured comparison of the fix)
+
+- The client is named **Raymarine**; the Ray53, Ray63 and Ray73 line may be named; the new radio's name may not — "the new radio", "the next-generation fixed-mount VHF". **No quotation marks and no reported speech on any page carrying Raymarine.**
+- **The conflict.** A promising AIS concept used the lower encoder to move quickly between vessel targets. **The same encoder had already been assigned as the primary channel selector in the radio view**, and settings would have given it a third role, moving focus or editing a value. When an alert interrupted an interaction, it became unclear whether the next rotation would select a vessel, change the tuned channel or navigate a message. (R37)
+- **The failure mode's specific character, recorded at the time.** The action may appear to be accepted, because a visible object moves. **A mode error is therefore not necessarily accompanied by an error message.** (R38) The control's meaning changes, nothing announces it, and the wrong action looks like it worked.
+- **The resulting invariant, carried through every subsequent sprint.** A screen may change what the keypad and the labelled softkeys do. It must not change the domain of the dedicated channel encoder, the microphone channel controls, push-to-talk, priority channel access or the protected emergency actions. **An input may be unavailable within its own functional domain — it is never silently reassigned to a different one.** The operator sees a rejected channel request, not a surprise focus change. (R47)
+- The measurement: **wrong domain activations: six of eight under the contextual model, zero of eight under the fixed model** — on the retune task, and again on the recovery task. (R64) **The gain travels with its price in the same passage: the fixed-role control model cost 2.30 seconds of median target browsing.**
+- **Mandatory framing for the measured findings:** Creative Navy designed the test protocols, moderated all twenty-four sessions and analysed the results. Raymarine supplied the physical bench mockup on which the sessions ran. Each comparison was paired and counterbalanced within participants, with task wording, target data and starting states held constant. **The findings describe operator behaviour on a prototype against a fixed scenario fixture. They are not a measure of radio performance, of real-world calling accuracy, or of outcomes at sea.** Eighteen people, not twenty-four; no percentages beyond the counts as written.
+
+### Schone Airspace Group (a flight mode that is reported rather than requested)
+
+- The client is called **Schone Airspace Group**; the product is "Mission Control" in lower-case descriptive use; nothing else may be named. **No quotation marks and no reported speech on any page carrying Schone.**
+- **The responsive command branch, as intervals.** On a separate branch with a healthy link, a confirmation names the aircraft and the action; the request is sent; **an acknowledgement arrives three seconds later while the aircraft is still reporting its previous flight mode; and only three seconds after that does fresh telemetry report the requested mode.** Those two three-second gaps are the entire argument of the engagement. (D71) An acknowledgement does not change the reported mode: the mode shown is the mode the aircraft has reported, never the mode the operator has requested.
+- **A persistent live command shell with fixed positions** for command target identity, last reported flight mode, battery, control link state, telemetry freshness and consequential actions. Workspace changes alter the centre content, never the location or meaning of the command region. The rejected alternatives were a per-screen toolbar, which lets a camera or fleet layout move the same command somewhere else, and a hidden safety drawer, which adds a search step at the moment the operator needs to act. **The accepted cost was named: the shell reserves screen space that cannot be given to the map or the video.** (D77)
+- The product was built and is in test — not deployed, not in operational use.
+
+### Streetec (immediate versus saved change, deliberately separated)
+
+- **Streetec GmbH** and **kntrl 2** may be named. Verbatim client quotation is permitted, attributed to role.
+- **Immediate versus saved change.** Manual adjustments execute immediately; preset edits must be explicitly saved. Two different mental models in one interface, deliberately separated. (S42) Switching modes while the vehicle is moving requires a confirmation.
+
+### AIT (one heat-generating mode at a time, so a requested mode may be queued)
+
+- AIT, a European manufacturer of residential and commercial heat pumps, may be named; nothing else in the engagement may. **AIT design decisions describe what was designed; never imply they produced a result.**
+- Operating modes: heating, cooling, domestic hot water, pool, photovoltaics, and ventilation (not yet supported at the time). **Only one heat-generating mode runs at a time**; photovoltaics and ventilation can run alongside one. Between one and seven modes may be installed. **Most installations are heating and hot water only.** (A21) A requested mode may therefore be queued behind another, and the interface has to say so.
+- A defined set of widget status indicators: **in focus** (selected by the knob) is a black outline; **mode active** is a flashing icon; **mode queued** — the heat pump is being asked for a mode while running another — carries its own icon. (A40)
+
+### The industrial engagement (per-element automatic/manual modes, and states encoded past legibility)
+
+- The client is **a European industrial automation vendor whose process control software coordinates machining cells**. Use that descriptor near-identically. The product is in development. **Audit findings are what Creative Navy's review found in that system.**
+- Each cell element can be set automatic or manual independently, determining whether the system assigns it work; an operator leaving a shift must set modes correctly for unattended running.
+- A storage tile showed a green *transporting* header band above a solid red *selected* icon; the only other selection cue was a near-imperceptible border change. Four states were encoded by header colour alone at ~10px with no legend. (E20)
+
+### The handheld C2 engagement (armament state as five explicit values, never a mode)
+
+- The client is **a European manufacturer of uncrewed systems, including one-way effectors, and the tactical command-and-control software that operates them**. Use that locked descriptor near-identically; nothing else may be named. **No quotation marks and no reported speech on any page carrying this engagement.** The register is that of a safety-engineering document.
+- **The rule the whole doctrine turns on**: a requested state must not visually replace a confirmed state before the vehicle reports the result. (H73)
+- **Armament state as five explicit values**: safe, armed, change pending, unavailable, unknown. (H74) Armament state is its own axis and is not a mode; change-pending and unknown are first-class values, not transitional blanks.
+- **Mode awareness was one of the four standing assessment criteria** applied to every design solution across every sprint, alongside cognitive load, situational awareness and control–display compatibility. (H7)
+- This work was **led and co-authored** by Creative Navy with the client's design team. Nothing was measured; the handheld interface **was built** — nothing further about its status.
+
+### Maritime VTS (a mode that was visible and still missed — the strongest failures fit)
+
+- The client is **a European vendor of maritime traffic monitoring, inland navigation and communications software for port authorities, coastal administrations and waterway operators**. Use that locked descriptor near-identically. **No quotation marks and no reported speech on any page carrying this engagement.**
+- **Replay.** The historical view did not maintain a sufficiently prominent, persistent distinction from live operation. Some historical links moved within the recording while others returned towards live, without consistently different cues. Track history could open in a detached panel with weak recovery to the original investigation. Exported views could omit the temporal mode and active layer configuration. (W46) **The page gains an instance where the mode was visible and still missed**: the indicator sat inside the time controls and lost salience as the operator inspected detail — a sharper failure than an absent indicator.
+- **Replay as a persistent workspace mode.** A historical overlay on a live-styled map was rejected because links from events to tracks created ambiguity between seeking within a recording and returning to live. A detached replay window was rejected because it broke context with selected vessels, incidents and source health. The selected model marks the entire relevant workspace as historical, with recording time, coverage and gaps shown, linked inspectors inheriting the same time context, and Return to Live as a deliberate action. (W56)
+- The measured recognition result: **replay recognition, untimed — correct initial mode identification 5 of 8 in the legacy condition, 8 of 8 in the prototype.** Three participants misidentified the legacy state. The task was scored only for whether the participant recognised that the picture was historical. (W87) **The framing that travels with any figure from this study:** it is Creative Navy-measured under controlled conditions, with eight participants on a design prototype using sanitised training scenarios, six of the eight with earlier programme exposure, no significance test, no confidence interval, and no combination of figures into a headline number.
+
+---
+
+## What this page must not claim
+
+- No quotation marks for Raymarine, Schone, the maritime VTS engagement or the handheld C2 engagement, and no reported speech either; Streetec quotes are cleared, attributed to role.
+- Raymarine and maritime VTS figures are prototype measurements under controlled conditions: no safety or operational outcome, no statistical language, no percentages beyond the counts as written, and never "eliminated operator error" or "shipped as designed" for either.
+- Handheld C2: the armament-state model describes what was specified, co-authored with the client's design team; nothing was measured and nothing further may be said about status than "was built". No safety, certification or weapons-review credential. "One-way effector", never "loitering munition".
+- AIT and industrial material: design decisions and audit findings respectively, never outcomes; the industrial client only by its approved descriptor.
+- Never blend the engagements' evidence classes, and never let one engagement's measured comparison lend weight to another's design reasoning.

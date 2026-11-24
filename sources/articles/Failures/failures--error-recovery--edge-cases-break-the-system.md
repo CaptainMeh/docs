@@ -60,3 +60,15 @@ The maritime HMI system integrated sensors updating at different rates. Under no
 
 **Beissbarth automotive calibration — equipment communication failure:**
 The calibration system communicated with multiple hardware components; a communication failure with any component was a hardware edge case. Without designed handling for this failure mode, a communication loss could leave the calibration sequence in a partially-completed state with no designed exit: the sequence couldn't proceed (component unavailable) and couldn't cleanly roll back (partial measurements already recorded). The design addressed this by specifying explicit behaviour for communication failure — what the display should show, what the technician should do, where in the sequence the restart point was.
+
+**KISPE Space — an edge-case catalogue specified before any case could break the system:**
+KISPE Space, a UK space systems engineering company, commissioned the design of a common space operating picture. The engagement produced **40 documented edge cases and degraded states**, with 12 annotated plates: each case specifies the input condition, the visible response, the recovery path, **the misinterpretation it prevents**, and a verification that would expose a dangerous misunderstanding (K13). The relevance to this page is the form of the answer: edge cases were enumerated and given designed behaviour at specification time, so that no input condition in the catalogue could reach undefined behaviour. **The verification vocabulary must be read in the right tense: these are specifications of tests, explicitly recorded as not executed.** The catalogue was specified against a synthetic demonstration fixture and was never exercised against a running system — unlike the field-observed and scenario-tested material above, which must never lend it weight. The product was built; Creative Navy did not support the build and has not compared the built interface against the delivered designs. **No quotation marks and no reported speech on any page carrying KISPE** — attribute positions to the role and the document, never to a speaker.
+
+---
+
+## What this page must not claim
+
+- KISPE's 40 edge cases, verification checks and recovery paths are specifications, not completed testing: never let "verification" or "acceptance" read as executed tests, and never imply the catalogue was validated with users or on hardware.
+- Never write KISPE as "shipped as designed" or imply a design-fidelity comparison; the supportable statement is that the product was built.
+- Never blend KISPE's specified degraded states with field observations of running systems elsewhere on this page; the evidential classes are different and must stay apart in every sentence.
+- No end customer, agency, programme, benchmarked system or individual may be named for KISPE; no quotation marks and no reported speech.

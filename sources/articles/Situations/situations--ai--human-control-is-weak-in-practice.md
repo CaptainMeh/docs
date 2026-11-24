@@ -16,6 +16,8 @@ What is less widely present is human control understood as the set of interface 
 
 The gap between nominal control and operational control is the most common AI governance failure in practice, and the least visible, because it is not a failure to provide the mechanism — it is a failure to provide the conditions that make the mechanism work.
 
+Oversight of a system that executes rather than infers — an uncrewed aircraft, an uncrewed ground or marine vehicle, a driverless transport fleet — is a different design problem with no model in it, and is described on the page about supervising autonomous and remotely operated systems.
+
 ---
 
 ## Three structural reasons the gap opens
@@ -70,6 +72,10 @@ A second human control question arose at the system level: blinded screening mod
 
 The confidence percentage display in the data extraction flow addressed the third structural failure from the audit dimension: by making the AI's confidence level explicit per extraction, the interface created a traceable record of which extractions were high-confidence and which were low-confidence — information that project managers and reviewers could use to direct verification effort, and that produced a documentary record of the AI's epistemic state at each extraction point.
 
+**visioncheckout — control present in the interface and weak in the flow**
+
+visioncheckout, a German vendor of computer-vision self-checkout systems for staff restaurants and catering — the name is styled lowercase — supplies the consumer-facing instance of the gap. The model's output here is a binding charge rather than a recommendation: 90–95% of users pay by keycard, and placing the keycard pays immediately where there is available balance. A correction path exists and works — the Corrector, the surface through which a guest amends the recognised basket — and entry to it is deliberately understated: a tertiary edit control near the basket header, with rescan remaining the primary action, so that correction is available without being proposed as the normal next step. Control is present in the interface and weak in the flow: accepting the model's output is near-frictionless, while correcting it sits behind a multi-step path the guest has to go looking for. **The product is in development: nothing has shipped, nothing about the new designs was tested with users, and no outcome of any kind may be claimed. visioncheckout's client positions are reported, never quoted, and its customers are never named.**
+
 ---
 
 ## What Creative Navy's Critical Systems Design method addresses here
@@ -79,3 +85,13 @@ The three structural failures that produce weak human control require different 
 Domain learning establishes this. In the Callsign engagement, workshops with Callsign's product, engineering, and security specialists were required to make the mechanics of the policy engine explicit before designing for it — mapping the existing rule structures, the fraud scenarios they needed to cover, and the points where conflicts or gaps appeared. This produced the model/policy separation that was the architectural foundation for everything that followed: a conceptual clarification about what analysts needed to control and what the model handled, before any interface design began.
 
 The model/policy separation is not a UI pattern. It is a design principle for AI governance: separate what the AI decides from what humans decide about what to do with what the AI found, and design the human interface around the policy layer — in the logic and vocabulary of the domain experts who are accountable for the decisions. When that separation is made explicit in the interface, human control is no longer a nominal feature of the system. It is an operational one.
+
+---
+
+## What this page must not claim
+
+- **No non-AI engagement appears on this page.** Schone Airspace Group, the handheld command-and-control engagement and Oceaneering stay off it: oversight of a system that executes rather than infers is a different design problem with no model in it, and belongs on the page about supervising autonomous and remotely operated systems. Oceaneering is excluded from every AI or automation page — there is no AI in that product.
+- **No throughput, speed, error-rate, satisfaction, accuracy or commercial outcome from the visioncheckout redesign.** None exists; nothing has shipped and nothing about the new designs was tested with users.
+- **No implication that the visioncheckout product is deployed with the new design.** It is in development.
+- **No quoted visioncheckout client speech.** Positions are reported and attributed to visioncheckout, not to an individual, and visioncheckout's customers are never named.
+- **Do not describe visioncheckout as high-consequence.** It is a canteen checkout; the consequence of failure is a queue, a wrong charge and a guest who needs help.

@@ -51,3 +51,25 @@ Silent degradation occurs both in embedded systems (a sensor faulting and the di
 - Torqeedo maritime HMI: storm conditions and sensor connectivity issues were designed for as degraded operating contexts. The sensor cadence synchronisation architecture was specifically designed to prevent apparent data transitions during hardware disruptions — a form of silent degradation prevention.
 
 - Gexcon CFD simulation: a simulation configuration with internally contradictory parameters is a form of degraded model state: the simulation can run but the outputs are unreliable. The pre-run validation architecture specifically addresses this degraded state by preventing the simulation from entering a silent-degradation output mode.
+
+### KISPE Space (degraded is not one mode but a position on seven independent axes)
+
+- The client is **KISPE Space**, a UK space systems engineering company; nothing else from the engagement may be named. **No quotation marks and no reported speech on any page carrying KISPE.** The product was built; **Creative Navy did not support the build and has not compared the built interface against the delivered designs** — never "shipped as designed". The degraded-state material was **specified against a synthetic fixture and was never executed**.
+- K55 refines the term: **degraded is not one mode but a position on seven independent axes** — source transport (reachable, unreachable, unknown); asset access (permitted, restricted, not checked); asset delivery (available, failed, pending, unknown); freshness (current, stale, not assessed); origin (observed, device-measured, provider notice, forecast, prediction); operational condition (favourable, unfavourable, unknown, not applicable — and only where the source semantics actually support that classification); local change state (saved locally, queued, confirmed shared, unresolved). The rejected alternative is named every time: one green-to-red health score, which is compact and would make identical colours carry conflicting meanings across domains.
+- K56 — **four prohibited shortcuts, stated explicitly, three of which are corrections to how the term is normally used**: grey is not necessarily offline; red is not necessarily inaccurate; an old observation is not automatically false; a nominal coverage footprint is not proof that a particular terminal is connected.
+
+### Schone Airspace Group (degradation can belong to the control channel)
+
+- **Schone Airspace Group** is the canonical name. **No quotation marks and no reported speech.** The product was built and is in test, not deployed.
+- Schone refines the term from the other side: **degradation can belong to the control channel independently of the controlled object.** An aircraft in perfect health behind an unreliable link is degraded in a sense the existing entries — all equipment or process faults — do not cover. The path by which an instruction travels can become unreliable while the thing at the far end of it is entirely healthy, and the interface must report the first without asserting anything about the second.
+
+### The maritime VTS engagement (a retained marker is not a current observation)
+
+- The client is described ONLY as **a European vendor of maritime traffic monitoring, inland navigation and communications software for port authorities, coastal administrations and waterway operators**. **No quotation marks and no reported speech.**
+- W43 — in the audited products, time of last observation sat behind secondary inspection, so in a degraded state a retained target could keep the same visual treatment as an updating one: the display did not reliably tell the operator whether a marker represented a current observation or a last known position, and an equipment view with no state data could read as an equipment view with no faults. The designed response keeps a retained marker carrying its age and its source — silent degradation named at the level of a single marker.
+
+## What this page must not claim
+
+- KISPE's degraded-state catalogue was specified and never executed; Schone's was evaluated against fixed criteria by five working remote pilots and its four open engineering gates subsequently closed. **Never let one lend weight to the other, and never blend the two in a sentence.** The page's existing entries are equipment faults; KISPE adds degradation of information availability; Schone adds degradation of the control channel — three classes, kept apart.
+- Neither KISPE nor Schone nor the maritime VTS engagement may be drawn into the AI cluster: none has a model, performs inference or makes recommendations.
+- No engagement dates; no quotation marks or reported speech for KISPE, Schone or maritime VTS; never "shipped as designed" for any of the three; no safety, certification or regulatory credential for any of them.

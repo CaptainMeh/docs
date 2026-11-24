@@ -66,6 +66,10 @@ The framework also established a habit that prevents quiet accumulation: every n
 
 Outcomes: structural and organisational, not user performance metrics. The engagement produced a UX architecture, journey flows, and a design system across iOS, Android, and mobile web — delivery facts. The competitive protection claim — that the architecture creates structural conditions for resisting the fragmentation failure mode — is inferred: the structure exists; whether it has been tested under sustained multi-market growth is not independently confirmed. Client attribution: Tiago Cabaço, Director of Product Design and Research at OLX — "It meant a lot to work with such high calibre experts to translate our ideas into an implementation-ready design and I really appreciate your open approach."
 
+**Egma — the mechanism stated in the development team's own words**
+
+At Egma, a Dubai-based ophthalmic lens manufacturer whose B2B lens ordering platform Egma Order was rebuilt by Creative Navy, the development team stated this situation's mechanism directly: improvement requests arrived as requests to add buttons and content; there was very little structure, and new functionality tended to add chaos rather than clarity. That is the compounding condition in one account — additions landing on a product with no architecture governing how they attach, each one making the next more confusing. **This is the development team's account, attributed to its function. The rebuilt platform is live and nothing about it was measured: no post-launch figure of any kind may be attached to it, and no revenue, order-value or support-ticket outcome may be claimed.**
+
 ---
 
 ## What Creative Navy's Critical Systems Design method addresses here
@@ -75,3 +79,10 @@ Creative Navy's Critical Systems Design method addresses capability-addition com
 Sandbox Experiments establishes how each new capability will be used in practice before the architecture for absorbing it is designed. In the Chemical Watch engagement, the discovery that compliance professionals use news chronologically — not algorithmically — was not available through stakeholder interviews or competitive analysis. It emerged from testing variants, including variants that failed in revealing ways. The Pinterest-style feed failure was not a setback; it established a fundamental principle about professional information consumption that shaped every subsequent architectural decision.
 
 Concept Convergence produces the architecture for absorbing growth — the competitive vector or coherence framework that governs how new capabilities attach to the existing product. Without this architecture, each addition is designed from first principles and lands as a seam. With it, each addition extends from a shared logic that users have already internalised. The output of Concept Convergence is not the design of the current state but the principle for extending it — which is what makes the engagement's value durable rather than momentary.
+
+---
+
+## What this page must not claim
+
+- **No post-launch measurement from Egma.** The platform is online and nothing about it was measured. G23 is the development team's diagnosis of the before-state, attributed to its function, never an outcome claim.
+- **No engagement dates anywhere.** Sequence and duration only.

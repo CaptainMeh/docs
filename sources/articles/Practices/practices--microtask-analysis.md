@@ -55,6 +55,19 @@ It is the practice that feeds task-criticality-mapping (which needs decomposed t
 
 **Squaremind — patient-operated dermatology scanning device.** The pause button required seven iterations and the progress representation five, because the microtask-level analysis surfaced interpretive conflicts that a flow diagram would have hidden: different users read the same control as useless, as an emergency stop, or as not theirs to press at all. Mapping the action independently of the intended flow — what the patient is doing physically at that moment, what they need to understand, what the screen distance permits them to read — was what made those divergent readings visible and resolvable. The microtask frame is what turned an apparently simple control into a documented option space.
 
+**Assemblio (Stuttgart; Composer and Smart Viewer) — with a caveat.** Three use cases describe the same interface used three ways: training, where a new worker follows the plan step by step, consulting it closely — a phase that is short in the lifetime of an employee; spot-check, where an experienced worker knows the first thirty steps and needs to look up what is different about *this* product — which part, which variant, what is special; and advance review, where an experienced worker reads the whole plan once before starting, then assembles without consulting it again (N34). That frequency-and-context account — one user following every step, one jumping to a single step, one reading ahead and leaving — is exactly the distinction this practice exists to surface. **State honestly that it came from the client rather than from a Creative Navy microtask account: Creative Navy conducted no user research of its own on this engagement, had no control over Assemblio's research, and never stood on a shop floor. Attribute as "Assemblio described" or "client-stated", never as observation.**
+
+**Oceaneering (hospital dispatch panel; nothing beyond the client name may be named).** A design requirements table built because no business requirements existed: the client project lead's position, rendered as reported speech, was that there were no concrete business requirements — what existed was study of the deployed panels, the tool built in-house for one hospital, and conversations with sales, service and subject-matter experts (O49). The table recorded, per entry: screen, module, content and user actions, use case, priority 1–5 and user persona, with Creative Navy's open questions and the client's answers interleaved in adjacent columns, inside a documentation workspace that also held the project timeline, the stakeholder interview findings and an open-questions page, with a design-review tool with per-screen commenting and a stated expectation of feedback within three to four working days per wireframe set (O4). **Oceaneering client positions are reported speech attributed to a role, never quoted. No dispatch operator was interviewed or observed and no depot was visited; the table was built from documents and stakeholder conversations, not from observation.**
+
+---
+
+## What this page must not claim
+
+- Assemblio's three use cases are client-stated; no observation, usability testing or shop-floor claim may attach to them, and they must never be blended with the industrial engagement's field observations.
+- Oceaneering contributes a requirements artefact, not research: no field research, no contextual inquiry, no operator contact.
+- Raymarine and Schone do not appear on this page — the practice was not used in either engagement. Maritime VTS does not appear either: its task analysis was hierarchical and journey-based, which is the method microtask analysis is defined against, and adding it would erode the definition.
+- No engagement dates — sequence and duration only.
+
 ---
 
 ## Relationship to other practices

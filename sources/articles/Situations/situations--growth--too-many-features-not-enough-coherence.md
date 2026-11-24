@@ -58,6 +58,14 @@ The dashboard was rebuilt around the user hierarchy of needs: immediate answers 
 
 Outcome: 36% demo-to-paying conversion rate, measured by Dancerace six months after release against their own trial-to-paid conversion tracking. Industry benchmarks for self-serve SaaS conversion at the time were 15–20%. Dancerace's own expectation going into launch was a conversion rate in that range. Evidence basis: client-measured; not independently verified by Creative Navy.
 
+**Maritime traffic monitoring — the client's own statement of incoherence across a portfolio**
+
+A European vendor of maritime traffic monitoring, inland navigation and communications software for port authorities, coastal administrations and waterway operators stated the incoherence itself: the interfaces had been designed by the software engineers who built them, in separate teams, extended per customer contract and tender requirement over many years, with individual improvements made but never a UX programme across the portfolio — and in demonstrations the interfaces did not communicate that the applications belonged to one family, even where the underlying systems exchanged information, with similar functions implemented differently from product to product. **These are the client's stated problems, attributed to the role and the artefact they came from — no quotation marks and no reported speech appear on any page carrying this engagement, and the client is identified only by the locked descriptor. No commercial or tender outcome attaches to the redesign.**
+
+**Assemblio — the same function looking different in different places, with the client's own causal account**
+
+Assemblio GmbH's Composer carried the accretion in miniature, and the client's stated reason — the features were built at different points in time — is the cleanest account of it in the corpus. Three different renaming interactions existed for three entity types: double-click for folders, a menu item opening a dedicated screen for projects, a modal for products. Moving a project into a folder required a menu command and a list to search through, with no drag and drop; a folder could not be deleted until everything inside it had been deleted individually. The export action was buried in a sub-menu — the client's position: very hard to find if you do not already know where it is — with no direct route to the output afterwards. The annotation tools were not standardised: a colour picker for parts, a different one for text, and separate palettes for rectangle, text and line, several of them active for elements not currently on screen — the client's own summary being that the same function looks different and is found in different places. A newly created text annotation gave no indication that it could be typed into. Arrows did not reliably attach to 3D components, and in the Smart Viewer did not move with components during animation. There was no undo. Dead and misleading controls existed — a filter that did nothing, an indicator that looked like a button but was not one. Copy camera and paste camera worked one step at a time. Asynchronous work was reported in snack bars with no reference to which product each one concerned. **These are Assemblio's own criticisms of its own product, given while demonstrating it — client-stated, never Creative Navy audit findings.**
+
 ---
 
 ## What Creative Navy's Critical Systems Design method addresses here
@@ -67,3 +75,11 @@ The core failure on this page is an absence of user hierarchy — the product ha
 Establishing the hierarchy requires understanding how real users approach the product under real conditions. In the Dancerace engagement, the hierarchy of user needs was not stated by users when asked directly — it emerged from observing how users interacted with prototypes, and was then confirmed in interviews. Users who could not identify what they owed within the first interaction did not proceed to any of the features the product contained. That finding made the feature-showcase approach legible as a failure mode rather than a viable strategy.
 
 The Concept Convergence practice that dissolved the stakeholder tension was tension-driven reasoning: instead of finding a compromise between feature visibility and configuration requirements, the method examined what drove the tension and identified that both camps were responding to a real concern (value communication, operational accuracy) through a design response that was counterproductive. Understanding the concern made it possible to design through the tension rather than around it.
+
+---
+
+## What this page must not claim
+
+- **Assemblio's criticisms of its own product are client-stated, never Creative Navy audit findings** — Assemblio is never framed as a UX audit, expert review or heuristic evaluation — and no time-saving, error-rate, adoption or funding figure attaches to it. No engagement dates: Assemblio's history is publicly dated and none of it may appear.
+- **The maritime traffic monitoring client is identified only by the locked descriptor**; its six RIS modules are never listed as an inventory; no quotation marks and no reported speech appear for it; and it is never read as a nine-product redesign — nine products were audited, one designed to full depth.
+- **No engagement dates anywhere.** Sequence and duration only.

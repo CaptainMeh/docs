@@ -109,3 +109,40 @@ Domain learning — conducted during Sandbox Experiments — establishes the act
 The design standards applied during Iterative System Building then hold against these conditions throughout. The layout stability standard — every element fixed across every view transition — was held through 18 sprints of the Kardion engagement without being negotiated away, because the shared understanding between Creative Navy and Kardion was that instability was a failure condition, not a tradeoff. The recognition standard — every critical state communicable without reading — governed every state communication decision in the deSoutter engagement from the outset. In the Polymatica engagement, the architecture that emerged through Concept Convergence replaced the cube metaphor, restructured the entry hierarchy around operational rather than technical logic, and introduced a data preparation step that translated the gap between training data and real data into a design problem with a design solution.
 
 The common pattern: these are not improvements applied to a finished design. They are requirements established at the start and held throughout. Cognitive demand that is not measured cannot be designed against.
+
+---
+
+## Evidence to draw on
+
+### The industrial engagement (memory demand found by an expert review of a running system)
+
+- The client is **a European industrial automation vendor whose process control software coordinates machining cells**. Use that descriptor near-identically; the client cannot be identified by name or by any proprietary detail. The product is in development, not shipped. **These are audit findings — what Creative Navy's review found in that system — never general claims about industrial software.**
+- Navigation changed between screens: seven rail icons on operator screens and thirteen elsewhere; machine strip membership and order shifted, one machine absent entirely from one view; the brand plate appeared on roughly half the screens. No navigation item carried a text label. (E26)
+- One machine carried four different names across breadcrumb, tile, card title and caption. (E27)
+- A 48-position storage grid contained three unexplained colour exceptions with no key. (E30)
+- The memory argument these findings make: when navigation structure, machine identity and colour meaning are inconsistent across views, the operator must hold the reconciliation in memory — which machine is which, which icon means what here — because the interface does not.
+
+### AIT (a designed answer to memory demand during a support call)
+
+- AIT, a European manufacturer of residential and commercial heat pumps, may be named; nothing else in the engagement may — not the consumer brands, OEM partners, programme names or individuals. **AIT design decisions describe what was designed; never imply they produced a result.**
+- The settings structure was kept close to the one installers already know, with two additions for orientation: a **breadcrumb trail**, and a **unique numeric identifier on every menu item** so that support staff can direct an installer to a setting by number over the telephone. (A48)
+- The relevance to this page: the numbered menu identifiers exist so that neither the installer nor the support agent has to hold a navigation path in memory during a call.
+
+### The handheld C2 engagement (colour differentiation degrading into a memory task)
+
+- The client is **a European manufacturer of uncrewed systems, including one-way effectors, and the tactical command-and-control software that operates them**. Use that locked descriptor near-identically; nothing else may be named — no product, vehicle, hardware or individual. **No quotation marks and no reported speech on any page carrying this engagement**; attribute positions to the role and the artefact. The register is that of a safety-engineering document: write the subject matter straight, with no euphemism and no relish.
+- **Client-reported operator behaviours, relayed to Creative Navy**: operators wrote coordinates on paper as an external memory aid; operators lost track of which dialog to open next; and colour coding and icon meanings required active recall rather than being readable from context. **These are the client's observations of the client's own users, relayed to Creative Navy — label them as such every time.** (H37)
+- **Two swarm problems identified as compounding.** Colour differentiation degrades as vehicle counts rise, turning the map into a memory task at exactly the point where memory fails, so redundant encoding by shape, label and spatial grouping is needed. And there was no focus mode: no way to narrow attention to one vehicle or task without losing the rest entirely. (H41)
+- The designed response: **map clustering with redundant encoding**, answering the review's finding that colour alone fails as vehicle counts rise. (H99) The review and its responses are work Creative Navy **led and co-authored** with the client's design team, not work it delivered alone.
+- **Creative Navy has no primary field evidence on this engagement** (H111): no contextual observation, no field visits, no observation of operators working. The expert review reasoned from the client's brief, the client's observations, published cognitive-science literature and hands-on use of the running product.
+
+---
+
+## What this page must not claim
+
+- The industrial client is identified only by the approved descriptor; its product is in development and nothing in that engagement is an outcome.
+- No AIT performance, efficiency, commissioning-time, error-rate or commercial figure; nothing in the AIT engagement was tested with users.
+- The handheld C2 client, product, vehicles and hardware are never named; "one-way effector", never "loitering munition". No quotation marks and no reported speech for this engagement. The handheld interface **was built** — nothing further about its status, and no explanation of the silence.
+- H37's operator behaviours are the client's observations, relayed — never Creative Navy fieldwork. Creative Navy conducted no field research on the handheld C2 engagement.
+- No claim that the handheld C2 design prevents operator error, and no safety, certification or regulatory credential from it; the designed responses describe what was designed, not a measured effect.
+- Never let facts migrate between the three engagements: the industrial findings are Creative Navy's own observations of a running system; H37 is client-relayed; A48 is a design decision.

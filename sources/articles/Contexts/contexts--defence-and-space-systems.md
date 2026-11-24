@@ -622,7 +622,7 @@ Three things must not be attached to it.
 
 ### A1.1 What may be named
 
-**The client may not be named, and the name in the source documents is already a placeholder.** "Maritime Systems Engineering" is not the client's name. It must not appear in the case study, in any note file, or in the corpus integration document.
+**The client may not be named, and the name in the source documents is already a placeholder.** That placeholder name is not the client's name. It must not appear in the case study, in any note file, or in the corpus integration document.
 
 **The locked client descriptor is:**
 

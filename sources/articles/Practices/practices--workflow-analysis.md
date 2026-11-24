@@ -71,6 +71,24 @@ The error documentation extended the analysis beyond workarounds to 12 specific 
 
 The 6 user interviews conducted alongside the session recording analysis provided contextual depth that the recordings could not supply — the motivations, task contexts, and domain knowledge levels that explained why specific navigation patterns appeared in the recordings. The two methods used together (session recording breadth, interview depth) is the appropriate model for platforms where direct observation is not feasible.
 
+**The industrial engagement (a European industrial automation vendor whose process control software coordinates machining cells)** — Two designed responses that came out of workflow findings: a collapsible workflow tree for workflows running to roughly a hundred operations, with grouped property sections for parts carrying up to roughly fifty properties (E49); and an NC program version table recording name, type, version and creation — answering a documented engineer complaint about not knowing which program version was current (E50). **These describe what was designed; the product is in development and nothing here is an outcome.**
+
+**AIT (a European manufacturer of residential and commercial heat pumps)** — A workflow split made for a physical reason rather than a role preference: commissioning was divided into an installer assistant and a separate end-customer assistant, because at a building site there is usually no network, so the installer cannot enter a Wi-Fi password and the owner must complete that part later (A23). **This is design reasoning from the operating conditions, not a researched workflow finding: nothing in the AIT engagement involved user research.**
+
+**Assemblio (Stuttgart; Composer and Smart Viewer)** — A workflow artefact doing two jobs at once: two annotated user-flow diagrams, one for the planner and one for the worker, each carrying the use cases the flow serves, Creative Navy's open questions marked as questions, and new features marked as new (N6) — describing the current flow and simultaneously holding the unresolved decisions about the future one. **Creative Navy conducted no user research of its own on this engagement and never stood on a shop floor: the flows were built from the client's material and client-stated accounts, and must never read as observation.**
+
+**Oceaneering (hospital dispatch panel; nothing beyond the client name may be named)** — A case where the workflow's real unit was not the one the interface assumed, and it was found in review rather than in requirements: stations are not independent — they sit in lines determined by the direction the vehicle drives in, and every station on a line must carry the same role. Changing the front station of a line to receive while the one behind it sends causes logistical failure; the whole row changes or none of it does. **This surfaced during review, not in the requirements** (O27). **Oceaneering client positions are reported speech attributed to a role, never quoted; no dispatch operator was observed and no depot was visited.**
+
+**Maritime VTS (a European vendor of maritime traffic monitoring, inland navigation and communications software for port authorities, coastal administrations and waterway operators)** — Hierarchical task analysis across seven operator journeys: monitor traffic and maintain sector awareness; identify and inspect a vessel or track; triage and disposition an operational alert; coordinate and document an incident; review past traffic and replay safely; monitor source health and assess impact; and supervisor and shift handover — each decomposed into subtasks, decisions, visible states, permitted actions and recoverable interruptions, with normal, ambiguous and degraded conditions modelled separately (W33). Cross-journey transitions were modelled explicitly, each retaining an origin reference — source object or alert, sector, active time mode and route back — on the stated principle that **switching screens is not itself completion of an operator task**. **No quotation marks and no reported speech anywhere this engagement appears.**
+
+---
+
+## What this page must not claim
+
+- Assemblio's and Oceaneering's workflow material is client-stated and document-derived respectively — never observation; the in-situ entries above (Triopsis, IDEXX, Gexcon, the forecourt) must never lend them field authority.
+- Oceaneering is reported speech only, never quoted; maritime VTS carries no quotes and no reported speech.
+- No engagement dates — sequence and duration only.
+
 ---
 
 ## Relationship to other practices

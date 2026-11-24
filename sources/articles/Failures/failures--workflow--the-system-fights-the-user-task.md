@@ -89,3 +89,22 @@ Domain learning is the prerequisite because the failure is typically invisible t
 In the Dancerace engagement, the user hierarchy of needs — what do I owe, what is my cost, what must I do right now — was discovered through prototype observation and user testing, not through asking users to describe their needs. Users did not articulate this priority order; they acted according to it, and the design team observing that behaviour drew the inference. The debtor behaviour model — acknowledging informally rather than through formal mechanisms — was discovered through modelling real financial behaviour, not from asking debtors to describe what they would do.
 
 In the MSolutions engagement, performing four test jobs made the module-vs-task mismatch explicit in direct operational terms. The discovery was not "the interface has a module-based structure" — that was visible from inspection. The discovery was "the technician's task sequence does not correspond to the module structure, and the cost of navigating between the two is experienced at every step of every diagnostic." That level of specificity requires doing the task.
+
+---
+
+## Evidence to draw on
+
+### Egma Order (the patient wanted a specific lens shape; the system could only say no)
+
+- Egma may be named in full, and so may **Egma Order**, Egma's B2B lens ordering platform through which optical stores order lenses. Verbatim client quotation is permitted, attributed to role.
+- The support team's worked example, the single clearest account of the failure: an optometrist tried to order a pair of reading lenses for a patient. They started a new order, went through half the steps, and were then told *"Lenses with your selected shape cannot be produced. Please choose a different shape."* The patient did not want a different lens shape, and the optometrist could not work out which parameters would allow the intended shape to be ordered. They created a support ticket instead of an order, and the support team placed the order on their behalf. (G25)
+- The relevance to this page: the user's task was fixed by the patient — a specific lens shape — and the system's workflow could only reject it, not help the user reach it. The patient wanted a specific lens shape; the system could only say no.
+- Calibration: this account comes from research interviews with Egma's support team about the platform being replaced. The redesigned platform is live and **nothing about it was measured** — no support-ticket movement, no order-completion rate, no outcome of any kind.
+
+---
+
+## What this page must not claim
+
+- No post-launch measurement from Egma, and no claim that support tickets fell; G25 establishes the problem, nothing establishes the result.
+- No usability-testing result from Egma — the live platform was never tested; the seventeen-optometrist programme was interviews and wireframe sessions, never "testing".
+- No revenue, order-value or conversion outcome from Egma.

@@ -103,3 +103,66 @@ Microtask analysis — the decomposition of user tasks into discrete cognitive s
 Domain learning in the Owkin/K engagement provided the understanding of clinician cognitive starting points that the judgment failure diagnosis required. Expert biologists who built K arrived at the system with an implicit map of what data was available and what questions were productive — a map that had been built through years of domain experience and that the interface assumed without communicating. Clinicians did not have that map. Understanding the gap between the map that expert users brought and the map that clinicians needed was not achievable through inspection of the interface alone; it required the kind of comparative understanding that benchmarking 20+ adjacent AI products and deeply understanding K's specific data-bounded architecture together produced.
 
 Both cases reflect the same underlying design commitment: the interface's job is to make significance and relevance judgments available to users through structural design rather than through accumulated expertise. A design that requires users to supply those judgments from knowledge the interface should communicate has not finished the design work. It has transferred the work to users.
+
+---
+
+## Evidence to draw on
+
+### The MDU (the live value removed precisely because it was the hardest thing to judge)
+
+- The product may be named: **the MDU**, a ship motion monitoring system whose bridge interface Creative Navy designed. The manufacturer is not named — use "the manufacturer". Verbatim quotation is permitted, attributed to role.
+- **The live "Now" value was removed from both cards** — *"that's just a number of flipping up and down constantly. It doesn't really add any value. You can look at the arrow and see close enough where you are. You don't need that as a decimal point."* The four numeric cells on each card became **minimum, maximum, period and maximum velocity**, in a single row, for pitch and roll alike. (M39)
+- Its replacement: **a three-arrow mechanism** carries the live reading the illustration no longer shows — a light arrow for the current position, two dark arrows marking the minimum and maximum of the rolling 20-minute window which the current value pushes outward and which retreat as the window rolls, and a shaded band between them showing the whole interval of movement — so that the reader can see how close the vessel has come to the alarm threshold without reading a number. (M38) Position, range and distance from the threshold are judged at once.
+- Calibration: nothing in this engagement was tested with users; the user-side evidence base is one external advisor. The design decisions describe what was designed, never a result.
+
+### Egma Order (mandatory inputs styled as errors, futures blurred but legible, inputs and buttons sharing one style)
+
+- Egma may be named in full, and so may **Egma Order**, Egma's B2B lens ordering platform. Verbatim client quotation is permitted, attributed to role.
+- Mandatory inputs were styled so that they **looked like error signalling**, and some mandatory inputs sat behind extra clicks. (G26)
+- **Future order steps were blurred** rather than hidden. The blurred content remained legible enough to read, so it added cognitive load and distracted from the current step while serving no purpose. (G27)
+- **Input fields and buttons shared a visual style.** The whole order form read as blue and white, making it unclear which elements were which. (G29)
+- These are findings about the platform being replaced, drawn from research interviews and the client's own account; the redesigned platform is live and **nothing about it was measured**.
+
+### Oceaneering (none unless necessary, and one thing flashing at a time)
+
+- Oceaneering may be named; nothing else in the engagement may — no hospital, product, system name or individual. Role descriptors only. **Every client or user position is reported speech, never quoted.**
+- A client reviewer, on the area overview's governing principle, approvingly: rather than giving the operator a lot of information, it gives them none unless it is necessary. (O59)
+- **Flashing discipline.** One thing flashing at a time: in a twelve-station area, twelve flashing stations convey no priority. Supported by the field, which expects one cart awaiting dispatch at a time, occasionally two. (O75)
+- Calibration: the reviewer's remark comes from a design review — these were design reviews, not usability tests; no task was attempted, nothing was measured and no dispatch operator took part.
+
+### KISPE Space (which records describe now, which describe days ago, which describe a forecast — the page's general form, not its AI form)
+
+- The client is **KISPE Space, a UK space systems engineering company**. Nothing else may be named. **No quotation marks and no reported speech on any page carrying KISPE.** This product has **no model**: the judgment problem is temporal and source-based, not algorithmic.
+- **Three temporal perspectives, and the perspective never rewrites a record's own time.** Three approaches were compared. A single global timeline gave an intuitive anchor and implied — falsely — that every record described the same instant. Per-module time controls matched each source's semantics and fragmented comparison, with users repeatedly setting similar dates. The chosen model frames the view without falsifying source times, and keeps local controls where a module genuinely needs precise acquisition dates or forecast intervals. **The accepted cost was named and is the sharpest self-criticism in the package: *Current* can still be misread as *live*, so per-record stamps and explicit labelling remain essential.** (K49)
+- **Five distinct temporal fields, each preventing a specific error.** Acquired or measured — prevents a historical observation being read as a current measurement. Issued — prevents a forecast's issue time being read as its validity. Received — prevents delivery time being read as observation time. Valid interval — prevents an expired forecast being treated as current. Queried — prevents cached results being read as a fresh search. (K50)
+- These describe what was designed and specified; the product was built, and no design-fidelity comparison exists.
+
+### Schone Airspace Group (priority specified placement by placement, and terms chosen so the judgment is right — the page's general form, not its AI form)
+
+- The client is called **Schone Airspace Group**; the product is "Mission Control" in lower-case descriptive use; nothing else may be named. **No quotation marks and no reported speech on any page carrying Schone.**
+- **10 information priority matrices specifying 97 individual information placements** on a four-level scale: operationally critical, task essential, supporting, reference. Organised by workspace and operating condition rather than by software subsystem. (D15)
+- **Seven terminology distinctions with functional consequences**, specified as the term to use and the term to avoid. Focused aircraft, not active aircraft. Command target, not selected. Command eligible, not ready. Last known, not live. Command acknowledged, not command completed. State observed, not success. Acknowledged, not resolved or cleared. (D40)
+- The product was built and is in test — not deployed, not in operational use.
+
+### Maritime VTS (receipt order mistakable for operational priority)
+
+- The client is **a European vendor of maritime traffic monitoring, inland navigation and communications software for port authorities, coastal administrations and waterway operators**. Use that locked descriptor near-identically. **No quotation marks and no reported speech on any page carrying this engagement.**
+- **Alerts.** Traffic conditions, equipment faults and advisory notices shared one notification surface. Ordering by receipt time was easily mistaken for operational priority. Acknowledgement, dismissal and resolution used overlapping wording, and an action history could carry visual weight comparable to the current lifecycle state. (W44)
+- This is an audit observation of the existing software, made in field observation at a customer site using sanitised material; it is not a claim about any deployed redesign.
+
+### visioncheckout (a screen whose areas do not announce their purpose)
+
+- **visioncheckout** may be named, lowercase, glossed as "a German vendor of computer-vision self-checkout systems for staff restaurants and catering". No customer names; client positions **reported, never quoted**. The product is in development and nothing has shipped.
+- **The variant-selection screen is very confusing.** Where the recognised product is "soft drink" and the guest must pick Cola, Sprite or Fanta, the flat visual design communicates neither that these are options belonging to a product nor that they can be pressed. (V36)
+- The overview of the screen confuses people; guests would like to understand what each area is for. Button hierarchy is unclear — pay, rescan and everything else do not read as three levels. (V40)
+- These are patterns a researcher saw and recorded in field research on the system being replaced — **no percentage may be attached to any of them**.
+
+---
+
+## What this page must not claim
+
+- **KISPE, Schone and the maritime VTS engagement enter this page in its general form, never its AI form.** None has a model, performs inference or makes recommendations; do not describe their material in AI vocabulary.
+- No quotation marks for KISPE, Schone or the maritime VTS engagement, and no reported speech either; Oceaneering is reported speech only, never quoted; visioncheckout is reported, not quoted. MDU and Egma quotes are cleared, attributed to role.
+- MDU: no fuel, emissions, fleet or commercial figure; nothing tested with users. Egma: no post-launch measurement of any kind. Oceaneering: nothing measured, no operator involved. visioncheckout: no outcome, nothing shipped, no percentages on observations.
+- The design responses (M38/M39, D15/D40, K49/K50, O75) describe what was designed — never imply they produced a measured result.
+- Never let facts migrate between these engagements, and never blend client-stated, interview-sourced and field-observed material in one sentence without naming which is which.

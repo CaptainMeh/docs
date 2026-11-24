@@ -103,3 +103,44 @@ Creative Navy's Critical Systems Design method addresses warning interpretation 
 Domain learning cannot establish what a warning's form needs to be in the abstract; it requires knowing the specific moment in the operational workflow when the warning will appear, under what attentional and physical conditions, with what time available for interpretation. In the deSoutter engagement, thirteen structured sessions with eight surgeons produced the specificity required: the team understood when in the procedure warnings were most likely to appear, which moments were most sensitive to interpretation delay, and what "brief glance" meant as a practical interaction constraint in operating theatre terms. In the Stromer engagement, domain learning included systematic analysis of the previous agency's design work — treating it as an accelerated first iteration — to understand what the warning architecture had attempted and why the contextual detachment failure had occurred.
 
 The design standard applied throughout Iterative System Building held one requirement non-negotiable across both engagements: no warning state whose meaning depends on conditions not present in the current interface context. Every warning was evaluated against the conditions under which it would be encountered — variable theatre lighting and divided surgical attention in one case; a glance during active riding in the other. Warning designs that satisfied the evaluation environment but would have degraded or lost contextual meaning under real operating conditions were identified and revised before they reached prototyping.
+
+---
+
+## Evidence to draw on
+
+### Oceaneering (one blink, two opposite demands — the sharpest alarm-vocabulary case in the corpus)
+
+- Oceaneering may be named; nothing else in the engagement may — no hospital, product, system name or individual. Role descriptors only ("the sales consultant", "the hospital's logistics manager"). **Every client or user position is reported speech, never quoted.** The subject is the dispatch panel in a hospital logistics depot.
+- **One blink, two opposite demands.** Blinking signalled both that a cart has been placed and the dispatch should be started, and that a cart has arrived and should be picked up. The sales consultant's diagnosis is the sharpest thing in the record: an operator reads a blinking control as *the system has something for me*, presses it and does whatever it offers — while the fleet backs up behind carts nobody has removed. Her request was to replace the blink with text or a pictogram that names the action: pull the cart off this detent. (O33)
+- From the predecessor's own specification: **in the destination menu, colour carried three meanings at once** — red marked a supervisor-only option, yellow a standard option, and an alerting colour a destination that is illogical and may be refused. Authority, normality and warning on one channel. (O32)
+- Calibration: the "before" state comes from the predecessor's own specification and from interviews with people adjacent to the users — **no operator was interviewed and no depot was visited**, and nothing was measured. Do not disparage the predecessor: it was a documented, reasoned design that accumulated incoherence across a decade and two installations.
+
+### Raymarine (a generic success surface read as established contact)
+
+- The client is named **Raymarine**; the Ray53, Ray63 and Ray73 line may be named; the new radio's name may not. **No quotation marks and no reported speech on any page carrying Raymarine.**
+- **Status comprehension: three of eight correct with a generic success surface, eight of eight correct with explicit transaction states.** **Five participants interpreted a generic call-sent message as meaning the other vessel had responded or that voice communication was already available.** (R75)
+- **Recognised the risk event and classified it correctly: seven of eight. Median recognition latency 3.60 seconds, range 2.1 to 8.2 seconds.** One occasional operator first described the warning as a general system notification. (R82)
+- **Mandatory framing for the measured findings:** Creative Navy designed the test protocols, moderated all twenty-four sessions and analysed the results. Raymarine supplied the physical bench mockup on which the sessions ran. Each comparison was paired and counterbalanced within participants, with task wording, target data and starting states held constant. **The findings describe operator behaviour on a prototype against a fixed scenario fixture. They are not a measure of radio performance, of real-world calling accuracy, or of outcomes at sea.** Eighteen people, not twenty-four; no percentages beyond the counts as written; cohort patterns are observational.
+
+### The industrial engagement (warning channels that collapse under inspection)
+
+- The client is **a European industrial automation vendor whose process control software coordinates machining cells**. Use that descriptor near-identically. The product is in development. **These are audit findings — what Creative Navy's review found in that system.**
+- In the alarms table, an error row and a selected row were both solid red simultaneously. One row duplicated another verbatim. (E21)
+- In the alarm list, severity was conveyed by a leading icon alone — no text, no row tint. (E32)
+
+### The MDU (an alarm bound to a rolling window states something specific)
+
+- The product may be named: **the MDU**. The manufacturer is not named. Verbatim quotation is permitted, attributed to role.
+- **Because the live value is not on screen, the alarm does not bind to it — and should not.** The instantaneous value leaves the alarm band seconds after entering it. Alarm state binds to the rolling maximum and minimum instead: an alarm means the vessel was outside its threshold at some point within the last twenty minutes. *"That means that sometime within the last 20 minutes you are outside the alarm level."* (M41) An alarm bound to the live value would state something that had already stopped being true.
+- **The multi-alarm format was modelled on phone notification behaviour**, at the manufacturer's request — full text for a single alarm, truncated text when several are active, full descriptions in the log — so the bar stays readable without discarding the meaning. *"I like the first one because we recognize that's from our phones."* (M46)
+- Calibration: the MDU's alarms are comfort, cargo and crew-safety alarms rather than immediate-danger alarms, by the manufacturer's own account; no alarm-response figure and no safety outcome may be attached.
+
+---
+
+## What this page must not claim
+
+- Oceaneering: reported speech only, never quotation marks; nothing measured; no operator interviewed, no depot visited; no alarm-management credential — no rationalisation process was run.
+- Raymarine: bench measurements only — no safety, rescue, distress-response or collision outcome; no statistical language; the radio was built and released, never "shipped as designed".
+- Industrial: audit findings about that system, never general claims about industrial software; the client is identified only by the approved descriptor; the product is in development.
+- MDU: no safety outcome or safety-critical credential; the alarm model describes what was designed and shipped, not a measured effect; never "ECDIS-compliant colour modes".
+- Never let the four engagements' evidence classes blend: the industrial findings are Creative Navy's own audit observations, Oceaneering's are interview-sourced, Raymarine's are bench-measured, the MDU's are design decisions with an advisor's reasoning.

@@ -84,7 +84,7 @@ Deliverables from the engagement: a multi-country research report, role-based us
 
 The Stromer embedded display is consulted during riding — a physical activity in which the rider's total available attention is primarily on the road, with a fraction available for brief display checks. In this context, routine attention cost is not measured in navigation steps. It is measured in glance duration: how long the rider's eyes are off the road per display check.
 
-Before Creative Navy's engagement, Creative Navy measured average glance duration at 4.32 seconds — more than twice the 2-second threshold at which road safety research identifies a doubling of near-crash and crash risk (Klauer et al., 2006, NHTSA Report No. DOT HS 810 594; NHTSA Driver Distraction Guidelines Phase 1, 2012). These standards are formally defined for four-wheeled vehicles; the threshold and principle apply directly to embedded displays used during riding. Glance frequency was also higher than necessary: riders were glancing at the display 18% more times per kilometre than after the redesign — each additional glance a routine attention expenditure that an interface communicating its state more efficiently would not have required.
+Before Creative Navy's engagement, Creative Navy measured average glance duration at 4.32 seconds — more than twice the 2-second threshold at which road safety research identifies a doubling of near-crash and crash risk (Klauer et al., 2006, NHTSA Report No. DOT HS 810 594; NHTSA Driver Distraction Guidelines Phase 1, 2013). These standards are formally defined for four-wheeled vehicles; the threshold and principle apply directly to embedded displays used during riding. Glance frequency was also higher than necessary: riders were glancing at the display 18% more times per kilometre than after the redesign — each additional glance a routine attention expenditure that an interface communicating its state more efficiently would not have required.
 
 The cause was structural. The warning architecture had been designed as a visual overlay on top of a fixed screen layout — warnings with no native structural relationship to the surface they inhabited, appearing without contextual grounding, covering content they should not cover, and requiring sustained reading to interpret. Each display check took longer than the information warranted because the information was not organised for rapid extraction. The routine cost per glance was elevated by the interface's inability to deliver meaning within the brief attention interval that safe riding allows.
 
@@ -101,3 +101,22 @@ Creative Navy's Critical Systems Design method addresses attention overhead thro
 Domain learning — conducted during Sandbox Experiments — establishes the actual task structure of the people who will use the system, in the environments and under the conditions where they will use it. In the WCO engagement, this meant documenting the real operational workflow of a frontline customs officer conducting an inspection — what information they needed, in what sequence, under what connectivity and time conditions — before any architectural decisions were made. In the IDEXX engagement, the two weeks of field observation across 35 clinics were what made the role-mode mismatch visible at the structural level: the finding that workarounds were role-specific rather than task-specific is what established that the solution was architectural, not configurational. In the Stromer engagement, the domain learning phase measured the pre-redesign attention cost directly — eye tracking in actual riding conditions — to establish the baseline against which the redesigned architecture would be evaluated.
 
 Microtask analysis — the practice of mapping interaction at the level of individual attention events within a task flow — identifies where overhead accumulates below the level of explicit workflow description. Users describing their work do not report navigation steps and scanning events as problems; they have absorbed them as habit. Observation and task decomposition make them visible. Reducing choices per screen, implementing progressive disclosure, and designing context-aware data presentation — the specific interventions applied in the WCO engagement — are downstream of this analysis. They cannot be specified without first knowing what the task actually requires at each step, and what the interface is currently adding that the task does not.
+
+---
+
+## Evidence to draw on
+
+### Assemblio (the attention budget as a client-stated binding constraint)
+
+- Assemblio GmbH may be named in full, and so may both products: the **Assemblio Composer**, the planning tool used by engineers, and the **Assemblio Smart Viewer**, the shop-floor application used by assembly workers. Individuals are not named; Assemblio's customers are not named — generalise to "industrial manufacturers".
+- **The attention budget is the binding constraint, and this is Assemblio's own position, stated by the client rather than observed.** Workers focus on what their hands are doing, not on the screen. The client's position: the controls must be as simple as possible because the worker cannot spend cognitive resources on the viewer, and roughly **90% of the time** the plan is consulted once and then left playing. (N33) **Attribute as client-stated — "Assemblio described", "according to Assemblio" — every time; the 90% figure is the client's, not a measurement.**
+- **Assemblio's operating-context material is client-stated rather than observed** (N16): Creative Navy ran no research on this engagement, tested nothing and never stood on a shop floor. Never blend this material with field observations made in person elsewhere on this page.
+
+---
+
+## What this page must not claim
+
+- The 90% figure is Assemblio's own characterisation, client-stated and unmeasured — never present it as observed, counted or Creative Navy-measured.
+- No usability, comprehension, field-research, persona or shop-floor observation claim from Assemblio; nothing in that engagement was tested or observed by Creative Navy.
+- No time-saving, error-rate, training or adoption figure from Assemblio, including Assemblio's own published marketing claims.
+- Never blend Assemblio's client-stated operating context with the field-measured evidence this page carries from other engagements.

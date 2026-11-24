@@ -62,6 +62,10 @@ The central finding was architectural: two fundamentally different operating mod
 
 The output was a UX audit, four role-based user models, 100+ recommendations structured for direct translation into development tickets, and a five-year product vision with capability stages explicitly linked to research evidence. Client-reported six months post-engagement: recommendations confirmed as well-grounded, with some already implemented and the remainder planned. Evidence basis: research scope is directly observed; post-engagement outcomes are client-reported.
 
+**Oceaneering — a client who named the gap first**
+
+The Oceaneering engagement strengthens this situation from an unusual direction: the client saw the problem before anyone else did, and this entry is written as that, not as a failure. At the kick-off for the redesign of a hospital dispatch panel, Oceaneering's own technology manager identified the research gap before design began — asked how many research participants were actual customers, the project lead answered that there were none, only people with experience of working with customers. The stated reason operators could not be reached is the same fact the design exists to address: operators arrive, receive some training, and leave after a few months. A validation plan was agreed at kick-off as urgent, naming three targets: a hospital logistics manager, someone from the hospital project then in progress, and the external consultants who specify these systems and who also see what competitors are doing. The gap was named by the client, and a plan was made and partly executed. **All Oceaneering client speech is reported, never quoted; role descriptors only. The sessions that followed were design reviews, not usability tests — no task was attempted, nothing was measured, and no dispatch operator took part.**
+
 ---
 
 ## What Creative Navy's Critical Systems Design method addresses here
@@ -73,3 +77,12 @@ The difference is not primarily methodological — interview techniques, researc
 Domain learning is the prerequisite for this. In the IDEXX/Animana engagement, the team built sufficient working knowledge of veterinary clinical workflows — consultation patterns, patient intake, lab sample tracking, vaccination management, multi-pet household administration — to distinguish between interface friction and operational constraint. Without this knowledge, a researcher observing a veterinary consultation cannot distinguish between a user who is struggling with the interface and a user who is doing something genuinely complex that requires careful navigation. With it, the difference is visible. The same principle applied in the WCO/IPM engagement: understanding customs intelligence workflows, alert and seizure record logic, and the institutional relationships between officers, analysts, and rights holders was what made it possible to characterise the operational causes of low adoption rather than just confirming their presence.
 
 The structure of Sandbox Experiments — exploratory in scope, real-time adaptive in protocol, triangulated across multiple evidence sources — is what produces findings that can drive prioritisation rather than merely inform discussion. When research establishes not just that users find something difficult but which specific users, under which specific conditions, at which specific points in which specific workflows, the decisions that follow are not opinions with evidence attached. They are operational conclusions.
+
+---
+
+## What this page must not claim
+
+- **Oceaneering speech is reported, never quoted**, and only Oceaneering is named: no hospital names, no product or system names, no individuals — role descriptors only.
+- **No usability, comprehension, field-research, persona or observation claim from Oceaneering.** No operator was interviewed and no depot was visited; the validation sessions were design reviews with operations management, not usability tests, and nothing was measured.
+- **Do not write Oceaneering's research gap as a failure illustration.** The gap was named by the client at kick-off and a plan was made and partly executed — the page is strengthened by a client who saw the problem first.
+- **No engagement dates anywhere.** Sequence and duration only.

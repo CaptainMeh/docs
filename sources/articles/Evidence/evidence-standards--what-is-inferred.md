@@ -80,6 +80,22 @@ The inferred outcome: the redesign reduced the risk of measurement error arising
 
 Inferential basis: reasoned from the specific design change (unambiguous state communication under movement and lighting constraints) and the failure mode it replaced (ambiguous state leading to misreading under real conditions). Repeated measurements were directionally reduced — this is client-measured and appears on the `/what-is-observed-but-not-quantified` page. What appears here is the risk claim: that the structural change removed a failure pathway. The risk claim is inferred from the mechanism; the reduction in repeated measurements is the closest observable proxy, but does not directly confirm that measurement errors were prevented.
 
+### Oceaneering — a competitive claim left at inference
+
+Oceaneering's own account is that rival dispatch interfaces are simpler than its panel. No public source can confirm this, because vendors in this sector publish vehicle and fleet-management material rather than operator terminals: no competitive benchmark of rival dispatch interfaces was possible, since Creative Navy had access only to public sources and could not reach operators independently. **The claim is therefore left at the client's own account — unverified, and never promoted to a competitive fact.** A clean example of a claim left at inference rather than promoted. Oceaneering client positions are reported speech attributed to a role, never quoted.
+
+### The maritime VTS engagement — a classification labelled as inference by the people who produced it
+
+In the engagement for a European vendor of maritime traffic monitoring, inland navigation and communications software for port authorities, coastal administrations and waterway operators, thirty-one candidate interaction patterns were classified into three groups — eighteen potentially common, eight conditional on product-specific contracts, and five that must remain permanently separate (radio transmit and physical push-to-talk, lock gate actuation, navigation alert authority, standards-bound chart portrayal, and shipboard terminal controls). **The classification was labelled in its own source as analytical synthesis rather than a measured prediction of code reuse** — a short entry, and worth having because it shows a classification being labelled as inference by the people who produced it, before anyone asked. No quotation marks and no reported speech in any passage carrying this engagement.
+
+### The handheld command-and-control engagement — the practice of labelling, applied in the deliverable itself
+
+The existing entries on this page are inferences labelled by Creative Navy afterwards, in this corpus, for this audience. The engagement for a European manufacturer of uncrewed systems, including one-way effectors, and the tactical command-and-control software that operates them is different, and the difference is the point: **three personas — a dismounted tactical operator, a mounted operator, and a commander — were delivered to the client with their substance under a heading reading "Speculation", because they were constructed from the client's brief and domain reasoning rather than from research. The label was written into the client deliverable at the moment of delivery, by the people who would be judged on it.** Write the practice, not the personas: the transferable claim is that a deliverable can carry its own evidence class on its face, and that doing so costs the author something and is worth it. Pair it with the expert review's three accessibility items — keyboard reachability and operability, focus trapping in modals and drawers, and keyboard support in custom components — **recorded as "cannot assess" rather than guessed at**, in an audit that could have guessed. **The personas are described as speculation wherever they are described at all, and never as personas built from research. No quotation marks and no reported speech in any passage carrying this engagement, and the locked descriptor above is its only identifier.**
+
+### Raymarine — nothing, and the absence is informative
+
+The Raymarine engagement contributes nothing to this page: **it inferred nothing that it then claimed**, and on a page whose subject is the weakest evidence class, that absence is itself informative. Do not add Raymarine material here.
+
 ---
 
 ## What distinguishes inferred from the other categories

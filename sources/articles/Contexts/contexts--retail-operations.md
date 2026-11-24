@@ -68,3 +68,37 @@ The outcomes for this engagement are primarily structural and operational — th
 - **Smoother handling of complex transactions.** Client-reported. Direction confirmed; no before/after timing data available.
 - Pre-redesign complex transaction benchmark (up to 7 minutes) was documented during research. Post-redesign comparison data is not available for publication. **Do not imply a measured before/after comparison exists.**
 - Design system coherence: till, outdoor terminal, and CarPlay surfaces share an interaction logic, reducing cognitive switching for cashiers who move between surfaces or train on one and operate another.
+
+### visioncheckout computer-vision self-checkout — an independent peak-load dataset in a different retail format
+
+**This is the page's second engagement, and it ends the page's single-source dependency. Keep the two engagements in separate sections, always: they share no facts. The forecourt's 84 transactions per hour comes from 40 hours of observation and 532 coded transactions across seven stations; visioncheckout's 11-to-25 seconds comes from five days, one researcher and 563 observed interactions across six locations. Different formats, different metrics, different researchers, different decades of retail technology. Never blend them in a sentence, and never let the forecourt's research depth lend weight to visioncheckout's, or the reverse.**
+
+**Context:**
+- visioncheckout, a German vendor of computer-vision self-checkout systems for staff restaurants and catering. Lowercase canonical name. **The product is in development; nothing has shipped, and no outcome of any kind may be claimed.** Client positions are reported, never quoted. No customer names in any form: "a chemical manufacturer's staff restaurant", "an automotive supplier's canteen", "a public-facing venue serving visitors rather than regular users".
+
+**The measured peak-load dataset — required framing wherever the figures appear:**
+- Creative Navy conducted field research at six locations across three organisations over five days, observing 563 interactions with the system in live operation. Transaction durations were measured with a clock during observation rather than estimated or self-reported. The research also included interviews with 34 users and 13 catering staff. **One researcher, five days — state it: a focused programme, not a longitudinal one, and stating its size is what makes it credible. The timings measure the system being replaced, never the redesign.**
+- 563 interactions observed is the engagement figure and the only observation figure that may appear — the per-site approximations in the research notes are rounded working notes and do not sum to it.
+- Measured standard transaction durations: approximately 13 seconds at the chemical manufacturer's site, approximately 11 seconds at the automotive supplier's site, and approximately 25 seconds at the leisure venue. Unusual transactions — removing lids, a guest unable to find their card, errors — ran to more than 20 seconds.
+- When an error occurs it takes one to four minutes to resolve, during which three to twelve people cannot check out. **The "three to twelve people" is an observed consequence of a measured duration, not an independently counted figure — write it as what it is.**
+- At the leisure venue, roughly two thirds of observed transactions were multi-tray, with two to four trays common.
+
+**The argument the pairing licenses — which neither engagement supports alone:**
+- **Peak load is the design condition in retail operations, and it is measurable** — 84 transactions per hour on a forecourt till, 11 to 13 seconds per transaction in a corporate canteen, 25 at a public venue, and an error that blocks three to twelve people for one to four minutes.
+
+**Operating conditions as domain material (observed patterns, not counted events — no percentage may be attached):**
+- Overhead lighting commonly casts a dark area both on the screen and on the surface where the tray is placed; one site was simply dark.
+- Unpredictable unit siting: it is difficult to find a good position for the unit, and people approach the counter from both sides.
+- At two of the three organisations a member of staff oversees the process and helps people.
+
+---
+
+## What this page must not claim
+
+- **Never blend the forecourt and visioncheckout in a sentence**, and never let one engagement's research depth lend weight to the other's.
+- **No throughput, speed, error-rate, satisfaction, accuracy or commercial outcome from the visioncheckout redesign.** None exists. The new designs were not tested with users; the field research measured the system being replaced, not the replacement. No implication that the product is deployed with the new design or in market use.
+- **Never let the word "testing" attach to visioncheckout's participant numbers.** Its 34 interviewees were interviewed alongside observation of a system already in service; Streetec's completion claim must not drift toward them. visioncheckout delivered 34 screens and interviewed 34 users — unrelated figures, never in the same sentence undisambiguated.
+- **No percentage attached to any visioncheckout field observation.**
+- **No compliance, conformance or certification credential from visioncheckout**, and no quoted client speech.
+- **Do not describe visioncheckout as high-consequence** — the consequence of failure is a queue, a wrong charge and a guest who needs help.
+- **No engagement dates anywhere** — sequence and duration only; regulatory dates that locate the law are permitted.

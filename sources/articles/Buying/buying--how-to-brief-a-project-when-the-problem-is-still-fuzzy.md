@@ -87,3 +87,43 @@ In complex software, a problem that is difficult to articulate precisely usually
 **The frame is wrong.** The client has been working inside a description of the problem that is not wrong but is not precise enough to be actionable. "The interface is complicated" does not reveal which complexity is essential — reflecting genuine domain difficulty — and which is accidental, having accumulated without purpose. "Users don't engage with the advanced features" does not distinguish between features that users do not want, features users want but cannot find, and features users find but cannot operate without expert guidance. The conversation and subsequent research can refine the frame.
 
 **The problem is known but the cause is contested.** Different people in the organisation have different explanations for why users struggle. The product team thinks training is insufficient. The engineering team thinks the feature set is correct but the information architecture needs work. The sales team thinks the visual design is unattractive. The support team is dealing with the specific failure points that none of the above explanations fully address. A fuzzy brief often encodes this internal disagreement. The Sandbox Experiments phase produces shared understanding across these competing explanations by grounding diagnosis in evidence rather than in advocacy.
+
+---
+
+## Evidence to draw on
+
+**No engagement dates anywhere — sequence and duration only.** **On any page carrying KISPE or Schone material, "phase" must always be qualified** — Creative Navy's method phases, the project's own delivery phases ("the exploration phase of the project") and sprints are three different things and a bare "phase" must not appear where a reader could take it for the wrong one.
+
+### Oceaneering (an engagement that began with no business requirements)
+
+Oceaneering builds automated transport systems for hospitals — fleets of automated guided vehicles moving carts through a building around the clock. The engagement designed the dispatch panel: the wall-mounted touchscreen in a logistics depot through which a materials-handling operator puts a cart into that system. **Only Oceaneering may be named — no hospital name, no product or system name, no individual on either side. Every client or stakeholder position is rendered as reported speech attributed to a role, never inside quotation marks.**
+
+- The client project lead reported that there were no concrete business requirements when the engagement began. What existed was study of the deployed panels, the tool Oceaneering had built in-house for one hospital, and conversations with sales, service and subject-matter experts. **A client in this position is buying the construction of the requirement set, not the execution of one — state this as what the engagement did, never as an outcome.**
+- The artefact built to produce the requirements: collaboration infrastructure set up for the engagement — a documentation workspace holding the project timeline, the design requirements table, the stakeholder interview findings and an open-questions page; a design-review tool with per-screen commenting and a how-to guide written for first-time reviewers; and a stated expectation of feedback within three to four working days per wireframe set. **The same device appears in the industrial, Streetec and AIT engagements — it is a repeatable working method, not an improvisation for one client.**
+
+### KISPE Space (a buyer's brief that asked for advice and named its questions)
+
+KISPE Space is a UK space systems engineering company; the engagement produced the design of a common space operating picture. **No quotation marks and no reported speech anywhere KISPE appears — no client speech is on record. Attribute every client position to the role and the document it came from, never to a speaker.**
+
+- KISPE's partner brief asked for advice as well as design, and named six questions it wanted the engagement to resolve: what the clearest proposition is and where the boundary sits between this product and existing operational systems; which roles, situations and decision journeys should shape a first release; whether the product should be organised around a geographic workspace, tasks, service domains or a combination; how provenance, uncertainty, time, outages and data gaps should be communicated without overwhelming users; what should be shared between field and desktop and where they need genuinely different interaction patterns; and which capabilities make a useful, testable first product. **This is a worked example of a good fuzzy-problem brief from the buyer's side — the brief named its questions rather than prescribing its answers.**
+- The exploration phase of the project was explicitly consultative: detailed UX and UI scope was confirmed at its conclusion, not before it. The engagement was structured so that the client could decide what to commission after seeing the analysis, rather than committing to a feature backlog up front.
+- **Required framing for the board gate, near-verbatim:** The exploration phase ended at a board review. Creative Navy put twelve working decisions and a recommended development sequence to KISPE's board, with a recommendation to proceed conditionally. The board endorsed the architecture as the working direction, approved a staged scope with explicit decision gates for the uncertain features, and authorised the seven-sprint UX development phase. **The endorsement is a commissioning decision, not user validation and not an outcome, and the decisions must not be described as approved requirements.**
+
+### Schone Airspace Group (a brief that named four questions and asked for a scope recommendation)
+
+Schone Airspace Group commissioned the redesign of a ground control station interface for connected aircraft. **No quotation marks and no reported speech anywhere Schone appears — no client or operator speech is on record. Attribute every position to the role and the artefact it came from.** **Write this engagement from its own facts: KISPE makes the same consultative-exploration argument from its board gate, and the two must not be written as one example.**
+
+- The client's brief named four questions it wanted the engagement to answer: what should remain visible as operators move between planning, flight supervision and camera work; how the interface should communicate aircraft state, autonomy, warnings and command consequences; how one operator should manage different aircraft and payloads without unnecessary complexity; and where this product should end and the separate cloud platform take over.
+- The brief asked the agency to challenge the client's assumptions and to recommend the scope and sequence of work rather than accept a predetermined list of screens.
+- The exploration phase of the project was consultative and scope-setting: detailed UX and UI scope was confirmed at its conclusion, not before it. The client was asked to decide what to commission after seeing the analysis.
+- The commercial arc may be stated plainly: the four exploration sprints converted into the twelve-sprint programme, which converted into a twelve-month retainer at biweekly involvement.
+
+---
+
+## What this page must not claim
+
+- **No engagement dates anywhere.** Sequence and duration only.
+- **Oceaneering:** every passage is reported speech attributed to a role, never inside quotation marks. No hospital, product, system or individual names. No efficiency, usability or outcome claim of any kind — nothing was measured.
+- **KISPE:** no quotation marks and no reported speech. The board endorsement is a commissioning decision, never user validation and never an outcome. The product was built; Creative Navy did not support the build and has not compared the built interface against the delivered designs — never "shipped as designed".
+- **Schone:** no quotation marks and no reported speech. The product was built and is in test — nothing may imply deployment or operational use. Do not merge the Schone and KISPE examples into one; they are different clients making the same argument from different facts.
+- Never let facts migrate between these engagements; each example carries only its own numbers and its own structure.

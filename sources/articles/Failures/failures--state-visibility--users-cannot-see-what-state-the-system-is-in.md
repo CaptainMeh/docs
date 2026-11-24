@@ -111,3 +111,79 @@ Creative Navy's Critical Systems Design method addresses state visibility failur
 Domain learning is how the state visibility requirement becomes specific rather than generic. In the Torqeedo engagement, 12 sea trials with 15 captains documented the specific moments when energy state understanding was most critical — harbour manoeuvres, load transitions, night operations — and observed the compensation patterns captains had developed where state was absent. Those patterns were the evidence base for what the integrated state view had to provide. In the Akrivia engagement, reviewing 32 papers on EHR interface design and conducting interviews across three institutional user groups was what made the governance readability requirement legible as a design problem: not "make it auditable" but "make the query logic independently readable to a governance reviewer months after construction." In the Elsner engagement, direct engineering collaboration established the full range of sensor states — valid reading, delayed reading, contradictory values, calibration fault — as operational conditions that needed named representation, not defensive error handling.
 
 The design standards applied during Concept Convergence and Iterative System Building then hold these requirements against every view state. For Torqeedo, no view state was allowed to present component state without also communicating overall system condition. For Akrivia, the query logic was required to remain independently readable at every stage of construction — not as a post-hoc audit log but as a live view of assembled reasoning. For Elsner, sensor states were designed for as normal operating conditions from the start: the interface handles them explicitly and communicates them in forms calibrated to the user's actual cognitive position when they encounter them, not to the engineer's internal model of what the fault means.
+
+---
+
+## Evidence to draw on
+
+### The industrial engagement (state readable only by walking to the machine)
+
+- The client is **a European industrial automation vendor whose process control software coordinates machining cells**. Use that descriptor near-identically. The product is in development. **Audit findings are what Creative Navy's review found in that system.**
+- Every operator screen is bolted to its own machine. To learn a machine's state the operator walks to it. Overhead stack lights exist because no screen is readable across the hall. (E10)
+- The platform's single accent colour carried six meanings at once: brand, primary action, selected row, active filter, current location, and error. (E19)
+- A storage tile showed a green *transporting* header band above a solid red *selected* icon; the only other selection cue was a near-imperceptible border change. Four states were encoded by header colour alone at ~10px with no legend. (E20)
+
+### AIT (state the controller must disclose, and states a widget must distinguish)
+
+- AIT, a European manufacturer of residential and commercial heat pumps, may be named; nothing else in the engagement may. **Design decisions describe what was designed; never imply they produced a result.**
+- A **start-up self-test screen** lists the internal boards, inverters and fans the controller has detected. It exists for service technicians to spot a missing component — AIT's own analogy is a PC BIOS screen. It **cannot be skipped**: if components are not found within the window, the controller enters a special operating mode. It can only be hidden, and a route back to it had to be designed. (A24)
+- A defined set of widget status indicators: **in focus** (selected by the knob) is a black outline; **mode active** is a flashing icon; **mode queued** — the heat pump is being asked for a mode while running another — carries its own icon. (A40)
+- The system overview built as **widgets consistent with the home screen** rather than a single diagram with a second bar, and the heat pump illustration replaced with an **abstract symbol** so that one icon covers every unit type rather than needing a new drawing per product. (A56)
+
+### The MDU (what the interface says when the sensor feeding it stops reporting)
+
+- The product may be named: **the MDU**; the manufacturer is not named. Verbatim quotation is permitted, attributed to role.
+- The watchdog and no-MDU alarms concern what the interface says when the sensor feeding it stops reporting — the state of the instrument itself rather than of the vessel.
+- The open question that travels with them: several of Creative Navy's open questions in the requirements table were never answered in the available material — **what message the watchdog alarm should display and what the user can do about it**; whether default alarm thresholds exist and whether users should be able to reset to them; how many decimal places ship length should carry and what its minimum and maximum should be; which keyboard component would be used; and what units track hogging, sagging, twisting, heave, sway and surge. **The questions are documented; the answers are not.** (M30) Do not write the unanswered questions as resolved.
+
+### Assemblio (a relationship the system maintains and never reports on)
+
+- Assemblio GmbH, the **Assemblio Composer** and the **Assemblio Smart Viewer** may be named; customers may not. Verbatim client quotation is permitted, attributed to role.
+- **A gap surfaced by a designer's question.** Creative Navy asked what happens when two products are in a sync loop, a change is made to one, and the other is deliberately left unsynchronised — would it show as permanently out of sync, and was that acceptable? The client confirmed it was acceptable and then realised, in answering, that **the product does not indicate anywhere whether an assembly plan is in or out of sync**; a planner would have to open the product to find out. This was not a known gap before the question. (N98) Found by a designer's question rather than by research — this engagement had no research and no shop-floor observation.
+
+### KISPE Space (three availability dimensions held apart)
+
+- The client is **KISPE Space, a UK space systems engineering company**. Nothing else may be named. **No quotation marks and no reported speech on any page carrying KISPE.** This product has **no model**; its states are properties of sources and connections, never of an algorithm.
+- **Three availability dimensions are exposed independently**: device connection, provider feed reachability, and locally cached content. An offline device does not prove provider failure; an online device does not guarantee provider reachability. (K76)
+- This describes what was designed and specified; the product was built, and no design-fidelity comparison exists.
+
+### Raymarine (two true values where only one is operative)
+
+- The client is named **Raymarine**; the Ray53, Ray63 and Ray73 line may be named; the new radio's name may not. **No quotation marks and no reported speech on any page carrying Raymarine.**
+- **Selected channel and monitored channel are visually distinct.** While scanning or in a watch mode, the prominently displayed channel remains the selected working channel, and a second label identifies the frequency actually being heard. The recorded reasoning is that monitoring must not suggest an automatic change to manual tuning. (R112)
+- **Requested transmit power and effective transmit power are different values**, and the display always shows the effective one. A blocked request leaves the previous value intact and explains the channel restriction. (R113)
+- These are design decisions with recorded reasoning, not measured results; the radio was built and released — never "shipped as designed".
+
+### Schone Airspace Group (three conditions held apart: the link, the age of a reading, and a pending request)
+
+- The client is called **Schone Airspace Group**; the product is "Mission Control" in lower-case descriptive use; nothing else may be named — including the cloud streaming platform's product name ("the client's cloud streaming platform"). **No quotation marks and no reported speech on any page carrying Schone.**
+- **A seven-state command transaction model**: ready to request, request sent, awaiting response, command acknowledged, state observed, request rejected, response unknown. Each has its own required source evidence and its own prohibited inference, recorded side by side. Acknowledgement does not mean the intended mode has been observed; state observed cannot be inferred from acknowledgement alone; rejection cannot be inferred from silence. Rejected: a success toast on click, and a spinner until the mode changes. **The accepted cost: more command states require precise copy and event matching, in exchange for less ambiguity about the outcome of each action.** (D85)
+- **Control link condition and telemetry freshness are independent fields.** A degraded link and a stale sample are different facts with different display semantics, and a value that has stopped updating keeps its last value alongside its age rather than being relabelled as current or hidden. **The accepted cost: two indicators take more room than one badge, in exchange for the operator not over-reading a simplified status.** (D88)
+- The product was built and is in test — not deployed, not in operational use.
+
+### The handheld C2 engagement (the six questions)
+
+- The client is **a European manufacturer of uncrewed systems, including one-way effectors, and the tactical command-and-control software that operates them**. Use that locked descriptor near-identically; nothing else may be named. **No quotation marks and no reported speech on any page carrying this engagement.** One paragraph only on this page. **The six questions the document requires the interface to answer unambiguously**: was the input registered; is the command being transmitted; did the vehicle acknowledge it; what state did the vehicle confirm; is the information current or stale; and is abort still available. (H48) The document is work Creative Navy led and co-authored with the client's design team; nothing was measured, and the handheld interface **was built** — nothing further about its status.
+
+### Maritime VTS (a retained target dressed as a current one)
+
+- The client is **a European vendor of maritime traffic monitoring, inland navigation and communications software for port authorities, coastal administrations and waterway operators**. Use that locked descriptor near-identically. **No quotation marks and no reported speech on any page carrying this engagement.**
+- **Freshness.** Time of last observation sat behind secondary inspection. In a degraded state, a retained target could keep the same visual treatment as an updating one, so the display did not reliably tell the operator whether a marker represented a current observation or a last known position. An equipment view with no state data could read as an equipment view with no faults. (W43)
+- **Vessel, track and observation as three separate objects.** A single resolved vessel record was rejected for obscuring what the system actually knew. The selected model keeps a vessel identity record, a tracked object with an association status, and timestamped observations each carrying their own source — with association expressed as resolved, unresolved, changed or unknown. (W52)
+
+### visioncheckout (no truthful state available to display — a state-visibility failure at an integration boundary)
+
+- **visioncheckout** may be named, lowercase, glossed as "a German vendor of computer-vision self-checkout systems for staff restaurants and catering". No customer names; client positions **reported, never quoted**. The product is in development and nothing has shipped.
+- **Guests often do not understand that payment is processing, because the main display does not tell them.** (V34) The reason is what makes the instance valuable: card payment executes on an **external POS terminal that returns no feedback** to the kiosk (V56) — so no truthful state is available to display. A state-visibility failure caused by a hard integration boundary rather than by design oversight.
+- The honest answer: **the payment-in-progress screen says to follow the instructions on the terminal**, because the external terminal returns no feedback to the kiosk and no truthful state is available. (V90) Direct the guest to the device that does know.
+
+---
+
+## What this page must not claim
+
+- No quotation marks for KISPE, Schone, Raymarine, the maritime VTS engagement or the handheld C2 engagement, and no reported speech either; visioncheckout is reported, not quoted; MDU, Streetec and Assemblio quotes are cleared, attributed to role.
+- None of KISPE, Schone, Raymarine or the maritime VTS engagement may be framed as AI uncertainty work: their states are properties of sources, links, protocols and clocks.
+- The design responses across all engagements describe what was designed — never measured effects. The MDU's open questions stay open. Nothing was tested with users at AIT, the MDU, Assemblio or KISPE, and the handheld C2 engagement has no field research.
+- Handheld C2: "one-way effector", never "loitering munition"; no safety or certification credential; status is "was built" and nothing more.
+- visioncheckout: no outcome of any kind, nothing shipped, no percentages on observations; do not describe it as high-consequence.
+- Never let facts migrate between engagements, and never blend their evidence classes in one sentence.

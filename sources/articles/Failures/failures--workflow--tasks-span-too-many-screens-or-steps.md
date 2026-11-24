@@ -95,3 +95,30 @@ Domain learning and microtask analysis establish the task flows that the informa
 In the Elsner engagement, the same principle operated at the level of interaction frequency: understanding which functions were accessed on a typical daily basis — not which functions existed or which the development team considered important — was the prerequisite for the navigation architecture that matched depth to frequency.
 
 The principle in both cases: information architecture follows task architecture, not system architecture. Task architecture is empirically established through domain learning and microtask analysis. System architecture is not a sufficient proxy for it.
+
+---
+
+## Evidence to draw on
+
+### AIT (an extra window per value edit, and the resolution that kept editing in place)
+
+- AIT, a European manufacturer of residential and commercial heat pumps, may be named; nothing else in the engagement may — not the consumer brands, OEM partners, programme names or individuals. **Design decisions describe what was designed; never imply they produced a result.**
+- The client objected to an extra window appearing for each value edit, and the resolution kept editing on the screen that owns the setting. Value editing resolved as **one pattern for every value type**: with the knob, the whole field is selected and then rotated to change the value; with touch, the same control is operated directly. Plus and minus buttons were dropped in favour of a single scroll selector, after AIT pointed out that 0.1° increments would mean pressing plus twenty times to move two degrees. The decisive argument was consistency, not elegance: one pattern applied everywhere rather than a different component depending on how many options a setting has or how long its labels are. (A44)
+- **Save and cancel per page, not per value**, and shown only once a change has been made — so a user can change several values on a screen and commit once. Replaces a model in which some screens saved automatically and others required confirmation. (A45)
+
+### Oceaneering (five taps where the operation allows two)
+
+- Oceaneering may be named; nothing else in the engagement may — no hospital, product, system name or individual. Role descriptors only. **Every client or user position is reported speech, never quoted.** The subject is the dispatch panel in a hospital logistics depot.
+- Too many steps: at one site operators tap five buttons to finish a dispatch, which the sales consultant called far too much. Her competitive account: competitors ship much simpler interfaces, and the people using them push buttons all day and want to be in and out. (O37) **This competitive account is the client's own and is unverified — never state it as fact about competitors.**
+- The hospital logistics manager, rejecting the flow length: anything beyond two taps and he is out; it is too much for his team. The shape he requires: cart type, then automatic dispatch, scan the badge, walk away. (O50)
+- The designed response: **two dispatch flows, one chrome.** A semi-automatic flow in which the operator selects a station and a cart type and everything else is preset, and a multi-step flow through building, floor and room for complex dispatches — sharing the same summary row, the same supervisor-override control and the same closing identity step. **Creative Navy named the limit of the first itself: with everything preset, an operator who knows that nothing normally needs changing may stop reading and send to the wrong place.** (O72)
+- **The premise of the semi-automatic flow was corrected in review, and the correction must be carried:** most areas dispatch several cart types to several destinations, and the only area with a single fixed destination is waste. (O73)
+- The logistics manager's two-tap objection and the shipped design are both true and not in conflict: his site was consulted as a reference, not as the deployment. **Do not write that the objection was answered, overruled or proved wrong** — it was recorded, it concerned that site's tempo and hardware, and the design shipped elsewhere as delivered (a client-reported fidelity statement that Creative Navy did not independently verify).
+
+---
+
+## What this page must not claim
+
+- Oceaneering: reported speech only, never quotation marks; no operator interviewed, no depot visited, nothing measured; O13–O17 were design reviews, not usability tests; O37's competitive characterisation is the client's unverified account; the fidelity statement is client-reported, never written at Creative Navy-verified weight.
+- AIT: no performance, commissioning-time or commercial figure; nothing tested with users; A44/A45 describe what was designed.
+- Never blend the two engagements, and never let either's design reasoning read as a measured step-count or time-saving outcome.

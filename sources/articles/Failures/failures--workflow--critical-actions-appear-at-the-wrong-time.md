@@ -83,3 +83,27 @@ In the Triopsis engagement, three in-situ observation sessions during peak-load 
 In the Petrol engagement, the 532-transaction corpus was the specific research output that made timing evaluation against operational reality possible. Without a corpus of real transactions at real distributions, architecture evaluation against timing criteria would have been evaluation against a simplified model of the transaction set — missing the combination transactions, the peak-load sequences, and the specific sub-flow timings that produced failures in practice. The corpus is what made "evaluate against operational timing conditions" achievable rather than aspirational.
 
 The principle underlying both: action timing is only evaluable against the operational context in which actions are taken. Designing timing in the abstract, or evaluating it in controlled conditions that do not reproduce the operational pressure and sequencing of real use, produces systems whose timing performs adequately in evaluation and incorrectly in deployment.
+
+---
+
+## Evidence to draw on
+
+### The handheld C2 engagement (an action that never appears to be unavailable — availability as timing's sibling)
+
+- The client is **a European manufacturer of uncrewed systems, including one-way effectors, and the tactical command-and-control software that operates them**. Use that locked descriptor near-identically; nothing else may be named — no product, vehicle, hardware or individual. **No quotation marks and no reported speech on any page carrying this engagement**; attribute positions to the role and the artefact. The register is that of a safety-engineering document: write the subject matter straight, no euphemism, no relish. The scope boundary appears early: the engagement covered interface structure, task behaviour, information priority and the clarity of operator control — Creative Navy designed the surface through which a human supervises the system; it did not design the system.
+- **This material inverts the page's framing usefully.** The problem here was not an action appearing at the wrong time but **an action never appearing to be unavailable**: a visible and enabled control communicates that the action is always available, when availability actually depends on connectivity, operating mode and vehicle state — so a permanent control may create mode confusion and encourage repeated activation attempts, where a persistent *status indicator* communicates readiness without implying that touchscreen activation is always valid. (H46, third limb) **The page is about timing; this adds availability as its sibling**, and the two belong together.
+- The positive case is the abort treatment in **the counter-recommendation**: keep the strike request *status* visible at all times, but do not expose strike as a permanently active touchscreen control. Commit the strike by pressing and holding both flip-guarded physical buttons simultaneously for a defined duration. Allow the abort control to hold a fixed, predictable position, but make it **active only once the system confirms that an action is in progress and remains abortable**. (H50)
+- Calibration that travels with this: the case against the permanently visible control was **jointly written by Creative Navy's designers and the client's designers**, citing NASA and FAA human-factors guidance. It did not make the system safe, **was not validated** — the deliverable itself records that the hold duration and the physical-control design require human-factors and system-safety testing that was not performed — and prevented nothing measurable: no accidental activation was counted before or after. The client did not accept all of it; the residual disagreement is part of the record.
+
+### The industrial engagement (the primary action relocating mid-task)
+
+- The client is **a European industrial automation vendor whose process control software coordinates machining cells**. Use that descriptor near-identically. The product is in development. **Audit findings are what Creative Navy's review found in that system.**
+- The primary action relocated mid-task; the spent control greyed out but remained. Three consecutive dialogs placed the primary action in three different positions. (E28)
+
+---
+
+## What this page must not claim
+
+- Handheld C2: "one-way effector", never "loitering munition"; no quotation marks and no reported speech; no claim that the design prevents accidental activation, wrongful engagement or operator error; no safety, certification, weapons-review or regulatory credential; the recommendation's own unperformed-testing caveat appears in the same passage as the recommendation, never in a footnote; status is "was built" and nothing more, with no explanation of the silence.
+- Industrial: the approved descriptor only; audit findings about that system, never general claims; nothing is an outcome.
+- Never blend the two: E28 is Creative Navy's own observation of a running system; H46/H50 are a co-authored written design argument, reasoned rather than observed.

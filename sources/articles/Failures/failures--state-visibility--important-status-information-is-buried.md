@@ -97,3 +97,37 @@ In the Elsner engagement, the decision to introduce a dual-priority alert hierar
 The design commitment then holds throughout Iterative System Building. For Beissbarth, variants that retained equal visual weight across measurement states were eliminated — not refined but replaced — because they failed the hierarchy requirement under the operational conditions that determined performance. For Elsner, the alert hierarchy was designed for explicitly from the start, not added as a secondary consideration once the primary interface directions were established.
 
 The principle underlying both: visual hierarchy is not a finishing step applied to a functionally complete design. It is a structural property of the interface that must be established from the first design decisions and held against the operational conditions of real use throughout every subsequent iteration.
+
+---
+
+## Evidence to draw on
+
+### Maritime VTS (last observation time behind secondary inspection — with a measured comparison behind the redesign)
+
+- The client is **a European vendor of maritime traffic monitoring, inland navigation and communications software for port authorities, coastal administrations and waterway operators**. Use that locked descriptor near-identically; a shortened form — "the maritime software vendor" — only after the locked descriptor has appeared in the passage. **No quotation marks and no reported speech on any page carrying this engagement.** Vessel Traffic Services (VTS) may be named as a sector term.
+- **Freshness.** Time of last observation sat behind secondary inspection. In a degraded state, a retained target could keep the same visual treatment as an updating one, so the display did not reliably tell the operator whether a marker represented a current observation or a last known position. An equipment view with no state data could read as an equipment view with no faults. (W43)
+- The engagement's measured result, which may be cited only at this weight and in this near-identical form: in a counterbalanced paired study with eight professional VTS operators and supervisors, each completing four matched tasks in both the existing interface and the redesigned prototype, median time to first answer fell by 42.3% on vessel identification, 34.2% on alert prioritisation and 32.2% on handover retrieval; correct first answers rose from 23 of 32 to 32 of 32; and correct recognition of historical replay rose from 5 of 8 to 8 of 8.
+- **The framing that travels with that result, every time, without exception:** this result is Creative Navy-measured under controlled conditions. Eight participants completed four of the seven operator journeys using sanitised training scenarios on a design prototype, not a production installation. Six of the eight had taken part in earlier research or testing. The time measure is time to a first submitted answer regardless of whether that answer was correct, not time to successful completion. The study reports no significance test, no confidence interval and no power calculation, and states that the three percentages must not be combined into one figure.
+- Field observation happened in operational VTS control rooms at a customer site, using sanitised scenarios rather than live traffic. Do not locate the control rooms.
+
+### The industrial engagement (status present on some panels, absent on others of the same type)
+
+- The client is **a European industrial automation vendor whose process control software coordinates machining cells**. Use that descriptor near-identically. The product is in development. **These are audit findings — what Creative Navy's review found in that system.**
+- Detail cards ran 40–85% empty beside unpaginated lists of up to 48 items. Three screens showed entirely blank cards with no heading or empty-state text. (E29)
+- A status indicator was present on some detail panels but absent from others of the same type.
+
+### Assemblio (an export action buried in a sub-menu, and the step's parts invisible inside a full hierarchy)
+
+- Assemblio GmbH, the **Assemblio Composer** and the **Assemblio Smart Viewer** may be named; customers may not. **These accounts are client-stated, not observed** — attribute them ("Assemblio described…", "the client's position…") and never blend them with field observation.
+- **The export action was buried in a sub-menu.** The client's position: it is very hard to find if you do not already know where it is. After exporting, there was no direct route to the output — the user had to navigate back to the project screen, find the product, and open the artefacts list. (N44)
+- The Smart Viewer displayed the **complete CAD hierarchy at all times** — the engineer's structure — when what the worker needs is the parts used in the current step. The client's worked example: a step containing two visually similar types of screw, where the names in the list did not tell the worker which was which. (N37)
+
+---
+
+## What this page must not claim
+
+- The maritime VTS percentages must never be averaged or combined into one headline figure; never write "eliminated operator error" — 32 of 32 comes from scripted tasks and eight participants; never describe the eight as independently recruited; never convert faster into better in one clause; never attach an operational consequence. No safety, certification or commercial outcome from the engagement; "shipped as designed" must not appear — no design-fidelity comparison is recorded.
+- The maritime VTS client is identified only by the locked descriptor; the placeholder company name in the engagement's source documents is not the client's name and must never appear; do not locate the control rooms. No quotation marks and no reported speech.
+- Industrial: audit findings about that system only; the client is identified only by the approved descriptor; the product is in development and nothing is an outcome.
+- Assemblio: client-stated, never observed; no shop-floor observation claim; no time-saving or adoption figure, including Assemblio's own marketing claims.
+- Never let the VTS engagement's field-and-measured basis lend weight to the Assemblio client-stated material, or blend either with the industrial audit findings in one sentence.

@@ -26,6 +26,8 @@ The interpretation failures page `/failures/interpretation-failures/users-see-in
 
 The situations page `/situations/ai-and-automation/uncertainty-is-hidden-at-the-point-of-decision` describes the organisational pattern this failure produces: the structural condition in which an AI system's outputs are used at decision points without the users having access to the epistemic context they need. This failures page describes the interface-level mechanism — what useful uncertainty communication requires, how interfaces fail to provide it, and what addressing it structurally looks like in a specific documented engagement.
 
+A third page sits beside this one. `/failures/interpretation-failures/source-and-age-of-information-are-not-visible` concerns uncertainty a system inherits rather than estimates: where a value came from, when it was measured, through what path it arrived, and whether it still holds. This page concerns what a model knows about its own output. The two share a word and almost nothing else — a system with no model has the second and not the first.
+
 ---
 
 ## What useful uncertainty communication actually requires
@@ -91,3 +93,11 @@ Creative Navy's Critical Systems Design method addresses uncertainty communicati
 The epistemic design challenge — presenting AI uncertainty at decision points in a form that supports both calibrated human judgment and the pace of real work — has no generic solution. The right design depends on the specific task, the specific user, the volume and pace of decisions required, and the specific form the AI's reasoning takes in that domain. In systematic review, the evidence unit is a publication and the specific text passage the AI used to reach its conclusion. In a fraud detection policy engine, the evidence unit is a behavioural signal and its relationship to the defined policy. In a diagnostic imaging tool, the evidence unit is an image region and the model's attention distribution. The design principle — reasoning visible at the decision point without additional interaction — is transferable. The specific design implementation is not.
 
 The four-iteration process on the Puraite suggestion display is the documentation of how that principle was found. Principles do not produce specific designs; iteration under real conditions does. The direct-quote-in-side-panel resolution was not available from the principle; it became available when iteration revealed that every design that compressed the display failed the override-quality requirement and every design that expanded it failed the scan-speed requirement. Understanding why each failure occurred — which requirement was being violated and under what conditions — was what revealed the structural resolution: the full reasoning text visible as a side-panel element from the outset, requiring no additional interaction, positioned for both quick scan and deep evaluation from the same interface state.
+
+---
+
+## What this page must not claim
+
+- **This page concerns AI-specific uncertainty — a model's knowledge of its own output — and its scope must not be broadened.** Source-provenance uncertainty belongs to the sibling page `/failures/interpretation-failures/source-and-age-of-information-are-not-visible`; broadening is what the sibling page exists to avoid.
+- **No KISPE, Schone, Raymarine, maritime VTS or handheld C2 material of any kind.** The first four products have no model, perform no inference and make no recommendations — their uncertainty is a property of sources, radio links, protocols and clocks, not of a probability distribution. The handheld C2 product does contain machine learning, but Creative Navy did not design the model behaviour, the trust calibration or the override semantics; the material on record is competitor observation and client discussion, not design work.
+- An interface that declines to assert a result and labels an outcome *unknown* reads exactly like an AI confidence treatment and is nothing of the kind — do not import such material from non-AI engagements.

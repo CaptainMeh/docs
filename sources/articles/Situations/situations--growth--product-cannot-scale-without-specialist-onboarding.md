@@ -82,6 +82,14 @@ The redesign introduced a progressive disclosure architecture: a project overvie
 
 Client-reported outcomes: the redesign enabled a commercial growth phase in which three months later Hudex received £3M in investment. The client attributed the design as critical and foundational to the product's ability to sell. Evidence basis: investment figure and causal attribution client-reported. User reception: 45 existing users rated the redesign as significantly better (client-reported, gathered for internal marketing); 68% of new users rated usability as good, 23% as very good (client-reported).
 
+**The industrial engagement — a field moving from specialists to non-specialists**
+
+For a European industrial automation vendor whose process control software coordinates machining cells, the scaling condition was stated by the client and confirmed in the field. The client expects people without deep technical expertise to operate these systems in future, where the field was previously staffed by specialists. And the field observation recorded the ceiling in one operator's own account: a node operator stated that he does everything on his cell and a new worker would be completely overwhelmed. **The client-stated expectation is attributed to the client's framing; the operator statement is an observation from that engagement, not a general truth about the industry. The product is in development, not shipped, and nothing in this engagement is an outcome.**
+
+**Oceaneering — a two-minute screen for a high-turnover population, configured without specialists hard-coding it**
+
+For Oceaneering's hospital dispatch panel, the goal, the constraint and the mechanism were each stated by the client. The goal, stated by Oceaneering in a validation session: a screen that speaks for itself, so that training is as short as possible — anyone should be able to do this in about two minutes. The constraint is the same fact that kept operators out of the research: operators arrive, receive some training, and leave after a few months. And the configuration mechanism is what lets one product reach sites with different hardware and different rules: Oceaneering's technology manager wanted the screens configurable per customer site, with nothing hard-coded, so that an application engineer could arrive at a site, add an area, set up the card configuration, save it, and have it available for others to use. **All Oceaneering client speech is reported, never quoted; role descriptors only. The validation sessions were design reviews with operations management — no task was attempted, nothing was measured, and no dispatch operator took part. No training-time or efficiency outcome exists.**
+
 ---
 
 ## What Creative Navy's Critical Systems Design method addresses here
@@ -91,3 +99,12 @@ Creative Navy's Critical Systems Design method addresses the scaling ceiling thr
 The Concept Convergence phase then identifies the competitive vector: the design direction that serves the expanded user population without compromising the expert value that made the product worth scaling. In the Polymatica engagement, the vector was full OLAP analytical power accessible to non-specialists. In the Gexcon engagement, it was navigable scientific complexity that served both expert and newer-engineer users at different speeds without fragmenting the interface. In both cases, the resolution was not simplification but structured revelation — expert depth made accessible through an entry architecture that did not require domain knowledge to navigate.
 
 The outcome this addresses: a product that can reach the users it was built to serve, in the geographies and at the scale its commercial potential requires, without being limited by what a specialist team can personally deliver.
+
+---
+
+## What this page must not claim
+
+- **Oceaneering speech is reported, never quoted**, and only Oceaneering is named — no hospital names, no product or system names, role descriptors only. The two-minute goal is a stated goal, never a measured result: no training-time, efficiency or throughput outcome from Oceaneering exists, nothing was tested, and no operator took part in any session. There is no AI in that product.
+- **The industrial client is identified only as "a European industrial automation vendor whose process control software coordinates machining cells"**; its product is in development and nothing in that engagement is an outcome.
+- **The industrial field observations and Oceaneering's interview-based context material are never blended in a sentence** — the first was observed in a running cell, the second comes from people adjacent to the users.
+- **No engagement dates anywhere.** Sequence and duration only.

@@ -12,90 +12,103 @@
   "category": "failures",
   "parentSlug": "governance-and-behaviour-failures",
   "childPageSlugs": [],
-  "excerpt": "This failure occurs when a team holds valid domain knowledge about good system behaviour, but that knowledge is not encoded as an explicit design requirement. The result is an interface that cannot represent expert reasoning or does not expose the criteria users need to evaluate outputs.",
+  "excerpt": "Good behaviour is not defined explicitly when a team can describe what high-quality system behaviour looks like, but that knowledge is not encoded in the interface. The failure leaves users without the criteria or expressive controls needed to judge or produce good outputs.",
   "metaTitle": "Good Behaviour Is Not Defined Explicitly",
-  "metaDescription": "A failure pattern where tacit expert knowledge about good outputs is not made explicit in interface behaviour or user-facing criteria.",
-  "summary": "Good behaviour is not defined explicitly when experienced team members can describe what good outputs or decisions look like, but the product does not embody that knowledge in its interaction architecture, evaluation criteria, or user-facing behaviour.",
-  "definition": "Good behaviour is not defined explicitly is a design failure in which tacit domain knowledge about correct or high-quality system behaviour exists in the team but is not translated into explicit interface requirements that the product can represent, enforce, or communicate.",
+  "metaDescription": "Explains the failure where teams know what good product behaviour looks like but do not encode that knowledge in the interface.",
+  "summary": "This failure occurs when domain knowledge about correct, useful, or trustworthy product behaviour exists in the team but remains tacit. The practical issue is not absence of expertise; it is the absence of an explicit design artefact that the interface enforces, communicates, or exposes to users.",
+  "definition": "Good behaviour is not defined explicitly when a team can describe what correct system behaviour looks like, but that knowledge has not been converted into interface requirements, evaluation criteria, interaction architecture, or checkable behaviour specifications.",
   "keyFacts": [
-    "The failure is a design gap, not a training gap: the knowledge exists but has not been converted into product behaviour.",
-    "This failure differs from having no behaviour model: here, experienced team members can describe good behaviour, but the answer remains tacit rather than encoded in a design artefact.",
+    "The failure concerns tacit knowledge that exists in experienced team members but is not encoded in the product interface.",
+    "It differs from having no clear behaviour model: in this failure, the team can describe good behaviour, but has not turned that knowledge into an explicit design artefact.",
     "One expression is an interface that cannot represent the full reasoning domain experts bring to the work.",
-    "A second expression is an AI-assisted product that displays outputs without displaying the criteria users need to evaluate them.",
-    "In the Callsign case, fraud analysts' strategies required conditional logic, exception handling, customer-segment distinctions, and sequencing that the earlier simple-rule interface could not fully represent.",
-    "In the Puraite case, four design iterations converted implicit evaluation knowledge into a specification: the AI decision, criteria, and direct quote from the publication were visible together without extra interaction.",
-    "The Callsign commercial outcome is described as client-reported: Lloyds Bank and HSBC contracts followed demos with the redesigned policy engine.",
-    "The Puraite outcome evidence is limited: the shift to active use was client-reported, and the single user quote was relayed through the client with no measured task-time or error-rate data."
+    "A second expression, common in AI-assisted products, is surfacing AI outputs without surfacing the criteria users need to evaluate those outputs.",
+    "In the Callsign case, fraud analysts' strategy knowledge exceeded what the pre-redesign rule interface could represent.",
+    "In the Puraite case, four iterations of the AI suggestion display converted implicit systematic-review evaluation knowledge into an explicit interface specification.",
+    "KISPE Space used 61 behavioural rules in ten families to make tacit expectations explicit as checkable design requirements before build.",
+    "Schone Airspace Group used 12 principal interaction contracts, eight operational invariants, and eight non-negotiable interface rules to specify intended interface behaviour from design and integration perspectives.",
+    "Client-reported outcomes in the Callsign and Puraite examples are not field-measured task-time, error-rate, or independent performance data."
   ],
   "tags": [
-    "failure pattern",
-    "governance and behaviour",
-    "implicit knowledge",
     "behaviour specification",
+    "governance failure",
+    "implicit knowledge",
     "AI-assisted products",
     "domain expertise",
-    "capability democratisation",
+    "evaluation criteria",
     "Critical Systems Design",
-    "Callsign",
-    "Puraite"
+    "domain learning",
+    "progressive specification"
   ],
-  "bodyMarkdown": "## Summary\n\nCreative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nGood behaviour is not defined explicitly when a team knows what good system behaviour looks like, but the product does not encode that knowledge in the interface. Experienced people may understand which fraud patterns a policy should catch, which publication characteristics justify inclusion in a systematic review, or which query structure correctly implements a clinical protocol. The failure occurs when that knowledge remains tacit instead of becoming an explicit design requirement.\n\nThis is not primarily a training failure. The knowledge that defines good behaviour is available inside the team. The design work that has not been done is the conversion of that knowledge into interface behaviour, interaction architecture, evaluation criteria, or user-facing standards that less experienced users can rely on.\n\n## Failure pattern: tacit knowledge is not converted into product behaviour\n\nGood behaviour is not defined explicitly when the interface does not distinguish outputs that embody expert knowledge from outputs that do not. The product may display an output, configuration, suggestion, or decision, but it does not communicate the standard against which that output should be judged.\n\nThe failure commonly appears in teams building complex or AI-assisted products. Experienced team members carry operational knowledge in memory, code review comments, onboarding sessions, and long-term institutional practice. The product does not carry the same knowledge. Users who do not already possess the evaluative standard are left to interpret system behaviour without the criteria required to judge it.\n\nThe practical consequence is a competence gap between what the organisation knows and what the product can express. The system behaves at the level of the interface's expressive capacity, not necessarily at the level of the domain expertise available behind it.\n\n## Boundary with a product that has no clear behaviour model\n\nThis failure is different from the more fundamental condition where the team cannot answer what the system should do under a given condition. In that adjacent failure, no specified behaviour model exists even implicitly.\n\nHere, the behaviour model exists as tacit knowledge. Experienced members can answer what good behaviour should look like in conversation. The failure is that the answer has not been made explicit as a design artefact that the interface embodies, communicates, or exposes to users.\n\nThe practical distinction is the starting point for design work. A team with no behaviour model needs to discover and specify what good behaviour is. A team whose good-behaviour knowledge remains implicit needs to surface and codify what experienced members already know.\n\n## Expression 1: domain expertise cannot be represented by the interface\n\nOne expression of this failure is an interface that cannot represent the full reasoning domain experts bring to the work. Fraud analysts, for example, may reason in terms of strategy combinations, conditional logic, contextual exceptions, sequencing, and market-specific fraud patterns. If the interaction architecture can express only simple rules, the analyst's expertise cannot fully become product behaviour through the interface.\n\nThis is not a failure of the expert to articulate the knowledge. The expert may be able to describe the knowledge clearly. The design gap is that the interaction architecture does not have enough expressive depth to carry the domain reasoning.\n\nWhen this happens, the product is governed by the subset of expert knowledge the interface can represent. Engineering intervention may be required to implement logic that analysts understand but cannot configure directly. The interface becomes a limiting layer between available expertise and actual system behaviour.\n\n## Expression 2: AI outputs appear without evaluation criteria\n\nA second expression appears in AI-assisted products when the interface displays an AI output but not the criteria needed to evaluate whether that output is good. Experienced analysts can often judge an AI suggestion against prior domain knowledge. Less experienced users cannot make the same judgment reliably if the standard is absent from the interface.\n\nIn systematic review work, experienced reviewers know that a trustworthy inclusion or exclusion decision must be grounded in publication text, applied to the approved criteria, and expressed at a confidence level that reflects the evidence behind it. If an AI-assisted review interface shows only the decision, the user sees the output but not the basis for accepting, overriding, or questioning it.\n\nThis failure constrains capability democratisation. The product remains usable mainly by specialists who already bring the evaluation criteria themselves. Less experienced users are not necessarily incapable; the interface has not supplied the criteria they need to exercise judgment.\n\n## Callsign example: fraud strategy knowledge was not fully representable\n\nIn the documented Callsign fraud detection and authentication platform case, the policy engine was intended to let fraud analysts encode strategies that would govern real-time authentication decisions. The analysts knew the signal combinations, customer-segment distinctions, legitimate high-value customer exceptions, and sequencing logic that shaped good fraud detection.\n\nBefore the redesign, the configuration model expressed simple rules: if condition X, then action Y. Analysts could encode part of their strategy in this form, but conditional logic, exception handling, and policy sequencing required engineering intervention. Expert knowledge therefore reached product behaviour only through a technical intermediary, and the interface represented a simplified version of the fraud strategy.\n\nCreative Navy's Critical Systems Design method addressed this through Sandbox Experiments and Concept Convergence. Sandbox Experiments documented the fraud scenarios analysts needed to cover, the conditions that separated good detection from false positives, and the exception logic needed to reduce friction for legitimate customers. Concept Convergence produced an interaction architecture in which policies bundled conditions, actions, history, and audit trail into a coherent unit, with a three-gesture interaction model for conditional logic, exception handling, and sequencing.\n\nThe redesigned Callsign policy engine also included an evaluation mode. Analysts could test configurations against simulated transaction contexts and observe whether the policy behaved as intended. The client-reported commercial outcome was Lloyds Bank and HSBC contracts following demos with the redesigned policy engine. The stated mechanism was that the redesigned interface demonstrated the product could represent and govern real fraud strategy, rather than only simple rule sets.\n\n## Puraite example: AI decision criteria were specified through four iterations\n\nIn the documented Puraite AI-assisted systematic review case, reviewers needed to evaluate AI inclusion and exclusion decisions. Experienced systematic reviewers understood the criteria for a trustworthy decision, but the interface initially surfaced AI decisions without surfacing the criteria needed to judge them.\n\nAt engagement start, what the AI should surface at the decision point was not specified as a design requirement. The team had intuitions that reviewers needed context about how the decision was reached, but those intuitions had not yet been converted into explicit interface criteria.\n\nCreative Navy's Critical Systems Design method used four design iterations on the AI suggestion display to convert implicit evaluation knowledge into an explicit behaviour specification. The first theory showed the decision and criteria, but criteria were disconnected from the supporting evidence. The second added an expandable evidence panel, but the additional interaction cost accumulated across hundreds of decisions per session. The third used a compact evidence summary, but the summary lost the precision needed for substantive override decisions.\n\nThe fourth iteration specified that the decision, criteria, and direct quote from the publication should be visible in the side panel from the outset, without additional interaction. This made the AI output evaluable by placing the specific text used for the conclusion beside the criteria. The design addressed both experienced reviewers, who needed enough information for substantive override decisions, and less experienced reviewers, who needed the evaluation criteria to be present in the interface.\n\nThe Puraite outcome evidence is calibrated as limited. The client reported a shift from theoretical to active use and relayed a single user quote: \"Now the tool fits my work\". The evidence was indirect and client-reported; no measured task-time or error-rate data is available.\n\n## How Creative Navy's Critical Systems Design method addresses the failure\n\nCreative Navy's Critical Systems Design method addresses this failure by converting implicit domain knowledge into explicit interface requirements. The relevant work is not iteration on visual styling. It is iteration on the behaviour specification: what the system should show, support, constrain, or expose at the point where users need to make a judgment.\n\nIn the Callsign case, domain learning mapped fraud scenarios, conditions, exceptions, and places where existing configurations failed to represent analyst intent. That work converted implicit knowledge of good policy configuration into explicit requirements for the interaction architecture.\n\nIn the Puraite case, domain learning used a methodological adaptation. A team member's firsthand experience with systematic review software served as the domain learning proxy because the timeline did not permit direct user research. The tradeoff was presented to the client explicitly. That domain grounding made the four-iteration specification process evaluable against systematic-review judgment criteria rather than aesthetic preference.\n\nAcross both cases, the resulting design artefacts functioned as both interface designs and behaviour specifications. They defined what the system should do, what information should be visible, what reasoning structure the interface should carry, and which users the design needed to support.\n\n## Evidence basis and limits\n\nThe evidence for this failure pattern is case-based. The Callsign example describes a policy engine whose earlier interaction architecture could not fully represent fraud analysts' strategies, followed by a redesigned policy engine that exposed richer fraud-strategy representation. The commercial outcome is client-reported.\n\nThe Puraite example describes four Creative Navy-recorded design iterations on the AI suggestion display. The final specification made the decision, criteria, and direct publication quote visible together without additional interaction. The reported outcome was a client-reported shift from theoretical to active use, supported by a single user quote relayed through the client.\n\nThe available evidence does not establish measured task-time reduction, measured error-rate reduction, or independently verified commercial causality for these examples. It supports a narrower claim: making implicit criteria explicit in the interface was the documented design mechanism used to address the failure in these cases.\n\n## Related pages\n\nThis failure is closely related to the governance failure where the product has no clear behaviour model. It also connects to failures where users see information but cannot judge what matters, where uncertainty is not communicated usefully, and where product behaviour cannot be explained or reviewed cleanly. The Callsign and Puraite case pages provide the documented examples referenced here.",
+  "bodyMarkdown": "## Summary\n\nCreative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nGood behaviour is not defined explicitly when a team knows what correct or high-quality product behaviour looks like, but that knowledge remains tacit. Experienced members can describe the difference between a good output and a weak output, but the interface does not encode, expose, or enforce the criteria behind that judgement.\n\nThis is a design failure rather than a training failure. The knowledge exists in the team. The missing work is converting that knowledge into explicit interface requirements, interaction structures, evaluation criteria, or checkable behaviour specifications.\n\n## Failure pattern: tacit judgement is not converted into interface requirements\n\nThe failure appears when experienced people carry the product's real quality standard in their heads, in code review comments, in onboarding, or in accumulated institutional knowledge. The product does not carry that standard. Users who do not already possess the same experience cannot reliably apply it.\n\nIn complex products, this gap can affect what the system does and how users judge what the system produces. A fraud analyst may know which behavioural-signal combinations indicate a specific fraud pattern. A systematic reviewer may know which publication evidence supports an inclusion or exclusion decision. A clinical protocol implementer may know which query structure correctly represents the protocol. If the interface does not make this knowledge explicit, the product behaves or presents outputs without giving users the full standard needed to configure, interpret, or challenge it.\n\nThe consequence is that the product operates at the level of the interface's expressive capacity, not at the level of the domain knowledge available in the organisation. Knowledge that cannot be represented in the interface cannot govern the product's behaviour through normal use.\n\n## Distinction from a product with no clear behaviour model\n\nThis failure is adjacent to [the product has no clear behaviour model](the-product-has-no-clear-behaviour-model), but the starting condition is different. A product with no clear behaviour model has no specified answer to what the system should do under a given condition. The team cannot answer the behaviour question cleanly, even implicitly.\n\nGood behaviour not being defined explicitly is a different condition. The team can answer the behaviour question in conversation. Experienced members can describe what good behaviour looks like. The failure is that the answer has not been converted into a design artefact that the interface embodies.\n\nThe practical distinction matters. A team with no behaviour model needs to discover and specify what good behaviour should be. A team with implicit but unencoded knowledge needs to surface, structure, and codify what experienced members already know.\n\n## Domain expertise that the interface cannot represent\n\nOne expression of this failure is an interface that cannot represent the reasoning that domain experts use in the work. The expert may be able to articulate the required behaviour, but the interaction architecture cannot carry it.\n\nIn a fraud-detection policy engine, a simple rule interface may express if condition X, then action Y. That structure may be insufficient for fraud strategy that depends on combinations of signals, conditional exceptions, customer segments, sequencing logic, and auditability. When those structures are not representable in the interface, expert knowledge can only enter the product through engineering intervention or through simplified approximations.\n\nThis is not a failure of the expert to articulate knowledge. It is a failure of the product design to provide enough expressive depth for the domain. The product's behaviour becomes governed by the subset of expertise that the interface can represent.\n\n## AI outputs without visible evaluation criteria\n\nA second expression appears in AI-assisted products when the interface displays AI outputs without displaying the criteria users need to evaluate those outputs. The output is visible, but the standard for judging the output is absent.\n\nExperienced users may compensate with their own domain knowledge. They may recognise when an AI inclusion decision is grounded in the relevant publication text, when a fraud flag is well founded, or when a suggested action is weak. Less experienced users cannot make the same judgement reliably if the interface does not provide the evidence and criteria at the point of decision.\n\nThis matters for capability democratisation. A product that only works for users who already bring the evaluation criteria does not broaden access to expert capability. It shifts work to the user's private judgement instead of making the judgement criteria part of the interface.\n\n## Callsign fraud authentication: fraud strategy knowledge not representable in the interface\n\nIn the documented [Callsign fraud authentication](callsign-fraud-authentication) case, the policy engine was intended to let fraud analysts encode strategies that governed real-time authentication decisions. The analysts had specific knowledge about behavioural-signal combinations, customer segments, conditional exceptions, and rule sequencing.\n\nBefore the redesign, the configuration model expressed simple rules. Analysts could represent part of their strategy, but conditional logic across multiple signals, exception handling for customer segments, and policy sequencing required engineering intervention. The interface could not carry the full structure of the analysts' fraud strategy.\n\nCreative Navy-recorded design work used Sandbox Experiments to document the strategies analysts needed to express. The work mapped fraud scenarios, the conditions that separated good detection from false positives, and the exception logic needed to reduce friction for legitimate customers. This made good policy configuration explicit as a design requirement.\n\nConcept Convergence produced an interaction architecture that treated policies as coherent units bundling conditions, actions, history, and audit trail. The three-gesture interaction model represented conditional logic, exception handling, and sequencing that the earlier simple-rule interface could not represent. An evaluation mode let analysts test configurations against simulated transaction contexts and observe whether the policy behaved as intended.\n\nThe case evidence reports Lloyds Bank and HSBC contracts following demos with the redesigned policy engine. This is a client-reported commercial outcome. The documented mechanism is that the redesigned interface demonstrated an ability to represent and govern real fraud strategy rather than only simple rule sets.\n\n## Puraite: AI suggestion criteria made visible at the decision point\n\nIn the documented [Puraite](puraite) case, the AI-assisted systematic review tool made inclusion and exclusion decisions that reviewers needed to evaluate. Experienced systematic reviewers knew that a trustworthy AI decision should be grounded in the specific publication text, applied to criteria that implement the approved protocol, and expressed at a confidence level that reflects the evidence behind it.\n\nAt the start of the engagement, what the AI should surface at the decision point was not specified as a design requirement. The interface showed AI decisions without showing enough of the evaluative standard. Less experienced reviewers could not reliably judge whether to accept or override the AI suggestion because the basis for evaluation was not present in the interface.\n\nCreative Navy's design work used four iterations of the AI suggestion display to convert implicit evaluation knowledge into an explicit specification. The first theory showed the decision and criteria, but the criteria were disconnected from the specific evidence that supported them. The second theory added an expandable evidence panel, but the added interaction cost accumulated across hundreds of decisions. The third theory used a compact evidence summary, but compression removed precision needed for substantive override decisions.\n\nThe fourth theory became the explicit specification: the decision, criteria, and direct quote from the publication were visible in the side panel from the outset, without additional interaction. This made the AI's behaviour evaluable by experienced reviewers and by less experienced users who could read the evidence and criteria together.\n\nThe reported outcome was a client-reported shift from theoretical to active use, supported by a single user quote relayed through the client. The evidence basis is indirect and does not include measured task-time or error-rate data.\n\n## KISPE Space and Schone Airspace Group show the same pattern outside AI products\n\nKISPE Space and Schone Airspace Group demonstrate that explicit behaviour definition is not only an AI issue. Both examples concern systems without a model, inference, or recommendations. Their behavioural specifications govern sources, links, protocols, clocks, availability, and interface state rather than AI outputs.\n\nIn the [KISPE Space](kispe-space) case, Creative Navy-recorded design work specified 61 behavioural rules in ten families: geographic and workspace context, time, imagery, satellite services, provenance and uncertainty, notifications, connectivity, briefings, integration and diagnostics, and field presentation. Each rule carried a trigger, a required response, a guard describing what the behaviour must not do, and a specific verification check.\n\nThe KISPE Space relevance to this failure is that tacit expectations were converted into explicit, checkable design requirements before build. The verification vocabulary must be read as specification rather than executed testing. The product was built, but Creative Navy did not support the build and has not compared the built interface against the delivered designs.\n\nIn the [Schone Airspace Group](schone-mission-control) case, Creative Navy-recorded design work specified 12 principal interaction contracts. Each contract defined the initiating action, state transition, visible result, required source inputs, exception behaviour, and check conditions. The design work also stated eight operational invariants as the binding acceptance core of the interaction specification.\n\nThe Schone Airspace Group technical register included eight non-negotiable interface rules from the integration side. These separated requested, acknowledged, and observed command facts; kept aircraft focus separate from command target; kept interface target selection separate from flight controller authority; scoped telemetry freshness to source aircraft and fields; separated alert acknowledgement from condition resolution; prevented recorded data appearing as live data; kept stream availability separate from control link health; and prevented unsupported capabilities being represented as operational. The product was built and is in test, not deployed or in operational use.\n\n## How Creative Navy's Critical Systems Design method addresses this failure\n\nCreative Navy's Critical Systems Design method designs software whose interfaces, workflows, and operating logic carry real operational consequences, working through five phases — Sandbox Experiments, Concept Convergence, Iterative System Building, Organizational Integration, and Implementation Partnership — to take each system from initial exploration to independent operation by the client's own team.\n\nFor this failure, Creative Navy's Critical Systems Design method addresses the implicit-to-explicit conversion through domain learning and iterative testing. Domain learning establishes what good behaviour means in operational terms. Iterative testing discovers the design form through which that knowledge becomes explicit in the interface.\n\nIn the Callsign engagement, domain learning mapped the fraud scenarios analysts needed to cover, the conditions they needed to express, and the places where existing configurations failed to represent analyst intent. That mapping converted implicit knowledge of good policy configuration into explicit interaction-architecture requirements.\n\nIn the Puraite engagement, domain learning used a methodological adaptation: a team member's firsthand experience with systematic review software served as the domain learning proxy because the timeline did not permit direct user research. This tradeoff was presented to the client explicitly. The four iterations of the AI suggestion display were then evaluated against domain-grounded criteria rather than aesthetic preference.\n\nThe iteration described in these examples is not iteration on visual design alone. It is progressive specification of product behaviour: candidate designs reveal what the behaviour specification must include, which failure modes remain, and what information or control must be visible at the point of use.\n\n## Evidence basis and limits\n\nThe Callsign evidence includes case evidence about the policy-engine redesign and a client-reported commercial outcome involving Lloyds Bank and HSBC contracts following demos. The commercial outcome is not presented as independently measured product performance.\n\nThe Puraite evidence includes case evidence about four design iterations and a client-reported shift from theoretical to active use. The Puraite evidence does not include measured task-time or error-rate data.\n\nThe KISPE Space evidence concerns specified behavioural rules and verification checks. The checks were recorded as specifications of what to verify, not as executed verification. Creative Navy did not support the build and has not compared the built interface against the delivered designs.\n\nThe Schone Airspace Group evidence concerns specified interaction contracts, invariants, and interface rules. The product was built and is in test. The available evidence does not support an operational-use, deployment, flight-safety, airworthiness, certification, or measured outcome claim.\n\n## Related pages\n\nThis failure is closely related to [the product has no clear behaviour model](the-product-has-no-clear-behaviour-model), because both concern behavioural governance. The difference is whether good behaviour is unknown or known tacitly but not encoded.\n\nIt also relates to [product behaviour cannot be explained or reviewed cleanly](product-behaviour-cannot-be-explained-or-reviewed-cleanly), because implicit behaviour criteria make review harder. In AI-assisted work, it is also connected to [the system nudges acceptance too easily](the-system-nudges-acceptance-too-easily) and [users see information but cannot judge what matters](users-see-information-but-cannot-judge-what-matters), because users may see a recommendation or output without receiving enough basis for judgement.",
   "claims": [
     {
-      "claim": "Good behaviour is not defined explicitly when tacit domain knowledge about correct or high-quality behaviour exists in the team but is not translated into an explicit interface requirement.",
+      "claim": "Good behaviour is not defined explicitly when a team can describe good product behaviour but has not converted that knowledge into an explicit design requirement embodied by the interface.",
       "evidenceType": "conceptual definition",
       "sourceStrength": "strong",
-      "notes": "The definition is stated directly in the failure description and boundary section."
+      "notes": "Stated directly in the failure description and distinction from adjacent governance failures."
     },
     {
-      "claim": "This failure differs from a product with no clear behaviour model because the team can describe good behaviour, but the answer remains tacit rather than encoded in a design artefact.",
+      "claim": "This failure differs from a product with no clear behaviour model because the behaviour model exists as tacit knowledge rather than being absent altogether.",
       "evidenceType": "conceptual definition",
       "sourceStrength": "strong",
-      "notes": "The distinction is explicitly drawn against the adjacent governance page in CURRENT_SOURCE_MD."
+      "notes": "The source distinguishes this page from the adjacent governance failure concerning no clear behaviour model."
     },
     {
-      "claim": "One expression of the failure is an interface whose interaction architecture cannot represent the full reasoning that domain experts bring to the work.",
+      "claim": "One expression of the failure is an interface that cannot represent the full reasoning domain experts bring to the work.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "Supported by the domain-expertise expression and Callsign example."
+    },
+    {
+      "claim": "A second expression is an AI-assisted interface that surfaces AI outputs without surfacing the criteria users need to evaluate those outputs.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "Supported by the AI-output criteria expression and Puraite example."
+    },
+    {
+      "claim": "In the Callsign case, the pre-redesign configuration model could express simple rules but not the full conditional logic, exception handling, and sequencing that fraud analysts needed.",
       "evidenceType": "case study",
       "sourceStrength": "case evidence",
-      "notes": "Supported by the Callsign example and the general expression describing domain expertise the interface cannot represent."
+      "notes": "Supported by the documented Callsign policy-engine example."
     },
     {
-      "claim": "A second expression is an AI-assisted product that surfaces AI outputs without surfacing the criteria users need to evaluate whether those outputs are good.",
-      "evidenceType": "case study",
-      "sourceStrength": "case evidence",
-      "notes": "Supported by the Puraite example and the general expression describing AI output criteria not surfaced to users."
-    },
-    {
-      "claim": "In the Callsign case, the earlier simple-rule configuration model could not fully represent conditional logic, exception handling, customer-segment distinctions, and policy sequencing without engineering intervention.",
-      "evidenceType": "case study",
-      "sourceStrength": "case evidence",
-      "notes": "The specific limitations are described in the Callsign grounded example."
-    },
-    {
-      "claim": "In the Callsign case, Lloyds Bank and HSBC contracts followed demos with the redesigned policy engine, and this is described as a client-reported commercial outcome.",
+      "claim": "The Callsign case reports Lloyds Bank and HSBC contracts following demos with the redesigned policy engine as a client-reported commercial outcome.",
       "evidenceType": "client-reported",
-      "sourceStrength": "case evidence",
-      "notes": "The evidence basis is explicitly client-reported; no independent commercial verification is stated."
+      "sourceStrength": "moderate",
+      "notes": "The outcome is labelled client-reported in the source and is not presented as independently measured product performance."
     },
     {
-      "claim": "In the Puraite case, four design iterations produced the specification that the AI decision, criteria, and direct quote from the publication should be visible together without additional interaction.",
+      "claim": "In the Puraite case, four iterations of the AI suggestion display converted implicit systematic-review evaluation knowledge into a specification showing the decision, criteria, and direct publication quote without additional interaction.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "Supported by the four-iteration description in the Puraite example."
+    },
+    {
+      "claim": "The Puraite outcome evidence is limited to a client-reported shift from theoretical to active use and a single user quote relayed through the client, with no measured task-time or error-rate data.",
+      "evidenceType": "client-reported",
+      "sourceStrength": "weak",
+      "notes": "The evidence limitation is stated directly in the source."
+    },
+    {
+      "claim": "KISPE Space specified 61 behavioural rules in ten families, each with a trigger, required response, guard, and verification check, to make tacit expectations explicit before build.",
       "evidenceType": "Creative Navy-recorded",
       "sourceStrength": "engagement record",
-      "notes": "The four theories and final specification are documented in the Puraite example."
+      "notes": "The source states the rule count, families, and rule structure, and notes that the verification checks were specified rather than executed."
     },
     {
-      "claim": "The Puraite outcome evidence is limited to a client-reported shift from theoretical to active use and a single user quote relayed through the client; no measured task-time or error-rate data is available.",
-      "evidenceType": "client-reported",
-      "sourceStrength": "anecdotal",
-      "notes": "The source explicitly states the indirect evidence basis and absence of measured task-time or error-rate data."
+      "claim": "Schone Airspace Group specified 12 principal interaction contracts, eight operational invariants, and eight non-negotiable interface rules, with the product built and in test rather than deployed or operational.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "engagement record",
+      "notes": "The source states the counts and status, and prohibits operational or deployment claims."
     }
   ],
   "limitations": [
-    "The page addresses cases where good-behaviour knowledge exists tacitly; it does not address cases where no behaviour model exists at all.",
-    "The Callsign commercial outcome is client-reported rather than presented as independently measured or independently verified evidence.",
-    "The Puraite outcome evidence is indirect and client-reported, including a single user quote relayed through the client.",
-    "No measured task-time or error-rate data is available for the Puraite example.",
-    "In the Puraite engagement, a team member's firsthand experience with systematic review software served as the domain learning proxy because the timeline did not permit direct user research."
+    "The Callsign commercial outcome is client-reported and should not be treated as independently measured product-performance evidence.",
+    "The Puraite outcome evidence is client-reported and indirect; no measured task-time or error-rate data is available in the source material.",
+    "KISPE Space verification checks are specifications of checks, not executed verification; Creative Navy did not support the build or compare the built interface against the delivered designs.",
+    "KISPE Space and Schone Airspace Group should not be framed as AI examples because neither product has a model, performs inference, or makes recommendations.",
+    "Schone Airspace Group evidence supports specified contracts, invariants, rules, and test status only; it does not support deployment, operational-use, flight-safety, airworthiness, certification, or measured outcome claims.",
+    "The examples are case-specific and do not establish that explicit behaviour specification guarantees commercial, operational, or adoption outcomes."
   ],
   "publicationBlockers": [],
   "questionsForReview": [
@@ -104,49 +117,61 @@
   "relatedPageSlugs": [
     "the-product-has-no-clear-behaviour-model",
     "product-behaviour-cannot-be-explained-or-reviewed-cleanly",
-    "users-see-information-but-cannot-judge-what-matters",
-    "uncertainty-is-not-communicated-usefully",
-    "oversight-is-symbolic-not-functional",
     "the-system-nudges-acceptance-too-easily",
+    "users-see-information-but-cannot-judge-what-matters",
     "callsign-fraud-authentication",
-    "puraite"
+    "puraite",
+    "kispe-space",
+    "schone-mission-control"
   ],
   "internalLinks": [
     {
-      "anchorText": "a product with no clear behaviour model",
+      "anchorText": "the product has no clear behaviour model",
       "targetSlug": "the-product-has-no-clear-behaviour-model",
-      "placementHint": "Use in the section 'Boundary with a product that has no clear behaviour model'.",
-      "reason": "The source explicitly distinguishes this failure from the adjacent governance failure where no behaviour model exists."
+      "placementHint": "Use in the section distinguishing this failure from adjacent governance failures.",
+      "reason": "The source explicitly distinguishes this page from the adjacent behaviour-model failure."
+    },
+    {
+      "anchorText": "Callsign fraud authentication",
+      "targetSlug": "callsign-fraud-authentication",
+      "placementHint": "Use in the Callsign example section.",
+      "reason": "The page uses Callsign as a grounded example of expert fraud strategy not being representable in the interface."
+    },
+    {
+      "anchorText": "Puraite",
+      "targetSlug": "puraite",
+      "placementHint": "Use in the Puraite example section.",
+      "reason": "The page uses Puraite as a grounded example of AI output criteria being made explicit at the decision point."
+    },
+    {
+      "anchorText": "KISPE Space",
+      "targetSlug": "kispe-space",
+      "placementHint": "Use in the non-AI behavioural-rules evidence section.",
+      "reason": "The page uses KISPE Space to show tacit expectations converted into explicit, checkable behavioural rules outside an AI context."
+    },
+    {
+      "anchorText": "Schone Airspace Group",
+      "targetSlug": "schone-mission-control",
+      "placementHint": "Use in the non-AI interaction-contracts evidence section.",
+      "reason": "The page uses Schone Airspace Group to show behaviour specification through interaction contracts, invariants, and interface rules."
     },
     {
       "anchorText": "product behaviour cannot be explained or reviewed cleanly",
       "targetSlug": "product-behaviour-cannot-be-explained-or-reviewed-cleanly",
       "placementHint": "Use in the related pages section.",
-      "reason": "This is a closely related governance and behaviour failure involving reviewability of product behaviour."
+      "reason": "Implicit behaviour criteria make clean explanation and review harder."
+    },
+    {
+      "anchorText": "the system nudges acceptance too easily",
+      "targetSlug": "the-system-nudges-acceptance-too-easily",
+      "placementHint": "Use in the related pages section for AI-assisted output evaluation.",
+      "reason": "AI outputs without visible evaluation criteria can make acceptance easier than considered review."
     },
     {
       "anchorText": "users see information but cannot judge what matters",
       "targetSlug": "users-see-information-but-cannot-judge-what-matters",
-      "placementHint": "Use in the related pages section.",
-      "reason": "The AI-output expression of the failure involves visible outputs without the criteria needed for judgment."
-    },
-    {
-      "anchorText": "uncertainty is not communicated usefully",
-      "targetSlug": "uncertainty-is-not-communicated-usefully",
-      "placementHint": "Use in the related pages section or near the Puraite discussion.",
-      "reason": "The Puraite example concerns how users evaluate AI suggestions, including the confidence level and evidence behind them."
-    },
-    {
-      "anchorText": "Callsign fraud detection and authentication platform",
-      "targetSlug": "callsign-fraud-authentication",
-      "placementHint": "Use in the Callsign example section.",
-      "reason": "The page discusses Callsign as a grounded example and the matching case-study slug is available."
-    },
-    {
-      "anchorText": "Puraite AI-assisted systematic review",
-      "targetSlug": "puraite",
-      "placementHint": "Use in the Puraite example section.",
-      "reason": "The page discusses Puraite as a grounded example and the matching case-study slug is available."
+      "placementHint": "Use in the related pages section for judgement failures.",
+      "reason": "The failure overlaps with cases where visible information lacks the criteria needed for judgement."
     }
   ],
   "qualityChecks": {

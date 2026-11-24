@@ -119,3 +119,24 @@ Using multiple role groups against each other — a specific practice in Sandbox
 Concept Convergence applies this to the design problem of holding multiple role requirements in a single architecture. The Akrivia query builder holds researcher flexibility and governance readability as the same interface property — not competing requirements that must be balanced, but requirements that can be satisfied simultaneously by the right architecture. The Pixelart Fugo overview structure holds media agency multi-location scheduling and single-organisation screen management as the same operational model — what content plays, where, when — rather than requiring each to work around the other's architectural assumption. The architecture that holds multiple role requirements is the architecture that does not break at role boundaries.
 
 For the mental-model form specifically, the method's contribution is upstream of the interface: where the failure is a missing shared standard, the design work begins by constructing that standard rather than by carrying existing context across the boundary. The UNICEF prototypes did this — they were the instrument through which two tiers with incompatible interpretations of the same requirements arrived at a shared one, which the system then embedded structurally. This is the case where "designing the handoff" means first creating the agreement the handoff is supposed to carry.
+
+---
+
+## Evidence to draw on
+
+### Assemblio (two user groups, one component set — the single best fit in the corpus)
+
+- Assemblio GmbH may be named in full, and so may both products: the **Assemblio Composer**, the planning tool used by engineers, and the **Assemblio Smart Viewer**, the shop-floor application used by assembly workers. Individuals are not named; Assemblio's customers are not named — generalise to "industrial manufacturers". Verbatim client quotation is permitted, attributed to role. **Assemblio's accounts of its own product are client-stated rather than observed** — attribute them ("Assemblio described…", "the client's worked example…") and never blend them with field observation made in person elsewhere.
+- The Smart Viewer had been **built from the Composer's components** and looked almost identical to it, while the requirements for the two user groups differ. (N36) One product's structure served the other role by default: the workflow broke at the role boundary because the second role never received a tool shaped for its work.
+- It displayed the **complete CAD hierarchy at all times** — the engineer's structure — when what the worker needs is the parts used in the current step. The client's worked example: a step containing two visually similar types of screw, where the names in the list did not tell the worker which was which. (N37)
+- **The worker had no way to send anything back to the planner.** Someone who discovers that a step does not work in practice had no route to say so. (N39) The workflow broke in both directions: the engineer's structure flowed down unusably, and nothing flowed back up.
+- Authorship note: separating the Smart Viewer from the Composer as two products for two populations was **Assemblio's own diagnosis**; knowing that two populations need different products is not the same as knowing what the second product should be, and the resolution is Creative Navy's. Write the division, not a monologue in either direction.
+
+---
+
+## What this page must not claim
+
+- Assemblio's operating-context and product descriptions are client-stated, never observed: no shop-floor observation, field-research, persona or usability claim from this engagement — Creative Navy ran no research and never stood on a shop floor.
+- No time-saving, error-rate, training or adoption figure from Assemblio, including Assemblio's own published marketing claims.
+- No AI framing — Assemblio must never be filed or framed as AI work — and no safety claim: the engagement produced no safety analysis.
+- Do not name Assemblio's customers, and do not reproduce the Bosch/ABB/Emerson/Rosemount sample folder names — placeholder data, not clients.

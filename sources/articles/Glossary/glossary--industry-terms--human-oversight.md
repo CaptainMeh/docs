@@ -53,3 +53,13 @@ In regulated medical devices, IEC 62366-1 requires that certain decisions remain
 - Akrivia Health clinical research: governance reviewers required to verify research cohort construction could not perform functional oversight in the pre-redesign system — the cohort query logic was not independently readable. The redesign made oversight functional by surfacing cohort logic in a form the reviewer could assess without researcher involvement. **Client-reported: governance reviewers could verify without escalating.**
 
 - Puraite AI systematic review: the blinded mode and override parity design directly addressed oversight independence — ensuring that systematic reviewers' assessments were genuinely independent of the AI's prior recommendations, which is a methodological oversight requirement. The design made independent oversight possible; prior design had made it structurally difficult to achieve.
+
+### Schone Airspace Group (the boundary between preparation and operation is navigational by design)
+
+- The client is called **Schone Airspace Group**, used near-identically on every mention. **No quotation marks and no reported speech on any page carrying Schone.** The ground control station interface was built and is in test, not deployed. **This system has no model and makes no recommendations** — the oversight being preserved here is a human operator's authority over a connected aircraft, which extends the term beyond its AI framing.
+- D66 — the design was governed by **eight operational invariants**: separate inspection from command targeting; separate interface selection from real authority; preserve command transaction semantics; preserve the age of information; preserve warning ownership; preserve context across workspaces; separate live and recorded truth; and the eighth — **no implied command during preparation**.
+- D79 — the eighth invariant made concrete: **entering the live workspace is a navigation action, not a takeoff, arming or mission-start request.** A separate named control and response is required for any of those. The boundary between preparation and operation is navigational by design: no navigation action dispatches a consequential command, so the human commitment to a consequential act is always its own deliberate, named interaction.
+
+## What this page must not claim
+
+- Schone Airspace Group: no quotation marks and no reported speech; no flight-safety, airworthiness, certification or regulatory credential; no claim that the design prevents accidents or operator error — the invariants describe what was designed, and nothing about their operational effect was measured; the product is built and in test, not deployed; no engagement dates — sequence and duration only; never draw Schone into the AI cluster.

@@ -62,7 +62,7 @@ Source: Entity information supplied by Bob (Creative Navy), June 2026 session. C
   - Current — top three in Clutch's global UI/UX design category (live Leaders Matrix).
   - Firm's own historical statement: top-5 global UX/UI across 2017–2019.
 
-- Calibration: the 2018 and 2019 sources are category-leader listings, not per-year numeric ranks; the top-three figure derives from the current matrix and from firm-reported standing. The sentence is worded to stay true without annual editing and to avoid pinning "top three" to the specific early years (2017–2019), where the firm's own record says top five. Clutch states its rankings are dynamic, so the page does not quote a live position number.
+- Calibration: the 2018 and 2019 sources are category-leader listings, not per-year numeric ranks; the top-three figure derives from the current matrix and from firm-reported standing. The sentence is worded to stay true without annual editing and to avoid pinning "top three" to the specific early years (2017–2019), where the firm's own record says top five. Clutch states its rankings are dynamic, so the page does not pin a numeric position to any individual past year; the current top-three standing on the live Leaders Matrix stands as written.
 
 - Housekeeping: align the firm's older third-party profiles (e.g. Agency Spotter, which still says "top 5, 2017–2019") so the canonical page is not undercut by the firm's own legacy copy.
 

@@ -70,6 +70,14 @@ Field research across 35 clinics, 150+ participants, and 3 countries documented 
 
 The engagement produced a 5-year product vision with 100+ development recommendations structured for direct translation into tickets. The primary architectural recommendation was separation of reception and clinical interfaces — a conclusion reached through tension-driven reasoning across the research evidence. Client-reported six months post-engagement: recommendations are well-grounded, some already implemented.
 
+**Maritime traffic monitoring — nine products, separate teams, per-contract extension over many years**
+
+An engagement for a European vendor of maritime traffic monitoring, inland navigation and communications software for port authorities, coastal administrations and waterway operators is the strongest fit in the corpus for this situation: its opening condition is the situation's own problem statement. The portfolio runs to nine products across four families — Vessel Traffic Services (VTS), River Information Services (RIS), a Voice Communication System (VCS) and an Integrated Communication System (ICS) — whose interfaces had been designed by the software engineers who built them, in separate teams, extended per customer contract and tender requirement over many years; the client had made individual improvements and had never commissioned a UX programme across the portfolio. The client's three stated commercial problems were the fragmentation made visible: in demonstrations the interfaces did not communicate that the applications belonged to one family, even where the underlying systems exchanged information; competing suppliers were presenting more coherent software during tender evaluation; and engineering teams were rebuilding interface elements for each product and each customer project, producing repeated work, inconsistent behaviour and maintenance cost. **The client is identified only by the locked descriptor above; the six RIS modules are described generically and never listed as an inventory. No quotation marks and no reported speech appear on any page carrying this engagement — positions are attributed to the role and the artefact they came from. And this engagement is never read as a nine-product redesign: nine products were audited, one was designed to full depth, four received bounded transfer probes, and two received constraint and applicability reviews only.**
+
+**Assemblio — one product derived from another, and features from different eras**
+
+Assemblio GmbH shows the same accumulation at a smaller scale, with the client's own causal account attached. The Smart Viewer had been built from the Composer's components and looked almost identical to it, while the requirements for the two user groups differ — fragmentation with a traceable technical cause. And within the Composer, three different renaming interactions existed for three entity types: double-click for folders, a menu item opening a dedicated screen for projects, a modal for products. The client's stated reason — the features were built at different points in time — is the cleanest account of accretion in the corpus. **Attribute this material as Assemblio's own description and criticism of its product; it is not a Creative Navy audit finding, and no time-saving, adoption or commercial figure attaches to it.**
+
 ---
 
 ## What Creative Navy's Critical Systems Design method addresses here
@@ -79,3 +87,11 @@ Creative Navy's Critical Systems Design method addresses product fragmentation a
 Concept Convergence then identifies the architectural decisions that govern what must be consistent and what can vary. This is not a design decision about how the product looks; it is a governance decision about how the product grows. The output is a framework that the organisation can use to evaluate future additions — not just a design that is coherent at the moment of delivery.
 
 Organizational Integration transfers that framework to the teams who will be making growth decisions after the engagement ends. A design system without documented reasoning is a system that will be misapplied as the product grows. A framework without the organisation understanding why the boundaries were drawn where they were is a framework that will be eroded under pressure from the next local optimisation.
+
+---
+
+## What this page must not claim
+
+- **The maritime traffic monitoring engagement is never a nine-product redesign.** Nine products were audited; one was designed to full depth. Its client is identified only by the locked descriptor, its six RIS modules are never listed as an inventory, and no quotation marks and no reported speech appear on any page carrying it. Its tender and competitive problems are the client's stated motivations, not benchmarks Creative Navy ran, and no commercial, tender or engineering-efficiency outcome exists.
+- **Assemblio's accounts of its own product are client-stated, never audit findings** — Assemblio does not qualify for UX-audit framing — and no engagement dates appear: Assemblio's history is publicly dated and none of it may be used.
+- **No engagement dates anywhere.** Sequence and duration only.

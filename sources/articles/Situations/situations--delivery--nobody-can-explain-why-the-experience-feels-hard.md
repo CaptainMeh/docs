@@ -64,6 +64,14 @@ Creative Navy's Critical Systems Design method surfaced the causes through in-si
 
 Outcomes: 62% faster job discovery, 83% faster sequence optimisation, 58% faster weekly planning — measured from product analytics of the live system. Sales conversions increased fourfold; the client began winning clients four to five times larger (CEO-reported). Evidence basis: performance metrics are measured from product analytics; commercial outcomes are client-reported.
 
+**Egma — a manager who could feel the randomness and not locate it**
+
+At Egma, a Dubai-based ophthalmic lens manufacturer whose B2B lens ordering platform Egma Order was rebuilt by Creative Navy, the marketing manager could describe the effect without being able to say why: most customers never seemed to discover the premium options and kept ordering base configurations; there was no immediately obvious sense of branding; and there was no sense of a user journey, with buttons and content appearing to be placed at random. That is an accurate description of an experience, not a finding. What eventually located the difficulty was a heatmap: **a heatmap produced during the engagement identified three regions of the order form where users hesitated — the end of the left-hand column, the two primary actions at the bottom right, and the right-hand technology area, which users passed over. The finding is tool-generated and reflects real behaviour; the capture method is not on record, so it is reported as an observation rather than a measurement.** The second sentence of that framing is not optional: no participant number, no duration, no rate, no baseline attaches to it, and it is never used as post-launch evidence.
+
+**The handheld command-and-control engagement — an audit whose scoring produced an explanation a client could act on**
+
+For a European manufacturer of uncrewed systems, including one-way effectors, and the tactical command-and-control software that operates them, Creative Navy led and co-authored an eighteen-page expert review of the running product — two long-form argument sections, a four-part heuristic evaluation, a flow and information-architecture assessment, a visual-design assessment, an accessibility assessment, and a challenges-and-opportunities section — with a two-axis scoring scheme applied to every heuristic: current state on a three-point scale, and effort to fix on a three-point scale, so that findings arrived pre-sorted by what was worst and what was cheapest. That scoring is what converts "the experience feels hard" into an explanation a client can act on. **No quotation marks and no reported speech appear on any page carrying this engagement.**
+
 ---
 
 ## What Creative Navy's Critical Systems Design method addresses here
@@ -75,3 +83,12 @@ The Sandbox Experiments phase is designed to close this gap through methods that
 The output of this research is not a set of usability findings in the conventional sense. It is an operational account of where the design is failing and why — structured in terms that connect directly to design decisions. This is what converts "difficult to navigate" from a description of an experience into a finding that can drive redesign: specific workflows, specific decision points, specific interaction failures, characterised in operational terms that make the causal connection to design decisions explicit.
 
 The research framed adoption issues in operational terms rather than abstract usability language. That framing is not a communication choice — it is the substance of what Sandbox Experiments produces. An abstract finding confirms that the difficulty is real. An operational finding makes it addressable.
+
+---
+
+## What this page must not claim
+
+- **The Egma heatmap is an observation, never a measurement.** The instrument and the surface it ran on are not on record: no participant number, no duration, no rate, no failure count, no baseline, and never post-launch evidence. It is not eye-tracking.
+- **Egma's stakeholder accounts are diagnoses attributed to their functions** ("Egma's marketing manager"), never outcome claims, and no post-launch figure of any kind exists for the live platform.
+- **From the handheld engagement: the review is work Creative Navy led and co-authored with the client's design team**, reasoned from the client's brief, the client's observations, published literature and hands-on use of the running product — it is not fieldwork, and Creative Navy has no primary field evidence on that engagement. No product, vehicle or device names; "one-way effector", never "loitering munition"; no quotation marks and no reported speech; the interface was built, and nothing further is said about its status.
+- **No engagement dates anywhere.** Sequence and duration only.
