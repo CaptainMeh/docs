@@ -4,18 +4,19 @@
   "pageType": "practice",
   "category": "practices",
   "section": "Practices",
-  "summary": "Usability testing under realistic constraint changes participant selection, task design, environment design, and timing so that usability evidence reflects the conditions that determine operational performance. Creative Navy applies the practice as formative evaluation during design, not as final summative validation.",
+  "summary": "Usability testing under realistic constraint changes standard usability testing choices when a controlled test environment would not represent the conditions that determine how a product works in use. The practice uses representative expertise, realistic scenarios, environmental approximation, and formative evaluation during design; in some engagements it also uses fixed adjudication criteria or longitudinal follow-up.",
   "keyFacts": [
-    "The practice differs from standard usability testing through domain-expert participant selection, realistic scenario design, environmental approximation, and formative use throughout design.",
-    "In regulated medical-device contexts, the practice supports formative evaluation under IEC 62366-1; summative validation remains the manufacturer's responsibility.",
-    "The Torqeedo maritime HMI engagement used 12 sea trials over 6 months with 15 professional captains.",
-    "The Torqeedo controlled component directly measured 50% faster energy state identification with 24 subjects comparing the new and legacy interface.",
-    "The Beissbarth automotive calibration engagement tested 14 technicians across 5 workshops and recorded client-measured calibration time reduction from 18 to 12 minutes across 8 locations after production deployment.",
-    "The WCO/IPM customs intelligence engagement involved 47 participants across Italy, Romania, Uzbekistan, Algeria, and Spain to assess multi-jurisdictional validity.",
-    "The Gexcon CFD simulation engagement involved 37 evaluation sessions with actual CFD engineers and safety analysts using realistic simulation scenarios.",
-    "The Stromer e-bike testing programme used three-day riding rounds on real routes, a post-redesign comparison round, and a two-year longitudinal follow-up.",
-    "In the Stromer eye-tracking component, average glance duration changed from 4.32 seconds before redesign to 1.89 seconds after redesign, with glance frequency per kilometre falling by 18%.",
-    "The Squaremind dermatology scanning device test involved 29 users across London and Paris; 27 of 29 completed the full scan independently."
+    "Usability testing under realistic constraint is formative usability evaluation designed around the users, tasks, environments, and non-nominal conditions that determine a product's actual operational performance.",
+    "The practice is formative: it is used to find and fix problems during design, not to provide final summative validation.",
+    "Participant selection is based on the intended user population and domain expertise, unless the product must work for first-time non-expert users.",
+    "Task design uses realistic scenarios, including fault conditions, time pressure, divided attention, abnormal states, and full expert workflows where those conditions matter.",
+    "Environmental approximation may include sea trials, workshop conditions, clinical analogues, real roads, lighting, noise, vibration, physical position, gloves, or real equipment, depending on the operating context.",
+    "IEC 62366-1 is named in the practice as a regulated medical-device context requiring formative evaluation throughout design and summative validation on the finalised design with representative users under simulated or actual use conditions.",
+    "Creative Navy's role in regulated medical-device contexts is formative evaluation only; summative validation is the manufacturer's responsibility.",
+    "Torqeedo testing used 12 sea trials over 6 months with 15 professional captains and included in-context observation, controlled comparison, and eye tracking during actual sea trials.",
+    "Stromer testing used three rounds, including a two-year longitudinal follow-up, with real bikes, real routes, and real riding conditions.",
+    "Beissbarth testing involved 14 technicians across 5 workshops, and client-measured production deployment data at 8 locations recorded calibration time moving from 18 to 12 minutes.",
+    "Raymarine, Maritime VTS, and Schone Airspace Group show that realistic constraint is not binary: participant realism, apparatus realism, setting realism, data realism, and criteria realism can vary independently."
   ],
   "bodySections": [
     {
@@ -23,53 +24,67 @@
       "bodyMarkdown": "Creative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nCreative Navy applies usability testing under realistic constraint as one of the named practices within its Critical Systems Design method. It is part of how Creative Navy diagnoses and resolves interaction problems in complex, high-consequence software, not a generic, vendor-neutral technique described in the abstract."
     },
     {
-      "heading": "Summary",
-      "bodyMarkdown": "Usability testing under realistic constraint is a formative evaluation practice for products whose interface performance depends on real operating conditions. Creative Navy applies the practice when standard usability testing would produce findings valid for the test environment but unreliable for the operational environment.\n\nThe practice changes four methodological choices: participant selection, task design, environmental approximation, and timing within design. These choices are determined by the gap between test conditions and the conditions that determine actual product performance."
+      "heading": "Definition and Purpose of Usability Testing Under Realistic Constraint",
+      "bodyMarkdown": "Usability testing under realistic constraint is formative usability evaluation designed around the users, tasks, environments, and non-nominal conditions that determine a product's actual operational performance.\n\nCreative Navy uses usability testing under realistic constraint when a controlled test environment would remove the conditions that decide whether the product works in use. The practice is used for complex professional software, high-consequence devices, embedded systems, and products used in demanding physical environments.\n\nStandard usability testing can appropriately use general participant pools, simplified tasks, controlled rooms, and broad generalisation across user populations. For a maritime helm display, a surgical instrument, a CFD simulation tool, an automotive calibration system, a vehicle display, or a patient-operated scanning device, those choices may produce findings that are valid for the test setting but unreliable for the operational setting.\n\nThe purpose of usability testing under realistic constraint is formative. It is used to find what is missing, identify what should change, and generate evidence that informs design decisions during development."
     },
     {
-      "heading": "What usability testing under realistic constraint does",
-      "bodyMarkdown": "Usability testing under realistic constraint tests with the intended user population rather than recruited proxies. A maritime helm display is tested with professional captains, a surgical instrument with orthopaedic surgeons, a CFD simulation tool with industrial safety engineers, and a consumer vehicle display with actual riders of that vehicle.\n\nThe reason for domain-specific participant selection is methodological. Non-expert participants produce findings about general usability. Expert participants produce findings about whether the interface supports expert practice. These are different research questions and can produce different answers.\n\nUsability testing under realistic constraint uses scenarios that reflect the complexity and conditions of real use. In high-consequence contexts, this includes non-nominal scenarios such as fault conditions, time pressure, divided attention, and abnormal states. The scenarios excluded from standard usability testing for being too complex are often the scenarios where high-consequence interface failures occur.\n\nUsability testing under realistic constraint also approximates the operating environment. This can mean sea trials rather than laboratory simulation, workshop conditions rather than office conditions, clinical environments or close analogues rather than generic testing rooms, and real roads on real bikes rather than a single controlled session. Where physical replication is not possible, constraints such as temperature, lighting, noise, vibration, physical position, and viewing distance are approximated as closely as practicable."
+      "heading": "Methodological Dimensions of Realistic Constraint",
+      "bodyMarkdown": "Usability testing under realistic constraint derives the test method from the gap between a convenient test setting and the conditions that determine whether the product works in use. The practice does not treat realism as a single variable. It examines participant selection, task design, environment, apparatus, criteria, data, duration, and timing within the design process.\n\nParticipant selection is based on the intended user population. Expert products require domain-expert participants because non-expert participants can produce findings about general usability but cannot establish whether the interface supports expert practice. Products intended for first-time non-expert users require a different participant strategy: the user population must reflect people encountering the product without training or external assistance.\n\nTask design uses realistic scenarios rather than simplified tasks chosen only because they fit a session. In high-consequence contexts, realistic scenarios may include faults, time pressure, divided attention, abnormal states, degraded modes, and full expert workflows. Scenarios excluded from standard testing because they are complex may be the scenarios where interface failures matter most.\n\nEnvironmental approximation represents material operating constraints instead of controlling them away. Depending on the product, this may mean sea trials, workshop conditions, clinical analogues, real roads, real equipment, lighting, noise, vibration, viewing distance, physical position, gloves, or other constraints that affect interaction."
     },
     {
-      "heading": "When Creative Navy uses the practice",
-      "bodyMarkdown": "Creative Navy uses usability testing under realistic constraint during Iterative System Building, before design directions are committed to. Testing at this stage is formative: the purpose is to find problems and change the design, not to confirm that the design is correct.\n\nIn regulated medical-device contexts, IEC 62366-1 requires formative evaluation throughout the design process and summative validation of the finalised design with representative users under simulated or actual use conditions. Usability testing under realistic constraint is the formative evaluation practice that produces documented evidence for the usability engineering process.\n\nCreative Navy's role is formative evaluation only; summative validation is the manufacturer's responsibility via the regulatory submission.\n\nCreative Navy also uses the practice for longitudinal confirmation in consumer embedded products used over extended periods. In those contexts, a single-session usability test cannot confirm whether a design improvement holds under sustained real-world use. Multi-day testing and longitudinal follow-up rounds can verify whether the operational improvement is durable rather than an artefact of novelty or the specific test session."
+      "heading": "How Creative Navy Applies Usability Testing Under Realistic Constraint During Design",
+      "bodyMarkdown": "Creative Navy applies usability testing under realistic constraint by first identifying which conditions determine performance. Those conditions may include expert judgement, physical environment, abnormal system states, distributed attention, gloved input, glare, vibration, noise, sustained use, clinical anxiety, or cross-jurisdictional variation.\n\nCreative Navy then designs the evaluation so those conditions are represented. In some engagements this means using the real operating environment. In others it means building a close analogue, using actual equipment, selecting end-customer operators, writing fixed adjudication criteria, preserving complex expert workflows, or keeping the methodology consistent across baseline and post-redesign rounds.\n\nThe practice can combine qualitative observation, structured sessions, controlled comparison, eye tracking, task completion measurement, timed recovery, issue logging, debriefing, and client deployment data. The point is not to apply one fixed protocol. The point is to select the protocol that can answer the operational question without overstating what the evidence establishes.\n\nCreative Navy uses the practice during Iterative System Building when design directions need to be evaluated before they are committed to. At this stage, testing is formative: the intent is to expose problems and change the design, not to confirm that the design is already correct."
     },
     {
-      "heading": "How Creative Navy applies realistic constraint in test design",
-      "bodyMarkdown": "Creative Navy derives test design from the operating environment rather than from a standard research protocol. The operating environment determines who must participate, which tasks are non-negotiable, which environmental constraints must be reproduced, and what type of evidence can be trusted.\n\nParticipant selection is constrained by domain expertise when the product is used by trained professionals. In the deSoutter Medical / Zethon engagement, surgical instrument evaluation used 13 structured sessions with 8 orthopaedic and trauma surgeons. In the Gexcon CFD simulation engagement, Creative Navy conducted 37 evaluation sessions with actual CFD engineers and safety analysts using realistic simulation scenarios.\n\nTask design is constrained by operational risk and realistic workflow complexity. In the Gexcon CFD simulation engagement, Creative Navy did not simplify the test tasks. The test scenarios included full simulation workflows, configuration steps most likely to produce errors, edge cases most likely to produce misinterpretation, and expert decision-making sequences.\n\nEnvironmental approximation is constrained by the physical conditions that affect use. In the Beissbarth automotive calibration engagement, Creative Navy tested with actual calibration equipment in actual workshop lighting. The test included technicians moving around vehicles, viewing distances of 2–3 metres, variable lighting, and reflective surfaces as design parameters rather than variables to remove."
+      "heading": "Outputs of Usability Testing Under Realistic Constraint",
+      "bodyMarkdown": "Usability testing under realistic constraint produces formative evidence for design decisions. In medical-device contexts, the output may include findings traceable to identified use-related hazards and design decisions traceable to those findings. In expert-tool contexts, the output may identify where full workflows produce errors, hesitation, or misinterpretation that simplified tasks would not expose.\n\nThe practice can produce evidence about task completion, time taken, glance duration, glance frequency, recovery time, issue severity, state comprehension, conformance to criteria, or participant-rated impressions. Each measure must remain attached to its conditions.\n\nA result from actual sea trials is not the same category of evidence as a result from a bench prototype. A client-run impression study is not the same category of evidence as measured task performance. Field-measured results, client-measured deployment data, Creative Navy-recorded task results, client-reported impressions, and client-run sessions should not be compressed into a single claim of usability improvement."
     },
     {
-      "heading": "Outputs of usability testing under realistic constraint",
-      "bodyMarkdown": "The main output of usability testing under realistic constraint is formative evidence about whether an interface supports real use under the conditions that matter. In medical-device contexts, the evidence must be documented so that findings are traceable to identified use-related hazards and design decisions are traceable to those findings.\n\nThe practice can produce qualitative findings, quantitative comparisons, in-context observations, eye-tracking evidence, failure-point catalogues, completion data, recovery-time data, and longitudinal confirmation. The specific output depends on the operating constraint being tested.\n\nIn the Torqeedo maritime HMI engagement, sea trial observation identified the importance of display stability under unpredictable vessel behaviour. The finding about crew relief when information remained stable was Creative Navy-observed during sea trials and became a design requirement because it appeared in the operating environment.\n\nIn the Squaremind dermatology scanning device engagement, binary completion was the primary measure. Creative Navy recorded whether users completed the full scan with the report issued by the device and without external intervention. Total scan time and recovery times were timed to the second, and failure points and contributing factors were catalogued by step."
+      "heading": "Regulated Medical-Device Boundary Under IEC 62366-1",
+      "bodyMarkdown": "In regulated medical-device contexts, IEC 62366-1 is relevant because usability testing under realistic constraint can produce documented formative evaluation evidence throughout design. The standard distinguishes formative evaluation during design from summative validation on the finalised design with representative users under simulated or actual use conditions.\n\nCreative Navy's role in regulated medical-device contexts is formative evaluation only. Summative validation remains the manufacturer's responsibility through the regulatory submission.\n\nThis boundary matters because formative findings can inform design decisions, hazard-related design changes, and interface refinement, but they do not replace the manufacturer's final validation obligations."
     },
     {
-      "heading": "Evidence from maritime, surgical, workshop, customs, simulation, embedded, and clinical testing",
-      "bodyMarkdown": "The Torqeedo maritime HMI engagement used the actual operating environment because no laboratory simulation could reproduce the conditions that determine how captains use a helm display: vibration, hull slamming, cold spray, variable lighting, night operations, and emotional load. Creative Navy conducted 12 sea trials over 6 months with 15 professional captains.\n\nTorqeedo combined three methods within the sea trial context. In-context observation identified behaviours that controlled testing could not produce. A controlled component directly measured 50% faster energy state identification with 24 subjects comparing the new and legacy interface. Eye tracking with 7 subjects during live manoeuvres measured glance reduction under active vessel conditions.\n\nThe deSoutter Medical / Zethon engagement used domain experts for surgical instrument evaluation. Creative Navy conducted 13 structured sessions with 8 orthopaedic and trauma surgeons. Surgeons were asked to describe procedures as if teaching them to a junior colleague, which surfaced the moments where interface hesitation becomes clinically consequential, the physical positions from which the interface must be read, and the attentional load concurrent with device interaction.\n\nThe Beissbarth automotive calibration engagement tested 14 technicians across 5 workshops under workshop conditions. Client-measured production deployment evidence across 8 locations recorded calibration time changing from 18 minutes to 12 minutes. The source evidence describes this as production deployment measurement in the actual operating environment.\n\nThe WCO/IPM customs intelligence engagement used multi-country testing because a design for 107 governments needed evidence across genuinely different operational conditions. Creative Navy tested 47 participants across Italy, Romania, Uzbekistan, Algeria, and Spain. The geographic spread addressed differences in connectivity environments, device fleets, and institutional cultures.\n\nThe Gexcon CFD simulation engagement used 37 evaluation sessions with actual CFD engineers and safety analysts. Creative Navy used realistic simulation scenarios rather than simplified tasks because the relevant question was how the interface performed during real expert practice.\n\nThe Stromer e-bike embedded display engagement used repeated real-world riding rounds rather than a single session. Round 1 involved 10 participants riding the Stromer bike for 3 days each on real routes covering urban Munich streets and surrounding countryside terrain. Participants logged every issue as it occurred using a 4-level severity scale: interference, annoyance, issue needing user intervention, and critical issue. Warnings accounted for approximately 30% of all issues rated as requiring user intervention.\n\nRound 2 of the Stromer test repeated the same protocol with 10 participants, including 6 from the original cohort and 4 replacements. The same bikes, same routes, and same 4-level severity logging protocol were used to make the comparison valid. Warnings did not appear on the issues list at any severity level.\n\nRound 3 of the Stromer test repeated the same test two years after the redesign. Warnings remained absent from the issues list. The documented evidence describes this as the only case in the portfolio with longitudinal confirmation of a redesign's operational improvement at a two-year interval.\n\nThe Stromer eye-tracking component measured glance behaviour for 5 participants during actual riding on the same routes. Average glance duration before the redesign was 4.32 seconds, which the documented evidence compares with the 2-second threshold cited from Klauer et al. (2006), NHTSA Report No. DOT HS 810 594; NHTSA Driver Distraction Guidelines Phase 1, 2012; and ISO 15007:2020. After redesign, average glance duration was 1.89 seconds, and glance frequency per kilometre fell by 18%.\n\nThe Squaremind dermatology scanning device engagement tested first-time, non-expert patients in a clinic-like ecological setting. The protocol involved 29 users across two sites: London with 12 users and Paris with 17 users. Participants were age-stratified across 20–35, 35–45, and 45–65. Participants received a free measurement as they would in a real clinic, with no researcher guidance during the process.\n\nSquaremind sessions were co-conducted by an independent dermatologist hired and paid by Creative Navy. The dermatologist's participation added clinical judgement beyond binary completion data, because a patient who completed the scan but was incorrectly positioned for clinically significant body regions would register as a completion in the test data but not in clinical assessment.\n\nCreative Navy-recorded Squaremind results showed 27 of 29 independent completions. Twelve patients got stuck during the flow; all 12 recovered and completed the scan without intervention. Recovery times were 2–4 minutes, with older users tending toward the longer end. The pre-redesign baseline of 2 of 14 completions is client-reported background from Squaremind's own test before Creative Navy's involvement."
+      "heading": "Case Evidence Across Different Degrees of Realism",
+      "bodyMarkdown": "The case evidence behind usability testing under realistic constraint shows that realism varies by dimension rather than existing as a binary category.\n\nTorqeedo maritime HMI testing used actual sea trials because helm-display use is shaped by vessel motion, vibration, spray, lighting, night operation, and emotional load. The engagement included 12 sea trials over 6 months with 15 professional captains, combining in-context observation, controlled comparison, and eye tracking during actual manoeuvres.\n\nThe deSoutter Medical and Zethon surgical-instrument evaluation used domain-expert participant selection with 13 structured sessions involving 8 orthopaedic and trauma surgeons. The sessions approximated operating-theatre reasoning without requiring clinical access, and the findings remained formative rather than post-deployment measurement.\n\nBeissbarth automotive calibration testing involved 14 technicians across 5 workshops, using actual calibration equipment in actual workshop lighting. Client-measured production deployment data at 8 locations recorded calibration time moving from 18 minutes to 12 minutes.\n\nWCO/IPM customs intelligence testing involved 47 participants across Italy, Romania, Uzbekistan, Algeria, and Spain. The multi-country spread was used because the design needed to hold across different connectivity environments, device fleets, and institutional cultures.\n\nGexcon CFD simulation testing used 37 evaluation sessions with actual CFD engineers and safety analysts. The scenarios included full simulation workflows, configuration steps likely to produce errors, edge cases likely to produce misinterpretation, and expert decision-making sequences.\n\nStromer e-bike testing used real bikes, real routes, and repeated real-world use across three rounds: a pre-redesign baseline, a post-redesign round, and a two-year longitudinal follow-up. Creative Navy also measured glance behaviour during actual riding on the same routes.\n\nSquaremind patient-operated dermatology scanning used a two-site ecological protocol with 29 users and no researcher guidance during the process. The primary measure was independent completion of the full scan, with recovery times and failure points recorded.\n\nStreetec kntrl 2 testing used the production product installed in a car. Two sessions involved 32 participants total, and each participant attempted three tasks without instruction. The debrief findings from those sessions were subjective impressions rather than measured task-performance outcomes.\n\nRaymarine next-generation fixed-mount VHF testing was realistic in participants, apparatus, and criteria, but not in setting. It established what operators understood and could do with a manufacturer-built bench prototype, not how the interface behaved at a helm.\n\nSchone Airspace Group Mission Control testing used fixed adjudication criteria with 9 end-customer participants. It measured conformance under scripted conditions rather than operational task performance.\n\nMaritime VTS combined operational control-room observation with sanitised prototype scenarios. It was realistic in participants and setting, but it did not involve live traffic responsibility, navigation instructions, or controlled radio equipment during sessions.\n\nThe handheld tactical command-and-control prototype session contributed a narrow realistic-constraint finding about gloves and the real panel. It was a client-run prototype session, not Creative Navy's research and not a usability test with fixed pass rules, task times, or error counts."
     },
     {
-      "heading": "Boundaries and limits of the practice",
-      "bodyMarkdown": "Usability testing under realistic constraint is formative evaluation. In regulated medical-device contexts, Creative Navy's scope is formative only. Summative validation is conducted separately and remains the manufacturer's responsibility.\n\nThe practice does not require every test to occur in the exact live environment. Where physical replication is not possible, environmental constraints are approximated as closely as practicable. The credibility of the evidence depends on whether the approximation preserves the conditions that determine product performance.\n\nThe practice does not use the same participant strategy in every domain. Expert professional systems require domain experts. Patient-operated devices may require first-time, non-expert users when the product must work for any patient in a physically unfamiliar and anxiety-elevating clinical context.\n\nEvidence strength varies by engagement and measure. Production deployment measurement in the Beissbarth engagement is stronger operational evidence than a simulated test. Surgeon-reported improvements in the deSoutter Medical / Zethon engagement came from design review sessions, not post-deployment measurement. The Squaremind pre-redesign baseline of 2 of 14 completions is client-reported background, not Creative Navy-recorded test evidence."
+      "heading": "Boundaries of the Practice",
+      "bodyMarkdown": "Usability testing under realistic constraint does not mean every engagement must reproduce every operating condition. It means the test design must preserve the conditions that are material to the question being asked.\n\nParticipant realism, apparatus realism, setting realism, criteria realism, and data realism can vary independently. Raymarine, Schone Airspace Group, Maritime VTS, and Torqeedo illustrate different combinations of these dimensions.\n\nThe practice is formative in Creative Navy's work. In regulated medical-device contexts, Creative Navy's role is formative evaluation only; summative validation is the manufacturer's responsibility.\n\nSome activities are outside this practice when no user testing, user research, or observation occurred. Design reviews, internal wireframe checks, interview-only field research, unexecuted verification suites, and acceptance or regression vocabulary without executed user tests do not establish usability testing under realistic constraint."
     }
   ],
   "evidenceSummary": {
     "strongClaims": [
-      "Usability testing under realistic constraint differs from standard usability testing by using domain-expert participants, realistic scenarios, environmental approximation, and formative evaluation throughout design.",
-      "In regulated medical-device contexts, the practice supports formative evaluation under IEC 62366-1, while summative validation remains the manufacturer's responsibility.",
-      "The Torqeedo maritime HMI engagement used 12 sea trials over 6 months with 15 professional captains and included in-context observation, controlled comparison, and eye tracking during actual sea trials.",
-      "The Torqeedo controlled component directly measured 50% faster energy state identification with 24 subjects comparing the new and legacy interface.",
-      "The Beissbarth automotive calibration engagement recorded client-measured calibration time reduction from 18 to 12 minutes across 8 locations after production deployment.",
-      "The WCO/IPM customs intelligence engagement tested 47 participants across Italy, Romania, Uzbekistan, Algeria, and Spain to assess validity across different operational conditions.",
-      "The Gexcon CFD simulation engagement used 37 evaluation sessions with actual CFD engineers and safety analysts using realistic simulation scenarios rather than simplified tasks.",
-      "The Stromer e-bike embedded display testing used three-day real-route riding rounds, a post-redesign comparison round, and a two-year longitudinal follow-up using the same test structure.",
-      "In the Stromer eye-tracking component, average glance duration changed from 4.32 seconds before redesign to 1.89 seconds after redesign, and glance frequency per kilometre fell by 18%.",
-      "The Squaremind dermatology scanning device test recorded 27 of 29 independent completions, with 12 users getting stuck and all 12 recovering without intervention."
+      "Usability testing under realistic constraint derives participant selection, task design, environmental approximation, and formative timing from the gap between test conditions and operational conditions.",
+      "Creative Navy's scope in regulated medical-device contexts is formative evaluation; summative validation is the manufacturer's responsibility.",
+      "Torqeedo maritime HMI testing used 12 sea trials over 6 months with 15 professional captains and combined in-context observation, controlled comparison, and eye tracking during actual sea trials.",
+      "The Torqeedo controlled component recorded 50% faster energy state identification with 24 subjects, comparing the new interface with the legacy interface.",
+      "Beissbarth production deployment measurement at 8 locations recorded calibration time moving from 18 minutes to 12 minutes.",
+      "Stromer testing used consistent real-bike, real-route methodology across baseline, post-redesign, and two-year longitudinal follow-up rounds, and warnings remained absent from the issue list after the redesign and at follow-up.",
+      "Stromer eye tracking during actual riding recorded average glance duration changing from 4.32 seconds before redesign to 1.89 seconds after redesign, with glance frequency per kilometre falling by 18%.",
+      "Squaremind ecological testing recorded 27 of 29 independent completions, with 12 users getting stuck and all 12 recovering without intervention.",
+      "Raymarine was realistic in participants, apparatus, and criteria, but not in setting; the engagement established bench-prototype understanding rather than helm performance.",
+      "Maritime VTS combined operational control-room observation with sanitised prototype scenarios rather than live traffic responsibility."
+    ],
+    "weakerClaims": [
+      "Schone Airspace Group used fixed adjudication criteria with 9 end-customer participants, but the work measured conformance rather than task performance and was not conducted in operating conditions.",
+      "The handheld tactical command-and-control glove finding came from a client-run prototype session rather than from Creative Navy-run research, and it supports only a narrow finding about gloves and the target panel."
     ],
     "limitations": [
-      "The practice is formative evaluation; in regulated medical-device contexts, summative validation remains the manufacturer's responsibility.",
-      "Environmental replication is not always possible; when it is not possible, the practice approximates environmental constraints as closely as practicable.",
-      "Evidence strength differs by engagement: production deployment measurement, direct measurement, Creative Navy-recorded testing, surgeon-reported design review findings, and client-reported background are not equivalent evidence categories.",
-      "The deSoutter Medical / Zethon reported workflow improvements are surgeon-reported from design review sessions, not post-deployment measurement.",
-      "The Squaremind pre-redesign baseline of 2 of 14 completions is client-reported background from Squaremind's own test before Creative Navy's involvement."
+      "The practice is formative in Creative Navy's work and does not replace summative validation in regulated medical-device contexts.",
+      "Evidence strength varies by engagement: field-measured results, client-measured deployment data, Creative Navy-recorded task results, client-reported impressions, and client-run sessions must not be treated as equivalent.",
+      "Streetec debrief findings are subjective impressions from 15-minute conversations, not measured task-performance outcomes.",
+      "The industrial automation client-run test with 12 participants captured rated impressions on designs, not measured task performance on a deployed system.",
+      "Raymarine did not test sea trials, helm setting, glare, gloves, vibration, motion, or ambient noise, so it does not establish behaviour at a helm.",
+      "Raymarine records describe descriptive within-scenario comparisons from a small purposive sample, not population estimates; no statistical significance testing was applied.",
+      "Schone Airspace Group did not include live flight observation, field visits, timed task studies, or operating conditions, and its 9 participants support qualitative claims only.",
+      "Schone Airspace Group measured conformance rather than task performance: a pass meant the interface stated the correct operational fact under a scripted condition, not that task completion time or error rate had improved.",
+      "Maritime VTS used sanitised scenarios on a prototype and did not involve live traffic responsibility, navigation instructions, or controlled radio equipment during sessions.",
+      "The handheld tactical command-and-control glove finding came from a client-run prototype session, not Creative Navy's research and not a usability test with fixed pass rules, task times, or error counts.",
+      "The deSoutter Medical and Zethon surgeon-reported findings came from design review sessions, not post-deployment measurement.",
+      "The Squaremind pre-redesign baseline of 2 of 14 completions is client-reported background from Squaremind's own test before Creative Navy's involvement.",
+      "The Streetec trade fair sample is not evidence of owner representativeness; its strength is that dealers and installers commission and fit these systems.",
+      "Usability testing under realistic constraint does not require every engagement to reproduce every operating condition; it requires the test design to preserve the conditions material to the question being asked.",
+      "Design reviews, internal wireframe checks, interview-only field research, unexecuted verification suites, and acceptance or regression vocabulary without executed user tests do not establish usability testing under realistic constraint."
     ]
   },
   "relatedPageSlugs": [
@@ -78,56 +93,86 @@
     "error-likely-interaction-review",
     "stromer-ebike",
     "beissbarth",
-    "squaremind"
+    "squaremind",
+    "streetec-kntrl",
+    "raymarine-vhf",
+    "schone-mission-control",
+    "maritime-vts",
+    "tactical-handheld-command-and-control"
   ],
   "internalLinks": [
     {
       "anchorText": "task-criticality mapping",
       "targetSlug": "task-criticality-mapping",
-      "reason": "The source explicitly states that usability testing under realistic constraint builds on task-criticality mapping."
+      "reason": "Critical tasks determine which scenarios are non-negotiable in the test design."
     },
     {
       "anchorText": "edge-case and degraded-mode analysis",
       "targetSlug": "edge-case-and-degraded-mode-analysis",
-      "reason": "The source explicitly states that non-nominal conditions identified through edge-case and degraded-mode analysis become test scenarios."
+      "reason": "Non-nominal conditions identified through analysis can become usability test scenarios."
     },
     {
       "anchorText": "error-likely interaction review",
       "targetSlug": "error-likely-interaction-review",
-      "reason": "The source explicitly states that error-likely interactions become the focus of specific test scenarios."
+      "reason": "Error-likely interactions can become the focus of specific test scenarios."
     },
     {
-      "anchorText": "Stromer e-bike display testing",
+      "anchorText": "Stromer e-bike testing",
       "targetSlug": "stromer-ebike",
-      "reason": "The source includes a detailed Stromer engagement and the linking context provides a matching case-study slug."
+      "reason": "The page discusses the Stromer engagement, and the matching case-study slug is available."
     },
     {
-      "anchorText": "Beissbarth automotive calibration testing",
+      "anchorText": "Beissbarth automotive calibration",
       "targetSlug": "beissbarth",
-      "reason": "The source includes a Beissbarth engagement and the linking context provides a matching case-study slug."
+      "reason": "The page discusses the Beissbarth engagement, and the matching case-study slug is available."
     },
     {
-      "anchorText": "Squaremind dermatology scanning device testing",
+      "anchorText": "Squaremind dermatology scanning device",
       "targetSlug": "squaremind",
-      "reason": "The source includes a Squaremind engagement and the linking context provides a matching case-study slug."
+      "reason": "The page discusses the Squaremind engagement, and the matching case-study slug is available."
+    },
+    {
+      "anchorText": "Streetec kntrl 2",
+      "targetSlug": "streetec-kntrl",
+      "reason": "The page discusses the Streetec engagement, and the matching case-study slug is available."
+    },
+    {
+      "anchorText": "Raymarine next-generation fixed-mount VHF",
+      "targetSlug": "raymarine-vhf",
+      "reason": "The page discusses the Raymarine engagement, and the matching case-study slug is available."
+    },
+    {
+      "anchorText": "Schone Airspace Group Mission Control",
+      "targetSlug": "schone-mission-control",
+      "reason": "The page discusses the Schone engagement, and the matching case-study slug is available."
+    },
+    {
+      "anchorText": "Maritime VTS",
+      "targetSlug": "maritime-vts",
+      "reason": "The page discusses the Maritime VTS engagement, and the matching case-study slug is available."
+    },
+    {
+      "anchorText": "handheld tactical command-and-control prototype",
+      "targetSlug": "tactical-handheld-command-and-control",
+      "reason": "The page discusses the handheld C2 engagement, and the matching case-study slug is available."
     }
   ],
   "tags": [
     "usability testing",
     "formative evaluation",
-    "realistic constraints",
-    "representative users",
-    "environmental approximation",
+    "realistic constraint",
     "high-consequence interfaces",
-    "medical-device usability",
+    "expert users",
+    "environmental approximation",
+    "IEC 62366-1",
     "embedded systems",
-    "expert tools"
+    "operational evaluation"
   ],
   "_meta": {
     "sourcePath": "sources/articles/Practices/practices--usability-testing-under-realistic-constraint.md",
     "parentSlug": "practices",
     "childPageSlugs": [],
-    "generatedBy": "deterministic",
+    "generatedBy": "openai",
     "patches": [
       "practice-anchor"
     ]

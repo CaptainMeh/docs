@@ -1,74 +1,62 @@
 {
   "slug": "state-and-status-visibility-design",
-  "title": "State And Status Visibility Design",
+  "title": "State and Status Visibility Design",
   "pageType": "capability",
   "category": "capabilities",
   "section": "Capabilities",
-  "summary": "State and status visibility design concerns how interfaces communicate current operational state, abnormal conditions, mode changes, and state transitions. The documented evidence emphasises state hierarchy, glance readability, spatial consistency, state aggregation, process mimics, and calibrated alert behaviour.",
+  "summary": "State and status visibility design is the capability of making operational state legible without forcing users to infer it from symptoms, scattered indicators, raw alarms, or ambiguous values. The documented evidence spans maritime, medical, industrial, residential energy, space, command, radio, and traffic-monitoring interfaces, with different evidence strength for each engagement.",
   "keyFacts": [
-    "State visibility is the degree to which users can understand what the system is doing without active interpretation.",
-    "Glance readability depends on state communication that works under brief or partial attention.",
-    "Recognition over recall is treated as a safety standard in high-consequence contexts, not only a usability preference.",
-    "Process mimics show state on a representation of the physical process, placing state where the equipment is rather than in a separate list.",
-    "State hierarchy separates primary state, secondary state, and tertiary state so that urgent information remains visible without flooding the interface.",
-    "Torqeedo evidence records 50% faster energy state identification in a controlled environment experiment with 24 subjects.",
-    "Torqeedo sea trials recorded glance reduction during manoeuvres through eye tracking with 7 subjects.",
-    "Kardion evidence records an absolute layout-stability standard: no element shifts position across any view transition.",
-    "Gericke evidence records client-measured fault-diagnosis time reductions from 24 to 8, 38 to 12, and 68 to 20 minutes across three sites.",
-    "deSoutter Medical / Zethon evidence records redundant non-colour cues because colour-only state indication was unreliable under operating-theatre lighting conditions."
+    "State visibility concerns what the machine is doing; information state concerns what is known about a reading and how well it is known.",
+    "Core mechanisms include state hierarchy, state aggregation, layout stability, recognition over recall, process mimics, sensor-cadence synchronisation, redundant non-colour cues, and explicit status taxonomies.",
+    "In the Torqeedo maritime HMI engagement, energy state identification was 50% faster in a controlled environment experiment with 24 subjects; glance reduction during manoeuvres was measured by eye tracking with 7 subjects during sea trials.",
+    "In the Gericke industrial HMI engagement, client-measured fault-diagnosis time fell by roughly two-thirds at three sites, and repeat alarms more than halved within a confirmed single-variable window.",
+    "In the Kardion MCS Controller engagement, the layout stability standard required no element to shift position across any view transition; the submitted design passed FDA evaluation with no design changes required.",
+    "The deSoutter Medical / Zethon engagement used redundant spatial, icon, and colour cues because colour alone was unreliable under operating theatre conditions; 8 surgeons reported brief-glance recognition in structured review sessions.",
+    "KISPE Space concerns information state, not device or process state, and remained a specification reasoned from a synthetic fixture without executed validation.",
+    "Schone Airspace Group Mission Control adds transaction state: the condition of an instruction in flight between request and observed result.",
+    "Raymarine adds the requested-versus-effective distinction, where the operative value remains visible when a requested value is blocked or superseded by protocol behaviour.",
+    "The maritime traffic software portfolio adds evidence state, including source, observation time, receipt time, association status, and the refusal to display an uncalibrated confidence score."
   ],
   "bodySections": [
     {
-      "heading": "Summary",
-      "bodyMarkdown": "Creative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nState-and-status visibility design makes operational state recognisable without forcing users to reconstruct meaning from scattered signals. It covers system state, operational state, device state, abnormal state, mode indicators, state transitions, and the visual hierarchy that determines which state is always visible and which state is available only in context.\n\nThe capability is needed when users must maintain ambient awareness under divided attention. In the documented work, that includes maritime energy systems, multi-engine vessel displays, clinical controllers, operating-theatre devices, building-control systems, workforce schedulers, and industrial HMIs."
+      "heading": "Definition and Scope of State and Status Visibility Design",
+      "bodyMarkdown": "Creative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nState and status visibility design is the design of interface structures that make the current condition of a system, process, device, transaction, command, datum, or evidence relationship understandable at the point of action, with the status class and evidence basis kept explicit.\n\nState visibility is not the same as showing more data. A display can expose many symptoms while still failing to communicate the state that produced them. Creative Navy distinguishes state visibility, which concerns what the machine is doing, from information state, which concerns what is known about a reading and how well it is known.\n\nState visibility also includes transition behaviour. A state indicator must communicate the current state, the change from one state to another, and the evidence that supports the displayed state. Mode changes, command transitions, sensor-cadence differences, and asynchronous work create state-visibility risk when an interface visually replaces a confirmed state with a requested or inferred one."
     },
     {
-      "heading": "When state and status visibility is needed",
-      "bodyMarkdown": "State and status visibility is needed when a user's next action depends on understanding the current condition of a system. The relevant state may be a vessel's energy capacity, a device's operational status, a process blockage, a sensor fault, a scheduling exception, or a normal temporary deviation that should not be treated as a fault.\n\nThe recurring failure pattern is symptom-versus-state communication. An interface may expose alarms, raw error codes, changing values, and scattered parameters, while still failing to explain the state that produced them. In the Gericke industrial HMI work, the legacy Easydos Pro interface exposed symptoms through alarm lists, raw error codes, and scattered parameters, but did not show operators whether the process was healthy. Under ambiguity, operators stopped or overrode healthy equipment precautionarily.\n\nState and status visibility is also needed at mode changes and state transitions. A mode change is a high-risk moment because the system's operating logic changes while the user may still be acting on the previous state. State transition behaviour is therefore part of the design problem, not only an animation or display detail."
+      "heading": "Core Vocabulary for State and Status Visibility",
+      "bodyMarkdown": "Creative Navy uses state and status visibility vocabulary to keep different visibility problems separate.\n\nSystem state, operational state, and device state refer to the current condition of the system as relevant to the user's next action. State visibility is the degree to which users can understand what the system is doing without active interpretation.\n\nGlance readability and peripheral attention describe state communication that remains usable under brief, partial attention. Recognition over recall means that the user recognises the state from visual pattern rather than remembering what an indicator means.\n\nA process mimic is a representation of the physical process on which state is shown where the equipment is. Symptom-versus-state communication distinguishes an interface that exposes symptoms from one that explains the state that produced them.\n\nSpatial consistency and layout stability mean that state indicators do not shift position across view transitions. State hierarchy organises state information by importance. State aggregation combines multiple component states into a coherent system state display.\n\nSensor cadence is the update interval of a data source. A mode change is a transition between operational modes. A state transition is the interface behaviour that occurs when the system moves from one state to another."
     },
     {
-      "heading": "What state and status visibility design does",
-      "bodyMarkdown": "State and status visibility design establishes a hierarchy of primary, secondary, and tertiary state. Primary state is always visible and highest priority. Secondary state is visible in context. Tertiary state is accessible but not intrusive. This hierarchy prevents the interface from treating telemetry, alarms, normal deviations, and urgent faults as equal information.\n\nCreative Navy's state-and-status visibility design uses recognition over recall where the operating context requires rapid interpretation. Recognition over recall means that users recognise the state from a visual pattern rather than remembering the meaning of an indicator. In high-consequence contexts described in the evidence, this is treated as a safety requirement rather than a preference for ease of use.\n\nThe capability also uses layout stability and spatial consistency. Spatial memory supports glance readability only when indicators remain in stable positions across view transitions. In the Kardion MCS Controller work, the layout stability standard required that no element shift position across any view transition. The clinical rationale was that surgeons rely on the spatial memory of critical state indicators during rapid response.\n\nState aggregation is used when several components must be read as one operational state. In the Torqeedo maritime HMI, propulsion motors, battery banks, generators, auxiliary loads, and conversion units each had their own state and update cadence. The design problem was not only to show component readings, but to answer the captain's question about vessel energy: how much energy remains, how it is being consumed, and what capacity remains.\n\nProcess-state communication is used when the physical process itself is the most reliable structure for recognition. In the Gericke industrial HMI work, the process mimic showed the twin-vessel conveying schematic, feeders, and flow paths, with failed components highlighted directly on the diagram. State was read from the picture of the plant rather than reconstructed from a separate alarm list."
+      "heading": "When State and Status Visibility Design Is Needed",
+      "bodyMarkdown": "Creative Navy's state and status visibility design is needed when users must act from partial attention, under time pressure, across multiple components, or with incomplete evidence. Documented contexts include captains managing hybrid-electric vessel energy, surgeons monitoring clinical device state, operators diagnosing conveying faults, schedulers monitoring live workforce interventions, and traffic operators distinguishing current observations from retained last-known positions.\n\nThe capability is also needed when the interface contains more than one true value. Streetec kntrl 2 had to decide when to show legally required bar pressure and when to show percentage height. Raymarine had to distinguish requested transmit power from effective transmit power. The MDU ship motion monitor had to decide whether a vessel illustration should show the rolling average or the instantaneous angle.\n\nState visibility is especially important when the condition is not a simple device state. KISPE Space concerns information state. Schone Airspace Group Mission Control concerns transaction state. Raymarine concerns protocol transaction state and requested-versus-effective values. The handheld command-and-control engagement concerns commitment state. The maritime traffic software portfolio concerns evidence state."
     },
     {
-      "heading": "Design mechanisms used for visible state",
-      "bodyMarkdown": "State hierarchy is the main organising mechanism. In the Torqeedo maritime HMI, primary state covered vessel energy state and range, secondary state covered component-level breakdown on demand, and tertiary state covered full telemetry that was accessible but not surfaced by default. This allowed captains to maintain ambient awareness without monitoring every component.\n\nSpatial consistency is the main mechanism for glance readability. In the Kardion MCS Controller work, the standard view was shaped by a rule that no element could shift position across view transitions. Thirty-four directions of exploration for the standard view were evaluated against this constraint, and candidates were eliminated if an element's position changed across transitions.\n\nRedundant state cues are used where a single signal channel may fail. In the deSoutter Medical / Zethon work, colour alone was not considered reliable under variable operating-theatre lighting. Critical state was communicated through spatial position, icon form, and colour together, so that the failure of one channel did not remove the signal.\n\nA process mimic is used where state should be shown where the equipment is. In the Gericke industrial HMI work, abnormal state was placed directly on the conveying schematic. A conveying blockage example highlighted “Valve V12 failed to reach open position — probable root cause of 6 active alarms” on the process path, rather than presenting a flat alarm list.\n\nSensor cadence synchronisation is used where data sources update at different rates. In the Torqeedo maritime HMI, different systems updated at different intervals, which could otherwise make the display read as unstable. A grid structure synchronised competing update cadences into a unified display rhythm so captains perceived one coherent system rather than competing data streams."
+      "heading": "How Creative Navy Structures State Visibility",
+      "bodyMarkdown": "Creative Navy's state visibility work turns ambiguous indicators into explicit state structures. The design work defines what state exists, which state is authoritative, how state changes, what evidence supports it, and where the state should appear in the interface.\n\nState hierarchy is one recurring mechanism. In the Torqeedo maritime HMI engagement, the hierarchy placed vessel energy state and range as primary state, component-level breakdown as secondary state, and full telemetry as tertiary state. In the Triopsis workforce management engagement, jobs requiring immediate action, jobs requiring monitoring, and normal jobs were visually separated by operational criticality.\n\nState aggregation is another mechanism. The Torqeedo maritime HMI engagement had to combine propulsion motors, battery banks, generators, auxiliary loads, and conversion units into a single readable vessel energy state.\n\nLayout stability preserves spatial memory. In the Kardion MCS Controller engagement, the design standard required critical elements to remain in fixed positions across view transitions. Recognition over recall supports high-consequence and divided-attention environments where users cannot pause to interpret each indicator.\n\nStatus taxonomies make state explicit when colour or position alone would overload one indicator. In the industrial automation engagement, one accent colour carried six meanings: brand, primary action, selected row, active filter, current location, and error. The design response was a seven-state status taxonomy: ready, warning, processing, done, error, transport, and end-of-life."
     },
     {
-      "heading": "Torqeedo maritime HMI evidence for state aggregation",
-      "bodyMarkdown": "The Torqeedo maritime HMI evidence is the strongest measured example of state aggregation in the documented capability set. The system combined propulsion motors, battery banks from 40 to 200 kWh, generators, auxiliary loads, and conversion units, each with its own state and update cadence.\n\nThe design response aggregated these component states into a coherent vessel energy state. Captains did not need to interpret separate systems as independent streams; the interface presented energy state, consumption, remaining capacity, and range as a coherent operational view.\n\nAvailable Torqeedo evidence records 50% faster energy state identification in a controlled environment experiment with 24 subjects. Available Torqeedo evidence also records glance reduction during manoeuvres in actual sea trials, measured through eye tracking with 7 subjects. Participant-reported structured feedback records that all 15 professional captains rated the new interface as significantly better."
+      "heading": "Device and Process State in Maritime, Medical, and Industrial Interfaces",
+      "bodyMarkdown": "Creative Navy's device and process state work appears in maritime, medical, and industrial interfaces where users need the system state without reconstructing it from scattered symptoms.\n\nThe Torqeedo maritime HMI engagement used state aggregation for a hybrid-electric vessel. The interface combined propulsion motors, battery banks, generators, auxiliary loads, and conversion units into a unified energy state view. The documented design problem was not the state of each component in isolation, but the captain's operational question about available energy, consumption, and remaining capacity.\n\nThe COX Marine cluster display engagement addressed state coherence across configurations. The interface had to support 1 to 6 engines across different vessel types. The engine tile became the invariant unit: one tile per engine, with the same spatial arrangement of state information within each tile regardless of configuration.\n\nThe Kardion MCS Controller engagement treated layout stability as a clinical state standard. The clinical rationale was that surgeons build spatial memory for critical indicators during a procedure and need the blood flow value to remain in the same position when rapid response is required.\n\nThe Gericke industrial HMI engagement shows the difference between symptom display and state display. The legacy Easydos Pro interface exposed alarm lists, raw error codes, and scattered parameters. The redesigned process mimic showed the physical process and highlighted failed components directly on the diagram."
     },
     {
-      "heading": "Cox Marine evidence for multi-engine state coherence",
-      "bodyMarkdown": "The Cox Marine cluster display work addressed state coherence across configurations from 1 engine to 6 engines. The state communication problem was that a single-engine display and a six-engine display had to share a coherent mental model so captains could read both without relearning the interface.\n\nThe engine tile became the invariant unit. Each engine had one tile, and state information kept a consistent spatial arrangement inside each tile regardless of configuration. A six-engine vessel displayed six tiles; a single-engine vessel displayed one tile. The state-reading logic did not change.\n\nMulti-engine fault scenario testing during Concept Convergence showed that some layout candidates made fault presence visible at tile level but did not direct attention to the priority engine in a multi-engine fault condition. The design therefore included a fault-summary area that surfaced the highest-priority fault across all tiles, allowing captains to identify the priority fault without scanning every tile individually.\n\nThe Cox Marine work also included a military night vision mode. The constraint was absolute: all state communication had to remain legible under night vision goggles, within luminance and contrast ranges that removed most standard interface choices."
+      "heading": "State Visibility Under Divided Attention and Ordinary Consumer Use",
+      "bodyMarkdown": "Creative Navy's state visibility work also applies when users are not continuously reading the interface.\n\nThe deSoutter Medical / Zethon engagement treated the operating theatre as a state visibility stress test. The interface had to work under variable overhead lighting, gloved hands, divided attention, and primary focus on the surgical field. The design response used redundant non-colour cues: spatial position, icon form, and colour together.\n\nThe Elsner Elektronik engagement addressed multi-zone and fault state for non-technical users across 54 countries. A single controller managed heating, cooling, lighting, and blinds across multiple rooms, so state needed to be visible without navigation between views. Sensor fault communication was calibrated so a non-technical occupant could understand that something was wrong and that an engineer should be called.\n\nThe AIT heat pump controller engagement used explicit widget status on a knob-driven display. The documented widget states included in focus, mode active, and mode queued. The start-up self-test screen reported detected internal boards, inverters, and fans."
     },
     {
-      "heading": "Kardion evidence for layout stability as a clinical state standard",
-      "bodyMarkdown": "The Kardion MCS Controller work treated layout stability as a clinical state visibility requirement. The rule was more specific than the IEC 62366-1 consistency requirement recorded in the evidence: no element shifts position across any view transition.\n\nThe clinical rationale was that surgeons build spatial memory for critical state indicators during a procedure. If the blood flow value moves between views, spatial memory fails and active search begins. The standard view was therefore built around a spatial and visual hierarchy rather than tabbed sections.\n\nThe Kardion state hierarchy separated primary, secondary, and tertiary state. Primary state included device operational status and the min/max flow visualisation that the standard view was built around. Secondary state included parameter detail accessible from the standard view. Tertiary state included alarm history and configuration.\n\nThe recorded regulatory outcome is FDA approval: the design passed evaluation as submitted, with no design changes required. The documented evidence states that the state hierarchy and layout stability contributed to the regulatory review satisfying identified use-related hazards related to misinterpretation of device state. This is a verifiable regulatory result, not a measured usability outcome.\n\nFor regulated medical-device work, Creative Navy's role is formative evaluation only; summative validation is the manufacturer's responsibility via the regulatory submission."
+      "heading": "Selecting Which Value Represents the State",
+      "bodyMarkdown": "Creative Navy's state visibility work sometimes concerns which true value should represent the state, not whether a value is available.\n\nThe Streetec kntrl 2 engagement had two true values: German law required bar pressure at all times, while a customer who had paid for height sensors wanted percentage. The resolved display changed with the user's task: percentage where height-setting mattered, bar where legal pressure visibility or regulation state mattered, and both where the user was working toward a specific height at a specific pressure.\n\nThe MDU ship motion monitor is a concentrated state-visibility example because the whole product concerns state visibility. The vessel illustration rotates on the 20-minute rolling average for trim and list, not on the instantaneous angle. Creative Navy recorded the cost of that choice: under an alarm, the vessel image will not look like a dangerous situation because it is showing the average. The live value is carried by arrows instead.\n\nThe MDU design reasoning tied the alarm to the rolling maximum and minimum, giving the alarm a precise meaning: at some point in the last twenty minutes, the vessel was outside its limits."
     },
     {
-      "heading": "deSoutter Medical / Zethon evidence for recognition under operating-theatre conditions",
-      "bodyMarkdown": "The deSoutter Medical / Zethon work treated the operating theatre as a stress test for state visibility. The relevant conditions included variable overhead lighting, gloved hands, divided attention, and primary focus on the surgical field.\n\nCompetitive benchmarking found that 6 of 8 benchmarked competitors relied primarily on colour as the state indicator. The documented failure mode was that colour coding became unreliable when surgical headlights were repositioned, overhead field illumination changed, or theatre setups differed.\n\nThe design response used redundant non-colour cues. Every critical state was communicated through spatial position, icon form, and colour together. The recognition standard was that a surgeon should be able to confirm the operating state without reading, without recalling an indicator meaning, and without taking attention from the patient for more than a brief glance.\n\nEight surgeons in structured review sessions confirmed that state verification was reduced to brief glance recognition. This evidence is surgeon-reported from design review sessions and is not post-deployment measurement."
+      "heading": "Information, Transaction, Protocol, Commitment, and Evidence State",
+      "bodyMarkdown": "Creative Navy keeps information state, transaction state, protocol transaction state, commitment state, and evidence state separate because each state class answers a different operational question.\n\nKISPE Space concerns information state: what is known about a reading and how well it is known. Status was specified as seven independent dimensions rather than one green-to-red health score: source transport, asset access, asset delivery, freshness, origin, operational condition where source semantics support that classification, and local change state.\n\nSchone Airspace Group Mission Control adds transaction state: the condition of an instruction in flight. The command transaction model separated request, response, acknowledgement, observed result, rejection, and unknown response conditions, with required source evidence and prohibited inference for each state.\n\nRaymarine adds protocol transaction state and the requested-versus-effective distinction. The display showed effective transmit power, not merely requested transmit power, and a blocked request left the previous value intact while explaining the channel restriction.\n\nThe handheld command-and-control engagement adds commitment state. A requested state must not visually replace a confirmed state before the vehicle reports the result. Vehicle status, mission segment, guidance mode, armament state, command state, system health, and alert priority were treated as related but not interchangeable.\n\nThe maritime traffic software portfolio adds evidence state. A track carries a source, an observation time, and a receipt time, and these may differ. The interface kept distinctions separate between vessel and track, track and observation, associated and verified, event time and receipt time, traffic alert and equipment fault, acknowledge and resolve, live and replay, and radio resource and transmission."
     },
     {
-      "heading": "Elsner Elektronik evidence for multi-zone state and non-technical fault communication",
-      "bodyMarkdown": "The Elsner Elektronik work addressed state visibility for users across 54 countries, including tech-savvy professionals and elderly consumers with limited technical background. The state communication had to function without requiring technical interpretation.\n\nThe multi-zone display challenge was that a single controller managed heating, cooling, lighting, and blinds across multiple rooms. The state of each system had to be visible without requiring navigation between views.\n\nSensor fault communication was calibrated for non-technical occupants. A user encountering a sensor fault needed to understand that something was wrong and that an engineer should be called, without needing to understand what a sensor fault meant for the broader system.\n\nThe work also used a dual-priority alert system. Routine notifications, such as a sensor outside a preferred range, were distinguished visually and behaviourally from critical notifications, such as complete sensor failure or safety-relevant state change. The hierarchy was intended to prevent alert fatigue from degrading the urgency of genuinely critical states."
+      "heading": "Object State, Disclosure, and Interrogable Warnings",
+      "bodyMarkdown": "Creative Navy's state visibility work also covers state attached to objects, progressive disclosure of production status, and warnings that can be interrogated in place.\n\nThe Assemblio engagement shows a state that existed in the data and nowhere in the interface. A synchronisation relationship between two products mattered to the user, but the interface did not show whether the assembly plan was in or out of sync. Assemblio also shows asynchronous job state attached to the object it concerns: large file uploads were represented as placeholder cards with a cancel action because files could exceed 1 GB and several could process in parallel.\n\nThe Topera concept design shows warnings designed to be interrogable in place. A warning indicator in the project table carried a tooltip naming the specific condition. Plan, actual, and forecast dates were kept structurally separate, with a plan block and a separately editable, explicitly saved actual block.\n\nEgma Order used three layers of disclosure over one production record. Eleven manufacturing steps were resolved into three headline groups: Order Processed, In Production, and Delivery. The current sub-status appeared on hover, and the full breakdown appeared on click."
     },
     {
-      "heading": "Triopsis evidence for scheduler and field-technician state hierarchy",
-      "bodyMarkdown": "The Triopsis workforce management work addressed state hierarchy for schedulers under operational pressure. Schedulers managing workforce interventions across a live fleet needed ambient awareness of fleet state without monitoring every job individually.\n\nThe scheduler view surfaced exceptions such as jobs at risk, developing conflicts, and incomplete assignments. Predictive conflict indicators made future scheduling problems visible before they became present crises. This treated an approaching conflict as a state that needed to be visible before it had fully occurred.\n\nThe state hierarchy in the scheduler view was defined by criticality. Jobs requiring immediate action included exceptions, conflicts, and overdue work. Jobs requiring monitoring included in-progress work and jobs near deadline. Jobs in normal state were backgrounded.\n\nField technicians also needed job-state visibility under outdoor conditions. The field-use state communication had to support sunlight, gloves, and brief glances, while showing the current job state and what came next."
-    },
-    {
-      "heading": "Gericke evidence for process-state communication on a live mimic",
-      "bodyMarkdown": "The Gericke industrial HMI work addressed the difference between symptoms and state. The legacy Easydos Pro interface exposed alarm lists, raw error codes, and scattered parameters, but did not show operators whether the process was healthy. Operators could therefore read ambiguous conditions as faults and stop or override healthy equipment precautionarily.\n\nThe redesigned interface used a live process mimic. The twin-vessel conveying schematic, feeders, and flow paths showed state where the equipment was located. Failed components were highlighted directly on the diagram, replacing raw error-code interpretation with process-state recognition.\n\nGericke also used a root-cause alarm hierarchy for abnormal conditions. Secondary alarms were collapsed beneath their originating event, and probable cause was indicated rather than presenting a flat list of effects. In the documented conveying-blockage example, the interface highlighted “Valve V12 failed to reach open position — probable root cause of 6 active alarms” directly on the process path.\n\nThe documented refill-cycle example shows the difference between symptom communication and state communication. A normal feeder refill cycle had previously surfaced as a cluster of alarms with no indication of which mattered. The redesigned mimic showed “Refill Cycle — temporary deviation expected — no operator action required,” so the normal state was recognisable as normal.\n\nClient-measured Gericke evidence records fault-diagnosis time falling by roughly two-thirds at every site: 24 to 8 minutes, 38 to 12 minutes, and 68 to 20 minutes. Client-measured evidence also records repeat alarms more than halving: 42% to 18%, 58% to 28%, and 73% to 35%. The evidence basis is client-measured by Gericke, not Creative Navy-measured, across three sites described by type and geography within a confirmed single-variable window.\n\nGericke is not a regulated device. It operates in GMP environments, GAMP 5 is relevant, and the validation boundary is the manufacturer's."
-    },
-    {
-      "heading": "Boundaries and limits of the evidence",
-      "bodyMarkdown": "The evidence base for state and status visibility design is mixed. Torqeedo includes directly measured controlled-environment and sea-trial evidence. Gericke includes client-measured evidence by Gericke, not Creative Navy-measured evidence. Kardion includes a recorded FDA approval outcome, but the regulatory result should not be treated as a measured usability outcome.\n\nSome evidence is structured but not deployment-measured. deSoutter Medical / Zethon evidence is surgeon-reported from design review sessions, not post-deployment measurement. Cox Marine evidence records design constraints, scenario testing, and architectural decisions, but not a quantitative outcome metric in the available capability evidence. Elsner Elektronik and Triopsis evidence describes state hierarchy and communication requirements, but does not provide quantitative outcome metrics in the available capability evidence.\n\nThe Gericke refill and valve illustrations are Creative Navy reconstructions of the redesign, not logged incidents. They are useful examples of symptom-versus-state communication, but they should not be cited as recorded operational events."
-    },
-    {
-      "heading": "Related capabilities and cases",
-      "bodyMarkdown": "State and status visibility design is closely related to warning and alarm clarity improvement, because both concern how abnormal conditions are prioritised and interpreted. It is also related to cognitive load reduction, information architecture for expert systems, design for abnormal and degraded scenarios, error reduction and recovery design, and usability evaluation for high-consequence products.\n\nThe documented cases most directly connected to this capability include Kardion, Cox Marine, and Triopsis. These cases illustrate layout stability in clinical use, tile-based state coherence across vessel configurations, and state hierarchy for workforce scheduling under operational pressure."
+      "heading": "Boundaries of State and Status Visibility Claims",
+      "bodyMarkdown": "Creative Navy treats state classes as separate design objects. Device or process state, information state, transaction state, protocol transaction state, commitment state, and evidence state solve different visibility problems. Evidence from one state class should not be used as evidence for another state class.\n\nA status display should not invent certainty. KISPE Space rejected a single health score because one colour scale would make identical colours carry conflicting meanings across domains. The maritime traffic software portfolio refused a numeric association-confidence badge because the client's engineering could not supply a calibrated, operationally defensible confidence figure.\n\nRegulatory and conformity claims remain bounded to what is documented. Prototype comprehension, surgeon review, design reasoning, specification work, and regulatory evaluation are different forms of evidence and should not be treated as equivalent outcome measures."
     },
     {
       "heading": "What this produces",
@@ -77,105 +65,177 @@
   ],
   "evidenceSummary": {
     "strongClaims": [
-      "State visibility is the degree to which users can understand what the system is doing without active interpretation.",
-      "Torqeedo evidence records 50% faster energy state identification in a controlled environment experiment with 24 subjects.",
-      "Torqeedo evidence records glance reduction during manoeuvres through eye tracking with 7 subjects during actual sea trials.",
-      "Kardion applied an absolute layout-stability standard requiring no element to shift position across any view transition.",
-      "Kardion received FDA approval, with the design passing evaluation as submitted and no design changes required.",
-      "Gericke client-measured evidence records fault-diagnosis time reductions from 24 to 8, 38 to 12, and 68 to 20 minutes across three sites.",
-      "Gericke client-measured evidence records repeat alarm reductions from 42% to 18%, 58% to 28%, and 73% to 35%.",
-      "Cox Marine used an engine tile as the invariant unit so configurations from 1 engine to 6 engines shared the same state-reading logic."
+      "State visibility concerns what the machine is doing, while information state concerns what is known about a reading and how well it is known.",
+      "The Torqeedo maritime HMI engagement recorded 50% faster energy state identification in a controlled environment experiment with 24 subjects, plus eye-tracking evidence from 7 subjects during sea trials.",
+      "The Gericke industrial HMI engagement recorded client-measured fault-diagnosis time reductions of roughly two-thirds and repeat-alarm reductions of more than half across three sites.",
+      "The Kardion MCS Controller engagement used an absolute layout stability standard requiring no element to shift position across any view transition.",
+      "The Kardion MCS Controller design passed FDA evaluation as submitted, with no design changes required.",
+      "The Raymarine prototype sessions showed that 8 of 8 participants read explicit transaction states correctly, while a generic success surface was misread by 5 of 8 participants in the fixed scenario fixture.",
+      "In the maritime traffic software portfolio, vessel identification median first-answer time was 61.5 seconds on the legacy design and 35.5 seconds on the prototype under controlled prototype conditions."
     ],
     "weakerClaims": [
-      "deSoutter Medical / Zethon used redundant non-colour cues after benchmarking found that 6 of 8 competitors relied primarily on colour for state indication.",
-      "Eight surgeons in structured review sessions confirmed that state verification was reduced to brief glance recognition for deSoutter Medical / Zethon."
+      "KISPE Space specified status as seven independent dimensions and rejected a single green-to-red health score; this remained specification evidence from a synthetic fixture.",
+      "Schone Airspace Group Mission Control specified a seven-state command transaction model with required source evidence and prohibited inference for each state; the product is in test and no flight measurement is claimed.",
+      "The maritime traffic software portfolio refused an uncalibrated numeric association-confidence badge and instead displayed unresolved association state; the refusal is grounded in the client's inability to supply a calibrated, operationally defensible confidence figure."
     ],
     "limitations": [
-      "The evidence base varies by case: Torqeedo includes directly measured controlled-environment and sea-trial results, while other examples are design records, structured feedback, or client-measured outcomes.",
-      "Kardion FDA approval is a regulatory result and should not be treated as a measured usability outcome.",
-      "deSoutter Medical / Zethon evidence is surgeon-reported from structured design review sessions, not post-deployment measurement.",
-      "Gericke results were client-measured by Gericke, not Creative Navy-measured.",
-      "The Gericke refill and valve illustrations are Creative Navy reconstructions of the redesign, not logged incidents.",
-      "Cox Marine, Elsner Elektronik, and Triopsis evidence in this capability description does not provide quantitative outcome metrics.",
-      "Gericke is not a regulated device; it operates in GMP environments, GAMP 5 is relevant, and the validation boundary is the manufacturer's."
+      "Evidence strength differs by engagement; device/process state evidence must not be used to support information state, transaction state, protocol transaction state, commitment state, or evidence state.",
+      "KISPE Space was a specification reasoned from a synthetic fixture; nothing was executed or validated, and no shipped-as-designed claim is made.",
+      "Schone Airspace Group Mission Control is in test; conformance results are not outcomes, and nothing was measured in flight.",
+      "Raymarine evidence is limited to bench prototype sessions with 8 participants and a fixed scenario fixture; no type-approval, certification, conformity, field, safety, rescue, collision, or radio outcome is established.",
+      "The handheld command-and-control engagement does not support a claim that the design prevents error, and no operational or workload figure is available.",
+      "The maritime traffic software portfolio evidence must not be combined into an averaged headline or attached to an operational consequence; the documented time measure is first submitted answer regardless of correctness.",
+      "AIT and the MDU are design reasoning only and were not tested with users.",
+      "Assemblio provides client-stated context and no outcomes or audit framing.",
+      "Topera was a concept design and nothing had been built.",
+      "Egma Order has no post-launch measurement."
     ]
   },
   "relatedPageSlugs": [
     "warning-and-alarm-clarity-improvement",
-    "cognitive-load-reduction",
-    "information-architecture-for-expert-systems",
     "design-for-abnormal-and-degraded-scenarios",
-    "error-reduction-and-recovery-design",
-    "usability-evaluation-for-high-consequence-products",
+    "command-integrity-design",
+    "information-architecture-for-expert-systems",
+    "cognitive-load-reduction",
+    "alarm-management",
     "kardion",
     "cox-marine",
-    "triopsis-workforce-management-saas"
+    "triopsis-workforce-management-saas",
+    "kispe-space",
+    "schone-mission-control",
+    "raymarine-vhf",
+    "mdu-ship-motion-monitoring",
+    "streetec-kntrl",
+    "ait-heat-pump-controller",
+    "assemblio",
+    "topera",
+    "egma",
+    "tactical-handheld-command-and-control",
+    "maritime-vts"
   ],
   "internalLinks": [
     {
       "anchorText": "warning and alarm clarity improvement",
       "targetSlug": "warning-and-alarm-clarity-improvement",
-      "reason": "State visibility and alarm clarity both concern how abnormal conditions are prioritised and interpreted."
-    },
-    {
-      "anchorText": "cognitive load reduction",
-      "targetSlug": "cognitive-load-reduction",
-      "reason": "The page discusses recognition over recall, ambient awareness, and avoiding active interpretation."
-    },
-    {
-      "anchorText": "information architecture for expert systems",
-      "targetSlug": "information-architecture-for-expert-systems",
-      "reason": "State hierarchy and progressive access to telemetry are information-architecture problems in expert systems."
+      "reason": "State visibility overlaps with alarm clarity when alarms must show underlying state rather than symptoms."
     },
     {
       "anchorText": "design for abnormal and degraded scenarios",
       "targetSlug": "design-for-abnormal-and-degraded-scenarios",
-      "reason": "The page covers abnormal states, degraded conditions, faults, and state transitions."
+      "reason": "Many state visibility examples concern faults, degraded conditions, mode changes, and abnormal states."
     },
     {
-      "anchorText": "error reduction and recovery design",
-      "targetSlug": "error-reduction-and-recovery-design",
-      "reason": "Clear state communication reduces misinterpretation of faults and normal deviations."
+      "anchorText": "command integrity design",
+      "targetSlug": "command-integrity-design",
+      "reason": "Transaction, protocol, and commitment state examples involve requested, pending, acknowledged, rejected, and confirmed command states."
     },
     {
-      "anchorText": "usability evaluation for high-consequence products",
-      "targetSlug": "usability-evaluation-for-high-consequence-products",
-      "reason": "Several evidence examples involve controlled evaluation, structured review, eye tracking, and regulatory evaluation."
+      "anchorText": "information architecture for expert systems",
+      "targetSlug": "information-architecture-for-expert-systems",
+      "reason": "State hierarchy, disclosure, and status taxonomies are information-architecture mechanisms for expert interfaces."
+    },
+    {
+      "anchorText": "cognitive load reduction",
+      "targetSlug": "cognitive-load-reduction",
+      "reason": "Glance readability and recognition over recall reduce the interpretation burden created by ambiguous state displays."
+    },
+    {
+      "anchorText": "alarm management",
+      "targetSlug": "alarm-management",
+      "reason": "The Gericke and Elsner examples both involve alarm hierarchy and prioritised fault state."
     },
     {
       "anchorText": "Kardion",
       "targetSlug": "kardion",
-      "reason": "Kardion is a named case example for layout stability and clinical state visibility."
+      "reason": "The page discusses Kardion layout stability and FDA evaluation evidence."
     },
     {
-      "anchorText": "Cox Marine",
+      "anchorText": "COX Marine",
       "targetSlug": "cox-marine",
-      "reason": "Cox Marine is a named case example for tile-based state coherence across multi-engine configurations."
+      "reason": "The page discusses the COX Marine engine tile architecture and multi-engine fault-state hierarchy."
     },
     {
       "anchorText": "Triopsis",
       "targetSlug": "triopsis-workforce-management-saas",
-      "reason": "Triopsis is a named case example for scheduler state hierarchy and predictive conflict indicators."
+      "reason": "The page discusses Triopsis state hierarchy for schedulers under operational pressure."
+    },
+    {
+      "anchorText": "KISPE Space",
+      "targetSlug": "kispe-space",
+      "reason": "The page discusses KISPE as an information-state example."
+    },
+    {
+      "anchorText": "Schone Airspace Group Mission Control",
+      "targetSlug": "schone-mission-control",
+      "reason": "The page discusses Schone as a transaction-state example."
+    },
+    {
+      "anchorText": "Raymarine",
+      "targetSlug": "raymarine-vhf",
+      "reason": "The page discusses Raymarine protocol transaction state and requested-versus-effective values."
+    },
+    {
+      "anchorText": "MDU",
+      "targetSlug": "mdu-ship-motion-monitoring",
+      "reason": "The page discusses the MDU ship motion monitor as a state-value selection example."
+    },
+    {
+      "anchorText": "Streetec kntrl 2",
+      "targetSlug": "streetec-kntrl",
+      "reason": "The page discusses Streetec's pressure and percentage display decision."
+    },
+    {
+      "anchorText": "AIT heat pump controller",
+      "targetSlug": "ait-heat-pump-controller",
+      "reason": "The page discusses AIT widget state and mode-queued status."
+    },
+    {
+      "anchorText": "Assemblio",
+      "targetSlug": "assemblio",
+      "reason": "The page discusses Assemblio synchronisation state and asynchronous job state attached to objects."
+    },
+    {
+      "anchorText": "Topera",
+      "targetSlug": "topera",
+      "reason": "The page discusses Topera interrogable warnings and concept-design limits."
+    },
+    {
+      "anchorText": "Egma",
+      "targetSlug": "egma",
+      "reason": "The page discusses Egma Order status disclosure across manufacturing steps."
+    },
+    {
+      "anchorText": "Tactical Handheld Command and Control for Uncrewed Systems",
+      "targetSlug": "tactical-handheld-command-and-control",
+      "reason": "The page discusses the handheld command-and-control engagement as commitment-state evidence."
+    },
+    {
+      "anchorText": "maritime VTS portfolio",
+      "targetSlug": "maritime-vts",
+      "reason": "The page discusses evidence state and measured prototype evidence in the maritime traffic software portfolio."
     }
   ],
   "tags": [
     "state visibility",
     "status visibility",
+    "system state",
     "operational state",
-    "glance readability",
-    "recognition over recall",
     "state hierarchy",
+    "state aggregation",
     "layout stability",
+    "recognition over recall",
+    "transaction state",
+    "information state",
+    "evidence state",
     "alarm hierarchy",
     "process mimic",
-    "ambient awareness",
-    "mode indicators"
+    "command state"
   ],
   "_meta": {
     "sourcePath": "sources/articles/Capabilities/capabilities--state-and-status-visibility-design.md",
     "parentSlug": "capabilities",
     "childPageSlugs": [],
-    "generatedBy": "deterministic",
+    "generatedBy": "openai",
     "patches": [
       "capability-deliverables"
     ]

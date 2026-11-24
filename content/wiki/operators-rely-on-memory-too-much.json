@@ -4,133 +4,144 @@
   "pageType": "situation",
   "category": "situations",
   "section": "Complexity",
-  "summary": "This situation describes interfaces that appear usable because experienced operators compensate for inconsistent layout, mode behaviour, or state presentation through memory. The failure becomes visible when new users, unfamiliar modes, abnormal conditions, or time pressure remove the capacity needed for active search.",
+  "summary": "Operator memory reliance is an interface failure pattern in which users must memorise layout positions, mode-specific behaviour, labels, state meanings, or next steps because the interface does not preserve a stable, recognisable structure. This page distinguishes user proficiency from compensation, gives grounded examples from medical, marine, tactical, and industrial engagements, and states the evidence limits for each example.",
   "keyFacts": [
-    "Interface inconsistency can make experienced users appear proficient when they are compensating for layout and state instability.",
-    "The failure becomes visible when a new user, unfamiliar scenario, unfamiliar mode, or time pressure disrupts the user's memorised map.",
-    "Layout inconsistency across overlays, modals, alarms, secondary data views, and other view states requires users to maintain multiple spatial maps.",
-    "Mode-dependent layouts can force users to learn a different interface for standby, active, adjustment, alarm, or other operating modes.",
-    "Incremental development can produce accumulated layout inconsistency without any single change appearing large enough to trigger redesign.",
-    "In high-consequence environments, active search competes directly with the clinical or operational task.",
-    "The Kardion MCS Controller example used a design standard that no element shifts position across any view transition.",
-    "The Kardion MCS Controller standard view required 34 iterations to resolve, and the controller received FDA approval with no design changes required during regulatory evaluation.",
-    "The deSoutter Medical / Zethon surgical device example used recognition over recall, spatial stability, redundant non-colour cues, and removal of intermediate confirmation steps.",
-    "Eight orthopaedic and trauma surgeons in structured review sessions reported that device state could be verified through brief glances without reading; this was not post-deployment operational measurement."
+    "Memory reliance appears when elements shift position between views, states alter layout, or modes produce different screen geometries.",
+    "Experienced operators may navigate inconsistent interfaces reliably, but that reliability can represent compensation rather than interface quality.",
+    "The failure becomes visible for new users, experienced users in unfamiliar modes, and operators working under time pressure or divided attention.",
+    "In the Kardion MCS Controller design, Creative Navy held the standard that no element shifts position across any view transition.",
+    "The Kardion standard view required 34 iterations, and versions that violated layout stability were rejected during the engagement.",
+    "The Kardion MCS Controller received FDA approval, passing the regulatory evaluation as submitted with no design changes required.",
+    "In the deSoutter Medical / Zethon engagement, eight orthopaedic and trauma surgeons in structured review sessions reported that device state could be verified through brief glances without reading.",
+    "In the Raymarine prototype work, wrong domain activations ran six of eight under the contextual model and zero of eight under the fixed model on the retune task and again on the recovery task.",
+    "For the handheld command-and-control engagement, the operator behaviours are client-reported observations; Creative Navy had no primary field evidence.",
+    "The industrial automation engagement findings are audit findings about one process control system in development, not general claims about industrial software."
   ],
   "bodySections": [
     {
-      "heading": "Summary: excessive memory reliance is an interface coherence failure",
-      "bodyMarkdown": "Creative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nOperators rely on memory too much when an interface requires users to memorise where information and controls move across layouts, modes, overlays, alarm states, or secondary views. This is an interface failure because the system has transferred the work of maintaining coherence to the user's working memory.\n\nExperienced users may appear proficient in this situation. The more precise description is that they are compensating. Their reliable operation depends on a memorised map that the interface does not preserve consistently for new users, periodic users, or experienced users working under time pressure."
+      "heading": "Memory Reliance Is an Interface Failure Pattern",
+      "bodyMarkdown": "Creative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nOperator memory reliance occurs when an interface is inconsistent enough that users must memorise where things are, how modes behave, or which state a control currently represents. This is not evidence that the interface is working well. It means the interface has transferred the work of maintaining coherence from the system to the user's working memory.\n\nExperienced users can carry this burden invisibly. The interface may appear adequate because long-tenured users have built compensatory spatial maps, procedural habits, or state interpretations. The failure becomes visible when that memorised map fails: a new user enters the system, an experienced user encounters an unfamiliar mode, or time pressure reduces the cognitive capacity available for active search.\n\nIn high-consequence environments such as clinical devices, industrial control, and safety-adjacent operational systems, memory reliance is not only friction. It can create use-related risk when the operator must spend attention relocating information instead of acting on it."
     },
     {
-      "heading": "Failure pattern: the interface transfers spatial coherence to working memory",
-      "bodyMarkdown": "An inconsistent interface asks users to maintain a spatial model of the interface in addition to the operational model of the domain. Elements that shift position between the primary view and an overlay, modal, alarm state, or secondary data view require the user to remember not only what the information means, but where the interface has placed it under each screen configuration.\n\nThis failure can remain hidden during normal operation. Long-tenured operators learn the inconsistencies and navigate them without visible hesitation. The interface therefore appears adequate because experienced users have filled the interface's gaps with memory.\n\nThe failure becomes visible when the memorised map no longer applies. A new user has not yet built the map. An experienced user in an unfamiliar scenario or mode cannot rely on the map formed elsewhere. An operator under time pressure may not have the cognitive capacity for active search."
+      "heading": "Layout Shifts and Mode-Dependent Behaviour Create Memory Dependence",
+      "bodyMarkdown": "Layout inconsistency across view states forces users to maintain a spatial map of the interface rather than only a mental model of the operational domain. Elements that move between a primary view, overlay, modal, alarm state, or secondary data view require the user to learn where the same information appears under each screen configuration.\n\nMode-dependent interface behaviour creates a related failure. Systems with standby, active, adjustment, alarm, or other operational modes can ask users to learn a different interface for each mode when those modes produce genuinely different layouts. Spatial knowledge learned in one mode may not transfer to another.\n\nIncremental development can also accumulate memory reliance. A system may drift away from a consistent spatial model as features are added, screen real estate is renegotiated, and different teams make local layout decisions. No single change may appear large enough to justify redesign, but the aggregate can leave new users struggling with an interface that experienced users navigate only because they have learned its inconsistencies."
     },
     {
-      "heading": "Layout inconsistency, mode-dependent behaviour, and incremental drift are the main mechanisms",
-      "bodyMarkdown": "Layout inconsistency across view states is one mechanism of excessive memory reliance. When elements move during transitions between standard views, overlays, modals, alarms, or secondary data views, users must maintain and update a spatial map for every possible screen configuration. In systems with many view states, this map becomes complex and expensive to maintain under time pressure.\n\nMode-dependent interface behaviour is another mechanism. Systems with multiple operational modes, such as standby, active, adjustment, or alarm modes, can produce genuinely different screen layouts. This asks users to learn a different interface for each mode. Continuous users may learn all modes, but periodic users or users entering an unfamiliar mode under pressure may find that spatial knowledge from one mode does not transfer.\n\nIncremental development can also create excessive memory reliance. Features are added, screen real estate is renegotiated, and local layout decisions accumulate across teams or releases. No single change may appear large enough to trigger redesign, but the aggregate can become an interface that experienced users navigate confidently while new users struggle because the spatial model has drifted."
+      "heading": "High-Consequence Use Changes the Cost of Memory Reliance",
+      "bodyMarkdown": "In standard enterprise software, memory reliance can produce slow onboarding, uneven performance across experience levels, and support overhead. These costs matter, but they are usually recoverable.\n\nIn high-consequence environments, the same pattern has a different cost structure. A surgeon or operator working under divided attention may need to confirm system state in a brief glance while primary attention remains on a patient, procedure, or operational process. If the expected information has moved, the operator must search actively or act on an incorrect inference.\n\nThe failure pattern is asymmetric. Under normal conditions, an experienced operator's spatial memory may compensate adequately. Under abnormal or pressured conditions, the compensation can break down at the moment when correct operation matters most."
     },
     {
-      "heading": "High-consequence cost: active search competes with the operational task",
-      "bodyMarkdown": "In standard enterprise software, excessive memory reliance can produce slow onboarding, inconsistent performance across experience levels, and support overhead. These costs are real but usually recoverable.\n\nIn high-consequence environments, the cost structure is different. Clinical devices, industrial control systems, and safety-adjacent operational systems are often used under divided attention and time pressure. A surgeon, scrub nurse, perfusionist, ICU nurse, or operator may need to confirm device state in a brief glance while primary attention remains on the patient, procedure, or process.\n\nIf layout instability disrupts the user's spatial map, the operator must reorient. That reorientation competes directly with the operational task. The operator may search actively, which consumes attention, or act on an incorrect inference, which creates use-related risk.\n\nThe asymmetry between normal performance and failure-condition performance is central to this situation. Under normal conditions, an experienced operator's spatial memory may compensate adequately. Under abnormal conditions, time pressure, divided attention, or unfamiliar modes, the compensation can break down precisely when correct operation matters most."
+      "heading": "Kardion MCS Controller Used Layout Stability as a Clinical Design Standard",
+      "bodyMarkdown": "The Kardion MCS Controller is used during cardiac procedures and for longer-term cardiogenic shock support. The controller displays device status, sensor data, and alarms; it handles flow adjustment and case management. Scrub nurses, perfusionists, and ICU nurses operate it under divided attention and time pressure.\n\nCreative Navy's design standard for the Kardion MCS Controller was that no element shifts position across any view transition. The standard applied across the standard running view, flow adjustment overlay, trend screens, case management views, alarm states, and setup screens. Spatial memory built in the standard running view therefore transferred to other view states because the positions did not change.\n\nCreative Navy treated layout instability as a failure condition in this engagement, not as a tradeoff to be accepted. The source evidence describes the standard as Creative Navy's own design requirement rather than a regulatory requirement, while also relating it to IEC 62366-1's requirement for consistent operation.\n\nThe constraint was substantial. The standard view required 34 iterations to resolve. Versions that created a visually striking standard view but shifted elements between views were evaluated, presented to Kardion, tested with users, and rejected because they violated the layout stability standard.\n\nThe Kardion MCS Controller received FDA approval, passing the regulatory evaluation as submitted with no design changes required."
     },
     {
-      "heading": "Kardion MCS Controller example: layout stability across every view transition",
-      "bodyMarkdown": "The Kardion MCS Controller is used during cardiac procedures and for longer-term cardiogenic shock support. The controller displays device status, sensor data, and alarms, and it handles flow adjustment and case management. Scrub nurses, perfusionists, and ICU nurses operate it under divided attention and time pressure, with primary attention on the patient and the procedure.\n\nCreative Navy's design standard for the Kardion MCS Controller was that no element shifts position across any view transition. As operators move between the standard running view, the flow adjustment overlay, trend screens, case management views, alarm states, and setup screens, each element remains in its established screen position. The information hierarchy is fixed so that spatial memory built in the standard running view transfers to other view states.\n\nThis layout stability standard was Creative Navy's own design standard, not a regulatory requirement. Creative Navy treated it as necessary in a high-consequence clinical environment because layout instability creates reorientation time under pressure. The source case connects the standard to the same principle as IEC 62366-1's requirement for consistent operation: users in clinical environments must be able to rely on spatial memory rather than active search.\n\nThe constraint imposed substantial design work. The standard view required 34 iterations to resolve. Versions that created a visually striking standard view by introducing layout shifts were evaluated, presented to Kardion, tested with users, and rejected because they violated the layout stability standard.\n\nThe Kardion MCS Controller received FDA approval. The documented regulatory result is that the controller passed regulatory evaluation as submitted with no design changes required. This is a verifiable regulatory outcome, not a measured clinical performance outcome.\n\nCreative Navy's role is formative evaluation only; summative validation is the manufacturer's responsibility via the regulatory submission."
+      "heading": "deSoutter Medical and Zethon Focused on Recognition Rather Than Reading",
+      "bodyMarkdown": "The deSoutter Medical / Zethon surgical device is a powered ultrasonic bone cutter used in orthopaedic and trauma surgery at rotational speeds from approximately 200 rpm to approximately 85,000 rpm. The interface is a safety-critical embedded GUI operated by surgeons during live procedures under divided attention.\n\nThe legacy interface required surgeons to read in order to interpret activation states and readiness conditions. Reading requires focused attention and sequential processing, which conflicts with the attention available during active surgery.\n\nCreative Navy's design standard in this engagement was that every critical state must be interpretable through recognition in a brief glance, without reading. The design response used spatial stability, redundant non-colour cues, and removal of intermediate confirmation steps that added cognitive burden without contributing to safety.\n\nSix competitor devices were benchmarked during Sandbox Experiments. The most common failure pattern found was reliance on colour as the primary state indicator. The surviving design did not rely on colour alone for any critical state.\n\nEight orthopaedic and trauma surgeons participating in structured review sessions reported that device state could be verified through brief glances without reading, and that parameter adjustments no longer interrupted surgical workflow."
     },
     {
-      "heading": "deSoutter Medical / Zethon example: recognition over recall during surgery",
-      "bodyMarkdown": "The deSoutter Medical / Zethon surgical device is a powered ultrasonic bone cutter used in orthopaedic and trauma surgery at rotational speeds from approximately 200 rpm to approximately 85,000 rpm. The interface is a safety-critical embedded GUI operated by surgeons during live procedures, under divided attention, with primary focus on the surgical field and the patient.\n\nThe legacy interface required surgeons to read in order to interpret activation states and readiness conditions. Reading requires focused attention and sequential processing. During active surgery, that demand creates a use-related risk: the surgeon must either direct sustained attention away from the patient or operate without confirming device state.\n\nCreative Navy's design standard in the deSoutter Medical / Zethon engagement was that every critical state must be interpretable through recognition in a brief glance, without reading. This applied the same underlying principle as layout stability: users in high-consequence environments should not be required to apply cognitive resources they do not have in order to retrieve information the interface should communicate directly.\n\nThe design response combined spatial stability, redundant non-colour cues, and removal of intermediate confirmation steps that added cognitive burden without contributing to safety. Spatial position, icon form, and reserved colour each independently communicated critical state. The surviving design did not rely on colour alone for any critical state.\n\nSix competitor devices were benchmarked during Sandbox Experiments. The most common failure pattern found in those competitor devices was reliance on colour as the primary state indicator, which was described as adequate under ideal theatre lighting and unreliable under variable lighting conditions.\n\nEight orthopaedic and trauma surgeons participating in structured review sessions reported that device state could be verified through brief glances without reading, and that parameter adjustments no longer interrupted surgical workflow. These are surgeon-reported outcomes from participants in the design engagement, not post-deployment operational measurement."
+      "heading": "Raymarine Showed a Perceptual Memory Tax in Physical Control Meaning",
+      "bodyMarkdown": "The Raymarine Marine VHF and AIS Radio engagement concerned the next generation of Raymarine's fixed-mount VHF line, whose documented precedent is the Ray53, Ray63, and Ray73. The memory burden in this engagement was perceptual rather than procedural.\n\nA promising AIS concept used the lower encoder to move quickly between vessel targets. The same encoder had already been assigned as the primary channel selector in the radio view, and settings would have given it a third role. When an alert interrupted an interaction, the operator had to reacquire whether the next rotation would select a vessel, change the tuned channel, or navigate a message.\n\nCreative Navy examined an explicit-mode model in two variants. One variant preserved local task continuity after interruption but created a memory burden after attention shifted. The other reset the mode, which made channel tuning predictable but changed the meaning of the next rotary movement unexpectedly. A visible mode label was informative but did not remove the need to reacquire active state under divided attention.\n\nCreative Navy-recorded wrong domain activations ran six of eight under the contextual model and zero of eight under the fixed model on the retune task and again on the recovery task. Creative Navy designed the test protocols, moderated all twenty-four sessions, and analysed the results; Raymarine supplied the physical bench mockup on which the sessions ran. Each comparison was paired and counterbalanced within participants."
     },
     {
-      "heading": "How Creative Navy's Critical Systems Design method addresses excessive memory reliance",
-      "bodyMarkdown": "Creative Navy's Critical Systems Design method designs software whose interfaces, workflows, and operating logic carry real operational consequences, working through five phases — Sandbox Experiments, Concept Convergence, Iterative System Building, Organizational Integration, and Implementation Partnership — to take each system from initial exploration to independent operation by the client's own team.\n\nCreative Navy's Critical Systems Design method addresses excessive memory reliance by treating layout consistency as a design standard in high-consequence environments and by establishing the operating conditions before visual or interaction decisions are made.\n\nDomain learning was central in the Kardion and deSoutter examples. Clinical choreography sessions in the Kardion engagement and surgical procedure walkthroughs in the deSoutter engagement established the actual conditions of use: divided attention, brief glances, time pressure, and physical constraints. These conditions were treated as normal clinical use, not edge cases.\n\nCreative Navy's Critical Systems Design method then applies layout stability throughout Iterative System Building. Versions that violate the standard are not treated as tradeoffs to keep in consideration; they are treated as failures that must be resolved. The Kardion engagement records this standard being held through eighteen sprints rather than being negotiated away under competing pressures.\n\nThe intended design outcome is an interface in which operators can locate information through spatial memory that the interface preserves, rather than through spatial memory the operator must build and maintain against an inconsistent interface."
+      "heading": "The Handheld Command-and-Control Engagement Treated Memory as Impaired by Conditions",
+      "bodyMarkdown": "In the tactical handheld command-and-control engagement for a European manufacturer of uncrewed systems, including one-way effectors, the relevant operator behaviours are client-reported observations of the client's own users.\n\nThe client-reported observations were that operators wrote coordinates on paper as an external memory aid, lost track of which dialog to open next, and needed active recall for colour coding and icon meanings rather than being able to read them from context.\n\nCreative Navy's expert review response was that the interface should always make current position, completed action, and next step readable without being requested. In normal conditions, those answers reduce friction. In frontline conditions, the same answers address memory reliance in conditions where memory is impaired.\n\nTwo navigation treatments were explored with their advantages and costs stated side by side. A collapsible navigation was adopted because it allowed labels beside icons, reducing reliance on memory. The additional interaction cost introduced by the collapsible model was paid through a hardware key assigned to show and hide it rather than through the touchscreen.\n\nCreative Navy designed the surface through which a human supervises the system; Creative Navy did not design the system."
     },
     {
-      "heading": "Evidence boundaries for this situation",
-      "bodyMarkdown": "The evidence for this situation combines conceptual analysis with documented engagement examples. The Kardion MCS Controller example includes Creative Navy-recorded design decisions, a Creative Navy-recorded 34-iteration resolution of the standard view, and a verifiable FDA approval outcome. The FDA approval is not evidence that the design caused clinical performance outcomes.\n\nThe deSoutter Medical / Zethon example includes Creative Navy-recorded design standards, Sandbox Experiments benchmarking of six competitor devices, and surgeon-reported outcomes from eight orthopaedic and trauma surgeons in structured review sessions. The surgeon reports are not post-deployment operational measurement.\n\nThe examples support the specific failure pattern described here: inconsistent spatial layout, mode-dependent behaviour, and recognition demands can transfer interface coherence work to memory. They do not establish a universal quantified rate of error, onboarding cost, or risk across all software systems."
+      "heading": "The Industrial Automation Review Found Navigation That Depended on Memory",
+      "bodyMarkdown": "Creative Navy's expert review for a European industrial automation vendor whose process control software coordinates machining cells found an interface that was difficult to navigate without memory. These findings are audit findings about that system, not general claims about industrial software.\n\nThe review found that navigation changed between screens. Operator screens showed seven rail icons, while other screens showed thirteen. Machine strip membership and order shifted. One machine was absent entirely from one view. The brand plate appeared on roughly half the screens. No navigation item carried a text label.\n\nThe same machine carried four different names across breadcrumb, tile, card title, and caption. A 48-position storage grid contained three unexplained colour exceptions with no key.\n\nThe product was in development and had not shipped. Nothing in this engagement is an outcome claim."
     },
     {
-      "heading": "Related situations",
-      "bodyMarkdown": "Excessive operator memory reliance is adjacent to situations where abnormal conditions break the interface, system state is hard to understand, the interface increases cognitive load at the worst moment, and user error has serious consequences. These related situations describe neighbouring failure patterns that can occur when an interface does not preserve operational clarity under real conditions."
+      "heading": "Creative Navy's Critical Systems Design Method Addresses Memory Reliance Through Operational Conditions and Layout Stability",
+      "bodyMarkdown": "Creative Navy's Critical Systems Design method addresses operator memory reliance by treating real operating conditions as design requirements before visual and interaction decisions are made. In the Kardion engagement, clinical choreography sessions established divided attention, brief glances, time pressure, and physical constraints as conditions of normal clinical use. In the deSoutter Medical / Zethon engagement, surgical procedure walkthroughs established similar constraints for live procedures.\n\nCreative Navy's layout stability standard then applied throughout Iterative System Building. Versions that violated the standard were treated as failures to resolve, not as acceptable tradeoffs. In the Kardion engagement, the shared understanding that layout instability was a failure condition helped preserve the standard through eighteen sprints.\n\nThe intended design consequence is that operators can locate information through spatial memory that the interface maintains, rather than through spatial memory the operator must rebuild across inconsistent layouts, modes, or states."
     }
   ],
   "evidenceSummary": {
     "strongClaims": [
-      "Excessive operator memory reliance occurs when an inconsistent interface transfers the work of maintaining coherence to the user's working memory.",
-      "The failure becomes visible when a new user, unfamiliar scenario, unfamiliar mode, or time pressure disrupts the memorised spatial map.",
-      "The main mechanisms described are layout inconsistency across view states, mode-dependent interface behaviour, and accumulated inconsistency from incremental development.",
-      "In high-consequence environments, disrupted spatial memory can force active search or incorrect inference under divided attention.",
-      "The Kardion MCS Controller design standard required no element to shift position across any view transition, and the standard view required 34 iterations to resolve.",
-      "The Kardion MCS Controller received FDA approval and passed regulatory evaluation as submitted with no design changes required.",
-      "In the deSoutter Medical / Zethon engagement, six competitor devices were benchmarked during Sandbox Experiments and the most common failure pattern was reliance on colour as the primary state indicator."
+      "Creative Navy's Kardion MCS Controller design standard required no element to shift position across any view transition.",
+      "The Kardion standard view required 34 iterations, and the Kardion MCS Controller received FDA approval with no design changes required during regulatory evaluation.",
+      "In the Raymarine prototype work, wrong domain activations ran six of eight under the contextual model and zero of eight under the fixed model on the retune task and again on the recovery task.",
+      "The industrial automation review found navigation inconsistency, shifting machine order and membership, missing labels, inconsistent naming, and unexplained colour exceptions in one process control system in development."
     ],
     "weakerClaims": [
-      "Eight orthopaedic and trauma surgeons reported in structured review sessions that device state could be verified through brief glances without reading and that parameter adjustments no longer interrupted surgical workflow."
+      "Operator memory reliance occurs when inconsistent layout, mode behaviour, or state presentation forces users to memorise interface structure rather than rely on a stable system model.",
+      "In high-consequence environments, memory reliance can become use-related risk because active search competes with clinical or operational tasks under time pressure and divided attention.",
+      "In the deSoutter Medical / Zethon engagement, eight orthopaedic and trauma surgeons in structured review sessions reported that device state could be verified through brief glances without reading.",
+      "For the handheld command-and-control engagement, operator behaviours such as writing coordinates on paper and losing track of dialogs are client-reported observations, not Creative Navy primary field evidence."
     ],
     "limitations": [
-      "The page does not provide a quantified error rate, risk rate, or onboarding metric for excessive memory reliance.",
-      "The Kardion FDA approval is a regulatory outcome and should not be treated as a measured clinical performance outcome or as proof of design causality.",
-      "The Kardion regulatory pathway is not specified; the page preserves the source wording of FDA approval and does not infer PMA, 510(k), or device class.",
-      "The deSoutter Medical / Zethon surgeon outcomes are participant-reported in structured review sessions and are not post-deployment operational measurement.",
-      "The layout stability standard described for Kardion is Creative Navy's own design standard, not a regulatory requirement.",
-      "The competitor-device benchmarking in the deSoutter example is described at the level of six devices and a common failure pattern; no broader market prevalence is established."
+      "Raymarine counts must remain six of eight and zero of eight; they are not percentages, prevalence claims, population estimates, or outcome measures at sea.",
+      "The Raymarine evidence describes operator behaviour on a prototype against a fixed scenario fixture, with eight participants per round, purposive recruitment, paired and counterbalanced comparisons, and no significance testing.",
+      "The handheld command-and-control engagement relies on client-reported observations of the client's own users; Creative Navy had no contextual observation, field visits, interviews, or measured error-prevention outcome for that engagement.",
+      "The industrial automation engagement concerns one process control system in development; the findings are not general claims about industrial software and are not outcomes.",
+      "The deSoutter Medical / Zethon surgeon feedback is engagement review evidence, not post-deployment operational measurement.",
+      "The Kardion FDA approval is a regulatory result and should not be presented as a measured clinical-performance outcome or as proof that layout stability caused approval.",
+      "For regulated medical-device examples, Creative Navy's role is formative evaluation only; summative validation is the manufacturer's responsibility via the regulatory submission."
     ]
   },
   "relatedPageSlugs": [
-    "kardion",
     "abnormal-conditions-break-the-interface",
     "the-interface-increases-cognitive-load-at-the-worst-moment",
     "system-state-is-hard-to-understand",
-    "user-error-has-serious-consequences",
-    "expert-workflows-are-hard-to-operate",
-    "software-too-complex-for-users",
     "training-burden-is-too-high",
-    "design-debt-is-turning-into-operational-debt"
+    "user-error-has-serious-consequences",
+    "design-debt-is-turning-into-operational-debt",
+    "kardion",
+    "raymarine-vhf",
+    "tactical-handheld-command-and-control"
   ],
   "internalLinks": [
     {
-      "anchorText": "Kardion MCS Controller",
+      "anchorText": "Kardion",
       "targetSlug": "kardion",
-      "reason": "The page includes a grounded Kardion example and LINKING_CONTEXT provides a matching allowed case-study slug."
+      "reason": "The page discusses Kardion as a grounded example of layout stability across clinical-device view states."
     },
     {
-      "anchorText": "abnormal conditions break the interface",
+      "anchorText": "Raymarine Marine VHF and AIS Radio",
+      "targetSlug": "raymarine-vhf",
+      "reason": "The page discusses Raymarine as a grounded example of a perceptual memory tax in physical control meaning."
+    },
+    {
+      "anchorText": "tactical handheld command-and-control",
+      "targetSlug": "tactical-handheld-command-and-control",
+      "reason": "The page discusses the handheld engagement as a grounded example where memory aids and labels were relevant to frontline operating conditions."
+    },
+    {
+      "anchorText": "abnormal conditions breaking the interface",
       "targetSlug": "abnormal-conditions-break-the-interface",
-      "reason": "The page describes failure-condition performance under abnormal conditions, time pressure, and unfamiliar modes."
+      "reason": "The memory reliance pattern is described as failing under abnormal or pressured conditions."
     },
     {
-      "anchorText": "the interface increases cognitive load at the worst moment",
+      "anchorText": "the interface increasing cognitive load at the worst moment",
       "targetSlug": "the-interface-increases-cognitive-load-at-the-worst-moment",
-      "reason": "The page describes active search and reorientation competing with the operational task under pressure."
+      "reason": "The page describes active search and reorientation competing with the primary operational task under pressure."
     },
     {
-      "anchorText": "system state is hard to understand",
+      "anchorText": "system state being hard to understand",
       "targetSlug": "system-state-is-hard-to-understand",
-      "reason": "The page discusses difficulty confirming device state through brief glances."
+      "reason": "The examples include failures of state interpretation, mode awareness, labels, and critical indicators."
     },
     {
-      "anchorText": "user error has serious consequences",
-      "targetSlug": "user-error-has-serious-consequences",
-      "reason": "The page describes use-related risk when operators search actively or act on incorrect inference in high-consequence environments."
+      "anchorText": "training burden being too high",
+      "targetSlug": "training-burden-is-too-high",
+      "reason": "The page describes slow onboarding and compensatory learning caused by inconsistent interfaces."
     }
   ],
   "tags": [
-    "interface consistency",
+    "memory reliance",
+    "layout consistency",
     "spatial memory",
-    "cognitive load",
-    "layout stability",
     "mode awareness",
-    "high-consequence software",
+    "cognitive load",
+    "high-consequence interfaces",
     "medical device UX",
-    "recognition over recall",
+    "industrial control UX",
     "Critical Systems Design",
-    "domain learning"
+    "recognition over recall"
   ],
   "_meta": {
     "sourcePath": "sources/articles/Situations/situations--complexity--operators-rely-on-memory-too-much.md",
     "parentSlug": "complexity",
     "childPageSlugs": [],
-    "generatedBy": "deterministic"
+    "generatedBy": "openai"
   }
 }

@@ -4,150 +4,148 @@
   "pageType": "failure",
   "category": "failures",
   "section": "Cognitive Failures",
-  "summary": "Routine tasks can impose a disproportionate attention cost even when the software is functional and tasks can be completed. The failure appears as accumulated friction, training burden, workarounds, adoption gaps, or extended glance duration in embedded displays used during physical activity.",
+  "summary": "This failure describes routine operational software that works in a functional sense but requires too much user attention for ordinary use. The attention cost appears through navigation overhead, decision overhead, role-mode mismatch, and ambient-use displays that require longer glances than the use context permits.",
   "keyFacts": [
-    "This failure concerns the attention cost of routine operation, not whether a workflow is technically possible to complete.",
-    "The failure produces accumulated friction rather than a discrete error, which makes it harder to identify than a broken workflow.",
-    "Common signals include high training investment, persistent workarounds, vague user descriptions of difficulty, adoption gaps, and extended glance duration in vehicle-mounted embedded systems.",
-    "Navigation overhead occurs when users must cross screens or sections whose boundaries reflect system architecture rather than task flow.",
-    "Decision overhead occurs when high-frequency actions are buried among low-frequency options, forcing repeated scanning and filtering.",
-    "Role-mode mismatch occurs when one interface serves users with fundamentally different operating contexts, time structures, and error profiles.",
-    "Attention budget mismatch occurs in ambient physical contexts where the interface requires sustained attention that the context does not supply.",
-    "In the WCO IPM case, WCO reported a 78% reduction in officer training costs, a 20% increase in officer platform use, a 67% increase among rights holders, and a 200% increase in rights holder sign-ups after the redesign.",
-    "In the Stromer case, average glance duration fell from 4.32 seconds to 1.89 seconds using the same methodology and routes, with 5 participants in real riding conditions.",
-    "Creative Navy's Critical Systems Design method addresses this failure through domain learning and microtask analysis, as described in the WCO, IDEXX Animana, and Stromer examples."
+    "The failure is not that tasks cannot be completed; it is that routine tasks impose an attention cost disproportionate to the task itself.",
+    "Common signals include high training investment, persistent workarounds, users calling the software difficult without isolating a cause, adoption gaps, and extended glance duration in embedded displays.",
+    "The source distinguishes attention cost from working-memory burden and from the structural condition where tasks span too many screens or steps.",
+    "Four mechanisms are identified: navigation overhead, decision overhead, role-mode mismatch, and attention budget mismatch in ambient use contexts.",
+    "In the WCO IPM case, WCO reported a 78% reduction in training costs for officers, a 20% increase in platform use among officers, a 67% increase among rights holders, and a 200% increase in rights holder sign-ups.",
+    "WCO IPM usability testing involved 47 participants across Italy, Romania, Uzbekistan, Algeria, and Spain; workflows were observed as faster and less error-prone but not quantified as task-time measurements.",
+    "In the IDEXX Animana case, field research covered 35 clinics in the UK, Netherlands, and Germany over two weeks with 150+ participants across four role types.",
+    "In the Stromer case, Creative Navy measured average glance duration falling from 4.32 seconds to 1.89 seconds using the same methodology and routes with 5 participants.",
+    "Assemblio evidence is client-stated only: Assemblio described the attention budget as the binding constraint and characterised roughly 90% of Smart Viewer use as consult once and leave playing."
   ],
   "bodySections": [
     {
-      "heading": "Summary",
-      "bodyMarkdown": "Creative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nToo much attention is required for routine use when ordinary software tasks impose an attention cost that is disproportionate to the task itself. The software may be functional. Users may be able to complete the workflow. The failure is that every routine interaction consumes more active attention than operational conditions justify.\n\nThis failure is common in complex operational software because users must repeatedly read screen state, move between sections, parse option lists, decide which available action matters, and switch windows to gather information. Each act is small. Across a working day, the cumulative cost becomes a material operational burden.\n\nIn embedded displays used during riding, driving, or machinery operation, the same failure appears differently. The relevant measure is not screen count or menu depth. It is how many seconds the user must keep attention on the display before returning attention to the primary physical task."
+      "heading": "What This Failure Means",
+      "bodyMarkdown": "Creative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nToo much attention is required for routine use when ordinary tasks in operational software require disproportionate user attention through navigation, decision load, role-mode mismatch, or ambient-use display checks. The software may function correctly, and users may still complete their tasks, but routine operation becomes expensive in cognitive terms.\n\nThe failure appears through repeated small costs: reading screen state, moving between sections, scanning option lists, deciding which available action applies, switching windows, and gathering information that the current view does not provide. Each act can seem minor. Across a working day, the accumulated cost becomes material."
     },
     {
-      "heading": "Failure pattern: routine operation consumes attention that should remain on the task",
-      "bodyMarkdown": "The failure pattern is not that the software is broken. The failure pattern is that the software costs too much attention to use during routine operation.\n\nA customs officer checking a shipment against existing intelligence should spend attention on the intelligence, not on navigating sections and parsing lists that contain more than the inspection requires. A veterinary receptionist managing an incoming call while updating a patient record should spend attention on the client interaction, not on moving between windows and filtering irrelevant options. A rider checking an e-bike display should register the relevant state in a glance, not hold attention on the display for several seconds while also managing the road.\n\nThe failure is hard to detect because it rarely produces a discrete error. It produces friction. The system appears to work, but users experience the interaction as slow, difficult, or not worth the effort under real conditions.\n\nTypical signals include high training investment before users reach baseline competency, persistent workaround processes running beside the system, users describing the product as difficult without being able to specify why, and adoption gaps where training is hard to deliver consistently. In vehicle-mounted embedded systems, the signal can be extended glance duration beyond safe thresholds because the display does not communicate meaning within the user's available attention budget."
+      "heading": "Common Signals of Excessive Attention Cost",
+      "bodyMarkdown": "Excessive attention cost does not usually produce one discrete error. It produces friction that users may normalise as training effort, personal preference, or an unavoidable learning curve.\n\nCommon signals include high training investment before baseline competency, parallel workaround processes, users describing software as difficult without naming a single cause, and adoption gaps where training is hard to deliver consistently.\n\nThese signals are diagnostic prompts, not proof. A system with high training cost or persistent workarounds may have this failure, but the attention-cost mechanism must be established through observation, workflow mapping, microtask analysis, or an equivalent evidence basis."
     },
     {
-      "heading": "Attention cost is distinct from memory load and screen-count failures",
-      "bodyMarkdown": "Too much attention in routine use is related to, but distinct from, [The Interface Demands Too Much Memory](the-interface-demands-too-much-memory). Memory load concerns retention and retrieval: users must hold spatial maps, recognition models, or conceptual structures in working memory because the interface does not maintain them. Attention cost concerns the active cost of each interaction cycle: the steps, screens, decisions, scans, and mode switches required to complete routine tasks.\n\nToo much attention in routine use is also related to, but distinct from, [Tasks Span Too Many Screens Or Steps](tasks-span-too-many-screens-or-steps). Screen-count fragmentation is a structural condition in the workflow architecture. Attention cost is the cognitive consequence of that structure, and it can also arise from decision overhead or role-mode mismatch even when a task is not obviously fragmented across many screens.\n\nThe mechanisms can compound. A complex system may require too much memory, span too many screens, and consume too much attention at the same time. The design response still needs to distinguish the mechanisms because reducing memory burden, reducing structural fragmentation, and reducing active attention cost are not the same intervention."
+      "heading": "How Attention Cost Differs From Memory Burden and Excessive Screen Count",
+      "bodyMarkdown": "Too much attention for routine use is distinct from the failure where the interface demands too much memory. Memory burden concerns retention and retrieval: users must hold spatial maps, recognition models, or conceptual structures in working memory because the interface does not maintain them. Attention cost concerns the active cognitive expenditure of each interaction cycle: the steps, screens, decisions, scanning, and mode switches required to complete routine work.\n\nToo much attention for routine use is also distinct from the workflow failure where tasks span too many screens or steps. Excessive screen count is a structural condition in the task architecture. Attention cost is the cognitive cost that condition imposes, and it can also arise from decision overhead or role-mode mismatch even where a task is not obviously fragmented across many screens.\n\nThe failures often co-occur. A system can force users across too many screens, require them to remember where they are, and make every routine action require excessive attention. The mechanisms are related but not interchangeable."
     },
     {
-      "heading": "Navigation overhead occurs when system structure replaces task structure",
-      "bodyMarkdown": "Navigation overhead occurs when users must cross sections, screens, or windows because the interface is organised around internal system architecture rather than operational task flow.\n\nComplex software often reflects the modules, data entities, and feature sets used to build it. Users' tasks do not necessarily follow that structure. A simple operational task such as confirming a shipment alert, updating a patient record, or completing an inspection may require movement across several system sections.\n\nEach crossing is an attention event. The user must reorient, locate the relevant element, confirm that the new context is correct, and resume the task. None of these steps contributes directly to the task outcome. The overhead is often tolerated because each step is minor, but the accumulation across routine work is substantial."
+      "heading": "Navigation Overhead Creates Repeated Reorientation Events",
+      "bodyMarkdown": "Navigation overhead occurs when software is organised around system structure rather than task structure. Complex systems often group screens by modules, data entities, and feature sets. Operational tasks do not necessarily follow those boundaries.\n\nA task that is simple in operational terms may require the user to cross multiple sections. Each crossing creates an attention event: the user must reorient, locate the relevant element in the new context, confirm they are in the right place, and resume the task.\n\nThose actions do not contribute directly to the operational task. They are costs introduced by the interface architecture."
     },
     {
-      "heading": "Decision overhead occurs when every interaction requires scanning and filtering",
-      "bodyMarkdown": "Decision overhead occurs when feature-complete systems place high-frequency and low-frequency actions in the same decision space.\n\nAs systems mature, option lists grow, menus expand, and edge cases accumulate. Many options may be legitimate, but routine operation does not require all options to compete for attention at every interaction. The user must scan more than is necessary, filter out irrelevant items, and locate the intended action.\n\nThe cognitive cost is not only the final selection. The cost lies in the scanning, filtering, and locating that precede selection. For expert operators performing familiar tasks many times a day, this overhead is unnecessary because the operator already knows the intended action. The interface still requires the operator to re-identify it repeatedly."
+      "heading": "Decision Overhead Forces Users to Scan More Than the Task Requires",
+      "bodyMarkdown": "Decision overhead occurs when feature-complete systems expose too many options during high-frequency interactions. Lists grow as capabilities are added. Menus expand as edge cases are handled. Low-frequency actions remain visible beside high-frequency actions because both are legitimate system capabilities.\n\nThe cognitive cost is not only the final selection. The cost is the scanning, filtering, and locating that precede the selection. Expert operators performing familiar tasks many times a day often already know what they need. The interface still requires them to prove it repeatedly by navigating through option sets that contain more than the current task requires.\n\nReducing decision overhead does not mean removing capability. It means presenting capability in a way that reflects task context, frequency, and role-specific need."
     },
     {
-      "heading": "Role-mode mismatch occurs when one interface serves incompatible operating modes",
-      "bodyMarkdown": "Role-mode mismatch occurs when one interface design is applied to users whose operational modes are genuinely different.\n\nThe difference is not a preference difference within one task structure. It is a difference in physical context, time pressure, interruption pattern, attention profile, and error consequence. One role may need breadth, speed, and immediate clarity. Another role may need depth, completeness, and sustained case attention.\n\nWhen one interface is used for both roles, the design usually optimises for neither. The role whose operating mode is closer to the interface pays tolerable overhead. The role whose operating mode is poorly served pays a heavier attention cost on every routine interaction."
+      "heading": "Role-Mode Mismatch Imposes One Operating Mode on Another",
+      "bodyMarkdown": "Role-mode mismatch occurs when one interface design serves users whose operational modes are fundamentally different. The difference is not a matter of preference. It arises from different physical environments, time structures, error profiles, and attention requirements.\n\nIn a shared interface, one role may receive tolerable overhead because the design fits its cognitive mode. Another role pays a heavier attention cost on every interaction because the interface logic was built for a different kind of attention.\n\nThis mechanism is visible when workarounds are role-specific rather than task-specific. Users are not merely compensating for a feature gap. They are adapting around an interface architecture that does not fit the mode in which they work."
     },
     {
-      "heading": "Attention budget mismatch occurs when ambient displays require sustained attention",
-      "bodyMarkdown": "Attention budget mismatch occurs when an embedded display used during physical activity requires more sustained attention than the operating context permits.\n\nIn riding, driving, or machinery operation, the user's primary attention belongs to the physical task. The interface receives only a brief attention interval. The display must communicate its primary state quickly enough for attention to return to the operating environment.\n\nIf understanding the display requires sustained reading or interpretation, the user holds gaze longer than the situation allows. In this mechanism, routine attention cost is measured in seconds of eyes-off-road time rather than in navigation steps or menu decisions."
+      "heading": "Ambient-Use Displays Fail When Meaning Cannot Be Extracted Quickly Enough",
+      "bodyMarkdown": "Attention budget mismatch in ambient use contexts occurs when an embedded display is used during physical activity such as riding, driving, or operating machinery. In those contexts, the primary task is outside the interface. Only a fraction of the user's attention is available for the display.\n\nThe interface does not need extended navigation or parsing. It needs to communicate primary state inside the brief interval the user can safely allocate before returning attention to the primary task.\n\nWhen the display cannot deliver meaning in that interval, the user holds attention on the interface longer than the operational context permits. The routine cost is measured in glance duration rather than screen count or menu depth."
     },
     {
-      "heading": "WCO IPM showed attention cost as low adoption, workarounds, and training burden",
-      "bodyMarkdown": "The WCO IPM case shows how attention cost can suppress adoption even when a platform is functional. IPM is a customs intelligence platform operated by the World Customs Organization to coordinate intellectual property enforcement between frontline customs officers and rights holders across member administrations. By the time Creative Navy was engaged, the platform was already in production and covered an intergovernmental community overseeing most international trade. Adoption remained persistently low across many administrations.\n\nThe presenting signals were indirect. Officers described IPM as slow during inspections, hard to learn, difficult to operate, and not worth the effort. Parallel workarounds had developed through spreadsheets and email chains. These workarounds indicated that users considered the official system more costly to use than the informal routes around it.\n\nCreative Navy's Sandbox Experiments phase documented the operational reality through interviews, workflow mapping, and remote observation across WCO teams and selected member administrations. Frontline inspection officers worked in ports, airports, and land border posts with unreliable connectivity, mixed device fleets, and limited time per inspection. The routine task was operationally simple: check a shipment against existing intelligence and record the outcome. The interface required several screens and frequent section switching to complete it.\n\nThe platform also served three user groups through one interface: frontline officers, intelligence analysts, and rights holders. Frontline officers needed speed and simplicity under field conditions. Intelligence analysts needed structured access to historical cases and patterns. Rights holders needed clear filing and monitoring paths. The information architecture imposed the overhead of all three contexts on each user, regardless of the task being performed.\n\nCreative Navy's Concept Convergence work rebuilt the information architecture around real inspection and case management flows. The documented interventions included recognition over recall, reduced choices per screen, progressive disclosure, contextual micro-hints on first use of complex actions, and context-aware data presentation. Officers could access relevant intelligence when opening a shipment record without navigating through sections intended for other roles.\n\nWCO reported to Creative Navy a 78% reduction in officer training costs, based on reduced training hours. WCO also reported a 20% increase in platform use among officers, a 67% increase among rights holders, and a 200% increase in rights holder sign-ups. The platform is now used by more than 2,000 officers across 107 governments. Usability testing with 47 participants across Italy, Romania, Uzbekistan, Algeria, and Spain confirmed that workflows were faster and less error-prone under realistic conditions, although the observed testing was not quantified as task-time measurements."
+      "heading": "How Creative Navy's Critical Systems Design Method Addresses Attention Overhead",
+      "bodyMarkdown": "Creative Navy's Critical Systems Design method addresses attention overhead by identifying the operational task structure before interface architecture is finalised. Domain learning during Sandbox Experiments establishes what users are actually doing, where they are doing it, what information they need, and what attention conditions apply.\n\nCreative Navy's Critical Systems Design method also uses microtask analysis to map interaction at the level of individual attention events within a task flow. Users often do not report navigation steps, scanning events, and reorientation moments as separate problems because they have absorbed them as habit. Observation and task decomposition make those costs visible.\n\nSpecific interventions depend on the mechanism. Navigation overhead may require a task-led information architecture. Decision overhead may require contextual presentation and progressive disclosure. Role-mode mismatch may require architectural separation by role. Ambient-use displays may require structural rules that make primary state legible within the available glance interval."
     },
     {
-      "heading": "IDEXX Animana showed role-mode mismatch between reception and clinical work",
-      "bodyMarkdown": "The IDEXX Animana case shows attention cost created by role-mode mismatch in veterinary practice management software. Animana had eleven years of accumulated feature additions, local customisations, and workflow assumptions layered onto an older architecture. IDEXX commissioned Creative Navy to conduct an independent, evidence-based assessment through field research across real clinical environments and to produce a long-horizon product vision.\n\nThe field programme covered 35 clinics in the UK, Netherlands, and Germany over two weeks. Creative Navy observed more than 150 participants across four role types: vets, nurses, reception staff, and administrative staff. The participant range included first-week users and ten-year veterans, which allowed Creative Navy to distinguish learning-curve problems from structural problems in the platform.\n\nThe structural finding was that two operating modes were sharing a single interface. Reception staff worked in ambient multitasking under time pressure: incoming calls, arriving clients, insurance queries, appointment changes, record updates, scheduling, and payment. Reception work required breadth, speed, immediate clarity, and high-frequency actions that did not compete with irrelevant options.\n\nClinical staff worked in focused, sequential case attention. Vets and nurses needed depth, completeness, and full case detail without administrative noise. The consultation room had different interruption patterns, attention structure, and error consequences from the front desk.\n\nThe observed interface imposed navigation and decision load calibrated for clinical depth on reception staff who needed a different operating model. Workarounds made the attention cost visible: checklists taped to monitors, printed reference sheets near terminals, and role-specific patterns of working around the platform rather than through it.\n\nCreative Navy's tension-driven reasoning led to an architectural recommendation: distinct UI design for reception and clinical roles. The documented conclusion was that feature additions, option reordering, or progressive disclosure could not resolve a role-mode mismatch at this level because the cognitive modes were incompatible within a single shared design.\n\nThe deliverables included a multi-country research report, role-based user models for four role types, a UX audit, more than 100 recommendations for development handoff, and a five-year product vision with capability stages linked to research evidence. IDEXX confirmed six months post-engagement that the recommendations were well-grounded and that some had already been implemented. This downstream signal is client-reported and was not independently verified by Creative Navy."
-    },
-    {
-      "heading": "Stromer showed attention budget mismatch through glance duration during riding",
-      "bodyMarkdown": "The [Stromer e-bike case study](stromer-ebike) shows attention budget mismatch in an embedded display used during riding. In this context, the rider's primary attention is on the road. The display must communicate relevant state in a short glance.\n\nBefore Creative Navy's engagement, Creative Navy measured average glance duration at 4.32 seconds. The documented comparison point is the 2-second threshold at which road safety research identifies a doubling of near-crash and crash risk, citing Klauer et al. (2006), NHTSA Report No. DOT HS 810 594, and NHTSA Driver Distraction Guidelines Phase 1, 2012. The standards cited are formally defined for four-wheeled vehicles; the page applies the threshold and principle to embedded displays used during riding.\n\nCreative Navy also recorded that riders were glancing at the display 18% more times per kilometre than after the redesign. Each additional glance represented an attention expenditure that a more efficient display state would not have required.\n\nThe structural cause was the warning architecture. Warnings were visual overlays on a fixed screen layout, with no native structural relationship to the surface they occupied. They appeared without contextual grounding, covered content they should not cover, and required sustained reading to interpret. The information was not organised for rapid extraction within the rider's available attention interval.\n\nCreative Navy rebuilt the warning architecture at the structural level before producing components. The redesign defined rules and principles for how warnings and interruptive elements relate to the screen structure across states. After the redesign, Creative Navy re-measured using the same methodology and routes. Average glance duration fell to 1.89 seconds, within the cited safe threshold, and glance frequency per kilometre fell by 18%. The evidence basis is field-measured in real riding conditions with 5 participants using a consistent pre/post methodology."
-    },
-    {
-      "heading": "How Creative Navy's Critical Systems Design method addresses attention overhead",
-      "bodyMarkdown": "Creative Navy's Critical Systems Design method addresses attention overhead by identifying the task structure, operating context, and attention events that routine use actually requires.\n\nDomain learning, conducted during Sandbox Experiments, establishes the real task structure before architectural decisions are made. In the WCO engagement, Creative Navy documented what frontline customs officers needed during an inspection, in what sequence, and under what connectivity and time conditions. In the IDEXX engagement, field observation across 35 clinics made the role-mode mismatch visible because workarounds were role-specific rather than merely task-specific. In the Stromer engagement, Creative Navy measured pre-redesign attention cost directly through eye tracking in actual riding conditions.\n\nMicrotask analysis identifies attention overhead below the level of explicit workflow description. Users often do not report navigation steps, scanning events, and repeated filtering as separate problems because they have absorbed them as habit. Observation and task decomposition make these costs visible.\n\nThe documented design responses were specific to the mechanism. WCO required information architecture rebuilt around inspection and case management flows, reduced choices per screen, progressive disclosure, contextual micro-hints, and context-aware data presentation. IDEXX required architectural separation between reception and clinical roles. Stromer required a structural warning architecture that communicated display state within the rider's available attention interval."
-    },
-    {
-      "heading": "Evidence basis and calibration",
-      "bodyMarkdown": "The evidence for this failure pattern comes from three documented engagements: WCO IPM, IDEXX Animana, and Stromer.\n\nWCO outcomes are client-reported by WCO to Creative Navy. The 78% training cost reduction is based on reduced training hours. The 20% increase in officer platform use, 67% increase among rights holders, and 200% increase in rights holder sign-ups are also reported by WCO. Usability testing involved 47 participants across Italy, Romania, Uzbekistan, Algeria, and Spain and confirmed faster, less error-prone workflows under realistic conditions, but the page does not provide quantified task-time measurements.\n\nIDEXX evidence is based on Creative Navy field research across 35 clinics in the UK, Netherlands, and Germany over two weeks, with more than 150 participants across four role types. The post-engagement signal that some recommendations had been implemented is client-reported and not independently verified by Creative Navy.\n\nStromer evidence is field-measured by Creative Navy in real riding conditions. The pre/post comparison used the same methodology and routes, involved 5 participants, and recorded average glance duration falling from 4.32 seconds to 1.89 seconds, with glance frequency per kilometre falling by 18%."
-    },
-    {
-      "heading": "Boundaries and limits",
-      "bodyMarkdown": "This failure should not be treated as a general claim that any complex interface is unusable. The failure concerns routine tasks where the attention cost is disproportionate to the task and operating context.\n\nThis failure should not be collapsed into memory burden. A system can require too much attention because it requires repeated scanning, navigation, or mode switching even if users do not need to hold much information in working memory.\n\nThis failure should not be collapsed into screen-count fragmentation. Tasks spanning too many screens often create attention overhead, but decision overhead and role-mode mismatch can also create attention cost in tasks that are not structurally fragmented.\n\nThe WCO and IDEXX outcomes include client-reported components. They are useful evidence for the documented cases, but they should not be stated as independently measured results.\n\nThe Stromer evidence is stronger for the specific embedded display and real riding conditions measured by Creative Navy. The 2-second threshold cited in the Stromer discussion is formally defined for four-wheeled vehicles, while the documented argument applies the threshold and principle to riding."
+      "heading": "Evidence Basis for This Failure Pattern",
+      "bodyMarkdown": "The evidence base for this failure pattern includes Creative Navy-observed case evidence, Creative Navy-measured field evidence, client-reported outcomes, and client-stated contextual material. These evidence types should not be treated as equivalent.\n\nThe strongest empirical material on this page is the directly observed or measured material: field research that documented role-mode mismatch, usability testing that observed faster and less error-prone workflows without quantified task-time measurement, and pre/post field measurement of glance duration using a consistent method.\n\nClient-reported outcomes and client-stated operating patterns are useful context, but they are weaker evidence than field observation or measurement. Assemblio material in particular supports the concept of attention budget as a client-stated constraint, not as Creative Navy-observed shop-floor evidence."
     }
   ],
   "evidenceSummary": {
     "strongClaims": [
-      "Too much attention is required for routine use when routine tasks impose navigation, decision, role-mode, or glance-duration costs that are disproportionate to the task.",
-      "The failure is difficult to identify because it produces accumulated friction rather than a discrete error.",
-      "In WCO IPM, attention cost appeared as low adoption, parallel workarounds, and navigation overhead during field inspections.",
-      "In IDEXX Animana, Creative Navy identified role-mode mismatch between reception staff and clinical staff using field research across 35 clinics and more than 150 participants.",
-      "In the Stromer engagement, average glance duration fell from 4.32 seconds to 1.89 seconds after the redesign, and glance frequency per kilometre fell by 18%.",
-      "Creative Navy's Critical Systems Design method addresses attention overhead through domain learning and microtask analysis."
+      "Too much attention is required for routine use when ordinary tasks impose attention cost disproportionate to the task itself, even though the software may remain functional.",
+      "The main mechanisms are navigation overhead, decision overhead, role-mode mismatch, and attention budget mismatch in ambient use contexts.",
+      "In the WCO IPM case, adoption problems were linked to attention overhead under field conditions, including several screens and frequent section switching for a simple inspection task.",
+      "WCO IPM usability testing with 47 participants across Italy, Romania, Uzbekistan, Algeria, and Spain confirmed workflows were faster and less error-prone under realistic conditions, without quantified task-time measurements.",
+      "In the IDEXX Animana case, fieldwork across 35 clinics and 150+ participants documented a role-mode mismatch between reception and clinical staff.",
+      "The IDEXX Animana recommendation was architectural separation into distinct UI designs for reception and clinical roles, rather than feature-level adjustment to the shared interface.",
+      "In the Stromer case, Creative Navy measured average glance duration falling from 4.32 seconds before redesign to 1.89 seconds after redesign, with glance frequency per kilometre falling by 18%."
     ],
     "weakerClaims": [
-      "WCO reported a 78% reduction in officer training costs, a 20% increase in officer platform use, a 67% increase among rights holders, and a 200% increase in rights holder sign-ups after the redesign."
+      "WCO reported a 78% reduction in training costs for officers, a 20% increase in officer platform use, a 67% increase among rights holders, and a 200% increase in rights holder sign-ups after the redesign. These figures are client-reported by WCO to Creative Navy.",
+      "Assemblio's attention-budget material is client-stated rather than observed; the roughly 90% use pattern is Assemblio's own unmeasured characterisation."
     ],
     "limitations": [
-      "WCO outcome figures are client-reported by WCO to Creative Navy and are not presented as independently measured results.",
-      "The WCO usability testing confirmed faster and less error-prone workflows under realistic conditions, but the source does not provide quantified task-time measurements.",
-      "IDEXX post-engagement implementation evidence is client-reported and was not independently verified by Creative Navy.",
-      "The Stromer pre/post glance-duration evidence involved 5 participants, so it should be treated as case-specific evidence rather than a general population estimate.",
-      "The 2-second glance threshold cited in the Stromer discussion is formally defined for four-wheeled vehicles; the documented page applies the threshold and principle to riding contexts."
+      "The failure is diagnostic rather than automatically proven by any single signal; high training cost, workarounds, and user complaints require evidence linking them to attention overhead.",
+      "WCO outcome figures are client-reported by WCO to Creative Navy and are not described as independently verified.",
+      "The WCO usability testing finding that workflows were faster and less error-prone was observed, not quantified as task-time measurements.",
+      "IDEXX downstream implementation feedback was client-reported six months post-engagement and not independently verified by Creative Navy.",
+      "The Stromer field measurement used 5 participants, although the pre/post methodology and routes were consistent.",
+      "The cited 2-second glance threshold is formally defined for four-wheeled vehicles; the documented case applies the threshold and principle to embedded displays used during riding.",
+      "Assemblio evidence is client-stated only. Creative Navy did not conduct research, testing, or shop-floor observation for Assemblio, and the roughly 90% figure must not be treated as measured."
     ]
   },
   "relatedPageSlugs": [
     "the-interface-demands-too-much-memory",
     "tasks-span-too-many-screens-or-steps",
-    "warnings-are-visible-but-their-meaning-is-unclear",
     "users-cannot-reorient-quickly-after-interruption",
     "the-system-does-not-support-rapid-judgment",
-    "stromer-ebike"
+    "warnings-are-visible-but-their-meaning-is-unclear",
+    "workflows-break-across-roles",
+    "stromer-ebike",
+    "assemblio"
   ],
   "internalLinks": [
     {
       "anchorText": "The Interface Demands Too Much Memory",
       "targetSlug": "the-interface-demands-too-much-memory",
-      "reason": "The source explicitly distinguishes this failure from memory burden."
+      "reason": "The current page explicitly distinguishes attention cost from memory burden."
     },
     {
       "anchorText": "Tasks Span Too Many Screens Or Steps",
       "targetSlug": "tasks-span-too-many-screens-or-steps",
-      "reason": "The source explicitly distinguishes attention cost from the structural condition of tasks spanning too many screens or steps."
-    },
-    {
-      "anchorText": "Stromer e-bike case study",
-      "targetSlug": "stromer-ebike",
-      "reason": "The source includes Stromer as a grounded example, and the matching case-study slug is available."
-    },
-    {
-      "anchorText": "Warnings Are Visible But Their Meaning Is Unclear",
-      "targetSlug": "warnings-are-visible-but-their-meaning-is-unclear",
-      "reason": "The Stromer example describes warnings that lacked contextual grounding and required sustained reading to interpret."
+      "reason": "The current page explicitly distinguishes attention cost from the structural condition of task fragmentation across screens or steps."
     },
     {
       "anchorText": "Users Cannot Reorient Quickly After Interruption",
       "targetSlug": "users-cannot-reorient-quickly-after-interruption",
-      "reason": "The page discusses attention diversion, reorientation, and mode switching during routine operation."
+      "reason": "Reorientation cost is a recurring mechanism in navigation overhead and interruption-related cognitive failures."
     },
     {
       "anchorText": "The System Does Not Support Rapid Judgment",
       "targetSlug": "the-system-does-not-support-rapid-judgment",
-      "reason": "The page describes cases where users need to extract meaning quickly under operational constraints."
+      "reason": "The failure affects contexts where users must extract meaning quickly, especially customs inspection and embedded display checks."
+    },
+    {
+      "anchorText": "Warnings Are Visible But Their Meaning Is Unclear",
+      "targetSlug": "warnings-are-visible-but-their-meaning-is-unclear",
+      "reason": "The Stromer example concerns warning architecture that required sustained reading to interpret."
+    },
+    {
+      "anchorText": "Workflows Break Across Roles",
+      "targetSlug": "workflows-break-across-roles",
+      "reason": "The IDEXX evidence describes role-specific operating modes that could not be served by one shared interface architecture."
+    },
+    {
+      "anchorText": "Stromer embedded display case",
+      "targetSlug": "stromer-ebike",
+      "reason": "The body discusses the Stromer embedded display as a named evidence example and a matching allowed case-study slug is available."
+    },
+    {
+      "anchorText": "Assemblio Smart Viewer evidence",
+      "targetSlug": "assemblio",
+      "reason": "The body discusses Assemblio as a named evidence example and a matching allowed case-study slug is available."
     }
   ],
   "tags": [
     "cognitive failures",
     "attention cost",
-    "cognitive load",
     "navigation overhead",
     "decision overhead",
     "role-mode mismatch",
     "ambient use",
     "glance duration",
-    "domain learning",
     "microtask analysis",
+    "domain learning",
     "Critical Systems Design"
   ],
   "_meta": {
     "sourcePath": "sources/articles/Failures/failures--cognitive--too-much-attention-is-required-for-routine-use.md",
     "parentSlug": "cognitive-failures",
     "childPageSlugs": [],
-    "generatedBy": "deterministic"
+    "generatedBy": "openai"
   }
 }

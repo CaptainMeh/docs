@@ -12,83 +12,87 @@
   "category": "situations",
   "parentSlug": "ai-and-automation",
   "childPageSlugs": [],
-  "excerpt": "Users trust the AI too much when an interface calibrates trust upward and users follow AI recommendations without appropriate critical evaluation. The documented mechanisms include anchoring, authority presentation, override friction asymmetry, and automation complacency.",
+  "excerpt": "Users trust the AI too much when interface design miscalibrates trust upward, producing automation bias. The failure appears as anchoring, authority presentation, override friction asymmetry, and automation complacency.",
   "metaTitle": "Users Trust The AI Too Much",
-  "metaDescription": "A situation page on AI over-trust, automation bias, anchoring, authority presentation, override friction, and automation complacency.",
-  "summary": "Users trust the AI too much when AI product interfaces make acceptance of AI output feel more warranted, safer, or easier than the evidence supports. In Creative Navy's documentation, this situation concerns automation bias and the design conditions that produce over-reliance on AI recommendations.",
-  "definition": "Users trust the AI too much is an AI-and-automation situation where automation bias causes users to follow AI recommendations without sufficient independent evaluation because the interface has miscalibrated trust upward.",
+  "metaDescription": "Over-trust in AI products occurs when interfaces make users follow AI outputs without enough independent judgement or scrutiny.",
+  "summary": "This situation describes over-trust in AI-enabled products: users appear to be exercising judgement, but the interface has made AI recommendations too easy to accept, too authoritative-looking, or too early in the decision sequence. The result is systematic over-reliance rather than isolated user error.",
+  "definition": "Users trust the AI too much when an AI interface creates automation bias: a systematic tendency to follow AI recommendations without appropriate critical evaluation.",
   "keyFacts": [
-    "Over-trust is described as automation bias: the systematic tendency to follow AI recommendations without appropriate critical evaluation.",
-    "The situation is distinct from under-trust, where users fail to engage with AI outputs at all.",
-    "Anchoring occurs when AI recommendations are shown before the user has formed an independent assessment.",
-    "Authority presentation occurs when AI outputs are displayed with more visual certainty than their reliability warrants.",
+    "Over-trust is described as more dangerous than under-trust because it can be invisible in normal product use.",
+    "Automation bias occurs when an interface miscalibrates user trust upward.",
+    "The source identifies four forms of over-trust: anchoring, authority presentation, override friction asymmetry, and automation complacency.",
+    "Anchoring occurs when AI recommendations are shown before the user forms an independent assessment.",
+    "Authority presentation occurs when AI outputs appear more visually certain than their actual reliability warrants.",
     "Override friction asymmetry occurs when accepting AI output is easier than disagreeing with it.",
-    "Automation complacency occurs when users stop verifying AI recommendations after repeated correct outputs.",
-    "In the Puraite case, blinded mode withheld AI decisions until after human assessment was recorded to eliminate the anchoring mechanism.",
-    "In the Callsign case, evaluation mode separation made analysis read-only to prevent untracked live modifications during policy review.",
-    "The documented general pattern is that uniform confidence presentation prevents users from calibrating trust appropriately."
+    "Automation complacency occurs when users stop verifying AI outputs after repeated correct recommendations.",
+    "The Puraite case used blinded mode to withhold AI decisions until after human assessment was recorded.",
+    "The Callsign case separated evaluation mode from live policy modification to prevent untracked consequential changes during analysis.",
+    "The visioncheckout case shows over-trust in a low-consequence, high-frequency checkout context through observed field patterns."
   ],
   "tags": [
-    "AI over-trust",
+    "AI and automation",
     "automation bias",
     "trust calibration",
+    "over-trust",
     "anchoring",
     "authority presentation",
     "override friction",
     "automation complacency",
-    "AI-enabled products",
-    "human judgment"
+    "human judgement",
+    "AI confidence"
   ],
-  "bodyMarkdown": "## Summary of AI over-trust as an automation-bias situation\n\nCreative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nUsers trust the AI too much when an AI product interface calibrates user trust upward and produces automation bias. Automation bias is the systematic tendency to follow AI recommendations without appropriate critical evaluation.\n\nThis situation is less visible than under-trust because the interface appears to be used normally. Users appear to be exercising judgment, and the resulting errors can look like random user errors rather than systematic design failures.\n\nCreative Navy's documentation treats over-trust as an interface problem, not only a user education problem. The relevant question is how the interface shapes the relationship between AI output and human judgment at the point where a decision is made.\n\n## Automation bias appears through four documented mechanisms\n\nAutomation bias in AI products appears when the interface gives users reasons to accept AI output without enough independent scrutiny. The documented mechanisms are anchoring, authority presentation, override friction asymmetry, and automation complacency.\n\nAnchoring occurs when AI recommendations are presented before the user has formed an independent assessment. Prior exposure to the AI recommendation can shift later judgment toward that recommendation, even when users believe they are evaluating independently.\n\nAuthority presentation occurs when AI outputs are presented with visual confidence that does not reflect actual reliability. A definitive visual treatment can imply more certainty than the underlying model confidence warrants. If users cannot distinguish high-confidence outputs from low-confidence outputs, they may treat all outputs as equally reliable.\n\nOverride friction asymmetry occurs when accepting an AI recommendation is the path of least resistance while disagreeing requires extra steps, extra cognitive effort, or the implicit act of contradicting a system that has usually been correct. High override friction can produce systematic over-acceptance independent of the user's actual judgment.\n\nAutomation complacency occurs over time when users who have repeatedly seen correct AI recommendations stop verifying them. The proportion of cases where users examine the basis for a recommendation decreases. The aggregate error rate may remain acceptable, but the safety margin against consequential errors erodes.\n\n## Why this belongs in the AI-and-automation cluster\n\nUsers trust the AI too much is an AI-and-automation situation because the failure concerns how the interface manages the relationship between AI output and human judgment. The pattern depends on users calibrating trust against recommendations produced by an AI system.\n\nThis situation differs from users not trusting the AI enough. Under-trust concerns failure to engage with AI outputs. Over-trust concerns excessive acceptance of AI outputs.\n\nThis situation also differs from weak human control in practice. Weak human control concerns whether control mechanisms exist. AI over-trust concerns whether trust calibration leads users to exercise the control that exists.\n\n## High-consequence contexts make over-trust more consequential\n\nAI over-trust is especially consequential when the AI's error distribution is correlated with domain-specific patterns that expert practitioners would catch. In those cases, the AI can be wrong in ways recognisable to experts but missed by users who are not exercising judgment.\n\nThe situation is also consequential when the decision is difficult to reverse, when epistemic independence is a methodological or governance requirement, or when the AI presents uniform confidence while its accuracy varies.\n\nSystematic review, clinical diagnosis, legal analysis, and regulatory compliance are named examples of contexts where epistemic independence may be a methodological or governance requirement. In those contexts, interface timing and confidence presentation can affect whether a human assessment remains independent.\n\n## Puraite shows anchoring produced by presentation order\n\nIn the Puraite case, Creative Navy identified anchoring in a systematic literature review workflow. Epistemic independence was a methodological requirement because inclusion and exclusion decisions had to reflect each reviewer's independent evaluation of the evidence.\n\nThe pre-design workflow showed AI screening decisions before human review. The documented case evidence describes this as a temporal presentation-order problem: reviewers who believed they were evaluating independently could still anchor their assessments to the AI's prior decision.\n\nCreative Navy's design response was blinded mode. AI decisions were withheld until after human assessment was recorded, eliminating the anchoring mechanism described in the workflow.\n\nThe Puraite case is described as the clearest single example in the portfolio of over-trust designed against rather than managed through user training or policy.\n\n## Callsign shows interface-safety over-trust during policy evaluation\n\nIn the Callsign fraud detection case, the platform managed risk through policy configuration. Thresholds and workflow rules determined when transactions were blocked or stepped up.\n\nThe documented pre-design state lacked separation between policy configuration and policy evaluation. Analysts reviewing policy performance in an evaluation session could inadvertently make live modifications because the interface did not enforce the distinction between reviewing and acting.\n\nThis is described as over-trust in interface safety. Analysts trusted that the interface was preventing consequential actions during review sessions, but the interface was not providing that protection.\n\nCreative Navy's design response was evaluation mode separation. Analysis became read-only, preventing untracked live modifications regardless of user intention.\n\n## Uniform confidence presentation prevents trust calibration\n\nThe documented pattern across Creative Navy AI product engagements is that interfaces that do not communicate AI confidence create uniform trust that is systematically miscalibrated.\n\nWhen high-confidence and low-confidence AI outputs receive the same confident-looking visual treatment, users have no interface signal showing when scrutiny is most warranted. In that condition, the interface does not provide the information users need to calibrate trust.\n\nThe documented design responses address this calibration problem in different ways. Puraite used explicit confidence percentage with colour coding. Callsign made policy performance data visible at configuration. Owkin/K made the data source visible at the point of output.\n\n## Domain vocabulary for AI over-trust\n\nAutomation bias is the systematic tendency to over-rely on automated systems. In this situation, automation bias is the primary failure mode of AI over-trust.\n\nAnchoring is the cognitive effect where prior exposure to a recommendation influences later judgment even when the user believes the later judgment is independent.\n\nAuthority presentation is interface design that presents AI outputs with more visual certainty than is epistemically warranted.\n\nOverride friction asymmetry is the condition where accepting AI output requires less cognitive effort than overriding it.\n\nAutomation complacency is the gradual atrophy of critical evaluation that occurs when AI outputs have been consistently correct.\n\nEpistemic independence is the condition where human evaluation is not influenced by prior AI output.\n\nTrust calibration is the design goal of matching user trust in AI outputs to actual AI reliability.\n\n## Boundaries and limits of this situation\n\nUsers trust the AI too much does not describe every AI error. It describes a trust-calibration failure where the interface leads users to over-accept AI recommendations or to reduce independent scrutiny.\n\nThis situation does not claim that users are lazy or incautious. In the Puraite case, the documented failure was produced by presentation order. In the Callsign case, the documented failure was produced by insufficient mode separation.\n\nThe available examples are case-based. The documented evidence describes mechanisms and design responses, but it does not provide quantitative error rates, before-and-after acceptance rates, or independent measurement of over-trust reduction.\n\n## Related pages\n\nThis situation should be read alongside users not trusting the AI enough, because under-trust and over-trust are opposite trust-calibration failures. It is also related to weak human control in practice, because control mechanisms may exist but still not be exercised if the interface encourages over-trust. Hidden uncertainty at the point of decision is also relevant because users cannot calibrate trust when confidence information is not visible where the decision is made.",
+  "bodyMarkdown": "## Definition of over-trust in AI products\n\nCreative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nUsers trust the AI too much when an AI product produces automation bias: the systematic tendency to follow AI recommendations without appropriate critical evaluation. The product appears to be in use, and users appear to be exercising judgement, but the interface has shifted user behaviour toward accepting the AI output.\n\nThis situation is different from simple user carelessness. Over-trust is a design failure when the interface makes AI outputs look more authoritative than they are, presents them before independent judgement can form, or makes acceptance easier than scrutiny.\n\n## Automation bias is an upward trust calibration failure\n\nAutomation bias occurs when an AI interface miscalibrates user trust upward. The user may not consciously decide to defer to the AI. The interface structure can produce over-acceptance through timing, visual treatment, friction, and repeated exposure.\n\nUnder-trust is visible because users ignore or reject AI outputs. Over-trust is less visible because the workflow continues normally. The errors can look like random user errors, even when the interface is systematically shaping users toward accepting recommendations without enough independent evaluation.\n\n## Anchoring occurs when AI output appears before independent judgement\n\nAnchoring is the cognitive effect where prior exposure to a recommendation influences later judgement. In an AI interface, anchoring occurs when the AI recommendation is presented before the user has formed an independent assessment.\n\nThe user may believe they are evaluating independently, but the prior AI recommendation shifts the assessment toward the AI output. In this situation, the user has not been convinced by evidence; the user has been anchored by presentation order.\n\n## Authority presentation makes uncertain AI output look definitive\n\nAuthority presentation occurs when an AI output is displayed with more visual certainty than the underlying reliability warrants. A definitive visual treatment can imply certainty even when the model confidence or output reliability is variable.\n\nWhen users cannot distinguish high-confidence and low-confidence AI outputs, they tend to treat outputs as uniformly reliable. This prevents trust calibration because the interface gives no signal for when scrutiny is most warranted.\n\n## Override friction asymmetry makes acceptance easier than disagreement\n\nOverride friction asymmetry occurs when accepting an AI recommendation is the path of least resistance and disagreeing requires additional work. Extra steps, extra cognitive effort, or the social meaning of contradicting a system that is usually correct can all increase over-acceptance.\n\nThe important point is that over-acceptance can happen independently of the user's actual judgement. If the interface makes acceptance easy and correction costly, the structure of the workflow pushes users toward the AI output.\n\n## Automation complacency reduces verification over time\n\nAutomation complacency occurs when users stop verifying AI outputs after repeated correct recommendations. Initial vigilance can atrophy as the product appears reliable in ordinary use.\n\nThe aggregate error rate may remain acceptable, but the safety margin against consequential errors erodes. The risk appears in the specific cases where the AI is wrong in a way that a domain practitioner might have caught if the interface had preserved active judgement.\n\n## High-consequence contexts make over-trust especially consequential\n\nOver-trust is especially consequential when the decision is difficult to reverse, when epistemic independence is a methodological or governance requirement, or when the AI is wrong in domain-specific ways that expert practitioners would recognise.\n\nThe risk also increases when AI confidence appears uniform while accuracy varies. If the same confident-looking output presentation is used for both high-reliability and low-reliability recommendations, the interface prevents users from calibrating attention to the cases where scrutiny matters most.\n\n## Puraite shows anchoring as a design mechanism in systematic review\n\nIn the Puraite systematic review case, epistemic independence was a methodological requirement. Inclusion and exclusion decisions needed to reflect each reviewer's independent evaluation of the evidence.\n\nCreative Navy's analysis of the pre-design workflow identified a specific anchoring mechanism: AI screening decisions were shown before human review. Reviewers who believed they were evaluating independently were still anchoring their assessments to the AI's prior decision.\n\nThe over-trust was produced by temporal presentation order rather than by deliberate user inattention. The design response was blinded mode: AI decisions were withheld until after human assessment was recorded, removing the anchoring mechanism.\n\n## Callsign shows over-trust in interface safety during policy evaluation\n\nIn the Callsign fraud detection case, the platform managed risk through policy configuration. Thresholds and workflow rules determined when transactions were blocked or stepped up.\n\nThe pre-design state did not separate policy configuration from policy evaluation. Analysts reviewing policy performance during an evaluation session could inadvertently make live modifications because the interface did not enforce a distinction between reviewing and acting.\n\nThis is described as over-trust in interface safety. Analysts trusted that the interface was preventing consequential actions during review sessions, but the interface was not providing that protection. The design response was evaluation mode separation: read-only during analysis, preventing untracked live modifications regardless of user intention.\n\n## visioncheckout shows over-trust in a low-consequence, high-frequency context\n\nvisioncheckout, a German vendor of computer-vision self-checkout systems for staff restaurants and catering, provides field-observed examples of over-trust in a low-consequence, high-frequency setting. The name is styled lowercase.\n\nThe visioncheckout case must not be framed as high-consequence. The consequence of failure is a queue, a wrong charge, or a guest who needs help. The point of the case is that small errors can matter when repeated across thousands of daily transactions.\n\nCreative Navy's field research observed three over-trust forms in the system in live operation: override friction asymmetry, automation complacency, and authority presentation. These are observed patterns, not counted events, and no percentage should be attached to the field observations.\n\n## visioncheckout shows extreme override friction asymmetry\n\nIn visioncheckout, accepting the model output costs a few touchless seconds. Recognition completes in about 0.5 seconds. Synchronising the basket with the POS system takes one to three seconds. Most users pay by keycard, and the payment completes immediately where balance is available.\n\nCorrecting the output costs a multi-step flow. Entry to the Corrector is deliberately understated as a tertiary edit control near the basket header, while rescan remains the primary action. Correction is available, but the interface does not present correction as the normal next step.\n\nThis creates a structural trust imbalance. The fastest route is to accept the system output, while the route for disagreement requires more effort and more attention.\n\n## visioncheckout shows automation complacency and field-observed overpayment\n\nCreative Navy observed that experienced visioncheckout users become very fast after using the system once or twice. They know what to expect and stop checking in detail.\n\nAn empty glass on a tray can produce a charge alongside the drink it held. Regular canteen users learned to avoid this rather than catch it through scrutiny. At the public venue, staff intervene. These are observed field patterns, not counted events.\n\nThe field research also observed over-trust costing a real person money: an employee intending to pay by credit card forgot to present the employee card for the discount and paid more than they should.\n\n## visioncheckout shows authority presentation without visible confidence\n\nIn visioncheckout, the basket states a price with the finality of a till receipt while recognition confidence varies invisibly. One POS item can map to several visual variants, such as different soups, salads, or dishes of the day.\n\nThose variants matter for retraining the recognition system, not for the guest's transaction. The guest sees a final-looking basket and price, but the interface does not indicate when scrutiny is most warranted.\n\n## Trust calibration depends on showing the information users need\n\nAcross the AI product engagements described here, a consistent pattern appears: interfaces that do not communicate AI confidence create uniform trust. Uniform trust becomes miscalibrated when high-confidence and low-confidence outputs receive the same visual treatment.\n\nCreative Navy's documented design responses address this problem in different ways. In Puraite, the response included explicit confidence percentage with colour coding. In Callsign, policy performance data became visible at configuration. In Owkin/K, data source visibility was provided at the point of output.\n\nThe shared design issue is not whether AI output should be trusted or distrusted in general. The issue is whether the interface gives users the information and workflow structure needed to calibrate trust to actual reliability.\n\n## Boundaries of this situation\n\nThis situation applies to AI-and-automation products where the interface manages the relationship between AI output and human judgement. It is distinct from under-trust, where users do not engage with AI output enough.\n\nIt is also distinct from weak human control in practice. Weak human control concerns whether control mechanisms exist and can be exercised. Over-trust concerns whether users are likely to exercise judgement and control when the mechanisms exist.\n\nThe visioncheckout evidence is field observation of a system already in service. It is not evidence that new visioncheckout designs were tested with users, and it does not establish throughput, speed, error-rate, satisfaction, accuracy, or commercial outcomes from a redesign.\n\n## Related pages\n\nThis situation is closely related to under-trust in AI products, hidden uncertainty at the point of decision, and weak human control in practice. It also connects to documented case evidence from Puraite, Callsign, Owkin/K, and visioncheckout.",
   "claims": [
     {
-      "claim": "Users trust the AI too much is an automation-bias situation where users follow AI recommendations without appropriate critical evaluation.",
+      "claim": "Users trust the AI too much when an interface creates automation bias: systematic over-reliance on AI recommendations without appropriate critical evaluation.",
       "evidenceType": "conceptual definition",
       "sourceStrength": "strong",
-      "notes": "Supported by the source definition of over-trust as automation bias."
+      "notes": "Defined directly in the situation description and domain vocabulary."
     },
     {
-      "claim": "Anchoring, authority presentation, override friction asymmetry, and automation complacency are documented mechanisms of AI over-trust.",
+      "claim": "The source identifies four forms of upward trust miscalibration: anchoring, authority presentation, override friction asymmetry, and automation complacency.",
       "evidenceType": "conceptual definition",
       "sourceStrength": "strong",
-      "notes": "The source lists and defines these four mechanisms."
+      "notes": "The four forms are explicitly listed and defined."
     },
     {
-      "claim": "AI over-trust is particularly consequential where errors are domain-specific, decisions are difficult to reverse, epistemic independence is required, or confidence presentation is uniform while accuracy varies.",
-      "evidenceType": "conceptual definition",
+      "claim": "In Puraite, AI screening decisions shown before human review created an anchoring mechanism, and blinded mode withheld AI decisions until after human assessment was recorded.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "Presented as the clearest portfolio example of over-trust designed against through interface structure."
+    },
+    {
+      "claim": "In Callsign, the absence of separation between policy configuration and policy evaluation allowed analysts to inadvertently make live modifications during evaluation sessions.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "The documented design response was read-only evaluation mode separation during analysis."
+    },
+    {
+      "claim": "In visioncheckout, Creative Navy observed override friction asymmetry, automation complacency, and authority presentation in live operation.",
+      "evidenceType": "Creative Navy-observed",
+      "sourceStrength": "engagement record",
+      "notes": "The source explicitly states these were field-observed patterns, not counted events."
+    },
+    {
+      "claim": "visioncheckout demonstrates that over-trust can matter in low-consequence, high-frequency contexts, without describing the system as high-consequence.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "The source frames the consequence as a queue, a wrong charge, and a guest who needs help."
+    },
+    {
+      "claim": "Interfaces that do not communicate AI confidence can create uniform trust that is systematically miscalibrated.",
+      "evidenceType": "case study",
       "sourceStrength": "moderate",
-      "notes": "Supported by the source section on high-consequence contexts."
-    },
-    {
-      "claim": "In the Puraite case, showing AI screening decisions before human review created an anchoring mechanism in systematic literature review.",
-      "evidenceType": "case study",
-      "sourceStrength": "case evidence",
-      "notes": "Supported by the Puraite case evidence described in the source."
-    },
-    {
-      "claim": "In the Puraite case, blinded mode withheld AI decisions until after human assessment was recorded to eliminate the anchoring mechanism.",
-      "evidenceType": "case study",
-      "sourceStrength": "case evidence",
-      "notes": "Supported by the source description of the design response."
-    },
-    {
-      "claim": "In the Callsign case, evaluation mode separation made analysis read-only to prevent untracked live policy modifications during review sessions.",
-      "evidenceType": "case study",
-      "sourceStrength": "case evidence",
-      "notes": "Supported by the Callsign case evidence described in the source."
-    },
-    {
-      "claim": "Across the documented AI product engagements, uniform confidence presentation is described as a pattern that prevents appropriate trust calibration.",
-      "evidenceType": "case study",
-      "sourceStrength": "case evidence",
-      "notes": "Supported by the source's general pattern across AI products."
+      "notes": "Stated as a general pattern across the documented AI product engagements."
     }
   ],
   "limitations": [
-    "The page is based on documented case evidence and conceptual definitions, not on quantitative before-and-after measures of automation bias.",
-    "The documented evidence does not provide error-rate figures, acceptance-rate figures, or independent measurement of over-trust reduction.",
-    "The Callsign example is described as over-trust in interface safety rather than over-trust in an AI recommendation itself.",
-    "The general pattern across AI products is stated in the documentation but is not accompanied by counts or statistical analysis."
+    "The page does not include Oceaneering material because the source explicitly excludes it from AI and automation pages.",
+    "visioncheckout must not be described as high-consequence; the permitted framing is low-consequence and high-frequency.",
+    "No throughput, speed, error-rate, satisfaction, accuracy, or commercial outcome is established for the visioncheckout redesign.",
+    "visioncheckout field observations are observed patterns, not counted events; no percentage should be attached to those observations.",
+    "The visioncheckout evidence concerns interviews and observation of a system already in service, not testing of new designs.",
+    "The page does not include quoted visioncheckout client speech or named visioncheckout customers."
   ],
   "publicationBlockers": [],
   "questionsForReview": [
@@ -99,54 +103,54 @@
     "human-control-is-weak-in-practice",
     "uncertainty-is-hidden-at-the-point-of-decision",
     "the-model-may-be-good-but-the-product-behaviour-is-not",
-    "teams-cannot-define-good-ai-behaviour",
     "the-product-behaves-inconsistently-across-scenarios",
     "puraite",
     "callsign-fraud-authentication",
+    "visioncheckout",
     "owkin-k"
   ],
   "internalLinks": [
     {
-      "anchorText": "users not trusting the AI enough",
+      "anchorText": "under-trust in AI products",
       "targetSlug": "users-do-not-trust-the-ai-enough",
-      "placementHint": "Related pages section",
-      "reason": "The source explicitly distinguishes over-trust from under-trust."
+      "placementHint": "Use in the Boundaries of this situation section where under-trust is distinguished from over-trust.",
+      "reason": "The source explicitly contrasts over-trust with the under-trust situation."
     },
     {
       "anchorText": "weak human control in practice",
       "targetSlug": "human-control-is-weak-in-practice",
-      "placementHint": "Related pages section",
-      "reason": "The source explicitly distinguishes trust calibration from the existence of control mechanisms."
+      "placementHint": "Use in the Boundaries of this situation section where control mechanisms are distinguished from trust calibration.",
+      "reason": "The source explicitly distinguishes this situation from human control being weak in practice."
     },
     {
       "anchorText": "hidden uncertainty at the point of decision",
       "targetSlug": "uncertainty-is-hidden-at-the-point-of-decision",
-      "placementHint": "Related pages section",
-      "reason": "The source describes uniform confidence presentation as a trust-calibration problem."
+      "placementHint": "Use in the Related pages section or the trust calibration section.",
+      "reason": "The source describes miscalibrated trust when confidence and reliability are not visible at the decision point."
     },
     {
-      "anchorText": "Puraite case",
+      "anchorText": "Puraite systematic review case",
       "targetSlug": "puraite",
-      "placementHint": "Puraite section",
-      "reason": "The body discusses Puraite as the clearest documented example of designing against over-trust."
+      "placementHint": "Use in the Puraite section heading or first paragraph.",
+      "reason": "The body discusses Puraite as a documented example of anchoring and blinded mode."
     },
     {
       "anchorText": "Callsign fraud detection case",
       "targetSlug": "callsign-fraud-authentication",
-      "placementHint": "Callsign section",
-      "reason": "The body discusses Callsign as evidence for mode separation and interface-safety over-trust."
+      "placementHint": "Use in the Callsign section heading or first paragraph.",
+      "reason": "The body discusses Callsign as a documented example of evaluation mode separation and over-trust in interface safety."
+    },
+    {
+      "anchorText": "visioncheckout",
+      "targetSlug": "visioncheckout",
+      "placementHint": "Use in the visioncheckout sections where the field-observed patterns are described.",
+      "reason": "The body discusses visioncheckout as a documented low-consequence, high-frequency example."
     },
     {
       "anchorText": "Owkin/K",
       "targetSlug": "owkin-k",
-      "placementHint": "Uniform confidence presentation section",
-      "reason": "The body mentions Owkin/K as one of the documented design responses for trust calibration."
-    },
-    {
-      "anchorText": "model behaviour and product behaviour",
-      "targetSlug": "the-model-may-be-good-but-the-product-behaviour-is-not",
-      "placementHint": "Related pages metadata or a cross-reference near the summary",
-      "reason": "The situation concerns product-interface behaviour around AI output, not only model performance."
+      "placementHint": "Use in the trust calibration section where data source visibility is mentioned.",
+      "reason": "The source includes Owkin/K as part of the general pattern of design responses for trust calibration."
     }
   ],
   "qualityChecks": {

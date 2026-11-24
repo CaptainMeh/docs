@@ -4,156 +4,171 @@
   "pageType": "context",
   "category": "contexts",
   "section": "Contexts",
-  "summary": "This context covers Creative Navy's documented work on embedded devices and constrained interfaces, including constrained display hardware, microcontroller limits, firmware behaviour, warning architecture, multi-surface systems, and evidence from named engagements.",
+  "summary": "This page documents Creative Navy's work on embedded devices and constrained interfaces where hardware constraints are treated as design parameters. The evidence spans small displays, limited touch layers, rotary-first controls, touch-only bridge panels, multi-device systems, firmware timing constraints, warning architectures, and environmental conditions such as glare, vibration, rain, cold, and gloved operation.",
   "keyFacts": [
-    "Elsner Elektronik / Cala Touch KNX used a 4-inch round TFT LCD at 480×480px, with initial conservative design at 320×240px until the panel was confirmed.",
-    "Torqeedo maritime HMI involved a 10-inch embedded display, 27 screens across 4 operational modes, and vessel systems spanning propulsion motors, generators, 40–200 kWh battery banks, conversion units, and auxiliary loads.",
-    "Cox Marine cluster displays used NMEA 2000 telemetry, covered 3 display families, and had to support 1–6 engine configurations and a military night vision mode requirement.",
-    "Beissbarth automotive calibration involved a three-device calibration system: embedded OEM display, rugged tablet, and large inspection line display.",
-    "MSolutions AV diagnostic instruments used a 480×320px embedded display with limited single-point touch and processing constraints.",
-    "Stromer e-bike work covered an embedded Display L, Display S, mobile companion app, and web account, with EN 15194:2017 as a hard regulatory constraint for embedded warning symbology, colour conventions, and marking requirements.",
-    "CDR Foodlab used a 7-inch capacitive touchscreen with 5-point touch and 1024×600px resolution across a variant-coherent product family.",
-    "Stromer average glance duration changed from 4.32 seconds before redesign to 1.89 seconds after redesign, with data recorded via eye tracking during actual riding with 5 participants on real routes in Munich.",
-    "CDR Foodlab task completion changed from a client-reported 9 minutes average before redesign to a Creative Navy-recorded 3.4 minutes average with 14 users on the final shipped product."
+    "Embedded and constrained interfaces in the evidence include 4-inch, 4.3-inch, 7-inch, 10-inch, 10.4-inch, and 15-inch displays, plus a 480 × 272 design canvas for a fixed-mount VHF radio.",
+    "Constraints include limited colour depth, microcontroller limits, laggy touch layers, single-point touch, rotary encoders, bezel keys, thumb reach, gloved use, glare, rain, vibration, hull slamming, direct sunlight, low luminance, laboratory bench use, and standing-height operation.",
+    "Elsner's Cala Touch KNX used a 4-inch round TFT LCD at 480×480px and was initially designed at 320×240px before the panel was confirmed.",
+    "Torqeedo's maritime HMI evidence includes 12 sea trials over 6 months, 15 professional captains, −5°C to +35°C operation, and a controlled 24-subject experiment showing 50% faster energy state identification compared with the legacy interface.",
+    "Stromer's e-bike display work treated average glance duration as safety-relevant; Creative Navy-measured average glance duration fell from 4.32 seconds to 1.89 seconds in real riding conditions with 5 participants.",
+    "CDR Foodlab's 7-inch laboratory instrument work used a variant-coherent design system across FoodLab, BeerLab, WineLab, GalvanLab, and related variants.",
+    "Streetec kntrl 2 evidence includes a 4.3-inch 480×800 portrait capacitive panel, thumb-reach positioning, finger-occlusion decisions, fixed-increment controls, and a phone-based naming flow because the embedded display could not host a full alphabetic keyboard.",
+    "AIT is the rotary-guaranteed engagement in the evidence: every interaction had to work through a rotary push-button and through touch, with the concept surviving removal of either input.",
+    "The MDU bridge interface is the touch-only pole in the evidence: the manufacturer specified a 15-inch touch display with no mouse or keyboard on the ship.",
+    "Raymarine's fixed-mount VHF work concerns physical-control semantics: dedicated controls must not be silently reassigned across radio, AIS, menu, and interrupted states."
   ],
   "bodySections": [
     {
-      "heading": "Embedded devices and constrained interfaces in Creative Navy's work",
-      "bodyMarkdown": "Creative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nEmbedded devices and constrained interfaces are product interfaces where hardware, firmware, environmental conditions, and physical interaction constraints shape the UX architecture. The documented cases include smart home control, maritime propulsion control, marine engine cluster displays, automotive calibration systems, AV diagnostic instruments, e-bike displays, and laboratory analytical instrumentation.\n\nCreative Navy's embedded interface work treats hardware constraints as design parameters. Documented constraints include limited display resolution, pixel density, restricted colour depth, microcontroller processing limits, firmware update intervals, laggy touch layers, single-point touch, capacitive 5-point touch, gloved-hand use, arm's-length readability, standing-height operation, and operation under glare, vibration, spray, rain, low luminance, direct sunlight, and dynamic riding terrain."
+      "heading": "Embedded and Constrained Interfaces as a Design Context",
+      "bodyMarkdown": "Creative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nEmbedded devices and constrained interfaces are interface contexts where the screen, processor, input model, firmware behaviour, environment, and physical mounting conditions materially shape what the interface can do. In these systems, display resolution, pixel density, limited colour depth, microcontroller constraints, rendering envelopes, touch latency, physical controls, and update intervals are design parameters rather than secondary implementation details.\n\nThe documented evidence includes maritime helm displays, marine diesel cluster displays, smart-home wall controls, automotive calibration equipment, AV diagnostic instruments, e-bike displays, laboratory analytical instruments, aftermarket automotive suspension controls, industrial touch extensions, heat-pump controllers, ship bridge monitoring panels, hospital dispatch panels, fixed-mount VHF radios, and handheld command-and-control interfaces."
     },
     {
-      "heading": "Hardware constraints define the embedded design envelope",
-      "bodyMarkdown": "Embedded interface design in the documented cases began from the rendering envelope of the device rather than from generic screen patterns. Elsner Elektronik / Cala Touch KNX used a 4-inch round TFT LCD at 480×480px; the design was first produced conservatively at 320×240px and scaled when the panel was confirmed, which is described as a deliberate risk-reduction decision.\n\nMSolutions AV diagnostic instruments used a 480×320px embedded display with limited single-point touch and processing constraints. The interface had to support field technicians using the device at arm's length, including gloved use, outdoor conditions, and rack environments.\n\nCDR Foodlab used a 7-inch capacitive touchscreen with 5-point touch and 1024×600px resolution. The device was used on a laboratory bench, where the display was constrained by close-range operation, physical sample handling, reagent steps, cuvettes, and analysis procedures.\n\nHardware constraints were not treated as visual limitations alone. In Elsner Elektronik / Cala Touch KNX, the kickoff constraints included a laggy touch layer, microcontroller limits on programmable symbols, restricted colour depth, and voltage limits. These constraints were handled as design parameters rather than as problems to overcome."
+      "heading": "Hardware Constraints Are Treated as Design Parameters",
+      "bodyMarkdown": "Creative Navy's Critical Systems Design method treats constrained hardware as part of the design space. In the Elsner Elektronik Cala Touch KNX engagement, the device used a 4-inch round TFT LCD at 480×480px. The design was first developed conservatively at 320×240px and scaled after the panel was confirmed. The hardware constraints disclosed at kickoff included a laggy touch layer, microcontroller limits on programmable symbols, restricted colour depth, and voltage limits.\n\nIn the Streetec kntrl 2 engagement, the embedded panel was a 4.3-inch 480×800 portrait capacitive display mounted in the centre of the dashboard. Creative Navy's design work accounted for thumb-reach positioning, finger occlusion, fixed-increment controls for tank pressure and brightness, and legibility at true physical size. Pressure values were placed above their adjustment arrows so the user's finger did not cover the number being changed. Font sizes were increased by 25% between review rounds, to 20px body text, after legibility was checked at physical size.\n\nIn the MSolutions AV diagnostic instrument engagement, the device used a 480×320px embedded display with limited single-point touch and processing constraints. The previous interface was organised around backend modules rather than technician workflows. The redesign evidence for interaction reduction and training changes is client-reported, so those figures should remain attached to that evidence basis."
     },
     {
-      "heading": "Firmware timing and data cadence affect interface state communication",
-      "bodyMarkdown": "Firmware behaviour is a core embedded interface constraint because visual state changes can drift away from the values they represent. In Elsner Elektronik / Cala Touch KNX, animation timing was aligned with firmware update intervals so visual changes did not drift out of sync with thermal values. The source describes this as a specific engineering constraint resolved through direct collaboration.\n\nTorqeedo maritime HMI had a different timing problem. Propulsion sensors, batteries, and generators updated at different rates. The design response was a grid structure that synchronised different cadences into a unified display, so captains perceived one system rather than three competing signals.\n\nStromer firmware update flows also show firmware as an interface problem rather than a background engineering process. The firmware update flow spanned the embedded display and the mobile app, with preconditions including installation only at 0 km/h, component-level updates distinct from system updates, and background download requiring low visual prominence. The download/install distinction required resolution across two surfaces with different interaction models and reached convergence after 6 iterations."
+      "heading": "Display Size, Mounting, and Viewing Distance Change the Interaction Model",
+      "bodyMarkdown": "Embedded interfaces are constrained by where the device is mounted and how far away the user is when reading it. Elsner's Cala Touch KNX was wall-mounted at 140cm and designed for standing use, including low-light bedroom conditions. Beissbarth's automotive calibration system spanned three device classes: an embedded OEM display read from 2–3m during movement, a rugged tablet used around the vehicle, and a large inspection line display used by technicians and inspection staff.\n\nOceaneering's hospital dispatch panel used a 10.4-inch touchscreen at 1024×768, 4:3, 350 nit, and 800:1 contrast. The panel was wall-mounted, read while standing and from across a room, operated with gloves, and used on a touchscreen characterised during review as not precise. The design specified station card dimensions numerically and rejected scrolling as too slow and unreliable on the hardware.\n\nThe MDU bridge interface used a 15-inch certified marine panel PC at 1024×768, with active display area 305.13 × 229.1mm, projected-capacitive touch, 400 cd/m² brightness, 700:1 contrast, IP65-sealed front, and a −15°C to 55°C rating. The certifications listed for the panel are properties of the panel selected by the manufacturer; Creative Navy did not certify to, audit against, or work to those certifications."
     },
     {
-      "heading": "Warning architecture must be structural before component design",
-      "bodyMarkdown": "Warning architecture is the structural rule set governing how warnings relate to screen layout, overlays, and interruptive elements. In the Stromer e-bike engagement, the core embedded design problem was warning architecture. A previous agency had established screen layout and interaction logic first, then added warnings as visual overlays. Warnings had no native structural relationship to the surface; they covered content, interfered with interactions, and appeared without contextual grounding.\n\nCreative Navy rebuilt the Stromer warning architecture from scratch by defining rules and principles governing how warnings, overlays, and interruptive elements relate to the screen structure across all states before component design began. EN 15194:2017 governed warning device symbology, colour conventions, and marking requirements for the embedded display. The standard is described as a hard regulatory constraint, not a preference, and the colour conventions for warning states created design tensions that had to be resolved within the standard's permitted space.\n\nCox Marine cluster displays show warning architecture in a multi-engine professional vessel context. During Concept Convergence, scenario testing of a multi-engine fault case revealed layouts that made fault presence visible but did not direct attention to the priority engine. The resolution was a fixed fault-summary area and alarm state highlighting per engine tile."
+      "heading": "Touch-Only, Rotary-First, and Physical-Control Interfaces Require Separate Interaction Layers",
+      "bodyMarkdown": "A design system for constrained hardware cannot assume that desktop components transfer to touch, rotary input, or physical controls. The industrial process control engagement states this principle directly: most desktop components cannot transfer to a 7-inch 1024×600 touch device because touch targets, spacing, typography, layout density, and navigation differ. The visual language can remain shared, but the interaction layer should not.\n\nAIT is the rotary-guaranteed pole in the evidence. The heat-pump controller used a colour LCD of roughly five inches at 800×480, a rotary push-button below the display, a physical Back button, and a second physical button whose function was undecided. The governing requirement was that every interaction had to work identically through knob and touch, with the concept surviving the removal of either input.\n\nThe MDU bridge interface is the opposite pole: touch was the only input available in the operating environment. The manufacturer specified a 15-inch touch display with no mouse or keyboard on the ship. Creative Navy's design work used documented touch-target and legibility review criteria for that panel.\n\nRaymarine's fixed-mount VHF radio work adds a different constraint: what a physical control can mean. A screen may change what the keypad and labelled softkeys do, but it must not change the domain of the dedicated channel encoder, microphone channel controls, push-to-talk, priority channel access, or protected emergency actions. An input may be unavailable within its own functional domain; it is never silently reassigned to a different one."
     },
     {
-      "heading": "Glance duration is a safety-relevant metric in vehicle-mounted embedded interfaces",
-      "bodyMarkdown": "Glance duration is the time a rider's eyes are off the forward scene. In vehicle-mounted embedded contexts, the documented Stromer e-bike work treats glance duration as a safety-relevant measurement of interface cognitive load, not only a usability measure.\n\nBefore the Stromer redesign, average glance duration was 4.32 seconds. The source compares this with the 2-second threshold established by road safety research: Klauer et al. (2006), NHTSA Report No. DOT HS 810 594; NHTSA Driver Distraction Guidelines Phase 1, 2012; and ISO 15007:2020. The source notes that these standards are formally defined for four-wheeled vehicles, while the threshold and principle apply directly to embedded displays used during riding.\n\nAfter the Stromer redesign, average glance duration was 1.89 seconds and glance frequency per kilometre reduced by 18%. The data was recorded through eye tracking during actual riding, with 5 participants on real routes in Munich, using the same methodology and routes before and after redesign."
+      "heading": "Environmental Conditions Make Interface State Communication Operationally Important",
+      "bodyMarkdown": "Embedded and constrained interfaces are often used under glare, motion, vibration, cold, rain, spray, low luminance, or direct sunlight. Torqeedo's maritime HMI was designed for a 10-inch embedded display with limited pixel density, 27 screens, and 4 operational modes. Research included sea trials with professional captains across cold, heat, night operations, vibration, sharp vessel movement, glare from cold water, rain, and gloved interaction.\n\nThe Torqeedo design problem was not simply information density. Propulsion sensors, batteries, and generators updated at different rates. Creative Navy's design response was a grid structure that synchronised different cadences into a unified display so captains perceived one system rather than three competing signal streams.\n\nCox Marine's cluster display work involved diesel outboard engines on fast patrol craft, racing boats, and workboats. The system had three display families, from compact auxiliary to large primary helm, and supported 1–6 engine configurations over NMEA 2000. The design problem was maintaining a coherent mental model from single-engine to six-engine displays. The resolution was an engine tile as the invariant unit: one engine, one tile, with a consistent spatial arrangement regardless of engine count."
     },
     {
-      "heading": "Multi-device embedded systems require coherence across surfaces",
-      "bodyMarkdown": "Embedded devices often operate as part of a multi-surface system rather than as a single screen. Stromer included an embedded Display L with and without integrated camera variant, Display S, mobile companion app, and web account. Each surface had distinct hardware constraints and interaction models, but the system required coherent cross-surface design.\n\nBeissbarth automotive calibration used a three-device calibration system: an embedded OEM display read from 2–3m during movement, a rugged tablet used for adjustments around the vehicle, and a large inspection line display used by technicians and inspection staff. The core tension was local device optimisation versus cross-device coherence. The resolution prioritised unambiguous state communication over information density across all three device types.\n\nThe Beissbarth design system covered all three device classes with documented states, transitions, and error conditions. The available operational evidence reports calibration time changing from 18 minutes to 12 minutes per vehicle, client-measured across 8 production deployment locations, and the training requirement being eliminated as a client-reported operational change."
+      "heading": "Warning Architecture Must Be Structural in Vehicle-Mounted Embedded Displays",
+      "bodyMarkdown": "Stromer's e-bike display work treated glance duration as safety-relevant because the embedded display is used during riding and the rider's eyes leave the road in brief glances. The evidence cites a 2-second threshold from Klauer et al. (2006), NHTSA Report No. DOT HS 810 594, NHTSA Driver Distraction Guidelines Phase 1 (2013), and ISO 15007:2020. Those standards are formally defined for four-wheeled vehicles; the documented principle is applied to embedded displays used during riding.\n\nThe core embedded design problem in the Stromer engagement was warning architecture. A previous screen structure had established layout and interaction logic first and then added warnings as visual overlays. Warnings covered content, interfered with interactions, and appeared without contextual grounding. Creative Navy rebuilt the warning architecture by defining the rules and principles governing how warnings, overlays, and interruptive elements relate to the screen structure before component design began.\n\nEN 15194:2017 governed warning device symbology, colour conventions, and marking requirements for the embedded display."
     },
     {
-      "heading": "Variant-coherent design systems support product families without per-variant redesign",
-      "bodyMarkdown": "CDR Foodlab illustrates a variant-coherent design system for embedded laboratory instruments. The product family includes FoodLab, BeerLab, WineLab, GalvanLab, and others. Each variant performs different analyses on different matrices, including water, wine, beer, food products, and galvanic solutions.\n\nThe UX architecture is universal across the CDR Foodlab family. Variants differ by which analysis steps are available, with some steps removed for variants with fewer parameters, and by colour scheme. The documented design principle is one architecture serving multiple products without requiring per-variant redesign.\n\nCox Marine cluster displays show a related coherence problem across display families and engine counts. The product covered 3 display families, from compact auxiliary to large primary helm, and 1–6 engine configurations. The core design problem was maintaining a coherent mental model between single-engine and six-engine displays. The resolution was the engine tile as the invariant unit: one engine, one tile, with consistent spatial arrangement regardless of engine count."
+      "heading": "Multi-Device and Variant-Coherent Systems Need Shared Architecture Without Identical Interaction",
+      "bodyMarkdown": "Constrained embedded products often belong to multi-device systems. Beissbarth's calibration system required coherence across an embedded OEM display, a rugged tablet, and a large inspection line display. The documented design system covered all three device classes with states, transitions, and error conditions. The core tension was local device optimisation versus cross-device coherence, and the resolution prioritised unambiguous state communication over information density across all three device types.\n\nStromer's product was also a multi-surface system: embedded Display L with and without integrated camera variant, Display S, a mobile companion app, and a web account. The firmware update flow spanned the embedded display and mobile app, had technical preconditions including installation only at 0 km/h, separated component-level updates from system updates, and required background download to remain visually low prominence.\n\nCDR Foodlab's laboratory instrument work used a variant-coherent design system across FoodLab, BeerLab, WineLab, GalvanLab, and related variants. The device was a portable chemical analysis instrument with a 7-inch capacitive touchscreen, 5-point touch, and 1024×600px resolution, used on a laboratory bench. The UX architecture was universal across the family; variants differed by available analysis steps and colour scheme rather than by per-variant redesign."
     },
     {
-      "heading": "Embedded instruction design must account for non-specialist operators",
-      "bodyMarkdown": "CDR Foodlab users are described as non-specialist laboratory operators. They are professionals with basic chemistry training who understand how to follow an analysis protocol but do not have deep domain knowledge. Specifically, they do not understand what procedural deviations mean chemically or how errors affect measurement validity.\n\nThis user profile is a material design constraint. The interface cannot assume that users will correctly interpret ambiguous states or incomplete guidance. Instruction must be explicit, and the consequences of deviation cannot be left to domain knowledge the user does not have.\n\nIn the CDR Foodlab engagement, Creative Navy replaced the existing static pictogram guidance system with inline step-by-step tutorial animations. These animations were functional interface components within the analysis flow, guiding users through physical sub-steps. They were delivered as part of the design system, not as decorative assets."
+      "heading": "Embedded Guidance Can Be a Functional Interface Component",
+      "bodyMarkdown": "Animation in constrained embedded systems can carry operating logic. In the Elsner engagement, animation timing was aligned with firmware update intervals so visual changes did not drift out of sync with thermal values. This was an engineering constraint resolved through direct collaboration rather than a visual styling choice.\n\nIn the Stromer engagement, animation deliverables were Lottie files for all covered screens. Deliverables included the unlocked-to-ride-screen transition with each element animated independently, the bike-with-cable animation appearing on both embedded and mobile, the boot sequence, PIN feedback states, and an animation pattern framework covering fullscreen modal, toast, partial overlay, and fullscreen overlay patterns.\n\nIn the CDR Foodlab engagement, inline tutorial animations replaced static pictogram guidance. These animations appeared within the analysis flow to guide users through physical sub-steps, including laboratory actions around cuvettes and reagents. They were functional interface components delivered as part of the design system, not decorative artefacts."
     },
     {
-      "heading": "Animation deliverables can be functional embedded interface components",
-      "bodyMarkdown": "Animation in embedded interfaces is documented as a functional system behaviour, not a marketing artefact. Stromer animation deliverables included Lottie files for all screens covered, with animation work representing approximately 10% of the engagement effort. Deliverables included the unlocked-to-ride-screen transition, where each element animated independently; the signature bike with cable animation appearing on both embedded and mobile; the boot sequence; PIN feedback states; and an animation pattern framework covering fullscreen modal, toast, partial overlay, and fullscreen overlay.\n\nElsner Elektronik / Cala Touch KNX also treated animation as an interface behaviour constrained by firmware. Animation timing was aligned with firmware update intervals so visual state did not drift away from thermal values.\n\nCDR Foodlab used inline tutorial animations as embedded step-by-step guidance within the analysis flow. The role of the animation was procedural support for physical laboratory sub-steps, not brand expression."
+      "heading": "Specification, Implementation Fidelity, and Performance Claims Are Separate Evidence Classes",
+      "bodyMarkdown": "Some constrained-interface evidence concerns implementation fidelity rather than performance. AIT's controller reached the market months after the engagement ended. Creative Navy compared the shipped interface with the designs it had delivered, and the product ships as the design that was delivered. It ships in a touch-only hardware configuration. The move to touch-only was AIT's hardware decision, and the evidence does not establish performance, reception, sales, efficiency, commissioning time, or error-rate outcomes.\n\nRaymarine's fixed-mount VHF radio was built and released, but no design-fidelity comparison is recorded. The documented evidence is the input contract and the reasoning that led to fixed-role physical controls. Nothing was validated on production hardware. Encoder detent force and press events, tactile performance, wet-surface operation, glove accessibility, input bounce, transmit timeout, and alarm acoustics remained open engineering dependencies at the close of the engagement.\n\nThe handheld command-and-control interface evidence is a specification, not a conformance claim and not a result. The specification used millimetres with pixels derived per device because the display had not been chosen when the work began. It specified consequence tiers from T1 critical actions at ≥22mm with 5mm isolation through T4 planning and static density at 8–10mm. It was not validated, and the evidence does not claim faster or more accurate operation."
     },
     {
-      "heading": "Research methods in embedded interface work must reflect physical operating conditions",
-      "bodyMarkdown": "Embedded interface research in the documented cases combined user research, field exposure, controlled comparisons, prototype reviews, and operational deployment evidence. Elsner Elektronik / Cala Touch KNX used a 20-user survey run by the client, ergonomics research citing Colle and Hiszem 2004 on touch targets, 12-subject formal usability testing, and 30-dealer prototype reviews across 10 countries. The ergonomics research included a minimum 13mm touch target and an accuracy plateau at approximately 22mm.\n\nTorqeedo maritime HMI was researched through 12 sea trials over 6 months with 15 professional captains. Conditions included an operating temperature range of −5°C to +35°C, night operations, vibration, hull slamming, glare from cold water, rain, and gloved interaction.\n\nCDR Foodlab used 13 remote user interviews and documented five workarounds. Each workaround was catalogued with the need it served, the outcome users were solving for, how users performed it, and estimated error or time-addition risk. One example was that users printed paper lists of sample names and placed them beside the machine because naming samples through the interface was more cognitively demanding than maintaining a physical reference.\n\nThe CDR Foodlab research has a stated limitation: all interviews were remote. Physical interaction with the device during analysis, including placing cuvettes, reading reagents, and dispensing, could not be directly observed."
-    },
-    {
-      "heading": "Evidence from embedded device cases is mixed by measurement type",
-      "bodyMarkdown": "Embedded device outcomes in the available evidence use different evidence bases and should not be treated as equivalent.\n\nTorqeedo maritime HMI recorded 50% faster energy state identification in a controlled environment experiment with 24 subjects comparing the new and legacy interfaces. Glance reduction during manoeuvres was recorded via eye tracking with 7 subjects during sea trials. All 15 captains reported the new interface as significantly better through structured feedback. Yamaha Motor Co. acquired Torqeedo following the engagement, and the CEO reported that the interface strengthened competitive position; the causal link between the interface and the acquisition is inferred, not documented.\n\nStromer e-bike evidence includes eye-tracking data in real riding conditions and a publicly verifiable app store rating change. Average glance duration changed from 4.32 seconds before redesign to 1.89 seconds after redesign, and glance frequency per kilometre reduced by 18%. The app store rating before engagement was 3.2 and after relaunch was 4.1.\n\nBeissbarth evidence includes a client-measured calibration time change from 18 minutes to 12 minutes per vehicle across 8 production deployment locations. The eliminated training requirement is a client-reported operational change, and repeated measurements were reduced according to client-measured evidence, but the exact figure is not available.\n\nMSolutions evidence includes a client-reported workflow reduction from 26 interactions to approximately 13 based on internal task walkthroughs. Training changed from repeated coaching sessions to a short guided introduction, described as a client-observed operational change. Large integrator customers formally reported smoother rollouts after redesign.\n\nCDR Foodlab evidence includes a client-reported 9-minute average task completion time before redesign, a Creative Navy-recorded 3.4-minute average after redesign with 14 users on the final shipped product, and a client-reported satisfaction change from 72% with 68 respondents before redesign to 93% with 76 respondents one year after redesign. The satisfaction survey was independent and third-party administered with an identical instrument and the same population. Users reported that all five documented workarounds were no longer necessary, but this was not re-tested under controlled conditions."
-    },
-    {
-      "heading": "Boundaries of this context",
-      "bodyMarkdown": "The documented embedded device evidence does not establish a single generic rule for all embedded systems. The cases span consumer smart home control, maritime propulsion, marine diesel engine clusters, automotive calibration, AV diagnostic instruments, e-bike displays, and laboratory analytical instruments, each with different hardware, firmware, operating, and regulatory conditions.\n\nSeveral outcomes are client-reported, client-measured, user-reported, or formally reported by customers rather than independently measured by Creative Navy. Where the source describes evidence as client-reported or not independently verified, that basis should remain attached to the claim.\n\nSome research findings are limited by research method. In CDR Foodlab, all user interviews were remote, and physical interaction during chemical analysis could not be directly observed. In Stromer, the 2-second glance threshold is drawn from road safety research formally defined for four-wheeled vehicles, while the documented application is to embedded e-bike displays used during riding."
+      "heading": "Boundary of This Context",
+      "bodyMarkdown": "This context covers fixed or constrained hardware where the interface must respect device-specific limits. It does not treat a browser application on a general-purpose tablet, a general-purpose web or native mobile product, an unidentified tablet presentation, a desktop console without a constrained-hardware story, or a multi-monitor keyboard-and-mouse control room as embedded-device evidence.\n\nThe documented boundary also separates related constraint classes. Input-model variability, glove-operable interface design, and ambient-range design are related but distinct topics. On this page, those topics appear only where they shape embedded-device decisions; they are not treated as substitutes for dedicated documentation on those topics."
     }
   ],
   "evidenceSummary": {
     "strongClaims": [
-      "Embedded device UX in the documented cases is shaped by constrained display hardware, microcontroller limits, firmware timing, touch behaviour, environmental exposure, and cross-device coherence.",
-      "Elsner Elektronik / Cala Touch KNX treated hardware constraints including laggy touch, microcontroller limits, restricted colour depth, and voltage limits as design parameters.",
-      "Torqeedo maritime HMI achieved 50% faster energy state identification in a controlled environment experiment with 24 subjects comparing the new and legacy interface.",
-      "Stromer average glance duration changed from 4.32 seconds before redesign to 1.89 seconds after redesign, with 18% lower glance frequency per kilometre.",
-      "Cox Marine resolved multi-engine coherence through an invariant engine tile: one engine, one tile, with consistent spatial arrangement regardless of engine count."
+      "Embedded and constrained interfaces are shaped by display hardware, processing limits, firmware behaviour, input devices, mounting conditions, environmental exposure, and regulatory or protocol constraints.",
+      "Elsner's Cala Touch KNX used a 4-inch round TFT LCD at 480×480px, with early conservative design at 320×240px before panel confirmation; the source describes this as a deliberate risk-reduction decision.",
+      "Torqeedo's redesigned maritime HMI enabled 50% faster energy state identification than the legacy interface in a controlled 24-subject experiment.",
+      "Stromer's average glance duration moved from 4.32 seconds before redesign to 1.89 seconds after redesign in Creative Navy-measured real-riding eye tracking with 5 participants, using the same methodology and routes in Munich.",
+      "Streetec kntrl 2 constrained the interface through a 4.3-inch 480×800 portrait capacitive panel, thumb reach, finger occlusion, true-size legibility checks, and the inability to host a full alphabetic keyboard.",
+      "AIT required every interaction to work identically through rotary knob and touch, with the concept surviving removal of either input.",
+      "The MDU bridge interface was touch-only, with no mouse or keyboard in the operating environment, and used panel-specific touch-target calculations.",
+      "Raymarine's fixed-mount VHF work established an invariant that dedicated controls must not be silently reassigned outside their functional domains.",
+      "The handheld command-and-control sizing material is a specification, not a conformance claim, validation result, or measured performance outcome."
     ],
     "weakerClaims": [
-      "Beissbarth calibration time changed from 18 minutes to 12 minutes per vehicle across 8 production deployment locations.",
-      "MSolutions reduced a key workflow from 26 interactions to approximately 13.",
-      "CDR Foodlab task completion changed from a client-reported 9 minutes before redesign to a Creative Navy-recorded 3.4 minutes after redesign with 14 users on the final shipped product.",
-      "CDR Foodlab user satisfaction changed from 72% with 68 respondents before redesign to 93% with 76 respondents one year after redesign.",
-      "Yamaha Motor Co. acquired Torqeedo following the engagement, but a causal link between the interface and the acquisition is inferred and not documented."
+      "Beissbarth calibration time moved from 18 minutes to 12 minutes per vehicle across 8 production deployment locations; the source states this was client-measured across production deployment locations, not under usability testing conditions.",
+      "CDR Foodlab task completion time before redesign was client-reported at 9 minutes average, while after redesign Creative Navy measured 3.4 minutes average with 14 users on the final shipped product; the before and after figures have different evidence bases and are stated separately."
     ],
     "limitations": [
-      "Evidence bases differ across cases: some findings are field-measured, some are client-measured, some are client-reported, some are user-reported, and some are formally reported by customers.",
-      "CDR Foodlab research relied on 13 remote user interviews; physical interaction during analysis, including placing cuvettes, reading reagents, and dispensing, could not be directly observed.",
-      "CDR Foodlab workaround elimination was user-reported and not re-tested under controlled conditions.",
-      "MSolutions workflow reduction from 26 interactions to approximately 13 was client-reported from internal task walkthroughs and not independently measured.",
-      "Cox Marine distributor feedback described as \"the best in the industry\" was relayed by the client and not independently verified.",
-      "The causal link between Torqeedo's interface work and Yamaha Motor Co.'s later acquisition of Torqeedo is inferred, not documented.",
-      "The Stromer 2-second glance threshold is drawn from road safety research formally defined for four-wheeled vehicles, while the documented application is to an e-bike embedded display used during riding.",
-      "Beissbarth calibration time evidence was client-measured across production deployment locations, not under usability testing conditions."
+      "Several outcome claims are client-reported or client-measured rather than independently measured; the evidence basis must remain attached to each figure.",
+      "Torqeedo's Yamaha acquisition context is not evidence of causality between the interface and the acquisition; the source says any causal link is inferred, not documented.",
+      "CDR Foodlab research interviews were all remote, so physical interaction during analysis could not be directly observed; workaround elimination was user-reported and not re-tested under controlled conditions.",
+      "MSolutions workflow reduction from 26 interactions to approximately 13 is client-reported from internal task walkthroughs and was not independently measured.",
+      "Elsner dealer feedback is client-reported; 30 of 130 dealers responded positively, representing 100% of those who responded, not 100% of all dealers.",
+      "AIT has design-fidelity evidence only; no performance, efficiency, commissioning-time, error-rate, commercial, usability, reception, or sales outcome is established.",
+      "Raymarine was built and released, but no shipped-as-designed claim is recorded and nothing was validated on production hardware.",
+      "The MDU panel certifications belong to the panel selected by the manufacturer; Creative Navy did not certify to, audit against, or work to those certifications.",
+      "Oceaneering has no measured efficiency, throughput, error-rate, time-saving, or training outcome; gloved use is a documented operating condition, not a tested result.",
+      "The industrial process control touchscreen work was in development and is not an outcome.",
+      "The handheld command-and-control sizing material is a specification and was not validated; it is not a safety, certification, weapons-review, regulatory, speed, or accuracy result."
     ]
   },
   "relatedPageSlugs": [
+    "streetec-kntrl",
+    "ait-heat-pump-controller",
+    "mdu-ship-motion-monitoring",
+    "raymarine-vhf",
+    "oceaneering-dispatch-panel",
+    "tactical-handheld-command-and-control",
     "cox-marine",
     "stromer-ebike",
     "beissbarth",
-    "high-consequence-environments",
-    "regulated-products",
-    "consumer-and-multi-market-products",
-    "expert-tools-and-internal-systems"
+    "industrial-process-control-platform"
   ],
   "internalLinks": [
     {
-      "anchorText": "Cox Marine",
-      "targetSlug": "cox-marine",
-      "reason": "Cox Marine is a documented embedded display case named in the page and has an allowed case-study slug."
+      "anchorText": "Streetec kntrl 2",
+      "targetSlug": "streetec-kntrl",
+      "reason": "The Streetec case is one of the strongest evidence bases for small embedded display constraints, thumb reach, finger occlusion, and cross-device allocation."
     },
     {
-      "anchorText": "Stromer e-bike",
+      "anchorText": "AIT heat pump controller",
+      "targetSlug": "ait-heat-pump-controller",
+      "reason": "AIT is the documented rotary-guaranteed engagement where touch was optional and the interface had to remain operable through the knob."
+    },
+    {
+      "anchorText": "MDU ship motion monitoring",
+      "targetSlug": "mdu-ship-motion-monitoring",
+      "reason": "The MDU case is the documented touch-only pole with no mouse, keyboard, or hardware-button fallback in the operating environment."
+    },
+    {
+      "anchorText": "Raymarine fixed-mount VHF radio",
+      "targetSlug": "raymarine-vhf",
+      "reason": "Raymarine provides the evidence for dedicated physical controls that must not be silently reassigned across functional domains."
+    },
+    {
+      "anchorText": "Oceaneering dispatch panel",
+      "targetSlug": "oceaneering-dispatch-panel",
+      "reason": "Oceaneering provides the documented wall-mounted touchscreen case with numeric card sizing and pagination thresholds."
+    },
+    {
+      "anchorText": "tactical handheld command-and-control interface",
+      "targetSlug": "tactical-handheld-command-and-control",
+      "reason": "The handheld case provides the millimetre-based consequence-tier sizing specification and its explicit validation limits."
+    },
+    {
+      "anchorText": "Cox Marine",
+      "targetSlug": "cox-marine",
+      "reason": "Cox Marine provides evidence for NMEA 2000, multi-engine tile invariants, fault-summary structure, and alarm highlighting."
+    },
+    {
+      "anchorText": "Stromer e-bike display",
       "targetSlug": "stromer-ebike",
-      "reason": "Stromer is a documented embedded and multi-surface case named in the page and has an allowed case-study slug."
+      "reason": "Stromer provides measured real-riding glance-duration evidence and embedded warning-architecture constraints under EN 15194:2017."
     },
     {
       "anchorText": "Beissbarth automotive calibration",
       "targetSlug": "beissbarth",
-      "reason": "Beissbarth is a documented multi-device embedded calibration case named in the page and has an allowed case-study slug."
+      "reason": "Beissbarth provides the cross-device calibration case with embedded display, rugged tablet, and inspection-line display evidence."
     },
     {
-      "anchorText": "high-consequence environments",
-      "targetSlug": "high-consequence-environments",
-      "reason": "Embedded devices in the documented cases include maritime, vehicle-mounted, and calibration contexts where interface behaviour affects operational decisions."
-    },
-    {
-      "anchorText": "regulated products",
-      "targetSlug": "regulated-products",
-      "reason": "The Stromer embedded display evidence includes EN 15194:2017 as a hard regulatory constraint."
-    },
-    {
-      "anchorText": "consumer and multi-market products",
-      "targetSlug": "consumer-and-multi-market-products",
-      "reason": "The context includes consumer smart home, e-bike, and multi-market product-family examples."
-    },
-    {
-      "anchorText": "expert tools and internal systems",
-      "targetSlug": "expert-tools-and-internal-systems",
-      "reason": "Several embedded examples are professional expert tools used by technicians, captains, workshop operators, and laboratory operators."
+      "anchorText": "industrial process control platform",
+      "targetSlug": "industrial-process-control-platform",
+      "reason": "The industrial process control case states the principle that desktop components cannot be directly transferred to a 7-inch touch device."
     }
   ],
   "tags": [
-    "embedded devices",
-    "constrained interfaces",
-    "firmware behaviour",
-    "touch interaction",
+    "embedded interfaces",
+    "constrained hardware",
+    "touchscreen HMI",
+    "rotary input",
+    "marine displays",
+    "vehicle displays",
+    "firmware timing",
     "warning architecture",
-    "multi-device design systems",
-    "NMEA 2000",
-    "KNX",
-    "EN 15194:2017",
-    "ISO 15007:2020"
+    "multi-device systems",
+    "physical controls"
   ],
   "_meta": {
     "sourcePath": "sources/articles/Contexts/contexts--embedded-devices-and-constrained-interfaces.md",
     "parentSlug": "contexts",
     "childPageSlugs": [],
-    "generatedBy": "deterministic"
+    "generatedBy": "openai"
   }
 }

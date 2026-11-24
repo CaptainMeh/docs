@@ -1,131 +1,167 @@
 {
   "slug": "abnormal-conditions-break-the-interface",
-  "title": "Abnormal Conditions Break The Interface",
+  "title": "Abnormal Conditions Break the Interface",
   "pageType": "situation",
   "category": "situations",
   "section": "Complexity",
-  "summary": "This page describes a specific operational failure pattern: a product appears usable under median conditions but degrades or breaks when real use involves high load, environmental stress, simultaneous faults, or exception-heavy workflows. The page distinguishes this pattern from broader demo-to-real-use gaps and from general expert-workflow friction, then grounds the pattern in petrol station, maritime HMI, Cox Marine, and Triopsis examples.",
+  "summary": "This situation describes interfaces that appear usable in normal evaluation but fail when operating conditions become extreme: peak load, degraded physical environments, simultaneous faults, or exception-heavy workflows. The page distinguishes this failure from broader demo-to-real-use mismatch and from general expert-workflow friction.",
   "keyFacts": [
-    "Abnormal conditions include peak-load transaction windows, direct sun glare, night operations, vessel vibration, simultaneous faults, weather interruptions, delayed jobs, partial completions, and urgent crew reassignments.",
-    "The petrol station engagement documented 40 hours of field observation across 7 stations, 36 cashiers during live operation, 24 interviews, and a coded corpus of 532 transactions.",
-    "The petrol station peak transaction rate documented was 84 transactions per hour on a single till, and complex combined transactions averaged up to 7 minutes each.",
-    "The Torqeedo maritime HMI was tested through 12 sea trials over 6 months with 15 professional captains.",
-    "The Torqeedo operating conditions included temperatures from −5°C to +35°C, rain, night conditions, vibration, sharp vessel movement, and glare from cold water.",
-    "Cox Marine scenario testing found that early layouts made fault presence visible but did not help operators identify which engine required priority attention during multi-engine fault scenarios.",
-    "Cox Marine scenario testing also found that initial alarm palette colours interfered with military night vision equipment.",
-    "Triopsis productivity was measured in the live product through product analytics: 62% faster job discovery, 83% faster job sequence optimisation, and 58% faster weekly planning.",
-    "Creative Navy's Critical Systems Design method addresses this situation through domain learning in operationally extreme contexts and scenario-based validation of abnormal conditions."
+    "Abnormal conditions include high load, direct sun glare, night operation, vibration, weather interruption, urgent reassignment, simultaneous faults, degraded information availability, and degraded control channels.",
+    "Standard usability testing under controlled conditions can underrepresent extreme load states, degraded physical environments, simultaneous faults, and non-standard transaction paths.",
+    "The petrol engagement used 40 hours of field observation across 7 stations, 36 cashiers, 24 interviews, and a coded corpus of 532 transactions.",
+    "The peak transaction rate documented in the petrol engagement was 84 transactions per hour on a single till, with complex combined transactions averaging up to 7 minutes each.",
+    "The Torqeedo maritime HMI evidence came from 12 sea trials over 6 months with 15 professional captains in conditions including −5°C to +35°C, rain, night operation, vibration, vessel movement, and cold-water glare.",
+    "The Cox Marine work identified a multi-engine fault-priority issue and a colour-palette issue affecting military night vision equipment during scenario testing.",
+    "KISPE Space and Schone Airspace Group examples describe designed adversarial test fixtures, not observations or operational data.",
+    "The Raymarine work specified forty-three exception cases across eight independent state axes, but only the interruption, position, receiver, and connectivity cases were put to operators in bench sessions.",
+    "The maritime traffic monitoring audit found freshness and replay failures in the client's existing software; those findings are not general claims about the sector.",
+    "Triopsis product analytics recorded 62% faster job discovery, 83% faster job sequence optimisation, and 58% faster weekly planning in the live product."
   ],
   "bodySections": [
     {
-      "heading": "Abnormal conditions as a design target",
-      "bodyMarkdown": "Creative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nAbnormal conditions are not rare in complex operational software. They are often the conditions under which the product's value is most needed: a petrol station interface during a peak-load transaction window, a maritime display in direct sun glare or night operation, a multi-engine helm display during simultaneous faults, or a workforce management system during weather interruption and urgent crew reassignment.\n\nThe failure pattern is specific. A product is designed and tested under median conditions: moderate load, good lighting, trained users, and expected inputs. Testing confirms that the interface works. The product ships. When conditions depart from the median, the interface degrades or fails because the conditions that determine operational usefulness were not made explicit design requirements."
+      "heading": "Abnormal-Condition Interface Failure",
+      "bodyMarkdown": "Creative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nAbnormal-condition interface failure is the pattern in which an interface works adequately under normal conditions but breaks, slows, misleads, or forces workarounds under operational extremes such as high load, physical environment stress, exception workflows, simultaneous faults, or degraded information states.\n\nThe product may appear to work under moderate load, good lighting, trained use, and expected inputs. It may then fail under rush-hour transaction volume, night operation in heavy swell, simultaneous faults, degraded information availability, or exception workflows that fall outside the designed path.\n\nThe central issue is not necessarily careless implementation. The issue is that the conditions that determine operational usefulness were not made explicit design targets. When abnormal conditions are treated as edge cases rather than core requirements, the failure can feel sudden after deployment while being structurally predictable from the design process."
     },
     {
-      "heading": "Abnormal-condition failure differs from broader real-use failure",
-      "bodyMarkdown": "Abnormal-condition interface failure is a narrower pattern than the general gap between supervised evaluation and unsupervised everyday use. The demo/real-use situation concerns a broader mismatch between evaluation conditions and everyday use, including data mismatch and cognitive-load mismatch. Abnormal-condition failure concerns the subset where the interface is exposed to operational extremes: high load, physical environment stress, exception workflows, or simultaneous faults.\n\nAbnormal-condition interface failure is also narrower than general expert-workflow friction. Expert-workflow difficulty can accumulate across many ordinary operational conditions. Abnormal-condition failure is sharper: the interface works adequately under normal conditions and breaks specifically when the operating context becomes extreme."
+      "heading": "How Abnormal-Condition Failure Differs from Adjacent Problems",
+      "bodyMarkdown": "Abnormal-condition interface failure is a specific subset of the wider problem where a product works in controlled evaluation but fails in real use. The wider demo-to-real-use gap concerns supervised evaluation, unsupervised everyday use, data mismatch, and cognitive-load mismatch. Abnormal-condition interface failure concerns operational extremes: high load, physical environment stress, simultaneous faults, degraded information states, and exception-heavy workflows.\n\nAbnormal-condition interface failure also differs from general expert-workflow difficulty. Expert-workflow friction can accumulate across ordinary operational use. The abnormal-condition pattern is sharper: the interface may work adequately under normal conditions and then break specifically when the operating state becomes extreme, degraded, or exception-heavy."
     },
     {
-      "heading": "Standard usability testing often underrepresents abnormal conditions",
-      "bodyMarkdown": "Standard usability testing tends to select representative tasks and evaluate them under controlled conditions. Extreme load states, degraded physical environments, simultaneous faults, and non-standard transaction paths are frequently absent from such testing because they are difficult to reproduce and implicitly treated as exceptions.\n\nIn deployment, these conditions are not necessarily exceptions. Rush-hour transaction surges, night manoeuvres, heavy swell, simultaneous faults, weather events, equipment failure, conflicting assignments, and partial completions can be normal parts of operational work."
+      "heading": "Why Abnormal Conditions Need Explicit Design Input",
+      "bodyMarkdown": "Abnormal conditions require explicit design input because they are underrepresented in standard usability testing. Representative tasks under controlled conditions often exclude peak load, degraded environments, simultaneous faults, and non-standard transaction paths. These states can be difficult to reproduce, but they are not exceptional in deployment.\n\nAbnormal conditions expose latent interface inadequacies that normal operation can conceal. Ambiguous state communication may be resolvable when a trained user has time to read carefully. Under time pressure, the same ambiguity can become a source of procedural error. An information hierarchy that is only slightly wrong at low load can become dangerous when attention is divided across simultaneous demands.\n\nException workflows need first-class interface treatment because they can represent a significant share of operational work in complex systems. Weather events, equipment failure, conflicting assignments, partial completions, and requests outside the standard path may be treated as edge cases in design specifications. In daily operation, these conditions can become recurring sources of friction and workaround behaviour."
     },
     {
-      "heading": "Abnormal conditions expose latent interface inadequacies",
-      "bodyMarkdown": "Interfaces that are inconvenient under normal conditions can become hazardous or procedurally unreliable under pressure. Ambiguous state communication that a trained user can resolve by reading carefully may become a source of procedural error when time pressure removes the margin for careful reading.\n\nInformation hierarchies that are only slightly wrong under low load can become dangerous when attention is stretched across several simultaneous demands. In this pattern, the interface does not need to be careless or visibly broken under normal conditions. It can fail because its normal-condition design assumptions do not match the operating conditions where reliability matters."
+      "heading": "Petrol Retail Evidence: Peak Load and Hidden Compensating Behaviour",
+      "bodyMarkdown": "The Swiss petrol station operator engagement documented abnormal-condition failure through 40 hours of field observation across 7 stations, 36 cashiers during live operation, 24 interviews, and a coded corpus of 532 transactions categorised by type and complexity. The peak transaction rate documented was 84 transactions per hour on a single till. Complex combined transactions, including fuel with shop items, voucher redemption, loyalty allocation, and multi-channel authorisation, averaged up to 7 minutes each.\n\nThe petrol evidence showed that experienced cashiers had developed personal shortcuts to compensate for field-ordering inconsistencies in the POS flow. These shortcuts reduced friction for experienced staff under normal conditions. Under peak load, they became procedurally entrenched. The efficient path used by experienced cashiers had diverged from the documented path, so new staff could not learn the correct procedure simply by observing experienced colleagues.\n\nThe 532-transaction corpus made a hidden pattern visible. Some transaction types were rarely mentioned by cashiers as problems, but were disproportionately represented in error recovery sequences. Cashiers had normalised compensating behaviour to the point where it no longer appeared as a problem in self-report."
     },
     {
-      "heading": "Exception workflows become operational work, not edge cases",
-      "bodyMarkdown": "Exception workflows are often treated as edge cases in design specifications, but they can make up a significant and predictable share of operational work in complex systems. Weather events, equipment failure, conflicting assignments, urgent reassignments, partial completions, and requests outside the standard transaction path may be encountered daily.\n\nWhen exception workflows receive workaround paths rather than first-class interface treatment, the operational cost accumulates invisibly. No single exception may be severe enough to trigger a redesign request, but the repeated friction becomes part of everyday work."
+      "heading": "Torqeedo Maritime Evidence: Physical Conditions as Design Requirements",
+      "bodyMarkdown": "The Torqeedo hybrid electric vessel HMI was deployed on professional vessels operating in temperatures from −5°C to +35°C, in rain, in night conditions from late evening through early morning, under vibration, sharp vessel movement, and glare from cold water. In this maritime context, these conditions were normal operating conditions rather than edge cases.\n\nTwelve sea trials over 6 months with 15 professional captains documented how these conditions affected interface performance. The observations included how glare from cold water reduces contrast differently from other light sources, how vibration affects readability at the pixel level, how scanning patterns during night harbour manoeuvres differ from daytime open-water operation, and how information instability under physical stress affects crew performance.\n\nThe Torqeedo alarm system, including contrast, visibility, and hierarchy rules, was defined through sea trial testing under vibration, night conditions, and glare. The night mode typography and contrast rules were defined specifically for late-evening through early-morning operations."
     },
     {
-      "heading": "Petrol station peak-load transactions showed hidden compensating behaviour",
-      "bodyMarkdown": "The Swiss petrol station operator engagement documented abnormal-condition failure in a high-throughput retail context. The engagement included 40 hours of field observation across 7 stations, 36 cashiers during live operation, 24 interviews, and a coded corpus of 532 transactions categorised by type and complexity.\n\nThe peak transaction rate documented was 84 transactions per hour on a single till. Complex combined transactions, including fuel with shop items, voucher redemption, loyalty allocation, and multi-channel authorisation, averaged up to 7 minutes each.\n\nThe transaction coding showed a mechanism that interview self-report did not surface on its own. Experienced cashiers had developed personal shortcuts to compensate for field-ordering inconsistencies in the POS flow. These shortcuts reduced friction for experienced staff under normal conditions, but under peak load they became procedurally entrenched. New staff could not learn correct procedure by observing experienced colleagues because the efficient observed path had diverged from the documented path.\n\nThe 532-transaction corpus also showed that transaction types cashiers rarely mentioned as problems were disproportionately represented in error recovery sequences. Cashiers had normalised compensating behaviour until it no longer registered as a problem in self-report. The abnormal-condition failure was not a visible breakdown; it was a degradation that became measurable only when behaviour was counted."
+      "heading": "Cox Marine Evidence: Simultaneous Faults and Night-Vision Constraints",
+      "bodyMarkdown": "Cox Marine cluster displays are deployed on fast patrol craft, racing boats, and workboats. The helm environment at speed includes sustained vibration, hull slamming, and spray. Operators brace with both feet and wear gloves. The interface must remain readable in direct sunlight, heavy overcast, and night conditions including military night vision modes.\n\nScenario testing during Concept Convergence identified a multi-engine fault issue. Early layouts made fault presence visible, but did not help operators identify which engine required priority attention. When multiple faults were present simultaneously, the operator had to scan each engine state and make a priority assessment under high-speed vessel conditions. The design response was to redesign alarm state highlighting within engine tiles and establish a fixed display area where the highest-priority fault is always summarised.\n\nThe Cox Marine work also identified that initial colour choices for the alarm palette interfered with military night vision equipment. The palette and contrast were revised in response to direct scenario testing. Both findings were invisible under normal display and lighting conditions and were found by testing against abnormal conditions the product would face."
     },
     {
-      "heading": "Torqeedo sea trials showed maritime HMI requirements under physical stress",
-      "bodyMarkdown": "The Torqeedo hybrid electric vessel HMI was deployed on professional vessels operating in temperatures from −5°C to +35°C, in rain, in night conditions from late evening through early morning, under vibration, sharp vessel movement, and glare from cold water. These conditions were not edge cases for professional maritime work.\n\nTwelve sea trials over 6 months with 15 professional captains documented how these conditions affected interface performance. The trials showed how glare from cold water reduces contrast differently from other light sources, how vibration affects readability at the pixel level, how scanning patterns during night harbour manoeuvres differ from daytime open-water operation, and how information instability under physical stress affects crew performance.\n\nThe alarm system's contrast, visibility, and hierarchy rules were defined through sea trial testing under vibration, night conditions, and glare. The night mode typography and contrast rules were defined specifically for late-evening through early-morning operations. These findings depended on observing the interface under the actual conditions that determined its performance."
+      "heading": "KISPE Space Evidence: A Synthetic Adversarial Fixture",
+      "bodyMarkdown": "For KISPE Space, Creative Navy designed a common space operating picture against a synthetic demonstration scenario that was deliberately adversarial. The fixture was built so that a design working only on the happy path would fail visibly.\n\nAt the fixture moment, the imagery feed is down, the newest image will not render, the highest-resolution image covers only part of the area, one image is restricted, the positioning fix is stale while the communications reading is current, and a predicted overflight has not happened yet. Each condition is a designed trap the interface has to avoid.\n\nThe KISPE Space scenario is a designed test fixture, not data. It does not represent a real location, operation, satellite, or advisory. The engagement's verification and acceptance material was specified, not executed, so the KISPE Space example should not be described as a completed test."
     },
     {
-      "heading": "Cox Marine multi-engine and night-vision scenarios exposed failures not visible in normal conditions",
-      "bodyMarkdown": "Cox Marine cluster displays are deployed on fast patrol craft, racing boats, and workboats. The helm environment at speed produces sustained vibration, hull slamming, and spray. Operators brace with both feet and wear gloves. The interface must remain readable in direct sunlight, heavy overcast, and night conditions including military night vision modes.\n\nScenario testing during Concept Convergence produced two specific findings with direct consequences for the design. A multi-engine fault scenario showed that early layouts made fault presence visible but did not help operators identify which engine required priority attention. When multiple faults were present, the operator had to scan each engine's state and make a priority assessment under vibration, pressure, and time constraint.\n\nThe design response was to revise alarm state highlighting within engine tiles and establish a fixed display area where the highest-priority fault is always summarised. This was a response to a specific failure observed under a specific abnormal operational condition.\n\nThe second Cox Marine finding was that initial colour choices for the alarm palette interfered with military night vision equipment. The palette and contrast were revised in response to direct scenario testing. Both failures were invisible under normal display and lighting conditions."
+      "heading": "Schone Airspace Group Evidence: A Separate Fixture for Control-Channel Degradation",
+      "bodyMarkdown": "In the Schone Airspace Group engagement, Creative Navy worked on a ground control station through which remote pilots command connected aircraft. The demonstration scenario was adversarial on purpose.\n\nAt the fixture moment, one aircraft's link is degrading, its telemetry is ageing, a warning belongs to an aircraft that is not under command, the offline map is incomplete while reporting a completed download, and the planning estimate on screen belongs to a superseded revision. Each condition is a trap the interface has to avoid.\n\nThe Schone Airspace Group scenario is a designed test fixture, not observations. The aircraft, mission, site, and link failure do not represent a real location, operation, aircraft, or incident. This evidence basis is separate from the KISPE Space fixture and from the handheld command-and-control engagement."
     },
     {
-      "heading": "Triopsis exception workflows became first-class scheduling states",
-      "bodyMarkdown": "The Triopsis workforce management platform served schedulers planning thousands of weekly interventions for utilities and road maintenance operations. Weather incidents, delayed jobs, partial completions, conflicting equipment availability, and urgent crew reassignments were not unusual events in this operational context. They were a significant and predictable share of daily scheduling work.\n\nThe legacy interface treated these conditions as edge cases. Exception handling required workarounds, corrective paths were long, and the interface offered no first-class treatment for the conditions experienced schedulers spent a substantial portion of their day managing.\n\nThree in-situ observation sessions documented schedulers managing peak-load conditions before redesign decisions were made. The observed conditions included simultaneous weather incidents, conflicting job locations, overlapping assignments, and crew shortages happening concurrently.\n\nThe redesign treated weather incidents, partial completions, and delayed jobs as normal workflow states. Predictive conflict indicators surfaced problems before users encountered them mid-task rather than requiring reactive management under pressure. Productivity was measured in the live product through product analytics: 62% faster job discovery, 83% faster job sequence optimisation, and 58% faster weekly planning. The documented interpretation is that these operational gains were partly a function of exception handling being designed for rather than worked around."
+      "heading": "Raymarine Evidence: Degraded States Specified During UX Development Sprints",
+      "bodyMarkdown": "For Raymarine, on the next generation of its fixed-mount VHF line, the documented precedent is the Ray53, Ray63, and Ray73; the new radio's name is not used. Degraded states were specified inside the three UX development sprints rather than after them.\n\nThe sprint covering safety, degradation, and integration specified outgoing distress, received distress, and locally initiated man overboard as three different workflows. It constructed four priority levels with cross-state rules, documented forty-three exception cases with feedback, action constraints, and recovery, and assigned twenty-eight functions to the radio, the chartplotter, or a shared information boundary.\n\nThe Raymarine exception catalogue described forty-three exception records across eight independent state axes: voice radio state, display context, calling transaction, AIS data quality, positioning, safety incident, interruption, and chartplotter link. The governing statement was that a current screen is not a system state, and that the interface is a state interpreter rather than the source of truth for radio outcomes.\n\nThe Raymarine catalogue was partly evaluated. The interruption, position, receiver, and connectivity cases were put to operators in bench sessions. The other thirty-odd cases were not. Nothing was tested in field conditions: no sea trials, glare, gloves, or vibration."
     },
     {
-      "heading": "Creative Navy's Critical Systems Design method addresses abnormal conditions through domain learning and scenario validation",
-      "bodyMarkdown": "Creative Navy's Critical Systems Design method designs software whose interfaces, workflows, and operating logic carry real operational consequences, working through five phases — Sandbox Experiments, Concept Convergence, Iterative System Building, Organizational Integration, and Implementation Partnership — to take each system from initial exploration to independent operation by the client's own team.\n\nFor abnormal-condition interface failure, Creative Navy's Critical Systems Design method addresses two specific needs: learning the full range of operating conditions before design decisions are made, and validating designs against abnormal scenarios before deployment.\n\nDomain learning in operationally extreme contexts means documenting the operating conditions that determine performance. The Torqeedo engagement required 12 sea trials over 6 months because the performance-determining conditions could not be reproduced in another way. The Cox Marine engagement required understanding NMEA 2000 telemetry behaviour under varying load states because telemetry criticality changes between low-speed and high-speed operation. The petrol station engagement required 40 hours of field observation and a 532-transaction coded corpus because the failure patterns were invisible in interview self-report and visible in operational data.\n\nScenario-based validation uses representative abnormal conditions as explicit evaluation criteria during Iterative System Building. Fault states, peak loads, physical environment extremes, and exception workflows are tested as operating conditions rather than treated as peripheral cases. A layout that passes normal-condition evaluation may fail during a multi-engine fault scenario, a night-conditions test, or a peak-load observation session."
+      "heading": "Handheld Command-and-Control Evidence: Interference as an Expected Condition",
+      "bodyMarkdown": "For a European manufacturer of uncrewed systems, including one-way effectors, and the tactical command-and-control software that operates them, Creative Navy authored a system requirement stating that electromagnetic interference should be treated as an expected operating condition rather than an exceptional failure. The reason given was that contested electromagnetic conditions are core to the intended environment.\n\nIn the same engagement, signal recovery replaced return-to-home on the first push button at the client's suggestion. Signal recovery was described as a manoeuvre in which the vehicle climbs and loiters in order to reacquire the link, rather than a command to come back.\n\nThis handheld command-and-control engagement is distinct from Schone Airspace Group. Schone Airspace Group concerns degradation of the control channel of a desktop ground station. The handheld engagement treats interference as a designed-for operating condition of a handheld controller. Creative Navy designed the surface through which a human supervises the system; it did not design the system, the datalink, the effector, or any autonomous behaviour."
     },
     {
-      "heading": "Evidence boundaries for abnormal-condition claims",
-      "bodyMarkdown": "The examples on this page are grounded in documented engagements, not in a universal measurement of all abnormal-condition failures. The petrol station evidence shows a high-throughput retail mechanism; Torqeedo and Cox Marine show maritime HMI mechanisms; Triopsis shows exception-heavy workforce scheduling mechanisms.\n\nThe Triopsis productivity figures were measured in the live product through product analytics, but the available description does not isolate exception handling as the sole cause of the gains. The documented claim is narrower: the operational gains were partly a function of exception handling being designed for rather than worked around.\n\nThe Cox Marine and Torqeedo examples show failures discovered under specific abnormal operating conditions. They should not be generalised into a claim that every interface failure can be found only through field trials. The supported claim is that these specific findings were accessible by observing or testing the interface under the actual conditions that determined its performance."
+      "heading": "Maritime Traffic Monitoring Evidence: Freshness and Replay Failures in Audited Software",
+      "bodyMarkdown": "In an engagement for a European vendor of maritime traffic monitoring, inland navigation, and communications software for port authorities, coastal administrations, and waterway operators, Creative Navy's audit of existing software found two abnormal-condition failures.\n\nThe first failure concerned freshness. Time of last observation sat behind secondary inspection, so in a degraded state a retained target could keep the same visual treatment as an updating one. The display did not reliably tell the operator whether a marker represented a current observation or a last known position. An equipment view with no state data could also read as an equipment view with no faults.\n\nThe second failure concerned replay. The historical view did not maintain a sufficiently prominent, persistent distinction from live operation. Some historical links moved within the recording while others returned towards live, without consistently different cues. Track history could open in a detached panel with weak recovery to the original investigation. Exported views could omit the temporal mode and active layer configuration.\n\nThese findings describe the audited client's existing software. They are not general claims about the maritime traffic monitoring sector."
+    },
+    {
+      "heading": "Triopsis Evidence: Exception Workflows as Daily Operational Reality",
+      "bodyMarkdown": "The Triopsis workforce management platform served schedulers planning thousands of weekly interventions for utilities and road maintenance operations. Weather incidents, delayed jobs, partial completions, conflicting equipment availability, and urgent crew reassignments were significant and predictable parts of daily scheduling work.\n\nThe legacy interface treated those conditions as edge cases. Exception handling required workarounds, corrective paths were long, and the interface did not provide first-class treatment for conditions that experienced schedulers spent a substantial portion of their day managing.\n\nThree in-situ observation sessions documented schedulers managing peak-load conditions before redesign decisions were made. The observed conditions included simultaneous weather incidents, conflicting job locations, overlapping assignments, and crew shortages occurring concurrently. The redesign treated these as normal workflow states. Weather incidents, partial completions, and delayed jobs received explicit interface treatment. Predictive conflict indicators surfaced problems before users encountered them mid-task.\n\nProductivity was measured in the live product through product analytics: 62% faster job discovery, 83% faster job sequence optimisation, and 58% faster weekly planning. These figures are from real users under real operational conditions. The available evidence frames the gains as partly a function of exception handling being designed for rather than worked around."
+    },
+    {
+      "heading": "How Creative Navy's Critical Systems Design Method Addresses Abnormal Conditions",
+      "bodyMarkdown": "Creative Navy's Critical Systems Design method designs software whose interfaces, workflows, and operating logic carry real operational consequences, working through five phases — Sandbox Experiments, Concept Convergence, Iterative System Building, Organizational Integration, and Implementation Partnership — to take each system from initial exploration to independent operation by the client's own team.\n\nCreative Navy's Critical Systems Design method addresses abnormal-condition interface failure by making operational extremes explicit design inputs. In the examples on this page, those inputs include physical environment stress, peak-load transaction rates, simultaneous fault states, degraded information availability, and exception workflows.\n\nDomain learning is the practice that documents the full range of operating conditions before design decisions are made. In the examples on this page, field observation, sea trials, scenario testing, bench sessions, audits, and live product analytics were used in different combinations because the relevant abnormal conditions could not all be inferred from ordinary task descriptions.\n\nScenario-based validation uses abnormal conditions as explicit evaluation criteria during Iterative System Building. A layout that passes normal-condition evaluation may fail during a multi-engine fault scenario, a night-conditions test, or a peak-load observation session. Building and testing against these scenarios before deployment is the distinction made on this page between ordinary interface evaluation and performance in reality."
+    },
+    {
+      "heading": "Evidence Boundaries for Abnormal-Condition Interface Claims",
+      "bodyMarkdown": "The evidence bases on this page are intentionally asymmetric. Field observation, sea trials, scenario testing, synthetic fixtures, bench sessions, audits, and live product analytics do not carry the same evidential weight and should not be blended into a single claim.\n\nKISPE Space material was specified against a synthetic fixture and was not executed as a completed test. Schone Airspace Group material concerns a different synthetic fixture for a ground control station. Raymarine's exception catalogue was only partly evaluated in bench sessions, and no Raymarine field conditions were tested.\n\nThe handheld command-and-control engagement concerns a handheld controller surface and an interference requirement. It does not support claims about the datalink, effector, autonomous behaviour, safety certification, weapons review, or regulatory status.\n\nThe maritime traffic monitoring audit describes failures in one client's existing software. It does not establish a general claim about all maritime traffic monitoring systems."
     }
   ],
   "evidenceSummary": {
     "strongClaims": [
-      "The petrol station engagement documented 40 hours of field observation across 7 stations, 36 cashiers during live operation, 24 interviews, and a coded corpus of 532 transactions.",
-      "The petrol station peak transaction rate documented was 84 transactions per hour on a single till, and complex combined transactions averaged up to 7 minutes each.",
-      "Torqeedo sea trials over 6 months with 15 professional captains documented how temperature range, rain, night conditions, vibration, vessel movement, and glare affected maritime HMI performance.",
-      "Cox Marine scenario testing found that early layouts made fault presence visible but did not help operators identify priority engine faults during multi-engine fault scenarios.",
-      "Cox Marine scenario testing found that initial alarm palette colours interfered with military night vision equipment.",
-      "Triopsis productivity was measured in the live product through product analytics as 62% faster job discovery, 83% faster job sequence optimisation, and 58% faster weekly planning."
+      "Abnormal-condition interface failure occurs when products designed and tested under median conditions fail under operational extremes such as high load, environmental stress, exception workflows, or simultaneous faults.",
+      "The petrol engagement identified hidden peak-load degradation through 40 hours of field observation, 24 interviews, and a 532-transaction corpus across 7 stations and 36 cashiers.",
+      "The Torqeedo maritime HMI findings depended on sea trials under actual operating conditions including temperature range, rain, night operation, vibration, vessel movement, and cold-water glare.",
+      "Cox Marine scenario testing found a multi-engine fault-priority issue and an alarm-palette issue affecting military night vision equipment.",
+      "Triopsis live product analytics recorded 62% faster job discovery, 83% faster job sequence optimisation, and 58% faster weekly planning after exception workflows received explicit interface treatment."
     ],
     "weakerClaims": [
-      "Abnormal-condition interface failure occurs when an interface works under median conditions but degrades or fails under operational extremes such as high load, physical environment stress, exception workflows, or simultaneous faults.",
-      "Creative Navy's Critical Systems Design method addresses abnormal-condition interface failure through domain learning in operationally extreme contexts and scenario-based validation of fault states, peak loads, physical environment extremes, and exception workflows."
+      "KISPE Space and Schone Airspace Group examples are designed adversarial fixtures rather than observations or operational data.",
+      "Raymarine degraded-state work specified forty-three exception cases across eight independent state axes, but only a subset was evaluated in bench sessions and no field conditions were tested.",
+      "The handheld command-and-control engagement treated electromagnetic interference as an expected operating condition and kept this degradation class separate from Schone Airspace Group.",
+      "The maritime traffic monitoring audit found freshness and replay failures in the audited client's existing software."
     ],
     "limitations": [
-      "The examples are engagement-specific and should not be treated as universal measurements of abnormal-condition interface failure across all products.",
-      "The Triopsis productivity figures are described as partly a function of exception handling being designed for; the available description does not isolate exception handling as the only cause of the measured gains.",
-      "The petrol station example shows degradation that became visible through behavioural counting; it does not describe a visible system outage or complete interface breakdown.",
-      "The Torqeedo and Cox Marine findings are tied to maritime operating conditions and should not be generalised beyond their documented contexts without further evidence."
+      "The page concerns interfaces failing under operational extremes, not every kind of real-use mismatch or expert-workflow friction.",
+      "KISPE Space and Schone Airspace Group scenarios are designed test fixtures and must not be treated as observations, operational data, or real incidents.",
+      "Raymarine degraded-state evidence was partly evaluated in bench sessions only; no Raymarine field conditions such as sea trials, glare, gloves, or vibration were tested.",
+      "The handheld command-and-control evidence concerns the human supervision surface and does not support claims about the datalink, effector, autonomous behaviour, safety certification, weapons review, or regulatory status.",
+      "The maritime traffic monitoring audit findings describe one client's existing software and are not general claims about the sector.",
+      "The degraded-state evidence bases are asymmetric and should not be blended into a single evidence claim."
     ]
   },
   "relatedPageSlugs": [
     "the-product-works-in-demos-but-not-in-real-use",
     "expert-workflows-are-hard-to-operate",
+    "system-state-is-hard-to-understand",
+    "warnings-are-visible-but-not-actionable",
+    "the-interface-increases-cognitive-load-at-the-worst-moment",
+    "users-cannot-recover-cleanly-from-errors",
     "cox-marine",
     "triopsis-workforce-management-saas",
-    "the-interface-increases-cognitive-load-at-the-worst-moment",
-    "system-state-is-hard-to-understand",
-    "warnings-are-visible-but-not-actionable"
+    "kispe-space",
+    "schone-mission-control",
+    "raymarine-vhf",
+    "tactical-handheld-command-and-control"
   ],
   "internalLinks": [
     {
-      "anchorText": "demo/real-use situation",
+      "anchorText": "products that work in demos but not in real use",
       "targetSlug": "the-product-works-in-demos-but-not-in-real-use",
-      "reason": "The current page explicitly distinguishes abnormal-condition failure from the broader demo-to-real-use gap."
+      "reason": "The source explicitly distinguishes abnormal-condition interface failure from the demo-to-real-use gap."
     },
     {
-      "anchorText": "expert-workflows situation",
+      "anchorText": "expert workflows being hard to operate",
       "targetSlug": "expert-workflows-are-hard-to-operate",
-      "reason": "The current page explicitly distinguishes abnormal-condition failure from general expert-workflow friction."
+      "reason": "The source explicitly distinguishes this sharper abnormal-condition failure from general expert-workflow friction."
     },
     {
-      "anchorText": "Cox Marine",
+      "anchorText": "Cox Marine scenario testing",
       "targetSlug": "cox-marine",
-      "reason": "The current page uses Cox Marine as a grounded example, and the matching case-study slug is available."
+      "reason": "The page discusses Cox Marine as a grounded example and the slug is allowed."
     },
     {
       "anchorText": "Triopsis workforce management platform",
       "targetSlug": "triopsis-workforce-management-saas",
-      "reason": "The current page uses Triopsis as a grounded example, and the matching case-study slug is available."
+      "reason": "The page discusses Triopsis as a grounded example and the slug is allowed."
     },
     {
-      "anchorText": "interface cognitive load under pressure",
-      "targetSlug": "the-interface-increases-cognitive-load-at-the-worst-moment",
-      "reason": "This related situation helps connect abnormal-condition failure to cognitive load at high-pressure moments."
+      "anchorText": "KISPE Space",
+      "targetSlug": "kispe-space",
+      "reason": "The page discusses KISPE Space as a designed adversarial fixture and the slug is allowed."
     },
     {
-      "anchorText": "system state understanding",
+      "anchorText": "Schone Airspace Group",
+      "targetSlug": "schone-mission-control",
+      "reason": "The page discusses Schone Airspace Group as a separate designed fixture and the slug is allowed."
+    },
+    {
+      "anchorText": "Raymarine fixed-mount VHF work",
+      "targetSlug": "raymarine-vhf",
+      "reason": "The page discusses Raymarine degraded-state specification and the slug is allowed."
+    },
+    {
+      "anchorText": "handheld command-and-control engagement",
+      "targetSlug": "tactical-handheld-command-and-control",
+      "reason": "The page discusses the handheld command-and-control engagement and the slug is allowed."
+    },
+    {
+      "anchorText": "system state is hard to understand",
       "targetSlug": "system-state-is-hard-to-understand",
-      "reason": "This related situation helps connect abnormal-condition failure to state visibility and prioritisation problems."
+      "reason": "Several examples concern state visibility, freshness, replay, and degraded system state."
     },
     {
-      "anchorText": "actionable warnings",
+      "anchorText": "warnings are visible but not actionable",
       "targetSlug": "warnings-are-visible-but-not-actionable",
-      "reason": "This related situation helps connect the Cox Marine alarm example to warning actionability."
+      "reason": "Cox Marine, Raymarine, Schone Airspace Group, and maritime traffic monitoring examples involve warnings, alarms, or state cues that require actionability."
     }
   ],
   "tags": [
@@ -133,17 +169,17 @@
     "operational extremes",
     "interface failure",
     "exception workflows",
-    "peak load",
-    "maritime HMI",
-    "field observation",
+    "high load",
+    "degraded states",
     "scenario-based validation",
     "domain learning",
-    "Critical Systems Design"
+    "Critical Systems Design",
+    "performance in reality"
   ],
   "_meta": {
     "sourcePath": "sources/articles/Situations/situations--complexity--abnormal-conditions-break-the-interface.md",
     "parentSlug": "complexity",
     "childPageSlugs": [],
-    "generatedBy": "deterministic"
+    "generatedBy": "openai"
   }
 }

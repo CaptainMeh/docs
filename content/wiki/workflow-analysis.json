@@ -4,16 +4,18 @@
   "pageType": "practice",
   "category": "practices",
   "section": "Practices",
-  "summary": "Workflow analysis is a research practice for reconstructing how work is actually done in complex professional systems. It is used before design decisions and during audits to identify the gap between designed workflows and actual operational behaviour.",
+  "summary": "Workflow analysis compares intended workflows with actual work as performed. It produces role-specific workflow maps, workaround catalogues, error catalogues, handoff analysis and inputs for microtask analysis and task-criticality mapping.",
   "keyFacts": [
-    "Workflow analysis maps actual workflows, not intended workflows derived only from requirements or stakeholder interviews.",
-    "The practice is primarily used during Sandbox Experiments before design decisions are made, and diagnostically during audits of existing systems.",
-    "In multi-role systems, workflow analysis must be conducted per role rather than aggregated across roles.",
-    "Workflow analysis uses observation in combination with contextual interviews, protocol walkthroughs, documentation analysis, and, where appropriate, session recording analysis.",
-    "Session recording analysis can substitute for or supplement in-situ observation when direct observation is not feasible, but it does not capture contextual conditions, time pressures, or external factors.",
-    "Outputs include workflow maps per role, workaround catalogues, error catalogues, handoff points, and inputs for microtask analysis and task-criticality mapping.",
-    "In the Triopsis workforce management engagement, 3 in-situ observation sessions informed a 47-microtask analysis and redesign of the exception-handling architecture.",
-    "In the Enhesa engagement, 95 session recordings, 31 workarounds, 12 error types, and 6 user interviews formed the primary workflow research evidence base."
+    "Workflow analysis maps actual workflows rather than intended workflows.",
+    "The practice is primarily used during Sandbox Experiments before design decisions are made.",
+    "In multi-role systems, workflow analysis is conducted per role rather than aggregated across roles.",
+    "The practice requires observation, not only interview, because complex professional work includes tacit sequences and rapid decisions that practitioners cannot fully reconstruct retrospectively.",
+    "Methods include in-situ observation, contextual interview, protocol walkthroughs, documentation analysis and session recording analysis.",
+    "Session recording analysis can substitute for or supplement direct observation when direct observation is not feasible, but it does not capture contextual conditions, time pressures or external factors around interface use.",
+    "Outputs include role-specific workflow maps, workaround catalogues, error catalogues, handoff-point identification and inputs for microtask analysis and task-criticality mapping.",
+    "Triopsis evidence included 3 in-situ observation sessions under operational pressure and drove a 47-microtask analysis.",
+    "IDEXX Animana evidence included workflow analysis across 35 clinics, 3 countries and 4 role types over 2 weeks.",
+    "Enhesa evidence included 95 session recordings, 31 documented workarounds across 4 categories and 12 error types with time-to-redress measurement."
   ],
   "bodySections": [
     {
@@ -21,90 +23,126 @@
       "bodyMarkdown": "Creative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nCreative Navy applies workflow analysis as one of the named practices within its Critical Systems Design method. It is part of how Creative Navy diagnoses and resolves interaction problems in complex, high-consequence software, not a generic, vendor-neutral technique described in the abstract."
     },
     {
-      "heading": "Summary",
-      "bodyMarkdown": "Workflow analysis documents how work is actually done in operational settings. It maps the sequences, decision points, deviations, workarounds, informal adaptations, and role-spanning handoffs that are often absent from process documentation, requirements, and user self-report.\n\nThe core distinction in workflow analysis is the difference between designed workflow and actual workflow. A workflow diagram drawn from requirements or stakeholder interviews captures how a system was intended to operate. Workflow analysis captures how work proceeds under real conditions. In complex professional systems, the divergence between the two is often the main finding."
+      "heading": "Workflow Analysis Documents Actual Work Rather Than Intended Process",
+      "bodyMarkdown": "Workflow analysis is the practice of documenting the actual operational sequences through which work gets done, including deviations, workarounds, informal adaptations and handoffs that are absent from process documentation or user self-report.\n\nThe central distinction in workflow analysis is between designed workflow and actual workflow. A workflow diagram drawn from requirements or stakeholder interviews describes how the system was intended to operate. Workflow analysis describes how practitioners complete work under real conditions.\n\nIn complex professional systems, the gap between intended workflow and actual workflow is often the main finding. The practice records real sequences, decision points, deviations, role-spanning handoffs and workarounds that may not appear in requirements, process documents or retrospective accounts."
     },
     {
-      "heading": "What workflow analysis documents",
-      "bodyMarkdown": "Workflow analysis produces a map of actual workflows rather than intended workflows. The map shows where a system supports work, where it fights the work, which informal practices have developed to compensate for interface failures, and which informal practices encode operational knowledge that a redesign must preserve.\n\nWorkflow analysis treats workarounds as evidence rather than noise. Some workarounds are failure signals: they show that the interface does not support what users need to do. Other workarounds are preservation signals: they contain operational knowledge that the redesigned system must carry forward.\n\nWorkflow analysis also documents role-spanning handoffs. These handoffs are primary failure locations in multi-role systems because work or context passes between people, roles, or operational groups."
+      "heading": "Workflow Analysis Treats Divergence From The Designed Process As Evidence",
+      "bodyMarkdown": "Workflow analysis produces a role-specific map of actual work. It shows where the system supports the work, where the system resists the work, which informal practices have developed to compensate for interface failures and which informal practices preserve operational knowledge that a redesign should not remove.\n\nA parallel spreadsheet, a printed reference sheet, a checklist taped to a monitor or a repeated navigation pattern can indicate that the interface does not support the work as performed. The same artefact can also contain useful operational knowledge that needs to survive redesign.\n\nIn multi-role systems, workflow analysis is conducted per role. A scheduler's workflow, a field technician's workflow and an operations manager's workflow are distinct. Aggregating role workflows can produce a composite account that is accurate for none of the roles."
     },
     {
-      "heading": "When workflow analysis is used",
-      "bodyMarkdown": "Workflow analysis is primarily used during Sandbox Experiments before design decisions are made. It is also used diagnostically during audits of existing systems, where the goal is to understand what the platform supports and does not support before recommending changes.\n\nIn multi-role systems, workflow analysis must be conducted per role. The scheduler's workflow, the field technician's workflow, and the operations manager's workflow in a workforce management system are distinct workflows. Aggregating them produces a picture that is accurate for none of the roles.\n\nWhen direct observation is not feasible, session recording analysis can substitute for or supplement in-situ observation. This applies when a platform is already deployed at scale, when the user base is geographically distributed, or when the operational context does not permit in-person access."
+      "heading": "Workflow Analysis Is Used Before Design Decisions And During System Audits",
+      "bodyMarkdown": "Workflow analysis is primarily used during Sandbox Experiments before design decisions are made. In Creative Navy's Critical Systems Design method, Sandbox Experiments are used to understand the operational reality of the system before committing to interface structure, workflow architecture or detailed interaction behaviour.\n\nWorkflow analysis is also used diagnostically in audits of existing systems. In that setting, the purpose is to understand what the platform supports and does not support before recommending changes.\n\nDirect observation is preferred when the operational context permits it. In-situ observation can reveal tacit sequences, informal adaptations and rapid decisions that practitioners may not reconstruct accurately in retrospective interviews."
     },
     {
-      "heading": "How workflow analysis is applied",
-      "bodyMarkdown": "Workflow analysis requires observation rather than interview alone. Complex professional work includes tacit sequences, informal adaptations, and decisions made in fractions of a second that practitioners cannot fully reconstruct in retrospect.\n\nIn-situ observation involves observing work in its actual operational environment under real conditions. It surfaces behaviour that self-report often misses, including checklists taped to monitors, parallel spreadsheets running alongside the system, and shortcuts developed under pressure.\n\nContextual interview asks practitioners to walk through their work while doing it, or immediately after completing a task. Proximity to the actual work produces more accurate accounts than a separate retrospective interview.\n\nProtocol walkthroughs are structured sessions in which practitioners describe specific workflows as if teaching them to a newcomer. These walkthroughs surface implicit sequence logic that experienced practitioners no longer consciously notice.\n\nDocumentation analysis reviews process documents, training materials, and system specifications to establish the intended workflow before investigating the actual workflow. The gap between intended workflow and actual workflow is the starting point for the analysis.\n\nSession recording analysis systematically reviews recorded usage sessions from a deployed platform to reconstruct actual user behaviour at scale. In-situ observation provides contextual depth; session recording analysis provides behavioural breadth. The two methods are complementary when both are available.\n\nThe research protocol adapts in real time based on what early sessions reveal. When a workaround pattern appears in the first clinic or workshop, subsequent sessions probe it explicitly. Workflow analysis in complex operational contexts does not depend on a fixed protocol that remains unchanged after early findings emerge."
+      "heading": "Workflow Analysis Combines Observation, Walkthroughs, Documentation Review And Recordings",
+      "bodyMarkdown": "Workflow analysis uses observation and supporting research methods in combination. Interview evidence alone is insufficient for complex professional work because practitioners may not be able to describe tacit routines, rapid judgements or adaptations made under pressure.\n\nIn-situ observation records work in the actual operational environment under real conditions. Contextual interview asks practitioners to describe work while doing it or immediately after completing a task. Protocol walkthroughs ask practitioners to describe specific workflows as if teaching them to a newcomer.\n\nDocumentation analysis reviews existing process documents, training materials and system specifications to establish the intended workflow. The gap between intended workflow and actual workflow becomes the starting point for investigation.\n\nSession recording analysis systematically reviews recorded usage sessions from a deployed platform to reconstruct actual user behaviour at scale. In-situ observation provides contextual depth; session recording analysis provides behavioural breadth. The two methods are complementary when both are available."
     },
     {
-      "heading": "Outputs of workflow analysis",
-      "bodyMarkdown": "Workflow analysis produces a documented map of actual workflows per role. The map shows sequences, decision points, and deviations from the designed flow.\n\nWorkflow analysis produces a workaround catalogue. Each workaround is tagged as either a failure signal, where the behaviour compensates for a system failure, or a preservation signal, where the behaviour encodes operational knowledge that the design must preserve.\n\nWorkflow analysis produces an error catalogue. The catalogue identifies recurring failure conditions across the user population, each with its frequency and, where measurable, the time cost of detection and recovery. Error catalogues inform both error prevention design and error recovery design.\n\nWorkflow analysis identifies handoff points. These are the points where work or context passes between roles and where failures commonly occur in multi-role systems.\n\nWorkflow analysis provides the empirical starting point for Microtask Analysis and Task-Criticality Mapping. Workflow analysis identifies the boundaries of significant workflows; Microtask Analysis decomposes those workflows into discrete actions; Task-Criticality Mapping assesses which tasks carry the highest operational consequence.\n\nWorkflow analysis also produces a picture of what the system actually supports versus what it claims to support. This gap between designed and actual operation determines the real scope of a redesign."
+      "heading": "Session Recording Analysis Has Behavioural Breadth But Limited Context",
+      "bodyMarkdown": "Session recording analysis can substitute for or supplement in-situ observation when direct observation is not feasible. This situation can occur when a platform is already deployed at scale, when the user base is geographically distributed or when the operational context does not permit in-person access.\n\nSession recordings capture what users do with the interface, but not the contextual conditions, time pressures or external factors that caused those behaviours. Session recording analysis is most appropriate when the platform generates sufficient session data and when workaround patterns are visible in interface interactions.\n\nVisible patterns can include navigation errors, repeated attempts and unexpected path choices. Patterns that depend on physical or organisational context may not be visible in recordings."
     },
     {
-      "heading": "Evidence basis from documented engagements",
-      "bodyMarkdown": "The Triopsis workforce management engagement used 3 in-situ observation sessions under operational pressure. Schedulers were managing weather incidents, crew shortages, and overlapping jobs simultaneously. The observation sessions showed that self-report interviews had not produced an accurate account of how work was done under pressure.\n\nIn the Triopsis engagement, observation revealed combinations of exceptions that the interface had not been designed for. The gap between designed workflow and actual workflow widened when operational pressure increased. The system's state communication was insufficient for the rapid assessments schedulers needed to make. These findings drove the 47-microtask analysis and the redesign of the exception-handling architecture.\n\nThe IDEXX Animana veterinary practice management engagement involved 35 clinics, 3 countries, and 2 weeks of workflow analysis across 4 role types: vets, nurses, reception staff, and administrative staff. When handwritten workarounds appeared across multiple clinics, including checklists taped to monitors and printed reference sheets near terminals, the research protocol was updated in real time to probe those patterns in later visits.\n\nThe IDEXX Animana engagement found that reception and clinical roles had incompatible cognitive requirements that could not be resolved within a single workflow architecture. This structural finding was not visible from stakeholder interviews and emerged from observing the same system used by different roles under different conditions.\n\nThe Gexcon CFD simulation engagement used 23 workplace observations and 24 user interviews. Domain learning preceded the workflow analysis: the team became productive CFD users before observing engineers at work, which was necessary to understand what was significant in the observed behaviour. Workflow analysis showed that Gexcon concentrated all expert activity in a single working environment, which determined the scope and structure of the subsequent microtask analysis. The engagement documented 102 individual tasks.\n\nThe Swiss petrol forecourt engagement involved 40 hours of structured observation, 532 transactions documented and coded, and 36 cashiers observed. The workflow analysis produced a design standard: 84 transactions per hour as the documented peak rate observed during the research. The engagement also documented complex mixed transactions running up to 7 minutes before redesign and catalogued cashier workaround sequences that had developed under peak load.\n\nThe WCO/IPM customs intelligence engagement analysed workflows across three operational groups: inspection officers, intelligence analysts, and rights holder teams. Workflow analysis confirmed that each group had a different operational relationship to the platform. Parallel spreadsheets and email chains across member administrations were the primary diagnostic signal that the designed workflow was being circumvented because it did not support what the work required.\n\nThe Enhesa legal compliance platform engagement used session recording analysis as the primary workflow research method. The engagement reviewed 95 session recordings, documented 31 workarounds across four categories, and documented 12 error types with time-to-redress measurement. Direct observation of Enhesa users in their operational context was not part of the research programme.\n\nIn the Enhesa engagement, the workaround catalogue included Finding legal texts with 8 workarounds, Using legal texts with 17 workarounds, Account settings with 2 workarounds, and Other with 4 workarounds. The concentration of 17 of 31 workarounds in Using legal texts was the diagnostic signal: users had developed the highest density of compensating behaviours in the platform's primary content area.\n\nThe Enhesa error documentation included 12 error types, each with measured time-to-redress where correction occurred. Known error types included clicking into the wrong legislative text, creating the wrong filter, and missing a search result that was present in the system. The engagement records that 80% of the documented workarounds were addressed in the redesign. The 6 user interviews conducted alongside the session recording analysis provided contextual depth that the recordings could not supply."
+      "heading": "Workflow Analysis Outputs Role Maps, Workaround Catalogues And Error Catalogues",
+      "bodyMarkdown": "Workflow analysis produces a documented map of actual workflows per role. The map records sequences, decision points and deviations from the designed flow.\n\nWorkflow analysis produces a catalogue of workaround patterns. Each workaround is tagged as either a failure signal, where the system is not supporting what users need to do, or a preservation signal, where the workaround encodes operational knowledge that should be carried forward.\n\nWorkflow analysis produces a catalogue of error types. The catalogue identifies recurring failure conditions across the user population, with frequency and, where measurable, the time cost of detection and recovery. Error catalogues inform both error prevention design and error recovery design.\n\nWorkflow analysis identifies handoff points where work or context passes between roles. These handoff points are primary failure locations in multi-role systems."
     },
     {
-      "heading": "Boundaries and limits",
-      "bodyMarkdown": "Workflow analysis is not a substitute for all forms of user research. The practice is specifically concerned with actual operational sequences, deviations, workarounds, and handoffs. It requires evidence of behaviour and cannot rely on stakeholder interviews alone.\n\nSession recording analysis has different evidential properties from in-situ observation. Session recordings show what users do with the interface, but they do not show the contextual conditions, time pressures, or external factors that drove those behaviours.\n\nSession recording analysis is most appropriate when the platform generates sufficient session data and when workaround patterns are visible in interface interactions. It is less suitable when the important workaround behaviour occurs in the physical or organisational context around the interface rather than in visible interaction sequences.\n\nWorkflow analysis in multi-role systems must avoid aggregation across roles. A combined workflow map may appear complete, but it can erase the different operational requirements of each role."
+      "heading": "Workflow Analysis Provides Inputs For Microtask Analysis And Task-Criticality Mapping",
+      "bodyMarkdown": "Workflow analysis provides the empirical starting point for microtask analysis and task-criticality mapping. Workflow analysis identifies the boundaries of significant workflows; microtask analysis decomposes them into discrete actions, and task-criticality mapping assesses which tasks carry the highest operational consequence.\n\nThe research protocol for workflow analysis can change as early sessions reveal patterns. If a workaround appears in the first clinic, workshop or observation session, later sessions can probe that pattern explicitly. Workflow analysis in complex operational contexts does not depend on a fixed protocol when emerging evidence changes what needs to be investigated."
+    },
+    {
+      "heading": "Workflow Analysis Evidence Must Distinguish Observation, Recordings, Client Material And Design Reasoning",
+      "bodyMarkdown": "Workflow analysis should not treat every workflow artefact as field observation. Observed operational work, session recording analysis, client-stated accounts, document-derived flows and design reasoning from operating conditions have different evidential status.\n\nObserved work can support claims about actual behaviour under specific conditions. Session recordings can support claims about interface behaviour at scale, but have limited contextual evidence. Client-stated accounts and document-derived flows can describe understood or intended work, but should not be treated as Creative Navy observation. Design reasoning from operating conditions can explain a design split or workflow structure, but should not be presented as a researched workflow finding."
     }
   ],
   "evidenceSummary": {
     "strongClaims": [
-      "Workflow analysis documents actual operational sequences, including deviations, workarounds, informal adaptations, and role-spanning handoffs.",
-      "Workflow analysis is primarily used during Sandbox Experiments before design decisions are made, and diagnostically during audits of existing systems.",
+      "Workflow analysis documents actual operational sequences, deviations, workarounds, informal adaptations and handoffs rather than intended workflow diagrams.",
+      "Workflow analysis is primarily used during Sandbox Experiments before design decisions and diagnostically during audits of existing systems.",
       "In multi-role systems, workflow analysis must be conducted per role rather than aggregated across roles.",
-      "Workflow analysis uses in-situ observation, contextual interview, protocol walkthroughs, documentation analysis, and session recording analysis in combination.",
-      "Session recording analysis can substitute for or supplement direct observation when direct observation is not feasible, but it lacks contextual evidence about conditions, time pressures, and external factors.",
-      "In the Triopsis workforce management engagement, 3 in-situ observation sessions under operational pressure informed a 47-microtask analysis and redesign of the exception-handling architecture.",
-      "In the Enhesa legal compliance platform engagement, 95 session recordings were reviewed, 31 workarounds were documented across four categories, and 12 error types were documented with time-to-redress measurement.",
-      "The Enhesa engagement records that 80% of the documented workarounds were addressed in the redesign."
+      "Workflow analysis requires observation, not only interview, because complex professional work includes tacit sequences, informal adaptations and rapid decisions that practitioners cannot fully reconstruct retrospectively.",
+      "Session recording analysis can substitute for or supplement in-situ observation when direct observation is not feasible, but it lacks contextual evidence about conditions, time pressure and external factors.",
+      "Triopsis workflow analysis involved 3 in-situ observation sessions under operational pressure and drove a 47-microtask analysis and redesign of the exception-handling architecture.",
+      "IDEXX Animana workflow analysis covered 35 clinics, 3 countries, 2 weeks and 4 role types, and found incompatible cognitive requirements between reception and clinical roles.",
+      "Enhesa workflow research used 95 session recordings, documented 31 workarounds across four categories, documented 12 error types with time-to-redress measurement and addressed 80% of documented workarounds in the redesign."
+    ],
+    "weakerClaims": [
+      "Assemblio workflow material should not be treated as in-situ observation evidence because it was built from client material and client-stated accounts, not Creative Navy observation.",
+      "Oceaneering workflow material should not be treated as in-situ observation evidence because it surfaced during review, with no dispatch operator observed and no depot visited.",
+      "AIT workflow splitting should not be treated as a researched workflow finding because it was design reasoning from physical operating conditions and the engagement involved no user research.",
+      "The industrial automation engagement describes designed responses for a product in development and should not be read as an outcome claim."
     ],
     "limitations": [
-      "Workflow analysis cannot rely on interviews alone because complex professional work includes tacit sequences and informal adaptations that practitioners may not reconstruct retrospectively.",
-      "Session recording analysis captures interface behaviour but not the contextual conditions, time pressures, or external factors that drove that behaviour.",
-      "Session recording analysis is most appropriate when the platform generates sufficient session data and workaround patterns are visible in interface interactions.",
-      "In multi-role systems, aggregating workflows across roles can produce a map that is accurate for none of the roles.",
-      "The engagement evidence is case-specific and should not be read as a universal claim that the same outputs or findings appear in every workflow analysis engagement."
+      "Session recordings capture interface behaviour but not the contextual conditions, time pressures or external factors that caused that behaviour.",
+      "Workflow analysis should be role-specific in multi-role systems; aggregated cross-role maps may misrepresent each role's actual work.",
+      "Assemblio workflow material was built from client material and client-stated accounts, not Creative Navy observation.",
+      "Oceaneering workflow material surfaced during review rather than in requirements or observed dispatch operations; no dispatch operator was observed and no depot was visited.",
+      "AIT workflow splitting was design reasoning from physical operating conditions, not a researched workflow finding, and the engagement involved no user research.",
+      "The industrial automation engagement describes designed responses for a product in development and should not be read as an outcome claim.",
+      "No engagement dates are stated; the evidence uses sequence, duration and counts only where documented."
     ]
   },
   "relatedPageSlugs": [
     "microtask-analysis",
     "task-criticality-mapping",
     "cognitive-load-analysis",
-    "triopsis-workforce-management-saas"
+    "triopsis-workforce-management-saas",
+    "ait-heat-pump-controller",
+    "assemblio",
+    "oceaneering-dispatch-panel",
+    "maritime-vts"
   ],
   "internalLinks": [
     {
-      "anchorText": "Microtask Analysis",
+      "anchorText": "microtask analysis",
       "targetSlug": "microtask-analysis",
       "reason": "The source states that workflow analysis identifies workflow boundaries and enables microtask analysis."
     },
     {
-      "anchorText": "Task-Criticality Mapping",
+      "anchorText": "task-criticality mapping",
       "targetSlug": "task-criticality-mapping",
       "reason": "The source states that workflows identified through workflow analysis are inputs for criticality assessment."
     },
     {
-      "anchorText": "Cognitive Load Analysis",
+      "anchorText": "cognitive-load analysis",
       "targetSlug": "cognitive-load-analysis",
-      "reason": "The source states that workflow analysis identifies where cognitive load is highest and cognitive load analysis investigates the mechanisms."
+      "reason": "The source states that workflow analysis identifies where cognitive load is highest and cognitive-load analysis investigates the mechanisms."
     },
     {
-      "anchorText": "Triopsis workforce management case",
+      "anchorText": "Triopsis workforce management",
       "targetSlug": "triopsis-workforce-management-saas",
-      "reason": "The source gives Triopsis as a documented engagement example, and the matching case-study slug is available."
+      "reason": "The body discusses the Triopsis workforce management engagement, and a matching case-study slug is available."
+    },
+    {
+      "anchorText": "AIT heat pump controller",
+      "targetSlug": "ait-heat-pump-controller",
+      "reason": "The body discusses the AIT engagement and its operating-condition workflow split, and a matching case-study slug is available."
+    },
+    {
+      "anchorText": "Assemblio",
+      "targetSlug": "assemblio",
+      "reason": "The body discusses Assemblio workflow artefacts built from client material, and a matching case-study slug is available."
+    },
+    {
+      "anchorText": "Oceaneering hospital dispatch panel",
+      "targetSlug": "oceaneering-dispatch-panel",
+      "reason": "The body discusses the Oceaneering dispatch panel workflow review, and a matching case-study slug is available."
+    },
+    {
+      "anchorText": "maritime VTS",
+      "targetSlug": "maritime-vts",
+      "reason": "The body discusses the maritime VTS hierarchical task analysis, and a matching case-study slug is available."
     }
   ],
   "tags": [
     "workflow analysis",
-    "workflow mapping",
-    "workarounds",
-    "handoffs",
+    "operational workflow",
+    "workaround catalogues",
+    "handoff analysis",
     "session recording analysis",
     "in-situ observation",
-    "contextual interview",
-    "protocol walkthroughs",
+    "multi-role systems",
+    "Sandbox Experiments",
     "microtask analysis",
     "task-criticality mapping"
   ],
@@ -112,7 +150,7 @@
     "sourcePath": "sources/articles/Practices/practices--workflow-analysis.md",
     "parentSlug": "practices",
     "childPageSlugs": [],
-    "generatedBy": "deterministic",
+    "generatedBy": "openai",
     "patches": [
       "practice-anchor"
     ]

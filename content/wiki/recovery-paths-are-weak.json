@@ -3,116 +3,133 @@
   "title": "Recovery Paths Are Weak",
   "pageType": "failure",
   "category": "failures",
-  "section": "Error And Recovery Failures",
-  "summary": "Recovery paths are interface structures that return users from error and fault states to valid operational conditions. They are weak when they are absent, generic, incomplete, ambiguous, or dependent on external knowledge that the interface does not provide.",
+  "section": "Error and Recovery Failures",
+  "summary": "Weak recovery paths occur when an interface detects or communicates an error but does not provide enough structure for the user to return to a valid operational state. The failure appears through absent paths, generic instructions, incomplete error coverage, ambiguous recovery confirmation, or recovery steps that require information the interface does not provide.",
   "keyFacts": [
-    "A recovery path is the designed interface sequence that returns from an error or fault state to a valid operational state.",
-    "Weak recovery paths may be absent, generic, incomplete, ambiguous, or dependent on knowledge outside the interface.",
-    "The characteristic operational consequence is escalation to support, colleagues, or prior-stage parties.",
-    "Generic instructions such as \"an error occurred,\" \"the action could not be completed,\" or \"contact support\" communicate that an error occurred but do not structurally support recovery.",
-    "Recovery confirmation is the signal that the recovery action was successful and the state is now valid.",
-    "In the Gexcon CFD simulation case, corrective load per configuration error was 4–6 hours before redesign and approximately 20 minutes after error-specific recovery communication was added.",
-    "In the Squaremind case, pre-redesign testing with 14 patients produced 2 completions; post-redesign ecological testing produced 27 of 29 independent completions.",
-    "In the Kardion MCS Controller case, the alarm recovery sequence covered alarm active, alarm acknowledged, condition addressed, and alarm resolved, with scope limited to formative evaluation."
+    "Weak recovery paths can be absent, generic, incomplete, ambiguous after use, or dependent on information outside the interface.",
+    "The characteristic operational consequence is escalation to support, colleagues, or a prior-stage party.",
+    "Workaround procedures such as “if this happens, call this person” are evidence that designed recovery paths are insufficient.",
+    "This failure differs from errors being hard to correct: hard correction concerns difficulty when a path exists, while weak recovery paths concern the structural adequacy and completeness of the path.",
+    "This failure differs from edge cases breaking the system: edge cases concern non-nominal inputs, while weak recovery paths concern what the interface provides after something goes wrong.",
+    "In the Gexcon CFD simulation case, configuration error correction changed from 4–6 hours before redesign to approximately 20 minutes after error-specific communication was added.",
+    "In the Squaremind dermatology scanning device case, pre-redesign testing with 14 patients produced 2 completions; post-redesign ecological testing produced 27 of 29 independent completions.",
+    "The Kardion MCS Controller alarm architecture included a recovery sequence from alarm active to alarm acknowledged, condition addressed, and alarm resolved; the scope was formative evaluation only.",
+    "In the Egma Order case, a refused order could lead users to stop using the product and ask the support team to place the order instead; no post-launch outcome was measured."
   ],
   "bodySections": [
     {
-      "heading": "Summary",
-      "bodyMarkdown": "Creative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nRecovery paths are the designed interface structures that return users from error and fault states to valid operational conditions. Recovery paths are weak when the interface presents an error state with no next step, gives only generic instructions, covers only some error categories, or leads users into a state where they cannot tell whether recovery succeeded.\n\nWeak recovery paths convert interface failure into operational escalation. When users encounter an error or fault state and the interface offers no actionable next step, they contact support, colleagues, or the prior-stage party. The frequency of that escalation is the operational cost of the recovery design failure."
+      "heading": "Weak Recovery Paths Leave Users Without a Route Back to Valid Operation",
+      "bodyMarkdown": "Recovery paths are the designed interface structures that return users from error and fault states to valid operational conditions. Weak recovery paths fail when the interface presents an error state with no next step, gives only a generic message, covers only some error types, returns the user to an ambiguous state, or requires external information the interface does not provide.\n\nCreative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nThe operational consequence of weak recovery paths is escalation. When users encounter an error or fault state and the interface does not provide an actionable next step, they contact support, colleagues, or the prior-stage party. The frequency of escalation is the operational cost of the recovery design failure."
     },
     {
-      "heading": "Failure pattern: recovery exists only as escalation or workaround",
-      "bodyMarkdown": "A weak recovery path is visible when users must build informal procedures around system errors. Instructions such as \"if this happens, call this person\" are not just local workarounds; they are evidence that the interface does not provide sufficient structural recovery support.\n\nStructural recovery support means that recovery is built into the interface as a first-class design target. It is different from simply showing an error signal. An alert, flag, or message can communicate that something went wrong while still leaving the user without the information or sequence needed to return to a valid operating state."
+      "heading": "Failure Pattern: Error Detection Without Recovery Support",
+      "bodyMarkdown": "A weak recovery path is not just a poor error message. It is a structural failure in the route from an invalid or uncertain state back to a valid operational state.\n\nThe path may be absent. The interface may show an error or fault condition and provide no next action.\n\nThe path may be generic. The interface may say “an error occurred,” “the action could not be completed,” or “contact support” without specifying the error type or corrective action.\n\nThe path may be incomplete. The interface may support recovery for some error categories but leave other categories structurally unsupported.\n\nThe path may be ambiguous after use. A user may follow the recovery step and return to a normal-looking state without knowing whether the error was resolved or merely hidden.\n\nThe path may require external knowledge. A user may be told to re-enter configuration values without seeing the prior values, or to restore a previous version without access to what the previous version contained."
     },
     {
-      "heading": "How weak recovery paths appear in interfaces",
-      "bodyMarkdown": "Weak recovery paths appear in several distinct forms. The most severe form is absence: the interface presents an error or fault state and gives the user no designed next step.\n\nA second form is generic recovery instruction. Messages such as \"an error occurred,\" \"the action could not be completed,\" or \"contact support\" satisfy the requirement that an error be communicated, but they do not specify the error type or corrective action.\n\nA third form is incomplete recovery coverage. Recovery paths may exist for some error categories but not others. Users often discover the gap only when their particular error has no designed path.\n\nA fourth form is recovery path ambiguity. The user follows a specific instruction, the interface returns to a normal-looking state, and the user cannot tell whether the error was resolved or merely hidden.\n\nA fifth form is recovery that requires external knowledge. The interface may tell the user what to do while withholding the information needed to do it, such as asking the user to re-enter configuration values without showing the prior values, or to restore a previous version without exposing what the previous version contained."
+      "heading": "Operational Signals of Weak Recovery Paths",
+      "bodyMarkdown": "Weak recovery paths appear as support tickets, colleague-to-colleague help, informal instructions, and institutional memory around known fault states. The workaround infrastructure that users build around error states is evidence that the designed interface does not carry the recovery burden.\n\nAn instruction such as “if this happens, call this person” is not only a local workaround. It is also a signal that the interface has not made the recovery path sufficiently specific, complete, and confirmable.\n\nEscalation can hide the design failure when the human support channel works well. If support can place an order, diagnose a configuration issue, or tell a user what to do next, the immediate operational problem may be absorbed outside the interface. The designed recovery path remains weak because recovery depends on leaving the product flow."
     },
     {
-      "heading": "What causes weak recovery paths",
-      "bodyMarkdown": "Weak recovery paths are often produced when the system is designed around the nominal workflow and error states are not treated as first-class design targets. In that condition, design stops at error detection. When the error occurs, the interface has nothing specific to provide.\n\nGeneric error communication also produces weak recovery. The interface may name that an error exists but fail to name what failed, where it failed, why the current state is invalid, or what action returns the user to a valid state.\n\nIncomplete coverage produces weak recovery when only some categories of error have designed paths. This incompleteness can be invisible to users, because users do not know which error category they are in until the recovery path is missing.\n\nAmbiguous completion produces weak recovery when the interface does not confirm that the recovery action succeeded. Recovery confirmation is the signal that the state is now valid.\n\nRecovery can also be weak when the corrective action depends on information the interface does not provide. In that case, the path may be structurally present but practically unusable."
+      "heading": "How Weak Recovery Paths Differ From Adjacent Failure Types",
+      "bodyMarkdown": "Weak recovery paths differ from errors being hard to correct. Errors are hard to correct when a correction path exists but imposes high correction difficulty. Weak recovery paths concern whether the recovery structure is adequate and complete in the first place. In practice, the two failures can compound: when the recovery path is weak, correction necessarily becomes harder.\n\nWeak recovery paths also differ from edge cases breaking the system. Edge cases breaking the system concerns the system failing to handle non-nominal inputs. Weak recovery paths concern what the interface provides for recovery after something goes wrong, regardless of the cause."
     },
     {
-      "heading": "How Creative Navy's Critical Systems Design method addresses weak recovery paths",
-      "bodyMarkdown": "Creative Navy's Critical Systems Design method treats weak recovery paths as an interface-structure problem, not only as a wording problem. The design target is the complete sequence from error or fault state back to a valid operational state, including the information needed to act and the confirmation that the action succeeded.\n\nA recovery path can be a specific error message, a contextual option set, a step-by-step abnormal-condition workflow, an alarm resolution sequence, or a handoff instruction to the person who can perform the remediation. The appropriate path depends on what the user can realistically do in the error state.\n\nCreative Navy's design work on recovery paths distinguishes between fixing the underlying fault and knowing the correct next action. In the Elsner Elektronik example, non-technical users could not perform technical remediation for sensor faults. The recovery path was therefore designed to communicate the fault state clearly, indicate the correct next action, and distinguish that state from conditions requiring no action."
+      "heading": "Common Causes of Weak Recovery Paths",
+      "bodyMarkdown": "Recovery paths are weak when error states are not treated as first-class design targets. In that situation, the nominal workflow is designed, but the design stops at the point of error detection.\n\nGeneric recovery instructions also produce weak recovery. A message can satisfy the need to communicate that an error occurred while failing to support the user in recovering from it. “Contact support” may be a valid next action in some contexts, but it is still a sign that recovery is not structurally supported inside the interface.\n\nIncomplete coverage creates uneven recovery. Some users encounter covered error categories and recover through the interface; others encounter unsupported categories and cannot recover. This incompleteness is often invisible until the user discovers that their specific error has no path.\n\nRecovery path ambiguity creates uncertainty after the user has acted. If the interface does not confirm that the recovery action succeeded, the user cannot distinguish a resolved state from a hidden fault.\n\nRecovery requiring external knowledge creates dependency on memory, records, colleagues, or support. The interface tells the user what to do but does not provide the information needed to do it."
     },
     {
-      "heading": "Evidence basis from documented cases",
-      "bodyMarkdown": "The Gexcon CFD simulation case shows recovery path support added through error communication redesign. Before the redesign, configuration error messages communicated that something had gone wrong without specifying what or where. The user had to find the error independently, understand what value should have been different, make the change, and re-run the simulation. Corrective load per error was recorded as 4–6 hours before redesign. After error-specific communication was added, including what went wrong, where in the configuration, and what corrective action was needed, corrective load fell to approximately 20 minutes.\n\nThe Triopsis workforce management case shows abnormal operating conditions treated as recovery-requiring workflow states. Weather incidents, partial completions, scheduling conflicts, and crew unavailability were error states without designed recovery paths before redesign. The redesign treated these conditions as primary workflow states: affected jobs surfaced explicitly, resolution options were presented contextually, and cascade effects became visible.\n\nThe Kardion MCS Controller case shows recovery confirmation built into an alarm recovery sequence. The alarm architecture specified the path from alarm active to alarm acknowledged, condition addressed, and alarm resolved. The path required confirmation that the condition was resolved, not only that the alarm had been seen. The visible muted-alarm state prevented a gap between alarm silenced and recovery confirmed. The Kardion evidence is limited to formative evaluation only.\n\nThe Elsner Elektronik case shows recovery paths calibrated for non-technical users. The recovery path for sensor faults was not to fix the fault directly. It was to communicate the fault state, indicate the correct next action, and distinguish faults requiring action from calibration drift within an acceptable range.\n\nThe Squaremind dermatology scanning device case shows the extreme form of absent recovery. The scan process was sequential and time-bounded, and any confusion event that the patient could not resolve independently ended the session. Before redesign, Squaremind's own test with 14 patients produced 2 completions. Of the 12 who did not complete, 8 got stuck within the first minute and 4 got stuck around the 3-minute mark.\n\nCreative Navy's design work in the Squaremind case used Inform–Prevent–Correct recursively across every step in the scan flow. Each step was mapped against what the patient needed to understand, what confusion event had to be prevented, and what the system should do if confusion occurred. Post-redesign ecological testing in London with 12 users and Paris with 17 users, co-conducted with an independent dermatologist, produced 27 of 29 independent completions. All 12 patients who got stuck recovered and completed the scan. Recovery times ranged from 2 to 4 minutes. The pre-redesign figures were client-reported background from Squaremind's own test; the post-redesign figures were Creative Navy-measured under an ecological protocol co-conducted with an independent dermatologist."
+      "heading": "Structurally Strong Recovery Requires Actionability, Coverage, and Confirmation",
+      "bodyMarkdown": "A recovery path is structurally strong when the interface makes the error type clear, gives the corrective action, provides the information needed to take that action, covers the error categories the system can encounter, and confirms that the recovery action has returned the state to validity.\n\nRecovery confirmation is a necessary part of the path. Without confirmation, the user may silence, acknowledge, or work around the visible error without knowing whether the underlying condition has been addressed.\n\nGraceful degradation is a related recovery concept. Instead of requiring complete recovery before work can resume, an interface may support operation at reduced capability during a fault state. The source concept is not that every fault must be fully fixed by the user, but that the interface must support an appropriate route from fault detection to the next valid operational condition."
     },
     {
-      "heading": "Boundaries and adjacent failures",
-      "bodyMarkdown": "Weak recovery paths differ from errors that are hard to correct. Errors that are hard to correct concern correction difficulty when paths exist. Weak recovery paths concern whether the paths are structurally adequate and complete. In practice, the two failures can compound because weak recovery necessarily makes correction harder.\n\nWeak recovery paths also differ from edge cases that break the system. Edge cases that break the system concern the system failing to handle non-nominal inputs. Weak recovery paths concern what the interface provides when things go wrong, regardless of the cause.\n\nGraceful degradation is related but distinct. Graceful degradation means operating at reduced capability during a fault state rather than requiring complete recovery before resuming. A recovery path may include graceful degradation, but graceful degradation is not the same as full recovery."
+      "heading": "Boundaries for Interpreting Weak Recovery Paths",
+      "bodyMarkdown": "A weak recovery path should not be treated as evidence that users are careless or incapable. The failure concerns the interface structure available after an error or fault state occurs.\n\nA support escalation can be an appropriate final next action in some contexts, especially when the user cannot perform the technical remediation. The recovery path is weak when escalation is the only option because the interface cannot specify the error, provide the needed information, support a valid next step, or confirm the state after action.\n\nRecovery path design does not always mean enabling the user to fix the fault directly. In constrained recovery capability, the interface may need to bridge the gap between detecting the problem and handing it to the person who can fix it."
     }
   ],
   "evidenceSummary": {
     "strongClaims": [
-      "Recovery paths are designed interface structures that return users from error and fault states to valid operational conditions.",
-      "Weak recovery paths produce escalation when users contact support, colleagues, or prior-stage parties because the interface offers no actionable next step.",
-      "In the Gexcon CFD simulation case, corrective load per configuration error was 4–6 hours before redesign and approximately 20 minutes after error-specific communication was added.",
-      "In the Triopsis workforce management case, weather incidents, partial completions, scheduling conflicts, and crew unavailability were treated as recovery-requiring workflow states in the redesign.",
-      "In the Kardion MCS Controller case, the alarm architecture included a recovery sequence from alarm active to alarm acknowledged, condition addressed, and alarm resolved, with confirmation that the condition was resolved.",
-      "In the Elsner Elektronik case, the recovery path for sensor faults was designed for non-technical users to know the correct next action rather than perform technical remediation."
+      "Weak recovery paths are recovery structures that are absent, generic, incomplete, ambiguous, or dependent on external knowledge.",
+      "The characteristic operational consequence of weak recovery paths is escalation to support, colleagues, or a prior-stage party.",
+      "In the Gexcon CFD simulation case, corrective load per configuration error changed from 4–6 hours before redesign to approximately 20 minutes after error-specific communication was added.",
+      "In the Squaremind dermatology scanning device case, post-redesign ecological testing in London and Paris produced 27 of 29 independent completions; the post-redesign figures are described as Creative Navy-recorded under an ecological protocol co-conducted with an independent dermatologist."
     ],
     "weakerClaims": [
-      "In the Squaremind case, pre-redesign testing with 14 patients produced 2 completions, while post-redesign ecological testing produced 27 of 29 independent completions."
+      "In the Squaremind dermatology scanning device case, pre-redesign testing with 14 patients produced 2 completions; the pre-redesign figures are client-reported background from Squaremind's own test.",
+      "Triopsis workforce management had abnormal conditions such as weather incidents, partial completions, scheduling conflicts, and crew unavailability that required designed recovery structures; the source describes the pre-redesign state and the redesigned treatment of abnormal conditions as primary workflow states.",
+      "The Kardion MCS Controller alarm recovery included a sequence from alarm active to alarm acknowledged, condition addressed, and alarm resolved; the scope was formative evaluation only.",
+      "Egma Order's pre-redesign recovery path from a refused order could become escalation to the support team; the evidence is client-reported and no measured post-launch outcome is available."
     ],
     "limitations": [
-      "The case examples use different evidence bases and should not be treated as equivalent measurement conditions.",
-      "The Gexcon case reports measured before-redesign and after-redesign corrective load, but the available description does not identify the measurement owner.",
-      "The Kardion MCS Controller evidence is explicitly limited to formative evaluation only.",
-      "The Squaremind pre-redesign figures are client-reported background, while the post-redesign figures are Creative Navy-measured under an ecological protocol co-conducted with an independent dermatologist.",
-      "The documented cases support the failure mechanism and observed recovery improvements in specific contexts; they do not establish a universal outcome rate for all systems with weak recovery paths."
+      "The page describes a failure pattern and case evidence; it does not claim that every error state in every interface requires the same recovery mechanism.",
+      "Gexcon figures are stated as measured before and after redesign, but the current source does not specify a separate measurement owner.",
+      "Kardion MCS Controller evidence is limited to formative evaluation only.",
+      "Squaremind pre-redesign figures are client-reported background from Squaremind's own test; post-redesign figures are Creative Navy-recorded under ecological protocol co-conducted with an independent dermatologist.",
+      "Egma Order has no post-launch measurement, no support-ticket outcome, no order-completion-rate outcome, no revenue or conversion outcome, and no live-platform usability-testing result."
     ]
   },
   "relatedPageSlugs": [
     "errors-are-hard-to-correct",
     "edge-cases-break-the-system",
-    "triopsis-workforce-management-saas",
+    "errors-are-hard-to-notice",
+    "warnings-are-visible-but-their-meaning-is-unclear",
+    "users-cannot-see-what-state-the-system-is-in",
+    "users-keep-repeating-an-action-because-the-system-cannot-confirm-it-worked",
     "kardion",
-    "squaremind"
+    "triopsis-workforce-management-saas",
+    "squaremind",
+    "egma"
   ],
   "internalLinks": [
     {
-      "anchorText": "Errors Are Hard To Correct",
+      "anchorText": "errors being hard to correct",
       "targetSlug": "errors-are-hard-to-correct",
-      "reason": "The source explicitly distinguishes weak recovery paths from correction difficulty when recovery paths exist."
+      "reason": "The source explicitly distinguishes weak recovery paths from errors being hard to correct."
     },
     {
-      "anchorText": "Edge Cases Break The System",
+      "anchorText": "edge cases breaking the system",
       "targetSlug": "edge-cases-break-the-system",
-      "reason": "The source explicitly distinguishes system failure on non-nominal inputs from recovery support after things go wrong."
+      "reason": "The source explicitly distinguishes weak recovery paths from edge cases breaking the system."
     },
     {
-      "anchorText": "Triopsis",
-      "targetSlug": "triopsis-workforce-management-saas",
-      "reason": "The source names the Triopsis workforce management case as evidence for abnormal conditions treated as recovery-requiring states."
-    },
-    {
-      "anchorText": "Kardion",
+      "anchorText": "Kardion MCS Controller",
       "targetSlug": "kardion",
-      "reason": "The source names the Kardion MCS Controller case as evidence for alarm recovery sequences and recovery confirmation."
+      "reason": "The source discusses Kardion as a case example of alarm recovery confirmation."
     },
     {
-      "anchorText": "Squaremind",
+      "anchorText": "Triopsis workforce management",
+      "targetSlug": "triopsis-workforce-management-saas",
+      "reason": "The source discusses Triopsis as a case example of abnormal conditions as recovery-requiring states."
+    },
+    {
+      "anchorText": "Squaremind dermatology scanning device",
       "targetSlug": "squaremind",
-      "reason": "The source names the Squaremind case as evidence for absent recovery paths in a sequential guided process and for Inform–Prevent–Correct recovery design."
+      "reason": "The source discusses Squaremind as a case example of absent recovery paths causing session loss."
+    },
+    {
+      "anchorText": "Egma Order",
+      "targetSlug": "egma",
+      "reason": "The source discusses Egma Order as a case example of escalation to the support team replacing product recovery."
+    },
+    {
+      "anchorText": "users repeat an action because the system cannot confirm that it worked",
+      "targetSlug": "users-keep-repeating-an-action-because-the-system-cannot-confirm-it-worked",
+      "reason": "Recovery confirmation is central to the failure pattern and directly relates to confirmation after action."
     }
   ],
   "tags": [
     "error recovery",
-    "recovery paths",
     "fault states",
+    "recovery paths",
     "error communication",
-    "recovery confirmation",
     "escalation",
     "workarounds",
-    "Inform–Prevent–Correct"
+    "recovery confirmation",
+    "graceful degradation"
   ],
   "_meta": {
     "sourcePath": "sources/articles/Failures/failures--error-recovery--recovery-paths-are-weak.md",
     "parentSlug": "error-and-recovery-failures",
     "childPageSlugs": [],
-    "generatedBy": "deterministic"
+    "generatedBy": "openai"
   }
 }

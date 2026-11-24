@@ -58,7 +58,7 @@ The cognitive demand of the calibration task — tracking a sequence, confirming
 
 The previous interface presented measurement values, tolerances, and procedure states at equal visual weight across all display types. Under controlled conditions, this was legible. Under operational conditions — distance, movement, gloves, variable workshop lighting — equal visual weight meant ambiguous state. Technicians either moved closer to confirm (slowing the sequence) or proceeded on inference rather than confirmed reading (introducing measurement error risk).
 
-Creative Navy's Critical Systems Design method established the competitive vector for this system through tension-driven reasoning: prioritise unambiguous state communication over information density, across all three device types. The redesign accepted reduced information density per screen in exchange for a single reading logic across the whole system — one that worked under the physical conditions of calibration, not the conditions of seated evaluation.
+Creative Navy's Critical Systems Design method established the design position for this system through tension-driven reasoning: prioritise unambiguous state communication over information density, across all three device types. The redesign accepted reduced information density per screen in exchange for a single reading logic across the whole system — one that worked under the physical conditions of calibration, not the conditions of seated evaluation.
 
 Calibration time reduced from 18 to 12 minutes per vehicle (client-measured across 8 deployment locations). Repeated measurements reduced directionally (client-measured; exact figure not shared). Evidence basis: client-measured operational data.
 

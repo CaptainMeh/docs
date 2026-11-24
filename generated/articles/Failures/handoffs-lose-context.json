@@ -12,33 +12,34 @@
   "category": "failures",
   "parentSlug": "workflow-failures",
   "childPageSlugs": [],
-  "excerpt": "Handoffs lose context when the receiving party must continue work without the information, state, or decision basis established by the prior party. The failure is a handoff-interface problem, not a general interpersonal communication problem.",
+  "excerpt": "A handoff loses context when the receiving party cannot continue work with the information, state, or decision basis established by the prior party. The failure is visible when users escalate, reconstruct context, or proceed with an incomplete picture.",
   "metaTitle": "Handoffs Lose Context",
-  "metaDescription": "A workflow failure where handoffs lose the information, state, or decision basis the receiving party needs to continue work correctly.",
-  "summary": "Handoffs lose context when work passes between parties but the receiving party cannot access the prior party's relevant information in the form and moment required for correct continuation. The common signals are escalation, reconstruction, or proceeding with an incomplete picture.",
-  "definition": "A handoff context loss failure occurs when the receiving party in a multi-stage workflow must begin work without the information, state, or decision basis established by the prior party.",
+  "metaDescription": "A workflow failure where context is not persisted or presented at the handoff point, forcing escalation, reconstruction, or incomplete action.",
+  "summary": "Handoffs lose context when information established in one stage of work does not reach the next party in a usable form at the moment it is needed. The failure is distinct from poor interpersonal communication: it concerns whether the interface makes handoffs self-sufficient.",
+  "definition": "A handoff context loss failure occurs when the receiving party must begin work without the information, state, or decision basis established by the prior party, even if that context technically exists somewhere in the system.",
   "keyFacts": [
-    "The failure occurs at the handoff point where work, information, or responsibility passes between parties.",
-    "The missing context may exist somewhere in the system but not be available in the form, position, or moment the receiving party needs.",
-    "Receiving parties commonly escalate to the prior party, reconstruct the context independently, or proceed without the missing context.",
-    "Escalation to obtain handoff context is a signal that the handoff is not self-sufficient.",
-    "Context requirements differ by role; the sender's useful format may not be usable by the receiving party.",
-    "Partial handoffs are risky because users may believe they have enough context when an important element is missing.",
-    "Asynchronous context becomes a failure when prior-session or earlier-workflow information is archived but not surfaced at the moment of resumption.",
-    "Akrivia Health evidence describes a research-to-governance handoff where reviewers could not independently evaluate cohort construction logic before redesign.",
-    "Triopsis evidence describes a scheduling-to-field handoff where technicians needed job conditions, dependencies, safety requirements, and scheduling changes at job commencement."
+    "The failure occurs at the point where work, information, or responsibility passes between parties.",
+    "The receiving party may escalate, reconstruct the missing context, or proceed without a complete picture.",
+    "Context can be technically accessible but still unavailable in the form, timing, or view the receiving party needs.",
+    "Partial handoffs can be more dangerous than complete gaps because users may believe they have enough context.",
+    "Asynchronous context becomes a failure when the interface archives context but does not surface it at resumption.",
+    "Akrivia Health provides a client-reported example where governance reviewers could verify cohort logic without escalating after redesign.",
+    "Triopsis workforce management describes scheduling-to-field context being surfaced at the point of job commencement.",
+    "Oceaneering evidence is limited to interviews with people adjacent to the users; no operator was interviewed and no depot was visited.",
+    "Assemblio evidence is client-stated, not observed on the shop floor.",
+    "Topera is a concept design only; it is described as a structure designed so context survives a handoff, not as an observed product outcome."
   ],
   "tags": [
     "workflow failure",
-    "handoff design",
+    "handoff",
     "context persistence",
+    "handoff gap",
     "multi-role workflow",
-    "context loss",
-    "escalation",
-    "workflow overhead",
-    "self-sufficient handoff"
+    "self-sufficient handoff",
+    "asynchronous context",
+    "role boundary"
   ],
-  "bodyMarkdown": "## Summary\n\nCreative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nHandoffs lose context when the receiving party in a multi-stage workflow must begin work without the information, state, or decision basis that the prior party established. The missing context may be technically accessible somewhere in the system, such as in a previous record or prior session, but it is not available in the form the receiving party needs at the moment the receiving party needs it.\n\nThis failure is not primarily a problem of bad communication between people. It is a design failure in the handoff interface: the interface does not persist and present the context required to make the next stage of work self-sufficient.\n\n## Failure pattern: the receiving party escalates, reconstructs, or proceeds without context\n\nA handoff context loss failure produces a specific operational pattern. The receiving party escalates to the prior party to obtain the missing context, reconstructs the context independently from available signals, or proceeds without the context and acts on an incomplete picture.\n\nEscalation creates workflow overhead and bottlenecks because the prior party is drawn back into work that should have passed forward. Reconstruction is time-consuming and error-prone because the receiving party must infer state, rationale, or decisions from partial traces. Proceeding without context accepts the consequences of incomplete information at the point of action.\n\nA self-sufficient handoff avoids this pattern. In a self-sufficient handoff, the receiving party has enough information, state, and decision basis to continue the work correctly without contacting the sender or rebuilding the context independently.\n\n## How handoff context loss appears in interfaces\n\nHandoff context loss appears when information exists but does not travel across a role boundary. A field technician may arrive at a job without the conditions the scheduler noted. A governance reviewer may be asked to review work without seeing the query logic the researcher built. In these cases, the issue is not that the information never existed; the issue is that the receiving party's view does not carry it forward.\n\nHandoff context loss also appears when information is persisted but not formatted for the receiving party. A format that is legible to the sender may not support independent verification by the next role. A researcher's cohort construction logic can be internally legible to the researcher while still being unusable to a governance reviewer who needs to evaluate the same logic from a different position in the workflow.\n\nPartial handoffs are a distinct risk. When some context passes and some is lost, the receiving party may have enough information to begin but not enough to proceed correctly. Partial context can be more dangerous than a complete gap because users may believe they have what they need and therefore do not look for the missing element.\n\nAsynchronous context creates another form of the same failure. The receiving party may need state established in a prior session, before an interruption, or earlier in the same workflow. If the interface archives that context but does not surface it at the moment of resumption, the handoff still fails.\n\n## Why handoff context loss matters in operational workflows\n\nHandoff context loss matters because it turns a designed workflow transition into a dependency on memory, escalation, or informal reconstruction. The receiving party cannot rely on the interface alone to understand what has already been observed, decided, or constrained.\n\nThe operational consequence depends on the setting. In field work, missing handoff context can mean proceeding without job conditions, prior issues, safety requirements, or scheduling changes. In governance review, missing handoff context can mean being unable to verify the work independently. In inspection work, missing intelligence context can cause officers to route around the platform to informal channels. In clinical practice workflows, missing reception-to-clinical context can force clinicians to reconstruct patient context at the start of a consultation.\n\nThe visible symptom is often not a formal error message. The visible symptom is a workaround: a phone call, an email chain, a spreadsheet, a repeated explanation, or an informal channel that carries the context the interface failed to present.\n\n## What causes handoffs to lose context\n\nHandoffs lose context when the sending party's work results, observations, and decisions are not carried forward into the receiving party's view. This is common when information is partitioned by role and not shared across the transition point, even though it exists somewhere in the system.\n\nHandoffs also lose context when the system preserves the data but not the receiving party's interpretation requirements. The receiving party may need the same underlying information in a different structure, level of explanation, or position in the workflow. Context persistence therefore requires more than storage; it requires presentation that matches the next role's task.\n\nPartial handoffs occur when the interface carries forward only part of the context. This produces a misleading sense of continuity. The receiving party starts work with apparently sufficient information but lacks a critical piece of the decision basis.\n\nAsynchronous handoff failures occur when relevant context was established at a different time from the moment of use. Prior-session state, earlier workflow decisions, and pre-interruption context must be surfaced at the point of resumption, not merely retrievable from an archive.\n\n## Evidence basis from Akrivia Health, Triopsis, WCO/IPM, and IDEXX Animana\n\nThe Akrivia Health case provides the clearest documented example of research-to-governance handoff context loss. Researchers constructed patient cohorts using complex nested logical conditions, and governance reviewers were required to verify those conditions before the study proceeded. The cohort query existed in the system, but the system did not present the cohort construction logic in a form the governance reviewer could evaluate independently. The reviewer either performed only a nominal review or escalated to the researcher for explanation. The client-reported outcome after redesign was that governance reviewers could verify cohort logic without escalating to the research team.\n\nThe Triopsis workforce management case describes a scheduling-to-field handoff. Field technicians arriving at job sites needed context about conditions, prior issues, safety requirements, and scheduling changes established by the operations layer. When this context was not surfaced in the field technician's view at job commencement, technicians either proceeded without it or called in to obtain it. The redesign surfaced job conditions, dependencies, and safety compliance steps at the point in the field workflow where they were needed, making the handoff part of the interface rather than a phone call.\n\nThe WCO/IPM customs intelligence case describes an intelligence-to-inspection handoff. The platform's enforcement value depended on intelligence context filed by rights holders and analysed by analysts reaching field inspection officers at the moment of inspection. When officers arrived at inspections without the alert context the platform was meant to provide, the enforcement workflow degraded and officers routed around the system through informal channels. Parallel email chains and spreadsheets were the organisational-scale expression of the handoff failure.\n\nThe IDEXX Animana case describes a reception-to-clinical handoff in veterinary practice workflows. Reception staff established context through patient arrival, initial assessment, and owner context, while clinical staff needed clinical history, prior examination notes, and the current presenting issue. The context reception established was in the system but not in the form or position that made the clinical handoff self-sufficient. Clinicians who needed to act quickly at the start of a consultation were reconstructing context rather than receiving it.\n\n## Boundaries: how this failure differs from adjacent workflow failures\n\nHandoffs lose context is narrower than workflows breaking across roles. Workflows breaking across roles concerns broader fragmentation of multi-role workflows across role boundaries. Handoff context loss is the specific failure at the transition point where work passes between parties and the context needed by the receiving party is lost.\n\nHandoffs lose context also differs from a system fighting the user's task. A system fighting the user's task concerns workflow structure that opposes the natural structure of the work. Handoff context loss concerns information loss at a specific transition point, not structural opposition throughout the workflow.\n\nA workflow can break across roles without every handoff losing context. A handoff can also lose context even when the broader workflow structure is otherwise coherent. The distinguishing test is whether the receiving party can continue correctly without escalation or reconstruction at the handoff point.\n\n## Related pages\n\nThis failure is closely related to workflows that break across roles because handoff context loss is one mechanism by which role boundaries fragment work. It is also related to systems that fight the user task when the handoff design forces users to reconstruct a work structure that the interface should have preserved.\n\nHandoff context loss can overlap with interruption and reorientation failures when prior context exists but is not surfaced at the point of resumption. It can also overlap with interpretability failures when information is available but not presented in a form the receiving party can use.",
+  "bodyMarkdown": "## Summary\n\nCreative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nA handoff loses context when the receiving party must begin work without the information, state, or decision basis that the prior party established. The context may exist somewhere in the system, but it is not available in the form the receiving party needs, at the moment the receiving party needs it, without escalation or reconstruction.\n\nThis failure is not primarily about bad communication between people. It is about an interface that does not persist and present the context required to make handoffs self-sufficient.\n\n## Failure pattern: escalation, reconstruction, or incomplete action\n\nA handoff context loss failure produces three common operational responses. The receiving party escalates to the prior party, reconstructs the context independently from available signals, or proceeds without the missing context.\n\nEscalation creates workflow overhead and bottlenecks because the prior party is drawn back into work that should have been transferred cleanly. Reconstruction is time-consuming and error-prone because the receiving party works from partial traces rather than the original decision basis. Proceeding without the context means acting on an incomplete picture and accepting the consequences of that gap.\n\nThe handoff gap is the specific information that is lost between sender and receiver. A self-sufficient handoff is one where the receiving party has everything needed to proceed correctly without escalation.\n\n## Handoff context loss is narrower than broad workflow fragmentation\n\nHandoff context loss is one mechanism inside broader multi-role workflow fragmentation. A workflow can break across roles because the whole workflow is fragmented across role boundaries; handoff context loss is the specific failure at the moment work passes from one party to another.\n\nThis failure also differs from a system that fights the user's task. A task-opposing system creates structural opposition across the workflow. Handoff context loss concerns information loss at a transition point, even when the larger workflow structure may otherwise be workable.\n\n## Causes of handoff context loss\n\nContext not persisted across role boundaries causes handoff failure when the sending party's observations, decisions, or work results do not appear in the receiving party's view. A field technician may arrive at a job without conditions noted by the scheduler. A governance reviewer may encounter a cohort query without the query logic needed for independent review.\n\nContext persisted in the wrong form also causes handoff failure. Information useful to the sender may be illegible or unusable to the receiver. A researcher's cohort construction logic may make sense to the researcher, while a governance reviewer needs the same logic presented differently to verify it independently.\n\nPartial handoff creates a different risk. The receiving party has enough information to begin, but not enough to proceed correctly. Partial context can be more dangerous than a complete gap because the receiving party may believe the handoff is complete and may not seek the missing information.\n\nAsynchronous context becomes a handoff failure when the context was established at a different time from when it is needed, and the interface does not surface it at the moment of resumption. Prior session state, earlier workflow state, and context established before an interruption must be presented when work resumes, not merely archived for later retrieval.\n\n## Evidence from Akrivia Health and Triopsis\n\nAkrivia Health provides the clearest handoff context loss described in the case evidence. Researchers constructed patient cohorts using complex nested logical conditions, and governance reviewers then needed to verify those conditions before a study proceeded. The cohort query existed in the system, but the governance reviewer could not evaluate the construction logic independently without the researcher re-explaining it.\n\nThe escalation frequency in Akrivia Health was the handoff failure signal. Every governance review either became a nominal handoff, where the reviewer could not verify independently, or a failed handoff, where the researcher was drawn back into the process. The client-reported outcome after redesign was that governance reviewers could verify cohort logic without escalating to the research team.\n\nTriopsis workforce management describes a scheduling-to-field handoff. Field technicians arriving at job sites required context about conditions, prior issues, safety requirements, and scheduling changes established in the operations layer. When that context was not surfaced in the field technician's view at job commencement, technicians either proceeded without it or called in to obtain it.\n\nThe Triopsis redesign surfaced relevant context at the point in the field workflow where it was needed. The context included job conditions, dependencies, and safety compliance steps. The handoff became part of the interface rather than a phone call.\n\n## Evidence from WCO/IPM and IDEXX Animana\n\nWCO/IPM customs intelligence describes an intelligence-to-inspection handoff. The platform's enforcement value depended on intelligence context filed by rights holders and analysed by analysts reaching field inspection officers at the moment of inspection. When officers reached inspections without the alert context the platform was intended to provide, the enforcement workflow degraded and officers routed around the system through informal channels.\n\nIn WCO/IPM, parallel email chains and spreadsheets were the handoff failure expressed at organisational scale. The platform was not persisting the context that made inspections intelligence-guided.\n\nIDEXX Animana describes a reception-to-clinical handoff in veterinary practice workflow. Reception staff handled patient arrival, initial assessment, and owner context. Clinical staff needed examination, diagnosis, and treatment context. The information useful to reception, such as appointment scheduling, owner contact details, and billing notes, was not the same as the information useful to clinical staff, such as clinical history, prior examination notes, and the current presenting issue.\n\nIn IDEXX Animana, the reception context existed in the system but was not in the form or position that made clinical handoffs self-sufficient. Clinicians who needed to act quickly at the start of a consultation were reconstructing context rather than receiving it.\n\n## Evidence from Oceaneering, Assemblio, and Topera\n\nOceaneering is described through a dispatch panel design for a hospital logistics depot. The account concerns reported handoff failures: arrived carts were not cleared, receive stations filled, queue positions along a quarter-mile tunnel filled behind them, and operators did not attend to carts that were not their responsibility. Operators were also reported not to consult the screen to collect an arrived cart; they walked in, saw the cart, and took it without looking at the panel.\n\nIn the Oceaneering account, the person who had to resolve a stuck state was routinely not the person who produced it, and the panel carried nothing that would tell the next person what had happened. The designed response was a stacked notification list: arrived-but-uncollected carts, abandoned carts, and refused dispatches accumulated as a list naming the station, required action, and elapsed time. The list was designed to collapse to the edge of the screen when it covered the map. The account is calibrated: the evidence came from interviews with people adjacent to the users, no operator was interviewed, no depot was visited, and the notification list describes a design and review, not a measured effect.\n\nAssemblio described a parts-list handoff from engineering to the shop floor. The Assemblio Smart Viewer displayed the complete CAD hierarchy at all times, reflecting the engineer's structure, while the worker needed the parts used in the current step. Assemblio described a worked example involving a step with two visually similar types of screw, where the names in the list did not tell the worker which was which. This account is client-stated, not observed.\n\nTopera is a concept design, not a built product or deployed system. The cross-organisational project management platform concept was grounded in the DIN 69901 series and the ProSTEP iViP / VDA recommendations. The work breakdown handover model was designed to carry constraint caps: maximum duration, maximum effort, and maximum cost. One party would create an initiative and assign it to another with those constraints attached; the receiving party would see only the assigned sub-initiative and its constraints and could decompose further within them. The system was specified to warn, but not prevent, when decomposition passed four levels, and the final structure was specified as a stitched tree with aggregated values.\n\nTopera also specified different legitimate views of the same objects across organisational boundaries. External partners were specified as asynchronous participants, with three to four structural levels exposed and no direct edit permissions, while internal users would see full depth. The boundary between views was designed as an object rather than treated only as a permissions setting.\n\n## Design implication: make the handoff self-sufficient\n\nThe common design implication is that handoff context must be carried forward in the receiving party's usable view. It is not enough for context to exist somewhere in the system. The interface must persist the relevant state, decision basis, and prior observations and present them when the next party needs them.\n\nA self-sufficient handoff requires the system to account for receiving party context requirements. The next role may not need the same representation that served the prior role. A sender's useful record can still be a receiving party's unusable input if the content is not reformatted, repositioned, or surfaced at the right time.\n\nEscalation is a practical signal that the handoff design has failed. When receiving parties routinely contact prior-stage parties to obtain context, the interface is not carrying the handoff on its own.\n\n## Boundaries and limits\n\nHandoff context loss should not be treated as a general label for every workflow problem across roles. It applies to the transition point where work, information, or responsibility passes between parties and context needed by the receiving party is missing, inaccessible, mistimed, or unusable.\n\nThe evidence basis varies by case. Akrivia Health includes a client-reported outcome after redesign. Triopsis, WCO/IPM, and IDEXX Animana are described as case evidence of handoff context loss in operational workflows. Oceaneering is limited to interview accounts from people adjacent to the users and a designed response; no operator was interviewed and no depot was visited. Assemblio is client-stated and not based on shop-floor observation. Topera is a concept design only and provides no observed user behaviour, deployment, pilot, or outcome.\n\n## Related pages\n\nRelated failure patterns include workflows breaking across roles, the system fighting the user task, important status information being buried, source and age of information not being visible, and users being unable to reorient quickly after interruption. The documented case examples most directly connected to this failure include Triopsis workforce management, Oceaneering, Assemblio, and Topera.",
   "claims": [
     {
       "claim": "A handoff context loss failure occurs when the receiving party must begin work without the information, state, or decision basis established by the prior party.",
@@ -47,53 +48,56 @@
       "notes": "Defined directly in the failure description."
     },
     {
-      "claim": "The operational pattern of this failure is escalation, independent reconstruction, or proceeding without the missing context.",
-      "evidenceType": "conceptual definition",
+      "claim": "The operational pattern is escalation to the prior party, independent reconstruction, or proceeding without complete context.",
+      "evidenceType": "definition",
       "sourceStrength": "strong",
-      "notes": "The source identifies these as the specific operational pattern produced by the failure."
+      "notes": "Stated as the specific operational pattern produced by the failure."
     },
     {
-      "claim": "Partial handoffs can be more dangerous than complete gaps because receiving parties may believe they have what they need and not seek the missing piece.",
-      "evidenceType": "conceptual definition",
-      "sourceStrength": "moderate",
-      "notes": "Stated directly as a risk pattern in the source."
-    },
-    {
-      "claim": "In the Akrivia Health case, governance reviewers could not independently evaluate cohort construction logic until the redesign presented the logic in a usable form.",
-      "evidenceType": "case study",
-      "sourceStrength": "case evidence",
-      "notes": "The source describes this as the clearest handoff context loss in the portfolio."
-    },
-    {
-      "claim": "The Akrivia Health outcome that governance reviewers could verify cohort logic without escalating to the research team is client-reported.",
+      "claim": "Akrivia Health governance reviewers could verify cohort logic without escalating to the research team after redesign.",
       "evidenceType": "client-reported",
       "sourceStrength": "case evidence",
-      "notes": "The source explicitly labels this as a client-reported outcome after redesign."
+      "notes": "Explicitly labelled in the source as a client-reported outcome after redesign."
     },
     {
-      "claim": "In the Triopsis workforce management case, surfacing job conditions, dependencies, and safety compliance steps at the point of field work changed the scheduling-to-field handoff from a phone call into an interface-supported handoff.",
+      "claim": "Triopsis redesigned the scheduling-to-field handoff so relevant job conditions, dependencies, and safety compliance steps were surfaced at the needed point in the field workflow.",
       "evidenceType": "case study",
       "sourceStrength": "case evidence",
-      "notes": "The source describes technicians calling in when context was missing and the redesign surfacing relevant context in the field workflow."
+      "notes": "Supported by the Triopsis case description."
     },
     {
-      "claim": "In the WCO/IPM customs intelligence case, parallel email chains and spreadsheets expressed handoff failure at organisational scale.",
+      "claim": "WCO/IPM handoff failure appeared when intelligence context did not reach inspection officers at the moment of inspection and officers routed around the system to informal channels.",
       "evidenceType": "case study",
       "sourceStrength": "case evidence",
-      "notes": "The source characterises these informal channels as the organisational-scale expression of handoff failure."
+      "notes": "Supported by the WCO/IPM case description."
     },
     {
-      "claim": "In the IDEXX Animana case, clinicians were reconstructing reception-established context rather than receiving it in the form and position needed for clinical handoffs.",
+      "claim": "Oceaneering evidence describes a designed stacked notification list, not a measured effect, and is limited by the absence of operator interviews and depot visits.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "weak",
+      "notes": "The source explicitly calibrates the Oceaneering account as interview-sourced from people adjacent to users, with no operator interviewed and no depot visited."
+    },
+    {
+      "claim": "Assemblio described a client-stated handoff problem where the complete CAD hierarchy and engineer naming arrived unusable for shop-floor step work.",
+      "evidenceType": "client-reported",
+      "sourceStrength": "anecdotal",
+      "notes": "The source explicitly states that the Assemblio account is client-stated and not observed."
+    },
+    {
+      "claim": "Topera is a concept design specified so context and constraints can survive cross-organisational handoffs, but it has no built product, deployment, users, pilot, or outcome.",
       "evidenceType": "case study",
-      "sourceStrength": "case evidence",
-      "notes": "The source describes the reception-to-clinical handoff and the mismatch between reception information and clinical needs."
+      "sourceStrength": "weak",
+      "notes": "The source explicitly states that Topera is a concept design and nothing has been built."
     }
   ],
   "limitations": [
-    "The evidence examples are case-specific and do not establish prevalence across all multi-role workflows.",
-    "The Akrivia Health post-redesign outcome is client-reported, not independently verified in the source material.",
-    "The Triopsis, WCO/IPM, and IDEXX Animana examples describe observed handoff patterns but do not provide quantified outcome metrics.",
-    "The page distinguishes this failure from adjacent workflow failures only where the source material provides explicit distinctions."
+    "The page describes a specific handoff-point failure, not every form of multi-role workflow fragmentation.",
+    "Akrivia Health outcome evidence is client-reported.",
+    "Oceaneering evidence is limited to interviews with people adjacent to the users; no operator was interviewed and no depot was visited.",
+    "The Oceaneering stacked notification list describes what was designed and reviewed, not a measured effect.",
+    "Assemblio evidence is client-stated and not based on shop-floor observation.",
+    "Topera is a concept design only; it has no built product, deployment, users, pilot, or measured outcome.",
+    "Topera is described as grounded in the DIN 69901 series and the ProSTEP iViP / VDA recommendations, not as compliant with those standards or recommendations."
   ],
   "publicationBlockers": [],
   "questionsForReview": [
@@ -102,47 +106,75 @@
   "relatedPageSlugs": [
     "workflows-break-across-roles",
     "the-system-fights-the-user-task",
+    "important-status-information-is-buried",
+    "source-and-age-of-information-are-not-visible",
     "users-cannot-reorient-quickly-after-interruption",
     "data-is-available-but-hard-to-interpret",
-    "important-status-information-is-buried",
-    "triopsis-workforce-management-saas"
+    "triopsis-workforce-management-saas",
+    "oceaneering-dispatch-panel",
+    "assemblio",
+    "topera"
   ],
   "internalLinks": [
     {
-      "anchorText": "workflows break across roles",
+      "anchorText": "workflows breaking across roles",
       "targetSlug": "workflows-break-across-roles",
-      "placementHint": "Related pages section and boundaries section",
-      "reason": "The source explicitly distinguishes broader multi-role workflow fragmentation from the specific handoff-point failure."
+      "placementHint": "Related pages section and the distinction section",
+      "reason": "The source explicitly distinguishes handoff context loss from broader multi-role workflow fragmentation."
     },
     {
-      "anchorText": "the system fights the user task",
+      "anchorText": "the system fighting the user task",
       "targetSlug": "the-system-fights-the-user-task",
-      "placementHint": "Boundaries section",
-      "reason": "The source explicitly distinguishes structural opposition throughout a workflow from information loss at a transition point."
+      "placementHint": "Distinction section",
+      "reason": "The source explicitly distinguishes this failure from structural opposition throughout a workflow."
     },
     {
-      "anchorText": "users cannot reorient quickly after interruption",
-      "targetSlug": "users-cannot-reorient-quickly-after-interruption",
-      "placementHint": "Related pages section",
-      "reason": "The source describes asynchronous context and prior-session state not being surfaced at resumption."
-    },
-    {
-      "anchorText": "data is available but hard to interpret",
-      "targetSlug": "data-is-available-but-hard-to-interpret",
-      "placementHint": "Related pages section",
-      "reason": "The source describes context that exists in the system but is not presented in a form the receiving party can use."
-    },
-    {
-      "anchorText": "important status information is buried",
+      "anchorText": "important status information being buried",
       "targetSlug": "important-status-information-is-buried",
       "placementHint": "Related pages section",
-      "reason": "The source describes context that may be technically accessible but buried in a previous record or prior session."
+      "reason": "The failure often involves context existing in the system but not appearing where the receiving party needs it."
     },
     {
-      "anchorText": "Triopsis workforce management case",
+      "anchorText": "source and age of information not being visible",
+      "targetSlug": "source-and-age-of-information-are-not-visible",
+      "placementHint": "Related pages section",
+      "reason": "Asynchronous context and prior-state visibility are directly relevant to handoff context loss."
+    },
+    {
+      "anchorText": "users being unable to reorient quickly after interruption",
+      "targetSlug": "users-cannot-reorient-quickly-after-interruption",
+      "placementHint": "Related pages section",
+      "reason": "The source identifies asynchronous context and resumption after interruption as a cause of the failure."
+    },
+    {
+      "anchorText": "data being available but hard to interpret",
+      "targetSlug": "data-is-available-but-hard-to-interpret",
+      "placementHint": "Causes section or related pages section",
+      "reason": "The source describes cases where information exists but is not formatted for the receiving party."
+    },
+    {
+      "anchorText": "Triopsis workforce management",
       "targetSlug": "triopsis-workforce-management-saas",
-      "placementHint": "Evidence basis section, on first mention of the Triopsis example",
-      "reason": "The source includes Triopsis as a named case example, and the linking context provides an allowed case-study slug."
+      "placementHint": "Evidence from Akrivia Health and Triopsis section",
+      "reason": "Triopsis is one of the named case examples in the source and has an allowed case-study slug."
+    },
+    {
+      "anchorText": "Oceaneering dispatch panel",
+      "targetSlug": "oceaneering-dispatch-panel",
+      "placementHint": "Evidence from Oceaneering, Assemblio, and Topera section",
+      "reason": "Oceaneering is one of the named case examples in the source and has an allowed case-study slug."
+    },
+    {
+      "anchorText": "Assemblio",
+      "targetSlug": "assemblio",
+      "placementHint": "Evidence from Oceaneering, Assemblio, and Topera section",
+      "reason": "Assemblio is one of the named case examples in the source and has an allowed case-study slug."
+    },
+    {
+      "anchorText": "Topera",
+      "targetSlug": "topera",
+      "placementHint": "Evidence from Oceaneering, Assemblio, and Topera section",
+      "reason": "Topera is one of the named concept design examples in the source and has an allowed case-study slug."
     }
   ],
   "qualityChecks": {

@@ -4,118 +4,139 @@
   "pageType": "situation",
   "category": "situations",
   "section": "Delivery And Execution",
-  "summary": "A team is shipping without a clear behaviour model when delivery continues without a governing specification for product behaviour. The product may grow feature by feature while actions, states, data presentation, AI behaviour, and workflow entry points become difficult to explain as a coherent whole.",
+  "summary": "A team is shipping without a clear behaviour model when features and requirements exist, but no governing specification defines how the product should behave as a coherent system. The product can continue to grow while accumulating contradictions across workflows, states, and feature boundaries.",
   "keyFacts": [
-    "A behaviour model defines how a product should behave, not only which features it contains.",
-    "The absence of a behaviour model causes interface decisions to be made locally by individual engineers or designers.",
-    "Local design decisions can produce features that are internally coherent but contradictory across the product.",
-    "The situation belongs to delivery and execution because the missing element is a behaviour specification as a delivery artefact.",
-    "Characteristic signals include behavioural contradiction, disproportionate design debate for new features, demos that require explanation, and users being unable to form a mental model.",
-    "In the Veecle case, approximately ten beta users encountered a working product whose capability, workflow, AI features, and loading or processing states were difficult to understand.",
-    "In the Hudex case, the working analytical platform lacked an entry behaviour model, so users encountered the primary visualisation without preceding orientation.",
-    "In the Callsign case, fraud rules existed across database views and configuration tables without a policy-level object or specified governance and audit behaviour."
+    "A behaviour model answers how the product should behave, not only what features it contains.",
+    "When no behaviour model exists, engineers and designers make local decisions based on local understanding.",
+    "Local decisions can produce a product that is internally coherent within individual features but contradictory across the whole product.",
+    "Characteristic signals include behavioural contradiction, disproportionate debate for new features, demos that require explanation, and users who cannot form a reliable mental model.",
+    "This is a delivery-and-execution situation because the missing artefact is a behaviour specification used during delivery.",
+    "The situation is distinct from feature-count incoherence, stakeholder misalignment, and design erosion during development.",
+    "Veecle, Hudex, KISPE Space, Raymarine, Schone Airspace Group, and Callsign are used as case evidence for different aspects of behaviour-model absence or specification.",
+    "KISPE Space, Raymarine, and Schone Airspace Group describe governing behaviour artefacts, but their artefact counts are not comparable like for like."
   ],
   "bodySections": [
     {
-      "heading": "Summary of shipping without a clear behaviour model",
-      "bodyMarkdown": "Creative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nShipping without a clear behaviour model is a delivery-and-execution situation in which the product is being built and released, but the team lacks a governing specification for how the product should behave. The team may have features, requirements, and a backlog, but not a coherent answer to what the product does when users act, what it shows in different states, how parts of the product relate to each other, or which principles govern cases not explicitly specified.\n\nThe result is not only visual inconsistency. The central problem is behavioural inconsistency: the same action can produce different outcomes in different areas, the same type of content can be displayed according to different local logics, and the product can make sense feature by feature while remaining difficult to explain as a whole."
+      "heading": "Shipping Without A Behaviour Model Means Delivery Continues Without Governing Product Behaviour",
+      "bodyMarkdown": "Creative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nA product's behaviour model is the answer to how the product should behave. It is not limited to the feature list. It covers what the product does when a user acts, what the product shows in each state, how different parts of the product relate to each other, and what principles govern decisions that the specification does not explicitly cover.\n\nA team is shipping without a clear behaviour model when features, requirements, and backlog items exist, but no coherent model governs product behaviour. Interface decisions are then made locally. Each engineer or designer makes the best decision available for one part of the product, based on a local understanding of what the product should do.\n\nLocal decisions accumulate into behavioural inconsistency. The same action can have different outcomes in different parts of the product. The same type of content can be displayed differently depending on where it appears. The product can make sense inside individual features while becoming difficult to explain as a whole."
     },
     {
-      "heading": "Behaviour model as the missing delivery artefact",
-      "bodyMarkdown": "A product behaviour model is the governing specification of how a product should behave. It defines what the product does in which situations, how different parts relate to each other, what the product communicates through its states, and what principles apply when a specification does not explicitly cover an edge case.\n\nWhen the behaviour model is absent, engineers and designers make local design decisions. Each local decision may be reasonable for the specific feature being implemented, but the decisions are not derived from a shared model. Over time, those local decisions accumulate into product incoherence and interface debt.\n\nThis situation can exist even when the team agrees on what to ship. The issue is not necessarily stakeholder conflict or a lack of feature delivery. The issue is that delivery is proceeding without the governing layer that makes shipped behaviour coherent across the product."
+      "heading": "The Missing Artefact Is A Behaviour Specification Used During Delivery",
+      "bodyMarkdown": "This situation belongs to delivery and execution because the team is building the product and the missing element is a delivery artefact: a governing behaviour specification. The problem is not that the team is unable to deliver. The problem is that delivery proceeds without the layer that makes the delivered product coherent.\n\nA missing behaviour model can exist regardless of how many features the product has. Feature-count incoherence concerns quantity and product strategy; behaviour-model absence concerns whether the delivered product has a governing logic.\n\nA missing behaviour model can also exist when stakeholders agree on what to ship. Stakeholder misalignment concerns competing opinions; behaviour-model absence concerns the lack of a shared specification for how the product behaves.\n\nThis situation is also distinct from design erosion during implementation. Design erosion concerns a correctly specified design degrading during development. A missing behaviour model means there is no governing behavioural specification to survive or fail to survive implementation."
     },
     {
-      "heading": "Characteristic signals of missing behaviour specification",
-      "bodyMarkdown": "A product shipping without a clear behaviour model often contradicts itself. The same action has different outcomes in different areas, error states are handled differently per feature, or the same type of data is presented differently depending on where it appears. These contradictions are behavioural rather than purely visual.\n\nNew features require disproportionate design debate when no existing behaviour model exists. Decisions that should be derived from a shared logic have to be discussed from the beginning each time. The source pattern is that decisions which should take a day can take a week because the governing logic has not been established.\n\nDemos require explanation when the product does not communicate what it is or what it does. In sales demonstrations or investor pitches, team members may need to explain the product because the product itself does not make its behaviour legible. Users who encounter the product without explanation may not understand what they are seeing or what they should do.\n\nUsers cannot form a reliable mental model when product behaviour is not predictable from the interface. First-time users may take an action and sometimes receive the expected result, but other times receive a result they cannot anticipate. This indicates that product behaviour has not been governed by a coherent model."
+      "heading": "Behavioural Inconsistency Is The Primary Observable Signal",
+      "bodyMarkdown": "The product contradicts itself when the same action has different outcomes in different areas, error states are handled differently per feature, or the same type of data is presented differently depending on where it appears. This is behavioural inconsistency rather than visual inconsistency. A design system can address many visual inconsistencies, but it does not by itself define the governing logic of product behaviour.\n\nNew features require disproportionate design debate when no existing model can be used to derive the answer. A decision that should be resolved in a day can take a week because the governing logic has not been established.\n\nDemos require explanation when the product itself does not communicate what it is, what it does, or what the user should do next. In sales demonstrations or investor pitches, team members may need to mediate between the product and the audience.\n\nUsers cannot form a reliable mental model when product behaviour is not predictable from the interface. Actions sometimes produce the expected result and sometimes do not. The user cannot infer the whole system's logic because no governing model determined that logic."
     },
     {
-      "heading": "Why this belongs to delivery and execution",
-      "bodyMarkdown": "This is a delivery-and-execution situation because it concerns how the product is being built. The missing element is a behaviour specification as a delivery artefact, not an external market context or a discovered user problem.\n\nThe situation is distinct from too many features without coherence. Too many features without coherence is described as a growth-cluster issue about quantity and product strategy. Shipping without a clear behaviour model can occur regardless of feature count.\n\nThe situation is distinct from stakeholders being unable to align. Stakeholder misalignment concerns competing opinions. Shipping without a clear behaviour model can occur even when everyone agrees on what to ship.\n\nThe situation is distinct from design not surviving development. Design not surviving development concerns correctly specified design that erodes during implementation. Shipping without a clear behaviour model concerns the absence of a behavioural specification to survive or erode."
-    },
-    {
-      "heading": "Veecle case evidence: a shipped product without behaviour orientation",
-      "bodyMarkdown": "In the Veecle automotive embedded IDE case, the product was working, had approximately ten beta users, and was actively being developed. Users who arrived at the platform could not understand what the product was capable of, what the workflow was, or what to do when something went wrong.\n\nThe documented Veecle case describes AI features that felt contextless because no behaviour model had been established for what the AI did, when it operated, or how it related to the rest of the IDE. Loading and processing states were also opaque because no behaviour had been specified for what the product should communicate during those states.\n\nThe case evidence describes a product that was being shipped and whose individual features made sense in isolation, while the aggregate product had no communicable behaviour model. After the redesign that established the behaviour model, £2M development funding was unlocked, client-reported. The funding was described as enabled in part because the redesigned product could be demonstrated coherently and investors could understand what the product was and what it did."
-    },
-    {
-      "heading": "Hudex case evidence: a shipped analytical platform without an entry model",
-      "bodyMarkdown": "In the Hudex intelligence analysis platform case, the platform had been built and shipped with a working analytical capability. The core capability, AI-powered semantic clustering, was described as real and powerful, but the platform lacked a behaviour model for how users should enter and orient within it.\n\nUsers encountered the primary visualisation first, without preceding orientation. Users arriving without analyst guidance could not understand what they were looking at, and demos required an analyst to mediate between the product and the audience.\n\nThe documented Hudex case describes a behaviour specification gap from the user's perspective: what should happen when a user arrives, what should the user see first, and what should the product communicate before the user has to interpret the interface. After the redesign established the entry behaviour model, 45 existing users rated the product as significantly better, client-reported. New users could orient independently according to the available case evidence."
-    },
-    {
-      "heading": "Callsign case evidence: fraud policy shipped without governance behaviour",
-      "bodyMarkdown": "In the Callsign fraud detection case, the platform had been built and shipped without a defined behaviour model for how fraud policies should be created, configured, reviewed, and audited. Fraud rules existed across database views and configuration tables, but there was no policy-level object and no specified behaviour for governance or audit trail work.\n\nEach part of the system worked, but the aggregate system lacked a coherent behaviour specification for what a compliance reviewer would encounter and do. The redesign established the policy as the central object, separated configuration and evaluation modes, and treated the audit trail as a workflow output.\n\nThe documented Callsign case describes this behaviour model as the commercial differentiator. Bank contracts with Lloyds and HSBC followed demos that demonstrated the behaviour model to risk teams, client-reported."
-    },
-    {
-      "heading": "Boundaries and related situations",
-      "bodyMarkdown": "Shipping without a clear behaviour model should be diagnosed at the level of product behaviour, not only visual consistency. A design system can address visual inconsistency, but this situation concerns contradictions in what the product does, what it communicates, and how users are expected to understand it.\n\nRelated situations include the product behaving inconsistently across scenarios, too many features without enough coherence, stakeholders being unable to align on direction, and design not surviving development. The key boundary is whether the delivery problem is the absence of a governing behaviour model, rather than feature volume, stakeholder conflict, or implementation erosion."
+      "heading": "Core Vocabulary For Behaviour-Model Absence",
+      "bodyMarkdown": "A behaviour model is the governing specification of how a product should behave, including what it does in which situations, how different parts relate to each other, and what principles govern edge cases.\n\nA local design decision is a design decision made without reference to a governing model. In this situation, local design decisions are the unit by which behaviour debt accumulates.\n\nProduct incoherence is the aggregate result of many local design decisions made without governing logic. The product behaves in ways that cannot be explained as a whole.\n\nAn interface contradiction occurs when different parts of the same product behave according to different local logics that contradict each other.\n\nA behaviour specification is the explicit, shared documentation of what the product should do and how it should behave. In this situation, the behaviour specification is the missing delivery artefact.\n\nFeature velocity without behaviour coherence means features are shipped quickly while interface debt accumulates with every unmoored local decision."
     }
   ],
   "evidenceSummary": {
     "strongClaims": [
-      "A behaviour model specifies how a product should behave across actions, states, product relationships, and unspecified edge cases, not only what features it contains.",
-      "When a behaviour model is absent, engineers and designers make local decisions that can accumulate into product incoherence and interface debt.",
-      "This situation belongs to the delivery-and-execution cluster because the missing element is a behaviour specification as a delivery artefact.",
-      "Characteristic signals include product contradiction, disproportionate design debate for new features, demos requiring explanation, and users being unable to form a mental model."
+      "A behaviour model is the governing specification of how a product should behave across actions, states, relationships between product parts, and unspecified edge cases.",
+      "When a product is shipped without a behaviour model, interface decisions are made locally and can accumulate into product incoherence and interface contradiction.",
+      "This is a delivery-and-execution situation because the missing element is a behaviour specification as a delivery artefact, not feature quantity, stakeholder alignment, or design erosion during implementation.",
+      "Characteristic signals include behavioural contradiction, disproportionate design debate for new features, demos requiring explanation, and users being unable to form a mental model."
     ],
     "weakerClaims": [
-      "In the Veecle case, a working product with approximately ten beta users lacked behaviour orientation around workflow, AI features, and loading or processing states.",
-      "In the Hudex case, a working analytical platform lacked an entry behaviour model, and 45 existing users later rated the redesigned product as significantly better, client-reported.",
-      "In the Callsign case, fraud policy behaviour lacked a coherent governance model until the redesign established the policy as central object, separated configuration and evaluation modes, and made the audit trail a workflow output."
+      "In the Veecle case, approximately ten beta users and active product development existed before the redesign, but users could not understand capabilities, workflow, error handling, AI behaviour, or opaque loading and processing states. The funding outcome is client-reported.",
+      "In the Hudex case, a shipped intelligence analysis platform lacked an entry behaviour model, and 45 existing users rated the product as significantly better after the redesign that established the entry behaviour model. The user rating and new-user orientation outcome are client-reported.",
+      "The KISPE Space engagement specified 61 behavioural rules, six state models, eight cross-module regression checks, and a cross-artefact change-control rule as a governing behaviour artefact. The verification and regression checks were specified, not executed.",
+      "The Raymarine engagement specified a physical input contract for ten controls and acceptance registers with close to two hundred observable checks, but no fidelity comparison is recorded after release.",
+      "The Schone Airspace Group engagement specified 12 principal interaction contracts and eight operational invariants. The product is built and in test, not deployed.",
+      "In the Callsign case, fraud policy functionality existed without a governance behaviour model. Bank contracts with Lloyds and HSBC followed demos that demonstrated the redesigned behaviour model to risk teams; the contract outcome is client-reported."
     ],
     "limitations": [
-      "The outcome evidence for Veecle, Hudex, and Callsign is labelled client-reported in the source and is not presented as independently verified.",
-      "The page describes a diagnostic situation; it does not establish that every product without a clear behaviour model will show all characteristic signals.",
-      "The source distinguishes this situation from adjacent situations conceptually; diagnosis in a specific product may require additional evidence not included here."
+      "The page describes a delivery-and-execution situation, not a general claim that all product incoherence has the same cause.",
+      "The evidence examples are case-specific and should not be generalised into guaranteed outcomes.",
+      "Veecle funding, Hudex user ratings, and Callsign bank contracts are client-reported where stated and are not presented as independently measured outcomes.",
+      "KISPE Space verification checks and regression checks were specified as tests, not executed; no user testing is recorded for those checks.",
+      "KISPE Space was built, but Creative Navy did not support the build and has not compared the built interface against the delivered designs.",
+      "Raymarine acceptance registers are specifications; release is not evidence of fidelity, quality, commercial performance, certification, or conformity.",
+      "Schone Airspace Group contracts and invariants describe the design representation; the product is built and in test, not deployed.",
+      "KISPE Space, Raymarine, and Schone Airspace Group artefact counts refer to different artefact types and should not be compared like for like.",
+      "No engagement dates are stated."
     ]
   },
   "relatedPageSlugs": [
     "the-product-behaves-inconsistently-across-scenarios",
+    "teams-cannot-define-good-ai-behaviour",
+    "the-model-may-be-good-but-the-product-behaviour-is-not",
+    "system-state-is-hard-to-understand",
+    "design-does-not-survive-development",
     "too-many-features-not-enough-coherence",
     "stakeholders-cannot-align-on-direction",
-    "design-does-not-survive-development",
-    "system-state-is-hard-to-understand",
-    "the-product-works-in-demos-but-not-in-real-use",
-    "callsign-fraud-authentication"
+    "callsign-fraud-authentication",
+    "kispe-space",
+    "raymarine-vhf",
+    "schone-mission-control"
   ],
   "internalLinks": [
     {
-      "anchorText": "the product behaving inconsistently across scenarios",
+      "anchorText": "product behaviour inconsistency",
       "targetSlug": "the-product-behaves-inconsistently-across-scenarios",
-      "reason": "The current page describes contradiction across product areas, which is closely related to inconsistent behaviour across scenarios."
+      "reason": "The current page describes behavioural contradiction as a core signal, making this situation page directly relevant."
     },
     {
-      "anchorText": "too many features without enough coherence",
-      "targetSlug": "too-many-features-not-enough-coherence",
-      "reason": "The source explicitly distinguishes the behaviour-model problem from the growth-cluster problem of too many features without coherence."
+      "anchorText": "teams that cannot define good AI behaviour",
+      "targetSlug": "teams-cannot-define-good-ai-behaviour",
+      "reason": "The current source includes AI feature examples where the product lacks a behaviour model for AI operation and orientation."
     },
     {
-      "anchorText": "stakeholders being unable to align on direction",
-      "targetSlug": "stakeholders-cannot-align-on-direction",
-      "reason": "The source explicitly distinguishes this situation from stakeholder alignment problems."
-    },
-    {
-      "anchorText": "design not surviving development",
-      "targetSlug": "design-does-not-survive-development",
-      "reason": "The source explicitly distinguishes the absence of a behaviour specification from erosion of a correctly specified design during implementation."
+      "anchorText": "the model may be good but the product behaviour is not",
+      "targetSlug": "the-model-may-be-good-but-the-product-behaviour-is-not",
+      "reason": "The current source distinguishes between underlying capability and product behaviour in examples such as Hudex and Veecle."
     },
     {
       "anchorText": "system state is hard to understand",
       "targetSlug": "system-state-is-hard-to-understand",
-      "reason": "The Veecle example includes opaque loading and processing states, making this a relevant related delivery situation."
+      "reason": "The Veecle example describes opaque loading and processing states."
     },
     {
-      "anchorText": "the Callsign fraud detection case",
+      "anchorText": "design not surviving development",
+      "targetSlug": "design-does-not-survive-development",
+      "reason": "The current source explicitly distinguishes this situation from design erosion during implementation."
+    },
+    {
+      "anchorText": "too many features without enough coherence",
+      "targetSlug": "too-many-features-not-enough-coherence",
+      "reason": "The current source explicitly distinguishes this situation from feature-count and product-strategy incoherence."
+    },
+    {
+      "anchorText": "stakeholders being unable to align on direction",
+      "targetSlug": "stakeholders-cannot-align-on-direction",
+      "reason": "The current source explicitly distinguishes this situation from competing stakeholder opinions."
+    },
+    {
+      "anchorText": "KISPE Space",
+      "targetSlug": "kispe-space",
+      "reason": "The current source uses KISPE Space as evidence of a full governing behaviour artefact."
+    },
+    {
+      "anchorText": "Raymarine Marine VHF and AIS Radio",
+      "targetSlug": "raymarine-vhf",
+      "reason": "The current source uses Raymarine as evidence of a governing behaviour artefact applied to hardware."
+    },
+    {
+      "anchorText": "Schone Airspace Group Mission Control",
+      "targetSlug": "schone-mission-control",
+      "reason": "The current source uses Schone Airspace Group as evidence of interaction contracts and operational invariants."
+    },
+    {
+      "anchorText": "Callsign Fraud Authentication",
       "targetSlug": "callsign-fraud-authentication",
-      "reason": "The source includes Callsign as case evidence, and the matching case-study slug is available in the linking context."
+      "reason": "The current source uses Callsign as evidence of fraud policy functionality shipped without a governance behaviour model."
     }
   ],
   "tags": [
     "behaviour model",
     "behaviour specification",
     "delivery and execution",
-    "interface contradiction",
+    "interface debt",
     "product incoherence",
     "local design decisions",
-    "interface debt",
     "mental model",
     "AI product behaviour"
   ],
@@ -123,6 +144,6 @@
     "sourcePath": "sources/articles/Situations/situations--delivery--the-team-is-shipping-without-a-clear-behaviour-model.md",
     "parentSlug": "delivery-and-execution",
     "childPageSlugs": [],
-    "generatedBy": "deterministic"
+    "generatedBy": "openai"
   }
 }

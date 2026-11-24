@@ -12,141 +12,177 @@
   "category": "situations",
   "parentSlug": "complexity",
   "childPageSlugs": [],
-  "excerpt": "Multi-role workflow fragmentation occurs when users share a system but not a task model. The resolution depends on whether role conflicts can be handled by a unified hierarchy or require architectural separation.",
-  "metaTitle": "Multi Role Workflows Are Fragmented",
-  "metaDescription": "Multi-role workflow fragmentation occurs when roles share a system but not a task model, requiring either a unified model or separation.",
-  "summary": "This situation describes how a single interface can accumulate friction when it is built around one role's mental model and then extended for others. Creative Navy's Critical Systems Design method classifies the problem as either a unified-model issue or an architectural-separation issue by examining observed workarounds and task structures.",
-  "definition": "Multi-role workflow fragmentation is the condition where different user roles share one software system while operating with different tasks, rhythms, consequence profiles, or mental models, causing one interface architecture to serve some roles while degrading others.",
+  "excerpt": "Multi-role workflow fragmentation occurs when different roles share a system but not the same task model. The diagnostic question is whether role conflict can be resolved through one hierarchy or requires separate interface architectures.",
+  "metaTitle": "Multi Role Workflow Fragmentation",
+  "metaDescription": "How multi-role software fragments when roles share a system but not a task, and how Creative Navy classifies unified versus separate architectures.",
+  "summary": "This situation describes how complex software becomes fragmented when one interface must serve roles with different tasks, rhythms, physical settings, and consequence profiles. Creative Navy uses observed workarounds to distinguish interaction-level problems from architecture-level mismatches.",
+  "definition": "Multi-role workflow fragmentation is the condition in which one software interface serves several roles with different tasks, operating rhythms, or consequence profiles, causing some roles to rely on workarounds because the interface architecture does not match their operational reality.",
   "keyFacts": [
-    "Multi-role fragmentation appears when a product serves roles that share a system but not necessarily a task.",
-    "A single interface architecture can serve one role well while creating friction for others.",
-    "The main diagnostic signal is the pattern of workarounds observed in real use.",
-    "Task-specific workarounds indicate an interaction pattern that may be improved within a unified model.",
-    "Role-specific workarounds indicate that the interface architecture may be wrong for the operating modes involved.",
-    "The two stated resolutions are a unified model and architectural separation.",
-    "Triopsis used a unified model after 43 user interviews across 21 participants and three in-situ observation sessions.",
-    "Triopsis live product analytics recorded 62% faster job discovery, 83% faster job sequence optimisation, and 58% faster weekly planning.",
-    "The Kardion MCS Controller used one screen hierarchy for roles positioned at different distances from the device and received FDA approval with no design changes required during regulatory evaluation.",
-    "IDEXX Animana was assessed across 35 clinics, 150+ participants, and 3 countries, leading to a recommendation for distinct reception and clinical interfaces."
+    "A single interface architecture can serve one role well while creating friction for roles with different task structures or operating rhythms.",
+    "The structural question is whether roles share a task model or require different interface architectures.",
+    "Task-specific workarounds indicate that a unified model may be improved at the interaction or hierarchy level.",
+    "Role-specific workarounds indicate that the architecture itself may be wrong for at least one role.",
+    "The two documented resolutions are a unified model or architectural separation.",
+    "Triopsis used a unified interface across three roles after 43 user interviews across 21 participants, three in-situ observation sessions, and 47 microtasks mapped against three personas.",
+    "Kardion MCS Controller used one clinical screen for roles positioned at approximately 3 metres and close to the controller, and received FDA approval with no design changes required during regulatory evaluation.",
+    "IDEXX Animana led to a recommendation for architectural separation after field research across 35 clinics, 150+ participants, and 3 countries.",
+    "Assemblio’s operating-context material is client-stated; Creative Navy did not observe a shop floor.",
+    "Topera is a concept design grounded in the DIN 69901 series and ProSTEP iViP / VDA recommendations; it is not a built or deployed system."
   ],
   "tags": [
     "multi-role workflows",
     "workflow fragmentation",
     "interface architecture",
-    "task model",
+    "task models",
     "workarounds",
-    "microtask analysis",
-    "tension-driven reasoning",
-    "Sandbox Experiments",
-    "enterprise SaaS",
-    "medical devices",
-    "practice management software"
+    "information hierarchy",
+    "architectural separation",
+    "unified model",
+    "Critical Systems Design",
+    "microtask analysis"
   ],
-  "bodyMarkdown": "## Multi-role workflow fragmentation in complex software\n\nCreative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nMulti-role workflow fragmentation occurs when a system serves users with genuinely different tasks, operating rhythms, and consequence profiles. A single interface architecture can serve one role well while creating friction for others, especially when the product was first shaped around one role's mental model and later extended for additional roles.\n\nThe fragmentation is often not visible as a deliberate design decision. It accumulates through extensions, patches, and compromises. Users in underserved roles create workarounds, the workarounds become habitual, and the operational cost of the mismatch becomes harder to see.\n\nThis situation is common in products where users share a system but not a task. The examples described here include enterprise SaaS platforms used by planners, operators, and field technicians; clinical devices used by surgeons and nurses from different physical positions; and practice management software used by receptionists and clinicians in different operational modes.\n\n## Why feature additions do not resolve structural role conflict\n\nMulti-role workflow fragmentation is not resolved by simply adding features for underserved roles or reorganising navigation. Those changes address symptoms when the underlying question is architectural: do the roles share a task model that one interface can support, or are the operating rhythms and consequence profiles different enough that one architecture will degrade at least one role?\n\nWhen teams treat those two conditions as the same, the common failure mode is a sequence of feature additions and layout adjustments. Each adjustment may improve the product for one role while increasing friction for another. The product changes, but the underlying architecture remains unclassified.\n\nCreative Navy's Critical Systems Design method treats role conflict as evidence to classify before design direction is chosen. The important distinction is whether the issue belongs at the interaction-pattern level or at the interface-architecture level.\n\n## Workarounds distinguish unified-model issues from architectural failures\n\nObserved workarounds are the main signal for distinguishing a unified-model issue from an architectural failure. Stated preferences are not enough, because users usually ask for improvements inside the interface they already know rather than asking for an architecture they have never seen.\n\nTask-specific workarounds suggest that different roles are encountering the same interface problem in similar ways. In that condition, the underlying task model may be shared, and the unified interface can be improved by fixing the interaction pattern or information hierarchy.\n\nRole-specific workarounds suggest that each role has developed a distinct coping strategy because the interface fails each role in a different way. In that condition, the issue is not only interaction design. The interface architecture is likely wrong for at least one operating mode.\n\n## Unified model when roles share workflows but need different information hierarchy\n\nA unified model is appropriate when roles share workflows but have different information priorities. The conflicts are about what should be prominent, what should be accessible, and in what order. The task structure is shared even if the role priorities differ.\n\nIn a unified-model resolution, the design work is concentrated in information architecture and information hierarchy. The product does not need to be split into separate interfaces if one structured interaction model can represent the shared workflow while making role-specific information priorities legible.\n\nCreative Navy's Critical Systems Design method uses microtask analysis to examine discrete tasks independently of assumed sequence or flow. In this situation, microtask analysis helps identify whether apparent role conflict is actually a hierarchy problem inside a shared workflow.\n\n## Architectural separation when roles operate in incompatible modes\n\nArchitectural separation is appropriate when roles operate in different modes with different physical environments, time structures, consequence profiles, and mental models of what the software is for. In that condition, no information hierarchy can resolve the conflict because the roles do not share the same task model.\n\nSeparate interfaces for separate modes are not described here as a failure of design ambition. They are the correct response when observation shows that a unified architecture would optimise for one role while degrading another.\n\nCreative Navy's Critical Systems Design method uses tension-driven reasoning to identify what drives each role conflict. The output is not automatically a unified design direction. The output is a classification: unified model or architectural separation.\n\n## Three enterprise roles resolved through a unified model in Triopsis\n\nThe [Triopsis Workforce Management SaaS](/triopsis-workforce-management-saas) case is described as a unified-model resolution for three roles in one workforce management interface. The roles were schedulers planning thousands of weekly interventions and coordinating crew availability, operations managers scanning for exceptions and managing risk across broader time horizons, and field technicians performing tasks outdoors with gloves, in sunlight, under time pressure and interruption.\n\nThe role conflicts were concrete. A layout optimised for schedulers emphasised speed, batch actions, and immediate team availability, but it hid exception signals that operations managers needed. A structure that reassured field technicians by surfacing required steps and safety confirmations obscured timing data that planners needed for sequencing decisions.\n\nCreative Navy-recorded case evidence included 43 user interviews across 21 participants and three in-situ observation sessions. That evidence showed that the conflicts were not only preferences in disagreement. The conflicts reflected the organisation's task structure as it appeared in the interface.\n\nCreative Navy's Critical Systems Design method classified the Triopsis case as a unified-model problem because the roles shared the same workflow. The roles operated it at different speeds, with different information priorities, and with different tolerance for uncertainty. The task structure was shared, so a single carefully structured interaction model could serve all three roles.\n\nCreative Navy-recorded design work in the Triopsis case mapped 47 microtasks against three personas. Product analytics from real users in the live system recorded 62% faster job discovery, 83% faster job sequence optimisation, and 58% faster weekly planning.\n\n## Clinical role differences resolved through one Kardion MCS Controller screen\n\nThe [Kardion](/kardion) MCS Controller case is described as a unified-model resolution for clinical roles using one screen in different physical positions. The controller is used during cardiac procedures and for longer-term cardiogenic shock support.\n\nTwo groups used the same device screen simultaneously. Scrub nurses and perfusionists stood approximately 3 metres from the controller during procedures and monitored motor current and device positioning signals. ICU nurses worked close to the controller and monitored flow rate, arterial blood pressure, and run time over longer care episodes.\n\nThe role conflict was spatial as well as informational. A hierarchy optimised for surgical-distance reading made elements large enough to read at 3 metres without diverting attention from the patient, but those same elements became visually dominant at close range. A hierarchy optimised for close-range nursing monitoring made elements too small to read reliably from 3 metres under time pressure.\n\nCreative Navy's Critical Systems Design method treated the fixed physical choreography of clinical use as the basis for the screen hierarchy. Elements critical to surgical-distance reading were large enough to be legible at 3 metres. The detail layer needed for close-range nursing monitoring remained present at a scale legible nearby but not dominant at distance.\n\nThis resolution is described as layout logic grounded in observed clinical practice, not responsive design. The Kardion MCS Controller received FDA approval, passing regulatory evaluation as submitted with no design changes required. That regulatory result is not a measured usability outcome and does not specify an FDA pathway.\n\n## Reception and clinical modes separated in IDEXX Animana\n\nIDEXX Animana is described as an architectural-separation case after eleven years of serving reception staff and clinical staff through a single interface. The evidence described here comes from field research across 35 clinics, 150+ participants, and 3 countries.\n\nReceptionists worked in an ambient awareness environment. They handled multiple simultaneous demands, short task windows, constant context-switching, and error consequences visible immediately to waiting clients. Their cognitive requirement was breadth, speed, and error prevention through simplicity.\n\nClinical staff worked in focused, sequential case attention. Vets and nurses handled one case at a time, with sufficient time available and error consequences that were clinical rather than reputational. Their cognitive requirement was depth, completeness, and accuracy.\n\nThe workarounds in Animana were role-specific. Receptionists had developed coping strategies for managing multiple animals per client at a glance. Clinical staff had developed strategies for avoiding the interface clutter that a reception-oriented layout imposed on consultation screens.\n\nCreative Navy's Critical Systems Design method classified the Animana situation as architectural separation rather than unified-model redesign. The recommendation was to develop distinct interfaces for reception and clinical roles because a unified interface optimised for either role would degrade the other.\n\n## How Creative Navy's Critical Systems Design method classifies the resolution\n\nCreative Navy's Critical Systems Design method addresses multi-role fragmentation through the Sandbox Experiments phase. In this situation, Sandbox Experiments maps the workflows of all roles before design decisions are made.\n\nMicrotask analysis documents discrete tasks independently of assumed sequence or flow. That practice reveals whether role conflict is interaction-level or architectural. Tension-driven reasoning then identifies what drives each conflict: shared task model with different information priorities, or structurally incompatible operating modes.\n\nThe output of this analysis is a classification rather than a design direction. A unified model is appropriate when the roles share workflows and need different hierarchy. Architectural separation is appropriate when role-specific workarounds show incompatible modes and mental models.\n\nWithout this classification, design effort is directed at the wrong level of the problem. Interaction-level fixes cannot resolve an architectural mismatch, and architectural separation is unnecessary when a shared task model can be served through a better hierarchy.\n\n## Related pages\n\nMulti-role workflow fragmentation is closely related to situations where expert workflows are hard to operate, system state is hard to understand, or product growth creates fragmentation. The documented examples on this page include [Triopsis Workforce Management SaaS](/triopsis-workforce-management-saas) and [Kardion](/kardion).",
+  "bodyMarkdown": "## Multi-role workflow fragmentation in complex software\n\nCreative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nMulti-role workflow fragmentation occurs when a system serves roles with genuinely different tasks, operating rhythms, and consequence profiles. A single interface architecture can serve one role well while creating friction for another. The fragmentation often accumulates as a product is built around one role's mental model, extended for another role, and patched for a third.\n\nThe operational cost becomes difficult to see because users in underserved roles create workarounds. Those workarounds become habitual, and the gap between the designed interface and the interface actually used becomes normalised.\n\nThis situation is common in products where users share a system but not a task. Examples include enterprise SaaS platforms used by planners, operators, and field technicians; clinical devices used by surgeons and nurses from different physical positions; and practice management systems used by receptionists and clinicians in different operational modes.\n\n## Feature additions do not resolve structural role fragmentation\n\nMulti-role workflow fragmentation is not usually resolved by adding features for underserved roles or reorganising navigation. Those responses operate at the interaction level. The structural question is whether the roles share a task model that a single unified interface can satisfy, or whether their operating modes are different enough that one architecture will degrade at least one role.\n\nCreative Navy's Critical Systems Design method treats this as a classification problem before treating it as a design problem. Without that classification, design work can improve one role's experience while making another role's work harder.\n\nThe distinguishing signal is the pattern of workarounds. Task-specific workarounds, where multiple roles work around the same interface problem in similar ways, indicate that the interaction pattern or information hierarchy may need improvement. Role-specific workarounds, where each role develops distinct coping strategies, indicate that the interface architecture may be wrong.\n\n## The two resolution types are unified model and architectural separation\n\nA unified model is appropriate when roles share workflows but have different information priorities. The conflict is about what should be prominent, what should be accessible, and what order should govern the interface. In this case, the work is in information architecture and information hierarchy rather than in splitting the product.\n\nArchitectural separation is appropriate when roles operate in different modes with different physical environments, time structures, and consequence profiles. In this case, the problem is not hierarchy but task model. Separate interfaces for separate operating modes can be the correct design conclusion.\n\nCreative Navy's Critical Systems Design method uses Sandbox Experiments to map workflows before design decisions are made. Microtask analysis documents discrete tasks independently of assumed sequence or flow. Tension-driven reasoning then identifies whether the conflict between roles is interaction-level or architectural.\n\n## Triopsis used one model for three roles with different priorities\n\nIn the [Triopsis workforce management SaaS](triopsis-workforce-management-saas) case, a single workforce management interface served schedulers, operations managers, and field technicians. Schedulers planned thousands of weekly interventions and coordinated crew availability. Operations managers scanned for exceptions and managed risk across broader time horizons. Field technicians performed tasks outdoors with gloves, in sunlight, under time pressure, and with interruption.\n\nThe roles had incompatible mental models at the interface level. A scheduler-oriented layout hid exception signals needed by operations managers. A structure that reassured field technicians by surfacing required steps and safety confirmations obscured timing data needed by planners.\n\nCreative Navy's Critical Systems Design method treated those conflicts as evidence. Forty-three user interviews across twenty-one participants and three in-situ observation sessions showed that the roles shared the same workflow but operated it at different speeds, with different information priorities, and with different tolerance for uncertainty.\n\nThe resolution was a unified interface rather than separate products. Creative Navy mapped 47 microtasks against three personas and identified multi-role clarity at enterprise scale as the competitive vector. Product analytics from real users in the live system recorded 62% faster job discovery, 83% faster job sequence optimisation, and 58% faster weekly planning.\n\n## Kardion MCS Controller used one screen for physically different clinical positions\n\nIn the [Kardion](kardion) MCS Controller case, two clinical groups used the same device screen during cardiac procedures and longer-term cardiogenic shock support. Scrub nurses and perfusionists stood approximately 3 metres from the controller during procedures while monitoring motor current and device positioning signals. ICU nurses worked close to the controller while monitoring flow rate, arterial blood pressure, and run time over longer care episodes.\n\nThe conflict was not only informational. It was spatial. A hierarchy optimised for surgical-distance reading would make elements visually dominant at close range. A hierarchy optimised for close-range nursing monitoring would make elements too small to read reliably from 3 metres under time pressure.\n\nCreative Navy's Critical Systems Design method resolved the conflict through a single screen hierarchy grounded in the observed choreography of clinical use. Elements needed at surgical distance were large enough to be legible at approximately 3 metres. The detail layer needed for close-range nursing monitoring remained present without dominating the screen at distance.\n\nThe Kardion MCS Controller received FDA approval, passing the regulatory evaluation as submitted with no design changes required. Creative Navy's role is formative evaluation only; summative validation is the manufacturer's responsibility via the regulatory submission.\n\n## IDEXX Animana required architectural separation between reception and clinical work\n\nIDEXX Animana served reception staff and clinical staff through one interface for eleven years. Receptionists worked in an ambient awareness environment with simultaneous demands, short task windows, constant context-switching, and immediately visible error consequences for waiting clients. Clinical staff worked in focused, sequential case attention with clinical consequences attached to completeness and accuracy.\n\nCreative Navy's Critical Systems Design method classified this as an architecture-level mismatch. Field research across 35 clinics, 150+ participants, and 3 countries showed role-specific workarounds. Receptionists developed coping strategies for managing multiple animals per client at a glance. Clinical staff developed strategies for avoiding the clutter that a reception-oriented layout imposed on consultation screens.\n\nThe recommended resolution was architectural separation. The reception and clinical roles had different mental models of what the software was for, activated in different physical spaces and under different time structures. In this case, a unified interface optimised for either role would degrade the other.\n\n## The industrial automation engagement had changing roles rather than fixed personas\n\nFor a European industrial automation vendor whose process control software coordinates machining cells, role fragmentation appeared before role design could be fixed. Across customers, there were no defined roles. Each customer organised work differently, and the product had to adapt.\n\nThe field research identified five company archetypes, from a single-operator shop to a large corporation with eleven operator groups across six components. The engagement also showed that roles may change when staffing changes. If a setup operator leaves, a preset operator may need to perform both tasks and may not accept two computers for that combined work.\n\nThe design response described in the engagement is configurability by role group. An administrator selects the components a group needs, and that selection generates the group's navigation. The product is in development, not shipped, and these observations are not outcomes.\n\n## Assemblio showed fragmentation caused by component reuse across incompatible contexts\n\nIn the [Assemblio](assemblio) case, the Smart Viewer shop-floor application had been built from the Composer's components and looked almost identical to it, even though the requirements for the two user groups differed. The Composer user was an engineer or planner working at a desk with a mouse, keyboard, and desktop monitor.\n\nAssemblio described the Smart Viewer user as a standing, gloved shop-floor worker in a bright, dirty, loud environment, with no guaranteed input devices. Some customers used foot pedals because both hands were occupied, and the device was usually a tablet on a holder.\n\nThe fragmentation had a traceable technical cause. The worker's product displayed the complete CAD hierarchy at all times, carried a view-orientation cube the worker did not need, and provided no route for a worker to send practical step feedback back to the planner.\n\nEvery statement about the shop-floor operating environment in this case is Assemblio's description. Creative Navy did not observe a shop floor, and no time-saving, error-rate, training, adoption, or engagement-date claim is established here.\n\n## Schone Airspace Group used one persistent command shell across role contexts\n\nIn the [Schone Airspace Group mission control](schone-mission-control) engagement, five operator role contexts were modelled as responsibilities within an operation: remote pilot, payload operator, mission planner, fleet supervising operator, and operations reviewer. The role contexts were not treated as a fixed staffing configuration because one person may hold several responsibilities on a small flight, while a larger operation may distribute them.\n\nThe resolution was not five tailored views. Creative Navy's design work held the role contexts together through one persistent live command shell with fixed positions for command target identity, last reported flight mode, battery, control link state, telemetry freshness, and consequential actions.\n\nWorkspace changes altered centre content, but not the location or meaning of the command region. The accepted cost was that the shell reserved screen space that could not be given to the map or video. The product is built and in test, not described here as operationally deployed.\n\n## Maritime traffic monitoring treated handover as the point where fragmentation becomes risk\n\nIn an engagement for a European vendor of maritime traffic monitoring, inland navigation, and communications software for port authorities, coastal administrations, and waterway operators, unresolved work was spread across incident, alert, source-health, and workspace views. An operator had to assemble the active situation by cross-checking separate lists.\n\nThe designed response treated handover as an accountable review rather than a digest. The selected model grouped open alerts, source concerns, and incident tasks with owner, latest attributable event, and unresolved status, and required the receiving operator to review and accept.\n\nThis example shows how multi-role fragmentation can become a handover risk when active work is distributed across views and responsibility transfer is assumed rather than explicitly reviewed.\n\n## Topera was designed against fragmentation as a concept, not observed as a live system\n\n[Topera](topera) is a concept design for a cross-organisational project management platform. It was grounded in the DIN 69901 series and the ProSTEP iViP / VDA recommendations. The engagement included no user research and no contact with any project manager or partner-organisation representative.\n\nThe information architecture was designed as a matrix with two axes. The horizontal time axis carried the five DIN 69901-2 lifecycle phases. The vertical knowledge axis carried eleven management domains. Both axes were designed as real routes rather than one primary navigation and one secondary navigation.\n\nTopera was designed so roles in different organisations could hold different depths of the same plan. External partners were specified as asynchronous users with three to four structural levels exposed and no direct edit permissions. Internal users would see full depth. The boundary between those views was designed as part of the system structure rather than treated only as a permissions setting.\n\nNothing in the Topera example was observed in live use. Topera is not a built system, has no deployment, no users, no pilot, and no outcome claim.\n\n## Related situations in complex software\n\nMulti-role workflow fragmentation often overlaps with [product fragmentation under growth](product-fragmenting-under-growth), especially when additional roles are added without revisiting the task model. It also relates to [software too complex for users](software-too-complex-for-users) when the same interface has accumulated competing role requirements.\n\nIn high-consequence environments, fragmentation can make [system state hard to understand](system-state-is-hard-to-understand) and can increase risk during [handoffs](handoffs-create-failures). Where users are domain specialists, the same pattern can appear inside [expert workflows that are hard to operate](expert-workflows-are-hard-to-operate).",
   "claims": [
     {
-      "claim": "Multi-role workflow fragmentation occurs when roles share a system but differ in tasks, operating rhythms, consequence profiles, or mental models.",
-      "evidenceType": "conceptual definition",
+      "claim": "Multi-role workflow fragmentation occurs when a single interface serves roles with different tasks, operating rhythms, or consequence profiles and creates workarounds for underserved roles.",
+      "evidenceType": "definition",
       "sourceStrength": "strong",
-      "notes": "Supported by the situation description and opening explanation of how one interface architecture can serve one role and create friction for others."
+      "notes": "Supported by the situation description and the definition of the structural problem in CURRENT_SOURCE_MD."
     },
     {
-      "claim": "Observed workaround patterns distinguish interaction-level issues from architectural issues in multi-role systems.",
+      "claim": "The main diagnostic distinction is whether workarounds are task-specific or role-specific.",
       "evidenceType": "conceptual definition",
       "sourceStrength": "strong",
-      "notes": "The source identifies task-specific versus role-specific workarounds as the signal separating unified-model improvements from architectural failure."
+      "notes": "CURRENT_SOURCE_MD identifies workarounds as the signal distinguishing interaction-level problems from architecture-level problems."
     },
     {
-      "claim": "A unified model is appropriate when roles share workflows but have different information priorities rather than fundamentally different task structures.",
+      "claim": "The two documented resolutions are unified model and architectural separation.",
       "evidenceType": "conceptual definition",
       "sourceStrength": "strong",
-      "notes": "Supported by Resolution 1 in the source."
+      "notes": "CURRENT_SOURCE_MD explicitly defines Resolution 1 as unified model and Resolution 2 as architectural separation."
     },
     {
-      "claim": "Architectural separation is appropriate when roles operate in structurally different modes with incompatible mental models of what the software is for.",
-      "evidenceType": "conceptual definition",
-      "sourceStrength": "strong",
-      "notes": "Supported by Resolution 2 in the source."
-    },
-    {
-      "claim": "In the Triopsis example, Creative Navy-recorded case evidence included 43 user interviews across 21 participants and three in-situ observation sessions, and live product analytics recorded 62% faster job discovery, 83% faster job sequence optimisation, and 58% faster weekly planning.",
-      "evidenceType": "case study",
+      "claim": "Triopsis used a unified interface across three roles after 43 user interviews, 21 participants, three in-situ observation sessions, and 47 mapped microtasks; live product analytics recorded 62% faster job discovery, 83% faster job sequence optimisation, and 58% faster weekly planning.",
+      "evidenceType": "field-measured",
       "sourceStrength": "case evidence",
-      "notes": "The source states the interview, participant, observation, microtask, and live product analytics figures."
+      "notes": "The research counts and live product analytics are stated in CURRENT_SOURCE_MD."
     },
     {
-      "claim": "In the Kardion MCS Controller example, one screen served roles positioned approximately 3 metres from the controller and close to the controller, and the controller received FDA approval with no design changes required during regulatory evaluation.",
+      "claim": "The Kardion MCS Controller used one screen hierarchy for clinical users at approximately 3 metres and close range, and the controller received FDA approval with no design changes required during regulatory evaluation.",
       "evidenceType": "verifiable regulatory outcome",
       "sourceStrength": "verifiable regulatory result",
-      "notes": "The source states the physical positions, role information needs, FDA approval, and no design changes required during regulatory evaluation. No FDA pathway is specified."
+      "notes": "CURRENT_SOURCE_MD states FDA approval and no design changes during regulatory evaluation; no FDA pathway is specified."
     },
     {
-      "claim": "In the IDEXX Animana example, field research across 35 clinics, 150+ participants, and 3 countries showed role-specific workarounds, leading to a recommendation for separate reception and clinical interfaces.",
-      "evidenceType": "case study",
+      "claim": "IDEXX Animana was classified as requiring architectural separation after field research across 35 clinics, 150+ participants, and 3 countries showed role-specific workarounds.",
+      "evidenceType": "Creative Navy-observed",
       "sourceStrength": "case evidence",
-      "notes": "The source states the research scope, role-specific workarounds, and architectural separation recommendation."
+      "notes": "CURRENT_SOURCE_MD describes the field research and the architectural separation recommendation."
     },
     {
-      "claim": "Creative Navy's Critical Systems Design method addresses multi-role fragmentation through Sandbox Experiments, microtask analysis, and tension-driven reasoning to classify the problem as unified model or architectural separation.",
+      "claim": "The industrial automation engagement identified five company archetypes, but the product is in development and no outcome is claimed.",
+      "evidenceType": "Creative Navy-observed",
+      "sourceStrength": "engagement record",
+      "notes": "CURRENT_SOURCE_MD states the field observations and explicitly says the product is not shipped and nothing is an outcome."
+    },
+    {
+      "claim": "Assemblio’s fragmentation had a traceable technical cause in component reuse, but its shop-floor operating context was client-stated and not observed by Creative Navy.",
+      "evidenceType": "client-reported",
+      "sourceStrength": "case evidence",
+      "notes": "CURRENT_SOURCE_MD states that Assemblio described the operating conditions and that Creative Navy did not observe a shop floor."
+    },
+    {
+      "claim": "Topera is a concept design against fragmentation, not a built system and not an observed research finding.",
       "evidenceType": "Creative Navy-recorded",
-      "sourceStrength": "moderate",
-      "notes": "Supported by the section describing what Creative Navy's Critical Systems Design method addresses here."
+      "sourceStrength": "engagement record",
+      "notes": "CURRENT_SOURCE_MD explicitly states that Topera included no user research, no built system, no deployment, no users, no pilot, and no outcome."
     }
   ],
   "limitations": [
-    "The page describes diagnostic classifications and documented examples; it does not establish that all multi-role systems require the same resolution.",
-    "Stated user preferences are described as insufficient for classification; observed behaviour and workarounds are needed.",
-    "The Triopsis outcome figures are described as product analytics from real users in the live system, but the source does not provide the analytics protocol.",
-    "The Kardion regulatory result is FDA approval as stated in the source; the source does not specify an FDA pathway and the result should not be framed as a measured usability outcome.",
-    "The IDEXX Animana example records a recommendation for architectural separation; the source does not provide implementation outcome metrics for that recommendation."
+    "This page is a situation-level diagnostic page, not proof that one resolution type is always correct.",
+    "Triopsis outcome figures are limited to the live product analytics described in the current evidence and should not be generalised to other systems.",
+    "Kardion is described only with FDA approval wording; no FDA pathway is specified.",
+    "Assemblio’s shop-floor operating context is client-stated and was not observed by Creative Navy.",
+    "The industrial automation product is in development, not shipped, and no outcome is established for that engagement.",
+    "Schone Airspace Group's product is built and in test, not described as operationally deployed.",
+    "Topera is a concept design with no built product, no deployment, no users, no pilot, no user research, and no outcome."
   ],
   "publicationBlockers": [],
   "questionsForReview": [
-    "The Kardion example states FDA approval but does not specify the FDA pathway; do not infer PMA, 510(k), device class, or pathway details without additional evidence.",
-    "The Triopsis example provides live product analytics percentages but does not specify the analytics protocol or measurement window.",
-    "The IDEXX Animana example provides field research scope and a design recommendation but does not provide post-recommendation implementation outcome metrics."
+    "Kardion regulatory pathway is not specified beyond FDA approval; no PMA or 510(k) pathway is stated."
   ],
   "relatedPageSlugs": [
     "triopsis-workforce-management-saas",
     "kardion",
+    "assemblio",
+    "schone-mission-control",
+    "topera",
+    "product-fragmenting-under-growth",
     "expert-workflows-are-hard-to-operate",
     "software-too-complex-for-users",
-    "system-state-is-hard-to-understand",
-    "product-fragmenting-under-growth",
-    "too-many-features-not-enough-coherence",
     "handoffs-create-failures",
-    "training-burden-is-too-high"
+    "system-state-is-hard-to-understand"
   ],
   "internalLinks": [
     {
-      "anchorText": "Triopsis Workforce Management SaaS",
+      "anchorText": "Triopsis workforce management SaaS",
       "targetSlug": "triopsis-workforce-management-saas",
-      "placementHint": "Use in the Triopsis example section and related pages section.",
-      "reason": "The source uses Triopsis as a grounded example of a unified-model resolution for three roles."
+      "placementHint": "Triopsis example section",
+      "reason": "The situation page uses Triopsis as a grounded example of a unified model across three roles."
     },
     {
       "anchorText": "Kardion",
       "targetSlug": "kardion",
-      "placementHint": "Use in the Kardion MCS Controller example section and related pages section.",
-      "reason": "The source uses Kardion as a grounded example of one screen hierarchy serving clinical roles in different physical positions."
+      "placementHint": "Kardion clinical screen section",
+      "reason": "The situation page uses Kardion as a grounded example of one screen hierarchy serving different clinical positions."
     },
     {
-      "anchorText": "expert workflows are hard to operate",
-      "targetSlug": "expert-workflows-are-hard-to-operate",
-      "placementHint": "Use in the related pages section.",
-      "reason": "Multi-role fragmentation is connected to difficulty operating expert workflows when roles have different task structures and information priorities."
+      "anchorText": "Assemblio",
+      "targetSlug": "assemblio",
+      "placementHint": "Assemblio component-reuse section",
+      "reason": "Assemblio is used as an example of fragmentation caused by reusing components across incompatible operating contexts."
     },
     {
-      "anchorText": "system state is hard to understand",
-      "targetSlug": "system-state-is-hard-to-understand",
-      "placementHint": "Use in the related pages section.",
-      "reason": "The source describes role-specific visibility and hierarchy conflicts that affect understanding of operational state."
+      "anchorText": "Schone Airspace Group mission control",
+      "targetSlug": "schone-mission-control",
+      "placementHint": "Schone Airspace Group persistent command shell section",
+      "reason": "Schone Airspace Group is used as an example of one persistent shell across multiple operator role contexts."
     },
     {
-      "anchorText": "product growth creates fragmentation",
+      "anchorText": "Topera",
+      "targetSlug": "topera",
+      "placementHint": "Topera concept design section",
+      "reason": "Topera is used as a concept-design example of designing against fragmentation rather than observing it in a live system."
+    },
+    {
+      "anchorText": "product fragmentation under growth",
       "targetSlug": "product-fragmenting-under-growth",
-      "placementHint": "Use in the related pages section.",
-      "reason": "The source describes fragmentation accumulating as products are extended from one role to others."
+      "placementHint": "Related situations section",
+      "reason": "Multi-role workflow fragmentation can appear when products expand across roles without revisiting architecture."
+    },
+    {
+      "anchorText": "software too complex for users",
+      "targetSlug": "software-too-complex-for-users",
+      "placementHint": "Related situations section",
+      "reason": "Competing role requirements can contribute to interface complexity."
+    },
+    {
+      "anchorText": "system state hard to understand",
+      "targetSlug": "system-state-is-hard-to-understand",
+      "placementHint": "Related situations section",
+      "reason": "Fragmented views can make system state difficult to interpret across roles."
+    },
+    {
+      "anchorText": "handoffs",
+      "targetSlug": "handoffs-create-failures",
+      "placementHint": "Related situations section",
+      "reason": "The maritime example connects multi-role fragmentation to accountable handover risk."
+    },
+    {
+      "anchorText": "expert workflows that are hard to operate",
+      "targetSlug": "expert-workflows-are-hard-to-operate",
+      "placementHint": "Related situations section",
+      "reason": "The situation often appears in expert tools where different specialist roles share one system."
     }
   ],
   "qualityChecks": {

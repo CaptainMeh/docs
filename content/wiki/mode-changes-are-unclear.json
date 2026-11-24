@@ -4,160 +4,177 @@
   "pageType": "failure",
   "category": "failures",
   "section": "State Visibility Failures",
-  "summary": "Mode changes are unclear when the transition between system states is not communicated in a way users can reliably perceive under real operating conditions. This failure is distinct from general state invisibility and from cumulative spatial memory burden, although the mechanisms often co-occur.",
+  "summary": "Mode changes are unclear when an interface fails to update the user's mental model at the moment a system state changes. The failure is distinct from general state invisibility and from accumulated spatial memory burden, although the same interface can exhibit all three problems.",
   "keyFacts": [
     "A mode error occurs when a user takes an action that is correct for one system state and incorrect for another, without knowing which state they are in.",
-    "A mode error requires both a user mental model of the system state and an interface failure to update that model when the actual state changes.",
-    "Mode-change clarity is specifically about the moment of transition, not only the visibility of the resulting state.",
-    "Three described mechanisms are insufficient visual differentiation, no perceptible transition event, and confirmation steps calibrated incorrectly.",
-    "The documented design response uses redundant communication through spatial position, icon form, and colour rather than relying on a single cue.",
-    "The deSoutter Medical / Zethon example concerns a powered ultrasonic bone cutter operating from approximately 200 rpm to approximately 85,000 rpm.",
-    "Eight orthopaedic and trauma surgeons familiar with ultrasonic and powered tools reviewed the legacy interface in structured sessions.",
-    "Creative Navy reviewed 12 human factors studies and ergonomics papers and conducted 13 structured sessions with the same eight surgeons in the deSoutter engagement.",
-    "Benchmarking of six comparable surgical devices found a recurring reliance on colour as the primary state indicator.",
-    "Surgeon-reported outcomes from the engagement were not post-deployment operational measurements."
+    "A mode error requires both a user mental model of system state and an interface failure to update that mental model when the actual state changes.",
+    "Mode-change clarity is narrower than general state visibility because it concerns the moment of transition, not only the resulting state.",
+    "Mode-change clarity is distinct from layout instability and spatial memory burden, although mode changes that reorganise the interface can cause those problems.",
+    "Common mechanisms include insufficient visual differentiation, no perceptible transition event, and confirmation steps calibrated incorrectly to consequence.",
+    "The deSoutter Medical / Zethon engagement treated activation state and readiness state as high-consequence mode states in a powered surgical device interface.",
+    "In the deSoutter Medical / Zethon engagement, eight orthopaedic and trauma surgeons reviewed the legacy interface in structured sessions.",
+    "The Raymarine prototype comparison recorded wrong domain activations of six of eight under the contextual model and zero of eight under the fixed model, with a 2.30 second median target-browsing cost.",
+    "The maritime VTS prototype comparison recorded replay recognition of five of eight in the legacy condition and eight of eight in the prototype under controlled conditions.",
+    "Creative Navy does not claim IEC 62366-1 compliance as a deliverable for the deSoutter Medical / Zethon engagement; summative validation was the manufacturer's responsibility and was not in scope."
   ],
   "bodySections": [
     {
-      "heading": "Summary",
-      "bodyMarkdown": "Creative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nA mode-change clarity failure occurs when a system changes mode without communicating the transition in a way the user can reliably perceive under real operating conditions. The resulting error is a mode error: the user takes an action that is correct for one system state and incorrect for another, without knowing which state they are in.\n\nA mode error is distinct from a selection error, where the wrong option is chosen from a visible set. It is also distinct from a misinterpretation error, where a visible value is read incorrectly. A mode error requires two conditions at the same time: the user has a mental model of the system state, and the interface has failed to update that mental model when the actual state changed."
+      "heading": "What unclear mode changes mean",
+      "bodyMarkdown": "Creative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nA mode-change clarity failure is an interface failure in which the transition between system modes is not communicated in a way the user can reliably perceive under real operating conditions. The user may act confidently because the action is correct for the state they believe the system is in. The error occurs because the user's mental model no longer matches the actual system state.\n\nA mode error is not the same as selecting the wrong visible option or misreading a visible value. A mode error requires two conditions at the same time: the user has a mental model of the system's current state, and the interface fails to update that mental model when the actual state changes.\n\nIn low-consequence software, mode errors often produce recoverable mistakes. In clinical and safety-critical contexts, mode errors become use-related risk because the user's next action may depend directly on whether the system is active, inactive, ready, unavailable, queued, or pending."
     },
     {
-      "heading": "Mode errors create false confidence rather than visible confusion",
-      "bodyMarkdown": "Mode-change failures often produce confident action under a false mental model. A surgeon who believes a powered device is inactive and uses it as though it were inactive behaves differently from one who knows it is active. A technician who believes a safety interlock has engaged and therefore moves past a confirmation step is acting coherently within an inaccurate understanding of system state.\n\nThe interface requirement is not only to display a state somewhere on the screen. The interface must maintain the accuracy of the user's mental model by communicating state transitions in forms that remain perceptible under the conditions of use.\n\nIn low-consequence software, mode errors may produce recoverable mistakes. In clinical and safety-critical contexts, mode errors can become use-related risk because the user's next action is governed by an incorrect understanding of what the system is doing."
+      "heading": "Mode errors are failures of transition visibility",
+      "bodyMarkdown": "A mode-change clarity failure concerns the transition between modes, not only the visibility of the final state. A system can display its current mode clearly after a transition and still fail if the user does not perceive that the transition occurred.\n\nThis distinction matters because many mode errors do not appear dramatic at the interface surface. The interface may show a new state, a visible object may move, or an action may appear to have been accepted. The failure is the quiet mismatch between what the system has done and what the user believes it has done.\n\nMode-change clarity must be evaluated under the conditions of use. Brief glances, variable lighting, gloves, sterile positioning, divided attention, interruptions, and operational pressure can all reduce whether a state transition is perceptible in practice."
     },
     {
       "heading": "Mode-change clarity is narrower than general state visibility",
-      "bodyMarkdown": "Mode-change clarity is a specific instance within state visibility failures. General state visibility concerns whether the current system state is accessible at the interface surface: whether information about what the system is doing is absent, fragmented, or presented in forms that require interpretation.\n\nMode-change clarity concerns the transition event itself. A system may display the current mode clearly after the transition, yet still fail if the transition produces no perceptible signal, if the visual difference between the previous and current mode is too subtle, or if the transition reorganises the interface in a way that makes immediate orientation difficult.\n\nThis failure should also be distinguished from spatial memory burden. Mode changes that reorganise the interface can contribute to layout instability, but the transition-specific failure is the missed event. The spatial memory failure is the cumulative cost of maintaining a map of an interface whose elements shift across view states."
+      "bodyMarkdown": "Mode-change clarity is a specific instance of state visibility failure. General state visibility concerns whether information about what the system is doing is available at the surface. Mode-change clarity concerns whether the transition into a new state is communicated in a way that reliably updates the user's mental model.\n\nThe distinction is structurally important. A system can display the current mode in a visible location and still fail if the transition produces no perceptible signal. A mode change can also fail if the visual difference between the previous and current state is too subtle, or if the interface reorganises in a way that prevents immediate orientation.\n\nMode-change clarity is also distinct from the cognitive failure in which the interface demands too much memory. Mode changes that reorganise the interface can create layout instability, but the transition-specific failure is the event of failing to communicate the change. The memory burden is the cumulative cost of maintaining spatial maps across inconsistent view states."
     },
     {
-      "heading": "Insufficient visual differentiation makes mode states hard to recognise",
-      "bodyMarkdown": "Insufficient visual differentiation occurs when two or more modes look too similar for the difference to register without close attention. A standby state and an active state that share layout, icon structure, and visual weight, and differ only through a small text label or colour change, do not create a reliable perceptual signal.\n\nThis failure is common when the interface relies on a single communication channel, especially colour, as the primary mode indicator. Colour coding may be legible under ideal conditions but degrade under variable operating theatre illumination, direct sunlight on a display, or the spectral shift introduced by night vision equipment.\n\nThe design response described for this failure is redundant communication. Spatial position, icon form, and colour should each independently communicate the current mode so that degradation of any single cue does not make the mode ambiguous."
+      "heading": "Insufficient visual differentiation makes mode changes easy to miss",
+      "bodyMarkdown": "The simplest mode-change clarity failure occurs when two or more modes are not visually distinct enough to register without close attention. A standby state and an active state that share layout, iconography, and visual weight may differ only by a small label or colour indicator. Under operational pressure, that difference may not be read or noticed.\n\nSingle-channel state communication is a common cause. When colour is the primary indicator, the mode distinction degrades when colour perception degrades. Source examples name variable operating theatre illumination, direct sunlight on a display, and spectral shift from night vision equipment as conditions that can reduce the reliability of colour coding.\n\nThe design response is redundant communication. Spatial position, icon form, and colour can each communicate the same state independently. If one channel degrades, the other channels can still support recognition of the mode state."
     },
     {
-      "heading": "A visible resulting state can still leave the transition unnoticed",
-      "bodyMarkdown": "A system can make the current mode visible after a transition while failing to communicate that the transition occurred. If the display simply updates to the new state and the visual difference is subtle, the change can pass unnoticed during inattention, physical distraction, or divided focus.\n\nThis mechanism produces the characteristic mode error pattern. Users operate confidently in the mode they believe is current because the interface did not give them a perceptible transition signal. The error is not confusion about a displayed value. It is the persistence of a mental model that was accurate until the system silently changed.\n\nThe design response at the transition-event level includes a perceptible change signal at the moment of transition, sufficient visual distinctiveness between modes, and confirmation mechanisms for high-consequence state changes when the risk profile justifies them."
+      "heading": "Silent transition events leave the user's mental model unchanged",
+      "bodyMarkdown": "A system can show the resulting state clearly and still fail to signal that a transition occurred. If the mode change produces only a static state update, and the difference between states is subtle, the change can pass unnoticed during inattention, physical distraction, or divided focus.\n\nThis produces the characteristic mode error pattern. The user operates confidently in a mode they believe to be current because their mental model was accurate until the system silently changed. The failure is not confusion. The failure is an interface update that did not register as a transition.\n\nThe design response at transition level includes a perceptible change signal at the moment of transition, sufficient visual distinctiveness between states, and confirmation mechanisms for high-consequence state changes where unintended activation must be prevented."
     },
     {
-      "heading": "Confirmation steps fail when they are not calibrated to risk",
-      "bodyMarkdown": "Mode-change confirmation can fail in two directions. An interface can add confirmation steps that create cognitive load without reducing risk, or it can omit confirmation for state changes whose consequences justify an explicit check.\n\nIntermediate confirmation steps do not protect users if the confirmation request itself is ambiguous or habituated. They add effort to intentional operations while failing to prevent the unintended activations they are meant to address.\n\nHigh-consequence activations require different treatment. Activating a powered surgical instrument or committing to a safety-critical configuration may require a confirmation mechanism matched to the conditions of use: simple enough to complete under divided attention, distinctive enough not to be bypassed through habit, and placed at the decision point where the user's intended mode is most reliable."
+      "heading": "Confirmation steps require consequence-based calibration",
+      "bodyMarkdown": "Mode-change confirmation is a calibration problem. Interfaces can over-correct by adding confirmation steps that create friction without reducing risk. Interfaces can also under-correct by allowing high-consequence state changes to proceed without confirmation.\n\nA confirmation step is not protective if the user does not recognise what is being confirmed. Ambiguous confirmation adds cognitive load without preventing the mode error it is intended to prevent. Conversely, a high-consequence activation that proceeds without confirmation relies entirely on the user's attention at the moment of activation.\n\nThe appropriate design response is not a uniform confirmation policy. Low-consequence mode changes can proceed without confirmation. High-consequence activations need confirmation mechanisms that are simple enough for divided-attention use, distinctive enough not to be bypassed through habit, and located at the decision point where the user's intended mode is clearest."
     },
     {
-      "heading": "deSoutter Medical / Zethon illustrates mode-change clarity in an operating theatre",
-      "bodyMarkdown": "The deSoutter Medical / Zethon example concerns a powered ultrasonic bone cutter used in orthopaedic and trauma surgery. The device operates at rotational speeds from approximately 200 rpm to approximately 85,000 rpm. Its embedded GUI is used during live procedures, through gloves, in a sterile field, and while the surgeon's primary attention remains on the surgical field and the patient.\n\nThe critical mode states in this context are the transition from inactive to active and the transition from active to inactive. A surgeon who believes the device is inactive when it has transitioned to active state, or who believes the device is ready when it has not completed a readiness sequence, is operating under a false mental model in a context where that model governs use-related risk.\n\nThe legacy interface followed the internal software architecture and exposed functions in the order they existed in the software. From a clinical perspective, activation states and readiness conditions were difficult to interpret at a glance, parameters relevant during cutting were visible but not visually prioritised, and warnings were presented as text rather than instantly recognisable patterns.\n\nEight orthopaedic and trauma surgeons familiar with ultrasonic and powered tools reviewed the legacy interface in structured sessions. The documented failure patterns were consistent across the participant group. In an operating theatre, where surgeons verify readiness through brief glances while maintaining sterile position and primary attention on the surgical field, this interaction profile was treated as use-related risk under IEC 62366-1."
+      "heading": "deSoutter Medical / Zethon shows mode-change clarity in a surgical device context",
+      "bodyMarkdown": "The deSoutter Medical / Zethon engagement provides a medical-device example of mode-change clarity under operating theatre conditions. The device is a powered ultrasonic bone cutter operating at rotational speeds from approximately 200 rpm to approximately 85,000 rpm, used in orthopaedic and trauma surgery.\n\nThe interface was a safety-critical embedded GUI used during live procedures. Surgeons interacted with it briefly, with primary attention on the surgical field and the patient, through gloves, and within a sterile field that constrained positioning and access.\n\nThe high-consequence mode states were the transition from inactive to active and from active to inactive. A surgeon who assumes the device is inactive when it has transitioned to active state, or who assumes readiness when a readiness sequence is incomplete, is acting within a false mental model in a context where that model affects use-related risk.\n\nThe legacy interface followed the internal software architecture and exposed functions in the order they existed in the software. From a clinical perspective, activation states and readiness conditions were difficult to interpret at a glance, parameters relevant during cutting were visible but not visually prioritised, and warnings were presented as text rather than instantly recognisable patterns.\n\nEight orthopaedic and trauma surgeons familiar with ultrasonic and powered tools reviewed the legacy interface in structured sessions. The failure patterns were consistent across the participant group. Under IEC 62366-1 framing, this interaction profile constituted use-related risk because readiness verification had to happen during brief glances in a live operating theatre."
     },
     {
-      "heading": "Creative Navy's Critical Systems Design method derived perceptibility requirements from operating conditions",
-      "bodyMarkdown": "Creative Navy's Critical Systems Design method addressed mode-change clarity in the deSoutter engagement through domain learning and through interface standards that translated operating conditions into concrete design requirements.\n\nCreative Navy reviewed 12 human factors studies and ergonomics papers covering touch performance with gloved hands, visual search under time pressure, and attention switching in dual-task conditions. Creative Navy also conducted 13 structured sessions with the same eight surgeons, combining interviews with procedural walkthroughs.\n\nThe procedural walkthroughs identified when surgeons verify cartridge seating, when they check speed or power settings, and which moments in the procedure are most sensitive to delay or distraction. This produced an operational model for mode-change clarity: which transitions needed to be perceptible in a brief glance, under what lighting conditions, at what viewing angles, and through what level of divided attention.\n\nCreative Navy's Critical Systems Design method converted the generic requirement to make mode states clear into a more specific requirement: activation state needed to be perceptible through recognition, without reading, under variable theatre lighting, in a glance of less than a second."
+      "heading": "Creative Navy's Critical Systems Design method treats mode-change clarity as an operating-conditions problem",
+      "bodyMarkdown": "Creative Navy's Critical Systems Design method addresses unclear mode changes by defining the operating conditions under which each transition must be perceived, then translating those requirements into structural interface standards.\n\nCreative Navy's Critical Systems Design method designs software whose interfaces, workflows, and operating logic carry real operational consequences, working through five phases — Sandbox Experiments, Concept Convergence, Iterative System Building, Organizational Integration, and Implementation Partnership — to take each system from initial exploration to independent operation by the client's own team.\n\nFor mode-change clarity, domain learning establishes when transitions occur in real operation, what the user is doing at those moments, which senses and actions are constrained, and what consequence follows if the transition is missed. In the deSoutter Medical / Zethon engagement, the requirement became specific: activation state had to be recognisable without reading during brief glances, under variable theatre lighting, with gloved hands, divided attention, and sterile field constraints.\n\nIn the deSoutter Medical / Zethon engagement, Creative Navy reviewed 12 human factors studies and ergonomics papers covering touch performance with gloved hands, visual search under time pressure, and attention switching in dual-task conditions. Thirteen structured sessions with the same eight surgeons combined interviews with procedural walkthroughs.\n\nThe resulting operational model specified which transitions had to be perceptible in a brief glance, under variable lighting, at relevant viewing angles, and under divided attention. The design standard required every critical mode state to be distinguishable through recognition without reading, using independent redundant cues.\n\nSpatial stability gave critical indicators fixed positions across screens and mode states. Icon form provided distinct shapes that did not depend on colour. Reserved colour, applied consistently to each state and not used for other purposes, provided a third cue. No single channel failure was allowed to make a critical mode state ambiguous.\n\nIntermediate confirmation steps were also calibrated against the operational model. Steps that added cognitive burden without contributing to safety were removed. Steps retained for protective function were redesigned for completion under divided-attention clinical use.\n\nEight surgeons in structured review sessions reported two changes compared with the legacy interface: device state could be verified during brief glances without reading, and speed and parameter adjustments no longer interrupted surgical workflow. These are surgeon-reported outcomes from participants in the design engagement, not post-deployment operational measurements.\n\nThe engagement produced a documented usability engineering trail structured to support IEC 62366-1 verification and validation activities. Summative validation was the manufacturer's responsibility and was not in scope for this engagement. Creative Navy does not claim IEC 62366-1 compliance as a deliverable for the engagement."
     },
     {
-      "heading": "Redundant cues made critical mode states recognisable without reading",
-      "bodyMarkdown": "Creative Navy's design standard for the deSoutter engagement required every critical mode state to be distinguishable through recognition in a brief glance, without reading, under degraded lighting conditions, through independent redundant cues.\n\nSpatial stability gave critical indicators fixed positions across all screens and mode states, so the surgeon knew where to look. Icon form provided distinct shapes that did not depend on colour for their meaning. Reserved colour, applied consistently to each state and not used for other purposes, provided a third cue.\n\nBenchmarking of six comparable surgical devices, including ultrasonic tools, powered saws, and other high-speed instruments used in orthopaedic and trauma surgery, included mode-change clarity as an explicit evaluation criterion. The recurring failure pattern across the competitive set was reliance on colour as the primary state indicator. None of the benchmarked devices combined spatial position, icon form, and colour as simultaneous independent cues for the same state change.\n\nCreative Navy's Critical Systems Design method also calibrated intermediate confirmation steps against the operating model. Steps that added cognitive burden without contributing to safety were removed. Steps with a genuine protective function were preserved and redesigned so they could be completed under the divided-attention conditions of clinical use."
+      "heading": "Additional engagement evidence shows different forms of mode-change failure",
+      "bodyMarkdown": "Raymarine provides a prototype comparison where a control changed functional domain without a sufficiently clear mode boundary. In the Ray53, Ray63 and Ray73 line context, a promising AIS concept used the lower encoder to move between vessel targets, while the same encoder had already been assigned as the primary channel selector in the radio view and would have had a third role in settings. When an alert interrupted an interaction, it became unclear whether the next rotation would select a vessel, change the tuned channel, or navigate a message.\n\nCreative Navy designed the Raymarine test protocols, moderated all twenty-four sessions, and analysed the results. Raymarine supplied the physical bench mockup. The comparison was paired and counterbalanced within participants, with task wording, target data, and starting states held constant. Wrong domain activations were six of eight under the contextual model and zero of eight under the fixed model on the retune task, and again on the recovery task. The fixed-role control model carried a cost of 2.30 seconds of median target browsing. These findings describe operator behaviour on a prototype against a fixed scenario fixture, not radio performance, real-world calling accuracy, or outcomes at sea.\n\nSchone Airspace Group provides an example where requested mode and reported mode had to remain distinct. In Mission Control, a command branch with a healthy link sent a request, received an acknowledgement three seconds later while the aircraft was still reporting its previous flight mode, and received fresh telemetry reporting the requested mode three seconds after that. The interface rule was that the shown mode was the mode the aircraft reported, never the mode the operator requested. The product was built and is in test, not deployed or in operational use.\n\nStreetec GmbH and kntrl 2 provide an example of deliberately separating two change models in one interface. Manual adjustments execute immediately. Preset edits require explicit saving. Switching modes while the vehicle is moving requires confirmation. The distinction prevents users from treating a saved-change context and an immediate-change context as the same mode of operation.\n\nAIT, a European manufacturer of residential and commercial heat pumps, provides a designed status model for queued modes. Heating, cooling, domestic hot water, pool, photovoltaics, and ventilation were operating modes, with ventilation not yet supported at the time. Only one heat-generating mode runs at a time, while photovoltaics and ventilation can run alongside one. A requested heat-generating mode may therefore be queued behind another. The designed widget status indicators distinguished in focus, mode active, and mode queued.\n\nA European industrial automation vendor whose process control software coordinates machining cells provides an audit example. Each cell element could be set automatic or manual independently, determining whether the system assigned it work. An operator leaving a shift had to set modes correctly for unattended running. Creative Navy's review found that a storage tile combined a green transporting header band with a solid red selected icon, while the only other selection cue was a near-imperceptible border change. Four states were encoded by header colour alone at approximately 10px with no legend. The product is in development.\n\nA European manufacturer of uncrewed systems, including one-way effectors, and the tactical command-and-control software that operates them provides a safety-engineering example where requested state must not visually replace confirmed state before the vehicle reports the result. Armament state was specified as five explicit values: safe, armed, change pending, unavailable, and unknown. Armament state was its own axis and not a mode. The handheld interface was built; nothing was measured.\n\nA European vendor of maritime traffic monitoring, inland navigation and communications software for port authorities, coastal administrations and waterway operators provides an example where a mode was visible and still missed. In the replay condition, the historical indicator sat inside the time controls and lost salience as the operator inspected detail. The selected prototype model marked the entire relevant workspace as historical, showed recording time, coverage, and gaps, made linked inspectors inherit the same time context, and made Return to Live a deliberate action. In Creative Navy-measured controlled prototype testing with eight participants using sanitised training scenarios, correct initial replay recognition was five of eight in the legacy condition and eight of eight in the prototype. Six of the eight participants had earlier programme exposure, and the result has no significance test or confidence interval."
     },
     {
-      "heading": "Reported outcomes and regulatory scope in the deSoutter engagement",
-      "bodyMarkdown": "Eight surgeons participating in structured review sessions reported two changes compared with the legacy interface: device state could be verified during brief glances without reading, and speed and parameter adjustments no longer interrupted surgical workflow. These are surgeon-reported outcomes from participants in the design engagement, not post-deployment operational measurements.\n\nOne participant described the redesigned interface as something they would not need to worry about because it worked the way the task required. This is participant-reported feedback from the engagement and should not be treated as independent operational evidence.\n\nThe engagement produced a documented usability engineering trail structured to support IEC 62366-1 verification and validation activities. Summative validation, the formal testing that closes the regulatory loop, was the manufacturer's responsibility and was not in scope for the engagement. Creative Navy does not claim IEC 62366-1 compliance as a deliverable for this work.\n\nCommercial teams reported that the device could be presented to surgical customers without the interface requiring explanation or excuse. This is a client-reported positioning outcome, not an independently verified commercial measurement."
-    },
-    {
-      "heading": "Layout stability connects mode-change clarity to spatial memory burden",
-      "bodyMarkdown": "Creative Navy's Critical Systems Design method treats layout stability as directly connected to mode-change clarity in high-consequence environments. Consistent layout across view states and mode changes helps prevent spatial memory disruption from becoming a separate source of mode error.\n\nThe Kardion MCS Controller engagement is cited as a related example of the design cost of layout stability. That engagement required 34 iterations on the standard view to resolve a contradictory constraint set without introducing layout instability across view transitions. In this failure pattern, the relevance is not the device category but the shared requirement: critical state information must remain orientable across transitions."
-    },
-    {
-      "heading": "Boundaries and limits",
-      "bodyMarkdown": "Mode-change clarity does not cover every state visibility problem. A system may fail because users cannot see the current state at all, because critical status information is buried, because warnings are visible but unclear, or because transitions are hard to notice. Mode-change clarity specifically concerns the event where one mode becomes another and the user's mental model fails to update.\n\nThe deSoutter example is a documented engagement example, not a general proof that the same design standard produces the same outcome in every medical device interface. The surgeon-reported findings are tied to structured review sessions with eight orthopaedic and trauma surgeons familiar with ultrasonic and powered tools.\n\nThe commercial positioning outcome in the deSoutter example is client-reported and not independently verified. The regulatory scope is also limited: the engagement supported the manufacturer's usability engineering trail, but summative validation remained outside Creative Navy's scope."
+      "heading": "Mode-change clarity has specific boundaries",
+      "bodyMarkdown": "Mode-change clarity does not mean every mode change needs a confirmation step. Confirmation is appropriate when the consequence profile justifies it. Confirmation is harmful when it adds cognitive load without protecting against the mode error likely in the operating scenario.\n\nMode-change clarity does not mean colour cannot be used. The failure occurs when colour is the primary or only state channel for a critical mode distinction. Colour can be one redundant cue when spatial position and icon form also communicate the state independently.\n\nMode-change clarity does not replace general state visibility. A system still needs current state to be available at the surface. This page covers the narrower event-level failure: the transition itself is not perceptible enough to update the user's mental model.\n\nThe engagement evidence has different strengths and must not be blended. The deSoutter Medical / Zethon outcomes are surgeon-reported from structured review sessions and not post-deployment operational measurement. Raymarine and maritime VTS figures are controlled prototype findings, not field outcomes. AIT decisions describe what was designed, not measured results. The industrial example is an audit finding for a product in development. The handheld C2 work was specified and built, with no measured result stated."
     }
   ],
   "evidenceSummary": {
     "strongClaims": [
-      "A mode error occurs when a user acts correctly for one system state and incorrectly for another because the interface failed to update the user's mental model after the actual state changed.",
-      "Mode-change clarity is distinct from general state visibility and from layout instability across view states, although the failures can co-occur.",
-      "Three described mechanisms for mode-change clarity failure are insufficient visual differentiation, no perceptible transition event, and incorrectly calibrated confirmation steps.",
-      "The deSoutter Medical / Zethon example involved a powered ultrasonic bone cutter used in orthopaedic and trauma surgery, operating from approximately 200 rpm to approximately 85,000 rpm.",
-      "Eight orthopaedic and trauma surgeons familiar with ultrasonic and powered tools reviewed the legacy interface in structured sessions, and the documented failure patterns were consistent across the group.",
-      "Creative Navy reviewed 12 human factors studies and ergonomics papers and conducted 13 structured sessions with the same eight surgeons to derive perceptibility requirements.",
-      "Benchmarking of six comparable surgical devices found recurring reliance on colour as the primary state indicator, and none combined spatial position, icon form, and colour as simultaneous independent cues for the same state change.",
-      "The deSoutter engagement produced a documented usability engineering trail structured to support IEC 62366-1 verification and validation activities, while summative validation remained the manufacturer's responsibility and was not in scope.",
-      "The Kardion MCS Controller engagement required 34 iterations on the standard view to resolve a contradictory constraint set without introducing layout instability across view transitions."
+      "A mode error occurs when the user takes an action that is correct for one system state and incorrect for another without knowing which state they are in.",
+      "Mode-change clarity is distinct from general state visibility because a system can display the current mode clearly and still fail to communicate the transition into that mode.",
+      "Mode-change clarity is distinct from spatial memory burden, although mode changes that reorganise the interface can create layout instability.",
+      "Common mode-change clarity mechanisms include insufficient visual differentiation, no perceptible transition event, and incorrectly calibrated confirmation steps.",
+      "The Raymarine prototype comparison recorded wrong domain activations of six of eight under the contextual model and zero of eight under the fixed model, with a 2.30 second median target-browsing cost, under prototype and fixed-scenario conditions.",
+      "The maritime VTS prototype comparison recorded correct initial replay recognition of five of eight in the legacy condition and eight of eight in the prototype under controlled conditions.",
+      "Creative Navy does not claim IEC 62366-1 compliance as a deliverable for the deSoutter Medical / Zethon engagement, and summative validation was the manufacturer's responsibility."
     ],
     "weakerClaims": [
-      "Eight surgeons reported that device state could be verified during brief glances without reading and that speed and parameter adjustments no longer interrupted surgical workflow."
+      "In the deSoutter Medical / Zethon engagement, eight orthopaedic and trauma surgeons reviewed the legacy interface in structured sessions, and the failure patterns were consistent across the participant group.",
+      "In the deSoutter Medical / Zethon engagement, 12 human factors studies and ergonomics papers and 13 structured sessions with the same eight surgeons informed the operational model for mode-change clarity."
     ],
     "limitations": [
-      "The deSoutter example is engagement evidence, not post-deployment operational measurement.",
-      "Surgeon-reported outcomes from the deSoutter engagement are attributed to participants in structured review sessions and are not independently verified in the page evidence.",
-      "The commercial positioning outcome is client-reported and not independently verified.",
-      "Creative Navy does not claim IEC 62366-1 compliance as a deliverable for the deSoutter engagement; summative validation was outside scope and remained the manufacturer's responsibility.",
-      "The page describes a transition-specific failure and does not cover all state visibility failures or all layout instability failures."
+      "The deSoutter Medical / Zethon surgeon feedback is surgeon-reported from participants in the design engagement, not post-deployment operational measurement.",
+      "The deSoutter Medical / Zethon commercial consequence is client-reported and not independently verified.",
+      "Creative Navy does not claim IEC 62366-1 compliance as a deliverable for the deSoutter Medical / Zethon engagement; summative validation was the manufacturer's responsibility and was not in scope.",
+      "Raymarine findings describe operator behaviour on a prototype against a fixed scenario fixture and are not a measure of radio performance, real-world calling accuracy, or outcomes at sea.",
+      "Maritime VTS recognition figures are Creative Navy-measured under controlled conditions with eight participants on a design prototype using sanitised training scenarios, with no significance test or confidence interval.",
+      "AIT material describes design decisions and must not be treated as measured outcome evidence.",
+      "The industrial material is an audit finding for a product in development, not a measured outcome.",
+      "The handheld C2 material describes a specified and built interface; nothing was measured and no further status is stated."
     ]
   },
   "relatedPageSlugs": [
     "users-cannot-see-what-state-the-system-is-in",
-    "transitions-are-hard-to-notice",
     "the-interface-demands-too-much-memory",
-    "warnings-are-visible-but-their-meaning-is-unclear",
+    "transitions-are-hard-to-notice",
     "errors-are-hard-to-notice",
-    "too-much-attention-is-required-for-routine-use",
-    "the-system-does-not-support-rapid-judgment",
+    "warnings-are-visible-but-their-meaning-is-unclear",
+    "raymarine-vhf",
+    "schone-mission-control",
+    "streetec-kntrl",
+    "ait-heat-pump-controller",
+    "tactical-handheld-command-and-control",
+    "maritime-vts",
     "kardion"
   ],
   "internalLinks": [
     {
-      "anchorText": "users being unable to see what state the system is in",
+      "anchorText": "users cannot see what state the system is in",
       "targetSlug": "users-cannot-see-what-state-the-system-is-in",
-      "reason": "The source explicitly distinguishes mode-change clarity from the broader state visibility failure."
+      "reason": "The source explicitly distinguishes unclear mode changes from the broader state visibility failure."
     },
     {
-      "anchorText": "transitions being hard to notice",
-      "targetSlug": "transitions-are-hard-to-notice",
-      "reason": "The page concerns the transition event and the allowed slug covers the adjacent transition-noticeability failure."
-    },
-    {
-      "anchorText": "the interface demanding too much memory",
+      "anchorText": "the interface demands too much memory",
       "targetSlug": "the-interface-demands-too-much-memory",
-      "reason": "The source explicitly distinguishes transition clarity from cumulative spatial memory burden."
+      "reason": "The source explicitly distinguishes transition-specific mode-change failure from accumulated spatial memory burden."
     },
     {
-      "anchorText": "warnings whose meaning is unclear",
-      "targetSlug": "warnings-are-visible-but-their-meaning-is-unclear",
-      "reason": "The deSoutter example includes warnings presented as text rather than instantly recognisable patterns."
+      "anchorText": "transitions that are hard to notice",
+      "targetSlug": "transitions-are-hard-to-notice",
+      "reason": "The failure concerns the perceptibility of transitions and this related failure page is in the allowed linking context."
     },
     {
       "anchorText": "errors that are hard to notice",
       "targetSlug": "errors-are-hard-to-notice",
-      "reason": "Mode errors may occur without uncertainty when the transition is not noticed."
+      "reason": "Mode errors can persist when the wrong action appears to work and the interface does not make the error visible."
     },
     {
-      "anchorText": "too much attention is required for routine use",
-      "targetSlug": "too-much-attention-is-required-for-routine-use",
-      "reason": "The page describes failures where reading labels or completing unnecessary confirmations demands attention under operational pressure."
+      "anchorText": "warnings whose meaning is unclear",
+      "targetSlug": "warnings-are-visible-but-their-meaning-is-unclear",
+      "reason": "The source describes warnings presented as text rather than instantly recognisable patterns."
     },
     {
-      "anchorText": "rapid judgment",
-      "targetSlug": "the-system-does-not-support-rapid-judgment",
-      "reason": "The deSoutter example depends on brief-glance state verification under divided attention."
+      "anchorText": "Raymarine fixed-mount VHF and AIS radio",
+      "targetSlug": "raymarine-vhf",
+      "reason": "The body discusses the Raymarine evidence and the matching allowed case-study slug is available."
     },
     {
-      "anchorText": "Kardion MCS Controller engagement",
+      "anchorText": "Schone Airspace Group Mission Control",
+      "targetSlug": "schone-mission-control",
+      "reason": "The body discusses the Schone flight-mode reporting evidence and the matching allowed case-study slug is available."
+    },
+    {
+      "anchorText": "Streetec kntrl 2",
+      "targetSlug": "streetec-kntrl",
+      "reason": "The body discusses Streetec GmbH and kntrl 2 and the matching allowed case-study slug is available."
+    },
+    {
+      "anchorText": "AIT heat pump controller",
+      "targetSlug": "ait-heat-pump-controller",
+      "reason": "The body discusses AIT mode queuing and the matching allowed case-study slug is available."
+    },
+    {
+      "anchorText": "tactical handheld command-and-control interface",
+      "targetSlug": "tactical-handheld-command-and-control",
+      "reason": "The body discusses the handheld C2 engagement and the matching allowed case-study slug is available."
+    },
+    {
+      "anchorText": "maritime VTS replay mode evidence",
+      "targetSlug": "maritime-vts",
+      "reason": "The body discusses maritime VTS replay recognition and the matching allowed case-study slug is available."
+    },
+    {
+      "anchorText": "Kardion MCS Controller",
       "targetSlug": "kardion",
-      "reason": "The source explicitly cites Kardion as a related example of the cost of maintaining layout stability across view transitions."
+      "reason": "The source references the Kardion MCS Controller engagement as evidence for layout stability across mode changes."
     }
   ],
   "tags": [
     "mode errors",
     "state visibility",
     "mode-change clarity",
-    "transition signalling",
-    "safety-critical UX",
-    "medical device UX",
-    "IEC 62366-1",
+    "transition visibility",
     "redundant cues",
-    "domain learning",
+    "confirmation calibration",
+    "safety-critical interfaces",
+    "IEC 62366-1",
     "Critical Systems Design"
   ],
   "_meta": {
     "sourcePath": "sources/articles/Failures/failures--state-visibility--mode-changes-are-unclear.md",
     "parentSlug": "state-visibility-failures",
     "childPageSlugs": [],
-    "generatedBy": "deterministic"
+    "generatedBy": "openai"
   }
 }

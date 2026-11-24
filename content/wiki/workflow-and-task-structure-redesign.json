@@ -1,46 +1,58 @@
 {
   "slug": "workflow-and-task-structure-redesign",
-  "title": "Workflow And Task Structure Redesign",
+  "title": "Workflow and Task Structure Redesign",
   "pageType": "capability",
   "category": "capabilities",
   "section": "Capabilities",
-  "summary": "Workflow and task structure redesign addresses the ordering, grouping, sequencing, and handoff structure of work in complex software. The documented evidence includes measured live-system outcomes, client-measured deployment outcomes, client-reported training and commercial outcomes, and Creative Navy-recorded task decomposition.",
+  "summary": "Creative Navy uses workflow and task structure redesign to investigate how work is actually done, decompose tasks before design decisions are made, and restructure interfaces around real operating sequences, handoffs, dependencies, and role-specific needs. The evidence includes field-measured, client-measured, client-reported, and design-only cases with different levels of confidence.",
   "keyFacts": [
     "Workflow analysis and task analysis investigate how work is actually done, not how it is supposed to be done.",
-    "Microtask analysis documents discrete user actions independently of assumed sequence or flow, revealing actual cognitive load structure.",
-    "Triopsis involved 47 microtasks mapped across 3 personas before design decisions were made.",
+    "Task structure and task sequence refer to the ordering and grouping of discrete actions within a workflow.",
+    "Microtask analysis documents discrete user actions independently of assumed sequence or flow to reveal cognitive load structure.",
+    "Triopsis mapped 47 microtasks across 3 personas before design decisions were made.",
     "Triopsis research included 43 user interviews, 21 participants, and 3 in-situ observation sessions under real operational pressure.",
-    "Triopsis live-system product analytics recorded 62% faster job discovery, 83% faster job sequence optimisation, and 58% faster weekly planning.",
     "Beissbarth calibration time changed from 18 to 12 minutes per vehicle, client-measured across 8 production deployment locations.",
-    "Gexcon documented 102 individual tasks across the full simulation workflow and reported time to first successful simulation changing from 4 days to 6 hours in real deployments.",
-    "MSolutions reduced a key diagnostic workflow from 26 interactions to approximately 13, client-reported from internal task walkthroughs and not independently measured.",
-    "WCO/IPM redesigned inspection and enforcement workflows used across 107 governments and recorded a client-reported 78% reduction in officer training costs based on reduced training hours.",
-    "Chemical Watch treated information consumption as workflow, preserving chronological regulatory news consumption as part of professional practice."
+    "MSolutions' key diagnostic workflow changed from 26 interactions to approximately 13, client-reported from internal task walkthroughs.",
+    "Gexcon documented 102 individual tasks across the full simulation workflow.",
+    "Topera was a concept design only; nothing has been built and no outcome is claimed.",
+    "Egma Order is live, but no post-launch measurement is stated."
   ],
   "bodySections": [
     {
-      "heading": "Summary",
-      "bodyMarkdown": "Creative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nWorkflow and task structure redesign is the redesign of the ordering, grouping, sequencing, and handoff structure of work in complex software. It is based on workflow analysis and task analysis: structured investigation of how work is actually done, not how it is supposed to be done.\n\nCreative Navy's documentation distinguishes task structure from a general screen-flow problem. Task structure concerns the specific ordering and grouping of discrete actions within a workflow. A workflow may be sequential, non-linear, multi-role, diagnostic, inspection-based, or part of recurring information consumption.\n\nMicrotask analysis is central to this capability where the work requires decomposition. In Creative Navy's documentation, microtask analysis means documenting discrete user actions independently of assumed sequence or flow, which reveals the actual cognitive load structure before interface decisions are made."
+      "heading": "Definition and Scope of Workflow and Task Structure Redesign",
+      "bodyMarkdown": "Creative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nWorkflow and task structure redesign is the structured analysis and redesign of task ordering, task grouping, handoff points, dependencies, role coordination, abnormal states, and non-linear work patterns within complex software workflows.\n\nCreative Navy's Critical Systems Design method uses workflow analysis, task analysis, and microtask analysis to expose where users need sequence, where users need random access, where roles diverge, where handoffs fail, and where abnormal workflow states are routine operating conditions rather than edge cases."
     },
     {
-      "heading": "When workflow and task structure redesign is needed",
-      "bodyMarkdown": "Workflow and task structure redesign is needed when an interface forces users to work through a sequence that does not match the operational sequence of the work. The mismatch may appear as excessive steps, misplaced screens, poor timing of information, unresolved dependencies, or handoff failures between roles.\n\nMulti-role workflows require particular attention because different roles can have incompatible mental models inside one system. In the Triopsis workforce management case, schedulers needed speed, batch actions, and team availability; operations managers needed exception scanning and a broader time horizon; field technicians needed task detail, safety compliance, and support for outdoor conditions.\n\nNon-linear workflows require different design treatment from idealised linear flows. In the Gexcon CFD simulation case, engineers moved between scenario setup, parameter configuration, visualisation, and validation in sequences that depended on what they found at each stage.\n\nAbnormal workflow states can be routine design targets rather than edge cases. In the Triopsis work, in-situ observation showed schedulers handling weather incidents, conflicting locations, overlapping jobs, and sudden crew shortages under real operational pressure."
+      "heading": "When Workflow and Task Structure Redesign Is Needed",
+      "bodyMarkdown": "Workflow and task structure redesign is needed when the interface sequence does not match the sequence of work. This can appear as a backend-module interface that does not match a diagnostic procedure, a wizard that hides prior decisions users must revise, or a dashboard that presents information before users have answered the questions that determine their next action.\n\nWorkflow and task structure redesign is needed in multi-role systems. In the Triopsis workforce management case, schedulers, operations managers, and field technicians had incompatible mental models inside one system. Schedulers needed speed, batch actions, and team availability. Operations managers needed exception scanning and a broader time horizon. Field technicians needed task detail, safety compliance, and support for outdoor conditions.\n\nWorkflow and task structure redesign is also needed when abnormal states are normal operating conditions. In Triopsis, in-situ observation showed schedulers handling weather incidents, conflicting locations, overlapping jobs, and sudden crew shortages. These conditions were treated as part of the real workflow that the interface had to support.\n\nWorkflow and task structure redesign is needed when expert work is non-linear. In the Gexcon CFD simulation case, engineers moved between scenario setup, parameter configuration, visualisation, and validation in sequences that depended on what they found at each stage. The workflow could not be represented as one fixed sequence."
     },
     {
-      "heading": "What Creative Navy redesigns in workflow and task structure",
-      "bodyMarkdown": "Creative Navy's Critical Systems Design method treats workflow as evidence when applying this capability. Existing workflows encode what the interface has been asked to do; analysing them reveals both failure modes and capabilities worth preserving.\n\nCreative Navy redesigns task sequence when the interface must communicate what action comes next. In the Beissbarth automotive calibration case, the key design decision was that the workflow is the interface: each screen in the workflow communicated exactly what the next action should be, rather than asking technicians to navigate to find functions.\n\nCreative Navy redesigns diagnostic workflows when the operational logic has a natural sequence that the interface has obscured. In the MSolutions AV diagnostic instruments case, the interface was redesigned around a diagnostic narrative: link integrity checks, EDID and HDCP verification, resolution and colour space validation per display, and consolidated confirmation.\n\nCreative Navy redesigns hierarchy-driven workflows when users cannot act until prerequisite questions are answered. In the Dancerace / Jacko invoice management portal, users needed to answer three questions in order: what do I owe, what is my cost, and what must I do now. That hierarchy of needs determined the returning user dashboard structure.\n\nCreative Navy also treats information consumption as workflow where the act of staying current is itself professional work. In the Chemical Watch case, compliance professionals consumed regulatory news chronologically as part of staying current; breaking chronological order created anxiety about whether obligations had been covered."
+      "heading": "How Creative Navy Analyses Workflow and Task Structure",
+      "bodyMarkdown": "Creative Navy treats existing workflows as evidence. Existing workflows encode what an interface has been asked to do, including failure modes, hidden dependencies, workarounds, and capabilities worth preserving. Analysing the workflow before redesign makes the operating structure visible before screens, navigation, or visual hierarchy are settled.\n\nMicrotask analysis decomposes work into discrete user actions independently of an assumed screen flow. In Triopsis, 47 microtasks were mapped across 3 personas before design decisions were made. For each microtask, Creative Navy recorded when it was performed, ease of discovery, ease of understanding, user needs, issues, opportunities, desired outcome, pain points, patterns, frequency, cognitive load, and dependencies.\n\nTask analysis can also be used for complex expert workflows. In Gexcon, 102 individual tasks were documented across the full simulation workflow, including goals, frequency, difficulty, actions, and hierarchy of needs within sequences. The redesign then created explicit requirements for significant interactions, including purpose, constraints, dependencies, expected behaviour, values that had to remain visible during scenario setup, warning placement, and system response to incomplete input."
     },
     {
-      "heading": "What the capability produces",
-      "bodyMarkdown": "Workflow and task structure redesign produces a documented understanding of tasks, dependencies, role-specific needs, handoff points, and points of cognitive load. The output is not only a revised screen sequence; it is a clearer operating structure for the product.\n\nIn the Triopsis workforce management case, 47 microtasks were mapped across 3 personas before any design decisions were made. For each microtask, the documented attributes included when it was performed, ease of discovery, ease of understanding, what the user needed, issues, opportunities, desired outcome, pain points, patterns, frequency, cognitive load, and dependencies.\n\nIn the Gexcon CFD simulation case, 102 individual tasks were documented across the full simulation workflow. The documentation covered goals, frequency, difficulty, actions, and the hierarchy of needs within sequences.\n\nWorkflow and task structure redesign can also produce explicit requirements for significant interactions. In the Gexcon case, the redesign specified purpose, constraints, dependencies, and expected behaviour, including what values had to remain visible during scenario setup, where warnings were needed, and how the system should respond to incomplete input.\n\nWorkflow compression is one output when the same operational capability can be preserved with fewer steps, interactions, or screens. In Creative Navy's documentation, workflow compression means reducing the number of steps, interactions, or screens required to complete a task without reducing capability."
+      "heading": "What Workflow and Task Structure Redesign Produces",
+      "bodyMarkdown": "Workflow and task structure redesign produces task sequences that reflect real work order. In Beissbarth automotive calibration, the workflow had to support a sequential and timing-sensitive procedure while technicians moved around the vehicle with tools in hand and depended on unambiguous feedback from three distinct interfaces. The design decision was that the workflow is the interface: each screen communicates the next action rather than asking the technician to navigate to find functions.\n\nWorkflow and task structure redesign produces role-specific visibility where one system serves different operational contexts. In Triopsis, microtask decomposition showed that improving one role's workflow created blind spots for another role. This was a structural organisational tension made visible through task decomposition, not a simple design error.\n\nWorkflow and task structure redesign produces dependency-aware structures. In Topera, a concept design for a cross-organisational project management platform grounded in the DIN 69901 series, project definition was designed as a single long working page rather than a wizard. The design included left navigation with per-area completion state, a central working column, and a right panel carrying settings, recommendations, and contextual validation.\n\nWorkflow and task structure redesign can also produce explicit gates. In Topera, the transition out of the DIN 69901-2 Definition phase was designed as a phase clearance checklist enumerating each area and its state, identifying incomplete and blocked items, and providing a submission action for review and clearance into the DIN 69901-2 Planning phase."
     },
     {
-      "heading": "Evidence basis across documented workflow redesign cases",
-      "bodyMarkdown": "The Triopsis workforce management case provides the strongest measured evidence for multi-role workflow redesign in this capability. The work covered three roles with incompatible mental models, 47 microtasks across 3 personas, 43 user interviews, 21 participants, and 3 in-situ observation sessions. Product analytics from real users in the live system recorded 62% faster job discovery, 83% faster job sequence optimisation, and 58% faster weekly planning.\n\nTriopsis also shows why workflow redesign cannot optimise one role in isolation. The microtask analysis found that improving one role's workflow created blind spots for another. Creative Navy's documentation describes this as a structural tension in the organisation made visible through task decomposition, not a design error to be corrected.\n\nThe Beissbarth automotive calibration case provides client-measured evidence for sequential, timing-sensitive workflow redesign. Calibration workflows required technicians to move around the vehicle with tools in hand while depending on unambiguous feedback from three distinct interfaces. Calibration time changed from 18 to 12 minutes per vehicle, client-measured across 8 production deployment locations. Beissbarth also reported that it now deploys without onboarding training.\n\nThe MSolutions AV diagnostic instruments case provides evidence for redesigning a tool collection into a diagnostic narrative. The previous design organised screens by backend modules, and two prior redesigns had addressed the visual layer without resolving that structural mismatch. The key diagnostic workflow changed from 26 interactions to approximately 13, client-reported from internal task walkthroughs and not independently measured. Training changed from repeated coaching sessions to a short guided introduction, client-observed. Large integrator customers formally reported smoother rollouts.\n\nThe Gexcon CFD simulation case provides measured evidence for complex expert workflow redesign. Gexcon measured time to first successful simulation changing from 4 days to 6 hours in real deployments. Configuration errors changed from 5–8 to 1–2 per simulation, and corrective load per error changed from 4–6 hours to approximately 20 minutes.\n\nThe WCO/IPM case provides evidence for inspection and enforcement workflows across 107 governments. The workflow analysis covered three user groups with distinct workflow types: officers performing time-pressured inspection against alerts, analysts performing pattern analysis and case building, and rights holders filing and monitoring. The information architecture was rebuilt around real inspection and case management flows rather than internal system structures. Officer training costs reduced by 78%, client-reported and based on reduced training hours.\n\nThe Dancerace / Jacko case provides evidence for hierarchy-driven workflow architecture in a three-party invoice management portal connecting financier, supplier, and debtor. The returning user dashboard was redesigned to answer the user's three priority questions before surfacing other content. Demo-to-paying conversion was 36% compared with a 15–20% industry benchmark, client-reported and measured over 6 months post-launch.\n\nThe Chemical Watch case provides evidence for treating information consumption as workflow. User research found that compliance professionals consumed regulatory news chronologically as a professional practice of staying current. The lens-view was redesigned as a persistent, named, configured workspace that users returned to as part of their regular workflow. Subscription price tripled following the platform launch, client-reported as a direct outcome."
+      "heading": "Workflow Redesign in Multi-Role and Operational-Pressure Systems",
+      "bodyMarkdown": "The Triopsis workforce management case shows workflow redesign in a multi-role operational system. Creative Navy mapped 47 microtasks across schedulers, operations managers, and field technicians, supported by 43 user interviews, 21 participants, and 3 in-situ observation sessions under real operational pressure. The in-situ observation revealed behaviour under pressure that interview self-report did not surface.\n\nThe Triopsis field technician compliance component surfaced required steps at the right moment in the workflow, highlighted dependencies, and showed safety requirements without overloading technicians working outdoors under time pressure."
     },
     {
-      "heading": "Boundaries and evidence limits",
-      "bodyMarkdown": "Workflow and task structure redesign does not mean making every workflow shorter. It can mean preserving a sequence, changing a hierarchy, surfacing dependencies at the right moment, or making abnormal states visible as routine design targets. Workflow compression applies only where steps, interactions, or screens can be reduced without reducing capability.\n\nThe documented evidence has different strengths across cases. Triopsis outcomes were measured in product analytics from real users in the live system. Beissbarth calibration time was client-measured across production deployment locations. Gexcon outcomes were measured by Gexcon in real deployments. MSolutions interaction reduction was client-reported from internal task walkthroughs and not independently measured. WCO/IPM, Dancerace / Jacko, and Chemical Watch include client-reported outcomes.\n\nClient-reported commercial and training outcomes are not the same evidence category as live-system analytics or production deployment measurement. The Dancerace / Jacko conversion result and the Chemical Watch subscription price result are reported as direct outcomes, but the available documentation identifies them as client-reported.\n\nThe Triopsis case also shows a design boundary: a workflow improvement for one role can create a blind spot for another role. In multi-role systems, Creative Navy's Critical Systems Design method therefore treats cross-role coordination and handoff points as structural design questions, not only as interface efficiency questions."
+      "heading": "Workflow Redesign in Sequential, Diagnostic, and Expert Systems",
+      "bodyMarkdown": "The Beissbarth automotive calibration case shows workflow redesign in a sequential, timing-sensitive, multi-device procedure. Technicians moved around the vehicle with tools in hand and relied on unambiguous feedback from three distinct interfaces. The workflow had to support the calibration procedure as a coherent sequence that did not pause for interface interpretation.\n\nThe MSolutions AV diagnostic instruments case shows workflow redesign as diagnostic narrative. The previous design organised screens by backend modules, and two prior redesigns had addressed the visual layer without correcting that structural mismatch. The audit named the mismatch, and the workflow redesign followed the diagnostic sequence rather than the backend structure.\n\nThe Gexcon CFD simulation case shows workflow redesign in a complex expert workflow. The workflow was non-linear: engineers moved between scenario setup, parameter configuration, visualisation, and validation depending on what they discovered at each stage."
+    },
+    {
+      "heading": "Workflow Redesign in Inspection, Information-Consumption, and Financial Workflows",
+      "bodyMarkdown": "The WCO/IPM case involved inspection and enforcement workflows across 107 governments. Three user groups had distinct workflow types: officers performed time-pressured inspection against alerts, analysts performed pattern analysis and case building, and rights holders filed and monitored cases. The workflow analysis rebuilt the information architecture around real inspection and case management flows rather than internal system structures.\n\nWCO/IPM applied cognitive design principles to workflow: recognition over recall, reduced choices per screen, progressive disclosure, and contextual micro-hints on first use of complex actions. The case records that parallel spreadsheets and email chains disappeared when the platform workflows were redesigned to support what people were actually doing.\n\nChemical Watch shows information consumption as workflow. User research found that compliance professionals consume regulatory news chronologically as a professional practice of staying current. Breaking chronological order created anxiety about whether obligations had been covered. The lens view was redesigned as a workspace: a persistent, named, configured view that users returned to as part of their regular workflow.\n\nThe Dancerace / Jacko invoice management portal connected financier, supplier, and debtor workflows. Research found a strict internal priority order: users needed to answer what they owed, what their cost was, and what tasks they had to do immediately before they could act on anything else. That hierarchy of needs determined the workflow architecture."
+    },
+    {
+      "heading": "Workflow Redesign in Assembly Planning, Project Definition, B2B Ordering, and Industrial Automation",
+      "bodyMarkdown": "Assemblio shows task structure design for the middle use case in assembly work. Assemblio GmbH and both products, the Assemblio Composer and the Assemblio Smart Viewer, may be named. The three use cases were client-stated: a trainee following every step, an experienced worker looking up the one thing that is different about a product, and an experienced worker reading the whole plan once before starting and never returning.\n\nThe Assemblio design response included a flattened parts list with quantities refined into two tabs: parts needed for the current step and the full hierarchy. Player controls included play, step forward and back, scrub, reset, and loop-a-single-step for the training case. Keyboard shortcuts were presented as a bottom overlay drawer rather than a modal so they could be consulted without leaving the step. Assemblio's workflow inversion, where the planner takes the finished 3D model apart and the software plays that disassembly backwards as the assembly sequence, is Assemblio's method, not Creative Navy's method.\n\nTopera was a concept design for a cross-organisational project management platform grounded in the DIN 69901 series. The project tree was designed to carry four item types out of one polymorphic entity. The Gantt information columns were designed to be configurable through an explicit configure control so the same timeline could carry different supporting columns for different readers.\n\nEgma Order, Egma's B2B lens ordering platform, shows workflow sequencing as an alternative to both hiding and explaining. A multi-step wizard on separate screens was considered and rejected because every choice limited the next and users needed to see and revise prior selections without leaving the screen. The form instead showed a summary of completed steps on the same screen, with jump-back-to-edit on any of them.\n\nEgma's resequencing of Fitting & Edging was Egma's decision. Fitting & Edging moved out of optional inputs to sit late in the flow, immediately before shipping. The reasoning was that users should acknowledge that the product exists before choosing the shape that can make it incompatible, and that diameter could not be filtered by the chosen shape early in the flow and then left editable later without defeating the filtering.\n\nIn a European industrial automation engagement, the process control software coordinates machining cells. The work designed a collapsible workflow tree for workflows running to roughly a hundred operations, grouped property sections for parts carrying up to roughly fifty properties, an NC program version table, an operator instructions layer, and task structures around physical objects such as structured and unstructured trolleys."
+    },
+    {
+      "heading": "Boundaries for Interpreting Workflow Redesign Evidence",
+      "bodyMarkdown": "Workflow and task structure redesign does not imply that every engagement has measured outcomes. Some cases contain measured or client-measured production evidence, some contain client-reported evidence, and some are design-only cases that do not support post-launch performance claims.\n\nAssemblio's three use cases and shop-floor conditions are client-stated, not observed. Assemblio's workflow inversion is credited to Assemblio, not to Creative Navy, and no time-saving, error-rate, training, or adoption figure is claimed.\n\nTopera was a concept design only. Nothing has been built, no product has been deployed, and no user outcome is claimed. The Topera work must be described as designed to support the DIN 69901-2 Definition phase and the DIN 69901-2 Planning phase, not as an implemented system.\n\nEgma Order is live, but no post-launch measurement is stated. Egma's Fitting & Edging resequencing is credited to Egma, not to Creative Navy.\n\nThe industrial automation engagement is in development, not shipped. Its described responses are design responses and must not be treated as evidence of operational results."
     },
     {
       "heading": "What this produces",
@@ -49,101 +61,120 @@
   ],
   "evidenceSummary": {
     "strongClaims": [
-      "Triopsis mapped 47 microtasks across 3 personas, used 43 user interviews, 21 participants, and 3 in-situ observation sessions, and recorded 62% faster job discovery, 83% faster job sequence optimisation, and 58% faster weekly planning in live-system product analytics.",
-      "Gexcon documented 102 individual tasks and measured time to first successful simulation changing from 4 days to 6 hours in real deployments, with configuration errors and corrective load also reduced."
+      "Workflow analysis and task analysis investigate how work is actually done, not how it is supposed to be done.",
+      "Triopsis mapped 47 microtasks across 3 personas and produced field-measured improvements of 62% faster job discovery, 83% faster job sequence optimisation, and 58% faster weekly planning in live product analytics.",
+      "Beissbarth calibration time changed from 18 to 12 minutes per vehicle, client-measured across 8 production deployment locations.",
+      "Gexcon documented 102 individual tasks, and Gexcon measured real-deployment changes from 4 days to 6 hours for time to first successful simulation, 5–8 to 1–2 configuration errors per simulation, and 4–6 hours to approximately 20 minutes corrective load per error."
     ],
     "weakerClaims": [
-      "Workflow and task structure redesign investigates how work is actually done and changes the ordering and grouping of discrete actions within a workflow.",
-      "Microtask analysis documents discrete user actions independently of assumed sequence or flow and reveals actual cognitive load structure.",
-      "Beissbarth calibration time changed from 18 to 12 minutes per vehicle across 8 production deployment locations, and Beissbarth reported deployment without onboarding training.",
-      "MSolutions reduced a key diagnostic workflow from 26 interactions to approximately 13, with the basis limited to client-reported internal task walkthroughs.",
-      "WCO/IPM workflow redesign covered inspection and enforcement workflows across 107 governments and recorded a 78% reduction in officer training costs based on reduced training hours.",
-      "Dancerace / Jacko used a hierarchy of needs to drive workflow architecture and recorded 36% demo-to-paying conversion versus a 15–20% industry benchmark over 6 months post-launch.",
-      "Chemical Watch treated regulatory news consumption as workflow and reported that subscription price tripled following the platform launch."
+      "MSolutions reported that the key diagnostic workflow changed from 26 interactions to approximately 13 after the workflow was restructured around a diagnostic narrative; the figure came from internal task walkthroughs and was not independently measured.",
+      "WCO/IPM rebuilt information architecture around inspection and case management workflows and reported a 78% reduction in officer training costs based on reduced training hours; this is client-reported evidence.",
+      "Assemblio's workflow inversion, in which the planner takes the finished 3D model apart and the software plays the disassembly backwards as the assembly sequence, is Assemblio's method and was not designed by Creative Navy.",
+      "Topera was a concept design grounded in the DIN 69901 series; nothing has been built and no outcome is claimed.",
+      "Egma Order rejected a separate-screen wizard because users needed to see and revise prior selections on the same screen, and Egma's Fitting & Edging resequencing is credited to Egma."
     ],
     "limitations": [
-      "Evidence strength differs by case: some outcomes are live-system product analytics or client-measured deployment data, while others are client-reported or client-observed.",
-      "The MSolutions interaction reduction is approximate and based on internal task walkthroughs, not independent measurement.",
-      "Client-reported commercial outcomes, including Dancerace / Jacko conversion and Chemical Watch subscription price, are not independently verified in the available documentation.",
-      "Workflow compression is bounded by preserving capability; reducing steps is not presented as appropriate where it would remove required function or context.",
-      "Multi-role workflow redesign can expose structural tensions between roles rather than a single correct workflow sequence."
+      "Some outcomes are field-measured or client-measured, while others are client-reported and not independently verified.",
+      "MSolutions' interaction reduction is approximate and client-reported from internal task walkthroughs, not independently measured.",
+      "Assemblio's use cases and shop-floor conditions are client-stated, not observed, and no performance metrics are claimed.",
+      "Topera was concept design only; no system was built, no deployment occurred, and no outcome is claimed.",
+      "Egma Order is live, but no post-launch measurement is stated.",
+      "The industrial automation engagement is in development, not shipped, so the described work must not be treated as operational evidence."
     ]
   },
   "relatedPageSlugs": [
-    "triopsis-workforce-management-saas",
-    "beissbarth",
-    "service-design-for-multi-role-systems",
     "cognitive-load-reduction",
+    "service-design-for-multi-role-systems",
     "design-for-abnormal-and-degraded-scenarios",
     "information-architecture-for-expert-systems",
     "state-and-status-visibility-design",
+    "research-in-complex-operational-contexts",
     "error-reduction-and-recovery-design",
-    "research-in-complex-operational-contexts"
+    "triopsis-workforce-management-saas",
+    "beissbarth",
+    "assemblio",
+    "topera",
+    "egma"
   ],
   "internalLinks": [
     {
-      "anchorText": "Triopsis workforce management",
-      "targetSlug": "triopsis-workforce-management-saas",
-      "reason": "Triopsis is a documented example with the strongest measured multi-role workflow outcomes for this capability."
-    },
-    {
-      "anchorText": "Beissbarth automotive calibration",
-      "targetSlug": "beissbarth",
-      "reason": "Beissbarth is a documented example of sequential, timing-sensitive workflow redesign."
+      "anchorText": "cognitive load reduction",
+      "targetSlug": "cognitive-load-reduction",
+      "reason": "Workflow decomposition and microtask analysis are used to reveal and reduce avoidable cognitive load."
     },
     {
       "anchorText": "service design for multi-role systems",
       "targetSlug": "service-design-for-multi-role-systems",
-      "reason": "The capability frequently addresses workflows spanning several user roles."
-    },
-    {
-      "anchorText": "cognitive load reduction",
-      "targetSlug": "cognitive-load-reduction",
-      "reason": "Microtask analysis records cognitive load and dependencies before design decisions are made."
+      "reason": "The capability addresses cross-role coordination, handoff points, and incompatible role-specific mental models."
     },
     {
       "anchorText": "design for abnormal and degraded scenarios",
       "targetSlug": "design-for-abnormal-and-degraded-scenarios",
-      "reason": "The capability treats interruptions, partial completions, sensor faults, and similar conditions as normal operational states."
+      "reason": "The source frames abnormal workflow states as routine design targets rather than edge cases."
     },
     {
       "anchorText": "information architecture for expert systems",
       "targetSlug": "information-architecture-for-expert-systems",
-      "reason": "Workflow redesign often requires information architecture changes when system structure does not match expert work."
+      "reason": "Several examples restructure navigation and information architecture around expert workflow rather than internal system structure."
     },
     {
       "anchorText": "state and status visibility design",
       "targetSlug": "state-and-status-visibility-design",
-      "reason": "Workflow redesign depends on making task state, dependencies, and status visible at the right point in the sequence."
-    },
-    {
-      "anchorText": "error reduction and recovery design",
-      "targetSlug": "error-reduction-and-recovery-design",
-      "reason": "Task structure and workflow sequencing are linked to configuration error reduction and recovery effort."
+      "reason": "The capability includes making completion state, blockers, dependencies, versions, and required actions visible within workflows."
     },
     {
       "anchorText": "research in complex operational contexts",
       "targetSlug": "research-in-complex-operational-contexts",
-      "reason": "The capability relies on observing how work is done under real operational conditions, not only on interview self-report."
+      "reason": "Triopsis used in-situ observation under real operational pressure to reveal behaviour not captured by interview self-report."
+    },
+    {
+      "anchorText": "error reduction and recovery design",
+      "targetSlug": "error-reduction-and-recovery-design",
+      "reason": "Gexcon evidence includes reduced configuration errors and corrective load per error."
+    },
+    {
+      "anchorText": "Triopsis workforce management",
+      "targetSlug": "triopsis-workforce-management-saas",
+      "reason": "Triopsis is the strongest measured example for multi-role workflow and microtask analysis in the page."
+    },
+    {
+      "anchorText": "Beissbarth automotive calibration",
+      "targetSlug": "beissbarth",
+      "reason": "Beissbarth is the page's example of sequential, timing-sensitive, multi-device workflow redesign."
+    },
+    {
+      "anchorText": "Assemblio",
+      "targetSlug": "assemblio",
+      "reason": "Assemblio illustrates middle-use-case workflow design and the client-owned workflow inversion."
+    },
+    {
+      "anchorText": "Topera",
+      "targetSlug": "topera",
+      "reason": "Topera illustrates concept-design workflow gating for the DIN 69901-2 Definition phase."
+    },
+    {
+      "anchorText": "Egma Order",
+      "targetSlug": "egma",
+      "reason": "Egma Order illustrates the rejection of a separate-screen wizard and sequencing as a design answer."
     }
   ],
   "tags": [
     "workflow analysis",
     "task analysis",
+    "task sequence",
     "microtask analysis",
     "multi-role workflow",
-    "cross-role coordination",
-    "handoff point",
+    "handoff points",
     "non-linear workflow",
     "workflow compression",
     "cognitive load",
-    "task sequence"
+    "operational workflows"
   ],
   "_meta": {
     "sourcePath": "sources/articles/Capabilities/capabilities--workflow-and-task-structure-redesign.md",
     "parentSlug": "capabilities",
     "childPageSlugs": [],
-    "generatedBy": "deterministic",
+    "generatedBy": "openai",
     "patches": [
       "capability-deliverables"
     ]

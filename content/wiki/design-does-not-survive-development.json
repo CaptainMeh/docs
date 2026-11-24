@@ -4,131 +4,159 @@
   "pageType": "situation",
   "category": "situations",
   "section": "Delivery And Execution",
-  "summary": "Design does not survive development when implementation diverges from design intent, or when a technically correct implementation fails to produce the intended operational outcome. Creative Navy describes three structural expressions: velocity erosion, translation loss, and the production gap.",
+  "summary": "This page defines design not surviving development as a delivery failure in which design artefacts are present but design understanding does not carry into implementation, growth, or production use. It distinguishes velocity erosion, translation loss, and production gap, and records evidence limits from documented engagements.",
   "keyFacts": [
-    "The situation is described as a gap between what was designed and what was built, inconsistent behaviour in production, and repeated reintroduction of earlier design decisions.",
-    "Creative Navy identifies three structural expressions: velocity erosion, translation loss, and the production gap.",
-    "Velocity erosion occurs when development output outpaces design coverage and developers make local decisions under time pressure.",
-    "Translation loss occurs when specifications are complete but do not carry the reasoning needed to adapt design intent under implementation constraints.",
-    "The production gap occurs when implementation matches the design but users do not adopt the designed flows because the design did not reflect operational reality.",
-    "In the Bofin example, a 50-person engineering team was moving across modules including onboarding, identity verification, account aggregation, and transaction initiation.",
-    "In the Triopsis example, a 9-month redesign produced 68 components and 200+ documented states, followed by 2 years of implementation partnership.",
-    "Triopsis product analytics recorded 62% faster job discovery, 83% faster sequence optimisation, and 58% faster weekly planning.",
-    "In the WCO/IPM example, usability testing involved 47 participants from Italy, Romania, Uzbekistan, Algeria, and Spain.",
-    "Creative Navy links this situation to Organizational Integration, Implementation Partnership, and progressive specification within Creative Navy's Critical Systems Design method."
+    "Design not surviving development is described as a gap between what was designed and what was built, or between specified behaviour and production behaviour.",
+    "The underlying structural cause is that design work has produced artefacts without producing transferable understanding.",
+    "Velocity erosion occurs when development outpaces design coverage and developers make local interface decisions under time pressure.",
+    "Translation loss occurs when design artefacts specify what to build but do not carry the reasoning needed to adapt under constraints.",
+    "The production gap occurs when implementation matches the specification but users avoid, underuse, or work around the system in real conditions.",
+    "Bofin is used as an example of velocity erosion in a 50-plus developer environment subject to PSD2 and SCA constraints.",
+    "Triopsis is used as an example of accumulated inconsistency over years of development without a central UX framework, with product analytics showing 62% faster job discovery, 83% faster sequence optimisation, and 58% faster weekly planning after redesign.",
+    "WCO/IPM is used as an example of production gap, with parallel spreadsheets and email chains acting as diagnostic workaround evidence.",
+    "Schone Airspace Group is presented as the fullest documented mechanism for making design survive development, with all 54 delivered screens compared against the built software across seven months and deviations recorded by name.",
+    "AIT, the MDU, and Assemblio are the only shipped examples on this page for which Creative Navy verified that the shipped interface was implemented as delivered."
   ],
   "bodySections": [
     {
-      "heading": "Design not surviving development is a transferable-understanding failure",
-      "bodyMarkdown": "Creative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nDesign does not survive development when the product built in production no longer reflects the design intent that shaped the design artefacts. The visible symptoms include a gap between what was designed and what was built, inconsistent behaviour in production, and repeated reintroduction of decisions that had already been resolved.\n\nThe immediate causes are often described as resourcing problems: not enough designer time, not enough developer attention, or too fast a delivery pace. In Creative Navy's framing, those factors are symptoms of a structural problem. The design process produced artefacts, but did not produce transferable understanding.\n\nWhen a developer encounters an edge case, an unexpected technical constraint, or a scope change mid-sprint that the artefacts do not cover, the developer resolves it by local judgment. If that judgment is not anchored to the reasoning behind the design, the implementation diverges from the design intent. The divergence accumulates over releases and the product drifts."
+      "heading": "Design Not Surviving Development Is a Transfer Failure",
+      "bodyMarkdown": "Creative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nDesign does not survive development when the built product no longer carries the reasoning that shaped the design. The visible symptom is a gap between what was designed and what was built, or between specified behaviour and production behaviour. The underlying cause is usually structural: the design process produced artefacts, but it did not produce transferable understanding.\n\nWhen developers encounter an edge case, a technical constraint, or a scope change that the artefacts do not cover, they must still make a decision. If that decision is not anchored to the reasoning behind the design, local implementation choices diverge from system-level intent. The divergence accumulates as the product grows."
     },
     {
-      "heading": "Velocity erosion occurs when development outpaces design coverage",
-      "bodyMarkdown": "Velocity erosion is the expression of design delivery failure where engineers are writing code faster than designers can specify the interfaces being built. When a developer needs an interaction pattern that does not yet exist in the design, the developer makes a local decision to keep delivery moving.\n\nThe local decision may be reasonable under time pressure, but it is not shaped by the broader design reasoning that would have made the product coherent. When enough of these decisions accumulate, the inconsistency has no single cause. It emerges from the gap between delivery pace and design coverage.\n\nVelocity erosion appears as modules that behave differently from each other, interaction patterns that contradict themselves across the product, and visual hierarchy that reflects who was available to specify each screen rather than a coherent system."
+      "heading": "Velocity Erosion Means Development Outpaces Design Coverage",
+      "bodyMarkdown": "Velocity erosion occurs when engineering output moves faster than design capacity. Engineers continue building, but design coverage has not yet reached the interaction patterns, states, or edge cases being implemented. Local decisions keep development moving, but the decisions are made without the shared reasoning needed to keep the product coherent.\n\nVelocity erosion appears as modules that behave differently from one another, interaction patterns that contradict themselves across the product, and visual hierarchy that reflects availability rather than a considered system. No single developer decision causes the inconsistency. The inconsistency emerges from repeated local decisions made in the gap between delivery pace and design coverage.\n\nIn the Bofin engagement, a funded fintech startup was building a mobile marketplace for financial services with a 50-plus developer engineering team. Development was already running across onboarding, identity verification, account aggregation, and transaction initiation. PSD2 and SCA requirements added a second constraint layer because exception states and authentication requirements shaped interaction design.\n\nCreative Navy's Critical Systems Design method addressed Bofin's velocity erosion through progressive specification. Design understanding and design coverage were built at the same pace as engineering output. The design system produced during Organizational Integration covered core modules with components, naming rules, variant logic, and interaction principles. Client-reported outcomes included fewer mid-sprint clarifications required by engineering teams and reduced rework due to clearer component definitions. Creative Navy-observed delivery timeline evidence records that no deadline was missed across 11 months.\n\nTriopsis shows the same pattern over a longer time scale. The Triopsis workforce management SaaS platform for utilities and road maintenance companies had accumulated interface inconsistencies over years of development by engineers and a graphic designer without a central UX framework. Modules behaved differently, users had to scan multiple screens to make a single decision, and peak load created stress and repeated checking.\n\nCreative Navy's Critical Systems Design method addressed the Triopsis accumulated inconsistency through a 9-month redesign and a design system of 68 components and 200-plus documented states. The component inventory recorded states, conditions, transitions, and conditional workflows for exceptions. A 2-year Implementation Partnership followed the redesign delivery to clarify design decisions, adjust components for new features, and maintain consistency as the product grew. Product analytics from the live system recorded 62% faster job discovery, 83% faster sequence optimisation, and 58% faster weekly planning. Commercial outcomes, including fourfold sales conversion increase and clients 4–5 times larger than previously, are CEO-reported."
     },
     {
-      "heading": "Translation loss occurs when artefacts transfer without design intent",
-      "bodyMarkdown": "Translation loss is the expression of design delivery failure where the design artefacts are complete, handoff is orderly, and implementation follows the specifications, but the product still diverges from design intent. The failure is not that developers ignored the design. The failure is that the artefacts conveyed what to build but not why.\n\nDuring implementation, constraints arise. A technical limitation, a performance requirement, or a scope adjustment may require adaptation. Without access to the reasoning the design was protecting, developers adapt in ways that are locally sensible and globally inconsistent.\n\nTranslation loss is difficult to detect because the deviations look deliberate. They are not accidents or shortcuts. They are reasoned responses to constraints, made without the design reasoning that would have resolved them differently."
+      "heading": "Translation Loss Means Artefacts Transfer but Design Intent Does Not",
+      "bodyMarkdown": "Translation loss occurs when implementation follows design artefacts but still diverges from design intent. The artefacts communicate what to build, but they do not communicate why the design protects particular behaviours, states, or constraints. When implementation constraints arise, developers adapt in locally sensible ways that can be globally inconsistent.\n\nTranslation loss is harder to detect than visible design drift because deviations often look deliberate. They are not necessarily mistakes, shortcuts, or ignored specifications. They are reasoned implementation responses made without the design reasoning that would have resolved the constraint differently.\n\nCreative Navy's Critical Systems Design method addresses translation loss by making the reasoning behind design decisions explicit during Organizational Integration and by maintaining design connection during Implementation Partnership. Developer questions can then be answered against the completed design system. Scope changes can be resolved against design reasoning rather than independently from it.\n\nThe Assemblio engagement is the cleanest documented example of fidelity consistent with handover rather than supervision. Implementation support consisted of one session and eight support tickets answered. The product is in production, and Creative Navy compared the shipped interface against the delivered designs. The Composer, the Smart Viewer, the platform around them, and sync profiles ship as the design that was delivered. The components Creative Navy documented were adopted by Assemblio's developers. The evidence supports an outcome consistent with the handover, not a proven causal chain, because nothing was measured about the development process and visibility into implementation was limited.\n\nIn Assemblio, the handover included a design system of 93 components, all documented with all states. Design tokens supported light and dark theming through one system rather than two. Component documentation carried reasoning as well as specification, which gave developers a basis for small implementation decisions that individual screens did not specify.\n\nThe AIT heat pump controller shows a different prevention mechanism. Implementation Partnership ran as five months of support to AIT's engineering team during development, with three scheduled progress meetings and eight support tickets answered. The controller reached the market months after the engagement ended. Creative Navy compared the shipped interface against the delivered designs and verified that the product ships as the design that was delivered in a touch-only hardware configuration. The touch-only hardware configuration was AIT's hardware decision, not a Creative Navy outcome. The evidence establishes that the design survived development, not that the design was good.\n\nThe MDU ship motion monitoring system provides a verified fidelity outcome without a recorded mechanism. The product shipped, and Creative Navy verified that the design was implemented as delivered, including day, dusk, and night display modes. Implementation support was provided, but its duration and substance are not recorded. Creative Navy also briefed each third-party development agency the manufacturer was considering before a builder was chosen, so that each could pitch on a common understanding of the delivered design."
     },
     {
-      "heading": "The production gap occurs when correct implementation does not produce operational use",
-      "bodyMarkdown": "The production gap is the expression of design delivery failure where the screens are built as specified, the interaction patterns are present, and the system ships, but users do not use it as intended. Users may use the product substantially less than expected, or may develop parallel workarounds that bypass the designed flows.\n\nThe production gap is not a development failure in this framing. It is a design failure that development reproduced accurately. The implementation is technically correct, but the design did not reflect operational reality closely enough to create an interface that users can operate under actual conditions.\n\nThe diagnostic signal is the presence of workarounds around the platform: spreadsheets, email chains, or verbal processes that run alongside the system. These workarounds indicate that users have assessed the designed interface and concluded that informal processes are more efficient than the product's intended flows."
+      "heading": "Production Gap Means Correct Implementation Does Not Produce Operational Use",
+      "bodyMarkdown": "The production gap occurs when development reproduces the design correctly but the product does not produce the intended operational outcome. The screens may be built as specified, the interaction patterns may be present, and the system may ship. The failure appears when users do not use the system as intended, use it less than intended, or create parallel workarounds outside it.\n\nThe WCO/IPM platform is the documented production gap example. The World Customs Organization's IPM platform coordinated intellectual property enforcement between customs officers and rights holders across member administrations. Adoption remained low. Officers and rights holders described the platform as difficult to navigate, slow to operate during inspections, and hard to learn.\n\nThe diagnostic signal was the presence of parallel workarounds: spreadsheets and email chains had emerged around the platform. This indicated that users were still operating in the same domain but had concluded that informal processes were more efficient than the designed interface. The implementation reflected the design, so the failure was not framed as a development failure. It was a design failure that development faithfully reproduced.\n\nCreative Navy's Critical Systems Design method identified the WCO/IPM barriers through Sandbox Experiments, including interviews, workflow mapping, and remote observation with WCO teams and selected member administrations. The redesign rebuilt the information architecture around actual inspection and case management flows rather than internal system structures. Usability testing involved 47 participants from Italy, Romania, Uzbekistan, Algeria, and Spain. Participation counts and geographic reach are Creative Navy-observed; post-deployment adoption outcomes are not quantified in available records."
     },
     {
-      "heading": "Bofin illustrates velocity erosion in a high-output engineering environment",
-      "bodyMarkdown": "Bofin was a funded fintech startup building a mobile marketplace for financial services, where users compared and accessed products from multiple institutions in a single app. When Creative Navy joined the engagement, the engineering team exceeded 50 developers and was moving at high velocity across onboarding, identity verification, account aggregation, and transaction initiation.\n\nPSD2 and SCA compliance requirements added a second constraint layer. The source example states that identity verification needed design coverage for exception states mandated by strong customer authentication, because a flow that works for a typical user but fails at those exception states is a liability in that context.\n\nCreative Navy's Critical Systems Design method addressed velocity erosion through progressive specification. Design understanding and design coverage were built at the same pace as engineering output so that modules under development had specifications able to absorb developer decisions without producing divergence.\n\nDuring Organizational Integration, the Bofin engagement produced a design system covering core modules with components, naming rules, variant logic, and interaction principles. The design system gave the 50-person engineering team a stable reference that converted local decisions from judgment calls into lookups.\n\nThe available Bofin evidence records no missed deadline across 11 months. Client-reported outcomes included fewer mid-sprint clarifications required by engineering teams and reduced rework due to clearer component definitions. The organisation was prepared to operate the design system without ongoing external support at handover, which is Creative Navy-observed."
+      "heading": "Schone Airspace Group Shows the Fullest Documented Mechanism for Design Surviving Development",
+      "bodyMarkdown": "The Schone Airspace Group engagement provides the strongest documented mechanism on this page because it records comparison, change control, integration gates, and implementation sequence together. All 54 delivered screens were compared against the built software by Creative Navy's design team across seven months. Deviations were identified and recorded by name.\n\nThe Schone Airspace Group handover protocol distinguished changes requiring UX approval from changes requiring engineering review. UX approval covered target selection, command lifecycle wording, last-known status semantics, warning acknowledgement, readiness completion, estimate revision, historical provenance, and persistence of the live shell. Engineering review covered protocol event meanings, aircraft permission model, fleet size, payload commands, stream state, terrain datum, cache schema, and recording keys.\n\nCreative Navy's Critical Systems Design method also specified an implementation sequence for Schone Airspace Group: build the shared command shell first, establish immutable aircraft and request identities, then connect per-aircraft timestamps and alert ownership. Four native integration gates were specified: terrain reference agreement; command request and observed result semantics; warning severity and lifecycle mapping; recorded session and media identity. Each gate carried a contract, verification sequence, pass evidence, and failure disposition.\n\nAll four Schone Airspace Group gates were subsequently closed by the client's engineering functions. The useful claim is limited: the design named in advance which behaviours it was not yet entitled to assert, and those conditions were then demonstrated. The product is built and in test, not deployed. A build matching a design is not evidence that the design is good."
     },
     {
-      "heading": "Triopsis illustrates accumulated inconsistency without a central UX framework",
-      "bodyMarkdown": "Triopsis's workforce management SaaS platform for utilities and road maintenance companies had reached profitability on the strength of its backend capabilities. Its interface had accumulated inconsistencies over years of development by engineers and a graphic designer without a central UX framework.\n\nThe Triopsis example is velocity erosion over a longer time scale. Modules behaved differently, users had to scan multiple screens to make a single decision, and peak load made the inconsistency stressful because users repeated checks. No single decision produced the accumulated state. The inconsistency emerged from years of local decisions that were reasonable at the time but not anchored to shared design reasoning.\n\nCreative Navy's Critical Systems Design method addressed the accumulated inconsistency through a 9-month redesign. The engagement produced a design system with 68 components and 200+ documented states. The design system was structured as a reasoning document, not only as a visual component library.\n\nDeveloper sessions during implementation allowed constraints to surface early. The component inventory documented states, conditions, transitions, and conditional workflows for exceptions, giving developers a coherent model to implement from and reducing the risk of legacy behaviour re-emerging through implementation choices.\n\nThe Triopsis engagement also included 2 years of implementation partnership after the redesign delivery. This support maintained consistency as the product grew by clarifying design decisions, adjusting components for new features, and preventing accumulated inconsistency from re-emerging.\n\nTriopsis product analytics recorded 62% faster job discovery, 83% faster sequence optimisation, and 58% faster weekly planning. Commercial outcomes were client-reported: sales conversions increased fourfold and the client began winning clients 4–5 times larger than previously."
+      "heading": "Behaviour Contracts Can Carry Design Understanding Without New Screen Specification",
+      "bodyMarkdown": "A European vendor of maritime traffic monitoring, inland navigation, and communications software provides a positive case for documented behaviour contracts. The design system used a four-layer architecture: primitive values, semantic tokens, component contracts, and bounded product compositions. Applications consumed semantic tokens and documented components rather than redefining priority colour meanings, overwriting status labels, or importing radio transmission semantics through a generic action control.\n\nA client engineer who was not a member of the design team built a working validation-and-correction view for the electronic reporting product in the client's frontend development sandbox. The engineer used 12 documented patterns and 2 domain adaptations with no additional screen specification from Creative Navy. The demonstration showed that the documentation could carry design behaviour into a non-production implementation.\n\nThe maritime traffic monitoring evidence has strict boundaries. It was a capability demonstration, not completion of a product migration, not an independently certified accessibility result, and not a production engineering efficiency benchmark. The design system reached production, with the client writing the code and Creative Navy supplying standard implementation support, but no design-fidelity comparison is recorded. This engagement must not be described as shipped as designed."
     },
     {
-      "heading": "WCO/IPM illustrates the production gap through workaround symptoms",
-      "bodyMarkdown": "The World Customs Organization's IPM platform was already in production when Creative Navy was engaged. The platform coordinated intellectual property enforcement between customs officers and rights holders across member administrations. Adoption remained low, and officers and rights holders described the system as difficult to navigate, slow to operate during inspections, and hard to learn.\n\nThe diagnostic signal was the presence of parallel workarounds. Spreadsheets and email chains had emerged around the platform. In the production-gap pattern, these workarounds indicate that users had not rejected the domain activity, but had judged their informal processes to be more efficient than the designed interface.\n\nThe WCO/IPM implementation reflected the design. The failure was that the design had not been grounded closely enough in the operational reality of three user groups: frontline inspection officers, intelligence analysts, and rights holder teams. The source example identifies variable connectivity, mixed device fleets, limited time per inspection, and language diversity across 100+ administrations as conditions the design had not accounted for.\n\nCreative Navy's Critical Systems Design method identified the barriers through Sandbox Experiments. Interviews, workflow mapping, and remote observation with WCO teams and selected member administrations framed the adoption issues in operational terms, creating a shared view of the problem across operational units, IT teams, and programme leadership.\n\nThe redesign rebuilt the information architecture around actual inspection and case management flows rather than internal system structures. The documented design principles applied in the redesign were recognition over recall, reduced choices per screen, and progressive disclosure.\n\nThe WCO/IPM redesign was validated through usability testing with 47 participants from Italy, Romania, Uzbekistan, Algeria, and Spain. Participation counts and geographic reach are directly observed. Adoption and workaround patterns are observed from the operational situation at engagement start. Post-deployment adoption outcomes are not quantified in the available records."
+      "heading": "Creative Navy's Critical Systems Design Method Addresses Design Transfer Across the Engagement",
+      "bodyMarkdown": "Creative Navy's Critical Systems Design method designs software whose interfaces, workflows, and operating logic carry real operational consequences, working through five phases — Sandbox Experiments, Concept Convergence, Iterative System Building, Organizational Integration, and Implementation Partnership — to take each system from initial exploration to independent operation by the client's own team.\n\nFor design not surviving development, the central issue is that design understanding has not been transferred in a form that travels through the organisation and into the product. Creative Navy's Critical Systems Design method addresses this through Organizational Integration and Implementation Partnership.\n\nOrganizational Integration structures design understanding for transfer. In Triopsis, it produced a design system where reasoning was documented alongside decisions. In Bofin, it produced progressive specification that matched development pace with design coverage. In WCO/IPM, it produced documentation and training materials structured for global distribution across diverse member administration contexts.\n\nImplementation Partnership maintains the connection between design intent and product reality during the period when translation loss and re-accumulation are likely. In Triopsis, 2 years of Implementation Partnership was the mechanism used to prevent accumulated inconsistency from re-emerging as the product grew."
     },
     {
-      "heading": "Creative Navy's Critical Systems Design method addresses transfer through Organizational Integration and Implementation Partnership",
-      "bodyMarkdown": "Creative Navy's Critical Systems Design method addresses design not surviving development by structuring design understanding so it can travel through the organisation and into the product. The common structural cause across velocity erosion, translation loss, and the production gap is that artefacts were transferred but understanding was not.\n\nOrganizational Integration is the phase where design understanding is structured for transfer. In the Triopsis engagement, Organizational Integration produced a design system where the reasoning behind decisions was documented alongside the decisions themselves. In the Bofin engagement, it produced progressive specification that matched development pace with design coverage. In the WCO/IPM engagement, it produced documentation and training materials structured for global distribution across diverse member-administration contexts.\n\nImplementation Partnership maintains the connection between design intent and product reality during the period when translation loss and re-accumulation are most likely. Developer questions are answered against the completed design system, scope changes are resolved against design reasoning, and new features are integrated without fragmenting the coherence established by the redesign.\n\nIn the Triopsis engagement, 2 years of Implementation Partnership was the mechanism that prevented accumulated inconsistency from re-emerging as the product grew."
-    },
-    {
-      "heading": "Evidence boundaries for this situation",
-      "bodyMarkdown": "The Bofin delivery timeline evidence is Creative Navy-observed. The reported reduction in mid-sprint clarifications and rework is client-reported by the product manager.\n\nThe Triopsis performance metrics are product analytics from the live system. The Triopsis commercial outcomes are client-reported by the CEO.\n\nThe WCO/IPM participation counts and geographic reach are Creative Navy-observed. The adoption and workaround patterns are observed from the operational situation at engagement start. The available records do not quantify post-deployment adoption outcomes for WCO/IPM."
+      "heading": "Evidence Boundaries for Design Fidelity Claims",
+      "bodyMarkdown": "Design fidelity evidence must not be treated as evidence that a design is good. AIT, the MDU, and Assemblio are the only shipped examples on this page where Creative Navy verified that the shipped interface was implemented as delivered. Schone Airspace Group has a different evidence form: every delivered screen was compared against the built software across seven months, deviations were recorded by name, and the product is built and in test rather than deployed.\n\nThe maritime traffic monitoring engagement reached production, but no design-fidelity comparison is recorded. The documented evidence supports behaviour-contract transfer and a non-production capability demonstration, not a shipped-as-designed claim.\n\nAssemblio's fidelity is an outcome consistent with the handover, not a proven causal chain. The source evidence records no development speed, cost, or defect-rate measurement for Assemblio. The AIT and MDU fidelity claims also do not support performance, reception, sales, or product-quality conclusions."
     }
   ],
   "evidenceSummary": {
     "strongClaims": [
-      "Design not surviving development is described as a failure to transfer design understanding, not only a failure to transfer design artefacts.",
-      "Creative Navy identifies three structural expressions of this situation: velocity erosion, translation loss, and the production gap.",
-      "In the Bofin example, a design system and progressive specification supported a 50-person engineering team moving across multiple financial-service marketplace modules.",
-      "In the Triopsis example, a 9-month redesign produced 68 components and 200+ documented states, followed by 2 years of implementation partnership.",
-      "Triopsis product analytics recorded 62% faster job discovery, 83% faster sequence optimisation, and 58% faster weekly planning.",
-      "In the WCO/IPM example, spreadsheets and email chains around the platform were used as diagnostic evidence of the production gap.",
-      "The WCO/IPM redesign was validated through usability testing with 47 participants from Italy, Romania, Uzbekistan, Algeria, and Spain."
+      "Bofin provides a documented velocity erosion example in a 50-plus developer environment subject to PSD2 and SCA constraints.",
+      "Triopsis provides a longer time-scale velocity erosion example, with a 9-month redesign, 68 components, 200-plus documented states, and a 2-year implementation partnership. Product analytics recorded 62% faster job discovery, 83% faster sequence optimisation, and 58% faster weekly planning after redesign.",
+      "WCO/IPM illustrates the production gap through adoption problems and parallel spreadsheet and email workarounds around a technically functional platform. Usability testing involved 47 participants across five countries.",
+      "Schone Airspace Group is the fullest documented mechanism for making design survive development, with all 54 delivered screens compared against the build across seven months and deviations recorded by name.",
+      "AIT, the MDU, and Assemblio are verified shipped examples where Creative Navy compared the shipped interface or verified implementation as delivered.",
+      "The maritime traffic monitoring engagement demonstrates behaviour-contract transfer in a non-production sandbox but does not support a shipped-as-designed claim."
     ],
     "weakerClaims": [
-      "Bofin recorded no missed deadline across 11 months, while fewer mid-sprint clarifications and reduced rework were client-reported outcomes."
+      "Design not surviving development is caused structurally by artefacts transferring without the reasoning needed for implementation decisions.",
+      "Velocity erosion occurs when development outpaces design capacity and local developer decisions accumulate into inconsistency.",
+      "Creative Navy's Critical Systems Design method addresses this situation through Organizational Integration and Implementation Partnership.",
+      "Triopsis commercial outcomes, including fourfold sales conversion increase and clients 4–5 times larger than previously, are CEO-reported.",
+      "Bofin client-reported outcomes included fewer mid-sprint clarifications required by engineering teams and reduced rework due to clearer component definitions."
     ],
     "limitations": [
-      "The Bofin outcomes about fewer mid-sprint clarifications and reduced rework are client-reported by the product manager, not independently measured in the available records.",
-      "The Triopsis commercial outcomes are client-reported by the CEO; the source distinguishes them from the product analytics metrics.",
-      "The WCO/IPM records do not quantify post-deployment adoption outcomes.",
-      "The three expressions are grounded in the documented examples, but the source does not claim that these are the only possible reasons design may diverge during development.",
-      "The page describes Creative Navy's framing and documented engagements; it does not provide independent comparative evidence against other design or delivery methods."
+      "Design fidelity is not evidence that the design is good; the page preserves that distinction for AIT, the MDU, Assemblio, and Schone Airspace Group.",
+      "Post-deployment adoption outcomes for WCO/IPM are not quantified in available records.",
+      "Assemblio's fidelity is an outcome consistent with the handover, not a proven causal chain, because development-process measurements were not recorded and implementation visibility was limited.",
+      "The MDU implementation support mechanism is not explained because the duration and substance of support are not recorded.",
+      "The maritime traffic monitoring engagement has no recorded design-fidelity comparison and must not be described as shipped as designed.",
+      "Schone Airspace Group is built and in test, not deployed.",
+      "No performance, reception, adoption, sales, funding, or commercial figures are stated for the shipped product examples unless they are explicitly recorded in the source evidence for the relevant engagement.",
+      "Handheld command-and-control material is excluded because the available record does not contain build oversight, a fidelity comparison, an integration gate, or a retainer for that engagement."
     ]
   },
   "relatedPageSlugs": [
     "triopsis-workforce-management-saas",
+    "schone-mission-control",
+    "mdu-ship-motion-monitoring",
+    "ait-heat-pump-controller",
+    "assemblio",
     "handoffs-create-failures",
     "design-debt-is-turning-into-operational-debt",
     "product-fragmenting-under-growth",
     "the-product-works-in-demos-but-not-in-real-use",
-    "previous-agency-delivered-surfaces-not-clarity",
-    "research-is-not-informing-decisions",
-    "too-many-features-not-enough-coherence"
+    "previous-agency-delivered-surfaces-not-clarity"
   ],
   "internalLinks": [
     {
       "anchorText": "Triopsis workforce management SaaS",
       "targetSlug": "triopsis-workforce-management-saas",
-      "reason": "The Triopsis case is named in the page and has an allowed case-study slug."
+      "reason": "Triopsis is a named evidence example for accumulated inconsistency and long implementation partnership."
+    },
+    {
+      "anchorText": "Schone Airspace Group",
+      "targetSlug": "schone-mission-control",
+      "reason": "Schone Airspace Group is the fullest documented mechanism for design fidelity in development on this page."
+    },
+    {
+      "anchorText": "AIT heat pump controller",
+      "targetSlug": "ait-heat-pump-controller",
+      "reason": "AIT is a verified shipped-as-designed counter-case with a recorded review-and-support mechanism."
+    },
+    {
+      "anchorText": "MDU ship motion monitoring system",
+      "targetSlug": "mdu-ship-motion-monitoring",
+      "reason": "The MDU is a verified fidelity outcome with limited recorded implementation-support detail."
+    },
+    {
+      "anchorText": "Assemblio",
+      "targetSlug": "assemblio",
+      "reason": "Assemblio is the clearest documented fidelity-by-handover counter-case on the page."
     },
     {
       "anchorText": "handoffs create failures",
       "targetSlug": "handoffs-create-failures",
-      "reason": "The page discusses translation loss and handoff where artefacts transfer without design reasoning."
+      "reason": "The page discusses handoff and transfer failures between design and development."
     },
     {
-      "anchorText": "design debt turns into operational debt",
+      "anchorText": "design debt turning into operational debt",
       "targetSlug": "design-debt-is-turning-into-operational-debt",
-      "reason": "The page describes accumulated inconsistency and reintroduced design decisions as the product grows."
+      "reason": "The page describes accumulated inconsistency and maintenance difficulty caused by design drift."
     },
     {
-      "anchorText": "products fragment under growth",
+      "anchorText": "product fragmenting under growth",
       "targetSlug": "product-fragmenting-under-growth",
-      "reason": "The page describes product drift and inconsistency accumulating across releases and modules."
+      "reason": "The page describes product fragmentation as local implementation decisions accumulate."
     },
     {
-      "anchorText": "products work in controlled demonstrations but not in real use",
+      "anchorText": "the product works in demos but not in real use",
       "targetSlug": "the-product-works-in-demos-but-not-in-real-use",
-      "reason": "The production gap section describes systems that are technically implemented but do not produce the intended operational outcome."
+      "reason": "The production gap section concerns technically functional products that fail to produce operational use."
+    },
+    {
+      "anchorText": "previous agency delivered surfaces not clarity",
+      "targetSlug": "previous-agency-delivered-surfaces-not-clarity",
+      "reason": "The page distinguishes artefact delivery from transferable design understanding."
     }
   ],
   "tags": [
     "design delivery",
-    "implementation drift",
+    "implementation fidelity",
     "translation loss",
     "velocity erosion",
     "production gap",
-    "progressive specification",
     "design systems",
+    "progressive specification",
     "Organizational Integration",
-    "Implementation Partnership",
-    "Critical Systems Design"
+    "Implementation Partnership"
   ],
   "_meta": {
     "sourcePath": "sources/articles/Situations/situations--delivery--design-does-not-survive-development.md",
     "parentSlug": "delivery-and-execution",
     "childPageSlugs": [],
-    "generatedBy": "deterministic"
+    "generatedBy": "openai"
   }
 }

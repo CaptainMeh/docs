@@ -4,18 +4,17 @@
   "pageType": "practice",
   "category": "practices",
   "section": "Practices",
-  "summary": "Error-likely interaction review examines interface and workflow conditions that make errors foreseeable, including memory dependency, ambiguous state, insufficient confirmation friction, information absence, single-channel communication, and foreseeable misuse patterns.",
+  "summary": "Error-likely interaction review examines what an interaction requires from users and under which operating conditions that requirement is likely to produce error. The practice is used during Sandbox Experiments, Iterative System Building, and IEC 62366-1 formative evaluation contexts to identify error mechanisms, classify consequences, and define design requirements.",
   "keyFacts": [
-    "The practice is analytical and is not a usability test.",
-    "The central question is what the interaction requires of users and when that requirement will produce errors.",
-    "The review identifies structural error mechanisms such as memory dependency, ambiguous state, insufficient friction, information absence, and single-channel communication.",
-    "Each identified interaction is documented with an error mechanism, an error consequence, and a design requirement.",
-    "Error consequence is classified by reversibility and magnitude.",
-    "The practice is used during Sandbox Experiments on existing systems before design decisions are made.",
-    "The practice is used during Iterative System Building on prototypes before implementation.",
-    "In regulated medical device contexts, the practice supports IEC 62366-1 formative evaluation.",
-    "The practice draws on task-criticality mapping, state and transition review, and cognitive load analysis.",
-    "Engagement examples include Kardion MCS Controller, deSoutter Medical / Zethon, Gexcon CFD simulation, Beissbarth automotive calibration, and Typewise AI keyboard."
+    "The practice is not a usability test; it is an analytical review conducted before or between test cycles.",
+    "The central question is what the interaction requires of users and under what conditions that requirement will produce errors.",
+    "The review produces three outputs: error mechanism, error consequence, and design requirement.",
+    "Common error mechanisms include memory dependency, ambiguous state, insufficient confirmation friction, information absence, and single-channel communication.",
+    "The review is used during Sandbox Experiments on existing systems before design decisions are made.",
+    "The review is used during Iterative System Building on prototypes before implementation, particularly for critical tasks identified through task-criticality mapping.",
+    "In regulated medical device contexts, the review supports IEC 62366-1 formative evaluation and foreseeable misuse analysis.",
+    "The documented engagement evidence includes Kardion, deSoutter Medical / Zethon, Gexcon, Beissbarth, Typewise, Raymarine, Schone Airspace Group, Streetec, Egma, a European manufacturer of uncrewed systems, and visioncheckout.",
+    "The practice supports design revision; the page does not claim that identified conditions prevented real-world errors."
   ],
   "bodySections": [
     {
@@ -23,55 +22,53 @@
       "bodyMarkdown": "Creative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nCreative Navy applies error likely interaction review as one of the named practices within its Critical Systems Design method. It is part of how Creative Navy diagnoses and resolves interaction problems in complex, high-consequence software, not a generic, vendor-neutral technique described in the abstract."
     },
     {
-      "heading": "Summary",
-      "bodyMarkdown": "Error-likely interaction review is an analytical practice for identifying interactions that are structurally likely to produce errors. It is conducted before or between usability test cycles, and it does not depend on waiting for a participant to make the error in observed testing.\n\nThe central question in error-likely interaction review is not \"what errors have users made?\" The central question is what the interaction requires of users, and under what conditions that requirement will produce errors.\n\nA single confirmation step before an irreversible high-consequence action is error-likely even if no participant has clicked through it accidentally. A colour-only state indicator on a device used in variable lighting is error-likely before anyone misreads it in a test. The practice identifies these structural conditions analytically so that design requirements can be defined before the interaction is tested into evidence."
+      "heading": "Definition and Purpose of Error-Likely Interaction Review",
+      "bodyMarkdown": "An error-likely interaction review is an analytical practice that identifies interactions whose structure makes user error foreseeable, independently of whether the error has already appeared in observed usability testing.\n\nThe review asks what the interaction requires of users and under what operating conditions that requirement is likely to produce errors. The supportable claim is that error-likely conditions can be identified analytically and translated into design requirements. The practice does not prove that a revised design prevented a real-world error."
     },
     {
-      "heading": "What error-likely interaction review does",
-      "bodyMarkdown": "Error-likely interaction review identifies the mechanism that makes an interaction error-prone, the consequence if the error occurs, and the design requirement that must be met to reduce the likelihood of error.\n\nThe practice treats error likelihood as a property of the interaction structure, not only as a count of observed user mistakes. It asks whether the interaction depends on memory, hides relevant state, permits an irreversible action too easily, withholds information at the decision point, or communicates critical state through a single channel that may fail under operating conditions.\n\nThe review does not produce a design solution as its primary output. It produces a design requirement. In regulated contexts, that requirement is formally documented and traceable to the identified hazard."
+      "heading": "How Error-Likely Interaction Review Differs From Usability Testing",
+      "bodyMarkdown": "Error-likely interaction review separates observed errors from foreseeable error conditions. Usability testing shows what participants did in a particular study. Error-likely interaction review examines whether an interaction creates a structural pathway to error under plausible conditions of use.\n\nThe practice is conducted before or between test cycles. It is used to find error mechanisms early enough for design work to address them before they become test evidence. In regulated contexts, the output is documented so that the design requirement can be traced to the identified hazard."
     },
     {
-      "heading": "When error-likely interaction review is used",
-      "bodyMarkdown": "Error-likely interaction review is used during Sandbox Experiments on an existing system before design decisions are made. In that position, the practice produces the error profile that the design work must address.\n\nError-likely interaction review is also used during Iterative System Building on design prototypes before implementation. In this position, the practice is applied especially to critical tasks identified through task-criticality mapping.\n\nIn regulated medical device contexts, error-likely interaction review runs throughout the engagement as part of IEC 62366-1 formative evaluation. The review supports the identification of foreseeable use errors and foreseeable misuse, and it supports traceability between design decisions and identified hazards. Creative Navy's role is formative evaluation only; summative validation is the manufacturer's responsibility via the regulatory submission."
+      "heading": "Error Mechanisms Examined in the Review",
+      "bodyMarkdown": "Error-likely interaction review focuses on mechanisms rather than symptoms. A user selecting the wrong control is not the explanation by itself; the review asks what interaction structure made that selection foreseeable.\n\nCommon mechanisms include memory dependency, where users must recall information instead of recognising it from the interface; ambiguous state, where the state needed for a correct decision is not visible at the moment of decision; insufficient confirmation friction, where irreversible or high-consequence actions can be completed too easily; information absence, where required context exists elsewhere but is missing at the decision point; and single-channel state communication, where a critical signal depends on one channel that may fail under operating conditions.\n\nIn IEC 62366-1 contexts, the review also addresses foreseeable misuse patterns. Foreseeable misuse means unintended use that is predictable given the user population, operating conditions, and interface design."
     },
     {
-      "heading": "Error mechanisms examined by the review",
-      "bodyMarkdown": "Error-likely interaction review examines memory-dependent interactions where users must recall information rather than recognise it from the interface. Examples include a calibration technician remembering which measurement sequence is current, a surgeon remembering which parameter a rotary knob is adjusting, or an officer remembering alert criteria for a goods category. These interactions are error-prone under time pressure or divided attention.\n\nError-likely interaction review examines ambiguous state at decision points. This includes configuration steps where prior values are not displayed, mode changes where the current mode is not visible at the point where mode-specific behaviour matters, and alarm states where the triggering condition is not shown alongside the alarm.\n\nError-likely interaction review examines insufficient confirmation friction. Irreversible or high-consequence actions that can be completed with a single interaction step are assessed for whether the confirmation friction is proportional to the consequence.\n\nError-likely interaction review examines information absence at decision points. This occurs when information needed for a correct decision is available somewhere in the system but is not surfaced where the decision is made.\n\nError-likely interaction review examines single-channel state communication. A critical state indicator that depends only on colour, sound, text, or spatial position can become error-likely when that channel fails under operating conditions.\n\nError-likely interaction review also examines foreseeable misuse patterns. In the IEC 62366-1 context described here, foreseeable misuse must be identified explicitly rather than treated as intended misuse."
+      "heading": "Where Creative Navy Applies Error-Likely Interaction Review",
+      "bodyMarkdown": "Creative Navy applies error-likely interaction review during Sandbox Experiments on existing systems before design decisions are made. The output is an error profile that the design work must address.\n\nCreative Navy applies the review during Iterative System Building on design prototypes before implementation. This is especially relevant for critical tasks identified through task-criticality mapping, because error likelihood matters most when task criticality is high.\n\nIn regulated medical device contexts, Creative Navy uses the review as part of IEC 62366-1 formative evaluation. The review supports identification of foreseeable use errors and misuse, and it supports traceability between design decisions and identified hazards. Creative Navy's role in this context is formative evaluation only; summative validation is the manufacturer's responsibility through the regulatory submission."
     },
     {
-      "heading": "Outputs of error-likely interaction review",
-      "bodyMarkdown": "The first output of error-likely interaction review is the error mechanism. The mechanism explains why the interaction produces errors. The source mechanisms include memory dependency, ambiguous state, insufficient friction, information absence, and single-channel communication.\n\nThe second output is the error consequence. The consequence describes what happens when the error occurs and is classified by reversibility and magnitude. A reversible low-consequence error requires a different design response from an irreversible safety-relevant error.\n\nThe third output is the design requirement. The requirement states what the design must satisfy to reduce error likelihood to an acceptable level. In regulated contexts, the requirement is traceable to the identified hazard."
+      "heading": "Outputs of an Error-Likely Interaction Review",
+      "bodyMarkdown": "An error-likely interaction review produces three outputs: error mechanism, error consequence, and design requirement.\n\nThe error mechanism explains why the interaction is likely to produce errors. The mechanism may be memory dependency, ambiguous state, insufficient confirmation friction, information absence, single-channel communication, or another structural condition identified in the review.\n\nThe error consequence is classified by reversibility and magnitude. A reversible low-consequence error requires a different design response from an irreversible safety-relevant error.\n\nThe design requirement states what the design must achieve to reduce error likelihood to an acceptable level. It is not the same as a proposed screen solution. In regulated contexts, the requirement is formally documented and traceable to the identified hazard."
     },
     {
-      "heading": "Engagement evidence for error-likely interaction review",
-      "bodyMarkdown": "Engagement evidence shows error-likely interaction review being applied across medical device, operating theatre, simulation, automotive calibration, and keyboard adoption contexts. The examples below are engagement-specific and should not be treated as universal evidence that the same mechanisms or requirements apply in every system.\n\nIn the Kardion MCS Controller engagement, the IEC 62366-1 formative evaluation process structured the review formally. A flow rate adjustment via rotary knob was identified as error-likely because a single physical input controlled a clinically significant parameter. The foreseeable error was inadvertent adjustment during procedure setup or equipment repositioning. The error mechanism was insufficient confirmation friction for a high-consequence action, and the design requirement was two-step confirmation before adjustment took effect.\n\nIn the Kardion MCS Controller engagement, min/max flow value misinterpretation was identified in a prior Emergo by UL formative study. The error mechanism was visual ambiguity in the prior display. The design requirement was that the primary flow visualisation make the min/max hierarchy unambiguous without requiring interpretation.\n\nIn the Kardion MCS Controller engagement, alarm state during mute was treated as foreseeable misuse. A user could silence an alarm and then forget it was active. The error mechanism was that alarm disappearance on mute removed the ongoing reminder. The design requirement was that muted alarms remain visually present at reduced prominence.\n\nIn the deSoutter Medical / Zethon engagement, the operating theatre context defined the foreseeable use conditions and foreseeable misuse profile. Activation state recognition was identified as the highest-risk interaction in the surgical workflow. The error mechanism was a state indicator relying on colour as the primary differentiator under variable lighting. The design requirement was redundant non-colour cues using spatial position, icon, and colour.\n\nIn the deSoutter Medical / Zethon engagement, speed parameter adjustment during procedure was identified as an interaction competing with primary surgical attention. The error mechanism was the need to actively read the current parameter value while performing the procedure. The design requirement was that the parameter adjustment display be confirmable as a glance-check without interrupting workflow.\n\nIn the Gexcon CFD simulation engagement, the review identified configuration error patterns across the simulation setup workflow. Error-prone interactions included required values that were not clearly signalled before simulation initiation, contradictory parameter combinations that were not identified before run, and deferred consequences where an error produced a completed simulation with incorrect outputs. The design requirement was an interactive configuration warning architecture that surfaced incomplete and contradictory inputs before run.\n\nIn the Beissbarth automotive calibration engagement, contextual observation across 5 workshops identified error-likely interactions in calibration workflows. Borderline tolerance measurement confirmation was error-likely because technicians needed to distinguish between a confirmed measurement and one requiring repetition. The design requirement was three-level measurement result communication: confirmed, borderline, and out of range.\n\nIn the Beissbarth automotive calibration engagement, calibration sequence state tracking was error-likely because multi-step sequences had no persistent completion state visible across the sequence. Technicians relied on memory. The design requirement was a persistent sequence state display showing completed, current, and upcoming steps.\n\nIn the Typewise AI keyboard engagement, error-likely interaction review was part of the domain learning phase. Creative Navy installed and used the keyboard before beginning design work. The review identified an adoption barrier at the product level: new users moving from the iOS native keyboard had a substantially higher error rate than experienced users because gestural patterns conflicted during transition. The design requirement was an adoption framework structured around Zone of Proximal Development, introducing new gestures within reach of existing competence."
-    },
-    {
-      "heading": "Relationship to task, state, and cognitive-load practices",
-      "bodyMarkdown": "Error-likely interaction review draws on task-criticality mapping because critical tasks are the primary scope for the review. Error likelihood has the greatest consequence where task criticality is highest.\n\nError-likely interaction review draws on state and transition review because state ambiguity is one of the primary error mechanisms. The state review provides evidence about whether the system state needed for correct action is visible at the decision point.\n\nError-likely interaction review draws on cognitive load analysis because high cognitive load under operational conditions is a primary predictor of error likelihood. Memory dependency, divided attention, and glance-check requirements are evaluated in relation to the conditions under which the interaction occurs.\n\nError-likely interaction review directly informs edge case and degraded mode analysis. The most error-prone interactions are examined under non-nominal conditions to understand worst-case scenarios."
-    },
-    {
-      "heading": "Boundaries and limits of error-likely interaction review",
-      "bodyMarkdown": "Error-likely interaction review is not a usability test. It identifies structurally error-prone interactions analytically, but observed testing may still be needed to evaluate how users behave with a design under realistic constraints.\n\nError-likely interaction review identifies design requirements, not finished design solutions. A requirement such as two-step confirmation or redundant non-colour cues still needs to be translated into a concrete interface design and evaluated in context.\n\nEngagement examples on this page are evidence of how the practice was applied in specific contexts. They do not establish that the same error mechanisms, consequences, or requirements apply unchanged in other systems."
+      "heading": "Evidence Base and Interpretation Limits",
+      "bodyMarkdown": "The evidence base for error-likely interaction review is engagement-specific. Some examples come from contextual observation, some from structured walkthroughs, some from hands-on sandbox analysis, some from formative evaluation, and some from review of design candidates. These evidence bases should not be treated as interchangeable.\n\nThe practice identifies foreseeable structural error conditions. It does not establish that a specific real-world error occurred, and it does not establish that any identified-and-closed condition prevented a real-world error."
     }
   ],
   "evidenceSummary": {
     "strongClaims": [
-      "Error-likely interaction review is an analytical practice, not a usability test, and is used to identify structurally error-prone interactions before or between test cycles.",
+      "An error-likely interaction review is an analytical practice, not a usability test, and identifies structurally error-prone interactions before or between test cycles.",
       "The review produces three outputs: error mechanism, error consequence, and design requirement.",
-      "The practice is used during Sandbox Experiments and Iterative System Building.",
-      "In regulated medical device contexts, the practice supports IEC 62366-1 formative evaluation and traceability between identified hazards and design decisions.",
-      "The Kardion MCS Controller engagement identified flow rate adjustment via rotary knob as error-likely because of insufficient confirmation friction for a high-consequence action.",
-      "The deSoutter Medical / Zethon engagement identified colour-dependent activation state recognition as error-likely under variable lighting.",
-      "The Gexcon CFD simulation engagement identified information absence before simulation run as an error mechanism in configuration workflows.",
-      "The Beissbarth automotive calibration engagement used contextual observation across 5 workshops to identify error-likely calibration interactions.",
-      "The Typewise AI keyboard engagement identified transition-phase interference between established motor habits and new interaction patterns as an error mechanism."
+      "The practice is used during Sandbox Experiments, Iterative System Building, and IEC 62366-1 formative evaluation in regulated medical device contexts.",
+      "The review examines memory dependency, ambiguous state, insufficient confirmation friction, information absence, single-channel state communication, and foreseeable misuse patterns.",
+      "In the Kardion MCS Controller engagement, the IEC 62366-1 formative evaluation context supported review of high-consequence rotary knob flow adjustment, min/max flow value ambiguity, and alarm state during mute as error-likely interactions with design requirements.",
+      "In Schone Airspace Group Mission Control, 18 findings were identified in Creative Navy's own design candidates, classified as 9 critical, 8 major, and 1 moderate; these findings do not establish that aircraft incidents occurred."
+    ],
+    "weakerClaims": [
+      "In the Beissbarth engagement, contextual observation across 5 workshops identified borderline tolerance measurement confirmation and calibration sequence state tracking as error-likely interactions.",
+      "In the Raymarine engagement, a multi-screen structured walkthrough before build work identified physical control ambiguity that a single-screen review would not have found.",
+      "In the Egma Order engagement, the dependency analysis identified a recoverability failure mode in the configurator, but the worked example does not establish measured support-ticket volume, order-completion, or error-rate figures.",
+      "In the uncrewed systems command-and-control engagement, recommendations about touchscreen strike control were not validated and cannot support a claim that the design prevents accidental activation or operator error."
     ],
     "limitations": [
-      "The practice is analytical and is not a substitute for usability testing.",
-      "The practice identifies design requirements rather than complete interface solutions.",
-      "The engagement examples are context-specific and should not be generalised to all systems.",
-      "In regulated medical device contexts, Creative Navy's role is formative evaluation only; summative validation is the manufacturer's responsibility via the regulatory submission."
+      "The practice identifies foreseeable structural error conditions; it does not prove that a real-world error occurred.",
+      "The page does not claim that any identified-and-closed condition prevented a real-world error.",
+      "Schone Airspace Group findings are Creative Navy's own first design candidates failing Creative Navy's own criteria, not findings about an existing product and not evidence of aircraft incidents.",
+      "Egma's worked example is a support-team account of a failure mode, not a measured frequency or post-launch outcome.",
+      "visioncheckout observations describe the system being replaced; the new designs were not tested with users, nothing had shipped, and no outcome is claimed.",
+      "The uncrewed systems command-and-control recommendations were not validated; hold duration and physical-control design require human-factors and system-safety testing that was not performed.",
+      "Creative Navy's role in regulated medical-device contexts is formative evaluation only; summative validation is the manufacturer's responsibility via the regulatory submission."
     ]
   },
   "relatedPageSlugs": [
@@ -79,70 +76,100 @@
     "state-and-transition-review",
     "cognitive-load-analysis",
     "edge-case-and-degraded-mode-analysis",
+    "alarm-and-warning-evaluation",
     "kardion",
     "beissbarth",
-    "usability-testing-under-realistic-constraint",
-    "alarm-and-warning-evaluation"
+    "raymarine-vhf",
+    "schone-mission-control",
+    "streetec-kntrl",
+    "egma",
+    "visioncheckout",
+    "tactical-handheld-command-and-control"
   ],
   "internalLinks": [
     {
       "anchorText": "task-criticality mapping",
       "targetSlug": "task-criticality-mapping",
-      "reason": "The source states that critical tasks are the primary scope for error-likely interaction review."
+      "reason": "Error-likely interaction review draws on task-criticality mapping and applies particularly to critical tasks."
     },
     {
       "anchorText": "state and transition review",
       "targetSlug": "state-and-transition-review",
-      "reason": "The source states that state ambiguity is a primary error mechanism and that the state review provides evidence."
+      "reason": "State ambiguity is a primary error mechanism, and state review provides related evidence."
     },
     {
       "anchorText": "cognitive load analysis",
       "targetSlug": "cognitive-load-analysis",
-      "reason": "The source states that high cognitive load under operational conditions predicts error likelihood."
+      "reason": "High cognitive load under operational conditions is related to error likelihood."
     },
     {
-      "anchorText": "edge case and degraded mode analysis",
+      "anchorText": "edge-case and degraded-mode analysis",
       "targetSlug": "edge-case-and-degraded-mode-analysis",
-      "reason": "The source states that error-likely interaction review directly informs worst-case analysis under non-nominal conditions."
-    },
-    {
-      "anchorText": "Kardion MCS Controller engagement",
-      "targetSlug": "kardion",
-      "reason": "The source names Kardion MCS Controller as an engagement example, and the slug is available in the linking context."
-    },
-    {
-      "anchorText": "Beissbarth automotive calibration engagement",
-      "targetSlug": "beissbarth",
-      "reason": "The source names Beissbarth automotive calibration as an engagement example, and the slug is available in the linking context."
-    },
-    {
-      "anchorText": "usability testing under realistic constraints",
-      "targetSlug": "usability-testing-under-realistic-constraint",
-      "reason": "The practice is explicitly distinguished from usability testing, making the testing practice a useful adjacent reference."
+      "reason": "Error-likely interaction review informs non-nominal scenario analysis."
     },
     {
       "anchorText": "alarm and warning evaluation",
       "targetSlug": "alarm-and-warning-evaluation",
-      "reason": "The source includes alarm state and warning-like state communication examples, making this adjacent practice relevant."
+      "reason": "Alarm and warning state conditions are relevant to the practice."
+    },
+    {
+      "anchorText": "Kardion MCS Controller",
+      "targetSlug": "kardion",
+      "reason": "The page uses Kardion as a documented engagement example."
+    },
+    {
+      "anchorText": "Beissbarth automotive calibration",
+      "targetSlug": "beissbarth",
+      "reason": "The page uses Beissbarth as a documented engagement example."
+    },
+    {
+      "anchorText": "Raymarine engagement",
+      "targetSlug": "raymarine-vhf",
+      "reason": "The page uses Raymarine as a documented engagement example."
+    },
+    {
+      "anchorText": "Schone Airspace Group Mission Control",
+      "targetSlug": "schone-mission-control",
+      "reason": "The page uses Schone Airspace Group as a documented engagement example."
+    },
+    {
+      "anchorText": "Streetec kntrl 2",
+      "targetSlug": "streetec-kntrl",
+      "reason": "The page uses Streetec kntrl 2 as a documented engagement example."
+    },
+    {
+      "anchorText": "Egma Order",
+      "targetSlug": "egma",
+      "reason": "The page uses Egma as a documented engagement example."
+    },
+    {
+      "anchorText": "visioncheckout",
+      "targetSlug": "visioncheckout",
+      "reason": "The page uses visioncheckout as a documented engagement example."
+    },
+    {
+      "anchorText": "uncrewed systems command-and-control engagement",
+      "targetSlug": "tactical-handheld-command-and-control",
+      "reason": "The page describes the uncrewed systems command-and-control engagement."
     }
   ],
   "tags": [
-    "error analysis",
+    "error-likely interaction",
     "use error",
     "foreseeable misuse",
     "IEC 62366-1",
     "formative evaluation",
     "critical tasks",
     "state ambiguity",
-    "cognitive load",
     "confirmation friction",
-    "design requirements"
+    "cognitive load",
+    "error reduction"
   ],
   "_meta": {
     "sourcePath": "sources/articles/Practices/practices--error-likely-interaction-review.md",
     "parentSlug": "practices",
     "childPageSlugs": [],
-    "generatedBy": "deterministic",
+    "generatedBy": "openai",
     "patches": [
       "practice-anchor"
     ]

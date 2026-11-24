@@ -41,7 +41,7 @@
 - The IA problem: cohort construction requires iterative hypothesis development (analytical freedom) and institutional auditability (governance traceability). These two requirements pull in opposite directions at the structural level.
 - **5 interaction models** developed and evaluated: wizard, nested logic blocks, timeline, fragment reuse, side-by-side comparison. These were not options to choose from — they were structural hypotheses, each embodying a different model of how researchers think about cohort construction.
 - 6 design cycles from first wireframes to interactive prototype; 8 usability sessions with realistic tasks (not simple navigation tasks but the full research scenario including governance review months later)
-- The competitive vector from Concept Convergence: the IA position where researcher analytical freedom and institutional auditability align — the query structure is automatically made visible and reproducible by the architecture, not by requiring users to document it separately
+- The design position from Concept Convergence: the IA position where researcher analytical freedom and institutional auditability align — the query structure is automatically made visible and reproducible by the architecture, not by requiring users to document it separately
 - **Client-reported: governance reviewers could verify cohort logic without escalating to the research team.** State as client-reported.
 
 ### Callsign fraud detection (IA as governance architecture)

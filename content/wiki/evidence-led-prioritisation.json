@@ -4,18 +4,18 @@
   "pageType": "practice",
   "category": "practices",
   "section": "Practices",
-  "summary": "Evidence-led prioritisation makes the evidence behind competing design options visible and comparable. It produces a structured ranking that combines expected operational effect with calibrated evidential confidence.",
+  "summary": "Evidence-led prioritisation makes the evidence behind design options visible, comparable and auditable. It is used when competing design options, engineering capacity constraints or stakeholder positions require a decision that distinguishes strong evidence from weaker inference.",
   "keyFacts": [
-    "Evidence-led prioritisation is used when design decisions must be made under partial or uneven evidence.",
-    "The practice compares each option by the option itself, its expected operational effect, its supporting evidence, and its evidential confidence.",
-    "The confidence dimension distinguishes evidence-led prioritisation from standard prioritisation methods such as impact/effort matrices, user story prioritisation, and stakeholder voting.",
-    "Creative Navy uses four evidential confidence categories: measured, client-reported, observed but not quantified, and inferred.",
-    "The output is a structured comparison document rather than a slide, opinion, or simple recommendation list.",
-    "The practice is used during Concept Convergence, during Implementation Partnership, and in audit and product vision engagements.",
-    "IDEXX Animana is cited as an example involving 100+ recommendations following a 35-clinic, 150+ participant research programme.",
-    "Triopsis is cited as an example where a 47-microtask analysis across three user roles informed a ranked output that shaped design sprints.",
-    "Gexcon is cited as an ancestor application involving 45 design variants across 10 key challenges and 37 evaluation sessions.",
-    "Dancerace is cited as an example of applying evidence-led prioritisation to stakeholder alignment."
+    "The practice ranks design options by expected operational effect and evidential confidence, not by advocacy alone.",
+    "Each option is described by the option itself, its expected effect, the supporting evidence and the confidence level of that evidence.",
+    "The confidence framework distinguishes measured, client-reported, observed but not quantified and inferred evidence.",
+    "The output is a structured comparison document, not a slide, opinion or recommendation presented for acceptance.",
+    "The deliverable supports parallel comparison, gap acknowledgement, disagreement resolution and decision audit.",
+    "The practice is used during Concept Convergence, Implementation Partnership, audit work, product vision engagements and stakeholder alignment work.",
+    "IDEXX Animana used the practice to structure more than 100 recommendations after a 35-clinic, 150-plus participant research programme.",
+    "Triopsis used evidence-led prioritisation after a 47-microtask analysis across three user roles, alongside outcomes recorded as 62% faster job discovery and 83% faster job sequence optimisation.",
+    "Maritime VTS used an auditable register with 36 unique issues mapped to 28 traceable interaction requirements, 14 approved decisions and 18 rejected alternatives.",
+    "Raymarine applied four evidence classes to every decision in the register: comparative prototype evidence, scenario observation, design reasoning and technical dependency."
   ],
   "bodySections": [
     {
@@ -23,57 +23,93 @@
       "bodyMarkdown": "Creative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nCreative Navy applies evidence led prioritisation as one of the named practices within its Critical Systems Design method. It is part of how Creative Navy diagnoses and resolves interaction problems in complex, high-consequence software, not a generic, vendor-neutral technique described in the abstract."
     },
     {
-      "heading": "Summary",
-      "bodyMarkdown": "Evidence-led prioritisation is a Creative Navy practice for ranking design options by expected operational effect and by the evidential confidence behind that expected effect. The practice is used when design decisions must be made under partial evidence, uneven research findings, live-system uncertainty, or competing stakeholder claims.\n\nThe distinctive contribution of evidence-led prioritisation is the confidence dimension. Standard prioritisation methods such as impact/effort matrices, user story prioritisation, and stakeholder voting can treat evidence as equivalent across options. Evidence-led prioritisation separates a high expected effect supported by strong evidence from a high expected effect based on weaker evidence that should be tested before development resource is committed."
+      "heading": "Evidence-Led Prioritisation Makes Design Evidence Comparable",
+      "bodyMarkdown": "Evidence-led prioritisation is a Creative Navy practice for ranking design options by combining expected operational effect with a calibrated assessment of evidential confidence. It is used when several design options compete for attention and a decision must distinguish expected operational effect from the confidence that the available evidence supports that effect.\n\nThe practice responds to a limitation in standard prioritisation methods. Impact and effort matrices, user story prioritisation and stakeholder voting can treat all evidence as equivalent. Evidence-led prioritisation separates the strength of a proposal from the strength of the evidence behind it.\n\nThe distinctive contribution is the confidence dimension. A design option can have high expected effect but weak supporting evidence. Another option can have lower expected effect but stronger evidence. Evidence-led prioritisation makes that difference explicit before development resource is committed."
     },
     {
-      "heading": "What evidence-led prioritisation compares",
-      "bodyMarkdown": "Evidence-led prioritisation makes the evidential basis for each design option visible and comparable. Each option is described through four elements: the specific design decision or change being considered, the expected operational effect, the evidence supporting that expected effect, and the evidential confidence assigned to that evidence.\n\nThe expected effect is stated in terms of the system's purpose rather than in terms of user satisfaction. The evidence may include research findings, observed behaviour, measured outcomes, or domain reasoning. The confidence assessment makes explicit whether the effect was measured directly, reported by the client, observed directionally, or inferred from adjacent evidence.\n\nThe final output is a ranking that combines expected effect with evidential confidence. The ranking is not only a statement of which option appears highest impact. It also shows which high-impact options are supported by strong evidence and which high-impact options rest on weaker evidence that may need validation before implementation."
+      "heading": "What Evidence-Led Prioritisation Compares",
+      "bodyMarkdown": "Evidence-led prioritisation compares design options through four elements: the option, the expected effect, the evidence and the evidential confidence. The option is the specific design decision or change being considered. The expected effect describes what the change would produce operationally, stated in terms of the system's purpose rather than user satisfaction.\n\nThe evidence records what supports the expected effect. Evidence can include research findings, observed behaviour, measured outcomes or domain reasoning. The evidential confidence states how strongly that evidence supports the expected effect.\n\nThe final ranking combines expected effect with evidential confidence. It does not only identify the option with the highest expected impact. It distinguishes options whose expected impact is strongly supported from options whose expected impact depends on weaker inference and should be tested before significant implementation commitment."
     },
     {
-      "heading": "Evidential confidence categories used in the practice",
-      "bodyMarkdown": "Creative Navy's evidence-led prioritisation uses four confidence categories to calibrate how strongly evidence supports an expected effect.\n\n**Measured** evidence means the outcome was directly measured in a controlled environment or in production deployment, by Creative Navy or by the client using defined methods. This is the highest confidence category in the practice.\n\n**Client-reported** evidence means the outcome was reported by the client from the client's own observation or data. This is treated as strong evidence, but it depends on the client's measurement basis and objectivity.\n\n**Observed but not quantified** evidence means the behaviour or pattern was directly observed during research sessions but was not measured with defined instruments. This category provides moderate confidence and is directional rather than precise.\n\n**Inferred** evidence means the expected effect is extrapolated from adjacent evidence, domain knowledge, or theoretical reasoning rather than from direct observation. This is the lowest confidence category. It is useful for generating hypotheses, but the practice does not treat it as sufficient for high-stakes commitments without further validation."
+      "heading": "Evidential Confidence Categories Used in the Practice",
+      "bodyMarkdown": "Evidence-led prioritisation uses four confidence categories: measured, client-reported, observed but not quantified and inferred.\n\nMeasured evidence has the highest confidence in this framework. It means the outcome was directly measured in a controlled environment or in production deployment by Creative Navy or by the client using defined methods.\n\nClient-reported evidence is strong but depends on the client's measurement basis and objectivity. It covers outcomes reported by the client from the client's own observation or data.\n\nObserved but not quantified evidence has moderate confidence. It covers behaviour or patterns directly observed during research sessions but not measured with defined instruments. This evidence is directional rather than precise.\n\nInferred evidence has the lowest confidence in the framework. It covers expected effects extrapolated from adjacent evidence, domain knowledge or theoretical reasoning rather than from direct observation. It is useful for hypotheses but not for high-stakes commitments without further validation."
     },
     {
-      "heading": "Structured comparison document as the output",
-      "bodyMarkdown": "Evidence-led prioritisation produces a structured comparison document rather than an opinion, a slide, or a recommendation presented for acceptance. The document assembles evidence so stakeholders can inspect the basis for each prioritisation decision.\n\nThe format supports parallel comparison. Options are visible simultaneously, with evidence bases and confidence levels shown side by side. This avoids a sequential presentation in which the last option argued for can receive disproportionate attention.\n\nThe format also supports gap acknowledgement. Evidence-led prioritisation explicitly flags where evidence is absent or weak, so weak evidence is not presented with the same confidence as strong evidence.\n\nThe document supports disagreement resolution by making the basis of disagreement specific. Stakeholders may disagree about expected effect, evidential confidence, or the available evidence. Evidence-led prioritisation separates these disagreements because each has a different resolution path.\n\nThe document creates a decision audit. It records why specific design decisions were made, which is useful for onboarding, retrospectives, and regulated contexts where design rationale needs to be documented."
+      "heading": "When Creative Navy Uses Evidence-Led Prioritisation",
+      "bodyMarkdown": "Creative Navy uses evidence-led prioritisation at key decision points during Concept Convergence, when multiple design directions have been explored and a selection must be made between competing claims about which direction is best.\n\nCreative Navy also uses evidence-led prioritisation during Implementation Partnership, when ongoing design priorities must be managed against limited engineering capacity and stakeholder priorities compete for queue position.\n\nIn audit and product vision engagements, evidence-led prioritisation structures research findings into recommendations the client team can act on independently. In stakeholder alignment work, evidence-led prioritisation makes competing positions comparable so that disagreement can be addressed as a question about expected effect, evidential confidence or evidence availability."
     },
     {
-      "heading": "When Creative Navy uses evidence-led prioritisation",
-      "bodyMarkdown": "Creative Navy uses evidence-led prioritisation at key decision points during Concept Convergence, when multiple design directions have been explored and a selection must be made between competing claims about which direction is best.\n\nCreative Navy also uses evidence-led prioritisation during the Implementation Partnership phase, when ongoing design priorities must be managed against limited engineering capacity and stakeholder priorities compete for queue position.\n\nEvidence-led prioritisation is also used in audit and product vision engagements, when a research programme has produced findings that need to become recommendations the client team can act on independently. The IDEXX Animana example involved 100+ structured recommendations following a 35-clinic, 150+ participant research programme. A recommendation set of that scale required prioritisation logic that could distinguish evidentially strong recommendations, directionally supported recommendations, and reasonable inferences from adjacent evidence.\n\nEvidence-led prioritisation is used when stakeholder alignment is the primary challenge. In the Dancerace engagement, competing stakeholder positions blocked design decisions. The practice made the evidence for different directions comparable, reducing the role of advocacy and making the underlying design question more tractable."
+      "heading": "The Deliverable Produced by Evidence-Led Prioritisation",
+      "bodyMarkdown": "Evidence-led prioritisation produces a structured comparison document. It is not an opinion, a presentation slide or a list of recommendations presented for acceptance. The deliverable assembles options, expected effects, evidence and confidence levels so that stakeholders can interrogate the basis of the ranking.\n\nThe structured deliverable supports parallel comparison. Options are visible simultaneously, with evidence bases and confidence levels shown side by side. This reduces the bias introduced when options are presented sequentially and the final option argued for receives disproportionate attention.\n\nThe deliverable also supports gap acknowledgement. Where evidence is absent or weak, the gap is visible rather than hidden inside a confident recommendation. This prevents weak evidence from being presented with the same authority as strong evidence.\n\nEvidence-led prioritisation helps resolve disagreement by making the disagreement specific. Stakeholders may disagree about the expected effect, about evidential confidence or about what evidence is available. These are different disagreements with different resolution paths.\n\nThe deliverable creates a decision audit. It records why specific design decisions were made, which supports onboarding, retrospectives and design rationale documentation in regulated contexts."
     },
     {
-      "heading": "Evidence from IDEXX Animana, Triopsis, Gexcon, and Dancerace",
-      "bodyMarkdown": "The IDEXX Animana veterinary practice management engagement is the primary example of evidence-led prioritisation applied to a large recommendation set. Creative Navy structured 100+ recommendations for development ticket translation after a 35-clinic, 150+ participant research programme. The recommendation structure distinguished recommendations that could proceed with confidence from recommendations that were directionally supported or inferred from adjacent evidence.\n\nIn the Triopsis workforce management engagement, Creative Navy's 47-microtask analysis produced a rich evidence base across three user roles. Evidence-led prioritisation structured the design recommendations by combining frequency, cognitive load, and evidential confidence into a ranked output that shaped the design sprints. Engagement evidence reports 62% faster job discovery and 83% faster job sequence optimisation; the practice is described as part of how design effort was concentrated on interactions where evidence of impact and mechanism was strongest.\n\nIn the Gexcon CFD simulation engagement, Creative Navy explored 45 design variants across 10 key challenges and conducted 37 evaluation sessions. Each variant was presented with explicit pros and cons. This structured comparative format is described as an ancestor of evidence-led prioritisation because client decisions were made against visible trade-offs rather than advocacy for a preferred solution.\n\nIn the Dancerace / Jacko engagement, evidence-led prioritisation was applied to a stakeholder alignment problem. Two internal camps held competing positions about what the product should prioritise. A design concept described as chasing routines made a path through the trade-off visible, while structured presentation of evidence for each camp's position reframed the disagreement from a values conflict into an evidence conversation."
+      "heading": "IDEXX Animana Used Evidence-Led Prioritisation for a Large Recommendation Set",
+      "bodyMarkdown": "The IDEXX Animana veterinary practice management engagement used evidence-led prioritisation to structure more than 100 recommendations after a 35-clinic, 150-plus participant research programme. A recommendation set of that scale required explicit prioritisation logic because not all recommendations were supported by evidence to the same degree.\n\nThe prioritisation distinguished recommendations that were evidentially strong, recommendations that were directionally supported and recommendations that represented reasonable inferences from adjacent evidence. The 5-year product vision delivered alongside the recommendations provided the longer-term framing used to sequence shorter-term recommendations."
     },
     {
-      "heading": "Relationship to research and analytical practices",
-      "bodyMarkdown": "Evidence-led prioritisation depends on other Creative Navy research and analysis practices for its inputs. Workflow analysis, microtask analysis, and task-criticality mapping produce operational evidence that the prioritisation can assemble.\n\nCognitive load analysis and error-likely interaction review produce mechanism-level evidence for why a design option is expected to affect operational performance. Usability testing under realistic constraint can produce evidence at the highest confidence level when outcomes are directly measured under defined conditions.\n\nEvidence-led prioritisation also reflects Creative Navy's broader evidence standards. The same confidence categories used in the practice — measured, client-reported, observed but not quantified, and inferred — are applied to evidence claims across Creative Navy's documentation."
+      "heading": "Triopsis Used Microtask Evidence to Rank Design Effort",
+      "bodyMarkdown": "The Triopsis workforce management engagement used evidence-led prioritisation after a 47-microtask analysis across three user roles. The prioritisation combined task frequency, cognitive load and evidential confidence into a ranked output that shaped design sprints.\n\nThe documented Triopsis engagement records 62% faster job discovery and 83% faster job sequence optimisation. The engagement connects those outcomes partly to concentrating design effort on interactions for which the evidence of both impact and mechanism was strongest, but the available evidence does not specify an independent measurement source."
     },
     {
-      "heading": "Boundaries and limits",
-      "bodyMarkdown": "Evidence-led prioritisation does not remove uncertainty from design decision-making. It makes uncertainty visible by distinguishing strong evidence from directional observation and inference.\n\nEvidence-led prioritisation does not treat stakeholder preference as equivalent to evidence. Stakeholders can still contest the ranking, but the structured document makes clear whether the disagreement concerns expected effect, confidence level, or the available evidence.\n\nEvidence-led prioritisation does not make inferred evidence sufficient for high-stakes commitments. Inferred evidence can support hypotheses and option exploration, but the practice identifies when further testing is needed before significant development resource is committed."
+      "heading": "Gexcon Used Comparative Variants as an Ancestor of the Practice",
+      "bodyMarkdown": "The Gexcon CFD simulation engagement involved 45 design variants across 10 key challenges and 37 evaluation sessions. Each variant was presented to the client with explicit pros and cons.\n\nThis structured comparison format is described as an ancestor of evidence-led prioritisation. It made trade-offs visible during design exploration rather than presenting a preferred solution through advocacy."
+    },
+    {
+      "heading": "Maritime VTS Used an Auditable Register for Prioritisation",
+      "bodyMarkdown": "The Maritime VTS engagement is the clearest example of evidence-led prioritisation as counting discipline. The register remained auditable from initial audit findings through handover, and the counting rules were stated at each stage.\n\nThe engagement recorded 58 audit findings triaged four ways: 6 flagged for safety-domain review, 16 high, 25 medium and 11 low. At the end of research this was consolidated to 36 unique issues: 19 carried from discovery and 17 newly distinguished, distributed as 4 safety-review candidates, 12 high, 14 medium and 6 low.\n\nEach of the 36 unique issues was mapped to one of 28 traceable interaction requirements, linked to session evidence, an issue cluster and a decision. The register then recorded 14 approved decisions against 18 explicitly rejected alternatives. At handover, the register was reconciled into 30 mitigated issues, 4 assigned to engineering follow-up and 2 deferred by client decision.\n\nThe 36 unique issues did not grow during later testing. The 13 observations in the formative round and 8 observations in the comparative round were mapped back to existing entries. In this engagement, prioritisation was not only a sorted list; it was a decision structure that could be re-derived from the register.\n\nThe status term mitigated has a defined limit in the Maritime VTS register. It means addressed in design specifications and evaluated where in scope. It does not mean implemented in every product, proven in production, certified or cleared from formal safety review. The 4 safety-review candidates remained open to the client's safety authority."
+    },
+    {
+      "heading": "Raymarine Classified Decisions by Evidence Type",
+      "bodyMarkdown": "The Raymarine engagement for a next-generation fixed-mount VHF applied four evidence classes to every decision in the register. The classes were comparative prototype evidence from a controlled comparison of alternative behaviours, scenario observation from scripted interruption, emergency or degraded states, design reasoning from workflow, state model and cross-document consistency, and technical dependency as an explicit handover condition.\n\nThis register allowed a reader to distinguish decisions based on measurement, decisions based on reasoning and decisions waiting on another dependency. The same engagement also shows prioritisation as reallocation rather than expansion: the control study was funded by trimming lower-value plot variants and secondary menu patterns within the same phase, with the two-week exploration and eight-week programme unchanged and no additional sprint or fee assumption change."
+    },
+    {
+      "heading": "Oceaneering Used Field Frequency Evidence to Decide What Not to Build Around",
+      "bodyMarkdown": "The Oceaneering hospital dispatch panel engagement settled three design decisions through frequency arguments from the field rather than analytics. Navigation changed after six navigation variants had been produced with written pros and cons. A persistent menu had been recommended, but field reporting indicated that the menus were needed about once every two months and that almost nobody who used the panel needed them. The collapsed menu therefore won and was shown collapsed by default.\n\nA disabled-station state was also deleted after both sites reported never having disabled one. The field evidence described one sensor replacement during the technician's tenure and spills occurring in corridors rather than on stations.\n\nThis engagement illustrates evidence-led prioritisation as the discipline of not building the design around rare exceptions while still deciding how those exceptions should be indicated."
+    },
+    {
+      "heading": "Evidence-Led Prioritisation Can Support Staging and Disclosure Under Constraint",
+      "bodyMarkdown": "Streetec kntrl 2 shows evidence-led prioritisation as staging. Testing produced a small set of immediate changes to screen transitions and a larger backlog of possible future features. Streetec chose to stage the larger backlog over a longer horizon rather than build it immediately.\n\nEgma Order shows evidence-led prioritisation as disclosure under time pressure. When remaining time looked short during the UI phase, Creative Navy stated openly what would be completed first and what would be dropped if necessary rather than silently descoping.\n\nThe industrial engagement with a European industrial automation vendor shows mid-engagement re-prioritisation. The expert review was re-prioritised at the client's request because the client was already redesigning certain screens and wanted depth where the findings would still be actionable."
+    },
+    {
+      "heading": "AIT, MDU and Assemblio Used Prioritisation to Reduce or Defer Work",
+      "bodyMarkdown": "The AIT heat pump controller engagement made three decisions by reducing rather than adding. Widget content was cut to three pieces of information each on legibility grounds after AIT's own review of a wireframe at physical size raised concern about smaller text for an older installer. The commissioning flow was reordered so that mode and feature selection came before the commissioning assistant. The information feature was deferred with a defined interim behaviour because the needed content did not exist.\n\nThe MDU ship motion monitoring engagement made reductions by judgement. The live Now value was removed from both cards because it cost attention without adding information. Pinch-to-zoom was declined on implementation-cost grounds, with a tap-to-read-value interaction specified instead. Features such as remote viewing and settings change, hogging, sagging and twisting, parametric roll detection and warning, and heave, sway and surge were reserved for a defined place rather than partially implemented. Parametric roll detection and the alarm-versus-warning distinction were not built.\n\nThe Assemblio engagement staged out hyperlinks and step numbers on hover. It also recorded a harder prioritisation limit: the match list did not scale, a search field was identified as a clear improvement, and beyond that the documented discussion acknowledged that a better representation might not exist if the planner had to decide part by part."
+    },
+    {
+      "heading": "Topera and Visioncheckout Prioritised Against External or Hardware Constraints",
+      "bodyMarkdown": "Topera was a concept design, and nothing was built. The prioritisation was set by interoperability depth rather than a feature list. Synchronisation levels were specified as required, target, stretch and post-MVP, and CPM collaboration classes were tiered in the same way. The concept design used the ProSTEP iViP and VDA recommendations as an external, published and verifiable yardstick. It also tiered data model coverage across the thirteen DIN 69901-4 diagrams. The concept design can be described as grounded in DIN 69901, but no compliance claim or outcome claim is established.\n\nThe visioncheckout engagement prioritised recommendations by constraint rather than preference. visioncheckout accepted every recommendation that did not require hardware change. Hardware-dependent recommendations, including the 3.5 mm headphone jack and tactile navigation keypad, were added to the requirements list for the next hardware iteration. This is not a claim that the product is accessible, will be accessible or complies with anything, and no shipped outcome is established."
+    },
+    {
+      "heading": "Boundaries of Evidence-Led Prioritisation",
+      "bodyMarkdown": "Evidence-led prioritisation does not make weak evidence strong. It makes evidence strength visible so that a design team can decide whether to proceed, test further or defer.\n\nThe practice does not remove the need for further validation where evidence is observed but not quantified or inferred. In the confidence framework, inferred evidence is useful for generating hypotheses but not for high-stakes commitments without further testing.\n\nThe practice also depends on preserving evidence labels. Client-reported evidence should not be treated as measured evidence. Observed but not quantified evidence should not be treated as precise. Inferred evidence should not be treated as directly observed.\n\nIn the Maritime VTS example, counts must not be combined across stages. The 36 unique issues did not grow; later observations were mapped back into the same register. Combining register counts would create a false claim."
     }
   ],
   "evidenceSummary": {
     "strongClaims": [
       "Evidence-led prioritisation ranks design options by combining expected operational effect with evidential confidence.",
-      "The confidence dimension distinguishes evidence-led prioritisation from standard prioritisation methods.",
-      "Creative Navy uses measured, client-reported, observed but not quantified, and inferred as evidential confidence categories in this practice.",
-      "The practice produces a structured comparison document that supports parallel comparison, gap acknowledgement, disagreement resolution, and decision audit.",
-      "Evidence-led prioritisation is used during Concept Convergence, during Implementation Partnership, and in audit and product vision engagements.",
-      "The IDEXX Animana example involved 100+ structured recommendations following a 35-clinic, 150+ participant research programme.",
-      "The Triopsis example used a 47-microtask analysis across three user roles and reports 62% faster job discovery and 83% faster job sequence optimisation.",
-      "The Gexcon example involved 45 design variants across 10 key challenges and 37 evaluation sessions.",
-      "The Dancerace / Jacko example applied evidence-led prioritisation to a stakeholder alignment problem involving competing internal positions."
+      "The evidential confidence framework distinguishes measured, client-reported, observed but not quantified and inferred evidence.",
+      "The practice produces a structured comparison document that supports parallel comparison, gap acknowledgement, disagreement resolution and decision audit.",
+      "Creative Navy uses evidence-led prioritisation during Concept Convergence, Implementation Partnership, audit work, product vision engagements and stakeholder alignment work.",
+      "IDEXX Animana used explicit prioritisation logic for more than 100 recommendations after a 35-clinic, 150-plus participant research programme.",
+      "The Maritime VTS engagement maintained an auditable register in which 36 unique issues were mapped to 28 traceable interaction requirements, 14 approved decisions, 18 rejected alternatives and a handover status register.",
+      "Raymarine applied four evidence classes to every decision in the register: comparative prototype evidence, scenario observation, design reasoning and technical dependency.",
+      "Topera was scoped as a concept design using interoperability depth and external recommendations, with no build and no outcome claim.",
+      "visioncheckout accepted recommendations that did not require hardware change and moved hardware-dependent recommendations to the next hardware iteration requirements list, with no shipped outcome or accessibility claim established."
+    ],
+    "weakerClaims": [
+      "Triopsis used evidence-led prioritisation after a 47-microtask analysis and recorded 62% faster job discovery and 83% faster job sequence optimisation; the available claim does not specify an independent measurement source."
     ],
     "limitations": [
-      "The practice assumes decisions are made under partial evidence; it does not eliminate uncertainty.",
-      "Client-reported evidence is treated as strong but depends on the client's measurement basis and objectivity.",
+      "Evidence-led prioritisation does not make weak evidence strong; it makes the confidence level visible.",
+      "Measured, client-reported, observed but not quantified and inferred evidence carry different confidence levels and should not be collapsed into a single evidence category.",
+      "Client-reported evidence depends on the client's measurement basis and objectivity.",
       "Observed but not quantified evidence is directional rather than precise.",
-      "Inferred evidence is the lowest confidence category and is positioned as hypothesis-generating rather than sufficient for high-stakes commitments.",
-      "The Triopsis outcomes are described as measurable in the source, but the source does not specify whether they were field-measured, client-measured, or measured by another defined basis.",
-      "The engagement examples show applications of the practice; they do not establish that the same outcomes will occur in every context."
+      "Inferred evidence is lowest confidence and is useful for hypotheses rather than high-stakes commitments without further validation.",
+      "The Maritime VTS counts must not be averaged or combined across register stages; the 36 unique issues did not grow, and later observations mapped back into the register.",
+      "In the Maritime VTS register, mitigated means addressed in design specifications and evaluated where in scope; it does not mean implemented, proven, certified or cleared from formal safety review.",
+      "AIT deferrals are design reasoning and client review evidence, not user-validated findings.",
+      "Topera was a concept design only; nothing was built and no outcome claim exists.",
+      "visioncheckout has no shipped outcome, accessibility claim or compliance claim in the available evidence.",
+      "Streetec staging should be framed as staging over a longer horizon, not reluctance."
     ]
   },
   "relatedPageSlugs": [
@@ -83,60 +119,121 @@
     "cognitive-load-analysis",
     "error-likely-interaction-review",
     "usability-testing-under-realistic-constraint",
-    "triopsis-workforce-management-saas"
+    "triopsis-workforce-management-saas",
+    "raymarine-vhf",
+    "mdu-ship-motion-monitoring",
+    "streetec-kntrl",
+    "ait-heat-pump-controller",
+    "assemblio",
+    "topera",
+    "egma",
+    "oceaneering-dispatch-panel",
+    "visioncheckout",
+    "maritime-vts"
   ],
   "internalLinks": [
     {
       "anchorText": "workflow analysis",
       "targetSlug": "workflow-analysis",
-      "reason": "The source identifies workflow analysis as an input that produces operational evidence for prioritisation."
+      "reason": "The source states that workflow analysis produces operational evidence assembled by evidence-led prioritisation."
     },
     {
       "anchorText": "microtask analysis",
       "targetSlug": "microtask-analysis",
-      "reason": "The source identifies microtask analysis as an input and describes the Triopsis 47-microtask analysis as evidence for prioritisation."
+      "reason": "The source connects microtask analysis to operational evidence and describes the Triopsis 47-microtask analysis."
     },
     {
       "anchorText": "task-criticality mapping",
       "targetSlug": "task-criticality-mapping",
-      "reason": "The source identifies task-criticality mapping as an input that produces operational evidence for prioritisation."
+      "reason": "The source states that task-criticality mapping produces operational evidence used as input."
     },
     {
       "anchorText": "cognitive load analysis",
       "targetSlug": "cognitive-load-analysis",
-      "reason": "The source identifies cognitive load analysis as mechanism-level evidence and mentions cognitive load in the Triopsis prioritisation logic."
+      "reason": "The source states that cognitive load analysis produces mechanism-level evidence for prioritisation."
     },
     {
       "anchorText": "error-likely interaction review",
       "targetSlug": "error-likely-interaction-review",
-      "reason": "The source identifies error-likely interaction review as a source of mechanism-level evidence."
+      "reason": "The source states that error-likely interaction review produces mechanism-level evidence."
     },
     {
       "anchorText": "usability testing under realistic constraint",
       "targetSlug": "usability-testing-under-realistic-constraint",
-      "reason": "The source identifies usability testing under realistic constraint as producing measured evidence at the highest confidence level."
+      "reason": "The source states that this practice can produce measured evidence at the highest confidence level."
     },
     {
       "anchorText": "Triopsis workforce management",
       "targetSlug": "triopsis-workforce-management-saas",
-      "reason": "The source mentions Triopsis as an engagement example, and the matching case study slug is available in the linking context."
+      "reason": "The body discusses Triopsis as a documented engagement example."
+    },
+    {
+      "anchorText": "Raymarine decision register",
+      "targetSlug": "raymarine-vhf",
+      "reason": "The body discusses Raymarine as a documented engagement example."
+    },
+    {
+      "anchorText": "MDU ship motion monitoring",
+      "targetSlug": "mdu-ship-motion-monitoring",
+      "reason": "The body discusses MDU as a documented engagement example."
+    },
+    {
+      "anchorText": "Streetec kntrl 2",
+      "targetSlug": "streetec-kntrl",
+      "reason": "The body discusses Streetec as a documented engagement example."
+    },
+    {
+      "anchorText": "AIT heat pump controller",
+      "targetSlug": "ait-heat-pump-controller",
+      "reason": "The body discusses AIT as a documented engagement example."
+    },
+    {
+      "anchorText": "Assemblio",
+      "targetSlug": "assemblio",
+      "reason": "The body discusses Assemblio as a documented engagement example."
+    },
+    {
+      "anchorText": "Topera",
+      "targetSlug": "topera",
+      "reason": "The body discusses Topera as a concept design example."
+    },
+    {
+      "anchorText": "Egma Order",
+      "targetSlug": "egma",
+      "reason": "The body discusses Egma as a documented engagement example."
+    },
+    {
+      "anchorText": "Oceaneering hospital dispatch panel",
+      "targetSlug": "oceaneering-dispatch-panel",
+      "reason": "The body discusses Oceaneering as a documented engagement example."
+    },
+    {
+      "anchorText": "visioncheckout",
+      "targetSlug": "visioncheckout",
+      "reason": "The body discusses visioncheckout as a documented engagement example."
+    },
+    {
+      "anchorText": "Maritime VTS register",
+      "targetSlug": "maritime-vts",
+      "reason": "The body discusses Maritime VTS as a documented engagement example."
     }
   ],
   "tags": [
     "evidence-led prioritisation",
     "design prioritisation",
     "evidential confidence",
-    "decision audit",
-    "research synthesis",
+    "evidence standards",
     "Concept Convergence",
     "Implementation Partnership",
-    "design recommendations"
+    "decision audit",
+    "recommendation sequencing",
+    "stakeholder alignment"
   ],
   "_meta": {
     "sourcePath": "sources/articles/Practices/practices--evidence-led-prioritisation.md",
     "parentSlug": "practices",
     "childPageSlugs": [],
-    "generatedBy": "deterministic",
+    "generatedBy": "openai",
     "patches": [
       "practice-anchor"
     ]

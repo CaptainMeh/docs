@@ -1,90 +1,73 @@
 {
   "slug": "edge-case-and-degraded-mode-analysis",
-  "title": "Edge Case And Degraded Mode Analysis",
+  "title": "Edge-case and degraded-mode analysis",
   "pageType": "practice",
   "category": "practices",
   "section": "Practices",
-  "summary": "Edge-case-and-degraded-mode analysis is a practice for designing interfaces that remain understandable under fault states, environmental stress, abnormal data, unusual configurations, and partial system operation. It complements nominal-case design by producing a condition inventory and specific design requirements for each non-nominal state.",
+  "summary": "Edge-case-and-degraded-mode analysis is a Creative Navy practice for identifying hardware faults, environmental deviations, abnormal data states and degraded operating modes before or during design work. The practice produces a non-nominal condition inventory and a design requirement for each condition.",
   "keyFacts": [
-    "The practice focuses on non-nominal conditions because interface failure has the greatest operational consequence under faults, stress, abnormal data, and degraded operation.",
-    "The analysis assesses each identified condition by frequency, consequence, current interface behaviour, and design requirement.",
-    "The practice distinguishes hardware and sensor faults, environmental conditions, abnormal data and configuration states, and degraded operating modes.",
+    "The practice focuses on non-nominal conditions where interface failure can have greater operational consequence than under nominal use.",
+    "The analysis distinguishes hardware and sensor faults, environmental conditions, abnormal data and configuration states, and degraded operating modes.",
+    "Each identified condition is assessed by frequency, consequence, current interface behaviour and required interface response.",
     "The aggregate output is a non-nominal condition inventory with design requirements for each condition.",
-    "The practice is used during Sandbox Experiments when reviewing existing systems and during Iterative System Building when reviewing design solutions.",
-    "In embedded and hardware-integrated contexts, the analysis is conducted before design begins because hardware architecture determines which non-nominal conditions are possible.",
+    "The practice is used during Sandbox Experiments to review existing systems before redesign decisions are made.",
+    "The practice is used during Iterative System Building to check whether proposed designs address non-nominal conditions as well as nominal use.",
+    "In embedded and hardware-integrated contexts, hardware specifications are inputs because hardware architecture determines which non-nominal conditions are possible.",
     "In regulated medical device contexts, the practice directly addresses IEC 62366-1 requirements for hazard-related use scenarios.",
-    "Torqeedo maritime HMI evidence included 12 sea trials over 6 months, including night operations, adverse weather, hull slamming, and glare conditions."
+    "KISPE Space had 40 documented edge cases and degraded states, five specified verification suites and eight cross-module regression checks; these were specified tests, not executed tests.",
+    "Raymarine had forty-three exception records across eight independently varying state axes and twenty-four verification scenarios; only interruption, position, receiver and connectivity cases were put to operators on a bench."
   ],
   "bodySections": [
     {
-      "heading": "Edge Case And Degraded Mode Analysis in Creative Navy's Critical Systems Design method",
-      "bodyMarkdown": "Creative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nCreative Navy applies edge case and degraded mode analysis as one of the named practices within its Critical Systems Design method. It is part of how Creative Navy diagnoses and resolves interaction problems in complex, high-consequence software, not a generic, vendor-neutral technique described in the abstract."
+      "heading": "Edge-case and degraded-mode analysis in Creative Navy's Critical Systems Design method",
+      "bodyMarkdown": "Creative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nCreative Navy applies edge-case and degraded-mode analysis as one of the named practices within its Critical Systems Design method. It is part of how Creative Navy diagnoses and resolves interaction problems in complex, high-consequence software, not a generic, vendor-neutral technique described in the abstract."
     },
     {
-      "heading": "Summary",
-      "bodyMarkdown": "Edge-case-and-degraded-mode analysis identifies non-nominal conditions before design decisions are made. The practice exists because embedded systems, high-consequence environments, and complex operational software often fail most seriously outside nominal operation.\n\nA maritime helm display that fails to communicate battery state clearly during a fault condition is more dangerous than one that communicates battery state suboptimally under nominal conditions. Edge-case-and-degraded-mode analysis treats those fault and degraded conditions as design inputs rather than late exceptions.\n\nThe practice assesses each identified condition against three dimensions: frequency, consequence, and current interface behaviour. The output is a specific design requirement for each condition, not a generic instruction to handle errors better."
+      "heading": "Definition and purpose of edge-case-and-degraded-mode analysis",
+      "bodyMarkdown": "Edge-case-and-degraded-mode analysis is a design practice that identifies non-nominal operating conditions, assesses frequency, consequence and current interface behaviour, and defines a specific design requirement for each condition.\n\nCreative Navy's Critical Systems Design method designs software whose interfaces, workflows, and operating logic carry real operational consequences, working through five phases — Sandbox Experiments, Concept Convergence, Iterative System Building, Organizational Integration, and Implementation Partnership — to take each system from initial exploration to independent operation by the client's own team.\n\nIn Creative Navy's Critical Systems Design method, edge-case-and-degraded-mode analysis treats edge cases as design inputs rather than late exceptions. The practice is used where nominal-case design is not sufficient because the interface may need to communicate, prevent, constrain or recover differently when the system is outside normal operation."
     },
     {
-      "heading": "What edge-case-and-degraded-mode analysis does",
-      "bodyMarkdown": "Edge-case-and-degraded-mode analysis systematically identifies all non-nominal conditions before design decisions are made. It then evaluates each condition by how often it occurs, what happens operationally if the interface does not address it, and what the existing interface currently shows.\n\nThe practice covers four categories of non-nominal condition:\n\n- **Hardware and sensor faults.** A sensor reads incorrectly, a component fails, a device loses power, or a communication link drops. The interface must communicate the fault state clearly and, where possible, support graceful degradation.\n- **Environmental conditions.** Temperature extremes, vibration, glare, water exposure, variable lighting, and noise can degrade communication channels such as colour, touch, and text.\n- **Abnormal data and configuration states.** Inputs may be incomplete, contradictory, outside expected ranges, not updated, or technically valid but operationally unusual. The interface must avoid silent errors and misleading outputs.\n- **Degraded operating modes.** Some functions may be unavailable or operating at reduced capability, such as single-engine operation in a six-engine configuration, low-connectivity mode in a field device, or safe mode during startup and shutdown."
+      "heading": "Types of non-nominal condition identified by the practice",
+      "bodyMarkdown": "Edge-case-and-degraded-mode analysis separates non-nominal conditions into distinct categories so that different degradation classes are not blended into a single generic exception type.\n\n- **Hardware and sensor faults** include incorrect sensor readings, component failure, device power loss and dropped communication links. The design requirement is usually to make the fault state visible and support graceful degradation where possible.\n- **Environmental conditions** include temperature extremes, vibration, glare, water exposure, variable lighting and noise. These conditions can degrade communication channels such as colour, touch input, text legibility or audible feedback.\n- **Abnormal data and configuration states** include incomplete inputs, contradictory inputs, out-of-range inputs, stale data and technically valid configurations that are operationally unusual. The design requirement is to prevent silent errors and misleading outputs.\n- **Degraded operating modes** are partial system states where functions are unavailable or operating at reduced capability. The design requirement is to show what remains possible, what is unavailable and what recovery path exists."
     },
     {
-      "heading": "How each non-nominal condition is assessed",
-      "bodyMarkdown": "Edge-case-and-degraded-mode analysis records four elements for each identified condition. Frequency describes whether the condition is routine, occasional, rare but foreseeable, or unlikely but high-consequence. Consequence describes what happens operationally if the condition occurs and the interface does not address it, classified by severity and reversibility.\n\nCurrent interface behaviour records what the existing interface shows when the condition is encountered. The observed behaviour may be nothing, a generic error, an incorrect reading, or an unintelligible state.\n\nThe design requirement states what the interface must do when the condition occurs. The requirement must be specific to the condition rather than a broad instruction to improve communication or error handling."
+      "heading": "When Creative Navy applies edge-case-and-degraded-mode analysis",
+      "bodyMarkdown": "Creative Navy applies edge-case-and-degraded-mode analysis during Sandbox Experiments when reviewing existing systems before redesign decisions are made. In this use, the practice identifies non-nominal conditions that the current interface may hide, generalise or handle inconsistently.\n\nCreative Navy applies edge-case-and-degraded-mode analysis during Iterative System Building when reviewing proposed design solutions. In this use, the practice checks whether the design addresses non-nominal conditions as well as nominal use.\n\nIn embedded and hardware-integrated contexts, Creative Navy conducts the analysis before design begins because hardware architecture determines which non-nominal conditions are possible. Inputs include hardware specifications such as operating temperature range, sensor fault modes and communication protocol behaviours.\n\nIn regulated medical device contexts, edge-case-and-degraded-mode analysis addresses IEC 62366-1 requirements for hazard-related use scenarios, including abnormal conditions under which the device will be used. Creative Navy's role is formative evaluation; summative validation remains the manufacturer's responsibility through the regulatory submission."
     },
     {
-      "heading": "Outputs of edge-case-and-degraded-mode analysis",
-      "bodyMarkdown": "The main output of edge-case-and-degraded-mode analysis is a complete non-nominal condition inventory. Each inventory entry connects a condition to frequency, consequence, current interface behaviour, and a specific design requirement.\n\nThis inventory complements nominal-case design. Standard product design often stops at the normal operating path; edge-case-and-degraded-mode analysis defines what the interface must do when operation becomes abnormal, degraded, contradictory, interrupted, or constrained by the environment."
+      "heading": "Assessment fields used for each non-nominal condition",
+      "bodyMarkdown": "Edge-case-and-degraded-mode analysis assesses each identified non-nominal condition across four fields.\n\n- **Frequency** records how often the condition occurs in real operation. Categories can include routine, occasional, rare but foreseeable, and unlikely but high-consequence.\n- **Consequence** records what happens operationally if the condition occurs and the interface does not address it. Consequence is classified by severity and reversibility.\n- **Current interface behaviour** records what the existing interface shows when the condition occurs. The behaviour may be no visible response, a generic error, an incorrect reading or an unintelligible state.\n- **Design requirement** records what the interface must do when the condition occurs. The requirement must be specific enough to guide design decisions rather than remain a generic statement to handle errors better.\n\nThe aggregate output is a non-nominal condition inventory with a design requirement for each condition."
     },
     {
-      "heading": "When edge-case-and-degraded-mode analysis is used",
-      "bodyMarkdown": "Edge-case-and-degraded-mode analysis is used during Sandbox Experiments when existing systems are reviewed. In that phase, the practice identifies non-nominal conditions before redesign decisions are made.\n\nThe practice is also used during Iterative System Building when design solutions are reviewed. In that phase, the analysis confirms that proposed designs address non-nominal conditions rather than only nominal ones.\n\nIn embedded and hardware-integrated contexts, edge-case-and-degraded-mode analysis is conducted before design begins. Hardware architecture determines which non-nominal conditions are possible, so operating temperature range, sensor fault modes, and communication protocol behaviours become design inputs.\n\nIn regulated medical device contexts, edge-case-and-degraded-mode analysis directly addresses IEC 62366-1 requirements for hazard-related use scenarios, including the abnormal conditions under which the device will be used. Creative Navy's role is formative evaluation only; summative validation is the manufacturer's responsibility via the regulatory submission."
+      "heading": "How the practice changes design decisions",
+      "bodyMarkdown": "Edge-case-and-degraded-mode analysis can produce several kinds of design requirement. A condition may require clearer status communication, stronger warning behaviour, a recovery path, a changed interaction sequence, a constrained action, a differentiated visual state or an intentional omission of a state that is not needed in real operation.\n\nThe practice does not assume that every non-nominal condition requires an alarm. Some conditions require informational display, some require prevention, some require correction support and some require escalation outside the interface. The purpose of the inventory is to decide the required interface response condition by condition."
     },
     {
-      "heading": "Evidence from Elsner Elektronik and Cala Touch KNX",
-      "bodyMarkdown": "In the Elsner Elektronik / Cala Touch KNX engagement, hardware specifications were disclosed at project kickoff as design parameters. Three categories of non-nominal condition were identified before design began.\n\nFor KNX sensor fault states, the controller could display a temperature or humidity value that was incorrect or absent. The design requirement was to communicate the fault state clearly enough for a non-technical occupant to understand that a sensor was not working and that an engineer should be called, without requiring the occupant to understand what a sensor fault is.\n\nFor calibration drift, the analysis established that sensors drifting out of calibration over time in real installations was a routine condition rather than a fault. The design requirement was informational display rather than alarming.\n\nFor firmware update timing, firmware updates cycled at specific intervals and produced brief periods where displayed values and actual sensor values diverged. The design requirement was to align animation timing with firmware update cycles so visual state changes did not drift out of sync with actual system state."
-    },
-    {
-      "heading": "Evidence from Torqeedo maritime HMI",
-      "bodyMarkdown": "In the Torqeedo maritime HMI engagement, the sea trial research programme was structured partly as systematic non-nominal condition observation. The programme included 12 sea trials over 6 months, with night operations, adverse weather, hull slamming, and glare conditions.\n\nThe analysis identified multi-component state at different sensor cadences. Propulsion, battery, and generation systems updated at different rates, and presenting them without a synchronisation architecture would produce a visually unstable display. The design requirement was cadence synchronisation.\n\nNight operations established readability requirements under night vision conditions. The analysis defined luminance and contrast requirements that determined which design approaches were available.\n\nStorm conditions and hull slamming showed that vibration affected touch interaction reliability. The analysis established minimum touch target parameters for the helm environment."
-    },
-    {
-      "heading": "Evidence from Cox Marine cluster displays",
-      "bodyMarkdown": "In the Cox Marine cluster display engagement, edge-case analysis was conducted as scenario testing during Concept Convergence. A multi-engine fault scenario was simulated against candidate designs before the design direction was committed.\n\nThe scenario showed that several candidate designs addressed fault presence but not fault direction. They made it visible that a fault existed somewhere, but they did not direct attention to the priority engine.\n\nThe design requirement was a two-level fault communication architecture: a fault-summary area for priority and per-tile highlighting for location."
-    },
-    {
-      "heading": "Evidence from Kardion MCS Controller",
-      "bodyMarkdown": "In the Kardion MCS Controller engagement, the IEC 62366-1 formative evaluation process structured edge-case analysis as hazard-related use scenario identification.\n\nAlarm states during high-activity clinical periods were a non-nominal condition. When multiple alarms were active simultaneously during a complex procedure, the interface had to communicate priority without requiring the operator to assess each alarm individually. The analysis established alarm hierarchy requirements.\n\nStartup and shutdown conditions were also addressed. The system transitioned through specific states during startup and shutdown, and the analysis established that those transitions had to be communicated without ambiguity about whether the device was operational.\n\nLayout behaviour during view transitions was identified as a non-nominal condition for users relying on spatial memory. The design requirement was a no-shift standard for elements across view transitions."
-    },
-    {
-      "heading": "Evidence from Beissbarth automotive calibration",
-      "bodyMarkdown": "In the Beissbarth automotive calibration engagement, workshop observation identified three calibration edge cases.\n\nBorderline tolerance values were measurements within range but at a margin where confidence was low. The analysis established the design requirement for three-level measurement result communication: confirmed, borderline, and out of range.\n\nEquipment communication failure occurred when the calibration device lost communication with one component. The design requirement was specific error communication stating which component was affected and what the technician should check.\n\nInterrupted calibration sequences occurred when a technician interrupted a procedure and resumed it. The design requirement was persistent sequence state display showing completed and remaining steps."
-    },
-    {
-      "heading": "Evidence from Gexcon CFD simulation software",
-      "bodyMarkdown": "In the Gexcon CFD simulation engagement, the relevant edge cases were primarily data and configuration states rather than hardware conditions.\n\nIncomplete inputs created a simulation setup with required values absent. The analysis established the requirement for pre-run input completeness checking.\n\nContradictory parameter combinations involved values that were individually valid but inconsistent with each other. The analysis established the requirement for contradiction detection before run.\n\nPreviously run configurations being re-used with changed parameters created a non-nominal state where the visual state appeared complete but was not consistent with current scenario requirements. The analysis established the requirement for configuration validity checking at run initiation, not only at input."
-    },
-    {
-      "heading": "Boundaries and limits of the practice",
-      "bodyMarkdown": "Edge-case-and-degraded-mode analysis identifies and specifies requirements for non-nominal conditions. The available examples describe diagnostic findings and design requirements; they do not state measured outcome improvements from applying the practice.\n\nThe practice depends on knowing which non-nominal conditions are possible. In embedded and hardware-integrated contexts, hardware specifications such as operating temperature range, sensor fault modes, and communication protocol behaviours are necessary inputs.\n\nThe engagement evidence is case-specific. Maritime HMI conditions, KNX controller faults, medical device alarm states, automotive calibration interruptions, and CFD simulation configuration states illustrate the practice across different domains, but they do not define a universal severity scale beyond the frequency and consequence categories described here."
+      "heading": "Boundaries of the practice",
+      "bodyMarkdown": "Edge-case-and-degraded-mode analysis does not make all degradation classes interchangeable. Equipment faults, process faults, information availability degradation and control-channel degradation must remain separate because they imply different user needs and different design requirements.\n\nEdge-case-and-degraded-mode analysis also does not close every issue through interface design. Some findings identify engineering, data-service or system-architecture limits that the interface can communicate but cannot resolve alone.\n\nThe documented use of the practice does not establish that any degraded-mode design prevented an incident. The practice also does not by itself establish safety certification, regulatory certification or regulatory acceptance."
     }
   ],
   "evidenceSummary": {
     "strongClaims": [
-      "Edge-case-and-degraded-mode analysis identifies non-nominal conditions before design decisions are made and assesses them by frequency, consequence, and current interface behaviour.",
-      "The practice distinguishes hardware and sensor faults, environmental conditions, abnormal data and configuration states, and degraded operating modes.",
-      "The aggregate output is a non-nominal condition inventory with design requirements for each condition.",
-      "The practice is used during Sandbox Experiments for existing-system review and during Iterative System Building for design-solution review.",
-      "In embedded and hardware-integrated contexts, the analysis is conducted before design begins because hardware architecture determines which non-nominal conditions are possible.",
-      "In regulated medical device contexts, the practice addresses IEC 62366-1 requirements for hazard-related use scenarios.",
-      "The Torqeedo maritime HMI evidence included 12 sea trials over 6 months covering night operations, adverse weather, hull slamming, and glare conditions.",
-      "The Cox Marine cluster display scenario showed that candidate designs could communicate fault presence without communicating fault direction."
+      "Edge-case-and-degraded-mode analysis identifies non-nominal conditions before design decisions are made and assesses each by frequency, consequence and current interface behaviour; this is supported by the practice definition and output description.",
+      "The practice distinguishes hardware and sensor faults, environmental conditions, abnormal data and configuration states, and degraded operating modes; this is supported by the practice definition.",
+      "In regulated medical device contexts, the practice directly addresses IEC 62366-1 requirements for hazard-related use scenarios."
+    ],
+    "weakerClaims": [
+      "In embedded and hardware-integrated contexts, the analysis is conducted before design begins because hardware architecture determines possible non-nominal conditions; this is Creative Navy-recorded engagement evidence.",
+      "The Cala Touch KNX work identified sensor fault states, calibration drift and firmware update timing before design began; this is case-study evidence.",
+      "The Torqeedo maritime HMI programme included 12 sea trials over 6 months with night operations, adverse weather, sharp vessel movement and glare conditions; this is Creative Navy-recorded case evidence.",
+      "The KISPE Space catalogue contained 40 documented edge cases and degraded states, with five specified verification suites and eight cross-module regression checks; these were specified tests, not executed tests.",
+      "The Raymarine engagement enumerated forty-three exception records across eight independently varying state axes and twenty-four verification scenarios, with only interruption, position, receiver and connectivity cases put to operators on a bench.",
+      "The Maritime VTS engagement includes an example of an edge case a design could not close alone, because the service could not guarantee a distinction between missing data and confirmed health."
     ],
     "limitations": [
-      "The available evidence describes identified conditions and design requirements; it does not provide measured outcome improvements from applying the practice.",
-      "The practice depends on access to relevant operational and technical inputs, especially hardware specifications in embedded and hardware-integrated contexts.",
-      "The examples are engagement-specific and should not be treated as a universal catalogue of all possible non-nominal conditions.",
-      "The source describes severity and reversibility as consequence dimensions but does not provide a detailed severity scale."
+      "The page does not claim that any degraded-mode design prevented an incident.",
+      "The page does not claim safety certification, regulatory certification or regulatory acceptance for the practice.",
+      "KISPE Space specified tests and a synthetic fixture; the catalogue was not executed and must not be treated as observed data.",
+      "Raymarine was partly evaluated: interruption, position, receiver and connectivity cases were put to operators on a bench, while the other exception records were not.",
+      "Degradation classes must remain separate; equipment and process faults, information availability degradation and control-channel degradation cannot be blended into one class.",
+      "Evidence from one engagement must not be used to lend evidential weight to another engagement."
     ]
   },
   "relatedPageSlugs": [
@@ -93,38 +76,68 @@
     "alarm-and-warning-evaluation",
     "cox-marine",
     "kardion",
-    "beissbarth"
+    "beissbarth",
+    "kispe-space",
+    "raymarine-vhf",
+    "oceaneering-dispatch-panel",
+    "tactical-handheld-command-and-control",
+    "maritime-vts"
   ],
   "internalLinks": [
     {
-      "anchorText": "Task Criticality Mapping",
+      "anchorText": "task-criticality mapping",
       "targetSlug": "task-criticality-mapping",
-      "reason": "The source states that edge-case-and-degraded-mode analysis draws on task-criticality mapping to prioritise critical tasks under non-nominal conditions."
+      "reason": "Task-criticality mapping defines where edge-case failures have the greatest consequence."
     },
     {
-      "anchorText": "State And Transition Review",
+      "anchorText": "state-and-transition review",
       "targetSlug": "state-and-transition-review",
-      "reason": "The source states that fault states and degraded modes are a specific category of state and that state review establishes the state catalogue extended by this practice."
+      "reason": "State-and-transition review establishes the state catalogue extended by edge-case analysis."
     },
     {
-      "anchorText": "Alarm And Warning Evaluation",
+      "anchorText": "alarm-and-warning evaluation",
       "targetSlug": "alarm-and-warning-evaluation",
-      "reason": "The source states that non-nominal conditions are the primary trigger for alarms and warnings and that this practice informs alarm-level communication decisions."
+      "reason": "The non-nominal condition inventory helps determine which conditions require alarm-level communication."
     },
     {
       "anchorText": "Cox Marine cluster displays",
       "targetSlug": "cox-marine",
-      "reason": "The body discusses the Cox Marine engagement, and the matching case-study slug is available in the linking context."
+      "reason": "Cox Marine is an example of mid-design edge-case scenario testing."
     },
     {
       "anchorText": "Kardion MCS Controller",
       "targetSlug": "kardion",
-      "reason": "The body discusses the Kardion engagement, and the matching case-study slug is available in the linking context."
+      "reason": "Kardion is an IEC 62366-1 formative evaluation example."
     },
     {
       "anchorText": "Beissbarth automotive calibration",
       "targetSlug": "beissbarth",
-      "reason": "The body discusses the Beissbarth engagement, and the matching case-study slug is available in the linking context."
+      "reason": "Beissbarth is an example of calibration edge cases found through workshop observation."
+    },
+    {
+      "anchorText": "KISPE Space",
+      "targetSlug": "kispe-space",
+      "reason": "KISPE Space is a catalogue-building example with specified, not executed, tests."
+    },
+    {
+      "anchorText": "Raymarine",
+      "targetSlug": "raymarine-vhf",
+      "reason": "Raymarine is an enumeration example with partial bench evaluation."
+    },
+    {
+      "anchorText": "Oceaneering hospital dispatch panel",
+      "targetSlug": "oceaneering-dispatch-panel",
+      "reason": "Oceaneering is an example where the practice produced a decision to omit states."
+    },
+    {
+      "anchorText": "tactical command-and-control software for uncrewed systems",
+      "targetSlug": "tactical-handheld-command-and-control",
+      "reason": "The handheld command-and-control engagement is an example of degradation specified as an operating condition."
+    },
+    {
+      "anchorText": "Maritime VTS",
+      "targetSlug": "maritime-vts",
+      "reason": "Maritime VTS is an example of degradation modelled per task and an edge case design could not close alone."
     }
   ],
   "tags": [
@@ -132,18 +145,18 @@
     "degraded modes",
     "non-nominal conditions",
     "fault states",
-    "embedded systems",
-    "hardware-integrated interfaces",
-    "IEC 62366-1",
-    "alarm design",
     "state transitions",
-    "operational consequence"
+    "alarm requirements",
+    "embedded systems",
+    "hazard-related use scenarios",
+    "IEC 62366-1",
+    "operational software"
   ],
   "_meta": {
     "sourcePath": "sources/articles/Practices/practices--edge-case-and-degraded-mode-analysis.md",
     "parentSlug": "practices",
     "childPageSlugs": [],
-    "generatedBy": "deterministic",
+    "generatedBy": "openai",
     "patches": [
       "practice-anchor"
     ]

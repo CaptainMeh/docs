@@ -12,167 +12,185 @@
   "category": "situations",
   "parentSlug": "risk-and-consequence",
   "childPageSlugs": [],
-  "excerpt": "Visible warnings do not necessarily reduce operational risk. A warning is actionable only when an operator can perceive, interpret, and respond to it correctly under the conditions that produced it.",
+  "excerpt": "Warnings can be visible without being actionable when their format, timing, hierarchy, or interface architecture does not match operating conditions. In high-consequence contexts, a warning must be perceivable, interpretable, and usable at the moment it appears.",
   "metaTitle": "Warnings Visible But Not Actionable",
-  "metaDescription": "When warnings require reading, appear too late, or lack urgency hierarchy, visibility does not mean operators can act under real use conditions.",
-  "summary": "This situation describes warning systems that are present in the interface but fail under real operating conditions because the warning format, timing, urgency hierarchy, or screen architecture does not support correct action.",
-  "definition": "Warnings are visible but not actionable when an interface displays a risk state, alert, or warning, but the operator cannot reliably perceive, interpret, prioritise, or respond to it under the actual conditions of use.",
+  "metaDescription": "Why visible warnings fail when operators cannot recognise, interpret, or act on them under real use conditions.",
+  "summary": "This situation describes warning systems that are present in the interface but fail under operating conditions. The documented failure modes are format failure, timing failure, gradient failure, and architecture failure, with examples from medical devices, safety-critical simulation software, e-bike displays, maritime systems, automotive controls, and hospital dispatch interfaces.",
+  "definition": "Warnings are visible but not actionable when an operator can see that a warning exists but cannot process, interpret, prioritise, or respond to it correctly under the conditions that produced it.",
   "keyFacts": [
     "A warning is treated as a communication act, not only as a visual design element.",
-    "Under IEC 62366-1, a warning that cannot be acted on under use conditions is classified as a use-related hazard.",
+    "IEC 62366-1 frames a warning that cannot be acted on under use conditions as a use-related hazard in medical-device usability engineering.",
     "Format failure occurs when a warning requires reading in conditions where only rapid recognition is available.",
-    "Timing failure occurs when a warning appears at a point in the workflow where acting on it would create a second hazard.",
-    "Gradient failure occurs when all warnings have the same visual weight and operators must assess urgency manually.",
-    "Architecture failure occurs when warning behaviour is added after the layout and interaction model have already been fixed.",
-    "In the deSoutter Medical / Zethon engagement, eight surgeons reported that device state could be verified through brief glances after the redesign; the evidence basis was surgeon-reported from 13 structured design review sessions.",
-    "In the Gexcon engagement, configuration errors reduced from 5–8 per simulation to 1–2 per simulation, with corrective load reduced from 4–6 hours to approximately 20 minutes; the evidence basis was measured by Gexcon across real deployment locations.",
-    "In the Stromer engagement, warnings accounted for approximately 30% of issues requiring user intervention before the redesign and did not appear on the issues list after redesign or in a repeat test two years later; the evidence basis was Creative Navy-designed and run."
+    "Timing failure occurs when a warning appears at a point in the workflow where acting on it would create a second hazard or excessive corrective load.",
+    "Gradient failure occurs when all warnings carry similar visual weight, making urgent and advisory states initially indistinguishable.",
+    "Architecture failure occurs when warnings are added after layout and interaction rules are fixed, leaving no structural place for interruptive states.",
+    "In the deSoutter Medical / Zethon engagement, eight surgeons reported during 13 structured design review sessions that device state could be verified through brief glances after warning redesign; this was not post-deployment operational measurement.",
+    "In the Gexcon engagement, client-measured configuration errors reduced from 5–8 per simulation to 1–2 per simulation, and corrective load reduced from 4–6 hours to approximately 20 minutes.",
+    "In the Stromer engagement, warnings accounted for approximately 30% of issues requiring user intervention before redesign and did not appear on the issues list after redesign in the same structured test protocol.",
+    "Raymarine prototype testing recorded seven of eight participants recognising and correctly classifying the risk event, with median recognition latency of 3.60 seconds and a range of 2.1 to 8.2 seconds."
   ],
   "tags": [
-    "warnings",
+    "warning design",
     "risk communication",
     "use-related hazard",
     "IEC 62366-1",
+    "operational UX",
     "alert hierarchy",
-    "warning architecture",
+    "interface architecture",
+    "Critical Systems Design",
     "performance in reality",
-    "domain learning",
-    "Critical Systems Design"
+    "domain learning"
   ],
-  "bodyMarkdown": "## Warning visibility is not the same as actionable warning design\n\nCreative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nA visible warning is not necessarily an actionable warning. A warning must be evaluated by whether the operator can process it and act on it correctly in the conditions that produced it, not only by whether the warning appears on screen.\n\nIn high-consequence operational contexts, warning design cannot be reduced to information hierarchy. A warning that requires reading is not functional when only a glance is available. A warning that relies on colour as its primary signal is not functional under lighting conditions where colour distinction is unreliable. A warning that appears at a point where the operator cannot interrupt the primary task creates a choice between acting on the warning and completing the task safely.\n\nUnder IEC 62366-1, the international standard for usability engineering of medical devices, a warning that cannot be acted on under use conditions is classified as a use-related hazard. The presence of a warning is not evidence that the risk has been addressed; the warning must be perceived, interpreted, and acted on under the identified use scenarios and environments.\n\n## Format failure occurs when warnings require reading but only recognition is available\n\nFormat failure occurs when a warning depends on text reading, code interpretation, or labelled state interpretation in conditions where the operator has only divided attention and a fraction of a second. The warning may be legible at a desk under controlled conditions and still fail in the field.\n\nIn a surgical procedure, vessel manoeuvre, or high-throughput operational task, reading may not be available. The operator may need to maintain sterile position, monitor a patient, coordinate with other people, or continue a primary manoeuvre while briefly checking system state. In those conditions, a sentence or code is slower and less reliable than a recognisable state pattern.\n\nThe design response is pattern-based recognition. Warning states need to communicate through visual form, spatial arrangement, redundant cues, and high-contrast differentiation rather than through verbal content alone. The source material connects this principle to standardised symbols in medical device standards, aviation alerting design, and industrial control systems.\n\n## Timing failure occurs when warnings appear at points where response is unsafe\n\nTiming failure occurs when a warning appears during a sequenced operational workflow at a point where the operator cannot safely respond. The interface then imposes a double-bind: ignore the warning and continue, or respond to the warning and interrupt the workflow.\n\nA warning is actionable only if it appears at a point where the operator can evaluate it and respond without creating a second hazard. The design response is contextual warning placement: the workflow must be understood well enough to position warning communication at moments where correction, acknowledgement, or escalation is possible.\n\nCreative Navy's Critical Systems Design method treats this as a domain learning problem. The relevant workflow must be understood from inside the task rather than only from a functional specification, because warning actionability depends on what the operator is doing when the warning appears.\n\n## Gradient failure occurs when all warnings signal with equal weight\n\nGradient failure occurs when warnings proliferate without being prioritised. Systems that evolve by accumulation often assign warning treatment to every possible risk condition, while the visual grammar remains flat.\n\nWhen all warnings have the same visual weight, operators develop a single response: check, assess, proceed. A genuinely urgent warning then receives the same initial treatment as an advisory state. In a clinical or safety-critical context, the time needed to distinguish urgency can become the difference between a managed risk and an unmanaged one.\n\nThe design response is a warning hierarchy with consequence-differentiated visual grammar. The interface must communicate not only that something requires attention, but also what class of attention it requires, so that genuine urgency is distinguishable without a separate assessment step.\n\n## Architecture failure occurs when warnings are added after the layout is fixed\n\nArchitecture failure occurs when warning design is treated as an additive visual step instead of a structural design decision. If screen architecture, interaction logic, and layout rules are fixed first, warnings have no native relationship to the surface they inhabit.\n\nIn this failure mode, warnings can cover content they should not cover, appear at moments the interaction model cannot accommodate, or interfere with active tasks because no space or timing was reserved for their appearance. The warning is present, but the interface was not built to receive it.\n\nArchitecture failure is often invisible when individual warnings are evaluated in isolation. The failure becomes visible only when warnings interact with the full screen architecture under real operating conditions, such as a battery warning covering a speed readout or a status alert interrupting an input sequence without a designed recovery path.\n\nThe design response is architectural. Rules for how warnings, overlays, and interruptive states relate to the screen structure must be established before components are built. Warning behaviour is a structural decision, not only a visual one.\n\n## deSoutter Medical / Zethon showed format failure in surgical device warnings\n\nThe deSoutter Medical / Zethon engagement concerned an embedded GUI for a powered ultrasonic bone cutter used in orthopaedic and trauma surgery. The device operates at high rotational speeds and is subject to IEC 62366-1 usability engineering requirements.\n\nSurgeons needed to confirm device state, readiness conditions, and warnings through brief glances while maintaining sterile position, managing the patient, and coordinating with surgical assistants. The interface was typically used with the non-dominant hand, through gloves, and under variable theatre lighting.\n\nThe legacy interface presented warnings as text. Under controlled viewing conditions, this was legible. Under actual surgical conditions, it required the surgeon to shift primary attention from the patient to the interface long enough to read, parse, and interpret a statement. In this operating theatre context, format failure is a use-related hazard under IEC 62366-1.\n\nCreative Navy's Sandbox Experiments included benchmarking six comparable surgical devices and identified a widespread category pattern: reliance on colour as the primary warning signal. Colour-based warnings functioned adequately under ideal theatre lighting, but colour distinction was unreliable under the range of lighting conditions present in real operating theatres.\n\nCreative Navy's redesign applied pattern-based recognition throughout the warning system. Critical states were communicated through spatial arrangement, redundant non-colour cues, and high-contrast differentiation that did not rely on colour alone. Eight surgeons reported that device state could be verified through brief glances without reading and that warning presentation no longer required attention to be pulled from the surgical field for interpretation.\n\nThe evidence basis for the deSoutter Medical / Zethon example is surgeon-reported from 13 structured design review sessions; it is not post-deployment operational measurement. Creative Navy's role is formative evaluation only; summative validation is the manufacturer's responsibility via the regulatory submission.\n\n## Gexcon showed timing failure in safety-critical simulation configuration\n\nThe Gexcon engagement concerned CFD simulation software used by engineers performing gas dispersion modelling, explosion risk assessment, and facility safety validation for industrial installations. Before Creative Navy's engagement, the interface did not communicate clearly where in a simulation setup an error had occurred.\n\nEngineers could complete a scenario configuration and receive output that appeared valid, while configuration errors remained embedded in it. The source material records an average of 5–8 configuration errors per simulation before the redesign. Error discovery was deferred until output review or until a simulation had to be re-run.\n\nThis was timing failure at workflow scale. Configuration warnings were not surfaced during the configuration step, where correction was straightforward. They became visible after the simulation, when reconstructing the source of an anomalous result required 4–6 hours of corrective work.\n\nCreative Navy's Critical Systems Design method addressed the issue through an error-prevention interaction architecture. The requirements specified which values had to remain visible during scenario setup, where warnings were needed before the simulation ran, and how the system should respond to incomplete or contradictory input.\n\nAfter the redesign, configuration errors reduced to 1–2 per simulation and corrective load reduced to approximately 20 minutes. The evidence basis is measured by Gexcon across real deployment locations.\n\n## Stromer showed warning architecture failure on an embedded e-bike display\n\nThe Stromer engagement concerned a warning architecture problem on a consumer e-bike embedded display. The interface spanned an embedded display on the bike, a mobile companion app, and a web account. The embedded display was used while riding, where the rider's eyes leave the road to recognise or read displayed state in a glance.\n\nThe bike carried safety warnings, status alerts, error states, and threshold notifications. EN 15194:2017, the European standard for electrically power-assisted cycles, specifies requirements for warning device behaviour and symbol conventions.\n\nBefore Creative Navy was engaged, a previous external agency had completed a year-long design engagement that produced a design system and visual redesign work. The unresolved structural problem was warning architecture. Warnings had been layered onto a screen architecture that had already been set.\n\nThe consequences were observable in use. Warnings covered parts of the screen they should not cover, interfered with active interactions, were difficult to dismiss in context, and frequently appeared without enough contextual information for the rider to understand what they were about.\n\nCreative Navy's redesign addressed the layout and overlay system, the information architecture, and the rules governing how warnings and other interruptive elements relate to the screen structure across all states and warning types. The structural sequence was rules before components.\n\nThe outcome was tested using a structured methodology designed and run by Creative Navy. Ten participants rode the bike over three days each on real routes in Munich and surrounding countryside, logging every issue encountered with its severity on a four-level scale: interference, annoyance, issue needing user intervention, or critical issue. Before the redesign, warnings accounted for approximately 30% of all issues rated as requiring user intervention.\n\nAfter the redesign, the same test was run with 10 users, including six from the original cohort and four replacements, using the same bikes, routes, and logging protocol. Warnings did not appear on the issues list. Creative Navy ran the same test again two years later, and warnings remained absent. The evidence basis is Creative Navy-designed and run across all three rounds.\n\n## Creative Navy's Critical Systems Design method addresses warnings through domain learning and performance in reality\n\nCreative Navy's Critical Systems Design method addresses warning actionability by examining how operators encounter warnings under real conditions, not only how warnings appear in interface layouts. The shared root across format failure, timing failure, gradient failure, and architecture failure is that the warning was designed for a user with time, attention, and controlled conditions available, rather than for the operator who actually encounters it.\n\nDomain learning is the prerequisite. In the deSoutter Medical / Zethon engagement, 13 structured sessions with eight surgeons documented when surgeons check device state and which moments in the surgical workflow are sensitive to attention being drawn away. In the Gexcon engagement, understanding the simulation workflow from inside the work made it possible to position warnings at points where they were actionable. In the Stromer engagement, Creative Navy studied the previous agency's work as an accelerated first iteration to understand what had been attempted and why it had not resolved the underlying tensions.\n\nPerformance in reality is the evaluation standard. A warning is not evaluated only on a screen at close range. It is evaluated under the lighting, time pressure, physical constraints, divided attention, and workflow interruptions of actual operation. Under IEC 62366-1 this is a regulatory requirement for medical devices; in the other documented examples it is the condition that determined whether the warning worked.\n\n## Boundaries of the documented evidence\n\nThe deSoutter Medical / Zethon evidence is formative and surgeon-reported from 13 structured design review sessions. It is not presented as post-deployment operational measurement, and summative validation remains the manufacturer's responsibility.\n\nThe Gexcon outcome evidence is measured by Gexcon across real deployment locations. The source material reports the before-and-after error and corrective-load figures, but does not describe an independent study.\n\nThe Stromer outcome evidence comes from a structured methodology designed and run by Creative Navy across three rounds. The source material describes repeated real-route testing with matched routes, bikes, and logging protocol, but does not describe the study as independent.\n\nThe documented examples support the failure patterns described on this page. They do not establish that every warning problem in every operational domain has the same cause or requires the same design response.\n\n## Related pages\n\nRelated documentation includes system state understanding, abnormal condition handling, cognitive load at critical moments, delayed understanding, user error with serious consequences, clean error recovery, and the Stromer e-bike case material.",
+  "bodyMarkdown": "## Warning visibility is not the same as warning actionability\n\nCreative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nA warning is not only a design element. A warning is a communication act that must answer whether the operator can perceive, interpret, and act on it correctly in the conditions that produced it.\n\nIn high-consequence operational contexts, warning design cannot be evaluated only by asking whether the warning is present or visually prominent. A warning that requires reading is not functional where only a glance is available. A warning that relies on colour as its primary signal is not functional where lighting makes colour distinction unreliable. A warning that appears in the middle of a task sequence can force a choice between responding to the warning and completing the primary task safely.\n\nIEC 62366-1, the international standard for usability engineering of medical devices, treats a warning that cannot be acted on under use conditions as a use-related hazard. In that framing, the presence of a warning is not evidence that risk has been addressed. Evidence is needed that the warning can be perceived, interpreted, and acted on under the identified use scenarios and environments.\n\n## Format failure occurs when warnings require reading but only recognition is available\n\nFormat failure occurs when a warning is encoded as text, a code, or a labelled state in an operating context where the operator does not have time or attention available for reading. A text warning that is legible at a desk can fail during a surgical procedure, a vessel manoeuvre, or a high-throughput operational task.\n\nThe design response described in Creative Navy's Critical Systems Design method is pattern-based recognition. Warning states communicate through visual form rather than verbal content: shape, spatial arrangement, contrast, and redundant cues that can be decoded in a glance.\n\nPattern-based warning recognition is used in contexts such as medical device standards, aviation alerting design, and industrial control systems. The source distinction is not that symbols automatically solve warning design, but that warning format must match the actual conditions of use.\n\n## Timing failure occurs when acting on the warning would create a second hazard\n\nTiming failure occurs when a warning appears at a point in a sequenced workflow where the operator cannot safely respond without abandoning or disrupting the primary task. The interface then creates a double-bind: ignore the warning and continue, or respond to the warning and interrupt the workflow.\n\nThe design response in Creative Navy's Critical Systems Design method is contextual warning placement. The task sequence must be understood well enough to place warning communication at points where the operator can evaluate the warning and respond without creating a second hazard.\n\nThis requires domain learning. The workflow must be understood from inside the task, not only from a functional specification.\n\n## Gradient failure occurs when all warnings carry similar visual weight\n\nGradient failure occurs when warning saturation makes urgent and advisory states initially indistinguishable. In systems that evolve by accumulation, every possible risk condition can become a warning. If all warnings use the same visual weight, operators develop a single first response to all warnings: check, assess, proceed.\n\nIn clinical or safety-critical contexts, the time required to distinguish a critical alert from an advisory can be the gap between a managed risk and an unmanaged one. The design response is a warning hierarchy with consequence-differentiated visual grammar. The interface must communicate not only that attention is required, but what class of attention is required.\n\n## Architecture failure occurs when warnings are added after layout and interaction rules are fixed\n\nArchitecture failure occurs when warning design is treated as an additive visual step instead of a structural interface decision. If screen architecture, interaction logic, and layout rules are established first, warnings have no native relationship to the surface they inhabit.\n\nWarnings created this way can cover content they should not cover, appear at moments the interaction model cannot accommodate, or interfere with active tasks because the interface did not reserve space or timing for them. The warning is present, but the interface was not built to receive it.\n\nCreative Navy's Critical Systems Design method treats warning behaviour as an architectural decision. The rules governing warnings, overlays, and interruptive states must be established before component design fixes the surface.\n\n## deSoutter Medical / Zethon showed format failure in surgical device warnings\n\nThe deSoutter Medical / Zethon engagement concerned an embedded GUI for a powered ultrasonic bone cutter used in orthopaedic and trauma surgery. The device operates at high rotational speeds and is subject to IEC 62366-1 usability engineering requirements.\n\nSurgeons check device state, readiness conditions, and warnings through brief glances while maintaining sterile position, managing the patient, and coordinating with surgical assistants. Use typically occurs with the non-dominant hand, through gloves, and under variable theatre lighting.\n\nThe legacy interface presented warnings as text. Under controlled viewing conditions, the text was legible. Under actual surgical conditions, a warning that required reading created a moment where the surgeon had to shift attention from the patient to the interface long enough to read, parse, and interpret a statement. In the context described, format failure in an operating theatre is a use-related hazard under IEC 62366-1.\n\nBenchmarking of six comparable surgical devices during Sandbox Experiments identified reliance on colour as the primary warning signal across the category. Under ideal theatre lighting, colour-based warnings functioned adequately. Under the range of lighting conditions present in real operating theatres, colour distinction was unreliable.\n\nCreative Navy's redesign applied pattern-based recognition throughout the warning system. Critical states were communicated through spatial arrangement, redundant non-colour cues, and high-contrast differentiation that did not rely on colour alone. Creative Navy-recorded reports from eight surgeons across 13 structured design review sessions indicated that device state could be verified through brief glances without reading, and that warning presentation no longer required attention to be pulled from the surgical field for interpretation. This was not post-deployment operational measurement.\n\nCreative Navy's role is formative evaluation only; summative validation is the manufacturer's responsibility via the regulatory submission.\n\n## Gexcon showed timing failure at workflow scale in simulation setup\n\nGexcon's CFD simulation software is used by engineers performing gas dispersion modelling, explosion risk assessment, and facility safety validation for industrial installations. Before Creative Navy's engagement, the interface did not communicate clearly where in a simulation setup an error had occurred.\n\nEngineers completing a scenario configuration received output that appeared valid, but configuration errors averaging 5–8 per simulation were embedded in it. Error discovery was deferred until output review or until a simulation had to be re-run. Corrective work took 4–6 hours.\n\nThis is timing failure at workflow scale. Configuration warnings were not surfaced during the configuration step, before the simulation ran, when correction was straightforward.\n\nCreative Navy's Critical Systems Design method addressed this through an error-prevention interaction architecture. The work specified which values had to remain visible during scenario setup, where warnings were needed before the simulation ran, and how the system should respond to incomplete or contradictory input.\n\nGexcon client-measured the result across real deployment locations: configuration errors reduced to 1–2 per simulation, and corrective load reduced to approximately 20 minutes.\n\n## Stromer showed warning architecture failure on an e-bike embedded display\n\nStromer manufactures premium e-bikes whose interface spans an embedded display on the bike, a mobile companion app, and a web account. The embedded display is used while riding, where the rider's eyes leave the road to read or recognise displayed state.\n\nThe embedded display carried safety warnings, status alerts, error states, and threshold notifications. EN 15194:2017, the European standard for electrically power-assisted cycles, specifies requirements for warning device behaviour and symbol conventions.\n\nBefore Creative Navy's engagement, a previous external agency had completed a year-long design engagement that produced a design system and visual redesign work. The unresolved structural problem was warning architecture. Warnings were layered onto a screen architecture that had already been set.\n\nThe consequences were observable in use: warnings covered parts of the screen they should not cover, interfered with active interactions, were difficult to dismiss in context, and frequently appeared without enough contextual information for the rider to understand what they were about.\n\nCreative Navy's redesign addressed the layout and overlay system, the information architecture, and the rules governing how warnings and other interruptive elements relate to screen structure across states and warning types.\n\nCreative Navy designed and ran a structured test methodology. Ten participants rode the bike over three days each on real routes in Munich and surrounding countryside, logging every issue encountered with severity on a four-level scale: interference, annoyance, issue needing user intervention, and critical issue. Before redesign, warnings accounted for approximately 30% of all issues rated as requiring user intervention. After redesign, the same test was run with 10 users, six from the original cohort and four replacements, using the same bikes, routes, and logging protocol. Warnings did not appear on the issues list. Creative Navy ran the same test again two years later; warnings remained absent.\n\n## Streetec showed neutral escalation for normal operations\n\nStreetec's kntrl 2 control system for aftermarket automotive air suspension used a two-level alert escalation. A first attempt at a blocked action produced an inline notification. A second attempt produced a modal.\n\nThe design kept colour neutral until a genuine alert state. Raising and lowering pressure were both normal operations, so neither was colour-coded as a warning. This preserved the palette's signalling power for conditions that needed it.\n\n## The MDU showed an alarm that is actionable even when the interface does not actuate control\n\nThe MDU is a ship motion monitoring system whose bridge interface Creative Navy designed. The system is deliberately non-actioning: it may alarm and nothing else. Actions based on the GUI data are made elsewhere, such as changing course, changing speed, deploying stabiliser fins, or consulting shore-based advice.\n\nThe alarm remains useful because it states a condition precisely enough to support action outside the interface. Alarm state binds to the rolling maximum and minimum, so an alarm means the vessel was outside its threshold at some point within the last twenty minutes. A three-arrow mechanism shows the interval of movement beside the alarm: one arrow for the current position, two arrows for the minimum and maximum of the rolling window, and a shaded band between them.\n\nThe MDU alarm stakes are calibrated as comfort, cargo, and crew-safety alarms rather than immediate-danger alarms. No safety outcome, alarm-response figure, regulatory credential, or user-tested result attaches to the MDU engagement.\n\n## Raymarine showed consequence-based alert priority in a prototype test\n\nIn the Raymarine engagement for the next generation of Raymarine's fixed-mount VHF line, Creative Navy assigned four event priority levels by consequence rather than arrival order.\n\nEmergency events, including outgoing distress, received distress, and local man overboard, took a persistent incident surface that no ordinary action dismissed. High concern events, including a qualifying proximity risk or urgency event, were prominent and actionable with their source visible, and never silently altered a radio control. Operational events, including an incoming routine call, a degraded data condition, or a blocked action, were noticeable and proportionate, and did not silently change the selected vessel or tuned channel. Background events, including a new target or routine status change, updated quietly and never took keypad focus.\n\nCreative Navy designed the test protocols, moderated all 24 sessions, and analysed the results on a bench mockup supplied by Raymarine. The recognition finding was recorded as counts from eight participants: seven of eight participants recognised the risk event and classified it correctly, with median recognition latency of 3.60 seconds and a range of 2.1 to 8.2 seconds. One occasional operator first classified the proximity warning as a general system notification.\n\nThese findings describe behaviour on a prototype against a fixed fixture. They are not safety results and are not claims about the released radio's performance.\n\n## Maritime traffic monitoring showed why one chronological notification surface was rejected\n\nIn an engagement for a European vendor of maritime traffic monitoring, inland navigation, and communications software for port authorities, coastal administrations, and waterway operators, the audit found traffic conditions, equipment faults, and advisory notices sharing one notification surface.\n\nOrdering by receipt time could be mistaken for operational priority. Acknowledgement, dismissal, and resolution used overlapping wording. Action history could carry visual weight comparable to the current lifecycle state.\n\nCreative Navy's designed response was typed alerts over a unified queue. A single chronological notification queue was rejected because it mixed navigation alerts with technical faults. A filtered single list was rejected because the current filter could hide a class of important event, and a count alone could not explain technical degradation during a traffic task.\n\nThe selected model presented navigation alerts by operational priority and lifecycle, with equipment health in its own typed view carrying an impact explanation. Both were cross-linked from a common event history. No safety, certification, or conformity credential attaches to this engagement.\n\n## Oceaneering showed a saturated warning channel in hospital dispatch\n\nFor Oceaneering's hospital dispatch panel, the predecessor record described an error with no stated cause. If staff chose the wrong cart type, the vehicle arrived, tried to lift, detected the wrong cart, set it down, and left without explaining why.\n\nThe physical indication was not meaningful in context. The vehicle sat beneath the cart flashing its lights, but staff did not notice because the lights were always flashing when the vehicles moved. The warning channel existed, but it had been saturated into normal operation.\n\nThis account comes from the predecessor's specification and from interviews with people adjacent to the users. No depot was visited, and no redesign outcome was measured.\n\n## Creative Navy's Critical Systems Design method addresses warning actionability through domain learning and performance in reality\n\nCreative Navy's Critical Systems Design method addresses warning actionability by grounding warning design in the conditions under which warnings are encountered. The shared root of format failure, timing failure, gradient failure, and architecture failure is that the warning was designed for a user with time, attention, and controlled viewing conditions, not for the operator who actually encounters it.\n\nDomain learning is the prerequisite. In the deSoutter Medical / Zethon engagement, 13 structured sessions with eight surgeons documented when surgeons checked device state and which moments in the surgical workflow were sensitive to attention being drawn away. In the Gexcon engagement, understanding the simulation workflow made it possible to position warnings before the simulation ran. In the Stromer engagement, analysing the previous agency's work helped diagnose why surface redesign had not resolved the underlying warning architecture.\n\nPerformance in reality is the evaluation standard. A warning is not evaluated only on a screen at close range. It is evaluated under the lighting, time pressure, physical constraints, workflow interruptions, and interaction states of actual operation. IEC 62366-1 makes this a regulatory requirement in the medical-device context described here; in the other contexts on this page, it remains the practical condition that determines whether a warning works.\n\n## Evidence boundaries for warning actionability claims\n\nThe evidence on this page is case-specific. The deSoutter Medical / Zethon evidence is formative and based on Creative Navy-recorded reports from surgeons during structured design review sessions, not post-deployment operational measurement.\n\nThe Gexcon figures are client-measured across real deployment locations. The Stromer warning outcome is Creative Navy-recorded from a structured methodology that Creative Navy designed and ran. The Raymarine recognition finding is a prototype test result on a bench mockup and is reported as counts, not percentages or population claims.\n\nThe MDU engagement has no safety outcome, alarm-response figure, regulatory credential, or user-tested result. The maritime traffic monitoring engagement has no safety, certification, or conformity credential attached to the design work. The Oceaneering account has no measured redesign outcome and did not include a depot visit.\n\n## Related documentation\n\nThis situation relates to documented cases and adjacent situation pages where warning actionability, system-state recognition, operational timing, and recovery from errors affect real work. Relevant documented cases include Stromer, Raymarine, the MDU, Streetec, and Oceaneering. Related situation pages include system state that is hard to understand, abnormal conditions that break the interface, delayed understanding that creates risk, interfaces that increase cognitive load at the worst moment, and users who cannot recover cleanly from errors.",
   "claims": [
     {
-      "claim": "A warning that is visible but cannot be acted on under actual use conditions does not address the operational risk it signals.",
-      "evidenceType": "conceptual definition",
-      "sourceStrength": "strong",
-      "notes": "Supported by the page's core definition of warnings as communication acts and by the distinction between visibility and functionality."
-    },
-    {
-      "claim": "Under IEC 62366-1, a warning that cannot be acted on under use conditions is classified as a use-related hazard.",
+      "claim": "A warning that cannot be acted on under use conditions is classified as a use-related hazard under IEC 62366-1.",
       "evidenceType": "industry standard",
       "sourceStrength": "strong",
-      "notes": "The source explicitly states this IEC 62366-1 framing and the requirement to show perception, interpretation, and action under identified use scenarios and environments."
+      "notes": "The page source explicitly states the IEC 62366-1 framing and limits it to medical-device usability engineering."
     },
     {
-      "claim": "Format failure occurs when warning comprehension depends on reading in contexts where only rapid recognition is available.",
+      "claim": "Warnings fail through format failure when they require reading in conditions where only rapid recognition is available.",
       "evidenceType": "conceptual definition",
       "sourceStrength": "strong",
-      "notes": "Supported by the described surgical, vessel manoeuvre, and high-throughput operational examples."
+      "notes": "Defined as one of the structural failure modes in the situation description."
     },
     {
-      "claim": "Timing failure occurs when a warning appears at a point where responding would disrupt the primary workflow and create a second hazard.",
+      "claim": "Warnings fail through timing failure when they appear at a point where acting on them would disrupt the primary task or create a second hazard.",
       "evidenceType": "conceptual definition",
       "sourceStrength": "strong",
-      "notes": "Supported by the source's sequenced workflow explanation and Gexcon example."
+      "notes": "Defined as one of the structural failure modes in the situation description."
     },
     {
-      "claim": "Gradient failure occurs when warnings have equal visual weight and operators must manually distinguish critical urgency from advisory state.",
+      "claim": "Warnings fail through gradient failure when all warnings carry similar visual weight and urgent states are not distinguishable from advisory states without assessment.",
       "evidenceType": "conceptual definition",
       "sourceStrength": "strong",
-      "notes": "Supported by the source's warning saturation and consequence-differentiated visual grammar discussion."
+      "notes": "Defined as one of the structural failure modes in the situation description."
     },
     {
-      "claim": "Architecture failure occurs when warnings are layered onto a fixed screen architecture instead of being governed by structural rules.",
+      "claim": "Warnings fail through architecture failure when warnings are layered onto a screen architecture that was not designed to receive interruptive states.",
       "evidenceType": "conceptual definition",
       "sourceStrength": "strong",
-      "notes": "Supported by the source's fourth failure mode and the Stromer example."
+      "notes": "Defined as a fourth structural failure mode in the situation description."
     },
     {
-      "claim": "In the deSoutter Medical / Zethon engagement, eight surgeons reported that device state could be verified through brief glances without reading after the warning redesign.",
-      "evidenceType": "client-reported",
-      "sourceStrength": "case evidence",
-      "notes": "Evidence basis is surgeon-reported from 13 structured design review sessions; it is not post-deployment operational measurement."
-    },
-    {
-      "claim": "In the Gexcon engagement, configuration errors reduced from 5–8 per simulation to 1–2 per simulation and corrective load reduced from 4–6 hours to approximately 20 minutes.",
-      "evidenceType": "client-measured",
-      "sourceStrength": "case evidence",
-      "notes": "The source states that the outcome was measured by Gexcon across real deployment locations."
-    },
-    {
-      "claim": "In the Stromer engagement, warnings accounted for approximately 30% of issues requiring user intervention before redesign and did not appear on the issues list after redesign or in a repeat test two years later.",
+      "claim": "In the deSoutter Medical / Zethon engagement, eight surgeons reported across 13 structured design review sessions that device state could be verified through brief glances without reading after the warning redesign.",
       "evidenceType": "Creative Navy-recorded",
       "sourceStrength": "case evidence",
-      "notes": "The source states that Creative Navy designed and ran the structured testing methodology across all three rounds."
+      "notes": "The source states this was surgeon-reported from structured design review sessions and not post-deployment operational measurement."
+    },
+    {
+      "claim": "In the Gexcon engagement, configuration errors reduced from 5–8 per simulation to 1–2 per simulation, and corrective load reduced from 4–6 hours to approximately 20 minutes.",
+      "evidenceType": "client-measured",
+      "sourceStrength": "case evidence",
+      "notes": "The source states the evidence was measured by Gexcon across real deployment locations."
+    },
+    {
+      "claim": "In the Stromer engagement, warnings accounted for approximately 30% of issues requiring user intervention before redesign and did not appear on the issues list after the redesign or in a repeat test two years later.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "case evidence",
+      "notes": "The source states Creative Navy designed and ran the structured methodology across all three rounds."
+    },
+    {
+      "claim": "In the Raymarine prototype test, seven of eight participants recognised the risk event and classified it correctly, with median recognition latency of 3.60 seconds and a range of 2.1 to 8.2 seconds.",
+      "evidenceType": "Creative Navy-recorded",
+      "sourceStrength": "case evidence",
+      "notes": "The source limits the finding to prototype behaviour on a bench mockup and excludes percentages, population claims, safety results, and released-product performance claims."
+    },
+    {
+      "claim": "The MDU alarm design supports action outside the interface by binding alarm state to rolling maximum and minimum values over the last twenty minutes, but the engagement has no safety outcome, alarm-response figure, regulatory credential, or user-tested result.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "The source explicitly frames the MDU as non-actioning and states the evidence limitations."
     }
   ],
   "limitations": [
-    "The deSoutter Medical / Zethon evidence is surgeon-reported from formative design review sessions, not post-deployment operational measurement.",
-    "Creative Navy's role in the deSoutter Medical / Zethon engagement was formative evaluation; summative validation is the manufacturer's responsibility via the regulatory submission.",
-    "The Gexcon outcome figures are reported as measured by Gexcon across real deployment locations; the source does not describe an independent study.",
-    "The Stromer testing was designed and run by Creative Navy; the source does not describe it as independent third-party testing.",
-    "The documented examples support the described failure modes but do not establish universal causality across all warning systems or operational domains."
+    "The page describes warning actionability patterns from documented engagements and does not establish universal prevalence across sectors.",
+    "The deSoutter Medical / Zethon evidence is formative; Creative Navy's role is formative evaluation only, and summative validation is the manufacturer's responsibility via the regulatory submission.",
+    "The deSoutter Medical / Zethon surgeon feedback was reported during 13 structured design review sessions and was not post-deployment operational measurement.",
+    "The Gexcon outcome figures are client-measured by Gexcon across real deployment locations, not independently measured by a third party in the page source.",
+    "The Stromer warning outcome was recorded through a Creative Navy-designed and run structured methodology.",
+    "The MDU engagement has no safety outcome, alarm-response figure, regulatory credential, or user-tested result, and its alarms are calibrated as comfort, cargo, and crew-safety alarms rather than immediate-danger alarms.",
+    "The Raymarine recognition finding is limited to a prototype on a bench mockup, reported as counts from eight participants, and is not a safety result or a claim about the released radio's performance.",
+    "The maritime traffic monitoring engagement has no safety, certification, or conformity credential attached to the design solution.",
+    "The Oceaneering account includes no measured redesign outcome and did not include a depot visit."
   ],
   "publicationBlockers": [],
   "questionsForReview": [
-    "The source section is titled “Three structural failure modes” but describes three named failure modes plus a fourth architecture failure mode. The page preserves this as three failure modes plus an additional architectural failure mode.",
-    "The source includes a named participant quote from Nikola Strauss, but explicit naming-permission wording is not present. The public body omits the named quote rather than treating permission as confirmed."
+    "None"
   ],
   "relatedPageSlugs": [
+    "stromer-ebike",
+    "raymarine-vhf",
+    "mdu-ship-motion-monitoring",
+    "streetec-kntrl",
+    "oceaneering-dispatch-panel",
     "system-state-is-hard-to-understand",
     "abnormal-conditions-break-the-interface",
-    "the-interface-increases-cognitive-load-at-the-worst-moment",
     "delayed-understanding-creates-risk",
-    "user-error-has-serious-consequences",
-    "users-cannot-recover-cleanly-from-errors",
-    "expert-workflows-are-hard-to-operate",
-    "previous-agency-delivered-surfaces-not-clarity",
-    "stromer-ebike"
+    "the-interface-increases-cognitive-load-at-the-worst-moment",
+    "users-cannot-recover-cleanly-from-errors"
   ],
   "internalLinks": [
     {
-      "anchorText": "system state understanding",
-      "targetSlug": "system-state-is-hard-to-understand",
-      "placementHint": "Related pages section",
-      "reason": "Warning actionability depends on whether operators can understand system state under real conditions."
-    },
-    {
-      "anchorText": "abnormal condition handling",
-      "targetSlug": "abnormal-conditions-break-the-interface",
-      "placementHint": "Related pages section",
-      "reason": "Warnings often appear during abnormal conditions, where interface behaviour is most likely to fail."
-    },
-    {
-      "anchorText": "cognitive load at critical moments",
-      "targetSlug": "the-interface-increases-cognitive-load-at-the-worst-moment",
-      "placementHint": "Related pages section",
-      "reason": "The source describes warnings that require reading or assessment when attention is divided."
-    },
-    {
-      "anchorText": "delayed understanding",
-      "targetSlug": "delayed-understanding-creates-risk",
-      "placementHint": "Related pages section",
-      "reason": "Timing failure and deferred error discovery both create risk by delaying understanding."
-    },
-    {
-      "anchorText": "user error with serious consequences",
-      "targetSlug": "user-error-has-serious-consequences",
-      "placementHint": "Related pages section",
-      "reason": "The page concerns warning failures in contexts where operator error can carry serious consequences."
-    },
-    {
-      "anchorText": "clean error recovery",
-      "targetSlug": "users-cannot-recover-cleanly-from-errors",
-      "placementHint": "Related pages section",
-      "reason": "Architecture failure can leave no designed recovery path when alerts interrupt active input or tasks."
-    },
-    {
-      "anchorText": "expert workflows",
-      "targetSlug": "expert-workflows-are-hard-to-operate",
-      "placementHint": "Related pages section",
-      "reason": "The deSoutter Medical / Zethon and Gexcon examples both involve expert operational workflows."
-    },
-    {
-      "anchorText": "previous agency work that delivered surfaces without resolving clarity",
-      "targetSlug": "previous-agency-delivered-surfaces-not-clarity",
-      "placementHint": "Stromer section or Related pages section",
-      "reason": "The Stromer example describes a previous external agency producing visual redesign work without resolving warning architecture."
-    },
-    {
-      "anchorText": "Stromer e-bike case material",
+      "anchorText": "Stromer",
       "targetSlug": "stromer-ebike",
-      "placementHint": "Stromer section or Related pages section",
-      "reason": "The page includes a named Stromer example and the linking context provides a matching allowed case-study slug."
+      "placementHint": "Use where the Stromer warning architecture example is discussed.",
+      "reason": "The source includes Stromer as a grounded example of architecture failure and the slug is allowed."
+    },
+    {
+      "anchorText": "Raymarine",
+      "targetSlug": "raymarine-vhf",
+      "placementHint": "Use where the Raymarine consequence-based alert priority example is discussed.",
+      "reason": "The source includes Raymarine as a grounded example with a prototype recognition finding and the slug is allowed."
+    },
+    {
+      "anchorText": "the MDU",
+      "targetSlug": "mdu-ship-motion-monitoring",
+      "placementHint": "Use where the MDU non-actioning alarm example is discussed.",
+      "reason": "The source includes the MDU as a grounded example of an alarm that prompts action outside the interface and the slug is allowed."
+    },
+    {
+      "anchorText": "Streetec",
+      "targetSlug": "streetec-kntrl",
+      "placementHint": "Use where the Streetec neutral escalation example is discussed.",
+      "reason": "The source includes Streetec as a grounded example of escalation without consuming alarm colour and the slug is allowed."
+    },
+    {
+      "anchorText": "Oceaneering",
+      "targetSlug": "oceaneering-dispatch-panel",
+      "placementHint": "Use where the saturated warning channel example is discussed.",
+      "reason": "The source includes Oceaneering as a grounded example and the slug is allowed."
+    },
+    {
+      "anchorText": "system state that is hard to understand",
+      "targetSlug": "system-state-is-hard-to-understand",
+      "placementHint": "Use in the related documentation section or near examples about operators needing to recognise state quickly.",
+      "reason": "Warning actionability depends on operators understanding system state under real conditions."
+    },
+    {
+      "anchorText": "abnormal conditions that break the interface",
+      "targetSlug": "abnormal-conditions-break-the-interface",
+      "placementHint": "Use in the related documentation section or near the architecture failure section.",
+      "reason": "Warning architecture failure is closely related to interfaces that degrade when abnormal or interruptive states occur."
+    },
+    {
+      "anchorText": "delayed understanding that creates risk",
+      "targetSlug": "delayed-understanding-creates-risk",
+      "placementHint": "Use near the Gexcon timing failure example or in the related documentation section.",
+      "reason": "The Gexcon example describes risk from discovering configuration errors after the point where correction was straightforward."
+    },
+    {
+      "anchorText": "interfaces that increase cognitive load at the worst moment",
+      "targetSlug": "the-interface-increases-cognitive-load-at-the-worst-moment",
+      "placementHint": "Use near the sections on format failure and timing failure.",
+      "reason": "Warnings that require reading or appear during active tasks increase cognitive load when the operator has the least spare attention."
+    },
+    {
+      "anchorText": "users who cannot recover cleanly from errors",
+      "targetSlug": "users-cannot-recover-cleanly-from-errors",
+      "placementHint": "Use near the Gexcon and Oceaneering examples or in the related documentation section.",
+      "reason": "Non-actionable warnings often delay or obstruct recovery from errors."
     }
   ],
   "qualityChecks": {

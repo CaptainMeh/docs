@@ -4,157 +4,160 @@
   "pageType": "failure",
   "category": "failures",
   "section": "Interpretation Failures",
-  "summary": "Warnings can fail even when they are visible. The failure is interpretive: the interface interrupts the user but does not make the warning's meaning, urgency, or implied response immediately accessible.",
+  "summary": "This failure occurs when a warning is present and noticed, but the user cannot immediately understand what condition it describes, how urgent it is, or what response it requires. The source evidence covers text-based warnings in surgical use, colour-only warning channels, contextual detachment on an e-bike display, and related alarm and status-comprehension cases.",
   "keyFacts": [
-    "The failure is not warning absence; the warning is present but not immediately interpretable.",
-    "Meaning can fail when text is the primary warning channel in environments where sustained reading is unavailable.",
-    "Meaning can fail when colour is the sole differentiating cue and environmental conditions degrade colour discrimination.",
-    "Meaning can fail when warning content requires decoding, technical interpretation, or reference to information outside the current task.",
-    "Meaning can fail when warnings appear without enough contextual grounding to connect them to the state they describe.",
-    "In the deSoutter Medical / Zethon surgical device work, warning states were redesigned to communicate through spatial position, icon form, and reserved colour.",
-    "Creative Navy's deSoutter-related domain learning involved twelve human factors studies and ergonomics papers and thirteen structured sessions with eight orthopaedic and trauma surgeons.",
-    "In the Stromer e-bike work, warnings accounted for approximately 30% of all issues rated as requiring user intervention before the redesign and did not appear on the issues list after redesign testing.",
-    "The Stromer evidence came from three rounds of Creative Navy-designed and run structured testing in real riding conditions."
+    "The failure is not warning absence; the warning is present but its meaning is not immediately accessible.",
+    "A warning that interrupts the task but does not communicate actionable meaning produces confusion rather than response.",
+    "Text-label warnings are structurally weak in brief-glance environments because reading requires sequential processing and sustained attention.",
+    "Colour-only warning systems are vulnerable when lighting, glare, night-vision conditions, or colour perception reduce reliable colour discrimination.",
+    "Warning content can fail when it uses technical error codes, diagnostic descriptions, or status paragraphs that require interpretation before action.",
+    "Warnings can become unclear when they appear detached from the screen context or system state that gives them meaning.",
+    "In the deSoutter Medical / Zethon engagement, Creative Navy used twelve human factors studies and ergonomics papers, thirteen structured sessions with eight surgeons, and benchmarking of six comparable surgical instruments.",
+    "In structured deSoutter review sessions, eight orthopaedic and trauma surgeons reported that device state, including warning states, could be verified during brief glances without reading.",
+    "In the Stromer e-bike testing before redesign, warnings accounted for approximately 30% of all issues rated as requiring user intervention; after redesign, warnings did not appear on the issues list, and the same result remained two years later.",
+    "Creative Navy's documented design standard for warning states was that no critical warning should rely on colour alone or require reading to interpret."
   ],
   "bodySections": [
     {
-      "heading": "Summary",
-      "bodyMarkdown": "Creative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nA warning that is not understood is worse than a warning that is not seen. An unseen warning leaves the user without information they needed. An unclear warning draws attention, interrupts the task, and then fails to deliver actionable meaning.\n\nThis failure occurs when warnings are visible but their meaning is not immediately recoverable. The user encounters the warning, but cannot quickly understand what condition it describes, what urgency it carries, or what response is required.\n\nThe operational cost is different from absence. An unclear warning creates an interruption that produces confusion rather than response, while the user's primary task waits."
+      "heading": "Definition of Warning-Meaning Failure",
+      "bodyMarkdown": "Creative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nA warning-meaning failure occurs when an interface presents a warning that is visible but not immediately interpretable for the user, task, environment, and time available. The user may see the warning, recognise that the system is signalling something, and still be unable to determine the condition, urgency, or required response quickly enough for the operating context.\n\nThis is an interpretation failure. It is different from a warning that is absent, hidden, or not noticed. It is also different from a warning that is understood but not actionable. In this failure, the warning has been encountered, but its meaning is not immediately recoverable."
     },
     {
-      "heading": "Failure pattern: visible warnings that do not communicate meaning",
-      "bodyMarkdown": "Warnings are intended to interrupt the user's current activity and direct attention to a condition requiring response. In this failure pattern, the interruptive mechanism works, but the communication mechanism fails.\n\nThe warning may be a text-label warning on a surgical device display that a surgeon checks in brief glances during a live procedure. It may be an alert that combines a technical error code with a paragraph-length status description. It may be a warning colour that is the system's main semantic signal but degrades under variable lighting. It may be a warning on a consumer embedded display during a ride that describes a condition the rider cannot interpret without already knowing what it refers to.\n\nIn each case, the warning is technically present. The user sees that something is being communicated. The warning does not make the underlying condition, urgency, and required response immediately accessible."
+      "heading": "Warnings Can Interrupt the Task Without Reducing Uncertainty",
+      "bodyMarkdown": "A warning that is not understood can draw attention away from the primary task while failing to provide actionable meaning. The operational cost is the combination of interruption and uncertainty: the user is pulled away from current work and required to interpret the system state at the moment when the warning should have reduced ambiguity.\n\nThis pattern appears when a text-label warning must be read during a live procedure, when a technical error code is combined with a paragraph of status description, when warning colour is unreliable under variable lighting, or when an embedded-display alert appears without enough surrounding context for the user to understand what it refers to.\n\nThe design problem is therefore not only whether the warning is visible. The warning must communicate meaning quickly enough for the attention, time, and environmental constraints of the situation in which it appears."
     },
     {
-      "heading": "How this differs from warnings that are visible but not actionable",
-      "bodyMarkdown": "Warnings that are visible but unclear fail before action selection. The user has not yet recovered what the warning means.\n\nA separate adjacent failure occurs when warnings are visible and understood, but not actionable. In that situation, the user understands the warning but the system does not provide a clear path to acting on it, or the required action is not available from the current interface position.\n\nBoth failures prevent appropriate response. The design response differs: unclear warning meaning requires communication, recognition, and contextual grounding to be repaired; non-actionable warnings require action pathways and interface support to be repaired."
+      "heading": "How Warning Meaning Becomes Unclear in Interfaces",
+      "bodyMarkdown": "Warnings become unclear when the warning channel does not match the conditions of use. Text may be adequate when users can read with sustained attention, but it is weak when users work through brief glances while attending to a patient, a road, a physical process, or a high-throughput operational flow.\n\nWarnings also become unclear when colour is the sole differentiating cue. Colour can be efficient and salient under favourable display and lighting conditions, but it becomes fragile when glare, variable lighting, night-vision equipment, or colour-perception differences reduce reliable discrimination.\n\nWarning content can be visible and technically correct while still requiring too much interpretation. A technical error code, diagnostic message, or internally oriented status description may state what the system knows, while failing to state what the user needs to recognise.\n\nWarnings can also be contextually detached. The message may be legible, but the current screen may not show the state, component, or workflow condition that gives the warning meaning."
     },
     {
-      "heading": "How this differs from data that is available but hard to interpret",
-      "bodyMarkdown": "Warnings that are visible but unclear are a specific, high-consequence instance of the broader failure where data is available but hard to interpret. The general mechanism is that information is present but not in a form the user can interpret for the task.\n\nWarnings carry a higher operational cost because they are interruptive by design. A warning represents the system's attempt to alert the user to a consequential condition. When that attempt fails to communicate, the user pays both the cost of interruption and the cost of unresolved interpretation."
+      "heading": "Text Warnings Are Weak in Brief-Glance Environments",
+      "bodyMarkdown": "Text-label warnings fail when the operating context does not provide enough time or attention for reading. Reading requires sequential processing: the user must read words in order, hold earlier words in working memory, and integrate the sequence into meaning. Under brief-glance conditions, that process may not complete.\n\nThe deSoutter Medical / Zethon surgical-device case illustrates this mechanism. The Zethon bone cutter is a powered ultrasonic surgical instrument used in orthopaedic and trauma surgery. Surgeons operate the interface during live procedures, with primary attention on the surgical field and the patient, through gloves, under operating theatre lighting, and within sterile-field constraints.\n\nIn that context, text-label warnings created a use-related risk under IEC 62366-1 if sustained attention had to be diverted from the surgical field, and a different use-related risk if the warning was not understood. Creative Navy's design response shifted critical warning interpretation from reading to recognition through fixed spatial position, distinct icon form, and reserved colour semantics applied exclusively to warning states."
     },
     {
-      "heading": "Text warnings fail when reading is unavailable",
-      "bodyMarkdown": "Text is structurally weak as the primary warning channel when the user cannot reliably read. Text labels may be adequate when users are seated, have sustained attention, and can read at leisure. They are inadequate when the interface is accessed in brief intervals while attention remains on a physical or time-sensitive task.\n\nText requires sequential processing. The user must read words in order, retain earlier words in working memory, and integrate the sequence into meaning. Under brief-glance conditions, this process may not complete before attention must return to the primary task.\n\nThe design response shifts the primary warning channel from reading to recognition. Distinct shapes, fixed spatial positions, and redundant cues allow the user to recognise a warning state without reading a sentence. Spatial position, icon form, and colour can each communicate the same warning state, so that degradation in one channel does not make the warning uninterpretable."
+      "heading": "Colour Must Be Redundant, Not the Sole Warning Channel",
+      "bodyMarkdown": "Colour-only warning systems fail when colour is treated as the semantic channel rather than as one redundant cue. A colour distinction can be perceptible under ideal conditions and unreliable under real operating conditions.\n\nCreative Navy's benchmarking for the deSoutter Medical / Zethon engagement covered six comparable surgical instruments, including powered saws, ultrasonic tools, and other high-speed instruments used in orthopaedic and trauma surgery. The common pattern across the benchmarked devices was reliance on colour coding and text labels, without a recognisable pattern system that allowed state to be confirmed without reading.\n\nThe design response is not to remove colour. The design response is to make colour redundant. Spatial position, icon form, and colour should each contribute to the same warning state, so that degradation of any one channel does not make the warning uninterpretable."
     },
     {
-      "heading": "Colour warnings fail when colour is the sole differentiating cue",
-      "bodyMarkdown": "Colour coding is a common warning mechanism in complex software and embedded devices. It is efficient and salient under favourable display and lighting conditions. It is also vulnerable to environmental degradation.\n\nLighting conditions can shift the spectral balance of a display. Night vision equipment can change how the visual spectrum is perceived. Glare can reduce contrast between adjacent colours. Partial colour blindness affects a fraction of the user population.\n\nA warning system that relies on colour alone has made critical meaning dependent on a channel that can fail under the same operating conditions in which warning interpretation matters. The design response is not to remove colour. The design response is to make colour redundant, so that colour supports meaning but is not the only carrier of meaning."
+      "heading": "Warning Content Should Support Recognition Before Diagnosis",
+      "bodyMarkdown": "Warning content fails when it is written for internal diagnosis rather than user action under time pressure. A technical error code may be accurate, and a status description may correctly identify what has happened, but the warning still fails if the user must decode it before knowing whether to stop, continue, or change the current action.\n\nThis failure is common when warning content is shaped by engineering-centric documentation needs. The warning captures what the system knows, but in a form that serves technical completeness rather than operational response.\n\nA more robust warning pattern communicates urgency and implied response through form before technical detail. Progressive disclosure can place the actionable interpretation first and keep diagnostic detail available as a secondary layer for users who need it."
     },
     {
-      "heading": "Warning content fails when users must decode before acting",
-      "bodyMarkdown": "Warning content can be visible and legible while still requiring interpretation before it can govern action. A technical error code may require a reference manual. A status description may identify what happened without saying whether the state is critical. A warning may describe a condition without indicating whether the user should stop immediately, finish the current step, or continue while monitoring.\n\nThis failure appears when warning content is designed for technical completeness or internal diagnostic accuracy rather than user action under time pressure. The warning may be technically correct and still functionally inadequate.\n\nThe design response is to communicate the actionable interpretation first. Urgency level and implied response should be carried by the warning pattern itself where possible, with technical detail available as a secondary layer for users who need it."
+      "heading": "Contextual Detachment Makes Visible Warnings Hard to Understand",
+      "bodyMarkdown": "Warnings become contextually detached when they appear without the screen state, workflow state, or component relationship needed to understand them. The user may recognise that a warning exists, but may not be able to connect it to the current task without navigating elsewhere or already knowing what the message refers to.\n\nThe Stromer e-bike embedded-display case illustrates this failure. Stromer manufactures premium e-bikes whose embedded display is used while riding. The rider reads the display in brief glances while attention remains on the road.\n\nBefore Creative Navy's engagement, warnings had been layered onto an existing screen architecture after earlier design work by another provider. Creative Navy's structured testing before the redesign found that riders encountered warnings and recognised that something was being communicated, but could not recover the meaning without navigating away from the current context. During a ride, that action was not reliably available and was not safe.\n\nCreative Navy's redesign addressed the warning system at the architectural level, including the layout and overlay system, the information architecture, and the contextual grounding of warning types."
     },
     {
-      "heading": "Warnings fail when they are detached from the state they describe",
-      "bodyMarkdown": "A warning can be visible and legible but still disconnected from the operating context that gives it meaning. The warning may refer to a condition that is not visible in the same view, a state the user does not know the system has entered, or a component whose relationship to the current task is not apparent.\n\nIn this pattern, the user recognises that a warning exists but cannot connect it to current experience. The likely responses are dismissal or task interruption to navigate elsewhere. Neither response is necessarily the response the warning required.\n\nThis failure is common when the warning system and screen architecture are designed separately. If warnings are added after the screen architecture is established, they inherit screen contexts that may not match the condition being communicated."
+      "heading": "How Creative Navy's Critical Systems Design Method Addresses Warning Interpretation",
+      "bodyMarkdown": "Creative Navy's Critical Systems Design method designs software whose interfaces, workflows, and operating logic carry real operational consequences, working through five phases — Sandbox Experiments, Concept Convergence, Iterative System Building, Organizational Integration, and Implementation Partnership — to take each system from initial exploration to independent operation by the client's own team.\n\nCreative Navy's Critical Systems Design method addresses warning interpretation failure by establishing when and how warnings will be encountered under real operating conditions before warning forms are specified. Domain learning determines the workflow moment, attention state, physical environment, and available time for interpretation.\n\nIn the deSoutter Medical / Zethon engagement, Creative Navy's domain learning involved twelve human factors studies and ergonomics papers, thirteen structured sessions with eight orthopaedic and trauma surgeons, and benchmarking of six comparable surgical instruments. The design standard that emerged required warning states to be interpretable through pattern recognition in a brief glance, without reading, under variable theatre lighting, and through redundant cues.\n\nIn the Stromer engagement, Creative Navy's domain learning treated the previous design work as an accelerated first iteration. The analysis identified that the screen architecture and warning system had been designed separately, producing warnings that appeared without the contextual information required for immediate interpretation."
     },
     {
-      "heading": "deSoutter Medical / Zethon surgical device example",
-      "bodyMarkdown": "The deSoutter Medical / Zethon bone cutter is a powered ultrasonic surgical instrument operating at high rotational speeds, used in orthopaedic and trauma surgery. Surgeons operate the interface during live procedures, in brief glances, through gloves, within sterile-field constraints, and under operating theatre lighting conditions that vary with procedure requirements and equipment configuration.\n\nThe legacy interface presented warnings as text labels. The labels described warning conditions in language accurate to the engineering model of the device. In operating theatre use, the failure mode was that text requires reading, reading requires sustained focused attention, and sustained focused attention is not reliably available during an active surgical procedure.\n\nA surgeon encountering a text-label warning during a procedure faced two use-related risks under IEC 62366-1. The surgeon could divert sustained attention from the surgical field to read and interpret the warning, or continue operating without understanding what the warning communicated.\n\nCreative Navy-recorded benchmarking of six comparable surgical instruments found the same pattern across powered saws, ultrasonic tools, and other high-speed instruments used in orthopaedic and trauma surgery: warnings were communicated primarily or solely through colour coding and text labels, with no system of recognisable patterns that allowed state to be confirmed without reading.\n\nThe most common failure across the six benchmarked devices was reliance on colour as the primary warning differentiator. Under ideal operating theatre illumination, colour coding between warning and normal states was perceptible. Under variable operating theatre lighting, the distinction became unreliable. None of the six benchmarked devices used redundant non-colour cues to make warning states perceptible when colour degraded.\n\nCreative Navy's domain learning for the deSoutter Medical / Zethon engagement involved twelve human factors studies and ergonomics papers covering attention switching in dual-task conditions, visual search under time pressure, and medical device usability in clinical environments. Thirteen structured sessions with eight orthopaedic and trauma surgeons combined interviews with procedural walkthroughs.\n\nThe design standard from this work was that every warning state must be interpretable through pattern recognition in a brief glance, without reading, under variable theatre lighting, through redundant cues that remain independently communicative under realistic single-channel degradation.\n\nThe implementation communicated every critical warning state through three simultaneous channels: fixed spatial position, icon form, and reserved colour. No critical state relied on colour alone. No critical warning required reading to interpret.\n\nEight orthopaedic and trauma surgeons in structured review sessions reported that device state, including warning states, could be verified during brief glances without reading, and that adjustments to device parameters no longer required breaking focus on the surgical field. These are surgeon-reported outcomes from participants in the design engagement, not post-deployment operational measurement. The engagement produced a documented usability engineering trail structured to support IEC 62366-1 verification and validation activities. Summative validation is the manufacturer's responsibility; Creative Navy produced the design process and documentation structured to support it, not compliance as a deliverable."
-    },
-    {
-      "heading": "Stromer e-bike embedded display example",
-      "bodyMarkdown": "Stromer manufactures premium e-bikes whose embedded display is used while riding. The rider's eyes leave the road in brief glances, with an attentional profile compared in the documented work to a driver reading an instrument cluster. The bike carries safety warnings, status alerts, error states, and threshold notifications.\n\nBefore Creative Navy's engagement, a previous agency had completed a year of design work. Warnings had been layered onto an existing screen architecture after that architecture had already been established. This sequencing produced contextual detachment: warnings appeared without enough contextual grounding for riders to understand what they were about.\n\nCreative Navy-recorded structured user testing before the redesign documented the failure pattern. Users encountered warnings and recognised that something was being communicated, but could not recover meaning without navigating away from their current context during a ride.\n\nCreative Navy's redesign addressed the warning problem at the architectural level. Creative Navy established rules and principles for how warnings relate to the screen architecture before designing the warning components themselves. The redesign covered the layout and overlay system, the information architecture, and the contextual grounding of every warning type.\n\nThe outcome was evaluated across three Creative Navy-designed and run rounds of structured testing. Before the redesign, 10 users rode the bike for 3 days each on consistent routes in Munich and surrounding countryside, logging issues by severity on a 4-level scale. Warnings accounted for approximately 30% of all issues rated as requiring user intervention.\n\nAfter the redesign, the same test was run with 10 users, including 6 returning users and 4 replacements, using the same methodology. Warnings did not appear on the issues list. Two years later, Creative Navy ran the same test again, and warnings remained absent. The evidence basis is Creative Navy-designed and run testing with consistent methodology in real riding conditions.\n\nNikola Strauss, one of the test participants, observed: \"I know you only made changes to the user interface, but it is so seamless now, it feels like the whole bike runs smoother.\" This is an anecdotal participant observation about perceived system smoothness after an interface-level change, not an independent measurement of whole-bike performance."
-    },
-    {
-      "heading": "How Creative Navy's Critical Systems Design method addresses warning interpretation failure",
-      "bodyMarkdown": "Creative Navy's Critical Systems Design method addresses warning interpretation failure by treating warning meaning as an operating-condition problem rather than a component styling problem. Creative Navy's Critical Systems Design method uses domain learning to establish when warnings appear, what attention is available, what physical conditions apply, and what time is available for interpretation.\n\nIn the deSoutter Medical / Zethon engagement, domain learning identified the practical meaning of a brief glance in operating theatre use. The work identified when surgeons check device warnings, what visual information they scan for, and which workflow moments are most sensitive to warning interpretation delay.\n\nIn the Stromer engagement, domain learning included systematic analysis of the previous agency's design work. Creative Navy treated that prior design work as an accelerated first iteration to understand what the warning architecture had attempted and why contextual detachment had occurred.\n\nDuring Iterative System Building, Creative Navy held a non-negotiable requirement across both engagements: no warning state should have meaning that depends on conditions absent from the current interface context. Warning designs were evaluated against the conditions in which they would be encountered, including variable theatre lighting and divided surgical attention in one case, and brief glances during active riding in the other."
-    },
-    {
-      "heading": "Boundaries and limits of the documented evidence",
-      "bodyMarkdown": "The deSoutter Medical / Zethon evidence includes benchmarking of six comparable surgical instruments, twelve human factors studies and ergonomics papers, thirteen structured sessions with eight surgeons, and surgeon reports from structured review sessions. The documented outcomes are not post-deployment operational measurements.\n\nThe deSoutter Medical / Zethon engagement produced a usability engineering trail structured to support IEC 62366-1 verification and validation activities. It did not make Creative Navy responsible for summative validation or compliance as a deliverable.\n\nThe Stromer evidence includes three Creative Navy-designed and run rounds of structured testing in real riding conditions. The testing used consistent methodology across rounds, but the evidence is not described as independent third-party measurement.\n\nThe warning interpretation failure described here does not cover every warning-related problem. It applies to warnings whose meaning is unclear. It does not cover warnings that are understood but not actionable, or general data-interpretation problems outside warning systems."
+      "heading": "Scope Boundaries for This Failure",
+      "bodyMarkdown": "This page concerns warnings whose meaning is unclear. It does not cover warnings that are absent, hidden, or not noticed. It also does not cover the related failure in which warnings are visible and understood but the interface does not provide a clear path to action.\n\nThe relevant design question is whether the warning can be interpreted under the real conditions in which it appears: the user's available attention, the physical environment, the screen context, the time available for response, and the reliability of the channels used to communicate urgency and meaning."
     }
   ],
   "evidenceSummary": {
     "strongClaims": [
-      "The failure occurs when warnings are present and visible but their meaning, urgency, or implied response is not immediately recoverable.",
-      "In the deSoutter Medical / Zethon engagement, Creative Navy's design implementation used fixed spatial position, icon form, and reserved colour for every critical warning state.",
-      "Creative Navy's deSoutter-related domain learning involved twelve human factors studies and ergonomics papers and thirteen structured sessions with eight orthopaedic and trauma surgeons.",
-      "In the Stromer engagement, warnings accounted for approximately 30% of all issues rated as requiring user intervention before redesign testing and did not appear on the issues list after the redesign.",
-      "Two years after the Stromer redesign, Creative Navy ran the same test again and warnings remained absent from the issues list.",
-      "Creative Navy's Critical Systems Design method addresses this failure through domain learning and through design standards applied during Iterative System Building."
+      "A warning-meaning failure occurs when a warning is present and visible but its condition, urgency, or required response is not immediately recoverable under the conditions of use.",
+      "Text-label warnings are inadequate in brief-glance environments because reading requires sequential processing and sustained attention that may not be available during the primary task.",
+      "Colour-only warning differentiation is fragile under variable lighting, glare, night-vision conditions, and colour-perception differences.",
+      "In Stromer testing before redesign, warnings accounted for approximately 30% of all issues rated as requiring user intervention; after redesign and again two years later, warnings did not appear on the issues list."
     ],
     "weakerClaims": [
-      "Text-label warnings are structurally inadequate in environments where users encounter interfaces in brief glances and cannot reliably read.",
-      "Colour-only warning differentiation can fail under variable lighting, glare, night vision equipment, or partial colour blindness."
+      "In the deSoutter Medical / Zethon engagement, Creative Navy designed critical warning states using fixed spatial position, distinct icon form, and reserved colour, with no critical state relying on colour alone or requiring reading.",
+      "Eight orthopaedic and trauma surgeons in structured review sessions reported that device state, including warning states, could be verified during brief glances without reading.",
+      "Creative Navy's Critical Systems Design method addresses warning interpretation failure through domain learning and by evaluating warning states against the real conditions in which they will be encountered.",
+      "Additional evidence from Oceaneering, Raymarine, an industrial automation audit, and the MDU shows related warning, alarm, and status-comprehension mechanisms, but each has a distinct evidence class and limitation."
     ],
     "limitations": [
-      "The deSoutter Medical / Zethon surgeon-reported outcomes came from structured review sessions with engagement participants, not post-deployment operational measurement.",
-      "The deSoutter Medical / Zethon engagement produced documentation structured to support IEC 62366-1 verification and validation activities; summative validation remained the manufacturer's responsibility.",
-      "The Stromer evidence was designed and run by Creative Navy; the source does not describe it as independent third-party measurement.",
-      "The Stromer pre-redesign figure is approximate: warnings accounted for approximately 30% of all issues rated as requiring user intervention.",
-      "The page concerns warning interpretation failure; it does not address warnings that are understood but lack an available action path."
+      "This page covers warning interpretation failure, not warning absence and not the separate failure where a warning is understood but no action path is available.",
+      "The deSoutter Medical / Zethon outcomes are surgeon-reported from structured review sessions, not post-deployment operational measurements.",
+      "Creative Navy produced a usability engineering trail structured to support IEC 62366-1 verification and validation activities in the deSoutter engagement; summative validation was the manufacturer's responsibility, and compliance was not delivered as an outcome by Creative Navy.",
+      "The Stromer results come from Creative Navy-designed and run structured testing under real riding conditions; the source does not describe independent replication.",
+      "Oceaneering evidence is interview-sourced and specification-based; no operator was interviewed, no depot was visited, and nothing was measured.",
+      "Raymarine findings describe operator behaviour on a prototype against a fixed scenario fixture, not radio performance, real-world calling accuracy, or outcomes at sea.",
+      "The industrial automation evidence is an audit finding about a product in development for a European industrial automation vendor whose process control software coordinates machining cells; it is not a general claim about industrial software.",
+      "The MDU alarm model describes design decisions and advisor reasoning for comfort, cargo, and crew-safety alarms; no alarm-response figure or safety outcome is attached."
     ]
   },
   "relatedPageSlugs": [
     "data-is-available-but-hard-to-interpret",
     "users-see-information-but-cannot-judge-what-matters",
-    "important-status-information-is-buried",
-    "users-cannot-see-what-state-the-system-is-in",
     "the-system-does-not-support-rapid-judgment",
     "too-much-attention-is-required-for-routine-use",
-    "errors-are-hard-to-notice",
-    "stromer-ebike"
+    "users-cannot-see-what-state-the-system-is-in",
+    "important-status-information-is-buried",
+    "stromer-ebike",
+    "raymarine-vhf",
+    "oceaneering-dispatch-panel",
+    "mdu-ship-motion-monitoring"
   ],
   "internalLinks": [
     {
-      "anchorText": "data is available but hard to interpret",
+      "anchorText": "data being present but hard to interpret",
       "targetSlug": "data-is-available-but-hard-to-interpret",
-      "reason": "The current page explicitly describes warning interpretation failure as a specific instance of the broader data-interpretation failure."
+      "reason": "The source explicitly identifies this page as a specific high-consequence instance of the broader data-interpretation failure."
     },
     {
-      "anchorText": "users see information but cannot judge what matters",
+      "anchorText": "users cannot judge what matters",
       "targetSlug": "users-see-information-but-cannot-judge-what-matters",
-      "reason": "The warning failure concerns visible information whose significance is not recoverable quickly enough for action."
+      "reason": "Unclear warning meaning prevents users from judging the importance and urgency of visible information."
     },
     {
-      "anchorText": "important status information is buried",
-      "targetSlug": "important-status-information-is-buried",
-      "reason": "Warning interpretation failure overlaps with status communication problems where consequential state is not presented in an immediately usable form."
-    },
-    {
-      "anchorText": "users cannot see what state the system is in",
-      "targetSlug": "users-cannot-see-what-state-the-system-is-in",
-      "reason": "The page discusses warnings that fail to communicate the system state or condition they describe."
-    },
-    {
-      "anchorText": "the system does not support rapid judgment",
+      "anchorText": "rapid judgment under pressure",
       "targetSlug": "the-system-does-not-support-rapid-judgment",
-      "reason": "The failure is especially relevant in brief-glance conditions where users must judge warning meaning rapidly."
+      "reason": "The failure often appears when warning interpretation must happen quickly under operational pressure."
     },
     {
       "anchorText": "too much attention is required for routine use",
       "targetSlug": "too-much-attention-is-required-for-routine-use",
-      "reason": "The deSoutter example describes warning interpretation that would require sustained attention during a live procedure."
+      "reason": "Text-heavy warnings require sustained attention in contexts where only brief glances are available."
     },
     {
-      "anchorText": "errors are hard to notice",
-      "targetSlug": "errors-are-hard-to-notice",
-      "reason": "Warnings that rely on degraded cues can make consequential states difficult to notice or distinguish from normal states."
+      "anchorText": "users cannot see what state the system is in",
+      "targetSlug": "users-cannot-see-what-state-the-system-is-in",
+      "reason": "Warning-meaning failures often overlap with unclear system-state communication."
     },
     {
-      "anchorText": "Stromer e-bike case",
+      "anchorText": "important status information is buried",
+      "targetSlug": "important-status-information-is-buried",
+      "reason": "Warnings can fail when the actionable meaning is buried behind technical or diagnostic content."
+    },
+    {
+      "anchorText": "Stromer e-bike embedded-display case",
       "targetSlug": "stromer-ebike",
-      "reason": "The current page uses Stromer as a grounded example, and the allowed linking context includes the Stromer case-study notes slug."
+      "reason": "The source uses Stromer as a grounded example of warnings that were visible but contextually detached during riding."
+    },
+    {
+      "anchorText": "Raymarine prototype testing",
+      "targetSlug": "raymarine-vhf",
+      "reason": "The source includes Raymarine evidence about status comprehension changing between generic and explicit transaction states."
+    },
+    {
+      "anchorText": "Oceaneering dispatch-panel evidence",
+      "targetSlug": "oceaneering-dispatch-panel",
+      "reason": "The source includes Oceaneering evidence about one blinking signal carrying two opposite operational meanings."
+    },
+    {
+      "anchorText": "MDU alarm model",
+      "targetSlug": "mdu-ship-motion-monitoring",
+      "reason": "The source includes the MDU as a related alarm-meaning case where alarm state binds to a rolling window rather than the live value."
     }
   ],
   "tags": [
     "warning interpretation",
-    "interpretation failure",
-    "critical systems",
+    "interpretation failures",
+    "alarm design",
+    "brief-glance interfaces",
+    "colour redundancy",
+    "status comprehension",
     "medical device UX",
     "embedded display UX",
-    "colour redundancy",
-    "brief-glance interaction",
-    "contextual grounding",
-    "domain learning",
     "Critical Systems Design"
   ],
   "_meta": {
     "sourcePath": "sources/articles/Failures/failures--interpretation--warnings-are-visible-but-their-meaning-is-unclear.md",
     "parentSlug": "interpretation-failures",
     "childPageSlugs": [],
-    "generatedBy": "deterministic"
+    "generatedBy": "openai"
   }
 }

@@ -58,7 +58,7 @@
 - **14 individual interviews and 3 focus groups, 24 participants** across NHS analysts, academic researchers, and pharmaceutical research staff
 - The three groups were not aggregated into a single "researcher" persona — the research treated them as three distinct institutional contexts with different governance paths through the same system. The differences between them were the primary research finding.
 - NHS analysts: clear governance boundaries between research and operational use. Academic teams: lengthy ethics and data access approvals. Pharma teams: audit obligations and regulatory reporting requirements.
-- Triangulation across groups: what NHS analysts needed from the interface conflicted with what pharma teams needed; what academic researchers assumed about the system differed from what it actually did. These conflicts were the findings that shaped the competitive vector.
+- Triangulation across groups: what NHS analysts needed from the interface conflicted with what pharma teams needed; what academic researchers assumed about the system differed from what it actually did. These conflicts were the findings that shaped the design direction.
 
 ### Elsner Elektronik (multi-source evidence for a consumer embedded product)
 - Four distinct evidence sources used against each other, not in parallel:

@@ -1,116 +1,133 @@
 {
   "slug": "consumer-and-multi-market-products",
-  "title": "Consumer And Multi Market Products",
+  "title": "Consumer and Multi-Market Products",
   "pageType": "context",
   "category": "contexts",
   "section": "Contexts",
-  "summary": "This context describes design work for consumer products and multi-country platforms where users, markets, brands, and local behaviours vary, but the product still needs a coherent interaction architecture. The available evidence comes from Elsner Elektronik's Cala Touch KNX controller and the OLX automotive marketplace engagement.",
+  "summary": "Consumer and multi-market product design addresses consumer-facing products that must operate across countries, languages, brands, distributors, and local usage conventions without fragmenting into unrelated local variants. The documented evidence includes Elsner Elektronik, OLX, Streetec, AIT, and visioncheckout examples, with each claim calibrated to the available evidence.",
   "keyFacts": [
-    "Consumer product design is distinct from professional software because users have not invested in learning the domain and compare the product experience to smartphone standards.",
-    "Accessibility range can include tech-savvy professionals and elderly users with limited motor precision using the same product.",
-    "Dealer and distributor networks can act as intermediaries for feedback when direct end-user research access is limited across markets.",
-    "Elsner Elektronik's Cala Touch KNX controller was a 4-inch round TFT LCD room controller at 480×480px, wall-mounted at 140cm.",
-    "Elsner Elektronik had reach across 54 countries, with dealer networks from 10 countries involved in design validation.",
-    "Colle & Hiszem (2004) is cited for touch target sizing: a 13mm minimum, with accuracy plateauing at approximately 22mm.",
-    "Elsner Elektronik's previous carousel navigation could require up to 10 swipes to reach a function and was affected by lag from microcontroller processing limits.",
-    "OLX automotive work addressed market fragmentation across Poland, Portugal, and Romania, where local teams had independently introduced filters, flows, and entry points.",
-    "The OLX engagement produced a marketplace coherence framework: consistent journeys across markets with specified points for local adaptation.",
-    "No user performance metrics were measured in the OLX engagement; the outcome described is governance and architectural coherence."
+    "Consumer product design differs from professional software because users have not invested in learning the domain and compare responsiveness to smartphone experience.",
+    "The Elsner Elektronik Cala Touch KNX case involved a 4-inch round TFT LCD room controller at 480×480px, mounted at 140cm, with use across 54 countries.",
+    "Colle & Hiszem (2004) is cited for touch target sizing: minimum 13mm, with accuracy plateauing at approximately 22mm.",
+    "Elsner dealer prototype reviews produced 30 responses from dealers across 10 countries; 100% of responding dealers, 30 of 130 total dealers, rated the redesign as an improvement, client-reported from Elsner's dealer network.",
+    "The OLX automotive marketplace case produced a marketplace coherence framework for Poland, Portugal, and Romania; no user performance metrics were measured in that engagement.",
+    "Streetec kntrl 2 testing involved 32 participants using the production product installed in a car; all 32 completed all three tasks unassisted and performed in line with expectations.",
+    "AIT's heat pump controller interface was delivered in three complete themes and 21 interface languages; no user testing or performance outcome is stated for that engagement.",
+    "visioncheckout is in development; no shipped outcome, throughput, speed, error-rate, satisfaction, accuracy, compliance, certification, or commercial outcome may be claimed."
   ],
   "bodySections": [
     {
-      "heading": "Consumer and multi-market product design in Creative Navy's documentation",
-      "bodyMarkdown": "Consumer and multi-market product design covers products used by broad consumer audiences across countries, local brands, and regional usage conventions. The design problem is not only interface usability; it is the need to keep a coherent product architecture while allowing controlled market-specific adaptation.\n\nCreative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nIn this context, consumer product design is distinct from professional software. Users have not invested in learning the domain, and they compare the product with the smartphone experience they use daily. If an embedded device feels slower or less responsive than a phone, the difference can become a quality judgement about the product, regardless of the technical cause."
+      "heading": "Consumer and Multi-Market Product Design as a Creative Navy Context",
+      "bodyMarkdown": "Creative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nConsumer and multi-market product design is the design of consumer-facing or channel-mediated products that must remain coherent across markets while accommodating local behaviours, brands, languages, regulatory constraints, distributor feedback, and wide differences in user dexterity and technical familiarity.\n\nThe core design problem is controlled variation. A multi-market product needs enough local adaptation to fit real market conventions, but enough shared architecture for engineering, product, marketing, and support teams to maintain a coherent product."
     },
     {
-      "heading": "Consumer products are judged against smartphone responsiveness",
-      "bodyMarkdown": "The Elsner Elektronik Cala Touch KNX case shows how consumer electronics expectations affect embedded product design. The product was a 4-inch round TFT LCD room controller at 480×480px, wall-mounted at 140cm, used to control heating, cooling, lighting, blinds, and scenes.\n\nThe previous interface used carousel navigation with 1–10 pages and swipe-only movement. A user could need up to 10 swipes to reach a function. The touch layer was laggy because of microcontroller processing limits, making the controller feel unresponsive relative to smartphone standards.\n\nCreative Navy's design work explored six navigation architectures before converging on a hamburger-plus-dashboard model: lower bar tabs, hamburger menu, top ribbon menu, carousel menu, multiple buttons, and a physical home button. The user-configurable dashboard surfaced the most-used functions on the first screen, reducing the need to navigate for common actions."
+      "heading": "Consumer Interfaces Must Support a Wide Accessibility Range",
+      "bodyMarkdown": "Consumer product design differs from professional software because users have not invested in learning the domain. Users compare consumer devices against the responsiveness, clarity, and interaction quality of smartphones, even when the product is an embedded controller with constrained hardware.\n\nThe Elsner Elektronik Cala Touch KNX case illustrates this accessibility range. The product was a 4-inch round TFT LCD room controller at 480×480px, wall-mounted at 140cm, used to control heating, cooling, lighting, blinds, and scenes. It operated in the KNX building automation ecosystem across 54 countries.\n\nThe documented user split included tech-savvy building automation professionals and elderly consumers with limited dexterity, both using the same device in daily life. The KNX split also mattered: systems engineers configured the device through ETS, while occupants operated it daily without configuration access. Some interface patterns that appeared to be design decisions were actually workarounds for firmware or configuration constraints that occupants could not change.\n\nThe previous interface used carousel navigation with 1–10 pages and swipe-only access. A user could need up to 10 swipes to reach a function. The touch layer was laggy because of microcontroller processing limits, and the product felt unresponsive relative to smartphone standards. The consumer electronics comparison was structural: users experienced the difference between responsive and laggy touch as a quality judgement about the product, not as an understanding of hardware limits.\n\nCreative Navy's documented design decisions for Elsner included exploring six navigation architectures before converging on a hamburger-plus-dashboard model, adding a user-configurable dashboard for most-used functions, aligning animation timing with firmware update intervals, and designing explicitly for sensor fault states, calibration drift, and delayed sensor readings. Touch targets were designed around the cited Colle & Hiszem (2004) ergonomics parameters: minimum 13mm, with accuracy plateauing at approximately 22mm."
     },
     {
-      "heading": "Accessibility range can put professionals and elderly users on the same interface",
-      "bodyMarkdown": "Accessibility range is the full spectrum from tech-savvy professionals to elderly users with limited motor precision using the same product. In the Elsner Elektronik Cala Touch KNX case, building automation professionals and elderly consumers both used the same wall-mounted device in daily life.\n\nCreative Navy applied the cited ergonomics research by Colle & Hiszem (2004), which gives a touch target minimum of 13mm and reports that accuracy plateaus at approximately 22mm. The touch target decisions were applied to a consumer device used at standing height, with a wide dexterity range among users.\n\nThe design also accounted for sensor fault states, calibration drift, and delayed sensor readings. These states were designed explicitly because consumer devices must handle them without alarming users. Animation timing was aligned with firmware update intervals so that visual changes did not drift out of sync with actual thermal values."
+      "heading": "Dealer and Distributor Networks Can Provide Market Feedback When Direct User Access Is Limited",
+      "bodyMarkdown": "Dealer and distributor networks often mediate the relationship between manufacturer and end user in multi-market consumer products. Dealer feedback can function as a proxy for end-user insight in markets where direct research access is limited, but the evidence must be labelled as dealer evidence rather than treated as direct end-user research.\n\nIn the Elsner Elektronik case, dealer networks from 10 countries were involved in design validation. A 20-user survey was distributed and collected by Elsner, with Creative Navy analysing raw results. Formal usability testing involved 12 subjects in one structured session. Dealer prototype reviews produced 30 responses from dealers across 10 countries.\n\nThe Elsner dealer result is client-reported from Elsner's dealer network: 100% of responding dealers, 30 of 130 total dealers, rated the redesign as an improvement over the previous interface. The same evidence also records client-reported daily interaction frequency of approximately 25 interactions per day, client-reported early post-launch sales described as better than expected, and client-reported dealer promotion behaviour after launch.\n\nThe Streetec kntrl 2 case shows a different channel-mediated pattern. Dealers and installers mediate the manufacturer's relationship with owners, and the testing sample reflected that structure. After the design phase, two testing sessions were run with 32 participants total using the actual production product installed in a car: 13 in Munich, all tuning enthusiasts and car owners; and 19 at a trade fair in Spain, with a mixed sample of roughly 25% owners or enthusiasts, 40% dealers, 30% installers, and 5% other.\n\nThe Streetec trade fair sample should not be described as representative of owners. Its value is that dealers and installers commission and fit these systems. Creative Navy designed the test protocol, ran both sessions, and analysed the results. Streetec prepared the vehicle and site logistics and recruited participants. The supportable result is that all 32 participants completed all three tasks unassisted and performed in line with expectations."
     },
     {
-      "heading": "Dealer networks can proxy end-user insight when direct research access is limited",
-      "bodyMarkdown": "Dealer and distributor networks are intermediaries between manufacturers and end users across markets. In consumer and multi-market product design, dealer feedback can be used as a proxy for end-user insight in markets where direct research access is limited.\n\nElsner Elektronik had reach across 54 countries, and dealer networks from 10 countries were involved in design validation. The research included a 20-user survey distributed and collected by Elsner Elektronik, with Creative Navy analysing the raw results, and formal usability testing with 12 subjects in one structured session.\n\nDealer prototype reviews produced 30 responses from dealers across 10 countries. Client-reported evidence from Elsner Elektronik's dealer network records that 100% of responding dealers, 30 of 130 total dealers, rated the redesign as an improvement over the previous interface. This is a client-reported dealer-network result, not an independently measured end-user outcome."
+      "heading": "Multi-Country Marketplaces Need Explicit Coherence Boundaries",
+      "bodyMarkdown": "The OLX automotive marketplace case demonstrates market fragmentation in a multi-country consumer platform. OLX Group's automotive vertical operated across key markets including Poland, Portugal, and Romania. At the start of the engagement, local market teams had independently introduced their own filters, flows, and entry points across countries. The product was functionally different in each market.\n\nThe documented problem was feature bloat, late-cycle rework, and inability to run cross-market campaigns reliably. The central design tension was local market responsiveness versus global platform coherence.\n\nThe process included a three-day opening workshop in Lisbon with product, design, research, marketing, and engineering from key automotive markets. A shared end-to-end journey map was assembled across discovery, search, shortlisting, contact, negotiation, and post-sale, with known pain points and OLX data attached. Journey mapping covered first-time mobile-only buyers, experienced comparison shoppers, users moving between desktop and app, private sellers, and dealers.\n\nCreative Navy's documented design decisions included a marketplace coherence framework: a small set of journeys consistent everywhere, including search-to-contact and listing creation, with explicitly defined points where countries could adapt modules, content, and copy. The work also included a brand-agnostic design system across iOS, Android, and mobile web, and a feature decommissioning practice in which every new feature proposal was paired with a decommissioning plan for the legacy flow it would replace.\n\nThe OLX outcome is a governance outcome, not a user performance outcome. Before the engagement, the boundary between fixed and adaptable did not exist as a documented, agreed framework. After the engagement, country teams could propose adaptations within defined limits, engineering had a stable reference, and marketing could plan cross-market campaigns. No user performance metrics were measured in this engagement."
     },
     {
-      "heading": "KNX and ETS constraints separate configuration from daily operation",
-      "bodyMarkdown": "The KNX protocol and ETS, the KNX Engineering Tool Software, shaped the boundary between configuration and operation in the Elsner Elektronik Cala Touch KNX controller. Systems engineers configure through ETS, while occupants operate the device daily with no configuration access.\n\nMany interface patterns that appeared to be design decisions were actually workarounds for firmware or configuration constraints that occupants could not change. This distinction mattered because the daily operator could experience a constraint as a usability problem even when the underlying cause sat in configuration or firmware.\n\nThe Cala Touch KNX design therefore had to work within the KNX split while supporting daily consumer operation. Dual light and dark mode was included, with dark mode specifically valued for private-home and bedroom use according to client-stated evidence."
+      "heading": "Regulation, Units, and Market Defaults Can Become Product Architecture",
+      "bodyMarkdown": "Multi-market consumer products may need architecture that reflects regulatory or market-specific requirements. A regulatory fact in one market can become a product-architecture fact for both markets when the same product must support multiple deployments.\n\nStreetec kntrl 2, the second generation of Streetec GmbH's kntrl control system for aftermarket automotive air suspension, shows this pattern. CE rules require SI units, so bar is the European default. PSI is retained as a switchable option for the American market. The documented implication is that European and American unit divergence shaped the product architecture rather than remaining a simple label choice.\n\nThis distinction matters because market adaptation is not always content localisation. In Streetec's case, a regional regulatory requirement affected defaults and switchable units. In the OLX case, local differences affected filters, flows, modules, content, and copy. In Elsner's case, different markets were reached through dealer networks and validated through dealer prototype reviews."
     },
     {
-      "heading": "Multi-country marketplaces need fixed journeys and controlled adaptation points",
-      "bodyMarkdown": "The OLX automotive marketplace engagement shows the multi-country version of consumer product design. OLX Group is described as one of the largest classified ads platforms in Central and Eastern Europe, and the automotive vertical involved key markets in Poland, Portugal, and Romania.\n\nAt the start of the engagement, local market teams had independently introduced their own filters, flows, and entry points across countries. The product was functionally different in each market. The documented effects were feature bloat, late-cycle rework, and inability to run cross-market campaigns reliably.\n\nThis condition is described as market fragmentation: the accumulation of local variations without an architectural framework to constrain them. The central tension was local market responsiveness versus global platform coherence."
+      "heading": "Brand-Neutral Systems Support Products Whose Final Brand May Be Unknown to the Interface",
+      "bodyMarkdown": "Brand-agnostic design systems are needed when one product architecture must support multiple brands or market variants. The requirement is not only visual substitution; the structure, layout, and component behaviour must remain coherent when colour, logo, language, or market-facing content changes.\n\nAIT's heat pump controller demonstrates brand neutrality in an embedded product. The controller shipped and is in the market in a touch-only hardware configuration. The interface was delivered in three complete themes: two of AIT's consumer brands and a neutral OEM theme. Brand difference was confined to colour; structure, layout, and components were identical across all three.\n\nAIT's stated position was that the interface should be neutral because AIT sells under two of its own brands and also has OEM customers with brands of their own. The sharper constraint was that units are produced brand-neutral and may not know their brand at first power-up, so the welcome screen cannot carry a logo at all.\n\nThe AIT controller also had 21 interface languages. It had no Fahrenheit, and no zoning: the controller holds one temperature per circuit, while room distribution is handled downstream by a separate room unit. These are engagement facts, not measured outcomes. No performance, efficiency, commissioning-time, error-rate, commercial figure, usability result, or comprehension result is stated for AIT, and nothing in that engagement was tested with users."
     },
     {
-      "heading": "The OLX marketplace coherence framework separated shared journeys from local variation",
-      "bodyMarkdown": "The OLX engagement produced a marketplace coherence framework: a defined set of interaction journeys consistent across markets, with explicitly specified points where local adaptation was permitted. Before the engagement, the boundary between fixed and adaptable did not exist as a documented, agreed framework.\n\nThe process began with a three-day opening workshop in Lisbon that brought together product, design, research, marketing, and engineering from key automotive markets. A shared end-to-end journey map covered discovery, search, shortlisting, contact, negotiation, and post-sale, with known pain points and OLX data attached.\n\nJourney mapping covered distinct user segments: first-time mobile-only buyers, experienced comparison shoppers, users moving between desktop and app, private sellers, and dealers. Feedback ran every two days with core product and design leads, and weekly with wider multi-market groups. Decision logs were documented in Confluence and linked to journeys rather than stored as isolated comments."
-    },
-    {
-      "heading": "Brand-agnostic design systems support multi-market product architecture",
-      "bodyMarkdown": "The OLX automotive marketplace work included a brand-agnostic design system across iOS, Android, and mobile web. The design system was built to support several local brands within a single product architecture.\n\nThe framework defined a small set of journeys that stayed consistent everywhere, including search-to-contact and listing creation. Countries could adapt modules, content, and copy only at explicitly defined points.\n\nThe engagement also introduced a feature decommissioning practice. Every new feature proposal was paired with a decommissioning plan for the legacy flow it would replace, which addressed quiet feature accumulation across markets."
-    },
-    {
-      "heading": "Elsner and OLX outcomes use different evidence categories",
-      "bodyMarkdown": "The Elsner Elektronik Cala Touch KNX evidence includes client-reported dealer feedback, Creative Navy analysis of raw survey results, formal usability testing, and client-reported post-launch observations. Client-reported evidence records that 100% of responding dealers, 30 of 130 total dealers, rated the redesign as an improvement over the previous interface.\n\nElsner Elektronik also reported approximately 25 daily interactions with the controller. At engagement close, Elsner Elektronik's product managers were able to iterate the UI independently without Creative Navy involvement; this was observed and confirmed by the client. Elsner Elektronik described early post-launch sales as better than expected, but no precise figures are available. Dealer promotion behaviour after launch was also client-reported: dealers who had seen both old and new products placed promotional materials in their locations and gave customers more proactive recommendations.\n\nThe OLX outcome is a governance and architecture outcome, not a user performance outcome. After the engagement, country teams could propose adaptations within defined limits, engineering had a stable reference, and marketing could plan cross-market campaigns. No user performance metrics were measured in the OLX engagement.\n\nTiago Cabaço, Director of Product Design and Research at OLX, said: \"It meant a lot to work with such high calibre experts to translate our ideas into an implementation-ready design.\""
-    },
-    {
-      "heading": "Evidence limits in this context",
-      "bodyMarkdown": "Consumer and multi-market product evidence should not be treated as a single evidence category. In the Elsner Elektronik case, the dealer improvement result is client-reported from the dealer network and represents 30 responding dealers out of 130 total dealers. The sales statement is client-reported and has no precise figures available.\n\nThe OLX engagement did not measure user performance. Its evidence supports the existence of a documented marketplace coherence framework and an organisational capability to extend the car shopping app within the same architectural logic, observed by Creative Navy.\n\nRegional usage conventions and market-specific behaviour should be found through dealer and field research, not assumed. The documented cases support that principle, but they do not establish universal behaviour across all consumer or multi-country products."
+      "heading": "Language Variation Can Affect Component Layout and Interaction Logic",
+      "bodyMarkdown": "Multi-market products often need interfaces that absorb languages the designer does not directly see during design. Language variation can change component choice, layout logic, and scanning or selection flows.\n\nvisioncheckout is a German vendor of computer-vision self-checkout systems for staff restaurants and catering. The product is in development; nothing has shipped and no outcome of any kind is claimed.\n\nThe documented deployment model includes closed-world sites with a known population and dual-language display, and open-world sites serving the public with a language selector offering English, German, French, Italian, and Spanish. Item names typically exist in only one language, while interface text must show two.\n\nCustomers apply their own logo and accent colour. The documented boundaries are that there is no customer-editable typography and no customer-editable component styling.\n\nThe dual-language constraints shaped component decisions. In the Corrector, sidebar category navigation was used because multi-row top-tab overflow grows too tall under dual language and obscures content when the bottom bar appears. QR scanning window placement followed layout logic rather than a fixed position because dual-language text length rules out centring where both keycard and QR options are shown.\n\nvisioncheckout pairs with AIT as a multi-brand and multi-language design problem. AIT had 21 languages and three brand themes; visioncheckout has deployment types, customer logos and accent colours, and language combinations the designer may not directly see. In both cases, interface architecture must absorb languages and brands without allowing component behaviour to fragment."
     }
   ],
   "evidenceSummary": {
     "strongClaims": [
-      "The Elsner Elektronik Cala Touch KNX redesign addressed swipe-only carousel navigation, laggy touch response, and wide accessibility range on a 4-inch wall-mounted controller.",
-      "Colle & Hiszem (2004) is cited for touch target sizing: minimum 13mm, with accuracy plateauing at approximately 22mm.",
-      "The OLX automotive marketplace engagement produced a marketplace coherence framework distinguishing consistent journeys from permitted local adaptation points.",
-      "No user performance metrics were measured in the OLX engagement.",
-      "The OLX engagement left internal teams able to extend the car shopping app within the same architectural logic."
+      "The Elsner Elektronik Cala Touch KNX work involved a 4-inch 480×480px room controller used across 54 countries, with a user base spanning building automation professionals and elderly consumers with limited dexterity.",
+      "The OLX automotive marketplace engagement produced a marketplace coherence framework defining consistent journeys and adaptation points, but no user performance metrics were measured.",
+      "Streetec kntrl 2 testing used the production product installed in a car with 32 participants; all 32 completed all three tasks unassisted and performed in line with expectations.",
+      "AIT's heat pump controller interface was delivered in three complete themes and 21 interface languages, with brand difference confined to colour and no user testing or performance outcome stated.",
+      "visioncheckout design constraints include dual-language display, a five-language selector for open-world sites, customer logo and accent colour, and layout decisions shaped by dual-language text length."
     ],
     "weakerClaims": [
-      "Consumer product design is distinct from professional software because users have not invested in learning the domain and compare the product to smartphone experience.",
-      "100% of responding Elsner Elektronik dealers, 30 of 130 total dealers, rated the redesign as an improvement over the previous interface."
+      "Consumer and multi-market product design requires balancing local adaptation with shared product architecture across markets, languages, brands, units, and dealer networks.",
+      "Elsner dealer prototype reviews returned 30 responses from dealers across 10 countries, and 100% of responding dealers, 30 of 130 total dealers, rated the redesign as an improvement over the previous interface. This result is client-reported from Elsner's dealer network and applies only to responding dealers."
     ],
     "limitations": [
-      "The Elsner Elektronik dealer improvement result is client-reported from 30 responding dealers out of 130 total dealers and is not independently verified in the available evidence.",
-      "Elsner Elektronik post-launch sales were described by the client as better than expected, but no precise figures are available.",
-      "The OLX engagement did not measure user performance metrics; its outcome is governance and architectural coherence.",
-      "Dealer feedback can proxy end-user insight where direct research access is limited, but it is not the same as direct end-user research.",
-      "Regional usage conventions and market-specific behaviour should not be assumed from one market or case."
+      "Elsner dealer review results are client-reported from Elsner's dealer network and apply to responding dealers, 30 of 130 total dealers.",
+      "OLX evidence supports a governance outcome and organisational capability, not measured user performance.",
+      "Streetec testing evidence must not be expanded into a completion percentage, task time, mean, or baseline comparison, and the trade fair sample must not be described as representative of owners.",
+      "AIT evidence is limited to engagement and shipped-product facts; no performance, efficiency, commissioning-time, error-rate, commercial, usability, or comprehension result is stated.",
+      "visioncheckout is in development; no shipped outcome, test result, compliance claim, certification credential, or commercial outcome is stated.",
+      "No engagement dates are stated."
     ]
   },
   "relatedPageSlugs": [
     "elsner-smart-home-controller",
-    "embedded-devices-and-constrained-interfaces"
+    "embedded-devices-and-constrained-interfaces",
+    "building-automation-and-smart-home",
+    "streetec-kntrl",
+    "ait-heat-pump-controller",
+    "visioncheckout",
+    "regulated-products"
   ],
   "internalLinks": [
     {
       "anchorText": "Elsner Smart Home Controller",
       "targetSlug": "elsner-smart-home-controller",
-      "reason": "The current page uses the Elsner Elektronik Cala Touch KNX case as the main consumer embedded-device evidence base."
+      "reason": "The page discusses the Elsner Elektronik Cala Touch KNX case as a primary embedded consumer-controller example."
     },
     {
-      "anchorText": "embedded devices and constrained interfaces",
+      "anchorText": "Embedded Devices And Constrained Interfaces",
       "targetSlug": "embedded-devices-and-constrained-interfaces",
-      "reason": "The Cala Touch KNX example depends on embedded-device constraints such as microcontroller processing limits and firmware update intervals."
+      "reason": "The page discusses constrained embedded hardware, firmware update intervals, touch responsiveness, and consumer expectations."
+    },
+    {
+      "anchorText": "Building Automation and Smart Home",
+      "targetSlug": "building-automation-and-smart-home",
+      "reason": "Elsner and AIT are both building-automation or residential-control examples in the documented evidence."
+    },
+    {
+      "anchorText": "Streetec kntrl 2",
+      "targetSlug": "streetec-kntrl",
+      "reason": "The page uses Streetec as evidence for channel-mediated testing and European/American unit divergence."
+    },
+    {
+      "anchorText": "AIT Heat Pump Controller",
+      "targetSlug": "ait-heat-pump-controller",
+      "reason": "The page uses AIT as evidence for brand-neutral embedded interfaces, three themes, and 21 interface languages."
+    },
+    {
+      "anchorText": "visioncheckout",
+      "targetSlug": "visioncheckout",
+      "reason": "The page uses visioncheckout as evidence for dual-language interface constraints and customer-applied branding."
+    },
+    {
+      "anchorText": "Regulated Products",
+      "targetSlug": "regulated-products",
+      "reason": "Streetec's CE and SI-unit constraint is relevant to regulated product adaptation, while the page preserves the limited regulatory framing in the evidence."
     }
   ],
   "tags": [
     "consumer product design",
-    "multi-market product design",
+    "multi-market products",
     "multi-country deployment",
-    "accessibility range",
-    "dealer network research",
-    "market fragmentation",
-    "marketplace coherence framework",
-    "KNX",
+    "marketplace coherence",
+    "dealer networks",
     "embedded interfaces",
-    "brand-agnostic design systems"
+    "brand-neutral design systems",
+    "language localisation",
+    "accessibility range",
+    "building automation"
   ],
   "_meta": {
     "sourcePath": "sources/articles/Contexts/contexts--consumer-and-multi-market-products.md",
     "parentSlug": "contexts",
     "childPageSlugs": [],
-    "generatedBy": "deterministic"
+    "generatedBy": "openai"
   }
 }

@@ -4,71 +4,59 @@
   "pageType": "capability",
   "category": "capabilities",
   "section": "Capabilities",
-  "summary": "Cognitive load reduction identifies and removes extraneous interface burden while preserving essential task complexity. The documented evidence includes reduced configuration errors, higher independent task completion, faster planning and discovery tasks, lower training costs, reduced glance demand, and higher independent completion in patient-operated scanning.",
+  "summary": "Cognitive load reduction focuses on separating essential task complexity from interface-imposed complexity, then reducing the extraneous load created by navigation, configuration, memory demands, alerts, unclear state, and unnecessary visual density.",
   "keyFacts": [
-    "Cognitive load is the total mental effort being used in working memory at a given time; in interface contexts, the relevant component is the load attributable to the interface rather than the underlying task.",
-    "Extraneous cognitive load is the interface-imposed load beyond what the task genuinely requires; it is the target for reduction.",
-    "Essential cognitive load is the load imposed by the task itself and cannot be reduced without reducing the capability.",
-    "Recognition over recall, progressive disclosure, guided-to-free architecture, predictive indicators, ambient awareness, and decision support are documented cognitive load reduction mechanisms.",
-    "In Gexcon, time to first successful simulation moved from 4 days to 6 hours, and configuration errors moved from 5–8 to 1–2; both are described as measured in real deployments.",
-    "In Polymatica, independent task completion moved from 2% to 56%, measured via product analytics.",
+    "Cognitive load is the total mental effort used in working memory at a given time; in interface contexts, the relevant part is the load attributable to the interface rather than the task itself.",
+    "Extraneous cognitive load is the reduction target; essential cognitive load belongs to the task and cannot be reduced without reducing the capability.",
+    "Recognition over recall is described as the most fundamental cognitive load reduction mechanism.",
+    "In Gexcon, field-measured time to first successful simulation changed from 4 days to 6 hours, and configuration errors changed from 5–8 to 1–2.",
+    "In Polymatica, independent task completion for importing data, slicing and dicing, answering a business question, and creating a report changed from 2% to 56% in product analytics.",
     "In Triopsis, product analytics recorded 62% faster job discovery, 83% faster job sequence optimisation, and 58% faster weekly planning.",
-    "In Stromer, average glance duration moved from 4.32 seconds to 1.89 seconds in real riding conditions with 5 participants, using consistent pre/post methodology.",
-    "In Squaremind, 27 of 29 patients completed the scan independently after redesign, with 12 who got stuck recovering during the session.",
-    "The 2-second glance threshold is contextualised by Klauer et al. (2006), NHTSA DOT HS 810 594, NHTSA Driver Distraction Guidelines Phase 1 (2012), and ISO 15007:2020."
+    "In WCO/IPM, officer training costs were client-reported to reduce by 78%.",
+    "In Stromer, field-measured average glance duration changed from 4.32 seconds to 1.89 seconds in real riding conditions with 5 participants on consistent routes.",
+    "In Squaremind, 27 of 29 patients completed the scan independently after redesign under a Creative Navy-recorded ecological protocol at two sites.",
+    "AIT, MDU, Assemblio, Oceaneering, Egma, visioncheckout, and the handheld C2 engagement have explicit evidence limits that prevent user-validation or measured-outcome claims where those claims were not established."
   ],
   "bodySections": [
     {
-      "heading": "Summary",
-      "bodyMarkdown": "Creative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nCognitive load reduction is the design work that reduces the mental effort an interface imposes beyond what the underlying task genuinely requires. The target is extraneous cognitive load, not essential cognitive load. Essential cognitive load is the demand created by the task itself and cannot be reduced without reducing the capability of the system.\n\nIn complex interfaces, cognitive load reduction is not only a visual simplification exercise. It includes recognition over recall, progressive disclosure, guided-to-free architecture, predictive indicators, ambient awareness, decision support, alert-priority design, and glance-duration control in vehicle-mounted embedded displays."
+      "heading": "Cognitive Load Reduction Separates Task Complexity From Interface-Imposed Complexity",
+      "bodyMarkdown": "Creative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nCognitive load reduction is the reduction of extraneous cognitive load: the mental effort imposed by an interface beyond what the underlying task genuinely requires. The capability depends on separating essential cognitive load from extraneous cognitive load. Essential cognitive load belongs to the task itself. Extraneous cognitive load is created by avoidable interface demands such as unnecessary navigation, unclear status, repeated memory work, weak information architecture, excessive options, alert fatigue, or display content that takes too long to interpret.\n\nCreative Navy treats cognitive load reduction as an interface-architecture problem, not only a screen-cleanup problem. In expert systems, a visually simpler screen can increase cognitive load if it forces users to track context across multiple screens. In monitoring and vehicle-mounted embedded interfaces, a dense display can be safer than a sparse display if it lets the user extract the needed state with a shorter glance. The criterion is whether the interface reduces the working-memory and attention cost of doing the task, not whether the screen appears minimal."
     },
     {
-      "heading": "When cognitive load reduction is needed",
-      "bodyMarkdown": "Cognitive load reduction is needed when users must hold too much interface state, workflow sequence, system status, or decision context in working memory. Working memory constraints create a practical limit on how many active facts, options, or pending decisions a user can safely carry while operating a system.\n\nA cognitive load problem can appear as reliance on memory, excessive navigation, unnecessary configuration steps, low independent task completion, repeated support requests, avoidable errors, slow discovery of relevant work, or long off-road glances at a display. In monitoring contexts, the problem can appear as a failure of ambient awareness: users must inspect separate component states instead of perceiving the system state as a single cognitive object.\n\nCognitive load reduction is also needed when alerts become too frequent or low priority. Alert fatigue is the cognitive consequence of too many low-priority alerts; it trains users to dismiss all alerts, including important ones."
+      "heading": "When Cognitive Load Reduction Is Needed",
+      "bodyMarkdown": "Cognitive load reduction is needed when users must hold too much system state, workflow sequence, configuration detail, or decision context in working memory. The problem appears differently across expert software, operational control, vehicle displays, self-service systems, and patient-operated clinical equipment.\n\nIn expert systems, cognitive load often comes from accumulated interface structure. In the Gexcon CFD simulation case, 15 years of interface accumulation had added navigation, configuration steps, and workflow overhead that were not required by the underlying task of conducting an industrial safety simulation. The critical distinction was between load-bearing scientific complexity and accidental complexity introduced by historical interface growth.\n\nIn analytics software, cognitive load can come from requiring users to understand technical system concepts before they can act. In the Polymatica OLAP analytics case, users had to maintain a mental model of cubes, dimensions, facts, and schema relationships before performing operations.\n\nIn operational scheduling, cognitive load can come from reactive crisis management. In the Triopsis workforce management case, schedulers had to maintain a valid schedule across a live fleet and anticipate conflicts before they became operational crises. Predictive conflict indicators moved conflicts into view before urgent intervention was required.\n\nIn embedded vehicle displays, cognitive load can be measured as glance duration. In the Stromer e-bike display case, field measurement compared average glance duration before and after redesign during actual riding on consistent routes."
     },
     {
-      "heading": "What cognitive load reduction does",
-      "bodyMarkdown": "Cognitive load reduction separates essential task complexity from accidental or extraneous interface complexity. In expert systems, this separation depends on domain learning. Without operational understanding of the domain, it is not possible to distinguish load-bearing scientific, clinical, analytical, or operational parameters from historical interface structures that no longer serve the task.\n\nRecognition over recall is the most fundamental mechanism. A user should recognise the correct action from an interface element rather than recall what to do from memory. Progressive disclosure supports the same goal by revealing complexity on demand instead of presenting all possible system capability at once.\n\nGuided-to-free architecture reduces load at the start of a task without constraining expert operation later. It provides structured guidance while a user is forming a mental model, then supports freer operation when the task stage no longer needs guided framing.\n\nDecision support reduces the cognitive effort of decision-making by surfacing the information needed for a decision at the moment it is needed. Predictive indicators reduce reactive load by surfacing conditions that will become problems before they require crisis intervention."
+      "heading": "What Cognitive Load Reduction Changes in the Interface",
+      "bodyMarkdown": "Creative Navy reduces cognitive load by changing the structure through which users recognise state, choose actions, follow procedures, and recover from uncertainty. The design object may be a workflow, a warning architecture, a dashboard state model, an instruction system, a role-specific interface, or the rules for when information appears.\n\nRecognition over recall is the most fundamental mechanism. An interface that lets users recognise the correct action from the screen imposes less working-memory demand than an interface that requires users to remember what to do. In WCO/IPM customs intelligence, recognition over recall was applied across the inspection workflow through reduced choices per screen, progressive disclosure, and contextual micro-hints.\n\nProgressive disclosure reduces cognitive load by revealing complexity when it is needed rather than displaying every capability at once. In Egma Order, unavailable options are hidden rather than shown disabled, and the form discloses progressively by dependency. A multi-step wizard was considered and rejected because every lens-ordering choice limits later choices and users need to check previous selections while working.\n\nGuided-to-free architecture reduces cognitive load at the start of a task without constraining expert operation later. In Polymatica, linear guided flows supported database connection and data preparation, while open free-operation environments supported analytical work after the user had enough orientation.\n\nPredictive indicators reduce the reactive load of managing exceptions under pressure. In Triopsis, future scheduling conflicts were surfaced before they became present crises.\n\nAmbient awareness reduces directed attention in monitoring contexts. In the Torqeedo maritime HMI case, a unified energy state view aggregated propulsion, battery, and generation into a single state representation, so captains monitored vessel energy state rather than multiple component states."
     },
     {
-      "heading": "Gexcon CFD simulation as essential versus accidental complexity",
-      "bodyMarkdown": "The Gexcon CFD simulation case documents cognitive load reduction as a distinction between essential and accidental complexity. The underlying task required scientific simulation parameters. The interface problem came from 15 years of accumulated navigation, configuration steps, and workflow overhead that were not required by the task of conducting an industrial safety simulation.\n\nDomain learning made the distinction possible. Without understanding CFD simulation at operational depth, the redesign could not separate load-bearing scientific complexity from historical interface structures that had accumulated without purpose.\n\nThe redesign compressed expert tasks into one working environment. This was a cognitive load decision. Distributing functionality across multiple screens can reduce visual complexity per screen, but it increases the cognitive load of tracking context across screens. In the Gexcon expert workflow, a single environment was lower overall cognitive load.\n\nThe documented outcomes are specific. Active users per team moved from 1 to 3–4, client-reported. Time to first successful simulation moved from 4 days to 6 hours, measured in real deployments. Configuration errors moved from 5–8 to 1–2, measured in real deployments. The case evidence describes configuration errors as a direct cognitive load consequence because users were attempting to hold incomplete or contradictory configuration states in working memory without interface support."
+      "heading": "Essential Complexity Is Preserved While Accidental Complexity Is Removed",
+      "bodyMarkdown": "Creative Navy's cognitive load reduction work depends on domain learning before simplification. In Gexcon, domain learning made it possible to distinguish essential CFD simulation complexity from accidental interface complexity accumulated over 15 years. Without operational understanding of CFD simulation, reducing apparent complexity could have removed parameters that were scientifically necessary.\n\nThe Gexcon redesign made a counterintuitive cognitive load decision: expert tasks were compressed into one working environment rather than distributed across multiple simpler screens. Distributing functionality would have reduced visual complexity per screen, but it would also have increased the cognitive load of tracking context across screens. For that expert workflow, the single working environment was treated as lower overall cognitive load.\n\nThis distinction is central to the capability. Cognitive load reduction does not mean removing all complexity. Essential cognitive load remains when the task itself requires specialised judgement, scientific parameters, clinical focus, or operational decision-making. Removing essential complexity would reduce capability rather than improve usability."
     },
     {
-      "heading": "Polymatica guided-to-free architecture for OLAP analytics",
-      "bodyMarkdown": "The Polymatica OLAP analytics case documents guided-to-free architecture as a cognitive load reduction mechanism. The previous interface required users to maintain a mental model of cubes, dimensions, facts, and schema relationships before they could perform operations. Every interaction carried a cognitive starting cost that the analytical task itself did not require.\n\nThe guided-to-free architecture used linear guided flows for setup processes such as database connection and data preparation. Those flows gave users a complete mental model through completion. Analytical tasks then moved into open free-operation environments where guided framing was no longer needed.\n\nThe Dataset Manager acted as a central orientation point. Users landed with datasets described in accessible terms: dataset name, dimensions available, measures available, record count, and last updated. This gave users orientation before operations without requiring them to hold the schema in memory.\n\nIndependent task completion moved from 2% to 56% for importing data, slicing and dicing, answering a specific business question, and creating a report. The result was measured via product analytics. The documented mechanism is cognitive: users who could not form a mental model of the system could not complete operations, and the architecture supplied that mental model. The training consequence was also cognitive: Roman stopped delivering personal training because the interface substituted for the cognitive scaffolding that personal training had previously provided."
+      "heading": "Role-Specific Cognitive Modes Can Require Different Interfaces",
+      "bodyMarkdown": "Cognitive load reduction sometimes means rejecting a unified interface. In the IDEXX Animana case, reception staff and clinical staff had different cognitive modes, not just different preferences.\n\nReception work required ambient multitasking: divided attention across arrivals, phone calls, short task windows, and frequent context switches. Clinical work required focused sequential attention: one patient at a time, deep context during a consultation, and error avoidance because clinical consequences were possible.\n\nThe IDEXX recommendation to develop distinct interfaces was a cognitive conclusion. A reception-optimised interface would require clinical staff to navigate a system structured for multitasking when they needed sustained focus. A clinically optimised interface would require reception staff to maintain deep context in a multitasking environment. The case evidence states that no single information architecture can simultaneously support ambient multitasking and focused sequential attention."
     },
     {
-      "heading": "IDEXX Animana role-specific cognitive modes",
-      "bodyMarkdown": "The IDEXX Animana case documents a cognitive distinction between reception staff and clinical staff. The finding was not only that the roles had different preferences. Reception and clinical staff operated in fundamentally different cognitive modes.\n\nReception work required ambient multitasking. Reception staff divided attention across simultaneous demands, short task windows, and context switches caused by patient arrivals and phone calls. The cognitive requirement was breadth: maintaining awareness of multiple ongoing situations simultaneously.\n\nClinical work required focused sequential attention. Clinical staff worked one patient at a time, maintained deep context across a consultation, and faced errors with clinical consequences. The cognitive requirement was depth: sustained, uninterrupted engagement with a single case.\n\nThe recommendation to develop distinct interfaces was a cognitive conclusion. A unified interface optimised for one mode would degrade the other. Reception-optimised designs require clinical staff to navigate a system structured for multitasking when deep sequential focus is needed. Clinically optimised designs require reception staff to maintain deep context in a multitasking environment. The documented conclusion is that no single information architecture can simultaneously support ambient multitasking and focused sequential attention."
+      "heading": "Attention Management Is Measurable in Glance-Based Contexts",
+      "bodyMarkdown": "Glance duration is the measurable expression of cognitive load in vehicle-mounted embedded interface contexts. The domain vocabulary for this capability uses the 2-second threshold established by road safety research as the safety boundary. The Stromer case references Klauer et al. (2006), The Impact of Driver Inattention on Near-Crash/Crash Risk, NHTSA Report No. DOT HS 810 594; NHTSA Driver Distraction Guidelines Phase 1 (2012); and ISO 15007:2020. The source evidence notes that the standards apply formally to four-wheeled vehicles, while the principle and threshold transfer directly to embedded displays used during riding.\n\nIn Stromer, the pre-redesign display required sustained attention because warning states, system status, and ride data were not organised for rapid recognition. Riders stayed on the display until they understood what they were seeing, because looking away before understanding left them without the information they needed.\n\nThe Stromer redesign rebuilt the warning architecture, layout system, and rules for interruptive elements at the architectural level. This is the only case described here where cognitive load reduction is expressed as a safety-boundary crossing.\n\nIn Torqeedo, field-measured eye tracking with 7 subjects during actual sea trials found that tasks previously requiring multiple screen transitions could be confirmed with a single glance. The evidence basis is narrower than Stromer, but it directly measures attention during live vessel manoeuvres rather than in a laboratory setting."
     },
     {
-      "heading": "Triopsis predictive indicators for scheduler workload",
-      "bodyMarkdown": "The Triopsis workforce management case documents predictive indicators as a cognitive load reduction measure. The scheduler's task was to maintain a valid schedule across a live fleet, which required anticipating conflicts before they occurred and resolving them before they became crises.\n\nWithout predictive indicators, schedulers managed by reactive crisis. A conflict became visible when it was imminent, requiring urgent intervention under the maximum cognitive pressure of a live operational situation. The documented cognitive load of reactive management was substantially higher than the cognitive load of proactive resolution.\n\nPredictive conflict indicators surfaced future scheduling conflicts before they became present crises. The scheduler saw the problem when it could be resolved calmly, not when emergency intervention was required. This was implemented at the information architecture level.\n\nProduct analytics recorded 62% faster job discovery, 83% faster job sequence optimisation, and 58% faster weekly planning. The documented explanation is cognitive: the previous interface required schedulers to hold more information in working memory because the structure did not provide it in context. Client-reported support ticket volume for \"how can I\" questions fell to approximately 5% of previous volume. The case evidence treats support tickets caused by interface confusion as a cognitive load measurement because users were reaching the limit of what they could figure out."
+      "heading": "Instruction Design Can Distribute Cognitive Load Across Modalities",
+      "bodyMarkdown": "Squaremind shows cognitive load reduction in a patient-operated scanning context where attention is divided by anxiety and physical experience, not only by task demands. A patient had to follow interface instructions while monitoring a robot arm's proximity, maintaining body positions, processing unfamiliar sensory stimuli, and managing anxiety or discomfort.\n\nThe Squaremind design response reduced processing demand per instruction. Text was minimised because fewer words reduce sequential processing under divided attention. Animation, silhouette, and spatial positioning carried guidance where possible, with text reserved for moments where no visual alternative existed.\n\nSquaremind also distributed guidance load across screen, audio, and floor markings. This was described as load distribution rather than redundancy: each modality carried a distinct guidance function rather than repeating the same information. The design had to hold across age-stratified groups because the pre-redesign failure pattern showed users aged 45–65 failing within the first minute and users aged 20–35 failing around the 3-minute mark."
     },
     {
-      "heading": "WCO/IPM recognition over recall in inspection workflows",
-      "bodyMarkdown": "The WCO/IPM customs intelligence case documents recognition over recall as the cognitive design standard across an inspection workflow redesign. The redesign reduced choices per screen so that each screen presented options relevant to the current task rather than the full range of system capabilities.\n\nProgressive disclosure was used so that complexity appeared when needed and was not displayed by default. Officers conducting a standard inspection encountered the standard workflow, while the full range of capabilities remained accessible without being constantly present.\n\nContextual micro-hints provided first-use guidance for complex actions in context rather than requiring navigation to documentation. The guidance appeared when cognitive demand was highest: at the first encounter with an unfamiliar task.\n\nOfficer training costs fell by 78%, client-reported. The documented interpretation is that training cost reduction is a downstream cognitive load measure: when the interface provides cognitive scaffolding through recognition, contextual guidance, and reduced choices, the training requirement reduces."
+      "heading": "Cognitive Load Reduction Can Mean Removing Information",
+      "bodyMarkdown": "Cognitive load reduction is not equivalent to adding more guidance. In several engagements, the documented design reasoning removed visible information because the information cost attention without supporting the task.\n\nIn the MDU ship motion monitoring system, the live \"Now\" value was deleted from a live telemetry display. The three-arrow mechanism already showed position and range: a light arrow for current position, two dark arrows for the minimum and maximum of the rolling 20-minute window, and a shaded band between them. The design reasoning was that a digit updating every second on a moving vessel consumed attention without adding information. Nothing in the MDU engagement was tested with users and nothing was observed at sea, so this is design reasoning only.\n\nIn Oceaneering's dispatch panel work, the governing design principle was that information should not appear unless necessary. Colours were reduced, a disabled-station grey state was removed after both sites reported never having disabled a station, icons were removed from station cards in favour of letters, and navigation was collapsed by default because the reviewed frequency for menu use was about once every two months.\n\nIn visioncheckout, animation was used only where attention genuinely needed to be captured. The preliminary basket is shown immediately while action and payment controls remain disabled until POS synchronisation returns. Item rows animate in individually so the perceived event is recognition rather than page load. Prices, total, and tax line stay hidden until synchronisation returns. The redesign has not been measured and the product is in development."
     },
     {
-      "heading": "Torqeedo maritime HMI and ambient awareness",
-      "bodyMarkdown": "The Torqeedo maritime HMI case documents cognitive load as an attentional problem in monitoring. Vessel captains had to maintain awareness of propulsion, battery, generation, and auxiliary loads while managing the vessel and navigating. The cognitive requirement was sustained background monitoring with minimal directed attention.\n\nThe design problem was attention management. A captain could not afford to monitor each system component individually, because synthesising multiple component states into a situational picture created too much cognitive load under navigational demands.\n\nThe unified energy state view aggregated propulsion, battery, and generation into a single state representation. This reduced the monitored system to one cognitive object: vessel energy state.\n\nGlance reduction during manoeuvres was measured via eye tracking with 7 subjects in actual sea trials. Tasks that previously required multiple screen transitions became confirmable with a single glance. The case evidence treats fewer required glances as a direct indicator of lower attentional effort."
+      "heading": "Interface Density Must Be Judged by Attention Cost, Not Screen Fullness",
+      "bodyMarkdown": "Creative Navy's case evidence distinguishes visual density from cognitive load. A screen can be full but cognitively efficient if it preserves context, and a screen can be sparse but cognitively costly if it forces users to remember missing state.\n\nIn the industrial automation expert review, detail cards ran 40–85% empty beside unpaginated lists of up to 48 items. Three screens showed entirely blank cards with no heading or empty-state text. Emptiness and overload coexisted in the same interface. Supporting findings included six different treatments for selected state, five date formats, mixed units in a single column, and a 48-position storage grid with three unexplained colour exceptions and no key. These are findings from Creative Navy's expert review of a European industrial automation vendor's process control software for machining cells, not general claims about industrial software.\n\nIn the handheld C2 engagement, the review treated clutter as an attention problem rather than a space problem. The review reasoned that under acute stress working memory contracts, attention narrows, and irrelevant information requires active suppression. The resulting design position was that flexibility without constraints is not a feature when the interface has no limit on simultaneous dialogs and no adaptation to mission context. The remedy was structure: mission-context modes surfacing only relevant content by default, with manual override.\n\nIn Assemblio Smart Viewer, the binding constraint was the attention budget. The client stated that workers focus on what their hands are doing rather than the screen, and estimated that roughly 90% of the time the plan is consulted once and then left playing. Creative Navy ran no research, tested nothing, and did not observe a shop floor in this engagement, so the operating-context material is client-stated."
     },
     {
-      "heading": "Stromer e-bike display and the 2-second glance-duration boundary",
-      "bodyMarkdown": "The Stromer e-bike embedded display case documents cognitive load through glance duration. In a vehicle-mounted embedded interface context, glance duration is the time a rider's or driver's eyes are off the forward road scene while reading a display. The 2-second threshold established by road safety research is the safety boundary used in the case evidence.\n\nBefore redesign, average glance duration was 4.32 seconds. The measurement was not a usability test estimate. Eye tracking was conducted during actual riding on real routes in Munich and surrounding countryside with 5 participants. The same route conditions were used in the broader usability testing programme. Glance frequency was also measured: riders were glancing 18% more often per kilometre than after the redesign.\n\nThe documented cause was structural. Warning states, system status, and ride data were not organised for rapid recognition, so riders kept looking at the display until they understood what they were seeing. Looking away before understanding was complete would leave riders without the information they needed.\n\nThe redesign rebuilt the warning architecture, layout system, and rules governing interruptive elements at the architectural level. Using the same methodology and routes after redesign, average glance duration fell to 1.89 seconds, within the 2-second threshold. Glance frequency per kilometre fell by 18%.\n\nThe standards and research references used to contextualise the finding are Klauer et al. (2006), *The Impact of Driver Inattention on Near-Crash/Crash Risk* (NHTSA Report No. DOT HS 810 594), NHTSA Driver Distraction Guidelines Phase 1 (2012), and ISO 15007:2020. These standards apply formally to four-wheeled vehicles; the documented case states that the principle and threshold transfer directly to embedded displays used during riding. The Stromer case is the only documented case in the portfolio where cognitive load reduction is expressed as a safety-boundary crossing."
-    },
-    {
-      "heading": "Squaremind patient-operated scanning and multi-modal load distribution",
-      "bodyMarkdown": "The Squaremind dermatology scanning device case documents cognitive load in a patient-operated clinical context. The user's attention was divided between following interface instructions and managing the physical and psychological experience of the scan: monitoring the robot arm's proximity, maintaining prescribed body positions, processing unfamiliar sensory stimuli, and managing anxiety and discomfort.\n\nThe competing cognitive draw was affective rather than task-based. Its intensity varied across individual patients and could not be measured in advance or treated as constant across the population. The design therefore had to reduce processing demand per instruction to the minimum viable level so that the interface would hold even when the non-task attentional draw was high.\n\nThe pre-redesign failure pattern was age-stratified. Users aged 45–65 failed within the first minute, while users aged 20–35 failed around the 3-minute mark. The documented interpretation is that this pattern is consistent with differential cognitive capacity under anxiety: older users had a lower available attention budget for instruction-following before the physical-emotional context consumed it entirely.\n\nThe instruction-level design response minimised text. Fewer words reduced sequential processing demand under divided attention. Animation, silhouette, and spatial positioning were used wherever possible, with text reserved for moments where no visual alternative existed. The guiding principle was the same recognition-over-reading standard used in surgical devices and maritime HMIs, applied to a consumer clinical context.\n\nThe system-level design response distributed guidance load across screen, audio, and floor markings. These modalities were designed as an integrated system from the outset. This was a load distribution strategy, not a redundancy strategy: each modality carried a distinct guidance function rather than repeating the same information.\n\nPost-redesign, 27 of 29 patients completed the scan independently, and 12 who got stuck recovered. The post-redesign figures are described as Creative Navy-measured through an ecological protocol at two sites, age-stratified across 20–35, 35–45, and 45–65, and co-conducted by an independent dermatologist. The pre-redesign failure evidence is client-reported background from Squaremind's own test, where 2 of 14 completed."
-    },
-    {
-      "heading": "Evidence basis across documented cases",
-      "bodyMarkdown": "The evidence for cognitive load reduction is mixed by case and should be read with its evidence basis preserved. Gexcon includes real-deployment measurements for time to first successful simulation and configuration errors, plus client-reported active users per team. Polymatica and Triopsis include product analytics. WCO/IPM includes client-reported training cost reduction. Torqeedo and Stromer include eye-tracking evidence under operational conditions, with 7 subjects in Torqeedo sea trials and 5 participants in Stromer real riding conditions. Squaremind includes client-reported pre-redesign background and Creative Navy-measured post-redesign evidence through an ecological protocol.\n\nThe strongest safety-specific evidence is the Stromer glance-duration finding because it is tied to the 2-second threshold referenced by road safety research and regulatory guidance. The strongest analytics completion outcome is Polymatica's 2% to 56% independent task completion result, measured via product analytics. The strongest planning-task evidence is Triopsis, where product analytics recorded speed improvements across job discovery, job sequence optimisation, and weekly planning."
-    },
-    {
-      "heading": "Boundaries and limits",
-      "bodyMarkdown": "Cognitive load reduction does not mean removing all complexity. Essential cognitive load belongs to the task itself. Reducing essential cognitive load would reduce the capability of the system.\n\nVisual simplicity does not always reduce total cognitive load. The Gexcon case documents the opposite pattern: distributing expert tasks across multiple simpler screens would reduce visual complexity per screen but increase context-tracking load across screens.\n\nSome outcomes are client-reported rather than independently verified. The client-reported evidence includes Gexcon active users per team, WCO/IPM officer training cost reduction, and Triopsis support ticket reduction.\n\nSome measured evidence has small participant counts. Torqeedo eye tracking involved 7 subjects in actual sea trials. Stromer eye tracking involved 5 participants in real riding conditions. Squaremind post-redesign evidence involved 29 patients in an ecological protocol.\n\nThe 2-second glance-duration threshold is formally established for four-wheeled vehicle contexts in the cited road safety research and guidance. The Stromer documentation states that the principle and threshold transfer directly to embedded displays used during riding, but the formal standards context remains four-wheeled vehicles."
+      "heading": "Physical Scale and Support Contexts Can Convert Recall Into Recognition",
+      "bodyMarkdown": "The AIT heat pump controller shows cognitive load reduction at physical screen size and in support-call contexts. AIT may be named as a European manufacturer of residential and commercial heat pumps, but the consumer brands, controller programme name, and individuals are not named.\n\nWidget content was cut to three pieces of information each after a wireframe was reviewed at near physical size. Value editing was resolved as one pattern for every value type. Plus and minus buttons were dropped in favour of a single scroll selector after AIT pointed out that 0.1° increments would require many repeated presses to move a value by two degrees. The decisive reasoning was consistency: one pattern applied everywhere removes the need to learn a different control for each setting type.\n\nAIT also used a unique numeric identifier on every menu item. This converted a recall problem into a recognition problem during telephone support, because support staff could direct an installer to a setting by number. Nothing in the AIT engagement was tested with users, so these are design decisions and reasoning, not user validation."
     },
     {
       "heading": "What this produces",
@@ -77,26 +65,28 @@
   ],
   "evidenceSummary": {
     "strongClaims": [
-      "Cognitive load reduction targets extraneous cognitive load imposed by the interface, not essential cognitive load imposed by the underlying task.",
-      "In Gexcon, time to first successful simulation moved from 4 days to 6 hours and configuration errors moved from 5–8 to 1–2.",
-      "In Polymatica, independent task completion moved from 2% to 56% for specified analytics tasks.",
-      "IDEXX Animana required distinct interface support because reception and clinical staff operated in different cognitive modes.",
-      "In Triopsis, product analytics recorded 62% faster job discovery, 83% faster job sequence optimisation, and 58% faster weekly planning.",
-      "In Torqeedo, tasks previously requiring multiple screen transitions became confirmable with a single glance during manoeuvres.",
-      "In Stromer, average glance duration moved from 4.32 seconds before redesign to 1.89 seconds after redesign under consistent real-riding methodology.",
-      "In Squaremind, 27 of 29 patients completed the scan independently after redesign, and 12 who got stuck recovered.",
-      "The Stromer case is the only documented portfolio case where cognitive load reduction is expressed as a safety-boundary crossing."
+      "Cognitive load reduction targets extraneous cognitive load while preserving essential cognitive load required by the task.",
+      "In Gexcon, field-measured time to first successful simulation changed from 4 days to 6 hours, and field-measured configuration errors changed from 5–8 to 1–2.",
+      "In Polymatica, independent task completion changed from 2% to 56% for specified analytics tasks after guided-to-free architecture provided cognitive scaffolding.",
+      "In Triopsis, predictive conflict indicators reduced reactive cognitive load, with product analytics recording 62% faster job discovery, 83% faster job sequence optimisation, and 58% faster weekly planning.",
+      "In Stromer, field-measured average glance duration changed from 4.32 seconds to 1.89 seconds in real riding conditions with 5 participants using consistent pre/post methodology and routes.",
+      "In Squaremind, 27 of 29 patients completed the scan independently after redesign, with 12 who got stuck recovering, under a Creative Navy-recorded ecological protocol at two sites."
     ],
     "weakerClaims": [
-      "In WCO/IPM, officer training costs fell by 78%."
+      "In Gexcon, cognitive load reduction depended on domain learning that distinguished load-bearing CFD simulation complexity from accidental interface complexity accumulated over 15 years.",
+      "In WCO/IPM, recognition over recall, reduced choices per screen, progressive disclosure, and contextual micro-hints supported a client-reported 78% reduction in officer training costs.",
+      "AIT and MDU support design-reasoning examples for cognitive load reduction but do not support user-validation claims because neither engagement tested with users.",
+      "The handheld C2 engagement supports a cognitive mechanism about clutter consuming attention under acute stress, but Creative Navy has no primary field evidence for that engagement."
     ],
     "limitations": [
-      "Cognitive load reduction cannot remove essential cognitive load without reducing the capability of the task or system.",
-      "Some documented outcomes are client-reported rather than independently verified, including Gexcon active users per team, WCO/IPM training cost reduction, and Triopsis support ticket reduction.",
-      "Some measured or recorded evidence uses small samples, including Torqeedo eye tracking with 7 subjects and Stromer eye tracking with 5 participants.",
-      "The Stromer 2-second threshold is contextualised by road safety research and guidance that formally apply to four-wheeled vehicles; the documented case states that the principle and threshold transfer to embedded displays used during riding.",
-      "Squaremind pre-redesign failure evidence is client-reported background from Squaremind's own test, while post-redesign figures are Creative Navy-measured through the documented ecological protocol.",
-      "The documented cases support the capability in specific contexts and do not establish a universal guarantee of outcome."
+      "No maritime VTS material is included because the documented VTS engagement did not use a cognitive-load instrument and did not measure workload.",
+      "AIT and MDU provide design reasoning only; neither engagement tested anything with users.",
+      "Assemblio's operating-context material is client-stated; Creative Navy ran no research, tested nothing, and did not observe a shop floor.",
+      "Oceaneering evidence came from design reviews with operations management, not usability testing, field research, operator observation, or depot visits.",
+      "The handheld C2 engagement has no Creative Navy primary field evidence and no operational, workload, or error-rate figure.",
+      "Egma Order has no post-launch performance measurement, support-ticket figure, completion rate, or error-rate figure.",
+      "visioncheckout's redesign has not been measured and the product is in development; no throughput, speed, error-rate, or satisfaction outcome is established.",
+      "Case-specific findings from the European industrial automation vendor's process control software must not be generalised to all industrial software."
     ]
   },
   "relatedPageSlugs": [
@@ -104,83 +94,125 @@
     "workflow-and-task-structure-redesign",
     "state-and-status-visibility-design",
     "warning-and-alarm-clarity-improvement",
-    "error-reduction-and-recovery-design",
-    "research-in-complex-operational-contexts",
-    "usability-evaluation-for-high-consequence-products",
+    "alarm-management",
+    "instructions-and-procedural-content-as-a-design-object",
+    "ux-audit-for-complex-products",
     "stromer-ebike",
     "triopsis-workforce-management-saas",
-    "squaremind"
+    "squaremind",
+    "mdu-ship-motion-monitoring",
+    "ait-heat-pump-controller",
+    "assemblio",
+    "egma",
+    "oceaneering-dispatch-panel",
+    "visioncheckout",
+    "tactical-handheld-command-and-control"
   ],
   "internalLinks": [
     {
       "anchorText": "information architecture for expert systems",
       "targetSlug": "information-architecture-for-expert-systems",
-      "reason": "Cognitive load reduction in Gexcon, Polymatica, Triopsis, and WCO/IPM is described through information architecture decisions."
+      "reason": "Cognitive load reduction in Gexcon, Polymatica, Triopsis, and IDEXX depends on information architecture decisions in expert systems."
     },
     {
       "anchorText": "workflow and task structure redesign",
       "targetSlug": "workflow-and-task-structure-redesign",
-      "reason": "The capability is repeatedly described through workflow structure changes, guided flows, task staging, and reduced configuration overhead."
+      "reason": "The capability frequently changes task sequence, guided flows, progressive disclosure, and workflow structure."
     },
     {
       "anchorText": "state and status visibility design",
       "targetSlug": "state-and-status-visibility-design",
-      "reason": "Ambient awareness, unified energy state, warning states, and predictive indicators all depend on state and status visibility."
+      "reason": "Ambient awareness, predictive indicators, unified energy state views, and glance-based displays depend on state visibility."
     },
     {
       "anchorText": "warning and alarm clarity improvement",
       "targetSlug": "warning-and-alarm-clarity-improvement",
-      "reason": "The page defines alert fatigue and documents warning architecture and interruptive element rules in Stromer."
+      "reason": "Stromer and related warning-architecture examples address warning states and interruptive elements."
     },
     {
-      "anchorText": "error reduction and recovery design",
-      "targetSlug": "error-reduction-and-recovery-design",
-      "reason": "Gexcon configuration errors and Squaremind patient recovery are documented as cognitive load-related design issues."
+      "anchorText": "alarm management",
+      "targetSlug": "alarm-management",
+      "reason": "Alert fatigue is part of the domain vocabulary and cognitive load boundary for alerting systems."
     },
     {
-      "anchorText": "research in complex operational contexts",
-      "targetSlug": "research-in-complex-operational-contexts",
-      "reason": "The evidence base includes real deployments, product analytics, eye tracking, sea trials, real riding routes, and an ecological protocol."
+      "anchorText": "instructions and procedural content as a design object",
+      "targetSlug": "instructions-and-procedural-content-as-a-design-object",
+      "reason": "Squaremind and WCO/IPM use instruction design, contextual micro-hints, and multi-modal guidance to reduce processing demand."
     },
     {
-      "anchorText": "usability evaluation for high-consequence products",
-      "targetSlug": "usability-evaluation-for-high-consequence-products",
-      "reason": "Several cognitive load findings depend on evaluation under operational or ecological conditions."
+      "anchorText": "UX audit for complex products",
+      "targetSlug": "ux-audit-for-complex-products",
+      "reason": "The industrial automation and handheld C2 examples include expert-review findings related to cognitive load."
     },
     {
-      "anchorText": "Stromer e-bike display",
+      "anchorText": "Stromer e-bike",
       "targetSlug": "stromer-ebike",
-      "reason": "The page discusses the Stromer case and the allowed case-study slug is available."
+      "reason": "Stromer is the primary glance-duration example for safety-boundary cognitive load measurement."
     },
     {
-      "anchorText": "Triopsis workforce management",
+      "anchorText": "Triopsis workforce management SaaS",
       "targetSlug": "triopsis-workforce-management-saas",
-      "reason": "The page discusses the Triopsis case and the allowed case-study slug is available."
+      "reason": "Triopsis provides evidence for predictive indicators reducing reactive scheduling load."
     },
     {
-      "anchorText": "Squaremind dermatology scanning device",
+      "anchorText": "Squaremind",
       "targetSlug": "squaremind",
-      "reason": "The page discusses the Squaremind case and the allowed case-study slug is available."
+      "reason": "Squaremind provides evidence for multi-modal load distribution in patient-operated scanning."
+    },
+    {
+      "anchorText": "MDU ship motion monitoring",
+      "targetSlug": "mdu-ship-motion-monitoring",
+      "reason": "MDU is the design-reasoning example for removing a live value that cost attention without adding information."
+    },
+    {
+      "anchorText": "AIT heat pump controller",
+      "targetSlug": "ait-heat-pump-controller",
+      "reason": "AIT provides examples of physical-size review, control consistency, and numeric menu identifiers converting recall into recognition."
+    },
+    {
+      "anchorText": "Assemblio",
+      "targetSlug": "assemblio",
+      "reason": "Assemblio provides a client-stated attention-budget constraint for long procedural plans."
+    },
+    {
+      "anchorText": "Egma",
+      "targetSlug": "egma",
+      "reason": "Egma Order provides a progressive-disclosure example where visible disabled options and legibility errors created unnecessary load."
+    },
+    {
+      "anchorText": "Oceaneering dispatch panel",
+      "targetSlug": "oceaneering-dispatch-panel",
+      "reason": "Oceaneering provides an example of withholding information unless necessary, with explicit design-review evidence limits."
+    },
+    {
+      "anchorText": "visioncheckout",
+      "targetSlug": "visioncheckout",
+      "reason": "visioncheckout provides an example of using animation only where attention needs to be captured."
+    },
+    {
+      "anchorText": "tactical handheld command and control for uncrewed systems",
+      "targetSlug": "tactical-handheld-command-and-control",
+      "reason": "The handheld C2 engagement provides the documented mechanism that clutter consumes attention under acute stress."
     }
   ],
   "tags": [
     "cognitive load",
     "extraneous cognitive load",
-    "working memory",
     "recognition over recall",
     "progressive disclosure",
     "guided-to-free architecture",
-    "decision support",
+    "predictive indicators",
     "ambient awareness",
-    "alert fatigue",
+    "working memory",
+    "decision support",
     "glance duration",
-    "Critical Systems Design"
+    "attention management"
   ],
   "_meta": {
     "sourcePath": "sources/articles/Capabilities/capabilities--cognitive-load-reduction.md",
     "parentSlug": "capabilities",
     "childPageSlugs": [],
-    "generatedBy": "deterministic",
+    "generatedBy": "openai",
     "patches": [
       "capability-deliverables"
     ]

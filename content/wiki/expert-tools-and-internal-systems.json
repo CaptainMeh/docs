@@ -4,134 +4,227 @@
   "pageType": "context",
   "category": "contexts",
   "section": "Contexts",
-  "summary": "This context covers software and instrumentation used by domain experts, professional practitioners, analysts, technicians, researchers, and operational teams. The documented evidence spans CFD simulation, OLAP analytics, clinical research, automotive calibration, and AV diagnostic instruments, with outcomes calibrated as client-measured, client-reported, or measured via product analytics where stated.",
+  "summary": "This context covers professional software, expert instrumentation, operational systems, and internal tools where users depend on domain knowledge, procedural precision, or system expertise. Creative Navy's documented work in this context separates two opposite design poles: broadening access to expert-level outputs when expertise is a bottleneck, and protecting expert reasoning when trained practitioners are the intended users.",
   "keyFacts": [
-    "Expert reasoning support means the interface externalises the expert user's reasoning structure rather than simplifying the domain.",
-    "Tacit knowledge and internalised workarounds are treated as both diagnostic signals and constraints to preserve where they support work.",
-    "Essential complexity is distinguished from accidental complexity; the design challenge is to remove complexity that accumulated without intention.",
-    "Gexcon's CFD simulation software involved 24 user interviews, 23 workplace observations, 9 stakeholder interviews, 12 competitor benchmarks, and 102 documented tasks.",
-    "In Gexcon real deployments, time to first successful simulation changed from 4 days to 6 hours, configuration errors from 5–8 to 1–2 per simulation, and corrective load from 4–6 hours to approximately 20 minutes.",
-    "Polymatica's independent key-operation completion changed from 2% before redesign to 40% after release 1 and 56% after release 2, measured via product analytics.",
-    "Akrivia Health's cohort construction involved queries with up to 8 nested levels of logical conditions across diagnostic codes, medication sequences, rating scale scores, and free text markers.",
-    "Beissbarth's automotive calibration time changed from 18 to 12 minutes per vehicle, client-measured across 8 production deployment locations.",
-    "MSolutions' key diagnostic workflow changed from 26 interactions to approximately 13, client-reported from internal task walkthroughs and not independently measured."
+    "Expert-tool design divides into two poles: expertise as a bottleneck and expertise as the asset being protected.",
+    "Gexcon CFD simulation software is described as capability democratisation: time to first successful simulation changed from 4 days to 6 hours, client-measured by Gexcon in real deployments.",
+    "Polymatica's self-service analytics work changed independent completion of key operations from 2% before redesign to 56% after release 2, measured via product analytics.",
+    "The maritime traffic monitoring portfolio is the inverse of the democratisation story: simplifications that demonstrated well were rejected because they degraded expert operator work.",
+    "In the maritime traffic monitoring portfolio, a numeric association-confidence badge was refused because engineering could not supply a calibrated, operationally defensible confidence figure.",
+    "Beissbarth automotive calibration reduced calibration time from 18 to 12 minutes per vehicle, client-measured across 8 production deployment locations.",
+    "MSolutions reduced a key diagnostic workflow from 26 interactions to approximately 13, client-reported from internal task walkthroughs and not independently measured.",
+    "AIT retained a settings structure close to the one installers already knew, adding a breadcrumb trail and unique numeric identifiers for telephone support.",
+    "Egma Order deliberately used less visible help because the client held that the users were experienced opticians who already knew the domain terms.",
+    "Topera is only a concept design; no built product or outcome is claimed."
   ],
   "bodySections": [
     {
-      "heading": "Expert tools require reasoning support rather than simplification",
-      "bodyMarkdown": "Creative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nIn expert tools and internal systems, the interface does not succeed by reducing the domain to a beginner-level abstraction. The interface succeeds when it externalises the expert user's reasoning structure, shows the state and sequence of work clearly, and removes accidental complexity that accumulated without intention.\n\nThis context distinguishes essential complexity from accidental complexity. Essential complexity is the domain complexity that remains necessary for correct work. Accidental complexity is the interface, workflow, terminology, or state-management burden that obstructs expert work without adding domain value.\n\nExpert tools are often evaluated by the performance ceiling they enable, not only by the usability floor they require. A tool may be hard to learn because the domain is hard, but it should not be hard because the interface hides sequence, rationale, state, or error recovery."
+      "heading": "Expert Tools and Internal Systems in Creative Navy's Work",
+      "bodyMarkdown": "Creative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nExpert tools and internal systems are professional software contexts where the interface must either reduce expertise as a bottleneck or protect expert reasoning for trained practitioners, while preserving essential complexity and exposing irreducible uncertainty rather than hiding it.\n\nExpert tools and internal systems are not defined by interface density alone. They are defined by the relationship between the interface, the expert population, and the knowledge needed to produce a correct result. In some products, expertise is a bottleneck that prevents wider use of a capable system. In other products, expertise is the asset being protected, and simplification can damage the work.\n\nCreative Navy's Critical Systems Design method treats this distinction as structural. The relevant design question is not whether an interface should be simpler. The relevant question is whether the existing complexity is essential complexity, accidental complexity, tacit knowledge, or irreducible uncertainty."
     },
     {
-      "heading": "Domain learning is a prerequisite for designing expert systems",
-      "bodyMarkdown": "Creative Navy treats domain learning as a prerequisite in expert-tool work. The design team cannot design for an expert user without becoming a productive user of the system at a level sufficient to understand tasks, terminology, workarounds, and failure points.\n\nIn the Gexcon CFD simulation engagement, Creative Navy learned through calibration manuals, YouTube tutorials, Gexcon training videos, controlled tests inside the application, and two intensive four-hour stakeholder sessions. The engagement concerned computational fluid dynamics software for industrial safety engineering, including gas dispersion modelling, explosion risk assessment, and facility safety validation for industrial installations.\n\nIn the Beissbarth automotive calibration engagement, Creative Navy learned from calibration manuals, engineering diagrams, sensor logic, 14 technicians across 5 workshops, and 9 competitor systems. The Beissbarth system was a three-device calibration environment for vehicle safety equipment, spanning an embedded OEM display, a rugged tablet, and a large inspection display.\n\nIn the MSolutions AV diagnostic instrument engagement, Creative Navy received AV diagnostic training and performed 4 test jobs before design work. The handheld device measured HDMI signal integrity and related parameters across multi-monitor installations."
+      "heading": "The Two Poles of Expert-Tool Design",
+      "bodyMarkdown": "Expert tools divide into two opposite design problems. The first problem is expertise as a bottleneck: a capable system produces expert-level outputs, but only a small trained population can operate it independently. The second problem is expertise as the asset being protected: trained professionals carry operational responsibility, and the interface must support their reasoning rather than lower the ceiling of expert work.\n\nGexcon CFD simulation software and Polymatica OLAP analytics platform are documented examples of the first pole. Both cases involved capable systems whose performance or scientific rigour was constrained in practice by the interface and training model. The design objective was capability democratisation: enabling a broader user population to reach expert-level outputs without removing the capability that made the system valuable.\n\nThe maritime traffic monitoring portfolio is the inverse pole. The users were trained professionals working in maritime traffic monitoring, inland navigation, and communications software for port authorities, coastal administrations, and waterway operators. Simplifications that were attractive in demonstrations were rejected because they were worse for the expert operator doing the work.\n\nThis distinction matters because the design answers are opposite. When expertise is the bottleneck, the interface may need clearer orientation, staged guidance, and a broader entry path. When expertise is the asset, the interface may need density, predictable shortcuts, shared workspace context, and explicit preservation of domain distinctions."
     },
     {
-      "heading": "Tacit knowledge and internalised workarounds are design evidence",
-      "bodyMarkdown": "Tacit knowledge and internalised workarounds are central evidence in expert-tool design. Expert users often develop patterns to compensate for interface failures. Those patterns can reveal hidden domain structure, but they can also become constraints that cannot be removed without disrupting productive work.\n\nThe blanks phenomenon applies when expert users cannot articulate the rationale behind their own workflow patterns. In this context, the design task is not only to ask users why they act, but to document actions at enough granularity to surface the implicit knowledge structure behind those actions.\n\nMicrotask analysis at expert depth documents discrete actions with goals, frequency, difficulty, and action detail. In the Gexcon engagement, Creative Navy documented 102 individual tasks with goals, frequency, difficulty, and actions. That level of documentation made it possible to distinguish unavoidable scientific work from interface complexity accumulated over 15 years."
+      "heading": "Domain Learning Before Expert-Tool Redesign",
+      "bodyMarkdown": "Creative Navy's Critical Systems Design method uses domain learning before redesigning expert tools because expert interfaces cannot be designed from general UI patterns alone. In this context, domain learning means becoming sufficiently productive in the domain to distinguish essential complexity from accumulated accidental complexity.\n\nIn the Gexcon CFD simulation software engagement, Creative Navy used calibration manuals, YouTube tutorials, Gexcon training videos, controlled tests inside the application, and two intensive four-hour stakeholder sessions. The documented research scale included 24 user interviews, 23 workplace observations, 9 stakeholder interviews, 12 competitor products benchmarked, and 102 individual tasks documented with goals, frequency, difficulty, and actions.\n\nThe same pattern appears in smaller expert-instrumentation engagements. In MSolutions AV diagnostic instruments, Creative Navy received AV diagnostic training and performed 4 test jobs before design work. In Beissbarth automotive calibration, Creative Navy studied calibration manuals, engineering diagrams, and sensor logic, with 14 technicians across 5 workshops and 9 competitor systems benchmarked.\n\nDomain learning also exposes the blanks phenomenon. Expert users may not be able to articulate the rationale behind their own workflow patterns, particularly when tacit workarounds have developed to compensate for interface failures. Microtask analysis at expert depth is used to document discrete actions at a level of granularity that reveals implicit knowledge structure."
     },
     {
-      "heading": "Gexcon CFD software shows navigable complexity rather than reduced capability",
-      "bodyMarkdown": "Gexcon's CFD simulation software is the deepest documented expert-tool engagement in this context. The software originated at the Chr Michelsen Institute in the 1990s and had accumulated 15 years of interface complexity by the time of the engagement.\n\nThe user shift created a product-life problem. Senior CFD engineers were retiring. Newer engineers were choosing simpler tools that sacrificed capability. Non-technical roles, including risk managers and safety analysts, needed access to outputs but had no usable entry path.\n\nThe brief was to extend the product life by 25 years, retain full scientific rigour, and open a clearer entry path for newer engineers and non-technical roles. Creative Navy's Critical Systems Design method addressed the beginner/expert divide during Concept Convergence by rejecting a split between beginner mode and expert mode. The resolution was one structured interaction pattern serving both user types at different speeds and with different visibility expectations, without capability reduction and without fragmentation into modes.\n\nThe Gexcon research base included 24 user interviews, 23 workplace observations, 9 stakeholder interviews, 12 competitor products benchmarked, and 102 individual tasks documented with goals, frequency, difficulty, and actions. Option space mapping covered 10 key challenges, 3–6 solutions per challenge, 45 variants, 37 evaluation sessions, and 4 decision workshops.\n\nGexcon outcomes are among the strongest quantified evidence in this context. Time to first successful simulation changed from 4 days to 6 hours, client-measured by Gexcon in real deployments. Configuration errors per simulation changed from 5–8 to 1–2, client-measured. Corrective load per error changed from 4–6 hours to approximately 20 minutes, client-measured. Active users per team changed from 1 to 3–4, client-reported."
+      "heading": "Gexcon as Capability Democratisation Without Capability Reduction",
+      "bodyMarkdown": "Gexcon CFD simulation software is the deepest documented expert-tool engagement in this context. The product supported industrial safety engineering work including gas dispersion modelling, explosion risk assessment, and facility safety validation for industrial installations. By the time of the engagement, the interface carried 15 years of accumulated complexity.\n\nThe user shift created the design problem. Senior CFD engineers were retiring, newer engineers were choosing simpler tools that sacrificed capability, and non-technical roles such as risk managers and safety analysts needed access but had none. The brief was to extend product life by 25 years, retain full scientific rigour, and open a clearer entry path for newer engineers and non-technical roles.\n\nCreative Navy-recorded option space mapping covered 10 key challenges, 3–6 solutions per challenge, 45 variants, 37 evaluation sessions, and 4 decision workshops. The central tension in Concept Convergence was that the beginner and expert divide could not be solved by choosing one group over the other. The selected answer was one structured interaction pattern serving both user types at different speeds and with different visibility expectations, with no capability reduction and no fragmentation into modes.\n\nGexcon client-measured outcomes in real deployments included time to first successful simulation changing from 4 days to 6 hours, configuration errors per simulation changing from 5–8 to 1–2, and corrective load per error changing from 4–6 hours to approximately 20 minutes. Gexcon also client-reported that active users per team changed from 1 to 3–4, and that training changed from 3-day instructor-led events to short webinars and video materials."
     },
     {
-      "heading": "Polymatica shows that benchmark performance can remain invisible when the interface is the bottleneck",
-      "bodyMarkdown": "Polymatica was a GPU-backed OLAP analytics platform with benchmark performance 50–100x faster than competing solutions. The performance advantage was invisible to users until the interface stopped being the bottleneck.\n\nBefore redesign, 2% of users completed key operations independently. The key operations were importing data, slicing and dicing, answering a specific business question, and creating a report. With documentation, 9% completed those operations.\n\nAfter release 1, which focused on orientation, 40% completed key operations independently. After release 2, which added feature-level guidance, 56% completed key operations independently. These figures were measured via product analytics.\n\nThe central design insight was that the Dataset Manager became a central orientation point. The cube metaphor specific to OLAP was replaced with dataset, a universal term. Dimensions and facts terminology was replaced with the industry-standard term measures.\n\nInternational expansion to the UK, US, and Germany followed. HSBC and Barclays became UK clients. At those clients' data volumes, the benchmark performance advantage became experientially perceptible for the first time. These expansion and client observations are client-reported."
+      "heading": "Polymatica as Performance Blocked by Self-Service Failure",
+      "bodyMarkdown": "Polymatica was a GPU-backed OLAP analytics platform whose benchmark performance was 50–100x faster than competing solutions. The performance advantage was not experientially available to users until the interface stopped being the bottleneck.\n\nBefore redesign, every new customer required the founder, Roman, to personally deliver training. His limited English and lack of German made international expansion structurally difficult. Before redesign, 2% of users completed key operations independently: importing data, slicing and dicing, answering a specific business question, and creating a report. With documentation, 9% completed those operations.\n\nAfter release 1, independent completion reached 40%. After release 2, independent completion reached 56%, measured via product analytics. The central design insight was the Dataset Manager as a central orientation point, described as a lobby metaphor that emerged from reconciling 10 challenge areas simultaneously. The OLAP-specific cube metaphor was replaced with dataset, and dimensions/facts terminology was replaced with the industry-standard term measures.\n\nInternational expansion to the UK, US, and Germany followed. HSBC and Barclays became UK clients. At those client data volumes, the benchmark performance advantage became experientially perceptible for the first time; these expansion and client observations are client-reported."
     },
     {
-      "heading": "Akrivia Health shows the tension between expert analytical freedom and auditability",
-      "bodyMarkdown": "Akrivia Health was a mental health clinical data platform with more than 4 billion clinical datapoints. The platform served NHS analysts, academic researchers, and pharmaceutical research staff.\n\nThe expert-tool problem was cohort construction. A typical query could involve 8 nested levels of logical conditions across diagnostic codes, medication sequences, rating scale scores, and free text markers. This level of query construction required deep methodological knowledge.\n\nThe governance dimension changed the design problem. Cohort queries had to be reproducible and auditable months later by governance reviewers who were not present when the queries were constructed.\n\nCreative Navy developed and tested 5 interaction models for cohort construction: wizard, nested logic blocks, timeline, fragment reuse, and side-by-side comparison. These models were tested through 6 design cycles and 8 usability sessions.\n\nThe documented competitive vector was the position where researcher analytical freedom and institutional auditability align simultaneously. The client-reported outcome was that governance reviewers could verify cohort logic without escalating to the researcher."
+      "heading": "Maritime Traffic Monitoring as Deliberate Refusal to Simplify",
+      "bodyMarkdown": "The maritime traffic monitoring portfolio is the clearest documented example of expertise as the asset being protected. The engagement involved a European vendor of maritime traffic monitoring, inland navigation, and communications software for port authorities, coastal administrations, and waterway operators. The design system reached production, but no design-fidelity comparison is recorded.\n\nA summary dashboard landing view was built and rejected. It was useful for commercial presentations because it exposed many functions at once, but it moved the active traffic picture into a secondary container. That forced operators to reacquire sector, object, and layer context after every inspection. A map-as-bounded-card variant was rejected for the same reason.\n\nA gesture-first, large-tile universal interface was also rejected. It demonstrated well in stakeholder meetings, but it increased travel, concealed shortcuts for the workstation actually in use, and implied that the same controls could transfer to specialised radio equipment without a separate contract. The selected model treated keyboard focus order, predictable shortcuts, pointer targets, and paired-display selection as commitments.\n\nCreative Navy's Critical Systems Design method in this engagement preserved shared workspace context across selected object, sector, time mode, and originating element. Density became an explicit design variable with a rule attached: clutter reduction could not hide time-critical functions or introduce unnecessary modal steps."
     },
     {
-      "heading": "Beissbarth shows multi-device coherence in sequential precision work",
-      "bodyMarkdown": "Beissbarth automotive calibration was a multi-device expert instrument context. The system spanned an embedded OEM display, a rugged tablet, and a large inspection display used in a three-device calibration workflow for vehicle safety equipment.\n\nThe users were authorised workshop technicians and inspectors. The domain was sequential precision work where interface hesitation could introduce measurement error.\n\nCreative Navy documented 12 features across 4 modules. For each feature, Creative Navy documented the information required, value precision, expected technician movement, lighting effect, and acceptable interpretation time.\n\nThe core tension was local device optimisation versus cross-device coherence. Creative Navy resolved the tension by prioritising unambiguous state communication over information density, consistently across all three device types.\n\nCalibration time changed from 18 to 12 minutes per vehicle, client-measured across 8 production deployment locations. Beissbarth also reported an operational change: the commercial deployment model no longer includes onboarding training. Repeated measurements were reduced, but the exact figure is not available."
+      "heading": "Irreducible Uncertainty in Vessel, Track, and Observation Modelling",
+      "bodyMarkdown": "The maritime traffic monitoring portfolio is the strongest documented example of irreducible uncertainty in this context. Vessel, track, and observation were treated as three separate objects. A single resolved vessel record was rejected because it would obscure what the system actually knew.\n\nThe selected model kept a vessel identity record, a tracked object with an association status, and timestamped observations that each carried their own source. Association was expressed as resolved, unresolved, changed, or unknown.\n\nA numeric association-confidence badge was explored because it would compress uncertainty into one familiar control. The client's engineering could not supply a calibrated, operationally defensible confidence figure, so the interface was not permitted to display one. The design states the association as unresolved instead.\n\nThe resulting specification rule is important for expert tools: the interface does not synthesise an association confidence score, a source time, or an authorisation decision. Missing values appear as unknown or not available. This is not essential complexity or accidental complexity. It is irreducible uncertainty, a property of the evidence that the interface must report rather than resolve."
     },
     {
-      "heading": "MSolutions shows expert instrumentation as a guided diagnostic narrative",
-      "bodyMarkdown": "MSolutions was a professional handheld device for measuring HDMI signal integrity and related parameters across multi-monitor installations. The previous design organised screens by backend modules rather than by technician workflow.\n\nThe structural failure was that the AV diagnostic narrative was difficult to follow. Creative Navy's design work treated the device as a guide through a standard AV diagnostic narrative: link integrity checks, EDID and HDCP verification, resolution and colour space validation, and consolidated confirmation.\n\nThe key diagnostic workflow changed from 26 interactions to approximately 13. This figure is client-reported from internal task walkthroughs and was not independently measured.\n\nTraining changed from repeated coaching sessions to a short guided introduction, client-observed. Large integrator customers formally reported smoother rollouts after redesign."
+      "heading": "Expert-Tool Density as a Design Variable",
+      "bodyMarkdown": "Density in expert tools is not automatically a defect. Density becomes a design variable when a professional interface must keep time-critical functions, repeated controls, or domain-specific distinctions available without adding unnecessary modal steps.\n\nIn the maritime traffic monitoring portfolio, six recorded disagreements were resolved rather than averaged: how alike the interfaces should look, how many controls stay visible, whether a radio action may reuse a standard button, whether the map occupies the whole canvas, whether one frontend library serves every application, and whether user access could be deferred. The recorded resolution principle was to separate intent from implementation, and to retain specialised behaviour where a product-specific safety or hardware constraint conflicted with a visual preference.\n\nAssemblio Composer shows a different density problem: list rows that must work a hundred times on one screen. Assemblio client-stated operating context included products commonly running to 100 or more assembly steps, users having over 20 projects in play at once, and uploaded CAD files exceeding 1 GB. Step rows were condensed by removing sliders as inputs for MTM and animation speed, reducing numeric inputs, and tightening spacing, because expanded rows wasted space that could carry step information.\n\nEgma Order is a counterweight to the assumption that expert tools always need more explanation. Egma's client held that explanation would be condescending for experienced opticians and that users would not press a help control. What shipped was the least obtrusive help available: a hover tooltip on the text label. Creative Navy's own documentation names the cost: the help is essentially hidden, accessibility is affected, and hover help does not exist on the mobile application."
     },
     {
-      "heading": "Capability democratisation in expert tools does not mean capability reduction",
-      "bodyMarkdown": "Capability democratisation in this context means enabling a broader user population to access expert-level outputs without requiring expert-level training. It does not mean reducing expert capability or flattening domain complexity.\n\nThe Gexcon engagement illustrates this boundary. The design problem was not solved by choosing beginners over experts or experts over beginners. The documented resolution was one structured interaction pattern that supported both user types at different speeds and with different visibility expectations.\n\nThe Polymatica engagement shows a related pattern in analytics. The performance advantage existed in benchmarks, but performance in reality depended on whether users could complete core analytical operations independently. The interface had to make the capability reachable before the benchmark advantage became experientially visible."
+      "heading": "Expert Systems Where Expertise Sits in the Machine Rather Than the Software",
+      "bodyMarkdown": "Some expert-tool contexts involve users whose expertise is primarily in the machine, instrument, vehicle, installation, or process, not in software. Creative Navy's documented engagements include heat pump installers, workshop technicians, AV technicians, ship-motion readers, and industrial process operators.\n\nAIT's heat pump controller had four access levels in AIT's own structure: end user, installer, service, and factory. Installer and service levels were entered by PIN and timed out automatically. The previous generation's published documentation described roughly 135 commissioning parameters, 98 numbered fault codes, parameters hidden by access level and detected heat pump variant, and a controller structure specification of roughly 900 nodes across eleven levels of hierarchy in German.\n\nAIT's installed base had been trained on the existing concept. The response was to keep the settings structure close to the one installers already knew, while adding two orientation aids: a breadcrumb trail and a unique numeric identifier on every menu item so support staff could direct an installer to a setting by number over the telephone.\n\nThe MDU bridge instrument shows the same principle at an instrument-reading level. List to starboard is positive, and getting that convention wrong put the negative half of the roll scale at the top of the dial until the card was moved to the other side of the screen. The live Now value was removed from the pitch and roll cards because it changed constantly and did not add value; the retained values were minimum, maximum, period, and maximum velocity."
     },
     {
-      "heading": "Evidence boundaries for expert-tool outcomes",
-      "bodyMarkdown": "The evidence in this context varies by engagement and should not be treated as one uniform evidence class. Gexcon includes client-measured real-deployment outcomes for simulation time, configuration errors, and corrective load. Beissbarth includes client-measured production-deployment outcomes for calibration time across 8 locations.\n\nPolymatica's independent completion figures were measured via product analytics. Akrivia Health's governance verification outcome is client-reported. MSolutions' interaction reduction is client-reported from internal task walkthroughs and not independently measured.\n\nSome documented outcomes are operational changes rather than measured outcomes. For example, Gexcon training changed from 3-day instructor-led events to short webinars and video materials, and Beissbarth reported that onboarding training was removed from the commercial deployment model. These should be read as operational changes, not as independently measured training-effectiveness studies.\n\nThe evidence supports specific claims about the documented engagements. It does not establish that the same numerical outcomes will occur in every expert-tool or internal-system context."
+      "heading": "Expert Instrumentation and Sequential Precision Work",
+      "bodyMarkdown": "Beissbarth automotive calibration and MSolutions AV diagnostic instruments show expert tools where the work is procedural, physical, and sequential. The interface must support the technician's movement through the task rather than present backend system structure.\n\nBeissbarth involved a three-device calibration system for vehicle safety equipment: an embedded OEM display, a rugged tablet, and a large inspection display. Users were authorised workshop technicians and inspectors, and the work required sequential precision where interface hesitation could introduce measurement error. Creative Navy documented 12 features across 4 modules, including information required, value precision, expected technician movement, lighting effect, and acceptable interpretation time.\n\nThe Beissbarth design tension was local device optimisation versus cross-device coherence. The resolution prioritised unambiguous state communication over information density across all three device types. Calibration time changed from 18 to 12 minutes per vehicle, client-measured across 8 production deployment locations. Beissbarth also client-reported that the commercial deployment model no longer included onboarding training.\n\nMSolutions involved a professional handheld device measuring HDMI signal integrity and related parameters across multi-monitor installations. The previous design organised screens by backend modules rather than by technician workflow. The conceptual breakthrough was to treat the device as a guide through a standard AV diagnostic narrative: link integrity checks, EDID/HDCP verification, resolution and colour space validation, and consolidated confirmation. The key diagnostic workflow changed from 26 interactions to approximately 13, client-reported from internal task walkthroughs and not independently measured."
+    },
+    {
+      "heading": "Research, Governance, and Controlled-Document Expert Tools",
+      "bodyMarkdown": "Akrivia Health, Assemblio Composer, and Topera show expert-tool design where correctness depends on the structure of knowledge, auditability, or an external standard rather than only on task speed.\n\nAkrivia Health was a mental health clinical data platform with 4 billion+ clinical datapoints serving NHS analysts, academic researchers, and pharmaceutical research staff. Cohort construction required deep methodological knowledge; a typical query might involve 8 nested levels of logical conditions across diagnostic codes, medication sequences, rating scale scores, and free text markers. Five interaction models were developed and tested through 6 design cycles and 8 usability sessions: wizard, nested logic blocks, timeline, fragment reuse, and side-by-side comparison. Client-reported outcome evidence says governance reviewers could verify cohort logic without escalating to the researcher.\n\nAssemblio Composer is an authoring tool whose output is a controlled document. The documented structure included single-owner editing with Draft, In Review, and Approved states; a review and approval gate; version history delivered as a panel on the left; MTM values entered per step and summed per workstation group; and separate time values for MTM time and animation duration. The separate time values existed because a real assembly step may take hours while an animation must be watchable in seconds.\n\nTopera is a concept design only, with no built product and no outcome claim. Its Schedule & Milestones view was grounded in DIN 69900 and network planning terminology: finish-to-start, start-to-start, finish-to-finish, start-to-finish, lead and lag, critical path, free float, total float, and baseline comparison. The useful point for this context is that expert vocabulary can come from a standard rather than from watching experts. Nothing from Topera is claimed as observed use."
+    },
+    {
+      "heading": "Progressive Detail and Capability-Following Controls",
+      "bodyMarkdown": "KISPE Space and Schone Airspace Group show expert-tool patterns that preserve depth without inventing unnecessary specialist surfaces.\n\nKISPE Space used progressive detail for expert depth, with inline indicators only where a limitation was essential to interpretation. The documented cost is explicit: users may never open the caveats. A data-quality overlay on the map was deferred until a documented specialist need existed, because it would add clutter and imply geographic precision the quality data might not have. A specialist diagnostics mode was also deferred until a repeated specialist workflow was confirmed; System Status remained a global utility rather than a sixth primary destination.\n\nSchone Airspace Group Mission Control used payload controls that follow the connected payload's reported capability set rather than a fixed list of always-visible buttons. Unsupported functions appear as unavailable rather than as working controls with no effect. Rejected alternatives included showing every known camera command and hiding the whole control panel when video fails. The accepted cost is that conditional control surfaces require a reliable payload capability description.\n\nSchone also records an expert-tool vocabulary problem solved explicitly. Seven terminology distinctions had functional consequences: focused aircraft, not active aircraft; command target, not selected; command eligible, not ready; last known, not live; command acknowledged, not command completed; state observed, not success; acknowledged, not resolved or cleared."
+    },
+    {
+      "heading": "Internal Systems and Expertise Transfer Inside Operations",
+      "bodyMarkdown": "Industrial process control and handheld command-and-control show expert-tool issues where software structure is entangled with organisational skill distribution.\n\nIn the industrial process control engagement, the product was in development and not shipped, so no outcome is claimed. The client stated that the platform was an expert system and that explainability was not valued as an interface goal, while also expecting people without deep technical expertise to operate these systems in future. Observed in situ, one operator wanted a simple job list so a less-trained colleague could absorb setup and unsetup work consuming up to two hours of his day and sometimes a whole day. A node operator stated that he does everything on his cell and that a new worker would be completely overwhelmed.\n\nIn the handheld command-and-control engagement, the product was built around discrete, independently operable functional units: plans, intents, missions, tasks, and map geometry. The expert review position, in work Creative Navy led and co-authored with the client's design team, was that modularity is sound for complex professional software but insufficient alone. Guidance must be layered onto modularity rather than replacing it, so expert users can operate freely while the interface supports orientation, sequencing, and state recall."
+    },
+    {
+      "heading": "Boundaries of This Context",
+      "bodyMarkdown": "Not every specialised product belongs in this context. Oceaneering is excluded because its users are explicitly not experts; the documented design problem is a minimally trained, high-turnover population. visioncheckout is also excluded because its users are the public and catering staff, not an expert population.\n\nEgma Order must not be filed as capability democratisation. The platform was designed for an expert population at the client's explicit insistence, and no post-launch measurement, usability-testing result, competitor benchmarking, or support-ticket outcome is claimed.\n\nThe maritime traffic monitoring portfolio must not be used as evidence for capability transfer to a broader population. Its recorded measured comparison concerns interpretation under scripted conditions, not democratisation. The engagement also has no production, efficiency, training, support, commercial, safety, certification, conformity, or regulatory outcome claimed for deployed products.\n\nTopera has no outcome, research finding, validation result, standards conformance claim, or compliance credential. KISPE Space has no usability, comprehension, or validation result. Schone Airspace Group is in test, not deployed. AIT was not tested with users, and the settings-scale material is background from published documentation of the previous generation rather than an audit finding. Assemblio operating-context material is client-stated rather than observed."
     }
   ],
   "evidenceSummary": {
     "strongClaims": [
-      "Expert-tool design in this context aims to externalise expert reasoning rather than simplify the domain.",
-      "Creative Navy treats domain learning as a prerequisite for expert-tool work.",
-      "Gexcon's time to first successful simulation changed from 4 days to 6 hours.",
-      "Gexcon's configuration errors per simulation changed from 5–8 to 1–2, and corrective load per error changed from 4–6 hours to approximately 20 minutes.",
-      "Polymatica independent completion of key operations changed from 2% before redesign to 40% after release 1 and 56% after release 2.",
-      "Beissbarth calibration time changed from 18 to 12 minutes per vehicle across 8 production deployment locations.",
-      "The Gexcon Concept Convergence resolution used one structured interaction pattern for beginners and experts without capability reduction or fragmented modes."
+      "Expert-tool design divides into two opposite poles: expertise as a bottleneck and expertise as the asset being protected.",
+      "Gexcon CFD simulation software was redesigned for capability democratisation without reducing scientific rigour or fragmenting the interface into modes.",
+      "Gexcon time to first successful simulation changed from 4 days to 6 hours in real deployments, measured by Gexcon.",
+      "Polymatica independent completion of key operations changed from 2% before redesign to 56% after release 2, measured via product analytics.",
+      "The maritime traffic monitoring portfolio is an inverse case where simplifications were rejected because they were worse for trained operators.",
+      "The maritime traffic monitoring interface refused a numeric association-confidence badge because the client engineering team could not supply a calibrated, operationally defensible confidence figure.",
+      "Beissbarth calibration time changed from 18 to 12 minutes per vehicle, client-measured across 8 production deployment locations.",
+      "Topera is only a concept design, so no built product, observed-use finding, or outcome may be claimed."
     ],
     "weakerClaims": [
-      "Akrivia Health governance reviewers could verify cohort logic without escalating to the researcher.",
-      "MSolutions' key diagnostic workflow changed from 26 interactions to approximately 13."
+      "MSolutions reduced a key diagnostic workflow from 26 interactions to approximately 13; this is client-reported from internal task walkthroughs and not independently measured.",
+      "AIT retained a settings structure close to the one installers already knew and added breadcrumb and numeric menu identifiers for orientation and telephone support; no user testing is claimed."
     ],
     "limitations": [
-      "The evidence base is engagement-specific and should not be generalised into guaranteed outcomes for all expert tools or internal systems.",
-      "Several outcomes are client-reported rather than independently verified, including Akrivia Health governance verification and Gexcon active users per team.",
-      "MSolutions' interaction reduction is approximate, client-reported from internal task walkthroughs, and not independently measured.",
-      "Beissbarth repeated measurements were reduced, but the exact figure is not available.",
-      "Operational changes in training are not the same as independently measured training-effectiveness studies."
+      "The page distinguishes client-measured, client-reported, Creative Navy-observed, and Creative Navy-recorded evidence where the distinction appears in CURRENT_SOURCE_MD.",
+      "No outcome is claimed for the maritime traffic monitoring portfolio beyond the design system reaching production; no design-fidelity comparison is recorded.",
+      "The maritime engagement's measured comparison is not used as capability democratisation evidence because it measured interpretation under scripted conditions.",
+      "Egma Order is not treated as capability democratisation and has no post-launch measurement, usability-testing result, competitor benchmarking, or support-ticket outcome in the available evidence.",
+      "Topera is a concept design only; no built product, validation result, outcome, standards conformance, or compliance credential is claimed.",
+      "KISPE Space has no usability, comprehension, validation, or shipped-as-designed claim in the available evidence.",
+      "Schone Airspace Group Mission Control is built and in test, not deployed, and no audit or expert-review credential is claimed.",
+      "AIT's settings-scale material comes from published documentation of the previous generation and is not an audit finding; nothing in the AIT engagement was tested with users.",
+      "Assemblio operating-context material is client-stated rather than observed.",
+      "The handheld command-and-control engagement has no primary field evidence; operator behaviours are the client's observations relayed to Creative Navy."
     ]
   },
   "relatedPageSlugs": [
     "beissbarth",
-    "enterprise-software",
+    "kispe-space",
+    "schone-mission-control",
+    "mdu-ship-motion-monitoring",
+    "streetec-kntrl",
+    "ait-heat-pump-controller",
+    "assemblio",
+    "topera",
+    "egma",
+    "tactical-handheld-command-and-control",
+    "industrial-process-control-platform",
+    "marine-and-maritime-systems",
+    "industrial-automation-and-machinery",
+    "building-automation-and-smart-home",
     "embedded-devices-and-constrained-interfaces",
-    "high-consequence-environments",
-    "medical-and-clinical-systems",
-    "regulated-products",
-    "multi-stakeholder-operational-environments"
+    "defence-and-space-systems",
+    "high-consequence-environments"
   ],
   "internalLinks": [
     {
-      "anchorText": "Beissbarth automotive calibration",
+      "anchorText": "Beissbarth Automotive",
       "targetSlug": "beissbarth",
-      "reason": "The linking context provides a matching Beissbarth case-study notes slug for the named Beissbarth example."
+      "reason": "Beissbarth is a documented expert instrumentation example in the page."
     },
     {
-      "anchorText": "enterprise software",
-      "targetSlug": "enterprise-software",
-      "reason": "Polymatica is described as an analytics platform, and enterprise software is an allowed same-category context page."
+      "anchorText": "KISPE Space",
+      "targetSlug": "kispe-space",
+      "reason": "KISPE Space is discussed as an expert-depth pattern with progressive detail and explicit caveat costs."
     },
     {
-      "anchorText": "embedded devices and constrained interfaces",
+      "anchorText": "Schone Airspace Group Mission Control",
+      "targetSlug": "schone-mission-control",
+      "reason": "Schone is discussed as an expert-tool vocabulary and capability-following control example."
+    },
+    {
+      "anchorText": "MDU Ship Motion Monitoring",
+      "targetSlug": "mdu-ship-motion-monitoring",
+      "reason": "The MDU bridge instrument is discussed as an expert instrument that follows domain conventions."
+    },
+    {
+      "anchorText": "Streetec kntrl 2",
+      "targetSlug": "streetec-kntrl",
+      "reason": "Streetec appears in the source as a client team whose expert bias shaped non-expert settings decisions."
+    },
+    {
+      "anchorText": "AIT Heat Pump Controller",
+      "targetSlug": "ait-heat-pump-controller",
+      "reason": "AIT is discussed as a case where installer expertise and an established settings structure shaped the design response."
+    },
+    {
+      "anchorText": "Assemblio",
+      "targetSlug": "assemblio",
+      "reason": "Assemblio is discussed as a controlled-document authoring tool and as an expert-density example."
+    },
+    {
+      "anchorText": "Topera",
+      "targetSlug": "topera",
+      "reason": "Topera is discussed as a concept design grounded in expert vocabulary from a standard."
+    },
+    {
+      "anchorText": "Egma",
+      "targetSlug": "egma",
+      "reason": "Egma Order is discussed as a counterexample where less explanation was the documented expert-tool decision."
+    },
+    {
+      "anchorText": "Tactical Handheld Command and Control for Uncrewed Systems",
+      "targetSlug": "tactical-handheld-command-and-control",
+      "reason": "The handheld command-and-control engagement is discussed as a corroborating note on modularity with guidance layered on."
+    },
+    {
+      "anchorText": "Industrial Process Control Platform",
+      "targetSlug": "industrial-process-control-platform",
+      "reason": "Industrial process control is discussed as an internal expert-system context in development."
+    },
+    {
+      "anchorText": "Marine and Maritime Systems",
+      "targetSlug": "marine-and-maritime-systems",
+      "reason": "The maritime traffic monitoring portfolio is a primary expert-tool example that overlaps with marine and maritime systems."
+    },
+    {
+      "anchorText": "Industrial Automation and Machinery",
+      "targetSlug": "industrial-automation-and-machinery",
+      "reason": "Several documented expert-tool examples involve machinery, calibration, industrial process control, or production planning."
+    },
+    {
+      "anchorText": "Building Automation and Smart Home",
+      "targetSlug": "building-automation-and-smart-home",
+      "reason": "AIT is a heat pump controller example connected to building automation and smart-home contexts."
+    },
+    {
+      "anchorText": "Embedded Devices and Constrained Interfaces",
       "targetSlug": "embedded-devices-and-constrained-interfaces",
-      "reason": "The page discusses multi-device and handheld expert instrumentation, and this context slug is allowed."
+      "reason": "Several expert-tool examples involve embedded devices, handheld instruments, bridge instruments, or constrained displays."
     },
     {
-      "anchorText": "medical and clinical systems",
-      "targetSlug": "medical-and-clinical-systems",
-      "reason": "Akrivia Health is described as a mental health clinical data platform serving NHS analysts, academic researchers, and pharmaceutical research staff."
+      "anchorText": "Defence and Space Systems",
+      "targetSlug": "defence-and-space-systems",
+      "reason": "KISPE, Schone, and the handheld command-and-control note overlap with defence and space contexts in the source."
     },
     {
-      "anchorText": "high-consequence environments",
+      "anchorText": "High Consequence Environments",
       "targetSlug": "high-consequence-environments",
-      "reason": "The source describes industrial safety engineering and clinical research governance contexts."
+      "reason": "The page discusses expert tools where operational responsibility, time-critical functions, or evidential uncertainty affect interface decisions."
     }
   ],
   "tags": [
     "expert tools",
     "internal systems",
     "domain learning",
+    "capability democratisation",
     "expert reasoning support",
-    "tacit knowledge",
     "essential complexity",
     "accidental complexity",
+    "irreducible uncertainty",
     "microtask analysis",
-    "capability democratisation",
-    "performance in reality"
+    "professional software"
   ],
   "_meta": {
     "sourcePath": "sources/articles/Contexts/contexts--expert-tools-and-internal-systems.md",
     "parentSlug": "contexts",
     "childPageSlugs": [],
-    "generatedBy": "deterministic"
+    "generatedBy": "openai"
   }
 }

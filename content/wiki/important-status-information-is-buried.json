@@ -4,132 +4,133 @@
   "pageType": "failure",
   "category": "failures",
   "section": "State Visibility Failures",
-  "summary": "Important status information is buried when an interface assigns insufficient visual prominence to information with operational significance. The failure commonly appears as missed alerts, missed calibration states, repeated checks, or status conditions that were visible in retrospect but not perceived at the moment of action.",
+  "summary": "This failure occurs when an interface presents operationally unequal information with equal visual weight. Users can technically see the status, alert, or value, but the display does not make it stand out enough for time-pressured, physically constrained, or attentionally divided use.",
   "keyFacts": [
-    "The failure concerns information that is visible but insufficiently prominent, not information that is absent.",
-    "The source distinguishes this failure from state information that users cannot see directly and from unclear mode-change transitions.",
-    "Common causes include equal visual weight for unequal significance, category-based organisation, and static hierarchy in contexts where significance changes dynamically.",
-    "In the Beissbarth example, measurement values, tolerances, and progress indicators previously appeared at equal visual weight across three device classes.",
-    "Beissbarth calibration equipment was read from two to three metres during technician movement, with gloves and variable lighting affecting interaction and visibility.",
-    "Beissbarth calibration time reduced from 18 minutes to 12 minutes per vehicle, client-measured across 8 production deployment locations.",
-    "Beissbarth repeated measurements reduced directionally, but the exact client-measured figure was not shared.",
-    "Beissbarth now deploys the redesigned system without onboarding training, a client-reported operational change.",
-    "In the Elsner Cala Touch KNX example, heating unit alerts and open-window notifications were separated into a dual-priority alert hierarchy.",
-    "A formal usability test with 12 subjects confirmed navigation and temperature comprehension for the Elsner interface; alert hierarchy outcomes were confirmed in prototype testing with Elsner's engineers, not independently quantified after deployment."
+    "This failure concerns visual prominence, not information absence.",
+    "The information that matters is visible, but it does not assert itself with the urgency its operational significance warrants.",
+    "Uniform visual treatment can make critical alerts, calibration states, and secondary parameters read as equivalent.",
+    "Category-based organisation can force users to translate from system categories to operational significance during use.",
+    "Static hierarchy can fail when the significance of readings, alerts, or sensor states changes with context.",
+    "In the Beissbarth engagement, calibration time reduced from 18 minutes to 12 minutes per vehicle, client-measured across 8 production deployment locations.",
+    "In the Beissbarth engagement, repeated measurements reduced directionally, client-measured; the exact figure was not shared.",
+    "In the Elsner Cala Touch KNX engagement, alert hierarchy outcomes were confirmed in prototype testing with Elsner's engineers, not independently quantified in post-deployment user measurement.",
+    "A maritime VTS prototype study recorded faster first answers and more correct first answers under controlled conditions, with important limits on sample, setting, and prototype status."
   ],
   "bodySections": [
     {
-      "heading": "Summary",
-      "bodyMarkdown": "Creative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nImportant status information is buried when the information that would change what a user does next is visible but does not assert itself with the prominence its operational significance requires. The failure is about visual hierarchy, not information presence.\n\nIn complex operational systems, some states require immediate attention, some are secondary reference, and some are contextual background. When an interface presents these states at equal visual weight, the interface places equal demands on attention for unequal information. Under time pressure, physical constraint, movement, poor lighting, or divided attention, deliberate parsing is not reliably available."
+      "heading": "Definition of Buried Status Information",
+      "bodyMarkdown": "Creative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nImportant status information is buried when present, accessible status information is assigned insufficient visual prominence relative to its operational significance, so users can miss it at the moment it should guide action.\n\nThe information is present. The failure is that the visual hierarchy does not match the operational hierarchy. A value, status, alert, or condition may be technically visible, but it does not assert itself with the urgency required by the user's task, environment, or time pressure."
     },
     {
-      "heading": "Failure pattern: present information has insufficient prominence",
-      "bodyMarkdown": "Important status information is buried when an operator can technically see the value, alert, or state, but the interface does not make that information stand out from surrounding content. A calibration fault shown at the same visual weight as a secondary parameter can read as equal information to a technician scanning from two metres. An operational alert shown with the same treatment as a minor notification may register only when the user is already looking for it.\n\nThis pattern often appears as user error after deployment. Missed calibration states can lead to repeated measurements. Unnoticed alerts can escalate before they are addressed. Status conditions may be visible in retrospective review but not perceived at the operationally relevant moment. In those cases, the underlying failure is not necessarily user vigilance; it is the interface hierarchy that made unequal information compete equally for attention."
+      "heading": "Failure Pattern: Present Status Does Not Stand Out as Operationally Significant",
+      "bodyMarkdown": "Important status information is buried when the operator can technically read the status, value, alert, or condition, but the interface does not make it prominent enough to be noticed at the moment of use. A calibration fault can sit beside secondary parameters with the same visual weight. An operational alert can receive the same treatment as a minor notification. A retained target can keep the same marker treatment as an updating one.\n\nThis failure often looks like user error after the event. A status condition was visible in retrospect, but it was not perceived at the operationally relevant moment. A technician may repeat a measurement because the measurement state was not clear enough at working distance. An alert may escalate before it is addressed because it did not visually distinguish itself from lower-priority notifications.\n\nThe design issue is not user inattentiveness. The interface has placed equal attention demands on unequal information."
     },
     {
-      "heading": "Boundary with absent state information and unclear mode changes",
-      "bodyMarkdown": "Important status information being buried is different from a system state that users cannot see. When users cannot see what state the system is in, the relevant state information is absent or inaccessible, and users must reconstruct or infer it. In buried-status failures, the information is accessible at the surface, but it has insufficient visual weight for the conditions in which it must be read.\n\nImportant status information being buried is also different from unclear mode changes. Mode-change failures concern transitions: the interface fails to communicate when the system moves between modes. Buried-status failures concern continuous display: the interface presents a status accurately and continuously, but at a level of prominence that does not reliably draw attention when the status matters.\n\nThis boundary matters because the design responses differ. Absent state information must be made present. Present but buried status information must be made structurally assertive in the interface hierarchy. Unclear mode changes require communication at transition moments. Buried-status failures require a hierarchy that persists across routine viewing."
+      "heading": "Boundary With Absent State Visibility and Unclear Mode Changes",
+      "bodyMarkdown": "Important status information is buried is distinct from the failure in which users cannot see what state the system is in. In an absent state visibility failure, the state information is missing or not directly accessible, so users must reconstruct or infer what the system is doing. In buried-status failures, the user looking at the display can see the value or condition, but the display does not make it prominent enough for operational use.\n\nImportant status information is buried is also distinct from unclear mode changes. Mode-change failures concern transitions: the interface fails to communicate when the system moves between modes. Buried-status failures concern continuous display: the interface presents a status accurately and continuously, but at an insufficient level of visual prominence for reliable noticing under operational conditions.\n\nThe distinction matters because the design responses differ. Absent state information requires making information present. Unclear mode changes require making transitions legible. Buried status requires making present information structurally assertive."
     },
     {
-      "heading": "Causes: visual hierarchy diverges from operational hierarchy",
-      "bodyMarkdown": "Buried status information commonly begins with equal visual weight assigned to unequal operational significance. When a screen is designed to be complete, the natural design impulse is to present every relevant value clearly and consistently. Consistency can produce uniformity, and uniformity can remove hierarchy. The display may be complete, informative, and consistent while still failing to identify what matters most at the moment of use.\n\nCategory-based organisation can also bury important status information. Complex systems are often organised by category: engine parameters, alarm states, configuration values, or workflow modules. Category-based organisation groups information by what it is, not by how significant it is in the current operational context. The user must translate from category logic to significance logic while using the interface.\n\nStatic hierarchy creates a further failure when significance is dynamic. A temperature value may be secondary reference during normal operation and critical near a threshold. An alert may be informational in one context and action-demanding in another. If all alerts use the same visual treatment regardless of priority, the user cannot scan for the most urgent condition because the display does not indicate which condition is most urgent."
+      "heading": "Causes: Visual Hierarchy Diverges From Operational Hierarchy",
+      "bodyMarkdown": "Equal visual weight assigned to unequal significance is the most direct cause of buried status. Teams often design screens to be complete, consistent, and informative. Those goals can produce visual uniformity. Uniformity removes hierarchy, so the most operationally significant value on the screen becomes visually indistinguishable from the least significant value.\n\nCategory-based organisation is another cause. Complex systems are often organised by what values are: engine parameters, alarm states, configuration values, measurement values, or sensor states. Users are often trying to answer a different question: what needs attention now? A category-based display can require the user to translate from system structure to operational significance during every scan.\n\nStatic visual hierarchy also fails when significance changes with context. A temperature reading may be secondary during normal operation and critical near a threshold. A low-priority notification may be informational, while a condition affecting primary system function may require immediate response. If both use the same alert treatment, the display does not support rapid priority judgement."
     },
     {
-      "heading": "Beissbarth example: measurement state at working distance",
-      "bodyMarkdown": "In the Beissbarth automotive calibration example, Creative Navy addressed buried measurement-state information across three device classes: an embedded OEM display, a rugged tablet, and a large inspection line display. The calibration sequence required technicians to move around the vehicle, read the OEM display from two to three metres, work with gloves, and operate under variable lighting.\n\nThe previous Beissbarth interface presented measurement values, tolerances, and progress indicators at equal visual weight across the three device classes. That hierarchy was suited to seated, close-range evaluation, but it did not support real calibration conditions. From two to three metres, while moving, the technician had to determine whether a measurement was complete, whether a reading was within tolerance, and whether a step was safe to proceed from.\n\nCreative Navy's Sandbox Experiments phase documented the operating conditions at individual task-step level. A twelve-feature, four-module analysis recorded expected technician movement, typical lighting conditions, and acceptable time available for state confirmation for each feature. This Creative Navy-recorded analysis made the hierarchy requirement specific: at the steps where measurement state needed confirmation from distance, the visual hierarchy had to make that state distinguishable without closer approach.\n\nOption space mapping produced three structural variants for the OEM display. Those variants were evaluated under reproduced workshop lighting and viewing distances. Through tension-driven reasoning, the competitive vector prioritised unambiguous state communication over information density across all three device classes. Variants that retained equal visual weight across measurement states were replaced because they failed the hierarchy requirement under the relevant operating conditions.\n\nBeissbarth reported several outcomes after deployment. Calibration time reduced from 18 minutes to 12 minutes per vehicle, client-measured across 8 production deployment locations. Repeated measurements reduced directionally, client-measured, although the exact figure was not shared. Beissbarth now deploys the system without onboarding training, a client-reported operational change. Reduced measurement error risk is an inferred claim based on the design change and the mechanism it addressed, not a separately quantified post-deployment measurement in the available evidence."
+      "heading": "Beissbarth Automotive Calibration: Measurement State at Working Distance",
+      "bodyMarkdown": "In the Beissbarth automotive calibration engagement, calibration equipment was used across three device classes in manufacturer-authorised inspection centres: an embedded OEM display, a rugged tablet, and a large inspection line display. The calibration sequence was sensitive to timing. Technicians moved around the vehicle, read the OEM display from two to three metres, wore gloves that restricted fine touch interaction, and worked in variable lighting that reduced contrast.\n\nThe previous interface presented measurement values, tolerances, and progress indicators at equal visual weight across all three device classes. That hierarchy was designed for seated, close-range evaluation, not for workshop use. At two to three metres, while moving, the technician had to distinguish whether a measurement was complete, whether a reading was within tolerance, and whether the next step was safe to proceed from. The visually uniform field did not support that confirmation without deliberate, closer attention.\n\nCreative Navy-recorded work in the Sandbox Experiments phase documented the operational conditions at the level of individual task steps. A twelve-feature, four-module analysis recorded expected technician movement, typical lighting conditions, and acceptable time for state confirmation for each feature. Option space mapping produced three structural variants for the OEM display, evaluated under reproduced workshop lighting and viewing distances. Tension-driven reasoning led to a design position that prioritised unambiguous state communication over information density across all three device classes."
     },
     {
-      "heading": "Elsner Cala Touch KNX example: alert hierarchy in an embedded controller",
-      "bodyMarkdown": "In the Elsner Cala Touch KNX example, important status information risked being buried because alert conditions with different operational significance were presented without sufficient priority separation. The Cala Touch KNX is a wall-mounted smart home and building automation controller installed at 140cm and used approximately 25 times per day across residential settings, commercial offices, and industrial buildings.\n\nThe controller manages heating, cooling, lighting, blinds, and scenes. It receives status inputs from weather stations, CO2 sensors, humidity sensors, temperature probes, and the main heating unit. Alert conditions in that context vary in significance. A heating unit alert affects the primary function of the environmental control system and demands attention. An open window detection notification is informational and not operationally urgent in the same way.\n\nThe interface designed during the Elsner engagement introduced a dual-priority alert hierarchy. Heating unit alerts and conditions affecting primary system function were treated as primary signals in the visual hierarchy. Minor notifications, including open window detection and informational status changes, remained present and accessible but did not compete for immediate attention with conditions requiring action.\n\nThe sensor state design used the same hierarchy principle. Delayed sensor readings, contradictory values, and calibration faults were given named representations at appropriate levels of the visual hierarchy. These states were made present, legible, and labelled, but their prominence was calibrated to significance rather than assigned uniformly.\n\nA formal usability test with 12 subjects confirmed that navigation and temperature comprehension met the interface requirements under the conditions of use. Touch target sizing was grounded in published ergonomics research applied in formal testing for standing-height use. Alert hierarchy outcomes were confirmed in prototype testing with Elsner's engineers, but they were not independently quantified in post-deployment user measurement in the available evidence."
+      "heading": "Elsner Cala Touch KNX: Alert Hierarchy in an Embedded Controller",
+      "bodyMarkdown": "The Elsner Elektronik Cala Touch KNX is a wall-mounted smart home and building automation controller installed at 140cm and used approximately 25 times per day in residential settings, commercial offices, and industrial buildings. The device manages heating, cooling, lighting, blinds, and scenes, and receives status inputs from weather stations, CO2 sensors, humidity sensors, temperature probes, and the main heating unit.\n\nAlert conditions in the Cala Touch KNX context had different operational significance. A heating unit alert affected the primary function of the environmental control system and required attention. An open window detection notification was informational and less urgent. Presenting both at the same visual prominence made each alert require investigation before the user could know whether it required action.\n\nCreative Navy's design work introduced a dual-priority alert hierarchy. Heating unit alerts and conditions affecting primary system function were treated as primary signals in the visual hierarchy. Minor notifications, including open window detection and informational status changes, remained present and accessible but did not compete visually with conditions requiring immediate attention.\n\nThe sensor state design applied the same principle to delayed sensor readings, contradictory values, and calibration faults. These states were given named representations at appropriate hierarchy levels: present, legible, clearly labelled, and calibrated to significance rather than shown with uniform prominence."
     },
     {
-      "heading": "How Creative Navy's Critical Systems Design method addresses buried status information",
-      "bodyMarkdown": "Creative Navy's Critical Systems Design method addresses buried-status failures by establishing operational hierarchy before screen-level design decisions are made. Domain learning and microtask analysis identify which information must be noticed first under specific operating conditions, rather than treating visual hierarchy as a finishing layer applied to a complete screen.\n\nIn the Beissbarth engagement, the twelve-feature, four-module analysis translated a general need for clear measurement state into a specific hierarchy requirement: at a given step, in a given lighting condition, from a given distance, the technician had to confirm the current state within a fixed time budget. In the Elsner engagement, domain learning separated alert classes by operational significance: heating faults, window-detection alerts, informational status changes, delayed sensor readings, contradictory values, and calibration faults did not all warrant the same visual priority.\n\nCreative Navy's Critical Systems Design method then holds the hierarchy requirement through Iterative System Building. In Beissbarth, variants that preserved equal visual weight across measurement states were eliminated. In Elsner, the dual-priority alert hierarchy was designed from the start rather than added after the primary interface direction was established.\n\nThe design principle is that visual hierarchy is a structural property of the interface. It must reflect operational hierarchy: what the user needs to notice first, under the conditions of real use, with the attention and time actually available."
+      "heading": "Additional Evidence Across Maritime VTS, Industrial Automation, and Assemblio",
+      "bodyMarkdown": "A European vendor of maritime traffic monitoring, inland navigation, and communications software showed another form of buried status in Vessel Traffic Services. Time of last observation sat behind secondary inspection. In a degraded state, a retained target could keep the same visual treatment as an updating one, so the display did not reliably tell the operator whether a marker represented a current observation or a last known position. An equipment view with no state data could read as an equipment view with no faults.\n\nIn an audit for a European industrial automation vendor whose process control software coordinates machining cells, the product in development showed status inconsistency across panels of the same type. Detail cards ran 40–85% empty beside unpaginated lists of up to 48 items. Three screens showed entirely blank cards with no heading or empty-state text. A status indicator was present on some detail panels but absent from others of the same type. These are audit findings about that system, not deployment outcomes.\n\nAssemblio described a different but related visibility problem in Assemblio Composer and Assemblio Smart Viewer. Assemblio's account is client-stated, not observed. The export action was buried in a sub-menu, and the client's position was that it was very hard to find without already knowing where it was. Assemblio also described the Smart Viewer displaying the complete CAD hierarchy at all times when the worker needed the parts used in the current step."
     },
     {
-      "heading": "Evidence basis and limits",
-      "bodyMarkdown": "The evidence for this failure pattern combines conceptual analysis and two grounded examples. The Beissbarth example includes Creative Navy-recorded task-step analysis, evaluation under reproduced workshop lighting and viewing distances, and client-measured operational outcomes across 8 production deployment locations. The strongest Beissbarth quantified outcome is the reduction in calibration time from 18 minutes to 12 minutes per vehicle.\n\nThe Beissbarth evidence also includes a client-measured directional reduction in repeated measurements, but the exact figure was not shared. The claim that measurement error risk reduced is inferred from the design mechanism and the addressed failure mode. It should not be treated as an independently quantified error-rate result.\n\nThe Elsner example includes a formal usability test with 12 subjects confirming navigation and temperature comprehension. The alert hierarchy design was confirmed in prototype testing with Elsner's engineers, but the available evidence does not include independently quantified post-deployment user measurement for alert hierarchy outcomes."
+      "heading": "How Creative Navy's Critical Systems Design Method Addresses Buried Status",
+      "bodyMarkdown": "Creative Navy's Critical Systems Design method designs software whose interfaces, workflows, and operating logic carry real operational consequences, working through five phases — Sandbox Experiments, Concept Convergence, Iterative System Building, Organizational Integration, and Implementation Partnership — to take each system from initial exploration to independent operation by the client's own team.\n\nFor buried-status failures, Creative Navy's Critical Systems Design method establishes operational hierarchy before visual design decisions are treated as settled. Domain learning and microtask analysis identify which states users need to notice first in each operational context. The issue is not whether a status exists on the screen, but whether the status can be perceived under the specific distance, timing, lighting, movement, and attention conditions that define use.\n\nIn the Beissbarth engagement, Creative Navy's twelve-feature, four-module analysis translated a general requirement for clear measurement state into specific hierarchy requirements: at a particular task step, in a particular lighting condition, from a particular distance, within a particular interpretation time, the measurement state had to be distinguishable in a single glance.\n\nCreative Navy's Iterative System Building then holds hierarchy requirements as non-negotiable properties of each screen. Variants that preserve equal visual weight for operationally unequal states are eliminated when they fail the hierarchy requirement under the relevant conditions of use."
     }
   ],
   "evidenceSummary": {
     "strongClaims": [
-      "Important status information is buried when visible status information is assigned insufficient visual prominence relative to its operational significance.",
-      "Buried status information is distinct from absent state information and from unclear mode-change transitions.",
-      "Equal visual weight for unequal significance, category-based organisation, and static hierarchy in dynamic contexts are causes of buried status information.",
-      "In the Beissbarth example, calibration time reduced from 18 minutes to 12 minutes per vehicle across 8 production deployment locations.",
-      "In the Beissbarth example, repeated measurements reduced directionally, but the exact figure was not shared.",
-      "The Elsner Cala Touch KNX engagement introduced a dual-priority alert hierarchy separating primary system-function alerts from minor notifications.",
-      "A formal usability test with 12 subjects confirmed navigation and temperature comprehension for the Elsner interface, while alert hierarchy outcomes were not independently quantified after deployment."
+      "In the Beissbarth engagement, calibration time reduced from 18 minutes to 12 minutes per vehicle across 8 production deployment locations. This was client-measured operational data.",
+      "The maritime VTS prototype study recorded reductions in median time to first answer and increases in correct first answers under controlled conditions. Median time to first answer fell by 42.3% on vessel identification, 34.2% on alert prioritisation, and 32.2% on handover retrieval; correct first answers rose from 23 of 32 to 32 of 32; and correct recognition of historical replay rose from 5 of 8 to 8 of 8.",
+      "In the Beissbarth engagement, equal visual weight across measurement values, tolerances, and progress indicators made measurement state hard to confirm from two to three metres under workshop conditions. This is supported by case evidence including device classes, viewing distance, gloves, lighting, and technician movement."
     ],
     "weakerClaims": [
-      "Beissbarth now deploys the redesigned system without onboarding training.",
-      "The reduced measurement error risk in the Beissbarth example is inferred from the design change and the mechanism it addresses."
+      "Important status information is buried when information is present at the surface but assigned insufficient visual prominence relative to its operational significance. This is a conceptual definition rather than an independently measured outcome.",
+      "The failure is distinct from cases where users cannot see system state at all and from unclear mode-change failures. This distinction is conceptual and determines the appropriate design response.",
+      "The Elsner Cala Touch KNX engagement introduced a dual-priority alert hierarchy separating primary system-function alerts from informational notifications. Alert hierarchy outcomes were confirmed in prototype testing with Elsner's engineers, not independently quantified after deployment.",
+      "The industrial automation audit found status inconsistency, including a status indicator present on some detail panels and absent from others of the same type. These are Creative Navy-observed audit findings for a product in development, not outcome claims.",
+      "Assemblio's export and Smart Viewer hierarchy examples are client-stated accounts, not field-observed findings.",
+      "In the Beissbarth engagement, repeated measurements reduced directionally, client-measured; the exact figure was not shared. Reduced measurement error risk is inferred from the design change and mechanism addressed, not independently measured as a separate outcome."
     ],
     "limitations": [
-      "The failure pattern is defined for information that is visible but insufficiently prominent; it does not cover state information that is absent or inaccessible.",
-      "The Beissbarth repeated-measurement reduction is directional because the exact client-measured figure was not shared.",
-      "The Beissbarth measurement error risk claim is inferred from the design change and addressed mechanism, not independently quantified in the available evidence.",
-      "The Elsner alert hierarchy outcomes were confirmed in prototype testing with Elsner's engineers, not independently quantified in post-deployment user measurement.",
-      "The Elsner formal usability test confirmed navigation and temperature comprehension, not a quantified alert-response outcome."
+      "This page concerns prominence of present information, not the complete absence of state information.",
+      "Beissbarth repeated measurements reduced directionally, but the exact figure was not shared.",
+      "The reduced measurement error risk in the Beissbarth example is inferred from the design change and mechanism addressed, not independently measured as a separate outcome.",
+      "Elsner alert hierarchy outcomes were confirmed in prototype testing with Elsner's engineers and were not independently quantified in post-deployment user measurement.",
+      "The maritime VTS study used eight participants, sanitised training scenarios, and a design prototype rather than a production installation; it reports no significance test, confidence interval, or power calculation.",
+      "Industrial automation evidence is limited to audit findings about a product in development and is not an outcome claim.",
+      "Assemblio evidence is client-stated and not observed in shop-floor fieldwork."
     ]
   },
   "relatedPageSlugs": [
     "users-cannot-see-what-state-the-system-is-in",
     "mode-changes-are-unclear",
-    "transitions-are-hard-to-notice",
     "warnings-are-visible-but-their-meaning-is-unclear",
     "users-see-information-but-cannot-judge-what-matters",
     "data-is-available-but-hard-to-interpret",
-    "the-system-does-not-support-rapid-judgment",
-    "too-much-attention-is-required-for-routine-use",
+    "source-and-age-of-information-are-not-visible",
     "beissbarth",
+    "assemblio",
+    "maritime-vts",
     "critical-actions-appear-at-the-wrong-time"
   ],
   "internalLinks": [
     {
       "anchorText": "users cannot see what state the system is in",
       "targetSlug": "users-cannot-see-what-state-the-system-is-in",
-      "reason": "The source explicitly distinguishes buried status information from state information that is absent or inaccessible."
+      "reason": "The source explicitly distinguishes this failure from state information that is absent or not accessible."
     },
     {
-      "anchorText": "unclear mode changes",
+      "anchorText": "mode changes are unclear",
       "targetSlug": "mode-changes-are-unclear",
-      "reason": "The source explicitly distinguishes buried status information from failures that occur when system mode transitions are unclear."
-    },
-    {
-      "anchorText": "transitions are hard to notice",
-      "targetSlug": "transitions-are-hard-to-notice",
-      "reason": "The page discusses the boundary between continuous status hierarchy and transition-related noticing failures."
+      "reason": "The source explicitly distinguishes buried-status failures from unclear mode-change failures."
     },
     {
       "anchorText": "warnings are visible but their meaning is unclear",
       "targetSlug": "warnings-are-visible-but-their-meaning-is-unclear",
-      "reason": "The Elsner example concerns alert hierarchy and the difference between alerts that demand action and notifications that are informational."
+      "reason": "The page discusses alert prominence and priority, which is adjacent to warning interpretation failures."
     },
     {
       "anchorText": "users see information but cannot judge what matters",
       "targetSlug": "users-see-information-but-cannot-judge-what-matters",
-      "reason": "The page explains how visually equal information forces users to decide significance during use."
+      "reason": "The page focuses on visual hierarchy and operational significance, closely matching this adjacent failure theme."
     },
     {
       "anchorText": "data is available but hard to interpret",
       "targetSlug": "data-is-available-but-hard-to-interpret",
-      "reason": "The failure concerns available information that still imposes interpretation cost under operational conditions."
+      "reason": "Buried status often leaves data available while making its operational interpretation costly."
     },
     {
-      "anchorText": "rapid judgment",
-      "targetSlug": "the-system-does-not-support-rapid-judgment",
-      "reason": "The source describes situations where users must confirm state quickly under movement, distance, and time limits."
+      "anchorText": "source and age of information are not visible",
+      "targetSlug": "source-and-age-of-information-are-not-visible",
+      "reason": "The maritime VTS example concerns the freshness of observation data and whether a marker represents a current observation or last known position."
     },
     {
-      "anchorText": "too much attention is required for routine use",
-      "targetSlug": "too-much-attention-is-required-for-routine-use",
-      "reason": "The source explains that flat hierarchy imposes deliberate scanning and parsing costs on routine status checks."
-    },
-    {
-      "anchorText": "Beissbarth automotive calibration example",
+      "anchorText": "Beissbarth automotive calibration",
       "targetSlug": "beissbarth",
-      "reason": "The source names Beissbarth as a grounded example and the linking context provides an allowed Beissbarth page slug."
+      "reason": "The page uses the Beissbarth engagement as a grounded example and the matching case-study slug is allowed."
+    },
+    {
+      "anchorText": "Assemblio Composer and Assemblio Smart Viewer",
+      "targetSlug": "assemblio",
+      "reason": "The page includes Assemblio client-stated examples and the matching case-study slug is allowed."
+    },
+    {
+      "anchorText": "maritime VTS prototype study",
+      "targetSlug": "maritime-vts",
+      "reason": "The page includes maritime VTS evidence and the matching case-study slug is allowed."
     },
     {
       "anchorText": "Critical Actions Appear At The Wrong Time",
@@ -144,15 +145,15 @@
     "alert hierarchy",
     "status information",
     "cognitive load",
-    "complex software",
     "Critical Systems Design",
-    "Sandbox Experiments",
-    "Iterative System Building"
+    "microtask analysis",
+    "domain learning",
+    "buried status"
   ],
   "_meta": {
     "sourcePath": "sources/articles/Failures/failures--state-visibility--important-status-information-is-buried.md",
     "parentSlug": "state-visibility-failures",
     "childPageSlugs": [],
-    "generatedBy": "deterministic"
+    "generatedBy": "openai"
   }
 }

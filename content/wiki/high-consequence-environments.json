@@ -1,166 +1,226 @@
 {
   "slug": "high-consequence-environments",
-  "title": "High Consequence Environments",
+  "title": "High-Consequence Environments",
   "pageType": "context",
   "category": "contexts",
   "section": "Contexts",
-  "summary": "High-consequence environments require interfaces to perform under real operating conditions rather than clean test conditions. The documented evidence covers maritime HMI, cardiac support control, operating theatre devices, industrial safety simulation, automotive calibration, enforcement platforms, and industrial process control.",
+  "summary": "This page defines high-consequence environments as contexts where software interface behaviour affects costly operational outcomes, including safety-adjacent work, regulated devices, industrial downtime, enforcement integrity, deferred simulation errors, command uncertainty, and irreversible commitment. It summarises the design vocabulary, evidence basis, measured outcomes, and limits that apply to Creative Navy's work in these contexts.",
   "keyFacts": [
-    "Performance in reality is the Creative Navy principle that design must be evaluated where failure is costly, not only where clean results are easy to obtain.",
-    "Use-related risk and use-related hazard describe interface-induced harm in regulated domains and can also apply in non-regulated high-consequence contexts.",
-    "High-consequence design distinguishes operating conditions from test conditions, including vibration, glare, divided attention, time pressure, gloved hands, abnormal states, and degraded modes.",
+    "Performance in reality means evaluating design against the conditions where failure is costly, not against conditions that produce clean results.",
+    "Operating conditions in the source examples include vibration, glare, spray, rain, gloved interaction, night operations, sterile field constraints, time pressure, divided attention, variable workshop lighting, and limited connectivity.",
     "In the Torqeedo maritime HMI case, energy state identification was 50% faster with the new interface than with the legacy interface in a controlled environment experiment with 24 subjects.",
-    "In the Kardion MCS Controller case, the submitted design passed FDA evaluation with no design changes required.",
-    "In the deSoutter Medical / Zethon case, the work was IEC 62366-1 formative evaluation only; summative validation remained the manufacturer's responsibility.",
-    "In the Gexcon CFD simulation case, client-measured configuration errors decreased from 5–8 per simulation to 1–2 in real deployments.",
-    "In the Beissbarth automotive calibration case, client-measured calibration time decreased from 18 to 12 minutes per vehicle across 8 production deployment locations.",
-    "In the Gericke industrial HMI case, client-measured fault-diagnosis time was roughly two-thirds faster at each of three deployment-and-research sites within a confirmed single-variable window."
+    "In the Gexcon CFD simulation case, client-measured configuration errors fell from 5–8 to 1–2 per simulation in real deployments, and corrective load fell from 4–6 hours to approximately 20 minutes per error.",
+    "In the Gericke industrial HMI case, client-measured fault-diagnosis time was roughly two-thirds faster across three deployment-and-research sites within a confirmed single-variable window.",
+    "In the Kardion MCS Controller case, the submitted design passed FDA evaluation as submitted, with no design changes required.",
+    "In the deSoutter Medical / Zethon case, the work was an IEC 62366-1 formative evaluation; summative validation is the manufacturer's responsibility.",
+    "In the Beissbarth automotive calibration case, client-measured calibration time fell from 18 to 12 minutes per vehicle across eight production deployment locations.",
+    "Several examples are explicitly bounded: MDU alarms are comfort, cargo and crew-safety alarms; Schone, Raymarine, handheld C2, maritime VTS, KISPE, and Oceaneering do not support safety, certification, validation, or incident-prevention claims."
   ],
   "bodySections": [
     {
-      "heading": "High-consequence environments are defined by costly failure under real operating conditions",
-      "bodyMarkdown": "Creative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nHigh-consequence environments are operating contexts where interface performance must be assessed against the conditions where failure is costly. The relevant question is not whether a workflow performs under clean test conditions, but whether it performs under vibration, glare, divided attention, time pressure, gloved interaction, abnormal states, degraded modes, and fault states.\n\nPerformance in reality is the Creative Navy principle that design must be evaluated against the conditions where failure is costly, not only against the conditions that produce clean results. In high-consequence environments, operating conditions and test conditions are not interchangeable. The distinction defines the design problem.\n\nUse-related risk and use-related hazard are regulated-domain terms for interface-induced harm. The same design concern also applies in non-regulated high-consequence contexts where interface ambiguity can create downtime, scrap, invalid safety assessment, unnecessary maintenance, or loss of enforcement integrity."
+      "heading": "High-consequence environments are defined by performance in reality",
+      "bodyMarkdown": "Creative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nHigh-consequence environments are operating contexts where interface ambiguity, incomplete state visibility, delayed interpretation, or weak recovery behaviour can produce costly consequences. The consequence may be patient safety, downtime, scrap, lost availability, enforcement weakness, deferred safety-assessment uncertainty, command ambiguity, cargo or crew disruption, or an irreversible commitment made against insufficient evidence.\n\nThe relevant design principle is performance in reality. In Creative Navy's documentation, performance in reality means that design must be evaluated against the conditions where failure is costly, not only against conditions that produce clean test results."
     },
     {
-      "heading": "Operating conditions are design inputs, not edge cases",
-      "bodyMarkdown": "Creative Navy treats abnormal conditions, degraded modes, and fault states as explicit design targets in high-consequence environments. A non-happy path is not secondary when the cost of confusion appears during abnormal operation rather than during nominal workflow.\n\nThe documented operating conditions vary by domain. The Torqeedo maritime HMI operated on a 10-inch embedded display under vibration, hull slamming, spray, glare from cold water, rain, gloved interaction, night operations, and temperatures from −5°C to +35°C. The Kardion MCS Controller was used in clinical conditions where surgeons were 3 metres from the controller during procedures, nurses monitored multiple parameters close to the controller, and the operating theatre imposed time pressure and sterile field constraints.\n\nThe deSoutter Medical / Zethon work involved operating theatre conditions with gloved hands, brief glances, primary attention on the surgical field and patient, divided attention, and variable theatre lighting. The Beissbarth automotive calibration work involved technicians moving around a vehicle with tools in hand, reading an embedded display from 2–3 metres during movement, using a rugged tablet at different positions, and working under variable workshop lighting and reflective surfaces.\n\nThese conditions collapse the performance difference between good and poor interfaces. Under time pressure and divided attention, state visibility, layout stability, recognition over recall, alarm hierarchy, and error recovery become operational requirements rather than interface preferences."
+      "heading": "Operating conditions are not the same as test conditions",
+      "bodyMarkdown": "High-consequence interface design is shaped by the gap between operating conditions and test conditions. Operating conditions include vibration, glare, divided attention, time pressure, gloved hands, abnormal states, fault states, degraded modes, night operations, sterile field constraints, variable lighting, reflective surfaces, limited connectivity, and users moving through the physical environment while acting.\n\nIn high-consequence environments, abnormal conditions, degraded modes, and fault states are explicit design targets. They are not secondary edge cases. A non-happy path may be the path that determines whether an operator can recover from ambiguity, whether a process stops unnecessarily, whether a simulation remains valid, or whether a command status is represented accurately.\n\nState visibility is central. State visibility is the degree to which operators can understand what a system is doing without active interpretation. When state is not visible enough, users may still execute the correct task while acting on an incomplete mental model of system state."
     },
     {
-      "heading": "Interpretation failure is a dominant high-consequence failure mode in process control",
-      "bodyMarkdown": "The Gericke industrial HMI evidence identifies interpretation failure as a dominant source of expensive operator error in a high-consequence process environment. Interpretation failure occurs when operators execute the correct task with an incomplete mental model of system state.\n\nIn the Gericke Universal Controller work, the most expensive operator errors across three deployment-and-research sites were described as interpretation failures caused by insufficient system transparency. The documented issue was not mechanical failure, lack of training, or negligence. Operators acted under ambiguity, stopped equipment, or overrode equipment precautionarily rather than risk a process deviation.\n\nPrecautionary over-intervention is a specific high-consequence failure mode. The equipment may be healthy, but the interface does not make state legible enough for operators to act with confidence. The cost is borne as lost availability and unnecessary maintenance rather than as a single dramatic incident.\n\nCreative Navy's design response in the Gericke work centred on state visibility and alarm management. The interaction architecture used a live process mimic showing state directly on the diagram, graphical error visualisation for failed components, a root-cause alarm hierarchy that grouped secondary alarms beneath their originating event, and a three-tier progressive-complexity model so each role received the level of detail its task required."
+      "heading": "Use-related risk, residual risk, and error recovery",
+      "bodyMarkdown": "Use-related risk and use-related hazard are regulated-domain terms for interface-induced harm, and the same vocabulary is also useful in non-regulated high-consequence contexts. The goal is not zero risk. The design target is acceptable residual risk after mitigations have been applied.\n\nError recovery is part of the design problem because errors will occur in high-consequence environments. The interface's behaviour after an error influences whether the result is harm, downtime, scrap, lost availability, corrective load, or a deliberate subsequent check.\n\nAlarm hierarchy and alarm management are also part of the design target. Alerts must be organised by priority and probable root cause so that operators can attend to what matters under pressure, instead of working through a cascade of symptoms one by one."
     },
     {
-      "heading": "State visibility and alarm hierarchy reduce ambiguity under pressure",
-      "bodyMarkdown": "State visibility is the degree to which operators can understand what the system is doing without active interpretation. In high-consequence environments, state visibility is important because users often cannot stop their primary task to inspect an interface in detail.\n\nAlarm hierarchy and alarm management organise alerts by priority and probable root cause. The goal is for operators to attend to what matters most under pressure rather than handling a cascade of symptoms one by one. In the Gericke industrial HMI case, graphical error visualisation and root-cause alarm hierarchy replaced raw error codes and flat alarm lists.\n\nError recovery is also part of the design target. In high-consequence environments, errors will occur. The interface behaviour after an error determines whether the consequence becomes harm, downtime, scrap, repeated alarms, invalid simulation output, or unnecessary intervention.\n\nResidual risk remains after design mitigations are applied. The high-consequence design target is acceptable residual risk, not zero risk. The available evidence describes design mechanisms that reduce ambiguity, expose state, and make abnormal conditions more legible; it does not establish elimination of risk."
+      "heading": "Interpretation failure and precautionary over-intervention in industrial HMI",
+      "bodyMarkdown": "Interpretation failure is a high-consequence failure mode in which operators execute the correct task with an incomplete mental model of system state. In the Gericke industrial HMI case, the expensive operator errors identified across three deployment-and-research sites were not mechanical failures, lack of training, or negligence. They were interpretation failures caused by insufficient system transparency.\n\nThe redesigned Gericke Universal Controller HMI replaced the ageing Easydos Pro interface and unified previously fragmented control philosophies for dosing, feeding and conveying bulk solids and powders in pharmaceutical, food, and specialty-chemical production. The dosing algorithm was fixed, so the interaction layer was redesigned around an immovable engine.\n\nCreative Navy's design work used a live process mimic, graphical error visualisation, a root-cause alarm hierarchy, and a three-tier progressive-complexity model. Failed components were highlighted instead of represented only through raw error codes. Secondary alarms were grouped beneath the originating event, and probable cause was indicated rather than presented as a flat list.\n\nClient-measured outcomes were recorded across three sites within a confirmed single-variable window. Gericke confirmed no hardware, sensor, mechanical, training, recipe, or process changes over the measurement period, captured four months after go-live. Fault-diagnosis time was roughly two-thirds faster at every site: 24 to 8 minutes at a Swiss pharmaceutical site, 38 to 12 minutes at an Italian food site, and 68 to 20 minutes at a Swiss chemicals site. Operator-caused stoppages fell from 3 to 1, 7 to 3, and 15 to 6 per month. Repeat alarms fell from 42% to 18%, 58% to 28%, and 73% to 35%.\n\nThe Gericke evidence is calibrated. The outcomes were client-measured by Gericke, not Creative Navy-measured. The three sites are described by type and geography only. Per-plant error frequencies were client-reported from plant managers' own operational statistics, not telemetry. The OE01–OE20 error taxonomy was a Creative Navy analytical synthesis, not a field instrument."
     },
     {
-      "heading": "Torqeedo maritime HMI evidence shows measured performance under vessel operating conditions",
-      "bodyMarkdown": "The Torqeedo maritime HMI work involved a hybrid electric vessel control system with 27 screens and 4 operational modes, designed to scale from approximately 6m vessels to 55m commercial vessels. The evidence is strong in this context because it includes direct measurement and operationally immersive research.\n\nCreative Navy's research included 12 sea trials over 6 months with 15 professional captains, including night operations through early morning. The work identified an emotional dimension of control system interfaces: crews experienced relief when information remained stable while the vessel behaved unpredictably. The stability and predictability requirements were therefore treated as operational requirements grounded in observed crew behaviour, not as general user-experience preferences.\n\nThe central design problem was that propulsion sensors, batteries, and generators updated at different rates. Presenting them together risked a display that appeared unstable or contradictory. The documented resolution was a grid structure that synchronised competing cadences into a unified rhythm, so captains perceived one system rather than three separate update behaviours.\n\nThe Torqeedo outcomes include a directly measured 50% faster energy state identification result for the new interface compared with the legacy interface in a controlled environment experiment with 24 subjects. The case also includes field-measured glance reduction during manoeuvres: tasks that previously required multiple screen transitions became confirmable with a single glance, measured by eye tracking with 7 subjects during sea trials. All 15 professional captains rated the new interface as significantly better in client-reported structured feedback across all 12 sea trials.\n\nYamaha Motor Co. acquired Torqeedo following the engagement, and the CEO reported that the interface strengthened competitive position. The causal link between the interface and acquisition is inferred rather than documented, so the acquisition should be framed only as following a period in which the interface was reported to contribute to competitive position."
+      "heading": "Maritime control interfaces require stability under physical instability",
+      "bodyMarkdown": "The Torqeedo maritime HMI case illustrates high-consequence interface design under vibration, vessel movement, spray, glare from cold water, rain, gloved interaction, night operations, and temperatures from −5°C to +35°C. The hybrid electric vessel control system covered 27 screens and 4 operational modes, scaling from approximately 6 metre vessels to 55 metre commercial vessels.\n\nThe operational research was immersive by necessity: 12 sea trials over 6 months, 15 professional captains, and night operations through early morning. The work identified an emotional dimension of control system interfaces: crews experienced relief when information remained stable while the vessel behaved unpredictably. In this context, stability and predictability were operational requirements grounded in observed crew behaviour, not only user-experience preferences.\n\nThe central design problem was that propulsion sensors, batteries, and generators updated at different rates. Presenting those values together risked making the display appear unstable or contradictory. The design response was a grid structure that synchronised competing cadences into a unified rhythm, so captains perceived one system rather than three separate systems.\n\nA controlled environment experiment with 24 subjects found energy state identification 50% faster with the new interface than with the legacy interface. Eye tracking with 7 subjects during sea trials found that tasks previously requiring multiple screen transitions could be confirmed with a single glance during manoeuvres. All 15 professional captains rated the new interface as significantly better through structured feedback across the 12 sea trials.\n\nYamaha Motor Co. acquired Torqeedo following the engagement, and Torqeedo's CEO reported that the interface strengthened competitive position. The causal link between the interface and the acquisition is inferred, not documented, so the documented claim is limited to contribution to competitive position that preceded acquisition."
     },
     {
-      "heading": "Kardion MCS Controller evidence covers a regulated clinical interface and FDA evaluation",
-      "bodyMarkdown": "The Kardion MCS Controller work involved a cardiac support controller for patient safety during high-risk cardiac procedures and cardiogenic shock recovery. The clinical operating conditions included surgeons viewing the controller from 3 metres during procedures, nurses close to the controller while monitoring multiple parameters, operating theatre time pressure, and sterile field constraints.\n\nCreative Navy applied a layout stability standard above the regulatory minimum: no element shifted position across any view transition. The rationale was that surgeons in a high-consequence environment must be able to rely on spatial memory rather than active search.\n\nThe design exploration was broad because the constraint set was contradictory. Creative Navy-recorded exploration covered 34 directions for the standard view and 9 directions for the flow adjustment overlay.\n\nThe regulatory result is documented as FDA approval: the submitted design passed FDA evaluation with no design changes required. This is a verifiable regulatory result, not a measured performance outcome and not evidence of a specific FDA pathway beyond the wording stated here.\n\nOperator praise is weaker evidence. Multiple doctors described the controller as among the best-designed tools they had encountered, but this feedback is client-reported from two timepoints, during design sessions and post-deployment, and is not independently verified."
+      "heading": "Clinical and operating-theatre systems require recognition under divided attention",
+      "bodyMarkdown": "The Kardion MCS Controller case is a regulated medical-device example. The controller supports patient safety during high-risk cardiac procedures and cardiogenic shock recovery. The clinical operating conditions included surgeons at 3 metres from the controller during procedures, nurses close to the controller while monitoring multiple parameters, operating theatre time pressure, and sterile field constraints.\n\nCreative Navy's design standard for the Kardion controller was layout stability above the regulatory minimum: no element shifts position across any view transition. The purpose was to let surgeons rely on spatial memory rather than active search in a high-consequence environment. Creative Navy-recorded exploration included 34 directions for the standard view and 9 directions for the flow adjustment overlay, reflecting a genuinely contradictory constraint set.\n\nThe regulatory result was FDA approval. The submitted design passed FDA evaluation as submitted, with no design changes required. This is a verifiable regulatory outcome, not a measured clinical outcome and not proof of causality from the interface design alone.\n\nThe deSoutter Medical / Zethon case addressed an IEC 62366-1 formative evaluation for a powered ultrasonic bone cutter used in orthopaedic and trauma surgery. The operating conditions included gloved hands, brief glances, divided attention, primary attention on the surgical field and patient, and variable theatre lighting.\n\nThe design standard in the deSoutter Medical / Zethon case was recognition over recall. Device state had to be readable in a fraction of a second without active interpretation. Every critical state used redundant non-colour cues: spatial position, icon form, and colour. This was required because colour alone fails under variable theatre lighting.\n\nEight surgeons in structured review sessions reported that state verification was reduced to brief glance recognition and that parameter adjustments no longer interrupted surgical workflow. This evidence is surgeon-reported from design review sessions, not post-deployment evidence. The scope was formative evaluation only; summative validation is the manufacturer's responsibility."
     },
     {
-      "heading": "deSoutter Medical / Zethon evidence is IEC 62366-1 formative evaluation only",
-      "bodyMarkdown": "The deSoutter Medical / Zethon work involved a powered ultrasonic bone cutter for orthopaedic and trauma surgery and an IEC 62366-1 formative evaluation. The operating theatre conditions included gloved hands, brief glances, primary attention on the surgical field and patient, divided attention, and variable theatre lighting.\n\nThe design standard derived from those conditions was recognition over recall. Device state had to be readable in a fraction of a second without active interpretation. Critical states used redundant non-colour cues through spatial position, icon form, and colour, because colour alone can fail under variable theatre lighting.\n\nThe evidence is limited to structured review sessions. Eight surgeons reported that state verification was reduced to brief glance recognition and that parameter adjustments no longer interrupted surgical workflow. This is surgeon-reported evidence from design review sessions, not post-deployment evidence.\n\nCreative Navy's role in this case was formative evaluation only. Summative validation remained the manufacturer's responsibility."
+      "heading": "Deferred and invisible errors require prevention during setup",
+      "bodyMarkdown": "The Gexcon CFD simulation case shows a high-consequence context where the error is not immediately visible. A misconfigured gas dispersion or explosion-risk simulation can run, produce outputs that look valid, and feed a safety assessment used for facility operations, emergency planning zones, or regulatory compliance. The error may surface only when the assessment is challenged, re-run, or investigated after an incident.\n\nBefore redesign, configuration errors were 5–8 per simulation, with each error producing 4–6 hours of corrective load. The downstream safety assessment carried structural uncertainty after multiple error-correction cycles because it was unclear whether the simulation configuration had been valid.\n\nClient-measured outcomes from Gexcon's real deployments recorded configuration errors falling from 5–8 to 1–2 per simulation. Corrective load per error fell from 4–6 hours to approximately 20 minutes.\n\nThe design mechanism was specific: the interaction architecture made required values visible during scenario setup, surfaced warnings for incomplete or contradictory input, and specified how the system responded to configuration errors rather than presenting errors only after the fact."
     },
     {
-      "heading": "Gexcon CFD simulation evidence covers deferred consequences and invisible configuration errors",
-      "bodyMarkdown": "The Gexcon CFD simulation work is high-consequence because configuration errors may not be immediately visible. A misconfigured simulation can run, produce outputs that appear valid, and then become part of a safety assessment used for facility operations, emergency planning zones, or regulatory compliance.\n\nThe documented consequence is deferred. The error may surface only when the assessment is challenged, re-run, or investigated after an incident. Before redesign, configuration errors were recorded as 5–8 per simulation, with each error producing 4–6 hours of corrective load.\n\nClient-measured real-deployment outcomes show configuration errors decreasing from 5–8 to 1–2 per simulation. Corrective load per error decreased from 4–6 hours to approximately 20 minutes.\n\nThe mechanism was interaction architecture rather than after-the-fact error presentation. Required values were made visible during scenario setup, warnings surfaced incomplete or contradictory input, and the system specified how it responded to configuration errors."
+      "heading": "Precision-measurement and workshop systems depend on readable state during movement",
+      "bodyMarkdown": "The Beissbarth automotive calibration case involved a multi-device calibration system for authorised and independent workshops. The work had direct safety consequences for vehicle safety systems because calibration depends on measurement accuracy.\n\nOperating conditions included technicians moving around the vehicle with tools in hand, reading an embedded display from 2–3 metres during movement, using a rugged tablet from different positions, variable workshop lighting and reflective surfaces, and calibration sequences that did not pause for interface interpretation.\n\nThe design standard was unambiguous state communication across all three device types under movement and lighting conditions. Client-measured deployment evidence recorded calibration time falling from 18 to 12 minutes per vehicle across 8 production deployment locations. Beissbarth also reported that its commercial deployment model no longer included onboarding training. Repeated measurements were reduced according to the client, but the exact figure is not available."
     },
     {
-      "heading": "Beissbarth automotive calibration evidence covers precision measurement in field workshop conditions",
-      "bodyMarkdown": "The Beissbarth automotive calibration work involved a multi-device calibration system for authorised and independent workshops. Measurement accuracy had direct safety consequences for vehicle safety systems.\n\nThe operating conditions included technicians moving around the vehicle with tools in hand, reading an embedded display from 2–3 metres during movement, using a rugged tablet from different positions, working under variable workshop lighting and reflective surfaces, and performing calibration sequences that did not pause for interface interpretation.\n\nThe design standard was unambiguous state communication across all three device types under movement and lighting conditions. The client-measured outcome was calibration time decreasing from 18 to 12 minutes per vehicle across 8 production deployment locations.\n\nBeissbarth also reported that training was eliminated from the commercial deployment model. Repeated measurements were reduced according to client measurement, but the exact figure is not available."
+      "heading": "Network consequences depend on adoption density as well as local usability",
+      "bodyMarkdown": "The WCO/IPM platform is high-consequence in a network sense. The platform's enforcement value depends on adoption density across all stakeholder groups. If an officer does not use the system because it is too slow during inspections, that missing use removes a data point from the intelligence network. If a rights holder does not file because the interface is confusing, that missing filing removes an alert from officers.\n\nField conditions varied across ports, airports, and land borders. The platform also had to work with variable connectivity, mixed device fleets, and limited time per inspection.\n\nClient-reported results included a 78% reduction in officer training costs based on reduced training hours, 107 governments, more than 2000 officers in field operations, a 200% increase in rights holder sign-up, a 67% increase in rights holder platform use, and a 20% increase in officer use."
     },
     {
-      "heading": "WCO/IPM evidence treats adoption density as the high-consequence condition",
-      "bodyMarkdown": "The WCO/IPM platform is high-consequence in a network sense. The enforcement value of the platform depends on adoption density across all stakeholder groups.\n\nIf an officer does not use the system because it is too slow during inspections, that data point is absent from the intelligence network. If a rights holder does not file because the interface is confusing, that alert is absent from officers.\n\nThe field conditions varied across ports, airports, and land borders. The operating constraints included variable connectivity, mixed device fleets, and limited time per inspection.\n\nThe outcomes are client-reported. WCO/IPM reported a 78% reduction in officer training costs based on reduced training hours, 107 governments, more than 2000 officers in field operations, a 200% increase in rights holder sign-up, a 67% increase in rights holder platform use, and a 20% increase in officer use."
+      "heading": "Consequence classes extend beyond immediate harm",
+      "bodyMarkdown": "High-consequence environments do not always mean immediate danger or regulated safety-critical work. Several documented examples are important precisely because they decline that framing.\n\nThe MDU ship motion monitoring system is read by a master or watch officer on a bridge in weather that is itself the reason for reading it. The expected response to an alarm is a change of course or speed, deployment of stabiliser fins, or consultation with shore-based advice. Nothing is actuated by the interface. The manufacturer described the alarms as not critical in the sense of immediate danger, but as comfort, cargo and crew-safety alarms. The MDU example does not support a safety-critical credential, regulatory credential, or type-approval claim for the interface.\n\nThe Oceaneering hospital dispatch panel illustrates operational and infection-control-adjacent consequence, not patient harm. The relevant misuse patterns were operational: supervisor access granted too widely, night-shift staff switching every detent to send so no carts could arrive, waste dispatch surges blocking pharmacy deliveries, and operators choosing the shortest route rather than the correct one. This example supports an operational consequence class only, not a medical-device or healthcare-regulatory claim.\n\nKISPE Space adds a sequencing argument. In the documented engagement, the decision priorities were security and permissions, provider semantics, scope boundaries, the meaning of overflight, and the definition of an urgent alert. Those issues carried higher consequence than the choice of any particular screen layout and needed to be settled before visual refinement created false expectations. Creative Navy did not support the build and has not compared the built interface against the delivered designs.\n\nSchone Airspace Group adds consequence that is already in motion. The product was built and is in test, not deployed. The aircraft is airborne before the operator arrives at the screen, so the interface's job includes being honest about an instruction whose outcome is not yet known. The seven-state command transaction model separated ready to request, request sent, awaiting response, command acknowledged, state observed, request rejected, and response unknown. Acknowledgement did not mean the intended mode had been observed, rejection could not be inferred from silence, and silence produced an explicit unknown state rather than an automatic retry. No flight safety, airworthiness, certification, regulatory, accident-prevention, wrong-aircraft-command, or operator-error reduction claim is established.\n\nRaymarine's next-generation fixed-mount VHF work adds consequence that leaves the system entirely. A voice transmission occupies a shared channel used by every vessel in range, a digital call addresses a specific vessel by registered identity, and a distress alert reaches a coast station and starts a search. The interface is the place where an operator can see which of those events has happened, while the radio subsystems are the authority on whether any of them did. The design material enumerated 43 exception records across eight independent state axes: voice radio state, display context, calling transaction, AIS data quality, positioning, safety incident, interruption, and chartplotter link. This example does not support safety, rescue, distress-response, collision, type-approval, certification, or conformity claims.\n\nA handheld command-and-control engagement for uncrewed systems adds commitment as a consequence class. The scope was interface structure, task behaviour, information priority, and clarity of operator control. It did not include autonomy, control algorithms, autonomous safety behaviour, the datalink, the effector, targeting logic, certification, or weapons-review activity. The design argument was that a requested state must not visually replace a confirmed state before the vehicle reports the result. The deliverable also recorded that the hold duration and physical-control design required human-factors and system-safety testing that was not performed. No safety, airworthiness, certification, weapons-review, regulatory, accidental-activation, wrongful-engagement, civilian-harm, fratricide, or operator-error prevention claim is established.\n\nA maritime traffic monitoring engagement adds interpretation, not action, as the consequence class. The operator's primary act is to form an accurate belief about what is in the water from evidence of varying age and provenance. The object model separated vessel, track, and observation, with associations expressed as resolved, unresolved, changed, or unknown. Four safety-review candidates were interpretation failures: an obscured target and lost geographic context, an unresolved association read as verified, a historical picture not unmistakably historical, and an observation age that had to be looked for. These flags indicate a need for domain scrutiny by the client's product and operational safety authority. They are not hazard classifications, accident severity grades, evidence of incidents, or design-based hazard closeouts."
     },
     {
-      "heading": "Gericke industrial HMI evidence shows client-measured reductions in diagnosis time, stoppages, and repeat alarms",
-      "bodyMarkdown": "The Gericke Universal Controller HMI replaced the ageing Easydos Pro interface and unified Gericke's previously fragmented control philosophies for dosing, feeding, and conveying bulk solids and powders in pharmaceutical, food, and specialty-chemical production.\n\nThe operating conditions were time pressure, gloved interaction, widely varying operator expertise, rapid movement between monitoring and intervention, and a fixed 1024×600-floor industrial panel base. The dosing algorithm was an immovable constraint, so the interaction layer was redesigned around a fixed engine.\n\nGericke confirmed a single-variable measurement window: no hardware, sensor, mechanical, training, recipe, or process changes occurred over the measurement period. Measurements were captured 4 months after go-live across three sites described by type and geography only.\n\nClient-measured fault-diagnosis time was roughly two-thirds faster at every site: 24 to 8 minutes at a Swiss pharmaceutical site, 38 to 12 minutes at an Italian food site, and 68 to 20 minutes at a Swiss chemicals site. Operator-caused stoppages roughly halved, from 3 to 1, 7 to 3, and 15 to 6 per month respectively. Repeat alarms more than halved, from 42% to 18%, 58% to 28%, and 73% to 35%.\n\nThe Gericke work is not a regulated-device case. The GUC HMI is industrial process-control software, IEC 62366-1 does not apply, and no device-validation claim is made. In pharmaceutical deployments it operates inside GMP-governed environments where GAMP 5 is relevant and where status visibility, alarm handling, batch-execution workflows, and data integrity bear on compliance. FDA 21 CFR Part 11 was studied but was not a hard requirement. Creative Navy's responsibility was the HMI and UX; validation of the deployed system remained the manufacturer's and operator's responsibility.\n\nThe evidence should be calibrated. The outcomes were client-measured by Gericke, not Creative Navy-measured. The three sites are described but not named. Per-plant error frequencies are client-reported from plant managers' operational statistics rather than telemetry, and the OE01–OE20 error taxonomy is a Creative Navy analytical synthesis rather than a field instrument."
+      "heading": "Development examples and bounded non-safety examples",
+      "bodyMarkdown": "A European industrial automation vendor's process control software coordinates machining cells. The work is in development, so no outcome is claimed. The observed system made every manual intervention costly because entering the cell trips the safety fence and stops production. Every operator screen was bolted to its own machine, so learning a machine's state required walking to it; overhead stack lights existed because no screen was readable across the hall.\n\nThe Oceaneering, MDU, industrial process control, and other bounded examples must not be read as safety-critical or regulated-safety work. Their value in this context is to show different consequence shapes: operational blockage, comfort and cargo implications, production cost, and state visibility under physical constraints."
     },
     {
-      "heading": "Evidence boundaries for high-consequence environment claims",
-      "bodyMarkdown": "The high-consequence evidence base combines several evidence types. Torqeedo includes direct measurement in a controlled environment experiment, field-measured eye tracking during sea trials, and structured feedback from professional captains. Kardion includes a verifiable regulatory result and client-reported operator praise that is not independently verified. deSoutter Medical / Zethon is limited to IEC 62366-1 formative evaluation and surgeon-reported structured review sessions.\n\nGexcon and Beissbarth include client-measured deployment outcomes. WCO/IPM includes client-reported adoption and training-cost outcomes. Gericke includes client-measured outcomes within a confirmed single-variable window, with site anonymity and evidence limitations preserved.\n\nThese examples support the context definition: high-consequence design work is judged by performance under the real conditions where ambiguity, delay, misinterpretation, or non-adoption carry cost. The evidence does not support a universal guarantee that any interface intervention will produce the same results in all high-consequence settings."
+      "heading": "Regulatory and validation boundaries in high-consequence documentation",
+      "bodyMarkdown": "High-consequence is not the same as regulated, certified, validated, safety-critical, or safety-proven. Each engagement must retain its own regulatory and evidence boundary.\n\nKardion is a regulated device example where the design passed FDA evaluation as submitted, with no design changes required. That is a regulatory result, not a measured patient-safety result.\n\ndeSoutter Medical / Zethon was an IEC 62366-1 formative evaluation. Summative validation is the manufacturer's responsibility.\n\nGericke's GUC HMI is industrial process-control software, not a medical device. IEC 62366-1 does not apply and no device-validation claim is made. In pharmaceutical deployments it operates inside GMP-governed environments where GAMP 5 is relevant and where status visibility, alarm handling, batch-execution workflows, and data integrity bear on compliance. FDA 21 CFR Part 11 was studied but was not a hard requirement. Creative Navy's responsibility was the HMI and UX; validation of the deployed system is the manufacturer's and operator's responsibility.\n\nKISPE, Schone, Raymarine, handheld command-and-control, MDU, Oceaneering, and maritime traffic monitoring examples do not establish safety, certification, conformity, regulatory, validation, incident-prevention, rescue, collision, flight-safety, airworthiness, weapons-review, or clinical-risk outcomes beyond the limits stated for each case."
     }
   ],
   "evidenceSummary": {
     "strongClaims": [
-      "High-consequence environments require interface performance to be evaluated under operating conditions where failure is costly, rather than only under clean test conditions.",
+      "High-consequence environments are defined by evaluation against real operating conditions where failure is costly, rather than clean test conditions.",
       "In the Torqeedo maritime HMI case, energy state identification was 50% faster with the new interface than with the legacy interface in a controlled environment experiment with 24 subjects.",
-      "In the Torqeedo maritime HMI case, tasks requiring multiple screen transitions became confirmable with a single glance during manoeuvres, measured by eye tracking with 7 subjects during sea trials.",
-      "In the Kardion MCS Controller case, the submitted design passed FDA evaluation with no design changes required.",
-      "In the Gexcon CFD simulation case, client-measured configuration errors decreased from 5–8 per simulation to 1–2, and corrective load per error decreased from 4–6 hours to approximately 20 minutes.",
-      "In the Beissbarth automotive calibration case, client-measured calibration time decreased from 18 to 12 minutes per vehicle across 8 production deployment locations.",
-      "In the Gericke industrial HMI case, client-measured fault-diagnosis time was roughly two-thirds faster at three sites within a confirmed single-variable window.",
-      "In the Gericke industrial HMI case, the GUC HMI is industrial process-control software, IEC 62366-1 does not apply, and deployed-system validation remains the manufacturer's and operator's responsibility."
+      "In the Gericke industrial HMI case, client-measured fault-diagnosis time was roughly two-thirds faster across three sites within a confirmed single-variable window.",
+      "In the Gexcon CFD simulation case, client-measured configuration errors fell from 5–8 to 1–2 per simulation and corrective load fell from 4–6 hours to approximately 20 minutes per error.",
+      "In the Kardion MCS Controller case, the submitted design passed FDA evaluation as submitted with no design changes required.",
+      "The deSoutter Medical / Zethon work was an IEC 62366-1 formative evaluation, and summative validation is the manufacturer's responsibility.",
+      "In the Beissbarth automotive calibration case, client-measured calibration time fell from 18 to 12 minutes per vehicle across 8 production deployment locations.",
+      "Several examples on the page do not support safety-critical, regulatory, certification, validation, or incident-prevention claims beyond their stated boundaries."
     ],
     "weakerClaims": [
-      "In the deSoutter Medical / Zethon case, the evidence is limited to IEC 62366-1 formative evaluation and surgeon-reported structured review sessions, with summative validation remaining the manufacturer's responsibility.",
-      "In the WCO/IPM case, reported adoption and training outcomes included a 78% reduction in officer training costs, 107 governments, more than 2000 officers in field operations, a 200% rights holder sign-up increase, a 67% increase in rights holder platform use, and a 20% increase in officer use."
+      "Torqeedo's CEO reported that the interface strengthened competitive position before Yamaha Motor Co. acquired Torqeedo; acquisition causality is not documented.",
+      "Eight surgeons in structured deSoutter Medical / Zethon review sessions reported faster glance-based state verification and fewer workflow interruptions, but this is design-review feedback rather than post-deployment evidence.",
+      "Beissbarth reported that its commercial deployment model no longer included onboarding training, and reported reduced repeated measurements without an exact figure.",
+      "WCO/IPM adoption and training-cost figures are client-reported.",
+      "The MDU alarm framing is manufacturer-described and bounded to comfort, cargo and crew-safety implications, not an immediate-danger or type-approval claim."
     ],
     "limitations": [
-      "Residual risk remains after design mitigations; the documented target is acceptable residual risk, not zero risk.",
-      "The causal link between the Torqeedo interface and Yamaha Motor Co.'s acquisition of Torqeedo is inferred rather than documented.",
-      "Kardion operator praise is client-reported from two timepoints and is not independently verified.",
-      "The deSoutter Medical / Zethon evidence is formative evaluation only; summative validation is the manufacturer's responsibility.",
-      "The WCO/IPM adoption and training figures are client-reported.",
-      "The Gericke outcomes are client-measured by Gericke, not Creative Navy-measured, and the three sites are described but not named.",
-      "Gericke per-plant error frequencies are client-reported from plant managers' operational statistics rather than telemetry.",
-      "The OE01–OE20 error taxonomy in the Gericke work is a Creative Navy analytical synthesis, not a field instrument.",
-      "The evidence does not establish that similar outcomes will occur in every high-consequence environment."
+      "The page does not claim that high-consequence environments are always safety-critical, regulated, certified, or validated.",
+      "Torqeedo acquisition causality is not documented; the supported claim is limited to reported contribution to competitive position that preceded acquisition.",
+      "Gericke outcomes are client-measured by Gericke, not Creative Navy-measured; per-plant error frequencies are client-reported from plant managers' operational statistics, not telemetry.",
+      "deSoutter Medical / Zethon evidence is formative evaluation evidence and surgeon-reported design review feedback, not post-deployment evidence; summative validation is the manufacturer's responsibility.",
+      "Kardion's FDA result is a regulatory outcome, not a measured clinical-performance or patient-safety outcome.",
+      "Beissbarth training elimination is client-reported, and the exact figure for reduced repeated measurements is not available.",
+      "WCO/IPM adoption and training-cost figures are client-reported.",
+      "KISPE was built, but Creative Navy did not support the build and has not compared the built interface against the delivered designs; no validation claim is made.",
+      "Schone was built and is in test, not deployed; no flight safety, airworthiness, certification, regulatory, accident-prevention, wrong-aircraft-command, or operator-error reduction claim is made.",
+      "Raymarine supports no safety, rescue, distress-response, collision, type-approval, certification, or conformity outcome claim.",
+      "The handheld command-and-control engagement did not include autonomy, control algorithms, autonomous safety behaviour, the datalink, the effector, targeting logic, certification, or weapons-review activity.",
+      "The maritime traffic monitoring flags are review candidates only; they are not hazard classifications, accident severity grades, evidence of incidents, or hazard closeouts."
     ]
   },
   "relatedPageSlugs": [
+    "defence-and-space-systems",
     "medical-and-clinical-systems",
     "regulated-products",
+    "industrial-automation-and-machinery",
+    "marine-and-maritime-systems",
+    "supervising-autonomous-and-remotely-operated-systems",
     "embedded-devices-and-constrained-interfaces",
-    "expert-tools-and-internal-systems",
-    "government-and-public-sector",
     "multi-stakeholder-operational-environments",
+    "government-and-public-sector",
     "kardion",
-    "beissbarth"
+    "beissbarth",
+    "kispe-space",
+    "schone-mission-control",
+    "raymarine-vhf",
+    "mdu-ship-motion-monitoring",
+    "oceaneering-dispatch-panel",
+    "tactical-handheld-command-and-control",
+    "maritime-vts",
+    "industrial-process-control-platform"
   ],
   "internalLinks": [
     {
-      "anchorText": "Kardion case",
+      "anchorText": "Kardion MCS Controller",
       "targetSlug": "kardion",
-      "reason": "The page discusses Kardion as a high-consequence regulated clinical interface, and the allowed slug provides a direct case-study connection."
+      "reason": "The Kardion example is named in the clinical and operating-theatre systems section."
     },
     {
-      "anchorText": "Beissbarth automotive calibration case",
+      "anchorText": "Beissbarth automotive calibration",
       "targetSlug": "beissbarth",
-      "reason": "The page discusses Beissbarth as a high-consequence precision measurement example with client-measured calibration time reduction."
+      "reason": "The Beissbarth example is named in the precision-measurement and workshop systems section."
+    },
+    {
+      "anchorText": "KISPE Space",
+      "targetSlug": "kispe-space",
+      "reason": "The KISPE example is named in the consequence classes section."
+    },
+    {
+      "anchorText": "Schone Airspace Group",
+      "targetSlug": "schone-mission-control",
+      "reason": "The Schone example is named in the consequence classes section."
+    },
+    {
+      "anchorText": "Raymarine's next-generation fixed-mount VHF work",
+      "targetSlug": "raymarine-vhf",
+      "reason": "The Raymarine example is named in the consequence classes section."
+    },
+    {
+      "anchorText": "MDU ship motion monitoring system",
+      "targetSlug": "mdu-ship-motion-monitoring",
+      "reason": "The MDU example is named in the consequence classes section."
+    },
+    {
+      "anchorText": "Oceaneering hospital dispatch panel",
+      "targetSlug": "oceaneering-dispatch-panel",
+      "reason": "The Oceaneering example is named in the consequence classes section."
+    },
+    {
+      "anchorText": "handheld command-and-control engagement",
+      "targetSlug": "tactical-handheld-command-and-control",
+      "reason": "The handheld command-and-control example is named in the consequence classes section."
+    },
+    {
+      "anchorText": "maritime traffic monitoring engagement",
+      "targetSlug": "maritime-vts",
+      "reason": "The maritime traffic monitoring example is named in the consequence classes section."
+    },
+    {
+      "anchorText": "industrial process control software",
+      "targetSlug": "industrial-process-control-platform",
+      "reason": "The industrial process control example is named in the development examples section."
+    },
+    {
+      "anchorText": "defence and space systems",
+      "targetSlug": "defence-and-space-systems",
+      "reason": "High-consequence work overlaps with defence and space systems where consequence is treated as a cross-sector condition."
     },
     {
       "anchorText": "medical and clinical systems",
       "targetSlug": "medical-and-clinical-systems",
-      "reason": "The page includes Kardion and deSoutter Medical / Zethon examples involving clinical and operating theatre conditions."
+      "reason": "The page discusses clinical and operating-theatre examples."
     },
     {
       "anchorText": "regulated products",
       "targetSlug": "regulated-products",
-      "reason": "The page discusses FDA evaluation, IEC 62366-1 formative evaluation, and regulated-domain terminology such as use-related risk."
+      "reason": "The page discusses regulated-device and regulatory-boundary examples."
     },
     {
-      "anchorText": "embedded devices and constrained interfaces",
-      "targetSlug": "embedded-devices-and-constrained-interfaces",
-      "reason": "The page discusses embedded displays, constrained panels, gloved interaction, movement, lighting, and glance-based use."
+      "anchorText": "industrial automation and machinery",
+      "targetSlug": "industrial-automation-and-machinery",
+      "reason": "The page discusses industrial HMI, process control, and workshop calibration examples."
     },
     {
-      "anchorText": "expert tools and internal systems",
-      "targetSlug": "expert-tools-and-internal-systems",
-      "reason": "The page covers specialist operator tools including industrial HMI, CFD simulation, and calibration workflows."
+      "anchorText": "marine and maritime systems",
+      "targetSlug": "marine-and-maritime-systems",
+      "reason": "The page discusses maritime HMI, ship motion monitoring, VHF radio, and maritime traffic monitoring examples."
     },
     {
-      "anchorText": "government and public sector systems",
-      "targetSlug": "government-and-public-sector",
-      "reason": "The WCO/IPM example concerns enforcement operations involving governments and officers in field operations."
-    },
-    {
-      "anchorText": "multi-stakeholder operational environments",
-      "targetSlug": "multi-stakeholder-operational-environments",
-      "reason": "The WCO/IPM example depends on adoption density across stakeholder groups, and the page discusses network-level consequence."
+      "anchorText": "supervising autonomous and remotely operated systems",
+      "targetSlug": "supervising-autonomous-and-remotely-operated-systems",
+      "reason": "The page discusses command-state uncertainty and uncrewed-systems supervision as bounded examples."
     }
   ],
   "tags": [
     "high-consequence environments",
     "performance in reality",
     "use-related risk",
-    "operating conditions",
-    "abnormal conditions",
     "state visibility",
-    "alarm hierarchy",
+    "alarm management",
+    "interpretation failure",
     "error recovery",
+    "residual risk",
+    "operating conditions",
+    "regulated products",
     "industrial HMI",
-    "medical device UX"
+    "maritime HMI",
+    "clinical systems"
   ],
   "_meta": {
     "sourcePath": "sources/articles/Contexts/contexts--high-consequence-environments.md",
     "parentSlug": "contexts",
     "childPageSlugs": [],
-    "generatedBy": "deterministic"
+    "generatedBy": "openai"
   }
 }

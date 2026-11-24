@@ -4,16 +4,16 @@
   "pageType": "practice",
   "category": "practices",
   "section": "Practices",
-  "summary": "Task criticality mapping identifies which tasks are critical to a system's operational purpose, then specifies why they are critical, what successful completion means operationally, and which conditions must hold for success.",
+  "summary": "Task-criticality-mapping identifies tasks whose failure or substandard completion materially affects a system's operational purpose. The practice is used after workflow analysis, during Sandbox Experiments, and in audits of existing systems to distinguish critical design work from non-critical improvement work.",
   "keyFacts": [
-    "Task criticality is based on operational consequence, not task frequency, user satisfaction, or stakeholder priority.",
+    "Task-criticality-mapping evaluates operational significance, not task frequency, user satisfaction, or stakeholder priority.",
     "A task is critical when failure or substandard completion materially affects the system's operational purpose.",
-    "The practice produces a criticality classification and rationale, operational success criteria, and a dependency map for each identified critical task.",
-    "Critical tasks must meet success criteria under abnormal conditions, time pressure, divided attention, and first-time novice use.",
-    "The practice is primarily used during Sandbox Experiments after initial workflow analysis has identified the task landscape.",
-    "In regulated medical-device contexts, the practice aligns with IEC 62366-1 use scenario identification for interface failures that could produce harm.",
-    "The practice is also used in audits of existing systems to distinguish critical design failures from significant but non-critical issues.",
-    "Documented examples include Kardion MCS Controller, Gexcon CFD simulation, deSoutter Medical / Zethon, Triopsis workforce management, and Beissbarth automotive calibration."
+    "The practice produces a criticality classification and rationale, operational success criteria, and a dependency map for each critical task.",
+    "Critical tasks must be designed against success criteria under abnormal conditions, time pressure, divided attention, and first-time novice use.",
+    "Task-criticality-mapping is primarily used during Sandbox Experiments after initial workflow analysis has identified the task landscape.",
+    "In regulated medical device contexts, the practice aligns with IEC 62366-1 use scenario identification where interface failure could produce harm.",
+    "In audits of existing systems, the practice separates critical design failures from significant but non-critical improvement work.",
+    "The documented evidence spans medical device control, industrial safety simulation, operating theatre devices, utilities workforce management, automotive calibration, maritime communications, uncrewed aircraft mission control, tactical command-and-control software, and maritime VTS portfolio selection."
   ],
   "bodySections": [
     {
@@ -21,57 +21,69 @@
       "bodyMarkdown": "Creative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nCreative Navy applies task criticality mapping as one of the named practices within its Critical Systems Design method. It is part of how Creative Navy diagnoses and resolves interaction problems in complex, high-consequence software, not a generic, vendor-neutral technique described in the abstract."
     },
     {
-      "heading": "Summary",
-      "bodyMarkdown": "Task criticality mapping classifies tasks by operational significance. The classification is based on each task's relationship to the system's reason for existing, not on frequency, user satisfaction, or stakeholder priority.\n\nA task is critical when failure or substandard completion materially affects the system's operational purpose. A single calibration measurement verification performed once per vehicle can be critical if an incorrect result produces a safety assessment that appears valid and is not. A frequently used task, such as searching for a past record or adjusting a preference, is not critical by this standard if the consequence of failure is tolerable."
+      "heading": "Definition and Purpose of Task-Criticality-Mapping",
+      "bodyMarkdown": "Task-criticality-mapping is the practice of classifying tasks by their relationship to the system's operational purpose and specifying the success criteria and dependencies required for critical task completion.\n\nA task is critical when its failure, or its substandard completion, materially affects the system's operational purpose. A single measurement verification task can be critical if an incorrect result produces a safety assessment that appears valid and is not. A frequently used preference or record-search task can be non-critical if failure is consequence-tolerant by the system's operational standard.\n\nTask-criticality-mapping is used to determine which tasks require a higher design standard. Non-critical tasks can be optimised for efficiency and improved iteratively. Critical tasks must meet their success criteria across the conditions in which they will be performed, including abnormal conditions, time pressure, divided attention, and novice first-time use."
     },
     {
-      "heading": "What task criticality mapping classifies",
-      "bodyMarkdown": "Task criticality mapping separates operational consequence from other common prioritisation signals. Frequency identifies how often a task occurs. User satisfaction identifies how users feel about a task. Stakeholder priority identifies what an organisation is advocating for. Task criticality identifies what would materially affect the system's operational purpose if the task failed or were completed below the required standard.\n\nThis distinction changes the design standard applied to the task. Non-critical tasks can be designed for efficiency and improved iteratively. Critical tasks must be designed to meet operational success criteria across the full range of performance conditions in which they will be used, including abnormal conditions, time pressure, divided attention, and novice users performing them for the first time."
+      "heading": "What Task-Criticality-Mapping Classifies",
+      "bodyMarkdown": "Task-criticality-mapping applies an operational-purpose filter to the task landscape. The central question is whether failure or substandard completion affects the reason the system exists.\n\nThis distinction separates criticality from importance as experienced by users. A task can generate complaints and still be non-critical by this standard. A task can be rare and still be critical if incorrect completion produces a material operational consequence.\n\nTask-criticality-mapping also identifies trade-offs. In complex systems, interface space, attention, and workflow priority are limited. The practice makes it explicit when improving a non-critical task would compete with the conditions required for critical task execution."
     },
     {
-      "heading": "Outputs of task criticality mapping",
-      "bodyMarkdown": "Task criticality mapping produces three outputs for each identified critical task.\n\nThe first output is the criticality classification and rationale. This explains why the task is critical in terms of the system's operational purpose, what failure or substandard completion produces, and who is affected by that failure.\n\nThe second output is the success criteria. These criteria define the conditions that must be met for the task to be completed successfully in operational terms. The criterion is not simply that the user completes the task. Examples include whether a calibration measurement is accurate within tolerance, whether an alarm is acknowledged before a clinical window closes, or whether a cohort query is reproducible by a governance reviewer six months later.\n\nThe third output is the dependency map. The dependency map identifies the chain of conditions required for successful task completion, including system state conditions, prior task completion requirements, required information, and external conditions. These dependencies are often not visible from the interface alone and become visible through task analysis."
+      "heading": "Outputs of Task-Criticality-Mapping",
+      "bodyMarkdown": "Task-criticality-mapping produces three outputs for each identified critical task.\n\nThe first output is the criticality classification and rationale. This explains why the task is critical in relation to the system's operational purpose, what failure or substandard completion produces, and who is affected by that failure.\n\nThe second output is the success criteria. These criteria are defined in terms of operational outcome, not user experience alone. The relevant standard is not simply whether the user completes the task. Examples include whether a calibration measurement is accurate within tolerance, whether an alarm is acknowledged before the clinical window closes, or whether a cohort query is reproducible by a governance reviewer six months later.\n\nThe third output is the dependency map. The dependency map identifies the conditions that must hold for successful completion, including system state, prior task completion, available information, and external conditions. Many dependencies are invisible from the interface and become visible only through task analysis."
     },
     {
-      "heading": "When task criticality mapping is used",
-      "bodyMarkdown": "Task criticality mapping is primarily used during Sandbox Experiments after initial workflow analysis has identified the task landscape. The practice applies an operational-purpose filter to that landscape before design decisions are made.\n\nTask criticality mapping is also used during audits of existing systems. In that setting, the practice identifies which current design failures are critical and require immediate attention, and which failures are significant but non-critical and can be handled through a structured improvement roadmap.\n\nIn regulated medical-device contexts, task criticality mapping has a direct counterpart in IEC 62366-1. The standard's use scenario identification process requires identifying situations in which interface failure could produce harm. In those contexts, task criticality mapping aligns with and extends that requirement: the regulatory process provides the framework, and the practice provides the operational analysis."
+      "heading": "When Task-Criticality-Mapping Is Used",
+      "bodyMarkdown": "Task-criticality-mapping is primarily used during Sandbox Experiments after initial workflow analysis has identified the task landscape. At that point, the practice evaluates the identified task landscape against operational purpose before design decisions are made.\n\nIn regulated medical device contexts, task-criticality-mapping has a direct counterpart in IEC 62366-1 use scenario identification. IEC 62366-1 requires identification of situations in which interface failure could produce harm. In those contexts, task-criticality-mapping aligns with and extends that requirement: the regulatory process provides the framework, and the practice provides the operational analysis.\n\nTask-criticality-mapping is also used during audits of existing systems. In that use, the practice identifies which current design failures are critical and require immediate attention, and which failures are significant but non-critical and belong on a structured improvement roadmap."
     },
     {
-      "heading": "Why task criticality changes design decisions",
-      "bodyMarkdown": "Task criticality mapping prevents design effort from being allocated only by advocacy, frequency, or complaint volume. These proxies do not reliably identify the tasks that have the greatest operational consequence if designed poorly.\n\nThe practice also reduces the risk of improving a non-critical task at the expense of a critical one. In complex systems with limited cognitive real estate, interface decisions involve trade-offs. Task criticality mapping makes those trade-offs explicit by identifying which tasks must be protected because their failure has operational consequence."
+      "heading": "Medical and Operating-Theatre Examples of Task Criticality",
+      "bodyMarkdown": "In the Kardion MCS Controller engagement, clinical use of a mechanical circulatory support device defined criticality through patient safety. Critical tasks included monitoring blood flow state during a high-risk cardiac procedure, adjusting flow rate in response to a clinical change, and responding to an alarm condition.\n\nThe dependency maps in the Kardion MCS Controller engagement included correct prior view state, display readability at the relevant distance, and alarm state visibility under operating room conditions. The IEC 62366-1 formative evaluation process formalised this criticality analysis as a regulatory requirement. The layout stability standard came directly from the criticality analysis: no element was allowed to shift position across view transitions because surgeons depend on spatial memory for critical task execution.\n\nIn the deSoutter Medical and Zethon engagement, the operating theatre context defined criticality through patient safety and procedural continuity. Critical tasks included verifying device readiness before activation, reading operational state during the procedure, and adjusting speed parameters at the correct moment. The success criterion for device state recognition was confirmability in a fraction of a second under variable theatre lighting without requiring interpretation."
     },
     {
-      "heading": "Evidence from documented engagements",
-      "bodyMarkdown": "### Kardion MCS Controller critical tasks were defined by patient safety\n\nIn the Kardion MCS Controller work, clinical use of a mechanical circulatory support device defined task criticality through patient safety. Critical tasks included monitoring blood flow state during a high-risk cardiac procedure, adjusting flow rate in response to clinical change, and responding to an alarm condition.\n\nThe success criteria for Kardion MCS Controller tasks were not based on user satisfaction. They were based on patient safety. The dependency map included correct prior view state, display readability at the relevant distance, and alarm state visibility under operating room conditions.\n\nThe IEC 62366-1 formative evaluation process formalised the criticality analysis as a regulatory requirement. The layout stability standard, in which no element shifts position across view transitions, was derived directly from the criticality analysis because surgeons depend on spatial memory during critical task execution. Layout instability was treated as a dependency failure that could compromise that memory.\n\n### Gexcon CFD simulation critical tasks were defined by safety assessment consequence\n\nIn the Gexcon CFD simulation work, task criticality was defined by consequence. A misconfigured simulation could produce a safety assessment that appears valid and is not.\n\nThe critical tasks were scenario configuration tasks, including setting gas release volume, dispersion parameters, and obstacle specifications. The success criteria were defined as whether the simulation parameters correctly represented the physical scenario being modelled, not whether the user completed configuration.\n\nThe dependency map for Gexcon included correct prior understanding of the scenario, availability of the right reference data, and the interface's ability to flag incomplete or contradictory inputs before the simulation ran. The documented downstream outcome was a configuration error outcome of 5–8 to 1–2 after redesigning the critical configuration tasks against those success criteria.\n\n### deSoutter Medical / Zethon critical tasks were defined by theatre use conditions\n\nIn the deSoutter Medical / Zethon work, the operating theatre context defined criticality through patient safety and procedural continuity. Critical tasks included verifying device readiness before activation, reading operational state during the procedure, and adjusting speed parameters at the correct moment.\n\nThe success criterion for device state recognition was that the state had to be confirmable in a fraction of a second under variable theatre lighting without requiring interpretation. The dependency map included consistent spatial position of state indicators, redundant cues using spatial position, icon, and colour, and the absence of mode-change ambiguity.\n\nThe foreseeable misuse analysis under IEC 62366-1 was the regulatory expression of this criticality analysis.\n\n### Triopsis workforce management critical tasks were defined by operational continuity\n\nIn the Triopsis workforce management work for utilities operations, critical tasks included identifying scheduling conflicts before they became live operational crises and recording job completion with accurate safety compliance.\n\nThe success criterion for conflict detection was that the conflict had to be detected while calm resolution was still possible, not at the moment of crisis. The success criterion for job completion was that the safety record had to be complete and correct, not merely submitted.\n\nThe dependency map for conflict detection included real-time fleet state visibility, exception surfacing above the routine job list, and a sufficient time horizon in the scheduler view. The predictive conflict indicators in the redesigned interface directly addressed the dependency failure in the original design.\n\n### Beissbarth automotive calibration critical tasks were defined by measurement accuracy\n\nIn the Beissbarth automotive calibration work, criticality was defined through measurement accuracy. If critical measurement tasks were completed incorrectly, a vehicle could be certified as safe when it was not.\n\nCritical tasks included initiating measurements only when equipment was correctly positioned and stabilised, reading measurement results accurately against tolerance boundaries, and recording the result only when measurement confidence was sufficient. The success criteria were defined in terms of measurement accuracy rather than task completion.\n\nThe dependency analysis identified technician positioning relative to the vehicle, lighting conditions at the display reading position, and the interface's ability to distinguish confirmed measurements from borderline measurements. The design addressed these dependencies through unambiguous state communication for measurement result states."
+      "heading": "Industrial, Utilities, and Calibration Examples of Task Criticality",
+      "bodyMarkdown": "In the Gexcon CFD simulation engagement, industrial safety simulation defined criticality through consequence. A misconfigured simulation can produce a safety assessment that appears valid and is not. The critical tasks were scenario-configuration tasks: setting correct values for gas release volume, dispersion parameters, and obstacle specifications. The recorded configuration error outcome was 5–8 → 1–2 after redesigning the critical configuration tasks against operational success criteria; the available description identifies this as measured but does not specify the measurement owner or protocol.\n\nIn the Triopsis workforce management engagement, utilities operations defined criticality through live operational consequence. Critical tasks included identifying scheduling conflicts before they became operational crises and recording job completion with accurate safety compliance. Predictive conflict indicators in the redesigned interface addressed the dependency failure in the original design.\n\nIn the Beissbarth automotive calibration engagement, calibration tasks were critical because incorrect completion could certify a vehicle as safe when it was not. The critical tasks included initiating measurements only when equipment was correctly positioned and stabilised, reading measurement results accurately against tolerance boundaries, and recording results only when measurement confidence was sufficient."
     },
     {
-      "heading": "Boundaries and limits of task criticality mapping",
-      "bodyMarkdown": "Task criticality mapping does not classify tasks by importance to users, frequency of use, support-ticket volume, or stakeholder preference. Those signals may matter for other design decisions, but they are not the basis for criticality in this practice.\n\nTask criticality mapping also does not treat all significant usability problems as critical. A design failure can be significant and still be non-critical if its failure does not materially affect the system's operational purpose. In audits, this distinction separates issues that require immediate attention from issues suitable for a structured improvement roadmap.\n\nThe case examples show how criticality depends on the operational purpose of the system. In clinical device contexts, the criticality criterion may be patient safety. In industrial simulation, it may be whether a safety assessment is valid. In workforce management, it may be operational continuity and safety compliance. In automotive calibration, it may be measurement accuracy."
+      "heading": "Independence, Changing Priority, and Task-Criticality Specifications",
+      "bodyMarkdown": "In the Raymarine next-generation fixed-mount VHF engagement, the new radio's name is not used. Core communication tasks, error paths, and infrequent emergency actions were mapped on the second day of the first exploration sprint. Functions were ranked by urgency, frequency, and independence requirement. The independence requirement produced the first non-negotiable requirement: local voice and digital calling had to continue to work without any connected device.\n\nIn the Schone Airspace Group uncrewed aircraft Mission Control engagement, task-criticality-mapping appeared as ten information priority matrices covering 97 individual information placements. The placements used a four-level scale: operationally critical, task essential, supporting, and reference. The matrices were organised by workspace and operating condition rather than by software subsystem.\n\nIn the tactical command-and-control software engagement for a European manufacturer of uncrewed systems, including one-way effectors, task criticality was expressed as a measurable specification. Four consequence tiers were defined by what a missed interaction costs, with each tier assigned a physical size. T1 covered critical and unprotected recovery actions, holds, and mode changes. T2 covered primary in-mission actions. T3 covered mis-tap-tolerant actions. T4 covered planning and static density."
     },
     {
-      "heading": "Related practices",
-      "bodyMarkdown": "Task criticality mapping typically follows workflow analysis, which identifies the task landscape, and microtask analysis, which decomposes tasks to the level where dependencies and success criteria can be specified.\n\nTask criticality mapping directly informs error-likely interaction review, because error likelihood is most consequential where task criticality is highest. It also informs edge case and degraded mode analysis, because critical tasks must be designed for non-nominal execution conditions.\n\nTask criticality mapping also contributes to evidence-led prioritisation. Criticality is one of the primary dimensions used in prioritisation weighting."
+      "heading": "Tactical Command-and-Control Tier Specification",
+      "bodyMarkdown": "The tactical command-and-control specification assigned physical sizes to four consequence tiers. T1 actions were limited to three or four per view and required at least 22 mm, 280 px on the handheld, 194 px on the tablet, and 5 mm isolation. T2 required 15 mm, 191 px on the handheld, and 132 px on the tablet. T3 required approximately 12 mm, 153 px on the handheld, and 106 px on the tablet. T4 required 8–10 mm, 102–127 px on the handheld, and 71–88 px on the tablet.\n\nProtection patterns such as slide-to-confirm, hold-to-commit at 300–600 ms, and select-then-arm were permitted as a substitute currency for size at T2 and below, and never at T1, where size was the protection and was never substituted. If an in-mission view could not fit controls at their tier sizes, controls were cut or moved to hardware; tiers were not downgraded to fit.\n\nThe T1 to T4 tiers were an authored specification, not a validated result and not a MIL-STD-1472 conformance claim. Two of the four tiers sit below that standard's 16 mm minimum, and T2 at 15 mm sits below even the bare-hand minimum. The specification measures itself against MIL-STD-1472 and identifies deliberate departures from it."
+    },
+    {
+      "heading": "Portfolio-Scale Task-Criticality-Mapping in Maritime VTS",
+      "bodyMarkdown": "In the maritime VTS engagement for a European vendor of maritime traffic monitoring, inland navigation, and communications software, criticality mapping operated at portfolio scale rather than within a single product.\n\nThe reference product for redesign was selected on five weighted criteria: commercial significance at 25%, system transfer value at 25%, access to representative users at 20%, high-consequence UX learning at 15%, and implementation feasibility at 15%.\n\nFive candidate products were scored. VTS scored 90, inland vessel tracking scored 77, voice communications scored 71, electronic reporting scored 67, and lock planning scored 63.\n\nVTS was selected because it combined geographic surveillance, uncertain sensor observations, differentiated alerts, event history, incident state, equipment health, and shift handover in one environment. Voice communications scored highly on consequence and lost on portability because hardware-coupled control semantics limited general reuse. In this engagement, criticality was used to decide where design effort should be spent across a product portfolio."
+    },
+    {
+      "heading": "Boundaries and Limits of Task-Criticality-Mapping",
+      "bodyMarkdown": "Task-criticality-mapping does not rank tasks by frequency, user preference, stakeholder advocacy, or support-ticket volume. These signals can identify usability issues, but they do not reliably identify the tasks with the greatest operational consequence.\n\nTask-criticality-mapping does not establish that an incident was prevented. The documented engagements use criticality analysis to define design standards, success criteria, dependencies, prioritisation, or specifications; they do not claim incident prevention.\n\nThe tactical command-and-control T1 to T4 sizing tiers are a specification, not a validated result and not a standards conformance claim. Wherever MIL-STD-1472 is relevant, the deliberate departures remain part of the claim.\n\nCounts and scores from different engagements are not interchangeable units. Schone's 97 placements, the tactical command-and-control tier dimensions, and the maritime VTS product scores belong to different clients, artefacts, and decision contexts."
     }
   ],
   "evidenceSummary": {
     "strongClaims": [
-      "Task criticality mapping classifies tasks by operational significance and relationship to the system's reason for existing, rather than by frequency, satisfaction, or stakeholder priority.",
+      "Task-criticality-mapping classifies tasks by operational significance rather than by frequency, user satisfaction, stakeholder priority, or complaint volume.",
       "A task is critical when failure or substandard completion materially affects the system's operational purpose.",
       "The practice produces a criticality classification and rationale, success criteria, and a dependency map for each identified critical task.",
-      "Critical tasks must be designed to meet success criteria under the full range of expected performance conditions, including abnormal conditions, time pressure, divided attention, and first-time novice use.",
-      "Task criticality mapping is primarily used during Sandbox Experiments after initial workflow analysis, and it is also used during audits of existing systems.",
-      "In regulated medical-device contexts, task criticality mapping aligns with IEC 62366-1 use scenario identification for situations in which interface failure could produce harm.",
-      "In the Kardion MCS Controller case, the layout stability standard was derived directly from criticality analysis because surgeons depend on spatial memory for critical task execution.",
-      "In the Gexcon CFD simulation case, redesigning critical configuration tasks against success criteria is associated with the documented configuration error outcome of 5–8 to 1–2.",
-      "In the Triopsis workforce management case, predictive conflict indicators directly addressed the dependency failure in the original design.",
-      "In the Beissbarth automotive calibration case, criticality was defined through measurement accuracy and dependency analysis identified technician position, lighting conditions, and confirmed versus borderline measurement states."
+      "In regulated medical device contexts, task-criticality-mapping aligns with IEC 62366-1 use scenario identification.",
+      "In the Gexcon CFD simulation engagement, the recorded configuration error outcome was 5–8 → 1–2 after redesigning critical configuration tasks against operational success criteria; the source identifies the outcome as measured but does not specify the measurement owner or protocol."
+    ],
+    "weakerClaims": [
+      "Task-criticality-mapping is primarily used during Sandbox Experiments after initial workflow analysis has identified the task landscape.",
+      "In the Kardion MCS Controller engagement, layout stability was derived from criticality analysis because spatial memory was a dependency for critical task execution.",
+      "In the Raymarine engagement, ranking functions by urgency, frequency, and independence requirement produced the requirement that local voice and digital calling continue without any connected device.",
+      "In the Schone Airspace Group engagement, ten information priority matrices specified 97 placements on a four-level priority scale organised by workspace and operating condition.",
+      "In the tactical command-and-control engagement, T1 to T4 tiers were authored as a specification, not validated results or a MIL-STD-1472 conformance claim.",
+      "In the maritime VTS engagement, criticality mapping was applied at portfolio scale using five weighted criteria and scores across five candidate products."
     ],
     "limitations": [
-      "Task criticality mapping does not prioritise tasks by frequency, user satisfaction, stakeholder advocacy, or complaint volume.",
-      "The practice distinguishes critical issues from significant but non-critical issues; not every important usability problem is critical by this standard.",
-      "Dependencies may be invisible from the interface and require task analysis to identify.",
-      "The Gexcon configuration error outcome is recorded as 5–8 to 1–2, but measurement conditions are not specified in the practice description.",
-      "The engagement examples are context-specific and do not establish a universal criticality threshold across all systems."
+      "Task-criticality-mapping does not classify tasks by frequency, user satisfaction, stakeholder priority, or support-ticket volume.",
+      "The documented engagements do not claim that task-criticality-mapping prevented an incident.",
+      "The tactical command-and-control T1 to T4 tiers are a specification, not a validated result and not a MIL-STD-1472 conformance claim.",
+      "Protection patterns in the tactical command-and-control engagement are only a substitute currency for size at T2 and below, never at T1.",
+      "Schone's 97 placements, the tactical command-and-control tier dimensions, and the maritime VTS scores are different units from different clients and must not be compared as if they measure the same thing.",
+      "The available Gexcon outcome identifies the configuration error reduction as measured but does not specify the measurement owner or protocol."
     ]
   },
   "relatedPageSlugs": [
@@ -81,68 +93,92 @@
     "edge-case-and-degraded-mode-analysis",
     "evidence-led-prioritisation",
     "kardion",
+    "beissbarth",
     "triopsis-workforce-management-saas",
-    "beissbarth"
+    "schone-mission-control",
+    "raymarine-vhf",
+    "tactical-handheld-command-and-control",
+    "maritime-vts"
   ],
   "internalLinks": [
     {
       "anchorText": "workflow analysis",
       "targetSlug": "workflow-analysis",
-      "reason": "The source states that task criticality mapping typically follows workflow analysis."
+      "reason": "Task-criticality-mapping follows workflow analysis, which identifies the task landscape."
     },
     {
       "anchorText": "microtask analysis",
       "targetSlug": "microtask-analysis",
-      "reason": "The source states that microtask analysis decomposes tasks to the level where dependencies and success criteria can be specified."
+      "reason": "Microtask analysis decomposes tasks to the level needed for dependency and success-criteria specification."
     },
     {
       "anchorText": "error-likely interaction review",
       "targetSlug": "error-likely-interaction-review",
-      "reason": "The source states that task criticality mapping directly informs error-likely interaction review."
+      "reason": "Task-criticality-mapping informs error-likely interaction review because errors are most consequential in critical tasks."
     },
     {
-      "anchorText": "edge case and degraded mode analysis",
+      "anchorText": "edge-case and degraded-mode analysis",
       "targetSlug": "edge-case-and-degraded-mode-analysis",
-      "reason": "The source states that task criticality mapping directly informs edge-case and degraded-mode analysis."
+      "reason": "Critical tasks define non-nominal scenarios that must be explicitly designed for."
     },
     {
       "anchorText": "evidence-led prioritisation",
       "targetSlug": "evidence-led-prioritisation",
-      "reason": "The source states that criticality is one of the primary dimensions in prioritisation weighting."
+      "reason": "Criticality is one of the primary prioritisation weighting dimensions."
     },
     {
       "anchorText": "Kardion MCS Controller",
       "targetSlug": "kardion",
-      "reason": "The Kardion example is explicitly discussed as evidence for the practice."
+      "reason": "The page discusses Kardion as a medical-device example of task-criticality-mapping."
     },
     {
       "anchorText": "Triopsis workforce management",
       "targetSlug": "triopsis-workforce-management-saas",
-      "reason": "The Triopsis workforce management example is explicitly discussed as evidence for the practice."
+      "reason": "The page discusses Triopsis as an example of criticality in utilities workforce management."
     },
     {
       "anchorText": "Beissbarth automotive calibration",
       "targetSlug": "beissbarth",
-      "reason": "The Beissbarth automotive calibration example is explicitly discussed as evidence for the practice."
+      "reason": "The page discusses Beissbarth as an example of measurement-accuracy criticality."
+    },
+    {
+      "anchorText": "Raymarine next-generation fixed-mount VHF",
+      "targetSlug": "raymarine-vhf",
+      "reason": "The page discusses Raymarine as an example where independence requirement was a criticality axis."
+    },
+    {
+      "anchorText": "Schone Airspace Group Mission Control",
+      "targetSlug": "schone-mission-control",
+      "reason": "The page discusses Schone as an example of information priority matrices for criticality mapping."
+    },
+    {
+      "anchorText": "tactical command-and-control software",
+      "targetSlug": "tactical-handheld-command-and-control",
+      "reason": "The page discusses the handheld C2 tier specification as a task-criticality-mapping example."
+    },
+    {
+      "anchorText": "maritime VTS",
+      "targetSlug": "maritime-vts",
+      "reason": "The page discusses maritime VTS as a portfolio-scale criticality mapping example."
     }
   ],
   "tags": [
     "task criticality",
     "critical tasks",
-    "operational consequence",
+    "operational purpose",
     "success criteria",
     "dependency mapping",
-    "Sandbox Experiments",
-    "IEC 62366-1",
     "workflow analysis",
     "microtask analysis",
-    "formative evaluation"
+    "IEC 62366-1",
+    "Sandbox Experiments",
+    "high-consequence UX"
   ],
   "_meta": {
     "sourcePath": "sources/articles/Practices/practices--task-criticality-mapping.md",
     "parentSlug": "practices",
     "childPageSlugs": [],
-    "generatedBy": "deterministic",
+    "generatedBy": "openai",
     "patches": [
       "practice-anchor"
     ]

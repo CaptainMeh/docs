@@ -4,16 +4,18 @@
   "pageType": "practice",
   "category": "practices",
   "section": "Practices",
-  "summary": "Cognitive load analysis is a diagnostic practice for separating irreducible task complexity from cognitive demand introduced by an interface. It produces specific findings about where extraneous load accumulates and how that load affects different roles and operating conditions.",
+  "summary": "Cognitive load analysis maps where interface structure, hidden state, recall dependency, attentional competition, mental model mismatch, role differences, and peak operating pressure create avoidable cognitive demand. The practice produces specific diagnoses that can inform interface architecture, workflow design, formative evaluation, and error-likelihood review.",
   "keyFacts": [
-    "Cognitive load analysis separates intrinsic load, extraneous load, and germane load in professional software contexts.",
-    "Intrinsic load is the mental effort required by the underlying task and is not the reduction target.",
-    "Extraneous load is the mental effort added by the interface and is the main target of the practice.",
+    "Cognitive load is separated into intrinsic load, extraneous load, and germane load in professional software contexts.",
+    "Intrinsic load is the irreducible mental effort required by the underlying work and is not the target of reduction unless capability is reduced.",
+    "Extraneous load is the mental effort added by the interface and is the main target of cognitive load analysis.",
     "Germane load is the effort required to build understanding and competence, especially during onboarding and skill development.",
-    "The practice examines working-memory demands, recognition-versus-recall dependency, attentional competition, cognitive mode mismatch, role-differentiated load profiles, and peak-load conditions.",
+    "The analysis examines working memory demand, recognition versus recall dependency, attentional competition, cognitive mode mismatch, role-differentiated load profiles, and peak-load conditions.",
     "Cognitive load analysis is used during Sandbox Experiments, complex product audits, and IEC 62366-1 formative evaluation in regulated contexts.",
-    "In the Polymatica OLAP analytics engagement, independent task completion increased from 2% to 56%, measured via product analytics, after a redesign that removed the cognitive starting cost of OLAP vocabulary and structure.",
-    "In the WCO/IPM customs intelligence engagement, a 78% reduction in officer training costs was client-reported and described as partly a cognitive load outcome."
+    "In the Polymatica OLAP analytics engagement, independent task completion moved from 2% to 56%, measured via product analytics, after the redesign eliminated a cognitive starting cost caused by OLAP vocabulary and structure.",
+    "In the WCO/IPM customs intelligence engagement, a 78% reduction in officer training costs was client-reported and partly attributed to recognition-based cognitive scaffolding.",
+    "In the tactical handheld command-and-control engagement, cognitive load was one of four standing assessment criteria applied across fourteen one-week sprints, with explicit scope boundaries and no field evidence.",
+    "In the AIT heat pump controller engagement, load-reduction decisions were design reasoning only; no user testing or comprehension result is established."
   ],
   "bodySections": [
     {
@@ -21,93 +23,50 @@
       "bodyMarkdown": "Creative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nCreative Navy applies cognitive load analysis as one of the named practices within its Critical Systems Design method. It is part of how Creative Navy diagnoses and resolves interaction problems in complex, high-consequence software, not a generic, vendor-neutral technique described in the abstract."
     },
     {
-      "heading": "Summary",
-      "bodyMarkdown": "Cognitive load analysis is a diagnostic practice for identifying where a software interface adds mental effort beyond the work itself. The practice distinguishes intrinsic load, extraneous load, and germane load so that design work targets the load that the interface creates rather than the complexity that belongs to the domain.\n\nIntrinsic load is the mental effort required to perform the underlying task regardless of interface. It cannot be reduced without reducing capability, and it is not the target of cognitive load analysis.\n\nExtraneous load is the mental effort required to navigate the system, interpret outputs, and manage states beyond what the task itself requires. Cognitive load analysis targets this load because it is created by the interface and can be reduced through design.\n\nGermane load is the effort required to build understanding and competence. It is relevant during onboarding and skill development and is expected to reduce as users become fluent."
+      "heading": "Cognitive Load Analysis Separates Task Difficulty From Interface-Imposed Load",
+      "bodyMarkdown": "Cognitive load analysis is the practice of identifying where a software interface imposes extraneous cognitive load by requiring unnecessary working memory, recall, active monitoring, or translation between the user's domain model and the system's structure.\n\nCognitive load analysis distinguishes the mental effort required by the work itself from the mental effort added by the interface. In professional software contexts, cognitive load has three components: intrinsic load, extraneous load, and germane load.\n\nIntrinsic load is the demand created by the underlying task. It cannot be reduced without reducing capability, and it should not be treated as the design target. Extraneous load is the demand added by the interface: navigating the system, interpreting outputs, managing states, and translating between system structure and work structure. Germane load is the effort required to build understanding and competence during onboarding and skill development, and it is expected to reduce as users become fluent.\n\nCognitive load analysis targets extraneous load. The practice maps where avoidable demand accumulates: hidden information that users must remember, choices that require recall instead of recognition, monitoring demands that compete with the user's primary focus, and system structures that force users to translate between their domain model and the interface model.\n\nThe output is a specific diagnosis rather than a general statement that a task is difficult. A cognitive load diagnosis identifies the mechanism of difficulty, such as a step that requires users to hold multiple prior states in working memory when none of those states is visible at the moment of use."
     },
     {
-      "heading": "What cognitive load analysis does",
-      "bodyMarkdown": "Cognitive load analysis maps where extraneous load accumulates in a software interface. It identifies interface structures that require users to hold more in working memory than the task needs, decision points that require active interpretation rather than recognition, and attentional demands that compete with the user's primary focus.\n\nThe practice produces a specific diagnosis rather than a general observation of difficulty. A cognitive load analysis finding is not simply that users find a step hard. A typical finding identifies the mechanism of difficulty, such as a step requiring users to hold three prior states in working memory simultaneously when none of those states is visible in the interface at the moment they are needed.\n\nCognitive load analysis separates interface-created cognitive effort from the irreducible cognitive demands of the domain. This distinction matters in expert systems because some complexity belongs to the work, while other complexity is introduced by how the system represents the work."
+      "heading": "Cognitive Load Analysis Examines Working Memory, Recognition, Attention, Mental Models, Roles, and Peak Pressure",
+      "bodyMarkdown": "Cognitive load analysis examines working memory demands per task. The analysis identifies where the interface relies on user memory for information that should be visible, easier to retrieve, or surfaced at the point of use.\n\nCognitive load analysis examines recognition versus recall dependency. Recognition means identifying the correct action when the interface presents it. Recall means retrieving the action without prompting. Interfaces that depend on recall impose extraneous load at every instance, and that load compounds in high-consequence or time-pressured environments.\n\nCognitive load analysis examines attentional competition. Some system states can be maintained through ambient awareness, where the user keeps a background picture of the situation with minimal effort. Other designs require active monitoring, where the user must stop and look. The analysis identifies where monitoring demands compete with the user's primary task.\n\nCognitive load analysis examines cognitive mode mismatch. A mismatch occurs when the interface's structural assumptions differ from how users actually think about their work. This creates extraneous load because users must translate between domain thinking and imposed system structure at each interaction.\n\nCognitive load analysis examines role-differentiated load profiles in multi-role systems. The same interface can impose different cognitive demands on schedulers, field technicians, clinical reviewers, reception staff, clinical staff, inspection officers, or operators. A single average profile across all users can obscure the differences that matter for design.\n\nCognitive load analysis examines peak-load conditions. The analysis specifically looks at operational pressure points, such as a scheduling crisis, an alarm under time pressure, or calibration under heavy workshop load. Extraneous load that appears manageable at average throughput can become a failure condition at peak load."
     },
     {
-      "heading": "Working-memory demands in cognitive load analysis",
-      "bodyMarkdown": "Cognitive load analysis examines which tasks require users to hold information in working memory that the interface should be providing. The analysis identifies where information is invisible, buried, or not surfaced at the moment when the user needs it.\n\nWorking-memory dependency becomes extraneous load when the interface requires users to remember previous states, prior choices, configuration details, or contextual conditions that could be persistently visible. In complex professional systems, this dependency can accumulate across multi-step tasks and make otherwise valid workflows harder to execute reliably."
+      "heading": "Cognitive Load Analysis Is Used in Sandbox Experiments, Product Audits, and IEC 62366-1 Formative Evaluation",
+      "bodyMarkdown": "Cognitive load analysis is used during Sandbox Experiments, typically drawing on the cognitive load dimensions from microtask analysis and extending them with role-specific analysis and peak-condition assessment.\n\nCognitive load analysis is used during complex product audits when a standard heuristic evaluation identifies a system as complex or difficult. The practice supplies the mechanism behind that observation by identifying where the interface imposes avoidable load.\n\nCognitive load analysis is also used as part of IEC 62366-1 formative evaluation in regulated contexts. In that context, the practice addresses complexity-induced errors: errors that occur because the interface demands more from working memory than operating conditions support, rather than because users are careless. Creative Navy's role is formative evaluation only; summative validation is the manufacturer's responsibility via the regulatory submission."
     },
     {
-      "heading": "Recognition-versus-recall dependency in cognitive load analysis",
-      "bodyMarkdown": "Cognitive load analysis examines whether actions require users to recall what to do or recognise the correct action from the interface. Recognition means identifying the right option when it is presented. Recall means retrieving the action without prompting.\n\nInterfaces that depend on recall impose extraneous load each time the user acts. In high-consequence and time-pressured environments, that load can compound across a working shift because the user must repeatedly remember criteria, procedures, or matching logic that the interface could surface in context."
+      "heading": "Cognitive Load Analysis Produces Mechanism-Level Design Requirements",
+      "bodyMarkdown": "Cognitive load analysis produces design requirements that target a specific mechanism of extraneous load. The practice can identify that state should remain persistently visible, that a workflow should surface context at the point of action, that a system should use recognition rather than recall, that a role needs a separate interface structure, or that peak-load scenarios require predictive indicators rather than reactive exception handling.\n\nCognitive load analysis also helps distinguish designable complexity from irreducible domain complexity. In scientific, clinical, operational, analytical, inspection, or control contexts, the aim is not to simplify the underlying work beyond recognition. The aim is to remove the interface's unnecessary cognitive demands so users can spend capacity on the work that actually requires expertise."
     },
     {
-      "heading": "Attentional competition in cognitive load analysis",
-      "bodyMarkdown": "Cognitive load analysis examines where an interface demands active monitoring when ambient awareness would be sufficient. Ambient awareness maintains a background picture of system state with minimal cognitive effort. Active monitoring requires directed attention because the user must stop and look.\n\nAttentional competition becomes a cognitive load problem when monitoring demands compete with the user's primary task focus. The analysis identifies where the interface asks users to watch the system actively instead of making relevant state visible in a lower-effort form."
-    },
-    {
-      "heading": "Cognitive mode mismatch in cognitive load analysis",
-      "bodyMarkdown": "Cognitive load analysis examines whether the interface's structural assumptions match how users think about their work. A cognitive mode mismatch occurs when the mental model required to use the interface diverges from the mental model users bring from the domain.\n\nThis mismatch is a primary source of extraneous load. Users must translate between their domain thinking and the interface's imposed structure at every interaction. The analysis treats that translation cost as interface-created load when it serves the system's internal structure rather than the user's task."
-    },
-    {
-      "heading": "Role-differentiated load profiles in cognitive load analysis",
-      "bodyMarkdown": "Cognitive load analysis assesses different roles separately in multi-role systems. The same interface can create different cognitive load profiles for different users because each role has different attention patterns, environmental constraints, and task structures.\n\nA scheduler managing live exceptions, a field technician reading instructions under sunlight, and a clinical reviewer checking compliance conditions do not carry the same cognitive load from the same system. A single averaged analysis across all users can make these profiles incoherent, so role-specific assessment is part of the practice."
-    },
-    {
-      "heading": "Peak-load conditions in cognitive load analysis",
-      "bodyMarkdown": "Cognitive load analysis examines the conditions of highest operational pressure. Examples include a scheduling crisis, an alarm under time pressure, or a calibration under heavy workshop load.\n\nPeak-load conditions are important because extraneous load that is manageable at average throughput can become a failure point under pressure. Cognitive load analysis evaluates whether the interface still supports working memory, recognition, and attention when operational demand is highest."
-    },
-    {
-      "heading": "When cognitive load analysis is used",
-      "bodyMarkdown": "Cognitive load analysis is used during Sandbox Experiments, typically drawing on cognitive load dimensions from microtask analysis and extending them with role-specific analysis and peak-condition assessment.\n\nCognitive load analysis is also used during complex product audits. In that context, it provides the mechanistic explanation for what a standard heuristic evaluation may identify more generally as complex or difficult.\n\nIn regulated contexts, cognitive load analysis is used as part of IEC 62366-1 formative evaluation. In that use, the practice addresses the use-related hazard of complexity-induced errors: errors that occur not because users are careless, but because the interface demands more from working memory than the operating conditions support."
-    },
-    {
-      "heading": "Outputs of cognitive load analysis",
-      "bodyMarkdown": "Cognitive load analysis produces a diagnosis of where extraneous load arises and why. The output can identify hidden state dependencies, recall-based decisions, unnecessary active monitoring, mental-model mismatch, role-specific load conflicts, and peak-condition overload.\n\nThe practice can also produce design requirements or standards. In documented engagements, cognitive load analysis produced requirements for persistent state display, distinct interfaces for different roles, domain-vocabulary restructuring, predictive conflict indicators, and recognition-over-recall interaction standards."
-    },
-    {
-      "heading": "Gexcon CFD simulation evidence for working-memory load",
-      "bodyMarkdown": "In the Gexcon CFD simulation engagement, cognitive load analysis examined multi-step simulation tasks by separating active scientific reasoning, simulation configuration state management, and memory of previous steps. The analysis distinguished intrinsic scientific complexity from extraneous interface-created load.\n\nThe finding was that a substantial portion of the 4-day-to-first-simulation timeline was attributable to working-memory demands. Engineers needed to hold and cross-reference configuration states that were visible only at the step where they were set, not at the step where they were needed.\n\nThe redesign made configuration state persistently visible. The case evidence describes this as reducing extraneous load without changing the scientific complexity of the simulation work."
-    },
-    {
-      "heading": "IDEXX Animana evidence for role-differentiated cognitive load",
-      "bodyMarkdown": "In the IDEXX Animana veterinary practice management engagement, cognitive load analysis operated at the role level. Reception staff and clinical staff carried different cognitive loads from the same system.\n\nReception staff maintained ambient awareness across calls, arrivals, and administrative requests while handling brief transactional interactions. Their load profile was characterised by attentional breadth and context switching.\n\nClinical staff maintained deep sequential focus on a single case for extended periods. Their load profile was characterised by depth and continuity.\n\nThe finding was that a unified interface imposed both cognitive profiles on both roles. Clinical staff were interrupted by attentional demands structured for reception, while reception staff were presented with depth and detail appropriate for clinical focus but requiring attention they were not allocating. The architectural recommendation for distinct role interfaces emerged from this cognitive load analysis."
-    },
-    {
-      "heading": "Polymatica OLAP analytics evidence for mental-model mismatch",
-      "bodyMarkdown": "In the Polymatica OLAP analytics engagement, cognitive load analysis identified mental-model mismatch as the primary source of extraneous load. The interface was structured around OLAP concepts, including the cube metaphor, dimensions and facts, and schema relationships.\n\nThose concepts were legible to data engineers who built the system, but they imposed substantial working-memory demand on analysts who used it. Before an analytical task could begin, users had to maintain a technical mental model that was not their natural domain vocabulary.\n\nThe analysis classified this as extraneous load because the mental model served the interface's internal structure rather than the analytical task. The redesign replaced OLAP vocabulary with domain vocabulary and replaced the cube entry with a dataset-oriented lobby rather than relying on training to build the technical mental model.\n\nThe documented outcome was an increase from 2% to 56% independent task completion, measured via product analytics. The engagement evidence attributes that outcome to eliminating the cognitive starting cost created by the prior mental-model requirement."
-    },
-    {
-      "heading": "Triopsis workforce management evidence for peak-load analysis",
-      "bodyMarkdown": "In the Triopsis workforce management engagement, cognitive load analysis drew on per-task cognitive load assessments from microtask analysis and extended them into peak-condition evaluation.\n\nSchedulers managing live exceptions under time pressure carried substantially higher cognitive load than their baseline. The exception-handling flow required them to hold weather impact, crew availability, job priority, and time window considerations in working memory without surfacing those considerations together in the interface.\n\nThe analysis produced the requirement for predictive conflict indicators. The intended mechanism was to surface future exceptions before they became crises, reducing reactive peak-load cognitive demand."
-    },
-    {
-      "heading": "WCO/IPM customs intelligence evidence for recognition-over-recall design",
-      "bodyMarkdown": "In the WCO/IPM customs intelligence engagement, cognitive load analysis across three user groups found a recognition-versus-recall failure for inspection officers. The inspection workflow required officers to recall alert criteria and matching logic at the moment of inspection, under time pressure, without surfacing the relevant information in context.\n\nThe analysis produced a recognition-over-recall design standard. The standard reduced per-screen choices, surfaced contextually relevant information, and used progressive disclosure for complexity that was not needed at every step.\n\nThe documented 78% reduction in officer training costs was client-reported. The engagement describes this reduction as partly a cognitive load outcome: when the interface provided cognitive scaffolding through recognition-based interaction, less training was required to build the recall capacity the previous interaction model depended on."
-    },
-    {
-      "heading": "Boundaries and limits of cognitive load analysis",
-      "bodyMarkdown": "Cognitive load analysis does not aim to reduce intrinsic load. If the domain task requires scientific reasoning, clinical judgement, inspection logic, or live scheduling trade-offs, the practice distinguishes those demands from avoidable interface-created load.\n\nCognitive load analysis does not treat all users as one average user. In multi-role systems, the same interface can impose different cognitive demands on different roles, so role-specific analysis is necessary when the source of load differs by role.\n\nCognitive load analysis is sensitive to operating conditions. A workflow that appears acceptable at average throughput may fail under peak-load conditions, so the practice specifically examines high-pressure scenarios where cognitive demand is highest.\n\nThe engagement outcomes described here are case-specific. The Polymatica outcome was measured via product analytics in that engagement, while the WCO/IPM training-cost reduction was client-reported and described as partly attributable to cognitive load reduction. These outcomes should not be treated as universal benchmarks for every cognitive load analysis."
-    },
-    {
-      "heading": "Related practices",
-      "bodyMarkdown": "Cognitive load analysis draws on microtask analysis because cognitive load per task is one of the task-level attributes that can be extended into a fuller diagnosis of the mechanisms behind the load.\n\nCognitive load analysis draws on workflow analysis because workflow analysis identifies peak-condition scenarios, and cognitive load analysis evaluates the load those scenarios impose.\n\nCognitive load analysis directly informs error-likely interaction review because high cognitive load under operational conditions is a primary predictor of error likelihood.\n\nCognitive load analysis also informs task-criticality mapping because cognitive load is one of the dimensions against which criticality is assessed."
+      "heading": "Boundaries and Limits of Cognitive Load Analysis",
+      "bodyMarkdown": "Cognitive load analysis does not treat all difficulty as a design defect. Intrinsic load is part of the work itself and should not be reduced unless reducing the capability is also acceptable.\n\nCognitive load analysis does not replace user validation. Some documented examples are design reasoning or audit findings rather than user-tested outcomes.\n\nCognitive load analysis does not turn subjective workload instruments into performance measures. NASA-TLX is a subjective workload instrument, not a measure of task time, accuracy, error rate, or gloved actuation success.\n\nCognitive load analysis must preserve evidence boundaries. Client-reported outcomes, product-analytics measurements, audit findings, field observations, and design-reasoning claims should not be blended into a single evidence type."
     }
   ],
   "evidenceSummary": {
     "strongClaims": [
-      "Cognitive load analysis separates intrinsic load, extraneous load, and germane load, and targets extraneous load rather than the irreducible cognitive demand of the task.",
-      "The practice examines working-memory demands, recognition-versus-recall dependency, attentional competition, cognitive mode mismatch, role-differentiated load profiles, and peak-load conditions.",
+      "Cognitive load analysis separates intrinsic load, extraneous load, and germane load, with extraneous load as the primary design target.",
+      "The practice examines working memory demands, recognition versus recall, attentional competition, cognitive mode mismatch, role-differentiated load profiles, and peak-load conditions.",
       "Cognitive load analysis is used during Sandbox Experiments, complex product audits, and IEC 62366-1 formative evaluation in regulated contexts.",
-      "In the Gexcon CFD simulation engagement, a substantial portion of the 4-day-to-first-simulation timeline was attributed to working-memory demands around configuration state visibility.",
-      "In the IDEXX Animana engagement, cognitive load analysis found that reception staff and clinical staff carried different load profiles from the same system, leading to a recommendation for distinct interfaces.",
-      "In the Polymatica OLAP analytics engagement, independent task completion increased from 2% to 56%, measured via product analytics, after the redesign removed the OLAP mental-model requirement.",
-      "In the Triopsis workforce management engagement, peak-load cognitive load analysis produced a requirement for predictive conflict indicators."
+      "In the Polymatica OLAP analytics engagement, independent task completion moved from 2% to 56%, measured via product analytics, after the redesign removed the OLAP mental-model starting cost."
     ],
     "weakerClaims": [
-      "In the WCO/IPM customs intelligence engagement, a 78% reduction in officer training costs was client-reported and described as partly a cognitive load outcome."
+      "In the Gexcon CFD simulation engagement, a substantial portion of the 4-day-to-first-simulation timeline was attributable to working memory demands around configuration state visibility; the source does not quantify the portion beyond substantial.",
+      "In the WCO/IPM customs intelligence engagement, the 78% reduction in officer training costs was client-reported and partly a cognitive load outcome.",
+      "In the tactical handheld command-and-control engagement, cognitive load was one of four standing assessment criteria applied across fourteen one-week sprints, with no primary field evidence and no NASA-TLX result recorded.",
+      "In the AIT heat pump controller engagement, widget content was cut to three pieces of information and settings were structured around installer familiarity, but no user-tested usability or comprehension result is established.",
+      "Assemblio's attention-budget and use-case descriptions are client-stated rather than Creative Navy field observations."
     ],
     "limitations": [
-      "Cognitive load analysis targets extraneous load, not intrinsic load that belongs to the underlying domain task.",
-      "The engagement outcomes are case-specific and should not be generalised as universal benchmarks.",
-      "The WCO/IPM 78% training-cost reduction is client-reported and described as partly a cognitive load outcome, not independently verified in the source.",
-      "The Polymatica completion-rate outcome is reported as measured via product analytics, but the source does not provide the product analytics protocol or sample details.",
-      "The practice is described as part of IEC 62366-1 formative evaluation in regulated contexts; the source does not describe summative validation or regulatory approval outcomes."
+      "Intrinsic load is not the target of reduction unless reducing the system capability is also acceptable.",
+      "Cognitive load analysis identifies mechanisms of extraneous load; it does not by itself establish that a design has been validated with users.",
+      "The tactical handheld command-and-control engagement has strict scope boundaries and no primary field evidence; no NASA-TLX result, participant count, validation claim, certification claim, deployment claim, or error-prevention claim is established.",
+      "The AIT heat pump controller engagement had no user testing, so no usability or comprehension result is established.",
+      "Assemblio's working-environment and use-case information is client-described, not field-observed by Creative Navy.",
+      "The industrial engagement findings apply to the reviewed system and should not be generalised into claims about all industrial software.",
+      "The industrial engagement's product was in development, so the review findings are not shipped-product outcomes.",
+      "The WCO/IPM training-cost reduction is client-reported.",
+      "The Polymatica completion-rate change is described as measured via product analytics, but the source does not provide participant count or test protocol details."
     ]
   },
   "relatedPageSlugs": [
@@ -115,33 +74,51 @@
     "workflow-analysis",
     "error-likely-interaction-review",
     "task-criticality-mapping",
-    "triopsis-workforce-management-saas"
+    "triopsis-workforce-management-saas",
+    "tactical-handheld-command-and-control",
+    "ait-heat-pump-controller",
+    "assemblio"
   ],
   "internalLinks": [
     {
       "anchorText": "microtask analysis",
       "targetSlug": "microtask-analysis",
-      "reason": "The source states that cognitive load analysis draws on cognitive load dimensions from microtask analysis."
+      "reason": "Cognitive load analysis draws on cognitive load dimensions from microtask analysis."
     },
     {
       "anchorText": "workflow analysis",
       "targetSlug": "workflow-analysis",
-      "reason": "The source states that workflow analysis identifies peak-condition scenarios evaluated by cognitive load analysis."
+      "reason": "Workflow analysis identifies peak-condition scenarios that cognitive load analysis evaluates."
     },
     {
       "anchorText": "error-likely interaction review",
       "targetSlug": "error-likely-interaction-review",
-      "reason": "The source states that cognitive load analysis directly informs error-likely interaction review."
+      "reason": "High cognitive load under operational conditions is a primary predictor of error likelihood."
     },
     {
       "anchorText": "task-criticality mapping",
       "targetSlug": "task-criticality-mapping",
-      "reason": "The source states that cognitive load analysis directly informs task-criticality mapping."
+      "reason": "Cognitive load is one of the dimensions used in criticality assessment."
     },
     {
-      "anchorText": "Triopsis workforce management",
+      "anchorText": "Triopsis workforce management engagement",
       "targetSlug": "triopsis-workforce-management-saas",
-      "reason": "The source includes Triopsis as an evidence example, and the linking context provides a matching case-study slug."
+      "reason": "The source discusses the Triopsis example and the matching case-study slug is available."
+    },
+    {
+      "anchorText": "tactical handheld command-and-control engagement",
+      "targetSlug": "tactical-handheld-command-and-control",
+      "reason": "The source discusses the tactical handheld command-and-control example and the matching case-study slug is available."
+    },
+    {
+      "anchorText": "AIT heat pump controller engagement",
+      "targetSlug": "ait-heat-pump-controller",
+      "reason": "The source discusses the AIT example and the matching case-study slug is available."
+    },
+    {
+      "anchorText": "Assemblio",
+      "targetSlug": "assemblio",
+      "reason": "The source discusses Assemblio and the matching case-study slug is available."
     }
   ],
   "tags": [
@@ -152,15 +129,14 @@
     "attentional competition",
     "mental model mismatch",
     "peak-load conditions",
-    "role-differentiated analysis",
-    "IEC 62366-1",
-    "formative evaluation"
+    "formative evaluation",
+    "complex software UX"
   ],
   "_meta": {
     "sourcePath": "sources/articles/Practices/practices--cognitive-load-analysis.md",
     "parentSlug": "practices",
     "childPageSlugs": [],
-    "generatedBy": "deterministic",
+    "generatedBy": "openai",
     "patches": [
       "practice-anchor"
     ]

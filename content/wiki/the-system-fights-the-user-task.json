@@ -4,91 +4,109 @@
   "pageType": "failure",
   "category": "failures",
   "section": "Workflow Failures",
-  "summary": "This failure describes software that imposes its own task sequence, action order, or behavioural assumptions on users rather than matching the logic of the work users are trying to perform. The result is not always an error or a blocked path; it is often a workflow that is almost correct but persistently misaligned.",
+  "summary": "This failure describes a mismatch between the task model encoded in an interface and the task model users bring from real work. The available evidence describes two main mechanisms: task models built from system logic rather than user logic, and assumed behaviour models that do not match observed behaviour.",
   "keyFacts": [
-    "The failure concerns misalignment between the system's workflow logic and the user's task logic.",
-    "The issue is distinct from excessive navigation overhead: a workflow can contain few steps and still impose the wrong sequence.",
-    "The issue is related to conceptual mismatch, but this page concerns task sequence, action order, and operational workflow logic rather than terminology alone.",
-    "One mechanism is task modelling from system logic, such as database objects, backend modules, or API structure.",
-    "A second mechanism is assumed user behaviour that has not been observed under real working conditions.",
-    "In the Dancerace / Jacko case, Sandbox Experiments found that users first needed to answer what they owed, what it cost, and what they had to do immediately.",
-    "Dancerace reported a 36% demo-to-paying conversion rate against a 15–20% industry benchmark and against Dancerace's own expectations; the evidence is client-measured and not independently verified by Creative Navy.",
-    "In the MSolutions case, Creative Navy received AV diagnostic training and performed four test jobs to understand the task sequence.",
-    "MSolutions reported that a key diagnostic workflow reduced from 26 to approximately 13 interactions, based on internal task walkthroughs and not independent measurement."
+    "The failure is a workflow mismatch between the system's encoded logic and the user's task logic.",
+    "The user may not encounter an explicit error; the system can remain technically navigable while remaining wrong for the task.",
+    "One mechanism is designing the task model around database objects, backend modules, APIs, or development-team logic rather than user work.",
+    "A second mechanism is designing around assumed user behaviour instead of observed behaviour under real conditions.",
+    "The Dancerace / Jacko evidence describes a B2B invoice portal where users needed to answer what they owed, what it cost, and what they had to do immediately before engaging with other features.",
+    "Dancerace reported a 36% demo-to-paying conversion rate against a 15–20% industry benchmark and against its own expectations; this was client-measured six months post-release and not independently verified by Creative Navy.",
+    "The MSolutions evidence describes an AV diagnostic interface organised around backend modules rather than the technician's diagnostic sequence.",
+    "MSolutions reported that a key diagnostic workflow reduced from 26 to approximately 13 interactions, based on internal task walkthroughs and not independently measured.",
+    "The Egma Order evidence describes an optometrist attempting to order reading lenses for a patient, being told the selected lens shape could not be produced, and creating a support ticket instead of an order.",
+    "No Egma post-launch outcome was measured, and no support-ticket, order-completion, revenue, order-value, or conversion outcome is established for Egma."
   ],
   "bodySections": [
     {
-      "heading": "Summary",
-      "bodyMarkdown": "Creative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nThe system fights the user task when software encodes a task model that does not match the logic of the work users are trying to perform. The interface may not produce an explicit error or block the user. The workflow may remain technically navigable while still requiring the user to translate, reorder, or work around the system's structure.\n\nThis failure is a workflow-level mismatch. The problem is not only that the user must remember terminology or interpret unfamiliar categories. The problem is that the available actions, the order of actions, and the navigational structure express a different operational model from the one users bring to the task."
+      "heading": "What It Means When The System Fights The User Task",
+      "bodyMarkdown": "Creative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nThe system fights the user task when a software workflow imposes a task sequence, action order, or operational model that does not match how users understand and perform the task in real conditions. The interface may not block the user or show an error. The system can remain technically navigable while still being wrong for the task.\n\nThis is a workflow failure. It concerns what the system makes the user do: the action order, task sequence, operational priority, and available paths. It is not only a terminology or comprehension issue, although it often shares the same underlying mismatch between system model and user model."
     },
     {
-      "heading": "Failure pattern: the interface encodes the wrong task model",
-      "bodyMarkdown": "The system fights the user task when the structure of the interface reflects how the system was built rather than how users think and work. The available actions, their order, and their placement in the workflow express an internal model of the task. When that model is inaccurate, users encounter a workflow that is almost right and persistently wrong.\n\nThe failure often appears as small but repeated friction. Features that should be reached directly require indirect paths. Actions that belong together are separated. A task that users understand in operational terms must be performed through system terms, such as objects, modules, or formal process steps.\n\nThe diagnostic signal is the gap between a demonstration sequence and real use. A developer's demonstration may work because it follows the sequence the system was built to support. Real users may return to check a specific state, adjust a particular part of a deployment, or manage work across locations in an order that the system did not encode."
+      "heading": "The Failure Pattern Is An Encoded Task Model That Does Not Match Real Work",
+      "bodyMarkdown": "The system fights the user when its workflow structure reflects how the software was built rather than how users perform the task. The encoded model appears in the available actions, the order of screens, the grouping of controls, and the moments at which decisions are required.\n\nA system can be fully functional and still fight the task. Features may exist but require indirect paths. Actions that belong together in the user's work may be separated across the interface. A user may need to translate constantly between an operational goal and the system's internal categories.\n\nThe diagnostic feature of this failure is not simple friction. The problem is that the system asks users to proceed according to a different logic from the task itself."
     },
     {
-      "heading": "Mechanism: task modelling from system logic rather than user logic",
-      "bodyMarkdown": "One common mechanism is a task model built from system logic rather than user logic. The interface presents the task through backend entities, database objects, modules, or implementation categories, so users must map their work onto the structure of the software.\n\nA content management interface that treats playlists as database objects can require users to manage screen content through playlist-object operations. The user's task may be simple: what plays on which screen and when. The system's task model may instead require the user to create, edit, and manage playlist objects through a wizard. Returning to modify a schedule can require re-entering the wizard and navigating back to the relevant step.\n\nThe cost is not one isolated usability issue. Every interaction carries the translation cost between the user's model of the task and the system's model of the task."
+      "heading": "How The Failure Appears In Use",
+      "bodyMarkdown": "The system-fights-the-user failure appears when users work around a system despite the system having the relevant features. Users may return to earlier steps repeatedly, skip formal mechanisms, abandon a structured path, or create support tickets because the workflow cannot help them reach the intended operational outcome.\n\nThe failure can be difficult to see in a demonstration. In a developer's demonstration, the task is usually performed in the sequence the system was built to support. In real use, users return to check status, adjust one part of a larger deployment, manage shared schedules, or respond to informal work norms that do not follow the demonstration sequence.\n\nThis distinction matters because the demonstration can work while real use fails. The system is coherent from the system's point of view, but not from the user's task point of view."
     },
     {
-      "heading": "Mechanism: assumed behaviour replaces observed behaviour",
-      "bodyMarkdown": "A second mechanism is a system model of user behaviour that was assumed rather than observed. The team may have genuine domain knowledge and a clear product vision, but still encode the wrong priority order, action sequence, or interaction meaning because the specific behaviour of users was filled in from intuition.\n\nThis form of the failure becomes visible when real behaviour diverges from the behaviour the system was designed to serve. Debtors may acknowledge invoices informally rather than follow formal confirmation steps. Technicians may skip an organisational mode and work directly from their own diagnostic sequence. Users may rely on workarounds even though features are present, because the system's model of the task does not match how the task is actually performed.\n\nThe source of the mismatch is specific, not generic. Users operating under time pressure, limited attention, and informal workplace norms may behave differently from the behaviour assumed in a product model."
+      "heading": "How This Failure Differs From Excessive Steps Or Memory Demand",
+      "bodyMarkdown": "The system-fights-the-user failure differs from tasks spanning too many screens or steps. A workflow can require excessive screen crossings while still following the user's task logic. In that case the direction is right, but the path is too long. A workflow can also fight the user while using relatively few steps, if those steps occur in the wrong sequence or require the user to adopt the wrong task model.\n\nThe system-fights-the-user failure also differs from interfaces demanding too much memory. Memory demand concerns the cost of translating terminology, structural metaphors, or conceptual organisation into the user's operational model. The system-fights-the-user failure concerns the workflow expression of that mismatch: task sequence, action order, and the operational logic encoded in the interface.\n\nConceptual mismatch and workflow mismatch are related but distinct. One concerns what the system means. The other concerns what the system makes the user do."
     },
     {
-      "heading": "Dancerace / Jacko: invoice workflows misaligned with user priority order",
-      "bodyMarkdown": "Dancerace / Jacko is a B2B invoice management and accounts receivable portal for small businesses. The portal manages invoice distribution, confirmation, dispute, and settlement across financiers, suppliers, and debtors. At the start of Creative Navy's engagement, Jacko was a greenfield product built on Dancerace's existing C3 backend.\n\nA prior Dancerace wireframe showed a feature-complete dashboard with every capability presented at equal visual weight. In retrospect, that direction would have made the system fight the user because it showed platform capability before establishing what users needed to see first.\n\nSandbox Experiments identified a strict user hierarchy of needs through user testing, interviews, and prototype observation. Users first needed to answer three questions: What do I owe? What is my cost? What must I do right now? Until those questions were satisfied, users could not be mobilised for profile setup, advanced features, or upsell prompts.\n\nCreative Navy's design response also addressed debtor behaviour. Real debtors did not always behave according to formal business norms. A debtor who expected to pay late might go quiet rather than open a formal dispute. A system that provided only formal confirmation and dispute mechanisms would have encoded behaviour that did not match real use.\n\nThe design allowed a debtor to change the status of an invoice to \"accepted\". This status created a symbolic acknowledgement without a payment commitment and without resolving a formal obligation. Suppliers could see whether each debtor had seen, accepted, ignored, or disputed each invoice. Informal financial behaviour became visible inside the operational model of the system.\n\nDancerace reported a 36% demo-to-paying conversion rate against a 15–20% industry benchmark and against Dancerace's own expectations. The evidence basis is client-measured against Dancerace's own tracking, six months post-release, and was not independently verified by Creative Navy."
+      "heading": "Mechanism: The Task Model Is Built From System Logic Rather Than User Logic",
+      "bodyMarkdown": "A common mechanism is a task model designed from system logic instead of user logic. The system may follow database entities, backend modules, API structure, or implementation order because those categories were natural for the team that built it.\n\nA content management interface can show this failure when it treats playlists as database objects rather than as screen content to be scheduled. The user's task is to decide what plays on which screen and when. If the system requires the user to create and edit playlist objects through a wizard, then returning to modify a schedule requires re-entering the wizard and navigating to the relevant step. The user's task model is content management; the system's task model is object management.\n\nThe cost is paid repeatedly. Every interaction requires translation between the user's operational goal and the system's internal structure."
     },
     {
-      "heading": "MSolutions: module-based structure conflicted with the AV diagnostic sequence",
-      "bodyMarkdown": "MSolutions produces a diagnostic device that measures signal integrity, EDID data, HDCP status, resolution, and other parameters across multi-monitor installations. The previous interface was organised around the device's backend modules, so functions were grouped by internal categories that made sense from a development perspective rather than by the sequence used by a technician performing an AV diagnostic.\n\nAn earlier visual redesign changed colours and icons without changing the structural mismatch. The interface looked different, but technicians still had to follow the system's module sequence rather than their own diagnostic sequence.\n\nCreative Navy received AV diagnostic training from MSolutions and performed four test jobs before design work. That domain learning made the mismatch explicit: the technician's natural diagnostic sequence was link integrity, EDID and HDCP verification, resolution and colour space per display, and consolidated confirmation. That sequence did not correspond to a navigational path in the module-based structure.\n\nCreative Navy's design response treated the device as a guide through a standard AV diagnostic narrative. Each screen state pointed to the next logical diagnostic action rather than the next module in the system architecture. Parameters appeared only when they were relevant to the current step. The technician's sequence became the system's sequence.\n\nMSolutions reported that the key diagnostic workflow reduced from 26 to approximately 13 interactions. The evidence basis is client-reported internal task walkthroughs, not independent measurement. MSolutions also reported that new users who previously required repeated coaching sessions could operate the device after a short guided introduction, and that large integrator customers formally reported smoother rollouts after the redesign."
+      "heading": "Mechanism: The Assumed Behaviour Model Does Not Match Real Behaviour",
+      "bodyMarkdown": "A second mechanism is a workflow designed around assumed user behaviour rather than observed behaviour. The assumed model may be plausible and informed by domain knowledge, but still wrong in the specific behaviours that shape use under time pressure, limited attention, or informal workplace norms.\n\nThis form of the failure appears when real users behave differently from the behaviour the system was designed to serve. Debtors may acknowledge invoices informally instead of using formal confirmation or dispute mechanisms. Technicians may skip an organisational mode and work from their own diagnostic sequence. Users may adopt workarounds not because a feature is missing, but because the system's model of the task does not match the task they actually perform.\n\nThe important evidence is behavioural divergence. Users do something different from the system's intended path because the intended path does not correspond to their operational logic."
     },
     {
-      "heading": "How Creative Navy's Critical Systems Design method addresses this failure",
-      "bodyMarkdown": "Creative Navy's Critical Systems Design method addresses this failure through domain learning before structural design decisions are made. The relevant question is not only what the system contains. The relevant question is how users actually think about and perform their tasks under real conditions.\n\nThe failure is often invisible to the team that built the system because the team knows the product's internal logic and may also have domain expertise. What may be missing is empirical knowledge of specific behaviours, priority orders, and informal norms. These details are not reliably visible through product inspection or through user interviews that ask people to describe tasks in the abstract.\n\nCreative Navy's Critical Systems Design method uses observation, prototype testing, and direct domain learning to compare the user's task model with the system's encoded model. In the Dancerace engagement, the hierarchy of needs was inferred from what users did during prototype observation and user testing. In the MSolutions engagement, performing four test jobs made the cost of navigating between module structure and diagnostic sequence explicit."
+      "heading": "Dancerace / Jacko: Invoice Workflow Misaligned With User Priority Order",
+      "bodyMarkdown": "Jacko is described as a B2B invoice management and accounts receivable portal for small businesses. It manages invoice distribution, confirmation, dispute, and settlement across financiers, suppliers, and debtors. At the start of Creative Navy's engagement, the product was greenfield and was built on Dancerace's existing C3 backend.\n\nThe prior wireframe established the direction the design needed to avoid. It showed a feature-complete dashboard where every possible capability appeared at equal visual weight, with no information hierarchy and no model of what users needed to see first.\n\nSandbox Experiments produced three findings that showed how the system would fight the user if built according to that wireframe. First, user testing, interviews, and prototype observation showed a strict user hierarchy of needs: What do I owe? What is my cost? What must I do right now? Until those questions were answered, users could not be mobilised for profile setup, advanced features, or upsell prompts.\n\nSecond, advanced features competing visually with immediate user needs caused disengagement. Users who could not quickly locate what they needed stopped using the system entirely. The system was presenting its depth at the moment when the user needed its surface.\n\nThird, debtor behaviour did not follow formal business norms. Debtors delayed, acknowledged without committing, and used informal signals to manage relationships. A debtor who knew they would pay late did not necessarily open a formal dispute; they might go quiet. A system that offered only formal confirmation and dispute mechanisms would encode behaviour that did not exist.\n\nCreative Navy's design response allowed a debtor to change an invoice status to \"accepted\". This status was a symbolic acknowledgement. It required no payment commitment and resolved no formal obligation, but it signalled good faith. The supplier could see whether each debtor had seen, accepted, ignored, or disputed each invoice."
     },
     {
-      "heading": "Boundaries: adjacent failures with different mechanisms",
-      "bodyMarkdown": "The system-fights-the-user-task failure is distinct from a task that simply spans too many screens or steps. A task can require more screen crossings than necessary while still following the user's logic. In that case, the main issue is navigation overhead. A system can also fight the user with relatively few steps if those steps are in the wrong order or require a wrong turn before the right path.\n\nThe failure is also distinct from an interface that demands too much memory. Memory demand can arise when terminology, structural metaphors, or conceptual organisation do not match the user's operational model. The system-fights-the-user-task failure concerns the workflow expression of that mismatch: task sequence, action order, and operational logic."
+      "heading": "MSolutions: Module-Based Structure Conflicted With The Diagnostic Sequence",
+      "bodyMarkdown": "The MSolutions diagnostic device measures signal integrity, EDID data, HDCP status, resolution, and other parameters across multi-monitor installations. The previous interface was organised around backend modules. Functions were grouped by internal categories that made sense from the development perspective, not by the sequence in which a technician performs an AV diagnostic.\n\nAn earlier visual redesign changed colours and icons without addressing the structural mismatch. The interface looked different, but it still fought the user's task because the technician's diagnostic sequence still did not map to the system's module sequence.\n\nCreative Navy received AV diagnostic training from MSolutions and performed four test jobs. This domain learning made the mismatch explicit: the technician's natural diagnostic sequence was link integrity, EDID and HDCP verification, resolution and colour space per display, and consolidated confirmation. That sequence did not correspond to any navigational path in the module-based structure.\n\nCreative Navy's design response treated the device as a guide through a standard AV diagnostic narrative. Each screen state pointed to the next logical action in the diagnostic sequence, not to the next module in the system architecture. Parameters appeared only when relevant to the current step. The technician's sequence became the system's sequence."
     },
     {
-      "heading": "Evidence basis and limits",
-      "bodyMarkdown": "The evidence for this failure pattern is case-based. The Dancerace / Jacko example includes user testing, interviews, prototype observation, and a client-measured commercial outcome reported six months post-release. The 36% demo-to-paying conversion rate was measured by Dancerace against Dancerace's own tracking and was not independently verified by Creative Navy.\n\nThe MSolutions example includes Creative Navy domain learning through AV diagnostic training and four test jobs. The reported reduction from 26 to approximately 13 interactions came from MSolutions internal task walkthroughs and was not independently measured. The reported improvement in new-user operation and smoother rollouts was client-reported.\n\nThese examples support the documented mechanism: when a workflow encodes system logic or assumed behaviour instead of observed task logic, users must translate their work into the system's structure. The available evidence does not establish a universal quantitative effect for all systems that exhibit this failure."
+      "heading": "Egma Order: The Workflow Could Reject A Lens Shape But Could Not Help Reach A Producible Order",
+      "bodyMarkdown": "Egma Order is Egma's B2B lens ordering platform through which optical stores order lenses. The clearest documented example of the system fighting the task came from research interviews with Egma's support team about the platform being replaced.\n\nAn optometrist tried to order a pair of reading lenses for a patient. The optometrist started a new order, went through half the steps, and was then told: \"Lenses with your selected shape cannot be produced. Please choose a different shape.\" The patient did not want a different lens shape, and the optometrist could not work out which parameters would allow the intended shape to be ordered. The optometrist created a support ticket instead of an order, and the support team placed the order on their behalf.\n\nThe relevance is specific. The user's task was fixed by the patient: a specific lens shape. The workflow could reject the requested shape, but it could not help the user reach a producible version of the intended order."
+    },
+    {
+      "heading": "How Creative Navy's Critical Systems Design Method Addresses This Failure",
+      "bodyMarkdown": "Creative Navy's Critical Systems Design method designs software whose interfaces, workflows, and operating logic carry real operational consequences, working through five phases — Sandbox Experiments, Concept Convergence, Iterative System Building, Organizational Integration, and Implementation Partnership — to take each system from initial exploration to independent operation by the client's own team.\n\nCreative Navy's Critical Systems Design method addresses the system-fights-the-user failure through domain learning before structural workflow decisions are made. The relevant question is not whether the system contains the right features. The question is whether the encoded task model matches how users think about and perform the task in real conditions.\n\nDomain learning is necessary because the mismatch is often invisible to the team that built the system. A development team may understand the product and the domain, while still lacking empirical knowledge of the behaviours, priority orders, and informal norms that govern real use. These details do not reliably appear through product inspection or through abstract interviews about tasks.\n\nIn the Dancerace engagement, the hierarchy of needs was discovered through prototype observation and user testing. Users did not state the priority order as a requirement; they acted according to it. In the MSolutions engagement, performing four test jobs made the module-versus-task mismatch explicit in operational terms. The discovery was not merely that the interface was module-based. The discovery was that the technician's task sequence did not correspond to the module structure, and that the translation cost appeared at every step of the diagnostic."
+    },
+    {
+      "heading": "Boundaries Of The Failure Pattern",
+      "bodyMarkdown": "The system-fights-the-user failure should not be used as a general label for any inconvenient workflow. The defining condition is a mismatch between the system's encoded task logic and the user's operational task logic.\n\nA workflow that follows the user's task model but uses too many screens is better described as a task spanning too many screens or steps. A workflow that creates translation cost through terminology or conceptual organisation is related to the interface demanding too much memory. This page concerns the workflow expression: task order, action sequence, behavioural assumptions, and operational path."
     }
   ],
   "evidenceSummary": {
     "strongClaims": [
-      "The system fights the user task when the interface encodes a task model that conflicts with the user's actual task logic.",
-      "One mechanism is task modelling from system logic rather than user logic, such as database objects or backend modules.",
-      "A second mechanism is a system model of user behaviour that was assumed rather than observed.",
-      "In the Dancerace / Jacko case, Sandbox Experiments found that users first needed to answer what they owed, what it cost, and what they had to do immediately.",
-      "In the MSolutions case, the previous interface was organised around backend modules rather than the technician's diagnostic sequence.",
-      "Creative Navy's Critical Systems Design method addresses this failure through domain learning, observation, prototype testing, and direct task experience before structural decisions are made."
+      "The system-fights-the-user failure is a mismatch between the system's encoded workflow logic and the user's task logic.",
+      "One mechanism is a task model built from system logic, such as database objects or backend modules, rather than user logic.",
+      "A second mechanism is an assumed model of user behaviour that does not match observed real behaviour.",
+      "No Egma post-launch support-ticket, order-completion, revenue, order-value, or conversion outcome is established."
     ],
     "weakerClaims": [
-      "Dancerace reported a 36% demo-to-paying conversion rate against a 15–20% industry benchmark and against Dancerace's own expectations.",
-      "MSolutions reported that the key diagnostic workflow reduced from 26 to approximately 13 interactions."
+      "In Dancerace / Jacko, user testing, interviews, and prototype observation showed that users needed to answer what they owed, what it cost, and what they had to do immediately before engaging with other features.",
+      "Dancerace reported a 36% demo-to-paying conversion rate against a 15–20% industry benchmark and against its own expectations; this was client-measured through Dancerace's own tracking six months post-release and was not independently verified by Creative Navy.",
+      "In MSolutions, a module-based interface structure conflicted with the technician's natural AV diagnostic sequence.",
+      "MSolutions reported that a key diagnostic workflow reduced from 26 to approximately 13 interactions; this was based on internal task walkthroughs and was not independently measured.",
+      "The Egma Order example establishes that the previous workflow could reject a patient's intended lens shape but could not help the optometrist reach a producible order."
     ],
     "limitations": [
-      "The Dancerace commercial outcome was client-measured against Dancerace's own tracking and was not independently verified by Creative Navy.",
+      "The Dancerace commercial outcome was client-measured through Dancerace's own tracking six months post-release and was not independently verified by Creative Navy.",
       "The MSolutions interaction-count reduction was based on internal task walkthroughs and was not independently measured.",
-      "The reported MSolutions changes in coaching needs and smoother rollouts were client-reported operational observations.",
-      "The examples support the documented failure mechanism but do not establish a universal quantitative effect across all systems."
+      "The MSolutions new-user and rollout observations were client-reported operational changes.",
+      "The Egma Order evidence establishes the problem only; no post-launch outcome was measured for Egma.",
+      "No claim is established that Egma support tickets fell, that order completion improved, or that revenue, order value, or conversion changed.",
+      "The Egma programme described interviews and wireframe sessions, not usability testing of the live platform."
     ]
   },
   "relatedPageSlugs": [
     "tasks-span-too-many-screens-or-steps",
     "the-interface-demands-too-much-memory",
+    "egma",
     "critical-actions-appear-at-the-wrong-time"
   ],
   "internalLinks": [
     {
-      "anchorText": "tasks span too many screens or steps",
+      "anchorText": "tasks spanning too many screens or steps",
       "targetSlug": "tasks-span-too-many-screens-or-steps",
-      "reason": "The current source explicitly distinguishes this adjacent workflow failure from the system-fights-the-user-task failure."
+      "reason": "The page distinguishes task-model mismatch from navigation overhead."
     },
     {
-      "anchorText": "the interface demands too much memory",
+      "anchorText": "interfaces demanding too much memory",
       "targetSlug": "the-interface-demands-too-much-memory",
-      "reason": "The current source explicitly distinguishes this adjacent cognitive failure from the system-fights-the-user-task failure."
+      "reason": "The page distinguishes workflow mismatch from conceptual translation and memory demand."
+    },
+    {
+      "anchorText": "Egma case",
+      "targetSlug": "egma",
+      "reason": "The page uses Egma Order as a named evidence example."
     },
     {
       "anchorText": "Critical Actions Appear At The Wrong Time",
@@ -102,17 +120,15 @@
     "user task logic",
     "system logic",
     "domain learning",
+    "Sandbox Experiments",
+    "Critical Systems Design",
     "prototype observation",
-    "user behaviour",
-    "Dancerace",
-    "Jacko",
-    "MSolutions",
-    "Critical Systems Design"
+    "workaround behaviour"
   ],
   "_meta": {
     "sourcePath": "sources/articles/Failures/failures--workflow--the-system-fights-the-user-task.md",
     "parentSlug": "workflow-failures",
     "childPageSlugs": [],
-    "generatedBy": "deterministic"
+    "generatedBy": "openai"
   }
 }

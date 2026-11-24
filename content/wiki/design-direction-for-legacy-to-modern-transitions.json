@@ -4,50 +4,42 @@
   "pageType": "capability",
   "category": "capabilities",
   "section": "Capabilities",
-  "summary": "This capability covers the diagnosis, planning, and staged redesign of established products that have accumulated interface, workflow, vocabulary, or architectural complexity over years of development. The documented evidence includes Gexcon, IDEXX Animana, Polymatica, Chemical Watch, Tetra/Prism, and Gericke.",
+  "summary": "This capability covers the diagnosis and direction of legacy-to-modern transitions where accumulated interface complexity, fragmented operating logic, or inherited product models must be changed without disorienting existing users or removing load-bearing domain logic.",
   "keyFacts": [
     "Legacy-to-modern transition work starts by separating essential complexity from accidental complexity.",
-    "In Gexcon, 102 tasks were documented to distinguish scientific simulation logic from accumulated interface structures.",
-    "Gexcon recorded field-measured time to first successful simulation from 4 days to 6 hours in real deployments.",
-    "IDEXX Animana research covered 35 clinics, 150+ participants, 2 weeks, and 3 countries.",
-    "Polymatica changed OLAP-facing vocabulary such as “cube” to “dataset” and “facts” to “measures” while preserving analytical capability.",
-    "Chemical Watch changed from a news and information publication model to a compliance intelligence platform model.",
-    "Tetra/Prism restructured a file library around folder hierarchies, file types, and recent activity rather than the developer's internal data model.",
-    "Gericke preserved a proven dosing algorithm while redesigning the interaction layer around hard hardware and Beckhoff/TwinCAT constraints.",
-    "Gericke's 89-component design system was later propagated by Gericke's own team across other product lines without Creative Navy."
+    "In the Gexcon CFD simulation case, 102 tasks were documented before redesign direction was established.",
+    "In Gexcon, time to first successful simulation changed from 4 days to 6 hours in real deployments, while configuration errors changed from 5–8 to 1–2.",
+    "In the IDEXX Animana assessment, research covered 35 clinics, 150+ participants, 2 weeks, and 3 countries.",
+    "In Polymatica, independent task completion changed from 2% to 56% as recorded through product analytics.",
+    "In Gericke, an 89-component design system was later propagated across other product lines by Gericke's own team without Creative Navy.",
+    "In Gericke, client-measured outcomes were recorded in a confirmed single-variable window across four months post-go-live.",
+    "In AIT, the legacy constraint was social: thousands of installers were trained on the previous structure, so recognisability was a design constraint.",
+    "In the maritime traffic software portfolio, the phased-introduction constraint was in the client's brief, and one product was designed to full depth."
   ],
   "bodySections": [
     {
-      "heading": "Summary",
-      "bodyMarkdown": "Creative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nDesign direction for legacy-to-modern transitions defines how an established product should change after years of accumulated interface, workflow, vocabulary, or architectural complexity. The capability is not limited to visual redesign. It includes platform life extension, product-model change, interface architecture restructuring, vocabulary change, staged audit-to-direction work, and industrial HMI transition under fixed constraints.\n\nThe central discipline is the “what must remain” analysis. Creative Navy uses that analysis to distinguish essential complexity, which is load-bearing and must be preserved, from accidental complexity, which accumulated without purpose and can be eliminated. In legacy systems, existing interface patterns often encode institutional knowledge about how the domain works. Creative Navy's design direction treats those patterns as material to be read and selectively preserved, not discarded wholesale."
+      "heading": "Definition of design direction for legacy-to-modern transitions",
+      "bodyMarkdown": "Creative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nDesign direction for legacy-to-modern transitions is the capability of distinguishing what must remain from what can change in an existing product, then defining a migration path that preserves essential operational knowledge while removing accumulated interface complexity. The work is not a visual refresh. It is a structured decision about which parts of an existing product encode necessary domain knowledge and which parts are accidental interface overhead."
     },
     {
-      "heading": "When legacy-to-modern design direction is needed",
-      "bodyMarkdown": "Legacy-to-modern design direction is needed when a product's existing behaviour, structure, vocabulary, or interface conventions no longer match the people and operating contexts the product must serve. The documented cases describe platforms that had accumulated complexity over 11 to 15 years, products built around builder-facing concepts, and industrial controllers with fragmented control philosophies.\n\nThe Gexcon CFD simulation case was explicitly a platform life extension brief. The product had 15 years of accumulated interface complexity without an architectural framework, and the stated brief was to extend the product's life by 25 years. The user base had changed: the original product had been built for senior CFD engineers, while newer engineers were choosing simpler tools that sacrificed capability, and non-specialist roles such as risk managers and safety analysts needed access the platform had not originally been designed to provide.\n\nThe IDEXX Animana engagement was explicitly directional rather than full execution. Creative Navy provided an independent evidence-based assessment of a platform that had grown through acquisition and years of feature addition, then delivered a 5-year product vision grounded in the research evidence.\n\nThe Gericke industrial HMI case shows the same capability in an embedded industrial setting. The ageing Easydos Pro interface and the separate STP61 conveying control had developed through separately commissioned product work, producing different operating philosophies across Gericke's controllers, a confused menu structure and parameter naming, and raw error codes. The Head of Continuous Manufacturing described the information architecture as having been extended over the years without considering usability. This was a documented case of sense decay and fragmented control philosophies."
+      "heading": "When legacy-to-modern transition work is needed",
+      "bodyMarkdown": "Legacy-to-modern transition work is needed when accumulated complexity prevents a product from remaining usable, adoptable, or extendable, while full replacement would discard important operational knowledge. The condition can appear in mature expert software, enterprise SaaS, industrial control HMI, embedded controllers, or portfolio-level systems.\n\nThe legacy condition may be technical, architectural, organisational, or social. In some products, years of feature addition leave menus, vocabulary, and workflows disconnected from operational reality. In other products, the inherited structure remains recognisable to expert users or trained installers, so recognisability itself becomes a design constraint."
     },
     {
-      "heading": "What Creative Navy preserves during a legacy-to-modern transition",
-      "bodyMarkdown": "Creative Navy's design direction preserves essential complexity where it carries real domain work. In Gexcon, the essential complexity was the scientific parameters and simulation logic that made the CFD platform defensible. The engagement documented 102 tasks to separate those elements from historical interface structures that had accumulated over 15 years of development.\n\nCreative Navy's domain learning was part of the Gexcon evidence base. The team became productive CFD users through calibration manuals, training videos, workplace observations, and intensive stakeholder sessions before drawing the essential-versus-accidental distinction. The documented reason for that depth was that the team had to understand the scientific and operational load-bearing structure before deciding which parts of the interface could change.\n\nIn Gericke, the essential part was fixed more sharply: the dosing algorithm was proven over years and every stakeholder independently insisted it must not change. Creative Navy redesigned the interaction layer around that fixed engine while preserving the algorithm. This is the clearest documented example of constraint respecting in the set, because the transformation changed the interface layer while leaving the proven operating engine intact.\n\nIn Polymatica, the essential part was the OLAP architecture underneath the product. The accidental part was the OLAP vocabulary through which users accessed it. Creative Navy preserved full analytical capability while replacing the user-facing vocabulary and structural metaphors that reflected the builders' perspective rather than the analysts' perspective."
+      "heading": "How Creative Navy's Critical Systems Design method treats the existing product as evidence",
+      "bodyMarkdown": "Creative Navy's Critical Systems Design method designs software whose interfaces, workflows, and operating logic carry real operational consequences, working through five phases — Sandbox Experiments, Concept Convergence, Iterative System Building, Organizational Integration, and Implementation Partnership — to take each system from initial exploration to independent operation by the client's own team.\n\nIn legacy-to-modern transitions, Creative Navy's Critical Systems Design method treats the existing product as evidence. Legacy workflows, naming conventions, interface structures, and operator habits are examined before they are changed. The purpose is to determine whether an inherited element represents genuine operational knowledge or only accumulated convention."
     },
     {
-      "heading": "What Creative Navy removes or restructures during a legacy-to-modern transition",
-      "bodyMarkdown": "Creative Navy removes accidental complexity where it creates access cost without carrying operational value. In Polymatica, OLAP-specific terms such as “cube” and “facts” were replaced with “dataset” and “measures”. The database-level connection flow was replaced with a data preparation and preview step. The lobby concept created a central orientation point where users could see datasets described in accessible terms before entering an operation.\n\nIn Tetra/Prism, the file library had been organised around the developer's internal data model. Eleven years of features had been built on that foundation, and file access required navigation logic that made sense to engineers but was opaque to users. The transition restructured the file library around standard file management patterns: folder hierarchies, file types, and recent activity.\n\nIn Gericke, Creative Navy removed accidental complexity in the form of fragmented control philosophies, confused menus, inconsistent parameter naming, and raw error codes. The redesigned interaction layer stayed within a recognisable Gericke environment rather than reinventing the visual language, because continuity for existing users was an explicit part of the brief."
+      "heading": "Essential complexity and accidental complexity in legacy products",
+      "bodyMarkdown": "Legacy-to-modern transition work starts by separating essential complexity from accidental complexity. Essential complexity is load-bearing: scientific parameters, proven algorithms, regulatory or operational logic, installed competence, and workflows that expert users depend on. Accidental complexity is accumulated without purpose: inconsistent naming, duplicated interaction models, menu structures that grew without a structural framework, vocabulary that exposes the builder's data model, and product architecture that no longer matches the user's operational reality.\n\nThis is a constraint respecting form of design direction. The aim is not to make a complex product appear simple by removing capability. The aim is to make necessary complexity navigable while removing interface overhead that no longer serves the product or its users."
     },
     {
-      "heading": "Continuity for existing users is part of the transition design",
-      "bodyMarkdown": "Continuity for existing users means preserving workflows that expert users have internalised over years while making change manageable. The strongest documented form appears in Gericke, where the brief was explicitly not to reinvent the visual language. The work improved usability, clarity, and workflow inside a Gericke visual environment that customers already recognised.\n\nGericke also shows why legacy interfaces cannot be treated only as obsolete surfaces. Experienced operators could run the old interface because they had memorised it. Creative Navy treated that memorised competence as institutional knowledge that had to be carried into a recognition-based design rather than discarded.\n\nIDEXX Animana shows continuity at the planning level rather than the execution level. Creative Navy's research covered 35 clinics, 150+ participants, 2 weeks, and 3 countries. Four role types were included, from first-week users to ten-year veterans, so the evidence could separate temporary learning-curve friction from structural problems embedded in the platform. The delivered output was a staged transformation path rather than a single replacement."
+      "heading": "Migration paths for existing users and delivery teams",
+      "bodyMarkdown": "Creative Navy's legacy-to-modern transition work produces a migration path, not only an endpoint design. The migration path is designed for the people and teams that must move from the existing system to the new one: expert users with memorised workflows, installers trained on a previous structure, operators reading state from across a room, development teams that must extend a design system, or product teams that must implement recommendations over several years.\n\nThe outputs vary by engagement. They can include redesign direction, documented task structures, evidence-based assessment, product vision, recommendations for development translation, component systems, layered token architecture, risk-ordered release sequencing, and implementation support. The strongest form of this capability is reached when the client team can continue the transition independently."
     },
     {
-      "heading": "Design systems as evolvable architecture",
-      "bodyMarkdown": "A design system in a legacy-to-modern transition can function as evolvable architecture rather than only as an implementation kit. The Gericke case is the clearest documented evidence for this claim. Creative Navy created an 89-component design system as a reusable foundation for Gericke's future digital products, and Gericke's own team later propagated it across other product lines without Creative Navy.\n\nThis matters because a legacy-to-modern transition can recreate accumulated complexity if the new interface has no architecture for future extension. In the Gericke evidence, the design system provided a structure that Gericke could extend independently after the engagement rather than commissioning isolated interface additions that would reproduce the previous fragmentation.\n\nImplementation Partnership also appears as part of preservation through development. Gexcon included 7 months of execution followed by a 2-year Implementation Partnership. Tetra/Prism included a 2-year Implementation Partnership. Gericke included a 4-month design engagement followed by a 12-month Implementation Partnership with QA against the design, on-panel testing, and in-situ colour calibration on the target panels while Gericke implemented the TwinCAT build."
-    },
-    {
-      "heading": "Evidence from platform life extension, audit direction, vocabulary change, product-model change, and industrial HMI work",
-      "bodyMarkdown": "Creative Navy's legacy-to-modern transition capability is evidenced across several types of change. The Gexcon engagement is the most complete platform life extension example. The documented outcomes include field-measured time to first successful simulation from 4 days to 6 hours in real deployments, field-measured configuration errors from 5–8 to 1–2, client-reported active users per team from 1 to 3–4, and a training change from 3-day instructor-led events to webinars.\n\nThe IDEXX Animana engagement demonstrates assessment and planning rather than full execution. The research found that 11 years of feature additions had created an interface that no longer reflected the operational reality of veterinary practice. The structurally significant conclusion was that reception and clinical roles had incompatible cognitive requirements requiring distinct interfaces. The engagement produced 100+ recommendations structured for direct development ticket translation and a 5-year product vision. Six months after the engagement, the client reported that recommendations were well-grounded, with some implemented and the remainder planned.\n\nThe Polymatica engagement demonstrates metaphor and vocabulary transition. Creative Navy changed OLAP-facing concepts into user-facing analytical concepts while preserving full analytical capability. The documented outcome was field-measured independent task completion from 2% to 56% via product analytics.\n\nThe Chemical Watch engagement demonstrates product-model transition. The product moved from a news and information publication to a compliance intelligence platform. Creative Navy's design work included new feature concepts that did not exist in the previous model: My Substances register, regulatory intelligence workspace, and lens-view as a persistent research environment. The client reported that subscription price tripled following launch and that a 24x EBITDA exit multiple occurred one year after launch. The documented causal chain is design, user adoption of new features, justified price increase, revenue, and valuation; the design is described as contributing to the product's ability to command a higher price, not as causing the exit.\n\nThe Tetra/Prism engagement demonstrates architecture restructuring around user mental models. The redesign introduced a field/office architecture split with separate mobile and web surfaces sharing a coherent data model. Client-measured mobile adoption changed from 12% to 64% one year after the redesigned app launched. Client-measured web NPS changed from 72% to 85% approximately 4 months post-launch.\n\nThe Gericke engagement demonstrates industrial HMI transition under hard constraints. The constraints included a 1024×600 panel floor and the Beckhoff/TwinCAT ecosystem. Client-measured outcomes were recorded within a confirmed single-variable window with no hardware, sensor, mechanical, training, recipe, or process changes, four months post-go-live, across three sites described by type and geography. Within that window, fault-diagnosis time was roughly two-thirds faster, moving from 24 to 8 minutes, 38 to 12 minutes, and 68 to 20 minutes. Repeat alarms were more than halved, moving from 42% to 18%, 58% to 28%, and 73% to 35%. Operator-caused stoppages were roughly halved, and MTTR was substantially reduced. These outcomes are interface-attributable within that window, not stated as caused."
-    },
-    {
-      "heading": "Boundaries and limits",
-      "bodyMarkdown": "The documented evidence supports this capability across several cases, but the cases do not establish a guaranteed result for every legacy-to-modern transition. Outcomes vary by product model, user population, implementation conditions, and evidence basis.\n\nSome outcomes are field-measured or client-measured, while others are client-reported. Gexcon's time-to-first-simulation and configuration-error changes are documented as measured in real deployments. Tetra/Prism and Gericke outcomes are documented as client-measured. Chemical Watch's subscription price change and exit multiple are client-reported, and the design work is described as contributing to the product's ability to command a higher price rather than causing the exit.\n\nIDEXX Animana is an audit and direction example, not a full execution example. Its evidence supports Creative Navy's assessment and planning capability for legacy-to-modern transition, including the ability to separate learning-curve friction from structural platform problems, but it does not provide full redesign implementation outcomes.\n\nGericke is described as not being a regulated device. It operates in GMP environments where GAMP 5 is relevant. The Gericke evidence basis is client-measured by Gericke, not Creative Navy-measured, within a confirmed single-variable window."
+      "heading": "Boundaries of legacy-to-modern design direction",
+      "bodyMarkdown": "Legacy-to-modern design direction does not mean replacing every inherited structure. In several cases, the correct direction is to preserve a recognisable environment, inherited convention, installed-base vocabulary, or proven operating logic while changing the orientation, structure, or rule system around it.\n\nThe evidence base for this capability varies by case. Some engagements include measured operational outcomes. Some provide assessment and direction without execution outcomes. Some include client-reported commercial or adoption information. Some examples are included because they clarify the transition constraint, not because they establish performance improvement."
     },
     {
       "heading": "What this produces",
@@ -56,95 +48,114 @@
   ],
   "evidenceSummary": {
     "strongClaims": [
-      "Legacy-to-modern transition work separates essential complexity from accidental complexity before changing an established product.",
-      "In Gexcon, 102 tasks were documented to distinguish scientific simulation logic from historical interface structures.",
-      "Gexcon recorded time to first successful simulation from 4 days to 6 hours in real deployments, and configuration errors from 5–8 to 1–2.",
-      "IDEXX Animana research covered 35 clinics, 150+ participants, 2 weeks, 3 countries, and four role types.",
-      "Polymatica preserved analytical capability while changing OLAP-facing vocabulary and recorded independent task completion from 2% to 56% via product analytics.",
-      "Tetra/Prism restructured file access around standard file management patterns and recorded client-measured mobile adoption from 12% to 64% one year after launch and web NPS from 72% to 85% approximately 4 months post-launch.",
-      "Gericke preserved the proven dosing algorithm while redesigning the interaction layer, and Gericke's own team later propagated the 89-component design system across other product lines without Creative Navy.",
-      "Gericke client-measured outcomes were recorded within a confirmed single-variable window and should be framed as interface-attributable within that window, not as caused."
+      "Legacy-to-modern transition work distinguishes essential complexity from accidental complexity and preserves load-bearing operational knowledge while removing accumulated interface overhead.",
+      "In Gexcon, Creative Navy documented 102 tasks, and real deployments recorded time to first successful simulation changing from 4 days to 6 hours and configuration errors changing from 5–8 to 1–2.",
+      "In IDEXX Animana, the assessment covered 35 clinics, 150+ participants, 2 weeks, and 3 countries, and produced 100+ recommendations plus a 5-year product vision. This evidence supports assessment and planning, not full execution.",
+      "In Polymatica, the transition preserved analytical capability while changing OLAP vocabulary and access structure; product analytics recorded independent task completion changing from 2% to 56%.",
+      "In Gericke, client-measured outcomes were recorded in a confirmed single-variable window, including faster fault diagnosis, fewer repeat alarms, roughly halved operator-caused stoppages, and reduced MTTR. These are framed as interface-attributable within the window, not as caused by the interface alone.",
+      "In AIT, the legacy condition was social: thousands of installers were trained on the previous structure, so recognisability and support-call implications shaped the transition.",
+      "In Oceaneering, the predecessor was already reasoned, and some conventions were inherited and systematised rather than invented.",
+      "In the maritime traffic software portfolio, phased introduction was a brief-level constraint and the design answer was a four-layer token architecture with a risk-ordered release sequence."
     ],
     "weakerClaims": [
-      "Chemical Watch changed from a news and information publication model to a compliance intelligence platform model; subscription price tripled following launch and a 24x EBITDA exit multiple was reported one year after launch."
+      "In Gericke, an 89-component design system was later propagated by Gericke's own team across other product lines without Creative Navy; this is client-reported case evidence.",
+      "In Assemblio, the accumulated-drift examples were the client's own account while demonstrating the product, not Creative Navy audit findings."
     ],
     "limitations": [
-      "The evidence spans multiple case types and does not establish guaranteed outcomes for every legacy-to-modern transition.",
+      "Evidence strength varies by case: some outcomes are field-measured, some are client-measured, some are client-reported, and some engagements provide direction without execution outcomes.",
+      "Gexcon active-user change is client-reported; the training change is described as an operational change.",
       "IDEXX Animana demonstrates assessment and planning, not full execution.",
-      "Chemical Watch outcome figures are client-reported and must not be framed as design-caused valuation results.",
-      "Gericke outcomes are client-measured by Gericke, not Creative Navy-measured, and should be framed as interface-attributable within the confirmed single-variable window.",
-      "Gericke is described as not being a regulated device; it operates in GMP environments where GAMP 5 is relevant."
+      "Chemical Watch commercial outcomes are client-reported, and the design contribution must not be framed as causing the exit outcome.",
+      "Gericke outcomes are client-measured and interface-attributable within a confirmed single-variable window, not claimed as caused by the interface alone.",
+      "AIT has no performance, efficiency, commissioning-time, error-rate, commercial, or user-tested outcome in the available evidence.",
+      "Assemblio drift examples are the client's own account, not Creative Navy audit findings.",
+      "Oceaneering has no efficiency or throughput outcome in the available evidence, and inherited conventions should not be framed as inventions.",
+      "The maritime traffic software portfolio was not a nine-product redesign; nine products were audited and one was designed to full depth.",
+      "For the maritime traffic software portfolio, the design system reached production, but no design-fidelity comparison is recorded.",
+      "For the maritime traffic software portfolio, no engineering-efficiency claim is established because the measurement framework was handed over and no result was reported back."
     ]
   },
   "relatedPageSlugs": [
-    "ux-audit-for-complex-products",
     "information-architecture-for-expert-systems",
     "workflow-and-task-structure-redesign",
     "cognitive-load-reduction",
-    "error-reduction-and-recovery-design",
-    "warning-and-alarm-clarity-improvement",
+    "ux-audit-for-complex-products",
     "state-and-status-visibility-design",
-    "research-in-complex-operational-contexts"
+    "error-reduction-and-recovery-design",
+    "ait-heat-pump-controller",
+    "assemblio",
+    "oceaneering-dispatch-panel",
+    "maritime-vts"
   ],
   "internalLinks": [
     {
-      "anchorText": "UX audit for complex products",
-      "targetSlug": "ux-audit-for-complex-products",
-      "reason": "Legacy-to-modern transition often begins with audit and evidence-based assessment, as shown by IDEXX Animana."
-    },
-    {
       "anchorText": "information architecture for expert systems",
       "targetSlug": "information-architecture-for-expert-systems",
-      "reason": "Several examples involve restructuring interface architecture, menu structure, vocabulary, or navigation around expert workflows."
+      "reason": "Legacy-to-modern transitions often require restructuring expert-system vocabulary, navigation, and task organisation."
     },
     {
       "anchorText": "workflow and task structure redesign",
       "targetSlug": "workflow-and-task-structure-redesign",
-      "reason": "The capability includes preserving essential workflows while changing accumulated task structures."
+      "reason": "Several examples involve changing task flow while preserving expert or installed-base continuity."
     },
     {
       "anchorText": "cognitive load reduction",
       "targetSlug": "cognitive-load-reduction",
-      "reason": "The source describes cases where accumulated interface complexity made expert capability harder to access."
+      "reason": "The capability removes accidental interface overhead while preserving necessary complexity."
     },
     {
-      "anchorText": "error reduction and recovery design",
-      "targetSlug": "error-reduction-and-recovery-design",
-      "reason": "Gexcon and Gericke include documented reductions in configuration errors, repeat alarms, stoppages, or recovery time."
-    },
-    {
-      "anchorText": "warning and alarm clarity improvement",
-      "targetSlug": "warning-and-alarm-clarity-improvement",
-      "reason": "Gericke includes raw error codes and repeat-alarm outcomes in an industrial HMI transition."
+      "anchorText": "UX audit for complex products",
+      "targetSlug": "ux-audit-for-complex-products",
+      "reason": "IDEXX and maritime portfolio evidence include assessment or audit-stage direction for mature platforms."
     },
     {
       "anchorText": "state and status visibility design",
       "targetSlug": "state-and-status-visibility-design",
-      "reason": "Industrial HMI and operational interface transitions require clearer visibility of operating state and status."
+      "reason": "Gericke, Oceaneering, and maritime traffic software examples involve clearer operational state and status representation."
     },
     {
-      "anchorText": "research in complex operational contexts",
-      "targetSlug": "research-in-complex-operational-contexts",
-      "reason": "The evidence base includes workplace observations, stakeholder sessions, clinics research, and domain learning before redesign direction."
+      "anchorText": "error reduction and recovery design",
+      "targetSlug": "error-reduction-and-recovery-design",
+      "reason": "Gexcon configuration errors and Gericke fault-diagnosis outcomes connect this capability to error-related design work."
+    },
+    {
+      "anchorText": "AIT heat pump controller",
+      "targetSlug": "ait-heat-pump-controller",
+      "reason": "AIT is a named embedded legacy transition where the constraint was installed-base competence."
+    },
+    {
+      "anchorText": "Assemblio",
+      "targetSlug": "assemblio",
+      "reason": "Assemblio is the named example where the client diagnosed accumulated drift in its own product."
+    },
+    {
+      "anchorText": "Oceaneering dispatch panel",
+      "targetSlug": "oceaneering-dispatch-panel",
+      "reason": "Oceaneering is the named example of a reasoned predecessor that was partly inherited and systematised."
+    },
+    {
+      "anchorText": "maritime traffic software portfolio",
+      "targetSlug": "maritime-vts",
+      "reason": "The maritime portfolio is the named example of phased introduction and four-layer token architecture."
     }
   ],
   "tags": [
-    "legacy platform modernisation",
-    "legacy-to-modern transition",
+    "legacy modernisation",
     "platform life extension",
+    "accumulated complexity",
     "essential complexity",
     "accidental complexity",
-    "sense decay",
-    "institutional knowledge",
-    "incremental transformation",
-    "design systems",
-    "migration path"
+    "migration path",
+    "design system architecture",
+    "industrial HMI",
+    "embedded controller",
+    "information architecture"
   ],
   "_meta": {
     "sourcePath": "sources/articles/Capabilities/capabilities--design-direction-for-legacy-to-modern-transitions.md",
     "parentSlug": "capabilities",
     "childPageSlugs": [],
-    "generatedBy": "deterministic",
+    "generatedBy": "openai",
     "patches": [
       "capability-deliverables"
     ]

@@ -12,134 +12,159 @@
   "category": "practices",
   "parentSlug": "practices",
   "childPageSlugs": [],
-  "excerpt": "Decision boundary design determines which AI-assisted product decisions are made autonomously, which require human confirmation, and which require human judgment independent of AI recommendation. The practice also designs the interactions that enforce those distinctions.",
+  "excerpt": "Decision boundary design allocates AI product decisions between autonomous system action, human confirmation and independent human judgment. It specifies both the boundary categories and the interactions that enforce them.",
   "metaTitle": "Decision Boundary Design",
-  "metaDescription": "Practice for defining and implementing AI decision boundaries across autonomous action, human confirmation, and independent human judgment.",
-  "summary": "Decision boundary design is a practice for assigning AI-assisted product decision points to appropriate control categories and implementing the interface behaviours that make those boundaries meaningful. It covers boundary identification, boundary calibration, and boundary implementation, with emphasis on consequence, reversibility, confidence, governance requirements, and operational context.",
-  "definition": "Decision boundary design is the practice of determining which decision points in an AI-assisted product the AI decides autonomously, which require human confirmation, and which require human judgment independent of the AI's recommendation, then designing interactions that enforce those distinctions.",
+  "metaDescription": "Decision boundary design allocates AI product decisions between autonomous action, human confirmation and independent human judgment.",
+  "summary": "Decision boundary design determines which decision points in an AI-assisted product may be handled autonomously, which require human confirmation, and which require independent human judgment. The practice covers boundary identification, boundary calibration and boundary implementation.",
+  "definition": "Decision boundary design is the practice of determining which decision points an AI system decides autonomously, which require human confirmation, and which require human judgment independent of the AI recommendation, then designing interactions that enforce those distinctions.",
   "keyFacts": [
-    "Decision boundary design applies to AI-assisted product decision points where the system makes a choice, executes an action, or provides a recommendation that shapes subsequent events.",
-    "The practice separates boundary identification, boundary calibration, and boundary implementation.",
-    "Autonomous AI action is appropriate when the consequence of error is low and reversible, AI confidence is high, and decision volume makes human review impractical.",
-    "Human confirmation is appropriate when consequence is moderate or the action is irreversible.",
-    "Human independent judgment is appropriate when consequence is high, governance requires epistemic independence, or AI data coverage is insufficient for the decision context.",
-    "Boundary calibration sets thresholds for consequence level, AI confidence, governance requirements, and operational context as design decisions rather than purely technical parameters.",
+    "Decision boundary design applies to decision points where a system makes a choice, executes an action or provides a recommendation that shapes later events.",
+    "The practice distinguishes autonomous AI action, human confirmation and independent human judgment.",
+    "Boundary identification determines which decision points belong in each category.",
+    "Boundary calibration sets consequence and confidence thresholds as design decisions rather than only technical parameters.",
+    "Boundary implementation designs the interactions that enforce the selected boundary at the moment of decision.",
     "A technically present override is not a meaningful boundary if it is cognitively expensive to use.",
-    "Friction should be calibrated to consequential decision points rather than applied uniformly across all decisions.",
-    "The practice is used after trust-and-oversight analysis and behavioural requirements definition have identified where boundaries are needed.",
-    "In enterprise and regulated contexts, the boundary map can become evidence that human oversight is meaningful rather than nominal."
+    "The Puraite AI systematic review example used blinded mode to enforce human independent judgment before AI recommendation exposure.",
+    "The Callsign fraud detection example separated model scores, policy thresholds and human policy configuration.",
+    "The non-model examples are not AI-governance instances; their uncertainty concerns sources, links, protocols and clocks rather than model confidence."
   ],
   "tags": [
-    "AI decision boundaries",
-    "human AI interaction",
-    "human oversight",
-    "AI governance",
-    "trust calibration",
-    "decision support",
-    "interface friction",
-    "AI confidence",
+    "decision boundaries",
+    "AI oversight",
     "human confirmation",
-    "independent judgment"
+    "independent judgment",
+    "AI confidence",
+    "governance evidence",
+    "interaction design",
+    "human-AI interaction"
   ],
-  "bodyMarkdown": "## Summary\n\nDecision boundary design is a practice for AI-assisted products that determines where the AI acts autonomously, where a human confirms an AI-supported action, and where a human must exercise independent judgment rather than follow an AI recommendation.\n\nThe practice treats decision boundaries as interaction design problems, not only as technical control features. A boundary must be visible, understandable, and enforceable at the point where a recommendation, action, or decision shapes subsequent events.\n\nDecision boundary design is especially relevant where AI confidence, consequence of error, reversibility, governance requirements, and operational context vary across the product. Uniform friction across all decisions can train users to click through. No friction at consequential decisions can make human oversight nominal rather than meaningful.\n\n## What decision boundary design does\n\nDecision boundary design classifies AI-assisted product decision points into three control categories: autonomous AI action, human confirmation, and human independent judgment.\n\nAutonomous AI action is appropriate when the consequence of error is low and reversible, the AI confidence is high, and the volume of decisions makes human review impractical. Human confirmation is appropriate when the consequence is moderate or the action is irreversible. Human independent judgment, with AI as reference rather than recommendation, is appropriate when consequence is high, governance requires epistemic independence, or the AI's data coverage is insufficient for the specific decision context.\n\nThe practice does not treat an override button as sufficient. If the override path is buried, multi-step, unsupported, or cognitively more expensive than accepting the AI output, the boundary may exist as a technical feature without functioning as a meaningful human-control boundary.\n\n## Boundary identification assigns decision points to control categories\n\nBoundary identification determines which AI-assisted product decision points belong in each control category. The relevant decision points are moments where a system makes a choice, executes an action, or provides a recommendation that will shape what happens next.\n\nThe classification depends on consequence, reversibility, AI confidence, decision volume, governance requirements, and AI data coverage. A low-consequence reversible action can be suitable for autonomous AI action. A moderate-consequence or irreversible action can require human confirmation. A high-consequence decision, a decision requiring epistemic independence, or a decision outside the AI's data coverage can require independent human judgment.\n\nThis identification step makes implicit boundary positions explicit. Different AI interaction patterns can embody different assumptions about what the AI decides and what the human decides, even when the interface appears similar at a surface level.\n\n## Boundary calibration sets thresholds as design decisions\n\nBoundary calibration sets the thresholds at which one control category becomes inappropriate and another becomes necessary. Examples include the consequence level at which autonomous AI action becomes inappropriate, or the AI confidence level at which recommendation becomes inappropriate without disclosure.\n\nThese thresholds are not only technical parameters. They are design decisions informed by consequence analysis, governance requirements, and the operational context in which the product will be used.\n\nCalibration matters because the presence of a boundary does not determine whether the boundary works. Friction at every decision point can train users to dismiss prompts by habit. Friction only at consequential decision points can protect the decisions that require protection without impeding decisions that do not.\n\n## Boundary implementation makes human control legible at the moment of decision\n\nBoundary implementation designs the interactions that enforce each decision boundary. Implementation includes what happens at a consequential decision point, how confirmation is structured, how AI confidence is communicated, and how the interface distinguishes the AI's recommendation from the human's decision in the record.\n\nA meaningful implementation makes the boundary legible. Users should understand when they are acting on AI output and when they are acting on their own judgment. The interaction should not make the correct path harder than the compliant path when independent judgment or override is required.\n\nImplementation also includes record design. Where the product must distinguish between an AI recommendation and a human decision, the interface and record must preserve that distinction rather than collapsing both into a single accepted output.\n\n## When decision boundary design is used\n\nDecision boundary design is used after trust-and-oversight analysis for AI and behavioural requirements definition have identified where boundaries are needed and why. In that sequence, decision boundary design specifies how the identified boundaries are implemented.\n\nDecision boundary design is also used during Concept Convergence when AI interaction patterns are being evaluated. Different design directions often carry different implicit boundary positions, and making those positions explicit is necessary for comparison.\n\nIn enterprise and regulated contexts, decision boundary design can be used before governance review. The resulting boundary map becomes part of the evidence that the product's human oversight structure is meaningful rather than nominal.\n\n## Puraite systematic review evidence for independent human judgment boundaries\n\nIn the Puraite AI systematic review case, the decision boundary is methodologically defined: inclusion and exclusion decisions must be made by human reviewers exercising independent judgment. The AI assists the review process, but it does not decide inclusion or exclusion.\n\nBlinded mode implements the epistemic independence boundary. The AI recommendation is not shown before the human reviewer has made an assessment. This is the boundary implementation rather than a user preference, because showing the AI recommendation before the human assessment can anchor judgment before independence is possible.\n\nThe Puraite case also uses confidence display at decision points. When the AI recommendation is available after human assessment in blinded mode, or in non-blinded sessions, confidence is shown as a percentage alongside the recommendation. This makes low-confidence AI recommendations more visible as requiring active human attention.\n\nOverride parity is another boundary implementation in the Puraite case. The override interaction is designed to require no more cognitive effort than acceptance, so the boundary does not make the correct path harder than the compliant path.\n\n## Callsign fraud detection evidence for model, policy, and human decision separation\n\nIn the Callsign fraud detection case, the decision boundary separates what the model decides, what the policy decides, and what the human decides. The model produces risk scores. The policy layer determines thresholds and workflow triggers. Human analysts configure policy and strategic exceptions.\n\nModel and policy separation functions as an architectural boundary. It is not possible to modify model outputs through the interface; it is only possible to configure how policies interpret those outputs. This means human decision-making operates at the policy level rather than at the model-output level.\n\nThe Callsign case also includes a policy evaluation mode. This read-only mode supports analysis of how a policy would behave against historical data and is separate from the configuration mode where policies are modified. The boundary prevents accidental live modifications during evaluation sessions.\n\nConsequence threshold surfacing is used for high-consequence policy changes. Policy changes affecting live transaction volumes above specified thresholds are flagged at the point of modification, creating visible friction calibrated to the impact of the change.\n\n## Owkin K biomedical AI evidence for data boundaries as decision boundaries\n\nIn the Owkin K biomedical AI case, the decision boundary separates what K knows from what the researcher decides to act on. K's responses are bounded by dataset scope, and the boundary design makes that scope visible.\n\nEvery K response includes the data sources it drew from. Responses that approach the edge of K's knowledge scope are flagged. The researcher's decision to act on K's output is therefore informed by visible information about the data basis for the response.\n\nThe Owkin K case also treats query framing as a decision point. The entry experience is designed so researchers frame their query with knowledge of K's capability scope before committing to a question. This moves a meaningful decision earlier in the interaction: researchers decide whether to ask before they ask, rather than only deciding whether to trust the output after receiving it.\n\n## Hudex intelligence analysis evidence for progressive disclosure boundaries\n\nIn the Hudex intelligence analysis case, the decision boundary between AI-generated summary and expert analytical engagement is implemented through progressive disclosure.\n\nThe project overview functions as a boundary entry. It shows AI-generated high-level analysis, and the researcher decides whether to engage with detailed AI clustering based on that summary. The boundary between receiving an AI summary and engaging with AI analysis is explicit and controlled by the researcher rather than crossed automatically.\n\nWithin the dondogram, the depth of AI analysis visible is controlled by user action rather than displayed by default. This keeps the boundary between AI output and analyst judgment legible because the analyst is aware of when AI-generated structure is being received and when personal interpretation is being applied.\n\n## Outputs of decision boundary design\n\nDecision boundary design produces a boundary map that identifies AI-assisted product decision points and assigns them to autonomous AI action, human confirmation, or human independent judgment.\n\nDecision boundary design also produces calibrated interaction requirements for those boundaries. These include consequence thresholds, confidence communication, confirmation structure, override parity, mode separation, and record distinctions between AI recommendation and human decision where those distinctions matter.\n\nIn enterprise and regulated contexts, the boundary map can become governance evidence. Its role is to show that human oversight has been designed into the interaction and workflow structure rather than represented only as an override feature.\n\n## Boundaries and limits of the practice\n\nDecision boundary design does not make an AI recommendation correct. It defines who decides, under what conditions, and how the interface enforces that distinction.\n\nDecision boundary design also does not treat all human involvement as meaningful oversight. A user can be technically able to override an AI recommendation while still being guided by the path of least resistance toward accepting it. The practice therefore evaluates the cognitive cost and interaction structure of crossing a boundary.\n\nThe engagement examples show how the practice has been applied in systematic review, fraud detection, biomedical AI, and intelligence analysis contexts. They should not be read as evidence that a single boundary pattern applies across all AI products. The appropriate boundary depends on consequence, reversibility, confidence, governance requirements, operational context, and data coverage.\n\n## Related practices and capabilities\n\nDecision boundary design follows trust-and-oversight analysis for AI, which identifies where trust calibration failures and oversight gaps require boundaries. It also follows behavioural requirements definition, which specifies the requirements that boundary design implements.\n\nDecision boundary design connects to human-AI interaction design because it implements human control architecture in the interface. It also connects to behavioural governance for AI products because the boundary map is a core component of governance evidence for meaningful oversight.",
+  "bodyMarkdown": "## Summary\n\nDecision boundary design specifies how consequential decisions are allocated in an AI-assisted product. The allocation distinguishes autonomous system action, human confirmation and independent human judgment.\n\nThe practice applies to decision points where the system makes a choice, executes an action or provides a recommendation that will shape later events. It is not limited to adding an override control. Decision boundary design identifies the decision boundary, calibrates the threshold for crossing it and implements the interaction that enforces it.\n\nIn products with no model, the equivalent design problem is the allocation between a touchscreen and a physical control, and between what an interface may assert and what the system beneath it can evidence. Those examples are not AI examples; their uncertainty concerns sources, links, protocols and clocks rather than model confidence.\n\n## What decision boundary design does\n\nDecision boundary design determines which decision points are appropriate for autonomous AI action, which require human confirmation and which require independent human judgment. The practice treats this allocation as a design and governance problem, not only as a technical configuration problem.\n\nAutonomous AI action is appropriate when the consequence of error is low and reversible, AI confidence is high and the volume of decisions makes human review impractical. Human confirmation is appropriate when the consequence is moderate or the action is irreversible. Human independent judgment is appropriate when consequence is high, governance requires epistemic independence or AI data coverage is insufficient for the specific decision context.\n\nThe practice also determines how the interface records the difference between an AI recommendation and a human decision. A record that does not distinguish recommendation from decision weakens the boundary because it obscures who or what made the consequential choice.\n\n## Boundary identification, calibration and implementation\n\nDecision boundary design has three separate activities: boundary identification, boundary calibration and boundary implementation. Each activity answers a different question about the same decision point.\n\nBoundary identification determines which decision points belong in each category. It asks whether the AI may act autonomously, whether a human must confirm the action, or whether the human must make an independent judgment with the AI as reference rather than recommendation.\n\nBoundary calibration sets thresholds. It asks at what consequence level autonomous AI action becomes inappropriate, and at what AI confidence level recommendation becomes inappropriate without disclosure. These thresholds are design decisions informed by consequence analysis, governance requirements and operational context; they are not only technical parameters.\n\nBoundary implementation designs the enforcing interaction. It specifies what happens at a consequential decision point, how confirmation is structured, how AI confidence is communicated at the moment of decision and how the interface distinguishes between the AI recommendation and the human decision in the record.\n\n## Boundary calibration matters more than the presence of an override\n\nDecision boundary design treats human override as an interaction design problem. A boundary can be technically present but not meaningful if it is cognitively expensive to cross, such as when the override is buried, dismissal requires multiple steps or the interface offers no support for the override decision.\n\nThe risk is default acceptance. Users may accept AI recommendations not because they agree with them, but because the path of least resistance leads to acceptance.\n\nThe interaction must make the boundary legible. Users should understand when they are acting on AI output and when they are acting on their own judgment. The friction must also be calibrated to the consequence of the decision rather than applied uniformly.\n\nUniform friction can train users to click through. Friction at consequential decision points protects the decisions that need protection without impeding decisions that do not need the same protection.\n\n## When Creative Navy applies decision boundary design\n\nCreative Navy applies decision boundary design after trust-and-oversight analysis and behavioural requirements definition have identified where boundaries are needed and why. At that point, decision boundary design specifies how the required boundaries are implemented in interaction behaviour.\n\nDecision boundary design is also used during Concept Convergence when evaluating AI interaction patterns. Different design directions often contain implicit boundary positions, and making those positions explicit is necessary for comparing them.\n\nIn enterprise and regulated contexts, decision boundary design is used before governance review. The boundary map becomes part of the evidence that the product's human oversight structure is meaningful rather than nominal.\n\n## Puraite AI systematic review boundary between AI assistance and independent human judgment\n\nIn the Puraite AI systematic review case, the decision boundary was methodologically defined. Inclusion and exclusion decisions had to be made by human reviewers exercising independent judgment. The AI's role was to assist rather than decide.\n\nBlinded mode enforced the epistemic independence boundary. The AI recommendation was not shown before the human reviewer made an assessment. Without this implementation, the boundary would exist nominally because users could still override, but it would not be enforced because AI recommendations could anchor judgment before independence was possible.\n\nConfidence display at decision points implemented calibration. When the AI recommendation was available, confidence was shown as a percentage alongside the recommendation. This applied in blinded mode after human assessment and in non-blinded sessions. Low-confidence AI recommendations required more active human attention than high-confidence recommendations.\n\nOverride parity implemented the principle that the boundary should not make the correct path harder than the compliant path. The override interaction was designed to require no more cognitive effort than acceptance.\n\n## Callsign fraud detection boundary between model score, policy consequence and human configuration\n\nIn the Callsign fraud detection case, the decision boundary separated what the model decided, what policy decided and what the human decided. The model produced risk scores. The policy layer determined thresholds and workflow triggers. Human analysts configured policies and strategic exceptions.\n\nModel and policy separation operated as an architectural boundary. Human analysts made decisions at the policy level, deciding which consequence applied to which risk score, rather than modifying model outputs. The interface did not allow model outputs to be changed; it allowed policy interpretation of those outputs to be configured.\n\nPolicy evaluation mode enforced a boundary between analysis and modification. The read-only mode allowed analysts to evaluate how a policy would behave against historical data, separated from the configuration mode where policies were modified. This prevented accidental live modifications during evaluation sessions.\n\nConsequence threshold surfacing created visible friction at the point of modification. High-consequence policy changes affecting live transaction volumes above specified thresholds were flagged when modified, so the friction was calibrated to the impact of the change.\n\n## Owkin K biomedical AI boundary between dataset scope and researcher action\n\nIn the Owkin K biomedical AI case, the decision boundary separated what K knows from what the researcher decides to act on. K's responses were bounded by dataset scope, and the boundary design made that scope visible.\n\nEvery response included the data sources it drew from. Responses approaching the edge of K's knowledge scope were flagged. The researcher's decision to act on K's output was therefore informed by visible information about the data basis for the response.\n\nQuery framing was also treated as a decision point. The entry experience was designed so that researchers framed their query with knowledge of K's capability scope before committing to a question. This moved the first meaningful decision earlier in the workflow: researchers decided whether to ask before they asked, rather than receiving an output and only then deciding whether to trust it.\n\n## Hudex intelligence analysis boundary between AI summary and analyst exploration\n\nIn the Hudex intelligence analysis case, the boundary between AI-generated summary and expert analytical engagement was implemented through progressive disclosure.\n\nThe project overview acted as the boundary entry. It showed AI-generated high-level analysis, and the researcher decided whether to engage with detailed AI clustering based on the summary. The boundary between receiving an AI summary and engaging with AI analysis was explicit and controlled by the researcher rather than crossed automatically.\n\nWithin the dondogram, the depth of AI analysis visible was controlled by user action rather than displayed by default. This kept the boundary between AI output and analyst judgment legible because the analyst remained aware of when AI-generated structure was being received and when the analyst's own interpretation was being applied.\n\n## Non-model examples show boundary design without AI inference\n\nFour non-model engagements show the same practice allocating boundaries between what an interface may assert and what the system beneath it can evidence. These engagements are not AI work and should not be treated as AI-governance examples. Their uncertainty is a property of sources, links, protocols and clocks, not of model confidence.\n\nIn KISPE Space, the product boundary excluded autonomous operational decisions, inferred adversary classification or targeting, guaranteed service-quality prediction and substitution for existing command systems. The enforcing behavioural rule was that system errors never invent operational conclusions. A transport or access failure is reported as a transport or access failure, with what is still known from cache, and is not translated into a statement about adversaries, sensors or service status.\n\nIn Raymarine next-generation fixed-mount VHF work, send eligibility was a derived boundary. Whether a digital call could be transmitted was computed from recipient identity validity, record freshness, channel lawfulness under the active regional profile and station readiness. The computation was repeated at the moment of sending, so a recipient could not drift during preparation. A visible vessel was not necessarily a callable vessel when it lacked a usable registered identity.\n\nIn Schone Airspace Group uncrewed aircraft Mission Control, command eligibility was a derived boundary. Whether an action could be offered was computed from source freshness, link condition and channel permission, not from selection alone. Where link condition and sample freshness could not establish eligibility, availability was shown as unknown rather than ready. The accepted cost was reduced apparent immediacy in uncertain conditions in order to preserve the accuracy of command affordances.\n\nIn the European manufacturer engagement for uncrewed systems and tactical command-and-control software, the radial menu was made non-contextual because the system could not reliably determine whether a vehicle was airborne or on the ground. The design showed every option rather than asserting a distinction the system beneath it could not evidence. This was a boundary about system knowledge, not model confidence.\n\n## Outputs of decision boundary design\n\nDecision boundary design produces a boundary map. The boundary map identifies decision points, assigns each decision point to autonomous action, human confirmation or independent human judgment, and records the reason for that assignment.\n\nDecision boundary design also produces interaction rules. These rules specify how the interface handles the decision point, how friction is introduced or avoided, how confidence or data scope is shown, and how the record separates AI recommendation from human decision.\n\nIn enterprise and regulated contexts, the boundary map can form part of governance evidence. Its purpose is to show that human oversight is meaningful in the interaction design, rather than only nominal in policy language.\n\n## Boundaries and limits of the practice\n\nDecision boundary design does not guarantee that a human will make the correct decision. It specifies where human judgment, confirmation or autonomous action belongs, and designs the interaction that enforces that allocation.\n\nDecision boundary design also does not convert non-model systems into AI systems. In non-model examples, the relevant boundary is between what the interface may assert and what the underlying system can evidence. Those examples should not be read as claims about model inference, AI confidence or AI governance.\n\nThe available engagement evidence describes boundary structures and design decisions. It does not establish that any boundary prevented an error or incident.\n\n## Related practices\n\nDecision boundary design follows trust-and-oversight analysis for AI when that analysis has identified trust calibration failures and oversight gaps that require boundaries.\n\nDecision boundary design also follows behavioural requirements definition because boundary requirements are one category of behavioural requirement. Behavioural requirements define what the product must make possible, prevent or distinguish; decision boundary design specifies the enforcing interaction at the decision point.",
   "claims": [
     {
-      "claim": "Decision boundary design determines which AI-assisted product decisions are autonomous, which require human confirmation, and which require independent human judgment, then designs interactions that enforce those distinctions.",
+      "claim": "Decision boundary design allocates decision points between autonomous AI action, human confirmation and independent human judgment, then designs interactions to enforce those distinctions.",
       "evidenceType": "conceptual definition",
       "sourceStrength": "strong",
       "notes": "Defined directly in the practice description."
     },
     {
-      "claim": "Boundary calibration is treated as a design decision informed by consequence analysis, governance requirements, and operational context, not only as a technical parameter.",
-      "evidenceType": "definition",
-      "sourceStrength": "strong",
-      "notes": "Supported by the boundary calibration section."
-    },
-    {
-      "claim": "A technically present override is not a meaningful boundary when crossing it is cognitively expensive.",
+      "claim": "Boundary calibration sets consequence and AI-confidence thresholds as design decisions informed by consequence analysis, governance requirements and operational context.",
       "evidenceType": "conceptual definition",
       "sourceStrength": "strong",
-      "notes": "Supported by the section explaining why boundary calibration matters more than boundary presence."
+      "notes": "The practice description states that thresholds are design decisions, not merely technical parameters."
     },
     {
-      "claim": "In the Puraite AI systematic review case, blinded mode enforces the epistemic independence boundary by withholding the AI recommendation until after human assessment.",
+      "claim": "A technically present override is not necessarily a meaningful decision boundary if it is cognitively expensive to cross.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "The source explicitly contrasts a nominal override with a meaningful boundary."
+    },
+    {
+      "claim": "In the Puraite AI systematic review case, blinded mode enforced independent human judgment by withholding the AI recommendation until after the human assessment.",
       "evidenceType": "case study",
       "sourceStrength": "case evidence",
-      "notes": "Supported by the Puraite engagement evidence."
+      "notes": "The Puraite example is presented as engagement evidence for boundary implementation."
     },
     {
-      "claim": "In the Callsign fraud detection case, model and policy separation creates an architectural boundary between model risk scores, policy consequences, and human policy configuration.",
+      "claim": "In the Callsign fraud detection case, model outputs, policy consequences and human policy configuration were separated as decision boundaries.",
       "evidenceType": "case study",
       "sourceStrength": "case evidence",
-      "notes": "Supported by the Callsign engagement evidence."
+      "notes": "The Callsign example distinguishes model scores, policy thresholds and human configuration."
     },
     {
-      "claim": "In the Owkin K biomedical AI case, visible dataset scope and source display make the data boundary part of the researcher's decision boundary.",
+      "claim": "In the Owkin K biomedical AI case, dataset-scope visibility was used as a decision boundary between what K knows and what researchers decide to act on.",
       "evidenceType": "case study",
       "sourceStrength": "case evidence",
-      "notes": "Supported by the Owkin / K engagement evidence."
+      "notes": "The Owkin K example describes data-source display and scope-edge flagging."
     },
     {
-      "claim": "In the Hudex intelligence analysis case, progressive disclosure separates AI-generated summary from analyst-controlled engagement with detailed AI clustering.",
+      "claim": "The KISPE Space, Raymarine, Schone Airspace Group and European manufacturer examples are non-model boundary examples and are not AI-governance instances.",
       "evidenceType": "case study",
       "sourceStrength": "case evidence",
-      "notes": "Supported by the Hudex engagement evidence."
+      "notes": "The source explicitly states that these four engagements contain no model and must not be read into the AI framing."
     },
     {
-      "claim": "In enterprise and regulated contexts, the boundary map can be used as evidence that the product's human oversight structure is meaningful rather than nominal.",
-      "evidenceType": "Creative Navy-recorded",
-      "sourceStrength": "engagement record",
-      "notes": "Supported by the stated use before governance review."
+      "claim": "Decision boundary design is used after trust-and-oversight analysis and behavioural requirements definition, during Concept Convergence, and before governance review in enterprise and regulated contexts.",
+      "evidenceType": "practice description",
+      "sourceStrength": "strong",
+      "notes": "The timing is stated directly in the source under when the practice is used."
     }
   ],
   "limitations": [
-    "The practice determines decision authority and interaction enforcement; it does not establish that an AI recommendation is correct.",
-    "The engagement examples are context-specific and do not establish a universal boundary pattern for all AI products.",
-    "The appropriate boundary depends on consequence, reversibility, AI confidence, governance requirements, operational context, and AI data coverage.",
-    "The source does not provide quantitative validation metrics for the engagement examples.",
-    "The Hudex example uses the term \"dondogram\"; spelling may need review before publication if it is intended to be a technical term."
+    "The practice does not establish that a boundary prevented an error or incident; the available evidence describes design decisions and boundary structures.",
+    "The KISPE Space, Raymarine, Schone Airspace Group and European manufacturer examples are non-model examples and must not be treated as AI-governance instances.",
+    "No safety, certification, type-approval, weapons-review or regulatory credential is established for the non-model examples.",
+    "The source provides sequence and practice use, but no engagement dates.",
+    "The page does not claim shipped-as-designed or design-fidelity outcomes for KISPE Space, Raymarine or the European manufacturer engagement."
   ],
   "publicationBlockers": [],
   "questionsForReview": [
-    "Confirm whether \"dondogram\" in the Hudex example is the intended term or a spelling issue."
+    "None"
   ],
   "relatedPageSlugs": [
     "trust-and-oversight-analysis-for-ai",
     "behavioural-requirements-definition",
-    "callsign-fraud-authentication",
     "puraite",
-    "owkin-k"
+    "callsign-fraud-authentication",
+    "owkin-k",
+    "kispe-space",
+    "raymarine-vhf",
+    "schone-mission-control",
+    "tactical-handheld-command-and-control"
   ],
   "internalLinks": [
     {
       "anchorText": "trust-and-oversight analysis for AI",
       "targetSlug": "trust-and-oversight-analysis-for-ai",
-      "placementHint": "Related practices and capabilities section",
-      "reason": "The current page states that decision boundary design follows this practice."
+      "placementHint": "Related practices section",
+      "reason": "The source states that decision boundary design follows trust-and-oversight analysis for AI."
     },
     {
       "anchorText": "behavioural requirements definition",
       "targetSlug": "behavioural-requirements-definition",
-      "placementHint": "Related practices and capabilities section",
-      "reason": "The current page states that behavioural requirements definition specifies the requirements that boundary design implements."
+      "placementHint": "Related practices section",
+      "reason": "The source states that decision boundary design follows behavioural requirements definition and implements boundary requirements."
     },
     {
-      "anchorText": "Puraite AI systematic review case",
+      "anchorText": "Puraite AI systematic review",
       "targetSlug": "puraite",
-      "placementHint": "Puraite systematic review evidence section",
-      "reason": "The page uses Puraite as a documented engagement example for independent human judgment boundaries."
+      "placementHint": "Puraite evidence section",
+      "reason": "The source uses Puraite as engagement evidence for blinded mode, confidence display and override parity."
     },
     {
-      "anchorText": "Callsign fraud detection case",
+      "anchorText": "Callsign fraud detection",
       "targetSlug": "callsign-fraud-authentication",
-      "placementHint": "Callsign fraud detection evidence section",
-      "reason": "The page uses Callsign as a documented engagement example for model, policy, and human decision separation."
+      "placementHint": "Callsign evidence section",
+      "reason": "The source uses Callsign as engagement evidence for model and policy separation."
     },
     {
-      "anchorText": "Owkin K biomedical AI case",
+      "anchorText": "Owkin K biomedical AI",
       "targetSlug": "owkin-k",
-      "placementHint": "Owkin K biomedical AI evidence section",
-      "reason": "The page uses Owkin K as a documented engagement example for data boundaries as decision boundaries."
+      "placementHint": "Owkin K evidence section",
+      "reason": "The source uses Owkin K as engagement evidence for dataset scope visibility and query framing."
+    },
+    {
+      "anchorText": "KISPE Space",
+      "targetSlug": "kispe-space",
+      "placementHint": "Non-model examples section",
+      "reason": "The source includes KISPE Space as a non-model boundary example."
+    },
+    {
+      "anchorText": "Raymarine next-generation fixed-mount VHF",
+      "targetSlug": "raymarine-vhf",
+      "placementHint": "Non-model examples section",
+      "reason": "The source includes Raymarine as a non-model boundary example involving send eligibility."
+    },
+    {
+      "anchorText": "Schone Airspace Group Mission Control",
+      "targetSlug": "schone-mission-control",
+      "placementHint": "Non-model examples section",
+      "reason": "The source includes Schone Airspace Group as a non-model boundary example involving command eligibility."
+    },
+    {
+      "anchorText": "European manufacturer tactical command-and-control engagement",
+      "targetSlug": "tactical-handheld-command-and-control",
+      "placementHint": "Non-model examples section",
+      "reason": "The source includes the European manufacturer engagement as a non-model boundary example about system knowledge."
     }
   ],
   "qualityChecks": {

@@ -12,83 +12,83 @@
   "category": "glossary",
   "parentSlug": "our-concepts",
   "childPageSlugs": [],
-  "excerpt": "Microtask analysis is an account of discrete user actions within a system, collected without assuming a sequence or flow. It is used to understand non-linear behaviour in complex interfaces such as single-page applications, dashboards, and expert software.",
+  "excerpt": "Microtask analysis documents discrete user actions within a system without assuming a fixed sequence or flow. It is used to understand nonlinear behaviour in complex software environments where users combine actions in ways not anticipated by the design.",
   "metaTitle": "Microtask Analysis",
-  "metaDescription": "Microtask analysis defines user behaviour as discrete actions rather than assumed flows in complex, non-linear software systems.",
-  "summary": "Microtask analysis treats behaviour in complex systems as a space of discrete actions rather than as a designed sequence. It records what users do, when they do it, what each action depends on, and where discovery, understanding, cognitive load, or operational constraints create friction.",
-  "definition": "Microtask analysis is an account of discrete user actions within a system, collected independently of any assumed sequence or flow.",
+  "metaDescription": "Microtask analysis documents discrete user actions in complex systems without assuming a fixed sequence or flow.",
+  "summary": "Microtask analysis treats user behaviour in complex systems as a space of discrete actions rather than as a predetermined sequence. It records what users do, when they do it, what they need, what goes wrong, and which dependencies shape the action.",
+  "definition": "Microtask analysis is an account of discrete user actions within a system, collected independently of any assumed sequence, journey, or designed flow.",
   "keyFacts": [
-    "Microtask analysis documents discrete user actions without assuming that those actions follow an intended sequence.",
-    "It differs from a task flow or journey map because task flows diagram designed sequences, while microtask analysis records what users actually do and when.",
-    "The concept is particularly valuable in single-page applications, complex dashboards, and interfaces where users navigate non-linearly.",
-    "Recorded attributes include triggering context, discovery, understanding, required information or state, issues, opportunities, desired outcome, pain points, patterns, frequency, cognitive load, and dependencies.",
-    "In complex expert software, users may develop idiosyncratic workflows and combine microtasks in ways not anticipated by the design.",
+    "Microtask analysis does not assume that user actions occur in a designed order.",
+    "It differs from a task flow because a task flow diagrams a designed sequence, while a microtask list records what users actually do and when.",
+    "It is particularly valuable in single-page applications, complex dashboards, and interfaces where users navigate non-linearly.",
+    "Microtask attributes include discovery, understanding, context, user needs, issues, opportunities, desired outcome, pain points, patterns, frequency, cognitive load, and dependencies.",
+    "The practice is used during Sandbox Experiments, typically alongside user observation and contextual inquiry.",
+    "A microtask list is built during or after observation sessions, not from user self-report alone.",
     "In the Gexcon CFD simulation software example, 102 individual tasks were documented across the system.",
     "In the Beissbarth automotive calibration example, 12 key features were documented across 4 modules.",
-    "As a practice, microtask analysis is used during Sandbox Experiments, typically alongside user observation and contextual inquiry.",
-    "The microtask list is built during or after observation sessions, not from user self-report alone.",
-    "The term is not described as an existing UX literature term in this exact form."
+    "In the Oceaneering engagement, a requirements-table column structure decomposed and tracked discrete requirements and open questions, but it was not evidence of observed user behaviour."
   ],
   "tags": [
-    "microtask analysis",
-    "user behaviour",
-    "task analysis",
-    "non-linear workflow",
-    "expert software",
+    "microtasks",
+    "task flow",
+    "journey map",
+    "single-page applications",
     "complex dashboards",
     "cognitive load",
+    "contextual inquiry",
     "Sandbox Experiments"
   ],
-  "bodyMarkdown": "## Definition of microtask analysis\n\nMicrotask analysis is an account of discrete user actions within a system, collected independently of any assumed sequence or flow.\n\nThe concept treats user behaviour in complex systems as a space of actions rather than as a set of predefined paths. The analytical practice operationalises this concept by documenting what users actually do and when, including actions that do not follow the designed or expected flow.\n\n## Microtask analysis differs from task flows and journey maps\n\nMicrotask analysis differs from a task flow or journey map because no ordering is assumed. A task flow diagrams a designed sequence. A microtask list documents what users actually do and when, regardless of whether those actions follow an intended flow.\n\nThis distinction matters in complex expert software because users may develop idiosyncratic workflows. Users can combine microtasks in ways the design did not anticipate. A flow-based analysis can miss this behaviour because it documents the intended sequence rather than the actual behaviour space.\n\n## Microtask analysis is useful in non-linear and complex interfaces\n\nMicrotask analysis is particularly valuable in single-page applications, complex dashboards, and interfaces where users navigate non-linearly or combine actions in ways not anticipated by the design.\n\nIn these systems, the meaningful unit of analysis is often not a complete journey. It is the individual action, the condition that triggers it, the information or state the user needs, and the dependencies that shape what can happen next.\n\n## Attributes recorded for each microtask\n\nA microtask record captures the conditions and consequences of a user action. The recorded attributes include when the action is performed, the context or triggering condition, and whether users can discover the action.\n\nA microtask record also captures whether users understand what the action does, what information, state, or context the user needs to perform it, what goes wrong, and what could be improved.\n\nThe analysis includes the desired outcome, specific pain points, patterns in how different users approach the action, frequency, cognitive load, and dependencies. Dependencies include what the microtask relies on and what the microtask enables.\n\n## What a microtask list reveals\n\nA microtask list can reveal actions that designers do not know users perform. It can also reveal actions that are harder to discover than expected, actions that carry more cognitive load than their apparent simplicity suggests, and dependencies that create unexpected constraints.\n\nThese findings are visible because microtasks are mapped independently before their relationships are examined. The analysis does not require the user action to belong to a designed path before it can be documented.\n\n## Microtask analysis as a practice during Sandbox Experiments\n\nAs a practice, microtask analysis is used during Sandbox Experiments, typically alongside user observation and contextual inquiry. The microtask list is built during or after observation sessions, not from user self-report alone.\n\nThis boundary is important because microtask analysis depends on observed behaviour. User self-report alone may describe remembered or intended behaviour, but the practice is concerned with what users actually do and when.\n\n## Gexcon CFD simulation software example\n\nIn the Gexcon CFD simulation software example, 102 individual tasks were documented across the system. For each task, the documentation captured user goals, frequency, difficulty, and the actions taken to complete it.\n\nThis produced a map of the full behaviour space. The map was not a designed sequence. It was an inventory of what users actually did and when, across a single working environment that compressed the workflow diversity that enterprise tools typically distribute across many simpler screens.\n\nA second analytical layer examined the hierarchy of needs within multi-step tasks. Some steps were essential for scientific correctness, others prevented error, and others improved efficiency. That hierarchy is not visible in a task flow diagram; it becomes visible when microtasks are mapped independently and their relationships are examined.\n\nThe task map revealed where the existing interface aligned with real scientific workflow and where friction had accumulated. The documented example describes this as an empirical basis for interaction design decisions that could not have been derived from stakeholder interviews alone.\n\n## Beissbarth automotive calibration example\n\nIn the Beissbarth automotive calibration example, 12 key features were documented across 4 modules in a structured analysis table. For each feature, the recorded attributes included the information required at that step, the precision of the values involved, the expected technician movement during the step, the effect of lighting conditions, and the acceptable time for a user to interpret the display.\n\nThis produced the empirical backbone for the interaction design and identified where bottlenecks affected calibration speed and procedural reliability. The movement and lighting attributes were a domain-specific extension of microtask analysis because standard microtask attributes would not have captured the physical operational constraints that governed each interaction in a workshop environment.\n\nThe Beissbarth analysis determined which information had to remain persistent throughout the sequence and which information could change contextually.\n\n## Boundaries of the term\n\nMicrotask analysis is not described as a term from existing UX literature in this exact form. In this documentation, the term names a specific concept: user behaviour in complex systems can be better understood as a space of discrete actions than as a set of flows.\n\nThe concept is distinctive enough to separate from flow-based analysis, but general enough to apply across different project types. The practice form applies the concept by building a microtask list from observation and analysis.",
+  "bodyMarkdown": "## Definition of microtask analysis\n\nMicrotask analysis is an account of discrete user actions within a system, collected independently of any assumed sequence or flow.\n\nThe concept treats user behaviour in complex systems as a behaviour space made of individual actions. It does not begin with the assumption that users follow the sequence intended by the interface design.\n\n## Microtask analysis differs from task flows and journey maps\n\nMicrotask analysis differs from a task flow because no ordering is assumed. A task flow diagrams a designed sequence. A microtask list documents what users actually do and when, regardless of whether those actions follow an intended flow.\n\nMicrotask analysis also differs from a journey map because it is not primarily a representation of an end-to-end experience. It is an inventory of discrete actions, their conditions, their dependencies, and the difficulties attached to them.\n\nThis distinction matters in complex expert software because users often develop idiosyncratic workflows. Users may combine microtasks in ways the design did not anticipate. A flow-based analysis can miss that behaviour because it documents the intended sequence rather than the full behaviour space.\n\n## What microtask analysis records for each action\n\nMicrotask analysis records attributes that describe how a user action functions in practice, not only what the action is called in the interface.\n\nFor each microtask, the recorded attributes include:\n\n- when the action is performed, including context and triggering condition\n- ease of discovery: whether users can find the action\n- ease of understanding: whether users know what the action does\n- what the user needs to perform the action, including information, state, and context\n- issues: what goes wrong\n- opportunities: what could be improved\n- desired outcome: what the user is trying to achieve\n- pain points: specific difficulties encountered during the action\n- patterns: how different users approach the action differently\n- frequency: how often the action occurs\n- cognitive load: how much attention the action demands\n- dependencies: what the action relies on and what it enables\n\nThese attributes make a microtask list more than a feature inventory. The list records the conditions under which actions occur and the constraints that shape whether those actions are successful.\n\n## Where microtask analysis is most useful\n\nMicrotask analysis is particularly valuable in single-page applications, complex dashboards, and interfaces where users navigate non-linearly.\n\nThese environments often do not have a single stable path through the interface. Users may switch between areas, repeat actions, combine actions, or follow local workarounds that are not visible in a designed flow diagram.\n\nIn these systems, microtask analysis can reveal actions that designers did not know users were performing, actions that are harder to discover than expected, actions that carry more cognitive load than their apparent simplicity suggests, and dependencies that create unexpected constraints.\n\n## Microtask analysis as a practice during Sandbox Experiments\n\nAs an analytical practice, microtask analysis is used during Sandbox Experiments, typically alongside user observation and contextual inquiry.\n\nThe microtask list is built during or after observation sessions. It is not built from user self-report alone. This boundary matters because the practice is intended to capture what users actually do in a system, including actions and combinations of actions that users may not report when asked to describe their workflow.\n\nThe practice operationalises the underlying concept: in complex systems, user behaviour can be better understood as a space of discrete actions than as a set of predefined flows.\n\n## Gexcon CFD simulation software example\n\nIn the Gexcon CFD simulation software example, 102 individual tasks were documented across the system.\n\nFor each task, the documented attributes included user goals, frequency, difficulty, and the actions taken to complete it. This produced a map of the full behaviour space: not a designed sequence, but an inventory of what users actually did and when.\n\nThe example involved a single working environment that compressed workflow diversity that enterprise tools typically distribute across many simpler screens. A second analytical layer examined the hierarchy of needs within multi-step tasks. Some steps were essential for scientific correctness, some prevented error, and others improved efficiency.\n\nThat hierarchy is not visible in a task flow diagram. It becomes visible when microtasks are mapped independently and their relationships are examined. In the Gexcon example, the task map showed where the existing interface aligned with real scientific workflow and where friction had accumulated. This provided an empirical basis for interaction design decisions that could not have been derived from stakeholder interviews alone.\n\n## Beissbarth automotive calibration example\n\nIn the Beissbarth automotive calibration example, 12 key features were documented across 4 modules in a structured analysis table.\n\nFor each feature, the recorded attributes included the information required at that step, the precision of the values involved, the expected technician movement during the step, the effect of lighting conditions, and the acceptable time for a user to interpret the display.\n\nThis produced the empirical backbone for the interaction design and identified where bottlenecks affected calibration speed and procedural reliability. The per-feature movement and lighting attributes were a domain-specific extension of microtask analysis. Standard microtask attributes would not have captured the physical operational constraints that governed each interaction in a workshop environment.\n\nThe Beissbarth analysis determined which information had to remain persistent throughout the sequence and which information could change contextually.\n\n## Oceaneering requirements-table example and evidence boundary\n\nIn the Oceaneering engagement, the analytical instrument was the column structure of the engagement's design requirements table.\n\nThat structure decomposed and tracked discrete requirements and open questions. The requirements table was held in collaboration infrastructure built for the engagement: a documentation workspace containing the project timeline, the design requirements table, stakeholder interview findings, and an open-questions page; and a design-review tool with per-screen commenting and a how-to guide written for first-time reviewers. The engagement also had a stated expectation of feedback within three to four working days per wireframe set.\n\nThe analytical device was the same type of requirements-table column structure used in the industrial, Streetec, and AIT engagements.\n\nThe Oceaneering example has a different evidence boundary from the Gexcon and Beissbarth examples. It documents how discrete requirements and open questions were decomposed and tracked. It is not evidence of observed user behaviour. No operator was interviewed, no depot was visited, and nothing was measured in that engagement.\n\n## Boundaries and limits of microtask analysis\n\nMicrotask analysis is not a term from existing UX literature in this exact form. In Creative Navy's documentation, it names a specific concept: user behaviour in complex systems can be understood as a space of discrete actions rather than as a set of flows.\n\nMicrotask analysis does not replace task flows in every situation. Its value is strongest where intended sequence is a poor model of real behaviour: complex dashboards, single-page applications, expert tools, and environments where users combine actions non-linearly.\n\nMicrotask analysis also depends on observational evidence when used as a practice. A list built only from user self-report would not carry the same evidence basis, because the practice is intended to reveal actions, dependencies, and cognitive load that may not be visible in interview accounts alone.\n\n## Related pages\n\nMicrotask analysis is closely related to cognitive load because the practice records how much attention a discrete action demands. It is also related to workflow robustness because nonlinear user behaviour can expose dependencies that a designed task flow does not represent.\n\nThe Beissbarth and Oceaneering examples show two different uses of structured action or requirement decomposition: Beissbarth as an observed operational analysis across features and modules, and Oceaneering as a requirements-table instrument with a narrower evidence boundary.",
   "claims": [
     {
-      "claim": "Microtask analysis is an account of discrete user actions within a system, collected independently of assumed sequence or flow.",
-      "evidenceType": "definition",
-      "sourceStrength": "strong",
-      "notes": "Direct definition provided in the current source."
-    },
-    {
-      "claim": "Microtask analysis differs from task flow or journey mapping because no ordering is assumed and it documents actual user behaviour rather than only a designed sequence.",
+      "claim": "Microtask analysis is an account of discrete user actions collected independently of assumed sequence or flow.",
       "evidenceType": "conceptual definition",
       "sourceStrength": "strong",
-      "notes": "The source explicitly contrasts microtask analysis with task flow and journey map."
+      "notes": "Directly supported by the definition in CURRENT_SOURCE_MD."
+    },
+    {
+      "claim": "Microtask analysis differs from task flow because a task flow diagrams a designed sequence while a microtask list records what users actually do and when.",
+      "evidenceType": "conceptual definition",
+      "sourceStrength": "strong",
+      "notes": "Directly supported by the source distinction between microtask analysis and task flow or journey map."
     },
     {
       "claim": "Microtask analysis is particularly valuable in single-page applications, complex dashboards, and interfaces where users navigate non-linearly.",
       "evidenceType": "conceptual definition",
       "sourceStrength": "moderate",
-      "notes": "The source lists these contexts as particularly valuable uses."
+      "notes": "The source explicitly identifies these contexts as particularly valuable uses."
     },
     {
-      "claim": "As a practice, microtask analysis is used during Sandbox Experiments, typically alongside user observation and contextual inquiry, and is not built from user self-report alone.",
+      "claim": "As a practice, microtask analysis is used during Sandbox Experiments alongside user observation and contextual inquiry, and is not built from self-report alone.",
       "evidenceType": "Creative Navy-observed",
       "sourceStrength": "engagement record",
-      "notes": "The source describes the practice framing and its relationship to observation sessions."
+      "notes": "Supported by the source description of how the practice is applied."
     },
     {
-      "claim": "In the Gexcon CFD simulation software example, 102 individual tasks were documented across the system, including user goals, frequency, difficulty, and actions taken.",
+      "claim": "In the Gexcon CFD simulation software example, 102 individual tasks were documented across the system.",
       "evidenceType": "case study",
       "sourceStrength": "case evidence",
-      "notes": "Grounded example provided in the source."
+      "notes": "Supported by the grounded Gexcon example in CURRENT_SOURCE_MD."
     },
     {
-      "claim": "In the Beissbarth automotive calibration example, 12 key features were documented across 4 modules with attributes including required information, precision, technician movement, lighting conditions, and interpretation time.",
+      "claim": "In the Beissbarth automotive calibration example, 12 key features were documented across 4 modules, with domain-specific attributes including technician movement and lighting conditions.",
       "evidenceType": "case study",
       "sourceStrength": "case evidence",
-      "notes": "Grounded example provided in the source."
+      "notes": "Supported by the grounded Beissbarth example in CURRENT_SOURCE_MD."
     },
     {
-      "claim": "Microtask analysis is not described as an existing UX literature term in this exact form.",
-      "evidenceType": "conceptual definition",
-      "sourceStrength": "moderate",
-      "notes": "The source explicitly notes that the term is not used in existing UX literature in this exact form."
+      "claim": "In the Oceaneering engagement, the requirements-table column structure decomposed and tracked discrete requirements and open questions, but did not provide evidence of observed user behaviour.",
+      "evidenceType": "case study",
+      "sourceStrength": "case evidence",
+      "notes": "Supported by the Oceaneering evidence boundary in CURRENT_SOURCE_MD: no operator was interviewed, no depot was visited, and nothing was measured."
     }
   ],
   "limitations": [
-    "Microtask analysis does not assume an ordered flow, so it should not be used as a substitute for documenting a designed sequence when sequence is the object of analysis.",
-    "As a practice, the microtask list is built during or after observation sessions and is not based on user self-report alone.",
-    "The term is not described as an existing UX literature term in this exact form.",
-    "The Gexcon and Beissbarth examples are grounded examples, not general proof that the same findings will occur in every complex system."
+    "Microtask analysis is not a term from existing UX literature in this exact form.",
+    "The practice is strongest where users navigate non-linearly or combine actions in ways not anticipated by the design.",
+    "When used as a practice, microtask analysis should be built during or after observation sessions, not from user self-report alone.",
+    "The Oceaneering example documents decomposition of requirements and open questions; it is not evidence of observed user behaviour.",
+    "The source gives grounded examples for Gexcon, Beissbarth, and Oceaneering, but does not establish measured general outcomes across all project types."
   ],
   "publicationBlockers": [],
   "questionsForReview": [
@@ -97,41 +97,61 @@
   "relatedPageSlugs": [
     "cognitive-load",
     "workflow-robustness",
+    "behavioural-requirement",
     "state-visibility",
-    "operational-clarity",
-    "performance-in-reality",
-    "beissbarth"
+    "beissbarth",
+    "oceaneering-dispatch-panel",
+    "streetec-kntrl",
+    "ait-heat-pump-controller"
   ],
   "internalLinks": [
     {
       "anchorText": "cognitive load",
       "targetSlug": "cognitive-load",
-      "placementHint": "Use in the section 'Attributes recorded for each microtask' where cognitive load is listed as a recorded attribute.",
-      "reason": "The current page explicitly includes cognitive load as a microtask attribute."
-    },
-    {
-      "anchorText": "Beissbarth automotive calibration",
-      "targetSlug": "beissbarth",
-      "placementHint": "Use in the section 'Beissbarth automotive calibration example' when the example is first named.",
-      "reason": "The current page includes Beissbarth as a grounded example and the slug is available in the linking context."
+      "placementHint": "Related pages section or attribute list discussion",
+      "reason": "Microtask analysis records cognitive load for each discrete action."
     },
     {
       "anchorText": "workflow robustness",
       "targetSlug": "workflow-robustness",
-      "placementHint": "Use in the related pages area if the page template renders related concept links.",
-      "reason": "Microtask analysis records dependencies, constraints, and procedural reliability issues that are relevant to workflow robustness."
+      "placementHint": "Related pages section",
+      "reason": "Microtask analysis reveals nonlinear behaviour and dependencies that affect workflow robustness."
+    },
+    {
+      "anchorText": "behavioural requirement",
+      "targetSlug": "behavioural-requirement",
+      "placementHint": "Discussion of decomposed requirements and action attributes",
+      "reason": "The Oceaneering example concerns decomposition of discrete requirements and open questions."
     },
     {
       "anchorText": "state visibility",
       "targetSlug": "state-visibility",
-      "placementHint": "Use in the related pages area if the page template renders related concept links.",
-      "reason": "Microtask attributes include the information, state, and context a user needs to perform an action."
+      "placementHint": "Discussion of what the user needs to perform a microtask",
+      "reason": "The microtask attributes include information, state, and context needed by the user."
     },
     {
-      "anchorText": "performance in reality",
-      "targetSlug": "performance-in-reality",
-      "placementHint": "Use in the related pages area if the page template renders related concept links.",
-      "reason": "The concept distinguishes actual user behaviour from intended flows."
+      "anchorText": "Beissbarth automotive calibration example",
+      "targetSlug": "beissbarth",
+      "placementHint": "Beissbarth example section",
+      "reason": "The page discusses Beissbarth as a grounded example of microtask-style feature analysis."
+    },
+    {
+      "anchorText": "Oceaneering engagement",
+      "targetSlug": "oceaneering-dispatch-panel",
+      "placementHint": "Oceaneering requirements-table example section",
+      "reason": "The page discusses Oceaneering as a grounded example with a specific evidence boundary."
+    },
+    {
+      "anchorText": "Streetec",
+      "targetSlug": "streetec-kntrl",
+      "placementHint": "Oceaneering requirements-table example section",
+      "reason": "The source states that the same analytical device was used in the Streetec engagement."
+    },
+    {
+      "anchorText": "AIT",
+      "targetSlug": "ait-heat-pump-controller",
+      "placementHint": "Oceaneering requirements-table example section",
+      "reason": "The source states that the same analytical device was used in the AIT engagement."
     }
   ],
   "qualityChecks": {

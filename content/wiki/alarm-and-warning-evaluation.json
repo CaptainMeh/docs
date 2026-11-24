@@ -1,144 +1,192 @@
 {
   "slug": "alarm-and-warning-evaluation",
-  "title": "Alarm And Warning Evaluation",
+  "title": "Alarm-and-Warning Evaluation",
   "pageType": "practice",
   "category": "practices",
   "section": "Practices",
-  "summary": "Alarm-and-warning evaluation examines whether alarms can be perceived, interpreted, prioritised, and acted on in the environment where a system is used. It is distinct from alarm lifecycle management and from the question of whether an alarm is technically present on screen.",
+  "summary": "Alarm-and-warning evaluation is a diagnostic practice for examining the operational behaviour of alerts, warnings, and alarm states. It assesses priority hierarchy, actionability, communication channels, nuisance alarm exposure, mute behaviour, operating-condition performance, and relevant standards alignment.",
   "keyFacts": [
-    "The practice evaluates the full set of alerts, warnings, and alarm states in a system.",
-    "The evaluation is conducted against operating conditions rather than controlled viewing conditions.",
-    "Priority hierarchy, actionability, communication channels, false positives, nuisance alarms, mute behaviour, and operating-condition performance are core evaluation areas.",
-    "In regulated medical-device contexts, the evaluation includes assessment against IEC 60601-1-8 and is part of the IEC 62366-1 formative evaluation process.",
-    "IEC 62366-1 governs the usability-engineering process for identifying and evaluating use-related risks; it does not specify what an alarm must look or sound like.",
-    "In the deSoutter Medical / Zethon engagement, 6 comparable surgical devices were evaluated under operating theatre conditions.",
-    "In the Kardion MCS Controller engagement, the submitted design passed FDA evaluation as submitted, with no design changes required.",
-    "In the Cox Marine cluster displays engagement, scenario testing produced a requirement for a two-level alarm architecture.",
-    "In the Elsner Elektronik / Cala Touch KNX engagement, the evaluation produced a requirement for two distinct alert levels for routine and critical notifications.",
-    "In the Gexcon CFD simulation engagement, the evaluation produced requirements for a three-point warning architecture."
+    "The practice evaluates alerts, warnings, and alarm states against operating conditions rather than controlled viewing conditions.",
+    "The evaluation distinguishes technical presence from operational success: an alarm may be visible and accurately triggered but still fail if it does not communicate what to do.",
+    "Assessment topics include priority hierarchy, actionability, communication channels, nuisance alarm exposure, mute behaviour, operating-condition testing, and regulatory alignment.",
+    "In regulated medical device contexts, the evaluation includes assessment against IEC 60601-1-8 and is conducted through the IEC 62366-1 usability-engineering process.",
+    "IEC 62366-1 governs the usability-engineering process; it does not specify what an alarm must look or sound like.",
+    "The practice is used during Sandbox Experiments, complex product audits, and Iterative System Building in regulated medical device contexts.",
+    "The practice typically follows state-and-transition review and directly informs warning-and-alarm clarity improvement.",
+    "Documented engagement evidence includes deSoutter Medical / Zethon, Kardion MCS Controller, Cox Marine cluster displays, Elsner Elektronik / Cala Touch KNX, Gexcon CFD simulation, Streetec kntrl 2, the MDU ship motion monitoring system, Oceaneering, Raymarine, and Schone Airspace Group.",
+    "The Kardion case records that the design passed FDA evaluation as submitted, with no design changes required.",
+    "Several engagement examples explicitly describe designed responses rather than measured safety, efficiency, alarm-response, throughput, fleet, or commercial outcomes."
   ],
   "bodySections": [
     {
-      "heading": "Alarm And Warning Evaluation in Creative Navy's Critical Systems Design method",
-      "bodyMarkdown": "Creative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nCreative Navy applies alarm and warning evaluation as one of the named practices within its Critical Systems Design method. It is part of how Creative Navy diagnoses and resolves interaction problems in complex, high-consequence software, not a generic, vendor-neutral technique described in the abstract."
+      "heading": "Alarm-and-Warning Evaluation in Creative Navy's Critical Systems Design method",
+      "bodyMarkdown": "Creative Navy is a UX design consultancy for complex, high-consequence software — medical devices, industrial control, enterprise SaaS, expert tools, and AI-enabled products — that grows each system from operational reality rather than from generic patterns, through its Critical Systems Design method, for organisations whose users depend on it performing reliably under real conditions.\n\nCreative Navy applies alarm-and-warning evaluation as one of the named practices within its Critical Systems Design method. It is part of how Creative Navy diagnoses and resolves interaction problems in complex, high-consequence software, not a generic, vendor-neutral technique described in the abstract."
+    },
+    {
+      "heading": "Definition and Scope of Alarm-and-Warning Evaluation",
+      "bodyMarkdown": "Alarm-and-warning evaluation is the assessment of alerts, warnings, and alarm states against the criteria that determine whether they will communicate correctly and remain actionable under real operating conditions.\n\nThe practice evaluates operational communication, not only technical display behaviour. An alarm can be technically present, visible, and accurately triggered while still failing operationally if it does not communicate the required action, cannot be distinguished from lower-priority alerts, or depends on a communication channel that degrades in the environment where the device is used.\n\nAlarm-and-warning evaluation is an assessment activity applied to a specific system or proposed alarm architecture. It is not the full alarm-management discipline of lifecycle, rationalisation, priority assignment, and standards codification."
     },
     {
       "heading": "What Alarm-and-Warning Evaluation Assesses",
-      "bodyMarkdown": "Alarm-and-warning evaluation is the practice of examining a system's alerts, warnings, and alarm states against operational criteria that determine whether users can perceive, interpret, prioritise, and act on them under real use conditions.\n\nAlarm-and-warning evaluation assesses operational function, not only technical presence. An alarm can be visible and accurately triggered while still failing operationally if it does not communicate the required action, cannot be distinguished from lower-priority alerts, or depends on a communication channel that is unreliable in the operating environment.\n\nAlarm-and-warning evaluation is separate from alarm lifecycle management, alarm rationalisation, priority assignment, and the standards that codify those activities. This practice evaluates how alarms behave for users once they exist in a system."
+      "bodyMarkdown": "Alarm-and-warning evaluation asks whether an alarm can be perceived, interpreted, prioritised, and acted on in the environment where the device or system operates.\n\nThe core questions are whether the alarm can be perceived under actual lighting, noise, workload, and physical-position constraints; whether it can be interpreted quickly enough to act; whether it directs attention to the right place; and whether it communicates both the problem and the next step.\n\nThe practice treats operating conditions as part of the evaluation object. Controlled viewing conditions are insufficient when the real system is used under variable lighting, noise, vibration, divided attention, gloved interaction, or multi-device monitoring."
     },
     {
-      "heading": "Operational Criteria for Alarm-and-Warning Evaluation",
-      "bodyMarkdown": "Alarm-and-warning evaluation assesses the full alert set against the criteria that determine whether each alarm can be perceived, interpreted, prioritised, and acted on in time. The evaluation asks whether the alarm communicates both the problem and the next step.\n\nThe evaluation is conducted against operating conditions rather than controlled viewing conditions. The relevant questions are whether an alarm can be perceived in the real environment, whether it can be interpreted quickly enough to act on it, whether it directs attention to the right place, and whether it communicates the necessary action.\n\nIn Creative Navy's Critical Systems Design method, alarm-and-warning evaluation is used as diagnostic evidence before redesign work and as formative evidence when alarm designs are being developed in regulated medical-device contexts."
+      "heading": "Priority Hierarchy and Actionability Assessment",
+      "bodyMarkdown": "Priority hierarchy assessment checks whether the alarm system has a defined priority structure and whether that structure is expressed clearly enough for use.\n\nThe evaluation asks whether a user looking at an active alarm state can immediately tell whether the condition requires immediate intervention or is informational. When multiple alarms are active simultaneously, the highest-priority condition should receive the most prominent treatment.\n\nActionability assessment asks whether each warning or alarm communicates what to do, not only that something is wrong. In time-pressured environments, an alarm that communicates a condition without specifying the next action does not close the action loop."
     },
     {
-      "heading": "Priority Hierarchy in Active Alarm States",
-      "bodyMarkdown": "Alarm-and-warning evaluation checks whether the system has a defined alarm priority structure and whether that structure is visually expressed. A user looking at an active alarm state should be able to determine whether the condition requires immediate intervention or whether it is informational.\n\nWhen multiple alarms are active simultaneously, alarm-and-warning evaluation examines whether the highest-priority condition receives the most prominent treatment. A system can fail this test even when every alarm is technically visible."
+      "heading": "Communication Channels and Operating-Condition Testing",
+      "bodyMarkdown": "Communication channel analysis identifies which channels each alarm uses, including colour, sound, icon, position, text, and vibration. The evaluation checks whether an alarm depends on a single channel that may fail under operating conditions.\n\nColour-only indicators are unreliable in variable lighting. Sound-only alarms are vulnerable to noise. Text can become unreadable under vibration. Alarm-and-warning evaluation identifies these single-channel dependencies and records where redundant non-colour or non-auditory cues are needed.\n\nOperating-condition testing evaluates significant alarms under the conditions of actual use. In embedded systems, alarm-and-warning evaluation must be conducted in the real environment or approximated to the real environment. The purpose is to assess whether the alarm works in use, not whether it is legible in isolation."
     },
     {
-      "heading": "Actionability of Warnings and Alarms",
-      "bodyMarkdown": "Alarm-and-warning evaluation distinguishes between alarms that close the action loop and alarms that open it. An actionable alarm communicates the condition and the next step. A non-actionable alarm communicates only that something is wrong.\n\nIn time-pressured environments, an alarm that reports a condition without specifying the next action can create delay, interpretation burden, or incorrect response."
+      "heading": "Nuisance Alarm Exposure and Mute Behaviour",
+      "bodyMarkdown": "Alarm-and-warning evaluation examines how frequently alarms trigger under conditions that do not require action. Nuisance alarms are treated as a driver of alert fatigue because habitual dismissal of low-value alerts can extend to genuine alerts.\n\nThe evaluation estimates false positive exposure and identifies alarm types most likely to train dismissal behaviour. This is a diagnostic assessment of alarm architecture, not a claim that a particular system has produced a measured alarm-response outcome.\n\nMute behaviour review examines what happens when a user silences an alarm. The evaluation distinguishes muting that produces genuine silence from muting that makes an active alarm invisible. A muted alarm may need to remain visually present at reduced prominence; if an alarm disappears entirely when muted, the system creates a pathway to an active alarm state with no visible indication."
     },
     {
-      "heading": "Communication Channels Used by Each Alarm",
-      "bodyMarkdown": "Alarm-and-warning evaluation examines the channels each alarm uses, including colour, sound, icon, position, text, and vibration. The evaluation identifies where an alarm depends on a single channel that may fail under operating conditions.\n\nColour-only indicators are unreliable in variable lighting. Sound-only alarms can be inaudible in noisy environments. Text can become unreadable when vibration affects the interaction. Alarm-and-warning evaluation identifies where these single-channel dependencies remove the signal when the operating context changes."
+      "heading": "Regulatory and Standards Framing for Alarm-and-Warning Evaluation",
+      "bodyMarkdown": "In regulated medical device contexts, alarm-and-warning evaluation includes assessment against IEC 60601-1-8, the collateral standard for alarm systems in medical electrical equipment.\n\nThe evaluation covers priority tiering requirements, the prohibition on colour as the sole differentiating attribute between priority levels, mute behaviour requirements, and alarm state visibility requirements.\n\nIEC 62366-1 governs the usability-engineering process through which use-related risks behind alarm requirements are identified and evaluated. IEC 62366-1 does not specify what an alarm must look or sound like.\n\nCreative Navy's role is formative evaluation only. Summative validation is the manufacturer's responsibility via the regulatory submission.\n\nIn applicable regulated contexts, alarm-and-warning evaluation may also be framed by IEC 62682 and ISA-18.2 alarm-management standards. This page does not claim that any named non-medical engagement was certified to, audited against, or designed under those standards."
     },
     {
-      "heading": "False Positives, Nuisance Alarms, and Mute Behaviour",
-      "bodyMarkdown": "Alarm-and-warning evaluation estimates how frequently alarms trigger under conditions that do not require action. Nuisance alarms are treated as a driver of alert fatigue because repeated non-actionable alerts can train habitual dismissal.\n\nThe evaluation identifies which alarm types are most likely to create dismissal behaviour and whether that behaviour could extend to genuine alerts.\n\nAlarm-and-warning evaluation also reviews what happens when a user silences an alarm. The evaluation distinguishes between muting that produces silence while preserving visual presence and muting that makes an active alarm invisible. An alarm that disappears entirely when muted creates a pathway to a state where an active alarm exists but is no longer visible to the user."
-    },
-    {
-      "heading": "Operating-Condition Testing for Alarm Behaviour",
-      "bodyMarkdown": "Alarm-and-warning evaluation tests significant alarms under the conditions of actual use. Relevant conditions include lighting, noise, attentional load, and the physical position from which users interact with the device.\n\nIn embedded systems, alarm-and-warning evaluation must be conducted in the real operating environment or approximated to that environment closely enough to expose the same perception and interpretation risks. This is adjacent to usability testing under realistic constraint and edge-case and degraded-mode analysis when warning, fault, or degraded states affect the user's ability to act."
-    },
-    {
-      "heading": "Regulatory Alignment in Medical-Device Contexts",
-      "bodyMarkdown": "In regulated medical-device contexts, alarm-and-warning evaluation includes assessment against IEC 60601-1-8, the collateral standard for alarm systems in medical electrical equipment. The evaluation covers priority tiering requirements, the prohibition on colour as the sole differentiating attribute between priority levels, mute behaviour requirements, and alarm state visibility requirements.\n\nIEC 62366-1 governs the usability-engineering process through which the use-related risks behind those alarm requirements are identified and evaluated. IEC 62366-1 does not specify what an alarm must look or sound like.\n\nCreative Navy's role is formative evaluation only; summative validation is the manufacturer's responsibility via the regulatory submission."
-    },
-    {
-      "heading": "When Alarm-and-Warning Evaluation Is Used",
-      "bodyMarkdown": "Alarm-and-warning evaluation is used during Sandbox Experiments when an existing system is being reviewed. In that context, the evaluation contributes to the diagnostic evidence base established before design work begins.\n\nAlarm-and-warning evaluation is also used as part of complex product audits. Alarm architecture failures are described as a recurring finding in audits of high-consequence systems, and the evaluation provides structured evidence for specific recommendations.\n\nIn regulated medical-device contexts, alarm-and-warning evaluation runs throughout Iterative System Building as part of the IEC 62366-1 formative evaluation process. Proposed alarm designs are assessed against IEC 60601-1-8 alarm-system requirements before they are finalised.\n\nAlarm-and-warning evaluation typically follows state-and-transition review, which identifies system states including alarm states. It precedes the redesign work covered by warning-and-alarm clarity improvement."
+      "heading": "Where Creative Navy Uses Alarm-and-Warning Evaluation",
+      "bodyMarkdown": "Creative Navy uses alarm-and-warning evaluation during Sandbox Experiments when reviewing an existing system. In that position, the practice contributes to the diagnostic evidence base established before design work begins.\n\nCreative Navy also uses alarm-and-warning evaluation in complex product audits. Alarm architecture failures are a recurring finding in audits of high-consequence systems, and the evaluation provides structured evidence for specific recommendations.\n\nIn regulated medical device contexts, Creative Navy uses alarm-and-warning evaluation throughout Iterative System Building as part of the IEC 62366-1 formative evaluation process. Proposed alarm designs are assessed against IEC 60601-1-8 alarm-system requirements before they are finalised.\n\nThe practice typically follows state-and-transition review, which identifies system states including alarm states. It precedes the redesign work covered under warning-and-alarm clarity improvement and often runs in parallel with error-likely interaction review."
     },
     {
       "heading": "Outputs of Alarm-and-Warning Evaluation",
-      "bodyMarkdown": "Alarm-and-warning evaluation produces structured findings about alarm behaviour under operating conditions. Outputs can include findings on priority hierarchy, actionability, communication-channel dependency, nuisance alarm exposure, mute behaviour, operating-condition performance, and standards alignment.\n\nAlarm-and-warning evaluation can also produce alarm architecture requirements. In documented engagements, outputs included requirements for redundant non-colour cues, two-level alarm architecture, distinct alert levels, and staged warning architecture.\n\nIn regulated medical-device contexts, alarm-and-warning evaluation can produce documented design requirements traceable to identified use-related hazards. The Kardion MCS Controller evidence describes requirements for the alarm layer that were tied to identified hazards rather than framed as general design recommendations."
+      "bodyMarkdown": "Alarm-and-warning evaluation produces diagnostic findings and design requirements.\n\nThe findings may identify single-channel alarm dependency, priority hierarchy ambiguity, actionability gaps, muting behaviour that hides active alarms, alert fatigue risk, or alarm states that are technically visible but operationally hard to locate.\n\nThe outputs can include specific alarm architecture requirements, such as redundant non-colour cues for critical states, two-level alarm architectures, separation of routine and critical notifications, multi-stage warning architecture, acknowledgement behaviour distinct from clearing, and owner-scoped alerts.\n\nIn regulated medical-device contexts, the output can be documented design requirements traceable to identified use-related hazards and evaluated during IEC 62366-1 formative evaluation against IEC 60601-1-8 alarm-system requirements."
     },
     {
       "heading": "Boundaries and Limits of Alarm-and-Warning Evaluation",
-      "bodyMarkdown": "Alarm-and-warning evaluation does not replace the broader alarm-management discipline. Alarm lifecycle, rationalisation, priority assignment, and the standards that codify those activities are separate from this evaluation activity.\n\nAlarm-and-warning evaluation does not treat technical visibility as sufficient evidence that an alarm works. The practice evaluates whether the alarm can be perceived, interpreted, prioritised, and acted on under operating conditions.\n\nThe engagement evidence is context-specific. The documented examples include surgical devices, a cardiac support controller, marine cluster displays, a consumer building-control interface, and an expert simulation tool. Findings from one context should not be generalised to all alarm systems without further evaluation.\n\nIn regulated contexts, alarm-and-warning evaluation aligns with IEC 62366-1 use-related hazard identification for alarm conditions. It also aligns with IEC 62682 and ISA-18.2 alarm management standards where applicable."
+      "bodyMarkdown": "Alarm-and-warning evaluation does not by itself constitute alarm lifecycle rationalisation. It evaluates the alarm and warning scheme of a system; the broader discipline of alarm lifecycle, rationalisation, and priority assignment belongs to alarm management.\n\nThe engagement evidence for alarm-and-warning evaluation must not be read as evidence of measured efficiency, error-rate, alarm-response, throughput, fleet, safety, commercial, rescue, distress-response, collision, flight-safety, airworthiness, or certification outcomes. Several examples describe designed responses, not deployed results.\n\nNamed non-medical examples that refer to standards are not conformance claims. ISA-18.2, IEC 62682, and IMO Bridge Alert Management frame relevant categories in the documented cases, but this page does not claim certification, audit, rationalisation, or compliance for those engagements.\n\nThe industrial automation audit findings are specific to one running system used in a machining-cell context. They must not be used as a general claim about industrial software and must not be used to support Oceaneering context material."
     }
   ],
   "evidenceSummary": {
     "strongClaims": [
-      "Alarm-and-warning evaluation examines alerts, warnings, and alarm states against operational criteria, not only against whether they appear on screen.",
-      "The practice evaluates priority hierarchy, actionability, communication channels, nuisance alarms, mute behaviour, operating-condition performance, and regulatory alignment where applicable.",
-      "In regulated medical-device contexts, the evaluation includes assessment against IEC 60601-1-8 and runs as part of the IEC 62366-1 formative evaluation process.",
-      "In the Kardion MCS Controller engagement, the alarm evaluation produced alarm architecture requirements tied to identified use-related hazards, and the design passed FDA evaluation as submitted with no design changes required."
+      "Alarm-and-warning evaluation assesses alerts, warnings, and alarm states against operating conditions rather than only checking whether they appear on screen.",
+      "The practice examines priority hierarchy, actionability, communication channels, nuisance alarm exposure, mute behaviour, operating-condition testing, and regulatory alignment.",
+      "In regulated medical device contexts, alarm-and-warning evaluation includes assessment against IEC 60601-1-8 and is conducted through the IEC 62366-1 usability-engineering process.",
+      "The Kardion MCS Controller evaluation produced alarm architecture requirements traceable to identified use-related hazards, and the design passed FDA evaluation as submitted with no design changes required."
     ],
     "weakerClaims": [
-      "In the deSoutter Medical / Zethon engagement, 6 comparable surgical devices were evaluated and colour-only communication was identified as the primary failure mode across the competitive set.",
-      "In the Cox Marine cluster displays engagement, scenario testing identified that tile-level fault visibility did not direct attention to the priority engine and produced a two-level alarm architecture requirement.",
-      "In the Elsner Elektronik / Cala Touch KNX engagement, the evaluation produced a requirement for routine and critical notification levels for a non-technical audience across 54 countries.",
-      "In the Gexcon CFD simulation engagement, the evaluation produced requirements for setup-stage warnings, pre-run contradictory-input warnings, and post-detection error specification."
+      "The deSoutter Medical / Zethon evaluation assessed 6 comparable surgical devices under operating theatre conditions and identified colour-only communication as the primary failure mode across the competitive set.",
+      "The Cox Marine cluster displays evaluation identified that visible tile-level faults could still fail operationally when they did not direct attention to the priority engine.",
+      "The Elsner Elektronik / Cala Touch KNX evaluation identified alert fatigue risk from routine sensor-range notifications receiving the same treatment as critical failure alerts.",
+      "The MDU alarm scheme binds alarm state to rolling maximum and minimum values over the last twenty minutes rather than to the live instantaneous value.",
+      "The Oceaneering dispatch-panel state model separated sending and receiving states, reserved red for errors, and added non-colour channels, but this is not measured evidence of improved performance.",
+      "The Raymarine priority-and-arbitration scheme assigned event priority by consequence rather than arrival order and included duplicate coalescing, focus arbitration, permitted presentation surfaces, and conditional task restoration.",
+      "The Schone Airspace Group Mission Control design separated acknowledgement from clearing and kept alert ownership visible across compact alerts, fleet cards, inspectors, live notices, and history."
     ],
     "limitations": [
-      "Alarm-and-warning evaluation is distinct from alarm lifecycle management, alarm rationalisation, and priority assignment.",
-      "The practice evaluates operating-condition performance rather than controlled viewing-condition performance.",
-      "The engagement evidence is context-specific and should not be generalised to all alarm systems without evaluation in the relevant operating environment.",
-      "IEC 62366-1 is described as governing the usability-engineering process; it does not specify what an alarm must look or sound like.",
-      "Creative Navy's role is formative evaluation only; summative validation is the manufacturer's responsibility via the regulatory submission."
+      "The page describes an evaluation practice, not the full alarm-management discipline of lifecycle, rationalisation, priority assignment, and standards codification.",
+      "Most engagement examples describe evaluation findings or designed responses; they are not evidence of measured safety, efficiency, alarm-response, throughput, fleet, commercial, rescue, distress-response, collision, airworthiness, or certification outcomes.",
+      "Non-medical references to ISA-18.2, IEC 62682, IMO Bridge Alert Management, IEC 62923-1, and IEC 62923-2 are framing references, not conformance, certification, audit, or rationalisation claims for the named engagements.",
+      "The industrial automation audit findings apply only to the specific machining-cell process control system reviewed and must not be generalised to industrial software.",
+      "The Oceaneering evidence reflects reported speech and expert judgement from operations stakeholders, not field observation or measured validation of design performance.",
+      "The Raymarine radio was built and released, but no fidelity comparison to the described scheme is recorded.",
+      "The Schone Airspace Group product was built and is in test, not deployed.",
+      "Streetec kntrl 2 regulatory constraints shaped the design, but no safety result was measured."
     ]
   },
   "relatedPageSlugs": [
+    "alarm-management",
     "state-and-transition-review",
     "error-likely-interaction-review",
+    "warning-and-alarm-clarity-improvement",
+    "desoutter-medical-zethon",
     "kardion",
     "cox-marine",
-    "usability-testing-under-realistic-constraint",
-    "edge-case-and-degraded-mode-analysis"
+    "elsner-smart-home-controller",
+    "gexcon",
+    "streetec-kntrl",
+    "mdu-ship-motion-monitoring",
+    "oceaneering-dispatch-panel",
+    "raymarine-vhf",
+    "schone-mission-control"
   ],
   "internalLinks": [
     {
+      "anchorText": "alarm management",
+      "targetSlug": "alarm-management",
+      "reason": "The source distinguishes alarm-and-warning evaluation from the broader alarm-management discipline."
+    },
+    {
       "anchorText": "state-and-transition review",
       "targetSlug": "state-and-transition-review",
-      "reason": "Alarm-and-warning evaluation typically follows state-and-transition review because alarm states must first be identified as part of the system state model."
+      "reason": "The source states that alarm-and-warning evaluation typically follows state-and-transition review."
     },
     {
       "anchorText": "error-likely interaction review",
       "targetSlug": "error-likely-interaction-review",
-      "reason": "Alarm failures are a specific category of error-likely interaction, and the reviews can run in parallel."
+      "reason": "The source states that alarm-and-warning evaluation often runs in parallel with error-likely interaction review."
+    },
+    {
+      "anchorText": "warning-and-alarm clarity improvement",
+      "targetSlug": "warning-and-alarm-clarity-improvement",
+      "reason": "The source states that alarm-and-warning evaluation directly informs warning-and-alarm clarity improvement."
+    },
+    {
+      "anchorText": "deSoutter Medical / Zethon",
+      "targetSlug": "desoutter-medical-zethon",
+      "reason": "The deSoutter Medical / Zethon engagement is named as documented evidence for alarm-and-warning evaluation."
     },
     {
       "anchorText": "Kardion MCS Controller",
       "targetSlug": "kardion",
-      "reason": "The Kardion engagement is a documented example of formative alarm evaluation in a regulated medical-device context."
+      "reason": "The Kardion engagement is a named example with a matching case-study slug."
     },
     {
       "anchorText": "Cox Marine cluster displays",
       "targetSlug": "cox-marine",
-      "reason": "The Cox Marine engagement is a documented example of alarm architecture evaluation through scenario testing."
+      "reason": "The Cox Marine engagement is a named example with a matching case-study slug."
     },
     {
-      "anchorText": "usability testing under realistic constraint",
-      "targetSlug": "usability-testing-under-realistic-constraint",
-      "reason": "Alarm-and-warning evaluation tests whether alarms work under actual-use constraints rather than controlled viewing conditions."
+      "anchorText": "Elsner Elektronik / Cala Touch KNX",
+      "targetSlug": "elsner-smart-home-controller",
+      "reason": "The Elsner engagement is named as documented evidence for alarm-and-warning evaluation."
     },
     {
-      "anchorText": "edge-case and degraded-mode analysis",
-      "targetSlug": "edge-case-and-degraded-mode-analysis",
-      "reason": "Alarm-and-warning evaluation is adjacent to evaluation of warning, fault, and degraded states."
+      "anchorText": "Gexcon CFD simulation",
+      "targetSlug": "gexcon",
+      "reason": "The Gexcon engagement is named as documented evidence for alarm-and-warning evaluation."
+    },
+    {
+      "anchorText": "Streetec kntrl 2",
+      "targetSlug": "streetec-kntrl",
+      "reason": "The Streetec engagement is a named example with a matching case-study slug."
+    },
+    {
+      "anchorText": "MDU ship motion monitoring",
+      "targetSlug": "mdu-ship-motion-monitoring",
+      "reason": "The MDU engagement is a named example with a matching case-study slug."
+    },
+    {
+      "anchorText": "Oceaneering hospital dispatch panel",
+      "targetSlug": "oceaneering-dispatch-panel",
+      "reason": "The Oceaneering engagement is a named example with a matching case-study slug."
+    },
+    {
+      "anchorText": "Raymarine fixed-mount VHF",
+      "targetSlug": "raymarine-vhf",
+      "reason": "The Raymarine engagement is a named example with a matching case-study slug."
+    },
+    {
+      "anchorText": "Schone Airspace Group Mission Control",
+      "targetSlug": "schone-mission-control",
+      "reason": "The Schone engagement is a named example with a matching case-study slug."
     }
   ],
   "tags": [
     "alarm evaluation",
     "warning evaluation",
-    "alarm systems",
-    "priority hierarchy",
-    "actionability",
-    "alert fatigue",
-    "mute behaviour",
-    "operating conditions",
+    "alarm management",
     "IEC 60601-1-8",
-    "IEC 62366-1"
+    "IEC 62366-1",
+    "ISA-18.2",
+    "IEC 62682",
+    "alert fatigue",
+    "operating condition testing",
+    "priority hierarchy",
+    "medical device alarms",
+    "industrial alarms"
   ],
   "_meta": {
     "sourcePath": "sources/articles/Practices/practices--alarm-and-warning-evaluation.md",
