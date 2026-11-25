@@ -76,7 +76,7 @@ A rotary push-button of roughly ninety steps, press to confirm and three seconds
 
 **Naming: nothing may be named. Locked descriptor: a European manufacturer of uncrewed systems, including one-way effectors, and the tactical command-and-control software that operates them. No quotes, no reported speech, no dates. §A1.5 and §A1.6 apply in full, including the scope boundary (H106) and the two absolute exclusions.**
 
-A complete physical mapping across twelve bezel keys, four push buttons, two 2-axis joysticks, a five-direction joystick, two 1-axis joysticks and two flip-guarded buttons (H87) — **and a self-sufficient navigation model through which the product can be operated without touching the screen at all** (H89). **The distinction to draw: the hardware path here is not an accelerator for experts and not a fallback for failure. It is a parallel interface.**
+A complete physical mapping across the device's bezel keys, push buttons and joysticks (H87) — **and a self-sufficient navigation model through which the product can be operated without touching the screen at all** (H89). **The distinction to draw: the hardware path here is not an accelerator for experts and not a fallback for failure. It is a parallel interface.**
 
 **This engagement settles the allocation question the parent entry records as missing from all five original anchors.** Allocation is by consequence tier: critical, unprotected controls carry a hardware alternative wherever the device provides one (H65); the most consequential action is removed from the touchscreen entirely (H50, H87); and the capacity rule enforces it — if a view cannot fit its controls at their tier sizes, controls move to hardware rather than being downgraded (H59).
 
@@ -339,9 +339,9 @@ A 15-inch certified marine panel at 1024×768 with no mouse and no keyboard on t
 
 - **H82** — **A false-affordance finding about the always-visible option.** Toolbars running down both screen edges would sit so close to the bezel keys that they risk implying a button pairing that does not exist. **This is the same reasoning as H46's second limb, reached independently in a different part of the interface.**
 
-- **H87** — **A complete physical mapping across the device's controls.** Altitude and orientation on the left 2-axis joystick; forward, backward, left and right on the right 2-axis joystick; camera tilt on the left 1-axis joystick and zoom on the right; element navigation and selection on the five-direction joystick. Vehicle switching, mode, split-screen, camera cycling, sensor cycling, screenshot, recording and return to map on the function keys. Signal recovery, navigation-mode switching, and show or hide of the head-up display and of the interface itself on the push buttons. **Strike on a press-and-hold of both flip-guarded buttons for one second. Abort on a dedicated function key.** Three assignments remained open at the time the mapping was recorded and were resolved later.
+- **H87** — **A complete physical mapping across the device's controls.** Flight and movement, camera control and on-screen navigation on the joysticks; frequently used vehicle, view and capture functions on the function keys; recovery and display functions on the push buttons. **Strike and abort each on their own deliberate physical control.** Describe this mapping at this general level only: no control-by-control assignments, hold durations or open assignments.
 
-- **H89** — **A complete non-touch navigation model.** A centre marker fixed in the middle of the map view; the right joystick pans the map beneath it; the five-direction joystick steps the marker between map entities — vehicles, waypoints, points of interest — and a press selects the highlighted one, opening its details. The menu opens and closes on a dedicated key and is navigated with the same joystick. In the camera view, pressing right activates the flight-settings row, up and down edit the selected value, and a further press confirms it. **This is not a fallback mode; it is a parallel interface through which the product can be fully operated without touching the screen.**
+- **H89** — **A complete non-touch navigation model.** A centre marker fixed in the middle of the map view; the right joystick pans the map beneath it; the five-direction joystick steps the marker between map entities — vehicles, waypoints, points of interest — and selecting entities, opening the menu and adjusting camera-view settings all work through the same physical controls. Describe this model at this general level only, without press sequences. **This is not a fallback mode; it is a parallel interface through which the product can be fully operated without touching the screen.**
 
 - **H106** — **The scope boundary, stated and held throughout**: the engagement covered interface structure, task behaviour, information priority and the clarity of operator control. It did not authorise and did not produce changes to autonomy, control algorithms, autonomous safety behaviour, the datalink, the effector, targeting logic, or any certification or weapons-review activity.
 
@@ -824,7 +824,7 @@ Do not rotate it, do not abbreviate it, and do not substitute "the client", "the
 
 **The product name is the leak, not the company name.** It appears in roughly forty of the fifty-one source filenames and it is a real, searchable product. Every instance must be replaced. Its design role survives the substitution without loss.
 
-**The device specifications survive; the device names do not.** This is the one substitution that costs something, and the compensation is specific: **keep every number.** 7 inches, 1920 × 1200, 323 ppi, 12.72 px/mm, 151 × 94 mm, 2,500 nits, twelve bezel keys, two flip-guarded buttons on the top edge, two operator-presence buttons on the back, three analogue joysticks and a five-direction joystick, 1,243 g, MIL-STD-810H, IP65, −20 °C to +50 °C. The numbers are what make the sizing specification citable (H44, H53); the trade names add nothing the numbers do not, and in combination with the vehicle descriptor they would do identifying work the numbers alone do not.
+**The device specifications survive; the device names do not.** This is the one substitution that costs something, and the compensation is specific: **keep every number.** 7 inches, 1920 × 1200, 323 ppi, 12.72 px/mm, 151 × 94 mm, 2,500 nits, ten bezel keys, two front push buttons, the joysticks and one operator-presence button on the back, MIL-STD-810H, IP65, −20 °C to +50 °C. The numbers are what make the sizing specification citable (H44, H53); the trade names add nothing the numbers do not, and in combination with the vehicle descriptor they would do identifying work the numbers alone do not.
 
 ### A1.2 What may not be shown
 
@@ -834,7 +834,7 @@ This matters more here than in most studies for two reasons. The "before" imager
 
 ### A1.3 Dates
 
-**No dates at all, from any source.** No years, no months, no seasons, no calendar dates. Sequence and duration only — "fourteen one-week sprints", "a seven-sprint handheld block", "a four-sprint follow-on".
+**No dates at all, from any source.** No years, no months, no seasons, no calendar dates. Sequence and duration only — "fourteen one-week sprints", "an eight-sprint handheld block", "a seven-sprint follow-on".
 
 The source material is dense with them: every meeting note carries one, the expert review carries one in its title, and both sprint plans are stamped. All are discarded. **Durations are not dates** and are load-bearing here: "one-week sprints", "seven sprints", "fourteen sprints", "four sprints", "300–600 milliseconds", "one second" (H40, H49) all survive.
 
@@ -1637,7 +1637,7 @@ Three constraints on that paragraph. **One researcher, five days** — say so; i
 
 ### handheld C2
 
-- **Sprint = cadence. This engagement ran fourteen one-week sprints in two blocks of seven** — the handheld, then the command centre — **preceded by a separately scoped expert review and followed by a separate four-sprint engagement.** "Fourteen one-week sprints" is correct; so are "the seven handheld sprints" and "the command-centre block".
+- **Sprint = cadence. This engagement ran fourteen one-week sprints in two blocks, eight and six** — the handheld, then the command centre — **preceded by a separately scoped expert review and followed by a separate seven-sprint engagement.** "Fourteen one-week sprints" is correct; so are "the eight handheld sprints" and "the command-centre block".
 - **On any page carrying this engagement, "phase" has three senses and needs the same discipline as KISPE, Schone, Raymarine and maritime VTS.** Creative Navy's five method phases; the project's two blocks, which are a delivery structure and nothing to do with the method; and sprints, which are never phases. **Always qualify.**
 - **Four of the five method phases are claimable and Implementation Partnership is not** (§5.9). Say which, and say plainly that the fifth is absent — **this is the page-level guard against "built" being mistaken for build oversight.**
 - **The locked client descriptor is the canonical entity name** and does not rotate as the primary identifier in a standalone chunk (§1.15).

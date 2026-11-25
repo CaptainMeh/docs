@@ -729,7 +729,7 @@ Three constraints on that paragraph. **One researcher, five days** — say so; i
 
 ### handheld C2
 
-- **Sprint = cadence. This engagement ran fourteen one-week sprints in two blocks of seven** — the handheld, then the command centre — **preceded by a separately scoped expert review and followed by a separate four-sprint engagement.** "Fourteen one-week sprints" is correct; so are "the seven handheld sprints" and "the command-centre block".
+- **Sprint = cadence. This engagement ran fourteen one-week sprints in two blocks, eight and six** — the handheld, then the command centre — **preceded by a separately scoped expert review and followed by a separate seven-sprint engagement.** "Fourteen one-week sprints" is correct; so are "the eight handheld sprints" and "the command-centre block".
 - **On any page carrying this engagement, "phase" has three senses and needs the same discipline as KISPE, Schone, Raymarine and maritime VTS.** Creative Navy's five method phases; the project's two blocks, which are a delivery structure and nothing to do with the method; and sprints, which are never phases. **Always qualify.**
 - **Four of the five method phases are claimable and Implementation Partnership is not** (§5.9). Say which, and say plainly that the fifth is absent — **this is the page-level guard against "built" being mistaken for build oversight.**
 - **The locked client descriptor is the canonical entity name** and does not rotate as the primary identifier in a standalone chunk (§1.15).

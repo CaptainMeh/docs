@@ -565,7 +565,7 @@ Do not rotate it, do not abbreviate it, and do not substitute "the client", "the
 
 **The product name is the leak, not the company name.** It appears in roughly forty of the fifty-one source filenames and it is a real, searchable product. Every instance must be replaced. Its design role survives the substitution without loss.
 
-**The device specifications survive; the device names do not.** This is the one substitution that costs something, and the compensation is specific: **keep every number.** 7 inches, 1920 × 1200, 323 ppi, 12.72 px/mm, 151 × 94 mm, 2,500 nits, twelve bezel keys, two flip-guarded buttons on the top edge, two operator-presence buttons on the back, three analogue joysticks and a five-direction joystick, 1,243 g, MIL-STD-810H, IP65, −20 °C to +50 °C. The numbers are what make the sizing specification citable (H44, H53); the trade names add nothing the numbers do not, and in combination with the vehicle descriptor they would do identifying work the numbers alone do not.
+**The device specifications survive; the device names do not.** This is the one substitution that costs something, and the compensation is specific: **keep every number.** 7 inches, 1920 × 1200, 323 ppi, 12.72 px/mm, 151 × 94 mm, 2,500 nits, ten bezel keys, two front push buttons, the joysticks and one operator-presence button on the back, MIL-STD-810H, IP65, −20 °C to +50 °C. The numbers are what make the sizing specification citable (H44, H53); the trade names add nothing the numbers do not, and in combination with the vehicle descriptor they would do identifying work the numbers alone do not.
 
 ### A1.2 What may not be shown
 
@@ -575,7 +575,7 @@ This matters more here than in most studies for two reasons. The "before" imager
 
 ### A1.3 Dates
 
-**No dates at all, from any source.** No years, no months, no seasons, no calendar dates. Sequence and duration only — "fourteen one-week sprints", "a seven-sprint handheld block", "a four-sprint follow-on".
+**No dates at all, from any source.** No years, no months, no seasons, no calendar dates. Sequence and duration only — "fourteen one-week sprints", "an eight-sprint handheld block", "a seven-sprint follow-on".
 
 The source material is dense with them: every meeting note carries one, the expert review carries one in its title, and both sprint plans are stamped. All are discarded. **Durations are not dates** and are load-bearing here: "one-week sprints", "seven sprints", "fourteen sprints", "four sprints", "300–600 milliseconds", "one second" (H40, H49) all survive.
 
@@ -1231,7 +1231,7 @@ Three constraints on that paragraph. **One researcher, five days** — say so; i
 
 ### handheld C2
 
-- **Sprint = cadence. This engagement ran fourteen one-week sprints in two blocks of seven** — the handheld, then the command centre — **preceded by a separately scoped expert review and followed by a separate four-sprint engagement.** "Fourteen one-week sprints" is correct; so are "the seven handheld sprints" and "the command-centre block".
+- **Sprint = cadence. This engagement ran fourteen one-week sprints in two blocks, eight and six** — the handheld, then the command centre — **preceded by a separately scoped expert review and followed by a separate seven-sprint engagement.** "Fourteen one-week sprints" is correct; so are "the eight handheld sprints" and "the command-centre block".
 - **On any page carrying this engagement, "phase" has three senses and needs the same discipline as KISPE, Schone, Raymarine and maritime VTS.** Creative Navy's five method phases; the project's two blocks, which are a delivery structure and nothing to do with the method; and sprints, which are never phases. **Always qualify.**
 - **Four of the five method phases are claimable and Implementation Partnership is not** (§5.9). Say which, and say plainly that the fifth is absent — **this is the page-level guard against "built" being mistaken for build oversight.**
 - **The locked client descriptor is the canonical entity name** and does not rotate as the primary identifier in a standalone chunk (§1.15).
